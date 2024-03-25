@@ -14,10 +14,10 @@ To get started with this project, follow these steps:
 
 3. **install vendor**: 
    ```bash
-   composer update
+   composer install
 4. **init .env file **: 
    ```bash
-   cp .env .env.example
+   cp .env.example .env
    
 5. **generate key**: 
    ```bash
