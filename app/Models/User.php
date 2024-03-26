@@ -3,20 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
         'name',
         'email',
@@ -25,23 +22,36 @@ class User extends Authenticatable implements MustVerifyEmail
         'provider',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    protected function RoleName(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => Str::afterLast($this->attributes['role_type'] , '\\') 
+        );
+    }
+
+    protected function slug(): Attribute
+    {
+        $name = 
+        $this->attributes['first_name'] . ' ' . 
+        $this->attributes['last_name'] . ' ' .
+        $this->attributes['id'] ;
+        return Attribute::make(
+            get: fn() => Str::slug($name) 
+        );
+    }
+
+    public function role():MorphTo
+    {
+        return $this->morphTo();
+    }
 }

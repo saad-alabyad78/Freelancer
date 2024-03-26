@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Company;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -19,7 +21,13 @@ require 'Api/socialite.php' ;
 require 'Api/otp.php' ;
 
 Route::post('test' , function(){
-    return Carbon::now() ;
+    $user = User::first();
+    $user->role()->save(Company::first());
+
+    return response()->json([
+        $user ,
+        $user->slug,
+    ] ,200);
 });
 
 Route::get('test' , function(){

@@ -18,8 +18,10 @@ Route::group(['prefix' => 'otp' , 'middleware'=> 'throttle:6,1'] , function(){
  Route::post('forgot-password' , [otpPasswordController::class , 'forgotPassword']);
  Route::post('reset-password' , [otpPasswordController::class , 'resetPassword']);
 
- Route::post('phone/register' , [otpPhoneNumberController::class , 'register'])
+ Route::middleware(['auth:sanctum' , 'verified'])->group(function(){
+   Route::post('phone/register' , [otpPhoneNumberController::class , 'register'])
     ->middleware('throttle:2,1'); //توفير وحدات 
- Route::post('phone/verify' , [otpPhoneNumberController::class ,'verify']);
+   Route::post('phone/verify' , [otpPhoneNumberController::class ,'verify']);
+ });
  
 });

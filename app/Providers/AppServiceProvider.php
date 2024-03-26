@@ -17,8 +17,12 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
-    {
-        //
+    public function boot() {
+        // \Event::listen('Illuminate\Database\Events\QueryExecuted', function ($query) {
+        //      echo '<pre>';
+        //      print_r([ $query->sql, $query->time]);
+        //      echo '</pre>';
+        // });
     }
+    
 }
