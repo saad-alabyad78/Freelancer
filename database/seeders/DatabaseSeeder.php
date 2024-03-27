@@ -14,12 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->create(
-            [
-                'name' => 'saad' ,
-                'email' => 'saadalabyad78@gmail.com' ,
-                'password' => 'password' ,
-            ]
-        );
+        $this->call([
+            SuperAdminSeeder::class ,
+        ]);
     }
 }

@@ -11,17 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('companies', function (Blueprint $table) {
+        Schema::create('super_admins', function (Blueprint $table) {
             $table->id();
-
-            $table->string('username')->unique();
-            $table->text('description');
-            $table->integer('size');
-            $table->string('name');
-            //$table->foreignId('industry_id')->constrained();
             $table->timestamps();
-
-            $table->index(['username']);
         });
     }
 
@@ -30,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('companies');
+        Schema::dropIfExists('super_admins');
     }
 };

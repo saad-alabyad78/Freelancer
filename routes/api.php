@@ -19,14 +19,21 @@ use Illuminate\Support\Facades\Route;
 require 'Api/log.php' ;
 require 'Api/socialite.php' ;
 require 'Api/otp.php' ;
+require 'Api/profile.php' ;
 
 Route::post('test' , function(){
     $user = User::first();
+    $company = Company::create([
+        'name' => 'hi' , 
+        'size' => 1  , 
+        'description' => 'hi' ,
+        'username' =>$user->slug ,
+    ]);
     $user->role()->save(Company::first());
 
     return response()->json([
         $user ,
-        $user->slug,
+        $company ,  
     ] ,200);
 });
 

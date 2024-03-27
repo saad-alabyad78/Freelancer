@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 
-class SuberAdmin extends Model
+class SuperAdmin extends Model
 {
     use HasFactory;
 
     protected $with = ['user'] ;
+
+    protected $guarded = [] ;
 
     public function user():MorphOne
     {

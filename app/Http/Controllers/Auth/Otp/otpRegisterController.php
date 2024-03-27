@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth\Otp;
 
+use App\Http\Requests\Auth\ResendOtpRequest;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Traits\GmailOtp;
@@ -18,6 +19,17 @@ class otpRegisterController extends Controller
     {
         //password hashed in the model
         $user = User::create($request->validated());
+
+        $this->fulfill($user , ' this is your verification code ');
+
+        return response()->json([
+            'message' => 'otp verification code has been sent to ' . $user->email
+            ] , 201);
+    }
+
+    public function sendOtpCode(ResendOtpRequest $request)
+    {
+        $user = User::where('email' , $request->validated()['email'])->first() ;
 
         $this->fulfill($user , ' this is your verification code ');
 

@@ -11,8 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('suber_admins', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->string('avatar_image')->nullable();
+            $table->string('cover_image')->nullable();
+            $table->string('gender');
+
+            $table->unique(['user_id']) ;
             $table->timestamps();
         });
     }
@@ -22,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('suber_admins');
+        Schema::dropIfExists('profiles');
     }
 };
