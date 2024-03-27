@@ -21,12 +21,19 @@ class ProfileRequest extends FormRequest
      */
     public function rules(): array
     {
-        $required = request()->isMethod('post') ? 'required' : '' ; 
-  
+        $max = 2048 ;
+
+        if(request()->isMethod('post')){      
+            return [
+                'gender' => ['required' , 'string' , 'in:male,female'] ,
+                'avatar_image'=> ['image' , 'min:10' , 'max:'.$max,'mimes:png,jpg'] ,
+                'cover_image'=> ['image' , 'min:10' , 'max:'.$max,'mimes:png,jpg'] ,
+            ];  
+        }
         return [
-            'gender' => [$required , 'string' , 'in:male,female'] ,
-            'avatar_image' => ['image' , 'min:10' , 'max:2048'] ,
-            'cover_image' => ['image' , 'min:10' , 'max:2048'] ,
-        ];      
+            'avatar_image' => ['image' , 'max:.'.$max, 'mimes:png,jpg'] ,
+            'cover_image' => ['image'  , 'max:.'.$max, 'mimes:png,jpg'] ,
+        ];  
+       
     }
 }

@@ -10,4 +10,5 @@ Route::group(
     'prefix' => 'profile' ,
 ] , function(){
     Route::post('/' , [ProfileController::class , 'store']) ;
+    Route::put('/' , [ProfileController::class , 'update']) ; 
 });

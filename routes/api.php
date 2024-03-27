@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Company;
+use App\Models\Profile;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -22,19 +23,10 @@ require 'Api/otp.php' ;
 require 'Api/profile.php' ;
 
 Route::post('test' , function(){
-    $user = User::first();
-    $company = Company::create([
-        'name' => 'hi' , 
-        'size' => 1  , 
-        'description' => 'hi' ,
-        'username' =>$user->slug ,
-    ]);
-    $user->role()->save(Company::first());
-
-    return response()->json([
-        $user ,
-        $company ,  
-    ] ,200);
+    $p = Profile::first() ;
+    $p->avatar_image = 'ihihi' ;
+    $p->save() ;
+    return [$p] ;
 });
 
 Route::get('test' , function(){

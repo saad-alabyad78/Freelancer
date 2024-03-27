@@ -16,10 +16,8 @@ class ProfileResource extends JsonResource
     {
         return [
             'gender' => $this->gender , 
-            'avatar_image' => 
-                $this->avatar_image ?? config('images.profile.avatar.'.$this->gender),
-            'cover_image' => 
-                $this->cover_image ?? config('images.profile.avatar.'.$this->gender),
+            'avatar_image' => $this->avatar_image ,
+            'cover_image' => $this->cover_image ,
         ];
     }
 }

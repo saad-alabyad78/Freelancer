@@ -19,6 +19,7 @@ class ProfileController extends Controller
      */
     public function store(ProfileRequest $request)
     {
+
         $data = $request->validated();
         $data['avatar_image'] = $this->image($request->avatar_image) ;
         $data['cover_image']  = $this->image($request->cover_image) ;
@@ -30,14 +31,22 @@ class ProfileController extends Controller
 
     public function update(ProfileRequest $request)
     {
+        return $data = $request->validated();
 
+        if(in_array('avatar_image' , $data))
+            $data['avatar_image'] = $this->image($request->avatar_image) ;
+        if(in_array('avatar_image' , $data))
+            $data['cover_image']  = $this->image($request->cover_image) ;
+
+        $profile = Profile::where('user_id' , Auth::id())->first() ;
+        $profile->update($data) ;
+        return ProfileResource::make($profile) ;
     }
 
-    private function image($image , $gender = 'male')
+    private function image($image)
     {
-        if(!$image){
-            return config('images.profile.avatar.'.$gender) ;
-        }
+        //default accessor in the model
+        if(!$image)return null ;
 
         $image_name = Str::random(32 , ) . '.' .
         $image->getClientOriginalExtension() ;
