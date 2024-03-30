@@ -16,7 +16,7 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
     protected $fillable = [
-        'name',
+        'first_name',
         'email',
         'password',
         'first_name',
@@ -36,18 +36,18 @@ class User extends Authenticatable implements MustVerifyEmail
     protected function RoleName(): Attribute
     {
         return Attribute::make(
-            get: fn () => Str::afterLast($this->attributes['role_type'] , '\\') 
+            get: fn () => Str::afterLast($this->attributes['role_type'] , '\\')
         );
     }
 
     protected function slug(): Attribute
     {
-        $name = 
-        $this->attributes['first_name'] . ' ' . 
+        $name =
+        $this->attributes['first_name'] . ' ' .
         $this->attributes['last_name'] . ' ' .
         $this->attributes['id'] ;
         return Attribute::make(
-            get: fn() => Str::slug($name) 
+            get: fn() => Str::slug($name)
         );
     }
 
