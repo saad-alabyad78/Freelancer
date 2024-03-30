@@ -28,7 +28,7 @@ Route::post('test' , function(){
 
 Route::get('test' , function(){
     return User::first()->role_name ;
-})->middleware('role:client');
+})->middleware('role:client,any');
 
 
 
