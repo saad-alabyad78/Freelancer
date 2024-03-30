@@ -23,15 +23,12 @@ require 'Api/otp.php' ;
 require 'Api/profile.php' ;
 
 Route::post('test' , function(){
-    $p = Profile::first() ;
-    $p->avatar_image = 'ihihi' ;
-    $p->save() ;
-    return [$p] ;
+    return 'ok' ;
 });
 
 Route::get('test' , function(){
-    dd(Carbon::now()->format('Y-m-d H:i:s'));
-});
+    return User::first()->role_name ;
+})->middleware('role:client');
 
 
 

@@ -36,7 +36,7 @@ class User extends Authenticatable implements MustVerifyEmail
     protected function RoleName(): Attribute
     {
         return Attribute::make(
-            get: fn () => Str::afterLast($this->attributes['role_type'] , '\\')
+            get: fn () =>Str::lower(Str::afterLast($this->attributes['role_type'] , '\\'))
         );
     }
 
