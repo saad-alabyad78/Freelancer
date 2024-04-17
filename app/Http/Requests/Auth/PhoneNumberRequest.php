@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\Rules\NotExitstsRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PhoneNumberRequest extends FormRequest
@@ -23,7 +24,7 @@ class PhoneNumberRequest extends FormRequest
     {
         return [
             'email' => ['required', 'email' , 'exists:users,email'],
-            'phone_number' => ['required' , 'min:10' , 'regex:/^(963|0)\d{9}$/'], //TODO:
+            'phone_number' => ['required' , 'min:10' , 'regex:/^(963|0)\d{9}$/' , new NotExitstsRule('phones' , 'phone_number')], //TODO:
         ];
     }
 

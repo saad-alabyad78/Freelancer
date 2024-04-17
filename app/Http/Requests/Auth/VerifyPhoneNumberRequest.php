@@ -24,7 +24,7 @@ class VerifyPhoneNumberRequest extends FormRequest
         return [
             'email' => 'required|email|exists:users,email',
             'phone_number_otp_code' => 'required|string',
-            'phone_number' => ['required' , 'min:10' , 'regex:/^(963|0)\d{9}$/'],
+            'phone_number' => ['required' , 'min:10' , 'regex:/^(963|0)\d{9}$/' , 'exists:phones,phone_number'],
         ];
     }
 }

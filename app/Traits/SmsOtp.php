@@ -4,6 +4,7 @@ namespace App\Traits;
 
 use Carbon\Carbon;
 use App\Models\User;
+use App\Models\Phone;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Client\RequestException;
@@ -12,17 +13,17 @@ trait SmsOtp
 {
     protected int $minutes = 60 ;
 
-    protected function fulfill(User $user , string $message){
+    protected function fulfill(Phone $phone , string $message){
         $code = $this->generate(4) ;
-        $this->set($user , $code );
-        return $this->send($user , $code , $message );
+        $this->set($phone , $code );
+        return $this->send($phone , $code , $message );
     }
-    protected function verifyOtp(User $user , string $otp){
+    protected function verifyOtp(Phone $phone , string $otp){
         if
-        (Hash::check($otp , $user->phone_number_otp_code) and $user->phone_number_otp_expired_date >= Carbon::now())
+        (Hash::check($otp , $phone->phone_number_otp_code) and $phone->phone_number_otp_expired_date >= Carbon::now())
         {
-            $user->phone_number_verified_at = Carbon::now() ;
-            $user->save();
+            $phone->phone_number_verified_at = Carbon::now() ;
+            $phone->save();
             return true;
         }
         return false;
@@ -32,13 +33,13 @@ trait SmsOtp
         return rand(pow(10 , $digits-1) , pow(10 , $digits)-1) ;
     }
 
-    protected function set(User $user , int $otp ){
-        $user->phone_number_otp_code = Hash::make($otp);
-        $user->phone_number_otp_expired_date = Carbon::now()->addMinutes($this->minutes);
-        $user->save();
+    protected function set(Phone $phone , int $otp ){
+        $phone->phone_number_otp_code = Hash::make($otp);
+        $phone->phone_number_otp_expired_date = Carbon::now()->addMinutes($this->minutes);
+        $phone->save();
     }
 
-    protected function send(User $user , int $otp , $message){
+    protected function send(Phone $phone , int $otp , $message){
         
         $key = config('sms.gateway.api_key');
         $url = config('sms.gateway.url');
@@ -51,11 +52,10 @@ trait SmsOtp
             ])->post($url, [
                 // Add your request body here
                 "message" => "$message $otp" ,
-                "to" => $user->phone_number ,
+                "to" => $phone->phone_number ,
             ]);
 
         return $response ;
-
     }
 }
 

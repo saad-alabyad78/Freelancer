@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Auth\Otp;
+namespace App\Http\Controllers\Profile;
 
 use App\Models\User;
+use App\Models\Phone;
 use App\Traits\SmsOtp;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\PhoneNumberRequest;
 use App\Http\Requests\Auth\VerifyPhoneNumberRequest;
 
-class otpPhoneNumberController extends Controller
+class PhoneController extends Controller
 {
     use SmsOtp;
     public function register(PhoneNumberRequest $request)
@@ -18,16 +19,19 @@ class otpPhoneNumberController extends Controller
 
         //get the user
         $user = User::where("email", $validated['email'])
-        ->with(('phone'))
         ->first();
 
-        //store the phone number
-        $user->phone->phone_number = $validated['phone_number'];
-        $user->save();
+        $phone = Phone::Create(
+            [
+                'user_id' => $user->id , 
+                'phone_number' => $validated['phone_number']
+            ]
+        ) ;
+
         //$user->phone->save ? 
 
         //send sms 
-        return $this->fulfill($user->phone , "pleas use the code to verify you phone number ");
+        return $this->fulfill($phone , "pleas use the code to verify you phone number ");
 
         //TODO: dont return the otp code
         //return response()->json($user, 201);
@@ -39,7 +43,16 @@ class otpPhoneNumberController extends Controller
 
         $user = User::where('email' , $validated['email'])->first() ;
 
-        $ok = $this->verifyOtp($user , $validated['phone_number_otp_code']);
+        $phone = Phone::where('user_id' , $user->id)
+             ->where('phone_number' , $validated['phone_number'])->first();
+
+        if($phone == null){
+            return response()->json([
+                'message' => 'no match for the user and the phone number' 
+            ]);
+        }
+
+        $ok = $this->verifyOtp($phone , $validated['phone_number_otp_code']);
 
         if(!$ok)
         {
@@ -51,5 +64,10 @@ class otpPhoneNumberController extends Controller
         return response()->json([
             'message' => 'user phone number has been verified successfully ' ,
         ]) ;
+    }
+
+    public function delete()
+    {
+        //TODO:
     }
 }

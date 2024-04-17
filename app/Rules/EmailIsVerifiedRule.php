@@ -2,8 +2,8 @@
 
 namespace App\Rules;
 
-use App\Models\User;
 use Closure;
+use App\Models\User;
 use Illuminate\Contracts\Validation\ValidationRule;
 
 class EmailIsVerifiedRule implements ValidationRule
