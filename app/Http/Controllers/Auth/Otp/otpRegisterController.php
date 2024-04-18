@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\Http\Requests\Auth\VerifyEmailRequest;
+use App\Http\Resources\Auth\UserResource;
 
 class otpRegisterController extends Controller
 {
@@ -23,7 +24,8 @@ class otpRegisterController extends Controller
         $this->fulfill($user , ' this is your verification code ');
 
         return response()->json([
-            'message' => 'otp verification code has been sent to ' . $user->email
+            'message' => 'otp verification code has been sent to ' . $user->email ,
+            'user' => UserResource::make($user)
             ] , 201);
     }
 
