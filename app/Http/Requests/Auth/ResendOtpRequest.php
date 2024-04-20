@@ -29,7 +29,7 @@ class ResendOtpRequest extends FormRequest
     public function messages()
     {
         return [
-            'email.exists' => 'you email dose not exists , try to register ' ,
+            'email.exists' => 'your email dose not exists , try to register ' ,
         ];
     }
 }

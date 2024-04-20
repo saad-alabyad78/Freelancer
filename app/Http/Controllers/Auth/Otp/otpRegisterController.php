@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers\Auth\Otp;
 
-use App\Http\Requests\Auth\ResendOtpRequest;
-use Carbon\Carbon;
 use App\Models\User;
-use App\Traits\GmailOtp;
-use Illuminate\Http\Request;
+use App\Traits\GmailVerifyOtp;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\RegisterRequest;
-use App\Http\Requests\Auth\VerifyEmailRequest;
 use App\Http\Resources\Auth\UserResource;
+use App\Http\Requests\Auth\RegisterRequest;
+use App\Http\Requests\Auth\ResendOtpRequest;
+use App\Http\Requests\Auth\VerifyEmailRequest;
 
 class otpRegisterController extends Controller
 {
-    use GmailOtp;
+    use GmailVerifyOtp;
 
     public function register(RegisterRequest $request)
     {

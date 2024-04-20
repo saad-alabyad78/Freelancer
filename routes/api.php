@@ -1,9 +1,9 @@
 <?php
 
+use Carbon\Carbon;
+use App\Models\User;
 use App\Models\Company;
 use App\Models\Profile;
-use App\Models\User;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 /*
@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 require 'Api/log.php' ;
 require 'Api/socialite.php' ;
 require 'Api/otp.php' ;
-require 'Api/profile.php' ;
+
 
 Route::post('test' , function(){
     return 'ok' ;

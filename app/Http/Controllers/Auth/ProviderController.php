@@ -58,9 +58,9 @@ class ProviderController extends Controller
     private function validate_provider(string $provider)
     {
         abort_if(
-            $provider!='google' and $provider != 'github' ,
+            $provider!='google'  ,
              403 ,
-             'provider must be "google" or "github" !' ,
+             'provider must be "google" !' ,
              ['Accept' => 'application/json']
              );
     }

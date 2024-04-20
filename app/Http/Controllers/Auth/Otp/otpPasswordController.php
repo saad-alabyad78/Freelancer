@@ -39,7 +39,7 @@ class otpPasswordController extends Controller
         {
             return response()->json([
                 'error' => ' try again pleas' ,
-                'email_otp_expired_date' => $user->email_otp_expired_date ,
+                'password_otp_expired_date' => $user->password_otp_expired_date ,
             ]);
         }
 
