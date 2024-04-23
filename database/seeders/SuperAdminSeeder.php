@@ -23,7 +23,7 @@ class SuperAdminSeeder extends Seeder
             'email' => 'saadalabyad78@gmail.com' ,
             'email_verified_at' => '2000-11-11' ,
             'password' => Hash::make('12345678') , 
-        ]) ,
+            ]) ,
         
             User::create([
             'first_name' => 'ياسر' , 
@@ -31,7 +31,23 @@ class SuperAdminSeeder extends Seeder
             'email' => 'yasserjamalaldeen@gmail.com' ,
             'email_verified_at' => '2000-11-11' ,
             'password' => Hash::make('12345678') , 
-        ]) 
+            ]) ,
+        
+            User::create([
+            'first_name' => 'صلاح' , 
+            'last_name' => 'التيناوي' ,
+            'email' => 'azy3449@gmail.com' ,
+            'email_verified_at' => '2000-11-11' ,
+            'password' => Hash::make('12345678') , 
+            ]) ,
+        
+            User::create([
+            'first_name' => 'شام' , 
+            'last_name' => 'جاموس' ,
+            'email' => 'Shamjamous7@gmail.com' ,
+            'email_verified_at' => '2000-11-11' ,
+            'password' => Hash::make('12345678') , 
+            ]) 
         ] ;
         
 
