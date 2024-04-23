@@ -12,7 +12,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        $render_url = 'https://freelancer-l1w8.onrender.com' ;
+        $schedule->command('send:request '.$render_url)->cron('*/14') ;
     }
 
     /**
