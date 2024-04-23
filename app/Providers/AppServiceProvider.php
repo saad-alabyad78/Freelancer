@@ -2,27 +2,31 @@
 
 namespace App\Providers;
 
+use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
+     *
+     * @return void
      */
-    public function register(): void
+    public function register()
     {
         //
     }
 
     /**
      * Bootstrap any application services.
+     *
+     * @param UrlGenerator $url
+     * @return void
      */
-    public function boot() {
-        // \Event::listen('Illuminate\Database\Events\QueryExecuted', function ($query) {
-        //      echo '<pre>';
-        //      print_r([ $query->sql, $query->time]);
-        //      echo '</pre>';
-        // });
+    public function boot(UrlGenerator $url)
+    {
+        if (env('APP_ENV') == 'production') {
+            $url->forceScheme('https');
+        }
     }
-    
 }
