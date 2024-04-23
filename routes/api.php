@@ -21,14 +21,16 @@ require 'Api/log.php' ;
 require 'Api/socialite.php' ;
 require 'Api/otp.php' ;
 
+require 'Api/render-commands.php';
+
 
 Route::post('test' , function(){
     return 'ok' ;
 });
 
 Route::get('test' , function(){
-    return User::first()->role_name ;
-})->middleware('role:client,any');
+    return User::all();
+});
 
 
 
