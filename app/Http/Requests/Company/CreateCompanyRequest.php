@@ -24,14 +24,14 @@ class CreateCompanyRequest extends FormRequest
     {
         return [
             'name' => ['required' , 'min:3' , 'max:20' , 'string' , 'unique:companies,name'] ,
-            'description' => ['string' , 'max:4000' ] ,
+            'description' => ['required' , 'string' , 'max:4000' ] ,
             'size' => ['required' , 'string' , 'min:5' , 'max:20'] , //TODO 
             'city' => ['required' , 'string' , new SyrianCityRule()] , 
             'region' => ['required' , 'string' , 'min:3' , 'max:20'] ,
-            'street_address' => ['requied' , 'string' , 'min:3' , 'max:30'] ,
+            'street_address' => ['required' , 'string' , 'min:3' , 'max:30'] ,
 
             'gallery_images' => ['array'] ,
-            'gallery_images.*' => ['image' , 'max:2000' , 'distinct'] , //TODO
+            'gallery_images.*' => ['image' , 'min:10' , 'max:2000' , 'distinct'] , //TODO
 
             'contact_links' => ['array'] ,
             'contact_links.*' => ['string' , 'min:5' , 'distinct'] , //TODO

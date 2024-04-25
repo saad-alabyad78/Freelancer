@@ -11,7 +11,7 @@ Route::group(
             'verified' ,
             'role:no_role' ,
         ]
-    ],//TODO : middlewares 
+    ],
     function(){
         Route::post('store' , CreateCompany::class) ;
     });

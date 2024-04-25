@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('company_phones', function (Blueprint $table) {
             $table->id();
             $table->string('number');
-            $table->foreignId('company_id')->constrained();
+            $table->foreignId('company_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

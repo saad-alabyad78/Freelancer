@@ -24,6 +24,7 @@ class RolesMiddleware
             {
                 abort(401 , 'bruh! you already have a role') ;
             }
+            return $next($request);
         }
 
         if(!in_array('any' , $roles) or !in_array(auth()->user()->role_name , $roles)){

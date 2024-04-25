@@ -10,6 +10,8 @@ class GalleryImage extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name'] ;
+    
     public function company():BelongsTo
     {
         return $this->belongsTo(Company::class);

@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class ContactLink extends Model
 {
     use HasFactory;
+    
+    protected $fillable = ['name'] ;
 
     public function company():BelongsTo
     {

@@ -26,50 +26,57 @@ class CreateCompany extends Controller
     public function __invoke(CreateCompanyRequest $request)
     {
         $data = $request->validated();
-        
+
         //create company
-        
+
         $company = Company::create([
-                'username' => auth()->user()->username ,
+                'username' => auth()->user()->slug ,
                 'name' => $data['name'] , 
-                'description' => $data['description'] ?? '', 
+                'description' => $data['description'] , 
                 'size' => $data['size'] , 
                 'city' => $data['city'] , 
-                'region' => $data['region'] ?? '' , 
-                'street_address' => $data['street_address'] ?? '', 
+                'region' => $data['region']  , 
+                'street_address' => $data['street_address'] , 
         ]);
 
         //create links 
 
-        $contact_links = [] ;
-        
-        foreach($data['contact_links'] as $link_name)
+        if(array_key_exists('contact_links' , $data))
         {
-            $contact_links[] = new ContactLink(['name' => $link_name]) ;
+            $contact_links = [] ;
+        
+            foreach($data['contact_links'] as $link_name)
+            {
+                $contact_links[] = new ContactLink(['name' => $link_name]) ;
+            }
+            $company->contact_links()->saveMany($contact_links) ;
         }
-        $company->contact_links()->saveMany($contact_links) ;
 
         //store and create images
 
-        $gallery_images = [] ;
-        
-        foreach($data['gallery_images'] as $galley_image)
+        if(array_key_exists('gallery_images' , $data))
         {
-            $name = $this->imageService->store_image($galley_image , 'Company/Gallary');
-
-            if($name)
+            $gallery_images = [] ;
+        
+            foreach($data['gallery_images'] as $galley_image)
             {
-                $gallery_images[] = new GalleryImage(['name' => $name]);
-            }
-        }
-        $company->gallery_images()->saveMany($gallery_images) ;
+                $name = $this->imageService->store_image($galley_image , 'company');
 
+                if($name)
+                {
+                    $gallery_images[] = new GalleryImage(['name' => $name]);
+                }
+            }
+            $company->gallery_images()->saveMany($gallery_images) ;
+        }
+
+        
         
         return CompanyResource::make($company->with
             ([
                 'contact_links' ,
-                'images' ,
+                'gallery_images' ,
                 'company_phones' ,
-            ])) ;
+            ])->first()) ;
     }
 }

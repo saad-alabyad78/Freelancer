@@ -11,7 +11,16 @@ class Company extends Model
 {
     use HasFactory;
 
-    protected $guarded = [] ;
+    protected $fillable = 
+    [
+        'name' ,
+        'size' ,
+        'description' ,
+        'street_address' ,
+        'city' ,
+        'region' ,
+        'username' ,
+    ] ;
 
     protected $with = ['user' , 'contact_links'] ;
 
@@ -22,14 +31,14 @@ class Company extends Model
 
     public function company_phones():HasMany
     {
-        return $this->hasMany(CompanyPhone::class , 'company_id') ;
+        return $this->hasMany(CompanyPhone::class ) ;
     }
     public function contact_links():HasMany
     {
-        return $this->hasMany(ContactLink::class , 'company_id') ;
+        return $this->hasMany(ContactLink::class) ;
     }
     public function gallery_images():HasMany
     {
-        return $this->hasMany(GalleryImage::class , 'company_id') ;
+        return $this->hasMany(GalleryImage::class) ;
     }
 }
