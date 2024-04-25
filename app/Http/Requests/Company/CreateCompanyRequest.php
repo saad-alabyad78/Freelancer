@@ -1,0 +1,51 @@
+<?php
+
+namespace App\Http\Requests\Company;
+
+use App\Rules\SyrianCityRule;
+use Illuminate\Foundation\Http\FormRequest;
+
+class CreateCompanyRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     */
+    public function rules(): array
+    {
+        return [
+            'name' => ['required' , 'min:3' , 'max:20' , 'string' , 'unique:companies,name'] ,
+            'description' => ['string' , 'max:4000' ] ,
+            'size' => ['required' , 'string' , 'min:5' , 'max:20'] , //TODO 
+            'city' => ['required' , 'string' , new SyrianCityRule()] , 
+            'region' => ['required' , 'string' , 'min:3' , 'max:20'] ,
+            'street_address' => ['requied' , 'string' , 'min:3' , 'max:30'] ,
+
+            'gallery_images' => ['array'] ,
+            'gallery_images.*' => ['image' , 'max:2000' , 'distinct'] , //TODO
+
+            'contact_links' => ['array'] ,
+            'contact_links.*' => ['string' , 'min:5' , 'distinct'] , //TODO
+
+            //no phone in store
+            /*'company_phones' => ['array'] ,
+            'company_phones.*' => ['regex:/^09[0-9]{8}$/' , 'distinct'] ,*/
+        ];
+    }
+
+   /* public function messages():array
+    {
+        return [
+            'company_phones.*.regex' => 'company phone must be a valid syrian phone 09 then 8 digits' ,
+        ];
+    } */
+}

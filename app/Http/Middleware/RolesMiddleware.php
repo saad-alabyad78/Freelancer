@@ -15,10 +15,17 @@ class RolesMiddleware
      */
     public function handle(Request $request, Closure $next , ...$roles): Response
     {
-        
         if(!auth()->check()){
             abort(401) ;
         }
+        if(in_array('no_role' , $roles))
+        {
+            if(auth()->user()->role_name != null)
+            {
+                abort(401 , 'bruh! you already have a role') ;
+            }
+        }
+
         if(!in_array('any' , $roles) or !in_array(auth()->user()->role_name , $roles)){
             abort(401) ;
         }

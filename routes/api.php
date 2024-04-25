@@ -4,6 +4,7 @@ use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Company;
 use App\Models\Profile;
+use App\Services\xmlService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 /*
@@ -23,9 +24,18 @@ require 'Api/otp.php' ;
 
 require 'Api/render-commands.php';
 
+require 'Api/company.php' ;
+
 
 Route::post('test' , function(){
-    return 'ok' ;
+    $x = new xmlService("constants/xml/syrian_cities.xml") ;
+    return implode(' , ' , $x->toJson($x->xmlContent)->city); 
+    $r = [] ;
+    foreach($x->xmlContent->city as $c)
+    {
+        $r = $c ;
+    }
+    return $c ;
 });
 
 Route::get('test' , function(){

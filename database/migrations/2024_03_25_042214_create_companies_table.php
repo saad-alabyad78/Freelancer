@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -15,13 +15,18 @@ return new class extends Migration
             $table->id();
 
             $table->string('username')->unique();
-            $table->text('description');
-            $table->integer('size');
+            $table->text('description')->nullable();
+            $table->string('size');
             $table->string('name');
-            //$table->foreignId('industry_id')->constrained();
+            $table->date('verified_at')->nullable();
+            $table->string('city');
+            $table->string('region');
+            $table->string('street_address');
             $table->timestamps();
 
             $table->index(['username']);
+
+            
         });
     }
 
