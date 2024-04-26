@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Resources\Company\CompanyResource;
 use App\Http\Requests\Company\CreateCompanyRequest;
 
+/**
+ * @group Company Managment
+ * 
+ */
 class CreateCompany extends Controller
 {
     private imageService $imageService ;
@@ -21,8 +25,8 @@ class CreateCompany extends Controller
         $this->imageService = $_imageService ;
     }
     /**
-     * Handle the incoming request.
-     */
+     * Create/Store New Company .
+     **/
     public function __invoke(CreateCompanyRequest $request)
     {
         $data = $request->validated();

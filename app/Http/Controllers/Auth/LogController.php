@@ -2,15 +2,20 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\LogInRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\Auth\LogInRequest;
 
-
+/**
+ * @group Auth log
+ * 
+ * APIs to manage the login and logout
+ **/
 class LogController extends Controller
 {
+
     public function login(LogInRequest $request)
     {
         //TODO: the otp code must be when loggin in not when register

@@ -10,6 +10,9 @@ use App\Http\Requests\Auth\RegisterRequest;
 use App\Http\Requests\Auth\ResendOtpRequest;
 use App\Http\Requests\Auth\VerifyEmailRequest;
 
+/**
+ * @group Email Managment
+ **/
 class otpRegisterController extends Controller
 {
     use GmailVerifyOtp;

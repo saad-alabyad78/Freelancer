@@ -9,6 +9,11 @@ use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
+/**
+ * @group Auth Google
+ * 
+ * API to sign with google oauth2.
+ **/
 
 class ProviderController extends Controller
 {

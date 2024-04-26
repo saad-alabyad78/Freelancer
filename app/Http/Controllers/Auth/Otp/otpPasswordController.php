@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\Auth\ResetPasswordRequest;
 use App\Http\Requests\Auth\ForgotPasswordRequest;
 
+/**
+ * @group Password Managment
+ * 
+ * Resent The Password
+ **/
 class otpPasswordController extends Controller
 {
     use ResetPasswordOtp;

@@ -7,7 +7,10 @@ use Illuminate\Http\Response;
 use App\Services\imageService;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Company\GetGalleryImageRequest;
-
+/**
+ * @group Company Managment
+ * 
+ **/
 class GalleryImageQuery extends Controller
 {
     private imageService $imageService ;
@@ -18,8 +21,8 @@ class GalleryImageQuery extends Controller
     }
 
     /**
-     * Handle the incoming request.
-     */
+     * Get A Gallary Image
+     **/
     public function __invoke(GetGalleryImageRequest $request)
     {
         $image_name = $request->validated()['image'] ;

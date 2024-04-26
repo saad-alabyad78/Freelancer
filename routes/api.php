@@ -31,22 +31,12 @@ require 'Api/company.php' ;
 
 
 Route::post('test' , function(){
-    $image_name = 'o11eAX0H0XYPEYvBpl9L9XMkefUK40hF.png' ;
-    $path = 'company/' . $image_name ;
-
-    
-
-    $file = Storage::disk('company')->get($image_name) ;
-    return $type = Storage::disk('company')->mimeType($image_name) ;
-
-    return new Response($file , 200 , ['Cotent-Type' => $type]) ;
+   return 'ok' ;
     
 });
 
 Route::get('test' , function(){
-    $image_name = 'o11eAX0H0XYPEYvBpl9L9XMkefUK40hF.png' ;
-    
-    return $file = ( new imageService() )->get_image('company' , $image_name) ;
+    return 'ok' ;
 });
 
 
