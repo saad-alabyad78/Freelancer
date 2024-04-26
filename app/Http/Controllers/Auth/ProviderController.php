@@ -17,6 +17,9 @@ use Laravel\Socialite\Facades\Socialite;
 
 class ProviderController extends Controller
 {
+    /**
+     *@urlParam provider only [ google ] 
+     */
     public function redirect(string $provider = 'google')
     {
         $this->validate_provider($provider);

@@ -4,12 +4,9 @@ namespace App\Http\Controllers\Company\Commands;
 
 use App\Models\Company;
 use App\Models\ContactLink;
-use Illuminate\Support\Str;
 use App\Models\GalleryImage;
-use Illuminate\Http\Request;
 use App\Services\imageService;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Storage;
 use App\Http\Resources\Company\CompanyResource;
 use App\Http\Requests\Company\CreateCompanyRequest;
 
@@ -26,8 +23,17 @@ class CreateCompany extends Controller
     }
     /**
      * Create/Store New Company .
+     * 
+     * @authenticated
+     * 
+     * @apiResource App\Http\Resources\Company\CompanyResource
+     * @apiResourceModel App\Models\Company with=ContactLink,GalleryImage
+     * 
+     * 
+     * @return CompanyResource
+     * 
      **/
-    public function __invoke(CreateCompanyRequest $request)
+    public function __invoke(CreateCompanyRequest $request) : CompanyResource
     {
         $data = $request->validated();
 
@@ -74,7 +80,6 @@ class CreateCompany extends Controller
             $company->gallery_images()->saveMany($gallery_images) ;
         }
 
-        
         
         return CompanyResource::make($company->with
             ([

@@ -22,13 +22,13 @@ endpoints:
         name: command_string
         description: ''
         required: true
-        example: dolores
+        example: voluptatem
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      command_string: dolores
+      command_string: voluptatem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -39,7 +39,7 @@ endpoints:
         status: 500
         content: |-
           {
-              "message": "The command \"dolores\" does not exist.",
+              "message": "The command \"voluptatem\" does not exist.",
               "exception": "Symfony\\Component\\Console\\Exception\\CommandNotFoundException",
               "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php",
               "line": 159,
@@ -605,7 +605,7 @@ endpoints:
         status: 500
         content: |-
           {
-              "message": "SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint \"users_email_unique\"\nDETAIL:  Key (email)=(saadalabyad78@gmail.com) already exists. (Connection: pgsql, SQL: insert into \"users\" (\"first_name\", \"last_name\", \"email\", \"email_verified_at\", \"password\", \"updated_at\", \"created_at\") values (saad, alabyad, saadalabyad78@gmail.com, 2000-11-11 00:00:00, $2y$12$cvmnQ/hQkR8Vhkg0LhEyYecZu7gBdpTX7WEAaxuNZZVg8R44VA8a6, 2024-04-26 15:19:26, 2024-04-26 15:19:26) returning \"id\")",
+              "message": "SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint \"users_email_unique\"\nDETAIL:  Key (email)=(saadalabyad78@gmail.com) already exists. (Connection: pgsql, SQL: insert into \"users\" (\"first_name\", \"last_name\", \"email\", \"email_verified_at\", \"password\", \"updated_at\", \"created_at\") values (saad, alabyad, saadalabyad78@gmail.com, 2000-11-11 00:00:00, $2y$12$fWO9AVW5M6YXGGzOAJOTjO1qsFyDJTaK8ZSZL65cDpYhbXNv23Zii, 2024-04-26 22:31:26, 2024-04-26 22:31:26) returning \"id\")",
               "exception": "Illuminate\\Database\\UniqueConstraintViolationException",
               "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
               "line": 824,

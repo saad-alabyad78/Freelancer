@@ -31,4 +31,12 @@ class NotExitstsRule implements ValidationRule
             $fail($value . ' should not be found in database ') ;
         }
     }
+
+    public static function docs(): array
+    {
+        return [
+            'description' => 'value must be in database  ' ,
+            'example' => '52KB', // Only used if no other supported rules are present
+        ];
+    }
 }

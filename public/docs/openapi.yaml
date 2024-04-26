@@ -38,11 +38,11 @@ paths:
                       function: abort
                     -
                       file: /home/saad/Desktop/Freelancer/app/Http/Controllers/Auth/ProviderController.php
-                      line: 65
+                      line: 68
                       function: abort_if
                     -
                       file: /home/saad/Desktop/Freelancer/app/Http/Controllers/Auth/ProviderController.php
-                      line: 22
+                      line: 25
                       function: validate_provider
                       class: App\Http\Controllers\Auth\ProviderController
                       type: '->'
@@ -482,11 +482,11 @@ paths:
                         function: abort
                       -
                         file: /home/saad/Desktop/Freelancer/app/Http/Controllers/Auth/ProviderController.php
-                        line: 65
+                        line: 68
                         function: abort_if
                       -
                         file: /home/saad/Desktop/Freelancer/app/Http/Controllers/Auth/ProviderController.php
-                        line: 22
+                        line: 25
                         function: validate_provider
                         class: App\Http\Controllers\Auth\ProviderController
                         type: '->'
@@ -923,11 +923,17 @@ paths:
       -
         in: path
         name: provider
-        description: 'The provider.'
-        example: harum
+        description: 'Optional parameter. only [ google ]'
         required: true
         schema:
           type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: pariatur
   '/api/provider/{provider}/sign-in/callback':
     get:
       summary: ''
@@ -959,11 +965,11 @@ paths:
                       function: abort
                     -
                       file: /home/saad/Desktop/Freelancer/app/Http/Controllers/Auth/ProviderController.php
-                      line: 65
+                      line: 68
                       function: abort_if
                     -
                       file: /home/saad/Desktop/Freelancer/app/Http/Controllers/Auth/ProviderController.php
-                      line: 28
+                      line: 31
                       function: validate_provider
                       class: App\Http\Controllers\Auth\ProviderController
                       type: '->'
@@ -1403,11 +1409,11 @@ paths:
                         function: abort
                       -
                         file: /home/saad/Desktop/Freelancer/app/Http/Controllers/Auth/ProviderController.php
-                        line: 65
+                        line: 68
                         function: abort_if
                       -
                         file: /home/saad/Desktop/Freelancer/app/Http/Controllers/Auth/ProviderController.php
-                        line: 28
+                        line: 31
                         function: validate_provider
                         class: App\Http\Controllers\Auth\ProviderController
                         type: '->'
@@ -1845,7 +1851,7 @@ paths:
         in: path
         name: provider
         description: 'The provider.'
-        example: maxime
+        example: quia
         required: true
         schema:
           type: string
@@ -1868,11 +1874,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: alvina47@example.net
+                  example: brigitte.mertz@example.com
                 password:
                   type: string
                   description: ''
-                  example: '`#=<\<l0'
+                  example: '>:nDoN>EYQcEz<[:!b'
               required:
                 - email
                 - password
@@ -1886,14 +1892,53 @@ paths:
       responses: {  }
       tags:
         - 'Auth log'
-      security: []
   /api/company/store:
     post:
       summary: 'Create/Store New Company .'
       operationId: createStoreNewCompany
       description: ''
       parameters: []
-      responses: {  }
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    username: null
+                    name: null
+                    description: null
+                    size: null
+                    gallery_images: []
+                    contact_links: []
+                    company_phones: []
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      username:
+                        type: string
+                        example: null
+                      name:
+                        type: string
+                        example: null
+                      description:
+                        type: string
+                        example: null
+                      size:
+                        type: string
+                        example: null
+                      gallery_images:
+                        type: array
+                        example: []
+                      contact_links:
+                        type: array
+                        example: []
+                      company_phones:
+                        type: array
+                        example: []
       tags:
         - 'Company Managment'
       requestBody:
@@ -1905,28 +1950,28 @@ paths:
               properties:
                 name:
                   type: string
-                  description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
-                  example: pzfckx
+                  description: 'name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters.'
+                  example: bonknpubojt
                 description:
                   type: string
                   description: 'Must not be greater than 4000 characters.'
-                  example: 'Quod assumenda quis impedit quod et.'
+                  example: 'Adipisci nihil nihil ab suscipit.'
                 size:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 20 characters.'
-                  example: ntu
+                  example: mmiwnyqlys
                 city:
                   type: string
-                  description: ''
-                  example: sint
+                  description: 'this must be a syrian city.'
+                  example: دمشق
                 region:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
-                  example: olswixragmeybcgsi
+                  example: dtfa
                 street_address:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 30 characters.'
-                  example: ca
+                  example: voibjkpvuhd
                 gallery_images:
                   type: array
                   description: 'Must be an image. Must be at least 10 kilobytes. Must not be greater than 2000 kilobytes.'
@@ -1937,7 +1982,7 @@ paths:
                   type: array
                   description: 'Must be at least 5 characters.'
                   example:
-                    - vhtzhniurntzyybgquwp
+                    - zzkwwmmdawvvrowndtgvmwccvkub
                   items:
                     type: string
               required:
@@ -1947,7 +1992,6 @@ paths:
                 - city
                 - region
                 - street_address
-      security: []
   /api/company/gallery:
     get:
       summary: 'Get A Gallary Image'
@@ -1991,7 +2035,7 @@ paths:
                 image:
                   type: string
                   description: ''
-                  example: nobis
+                  example: et
               required:
                 - image
       security: []
@@ -2014,19 +2058,19 @@ paths:
                 first_name:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: qoicijwkjkcgbnncsrmkl
+                  example: gsc
                 last_name:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: gsxrznnfapzefi
+                  example: lm
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: kyler67@example.org
+                  example: roman.lesch@example.net
                 password:
                   type: string
                   description: 'Must be at least 8 characters. Must not be greater than 255 characters.'
-                  example: '<=\Y`EF|Df;`-d?M>N'
+                  example: '}BW|~[^C4FpvH$A^'
               required:
                 - first_name
                 - email
@@ -2051,11 +2095,11 @@ paths:
                 email_otp_code:
                   type: string
                   description: ''
-                  example: sed
+                  example: debitis
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: fermin40@example.org
+                  example: stroman.leatha@example.org
               required:
                 - email_otp_code
                 - email
@@ -2079,7 +2123,7 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: vladimir66@example.net
+                  example: willms.bethel@example.org
               required:
                 - email
       security: []
@@ -2097,7 +2141,7 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'The command "dolores" does not exist.'
+                  message: 'The command "voluptatem" does not exist.'
                   exception: Symfony\Component\Console\Exception\CommandNotFoundException
                   file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php
                   line: 159
@@ -2513,7 +2557,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: 'The command "dolores" does not exist.'
+                    example: 'The command "voluptatem" does not exist.'
                   exception:
                     type: string
                     example: Symfony\Component\Console\Exception\CommandNotFoundException
@@ -2960,7 +3004,7 @@ paths:
         in: path
         name: command_string
         description: ''
-        example: dolores
+        example: voluptatem
         required: true
         schema:
           type: string
@@ -2995,7 +3039,7 @@ paths:
               schema:
                 type: object
                 example:
-                  message: "SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint \"users_email_unique\"\nDETAIL:  Key (email)=(saadalabyad78@gmail.com) already exists. (Connection: pgsql, SQL: insert into \"users\" (\"first_name\", \"last_name\", \"email\", \"email_verified_at\", \"password\", \"updated_at\", \"created_at\") values (saad, alabyad, saadalabyad78@gmail.com, 2000-11-11 00:00:00, $2y$12$cvmnQ/hQkR8Vhkg0LhEyYecZu7gBdpTX7WEAaxuNZZVg8R44VA8a6, 2024-04-26 15:19:26, 2024-04-26 15:19:26) returning \"id\")"
+                  message: "SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint \"users_email_unique\"\nDETAIL:  Key (email)=(saadalabyad78@gmail.com) already exists. (Connection: pgsql, SQL: insert into \"users\" (\"first_name\", \"last_name\", \"email\", \"email_verified_at\", \"password\", \"updated_at\", \"created_at\") values (saad, alabyad, saadalabyad78@gmail.com, 2000-11-11 00:00:00, $2y$12$fWO9AVW5M6YXGGzOAJOTjO1qsFyDJTaK8ZSZL65cDpYhbXNv23Zii, 2024-04-26 22:31:26, 2024-04-26 22:31:26) returning \"id\")"
                   exception: Illuminate\Database\UniqueConstraintViolationException
                   file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Connection.php
                   line: 824
@@ -3691,7 +3735,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: "SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint \"users_email_unique\"\nDETAIL:  Key (email)=(saadalabyad78@gmail.com) already exists. (Connection: pgsql, SQL: insert into \"users\" (\"first_name\", \"last_name\", \"email\", \"email_verified_at\", \"password\", \"updated_at\", \"created_at\") values (saad, alabyad, saadalabyad78@gmail.com, 2000-11-11 00:00:00, $2y$12$cvmnQ/hQkR8Vhkg0LhEyYecZu7gBdpTX7WEAaxuNZZVg8R44VA8a6, 2024-04-26 15:19:26, 2024-04-26 15:19:26) returning \"id\")"
+                    example: "SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint \"users_email_unique\"\nDETAIL:  Key (email)=(saadalabyad78@gmail.com) already exists. (Connection: pgsql, SQL: insert into \"users\" (\"first_name\", \"last_name\", \"email\", \"email_verified_at\", \"password\", \"updated_at\", \"created_at\") values (saad, alabyad, saadalabyad78@gmail.com, 2000-11-11 00:00:00, $2y$12$fWO9AVW5M6YXGGzOAJOTjO1qsFyDJTaK8ZSZL65cDpYhbXNv23Zii, 2024-04-26 22:31:26, 2024-04-26 22:31:26) returning \"id\")"
                   exception:
                     type: string
                     example: Illuminate\Database\UniqueConstraintViolationException
@@ -4468,7 +4512,7 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: melissa.grimes@example.net
+                  example: gmann@example.org
               required:
                 - email
       security: []
@@ -4491,15 +4535,15 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: bud.eichmann@example.org
+                  example: jakob42@example.com
                 password:
                   type: string
                   description: ''
-                  example: officia
+                  example: aut
                 password_otp_code:
                   type: string
                   description: ''
-                  example: quis
+                  example: provident
               required:
                 - email
                 - password
@@ -4524,3 +4568,12 @@ tags:
   -
     name: 'Password Managment'
     description: "\nResent The Password"
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: 'You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.'
+security:
+  -
+    default: []

@@ -14,9 +14,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Create/Store New Company .'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
@@ -26,9 +27,9 @@ endpoints:
     bodyParameters:
       name:
         name: name
-        description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
+        description: 'name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters.'
         required: true
-        example: pzfckx
+        example: bonknpubojt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -37,7 +38,7 @@ endpoints:
         name: description
         description: 'Must not be greater than 4000 characters.'
         required: true
-        example: 'Quod assumenda quis impedit quod et.'
+        example: 'Adipisci nihil nihil ab suscipit.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -46,16 +47,16 @@ endpoints:
         name: size
         description: 'Must be at least 5 characters. Must not be greater than 20 characters.'
         required: true
-        example: ntu
+        example: mmiwnyqlys
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
       city:
         name: city
-        description: ''
+        description: 'this must be a syrian city.'
         required: true
-        example: sint
+        example: دمشق
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -64,7 +65,7 @@ endpoints:
         name: region
         description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
         required: true
-        example: olswixragmeybcgsi
+        example: dtfa
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -73,7 +74,7 @@ endpoints:
         name: street_address
         description: 'Must be at least 3 characters. Must not be greater than 30 characters.'
         required: true
-        example: ca
+        example: voibjkpvuhd
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -93,26 +94,35 @@ endpoints:
         description: 'Must be at least 5 characters.'
         required: false
         example:
-          - vhtzhniurntzyybgquwp
+          - zzkwwmmdawvvrowndtgvmwccvkub
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: pzfckx
-      description: 'Quod assumenda quis impedit quod et.'
-      size: ntu
-      city: sint
-      region: olswixragmeybcgsi
-      street_address: ca
+      name: bonknpubojt
+      description: 'Adipisci nihil nihil ab suscipit.'
+      size: mmiwnyqlys
+      city: دمشق
+      region: dtfa
+      street_address: voibjkpvuhd
       contact_links:
-        - vhtzhniurntzyybgquwp
+        - zzkwwmmdawvvrowndtgvmwccvkub
     fileParameters:
       gallery_images:
         - null
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"username":null,"name":null,"description":null,"size":null,"gallery_images":[],"contact_links":[],"company_phones":[]}}'
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ZV51cDv6ePkE346gh8bdaaf'
     controller: null
     method: null
     route: null
@@ -142,13 +152,13 @@ endpoints:
         name: image
         description: ''
         required: true
-        example: nobis
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      image: nobis
+      image: et
     fileParameters: []
     responses:
       -

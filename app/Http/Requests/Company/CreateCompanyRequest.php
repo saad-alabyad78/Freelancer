@@ -48,4 +48,13 @@ class CreateCompanyRequest extends FormRequest
             'company_phones.*.regex' => 'company phone must be a valid syrian phone 09 then 8 digits' ,
         ];
     } */
+
+    public function bodyParameters()
+    {
+        return [
+            'name' => [
+                'description' => 'name must be unique company name '
+            ] ,
+        ] ;
+    }
 }

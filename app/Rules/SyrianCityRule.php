@@ -28,4 +28,11 @@ class SyrianCityRule implements ValidationRule
             $fail("The selected city must be a valid syrian city.") ;
         }
     }
-}
+
+    public static function docs(): array
+    {
+        return [
+            'description' => 'this must be a syrian city ',
+            'example' => 'دمشق', // Only used if no other supported rules are present
+        ];
+    }}

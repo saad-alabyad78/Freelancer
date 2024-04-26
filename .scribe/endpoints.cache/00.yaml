@@ -32,7 +32,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: alvina47@example.net
+        example: brigitte.mertz@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -41,14 +41,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: '`#=<\<l0'
+        example: '>:nDoN>EYQcEz<[:!b'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: alvina47@example.net
-      password: '`#=<\<l0'
+      email: brigitte.mertz@example.com
+      password: '>:nDoN>EYQcEz<[:!b'
     fileParameters: []
     responses: []
     responseFields: []
@@ -70,9 +70,10 @@ endpoints:
       subgroupDescription: ''
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -84,7 +85,10 @@ endpoints:
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 15PgZahde66Vkf3v84DcaEb'
     controller: null
     method: null
     route: null

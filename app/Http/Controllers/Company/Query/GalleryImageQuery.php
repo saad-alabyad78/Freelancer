@@ -22,6 +22,8 @@ class GalleryImageQuery extends Controller
 
     /**
      * Get A Gallary Image
+     * 
+     * 
      **/
     public function __invoke(GetGalleryImageRequest $request)
     {

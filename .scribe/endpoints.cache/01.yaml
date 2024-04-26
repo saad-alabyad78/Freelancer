@@ -26,15 +26,15 @@ endpoints:
     urlParameters:
       provider:
         name: provider
-        description: 'The provider.'
-        required: true
-        example: harum
+        description: 'only [ google ]'
+        required: false
+        example: pariatur
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      provider: harum
+      provider: pariatur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -64,12 +64,12 @@ endpoints:
                   },
                   {
                       "file": "/home/saad/Desktop/Freelancer/app/Http/Controllers/Auth/ProviderController.php",
-                      "line": 65,
+                      "line": 68,
                       "function": "abort_if"
                   },
                   {
                       "file": "/home/saad/Desktop/Freelancer/app/Http/Controllers/Auth/ProviderController.php",
-                      "line": 22,
+                      "line": 25,
                       "function": "validate_provider",
                       "class": "App\\Http\\Controllers\\Auth\\ProviderController",
                       "type": "->"
@@ -590,13 +590,13 @@ endpoints:
         name: provider
         description: 'The provider.'
         required: true
-        example: maxime
+        example: quia
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      provider: maxime
+      provider: quia
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -626,12 +626,12 @@ endpoints:
                   },
                   {
                       "file": "/home/saad/Desktop/Freelancer/app/Http/Controllers/Auth/ProviderController.php",
-                      "line": 65,
+                      "line": 68,
                       "function": "abort_if"
                   },
                   {
                       "file": "/home/saad/Desktop/Freelancer/app/Http/Controllers/Auth/ProviderController.php",
-                      "line": 28,
+                      "line": 31,
                       "function": "validate_provider",
                       "class": "App\\Http\\Controllers\\Auth\\ProviderController",
                       "type": "->"

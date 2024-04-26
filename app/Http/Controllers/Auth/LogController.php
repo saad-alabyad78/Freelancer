@@ -41,7 +41,9 @@ class LogController extends Controller
             'access_token' => $user->createToken($device)->plainTextToken ,
         ]);
     }
-
+    /**
+     * @authenticated
+     */
     public function logout(Request $request)
     {
         $request->user()->tokens()->delete();
