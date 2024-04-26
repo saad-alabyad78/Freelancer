@@ -3,7 +3,9 @@
 namespace App\Services;
 
 use Illuminate\Support\Str;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
+use App\Exceptions\FileNotFonudException;
 
 
 
@@ -22,4 +24,36 @@ class imageService
 
          return $image_name ;
     } 
+
+    public static function get_image($disk , $image) 
+    {
+        if(!array_key_exists($disk , config('filesystems.disks'))){
+            throw new FileNotFonudException('disk ' . $disk . ' not found' , 404 ) ;
+        }
+        if(!Storage::disk($disk)->exists($image)){
+            throw new FileNotFonudException('image ' . $image . ' not found' , 404 ) ;
+        }
+
+        $file = Storage::disk($disk)->get($image) ;
+        $type = Storage::disk($disk)->mimeType($image) ;
+
+        
+        return $file ;
+    } 
+
+    public static function get_type($disk , $image) 
+    {
+        if(!array_key_exists($disk , config('filesystems.disks'))){
+            throw new FileNotFonudException('disk ' . $disk . ' not found' , 404 ) ;
+        }
+        if(!Storage::disk($disk)->exists($image)){
+            throw new FileNotFonudException('image ' . $image . ' not found' , 404 ) ;
+        }
+
+        $type = Storage::disk($disk)->mimeType($image) ;
+
+        return $type ;
+    } 
+
+    
 }

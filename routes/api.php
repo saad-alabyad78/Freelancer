@@ -5,8 +5,11 @@ use App\Models\User;
 use App\Models\Company;
 use App\Models\Profile;
 use App\Services\xmlService;
+use Illuminate\Http\Response;
+use App\Services\imageService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -28,18 +31,22 @@ require 'Api/company.php' ;
 
 
 Route::post('test' , function(){
-    $x = new xmlService("constants/xml/syrian_cities.xml") ;
-    return implode(' , ' , $x->toJson($x->xmlContent)->city); 
-    $r = [] ;
-    foreach($x->xmlContent->city as $c)
-    {
-        $r = $c ;
-    }
-    return $c ;
+    $image_name = 'o11eAX0H0XYPEYvBpl9L9XMkefUK40hF.png' ;
+    $path = 'company/' . $image_name ;
+
+    
+
+    $file = Storage::disk('company')->get($image_name) ;
+    return $type = Storage::disk('company')->mimeType($image_name) ;
+
+    return new Response($file , 200 , ['Cotent-Type' => $type]) ;
+    
 });
 
 Route::get('test' , function(){
-    return User::all();
+    $image_name = 'o11eAX0H0XYPEYvBpl9L9XMkefUK40hF.png' ;
+    
+    return $file = ( new imageService() )->get_image('company' , $image_name) ;
 });
 
 
