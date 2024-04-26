@@ -53,8 +53,11 @@ class otpRegisterController extends Controller
             ]);
         }
 
+        $device = substr($request->userAgent() ?? '' , 0 , 255) ;
+
         return response()->json([
             'message' => 'user email has been verified successfully ' ,
+            'access_token' => $user->createToken($device)->plainTextToken ,
         ]) ;
     }
 }
