@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
+use App\Http\Requests\Auth\ProviderRequest;
 /**
  * @group Auth Google
  * 
@@ -17,33 +18,16 @@ use Laravel\Socialite\Facades\Socialite;
 
 class ProviderController extends Controller
 {
-    /**
-     *@urlParam provider only [ google ] 
-     */
-    public function redirect(string $provider = 'google')
-    {
-        $this->validate_provider($provider);
-        //send the user's request to oauth1 github or google
-        return Socialite::driver($provider)->stateless()->redirect();
-    }
-    public function callback(string $provider)
-    {
-        $this->validate_provider($provider);
 
-        //dd(Socialite::driver($provider)->stateless()->user());
-
+    public function google(ProviderRequest $request)
+    {
         try{
-            //get oauth request back from github to authenticate the user
-            $json = Socialite::driver($provider)->stateless()->user();
+            $json = Socialite::driver('google')->userFromToken($request->token) ;
 
-            //if the user doesn't exist , add them
-            //if they do get the model .
-            //either way , authenticate the user into the application
-            //dd(['first_name' => $json->name ,]);
             $user = User::firstOrCreate([
                 'email' => $json->email ,
             ],[
-                'provider' => $provider ,
+                'provider' => 'google' ,
                 'first_name' => $json->name ,
                 'password' => Hash::make(Str::random(24)),
             ]);
@@ -52,24 +36,15 @@ class ProviderController extends Controller
             $user->save();
             
             return response()->json([
-                'access_token' => $user->createToken($provider . '_token')->plainTextToken ,
+                'access_token' => $user->createToken('google' . '_token')->plainTextToken ,
             ]);
+
         }catch(Throwable $e){
             return response()->json([
-                'provider' => $provider ,
-                'error' => 'failed to authenticate the user with ' .$provider.' account' ,
+                'provider' => 'google' ,
+                'error' => 'failed to authenticate the user with google oauth token ' ,
                 'message' => $e->getMessage() ,
             ]);
         }
-    }
-
-    private function validate_provider(string $provider)
-    {
-        abort_if(
-            $provider!='google'  ,
-             403 ,
-             'provider must be "google" !' ,
-             ['Accept' => 'application/json']
-             );
     }
 }

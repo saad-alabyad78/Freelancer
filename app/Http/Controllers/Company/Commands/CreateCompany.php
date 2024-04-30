@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Company\Commands;
 
 use App\Models\Company;
 use App\Models\ContactLink;
+use App\Models\CompanyPhone;
 use App\Models\GalleryImage;
 use App\Services\imageService;
 use App\Http\Controllers\Controller;
@@ -79,6 +80,20 @@ class CreateCompany extends Controller
             }
             $company->gallery_images()->saveMany($gallery_images) ;
         }
+
+        //create phones 
+
+        if(array_key_exists('contact_links' , $data))
+        {
+            $company_phones = [] ;
+        
+            foreach($data['company_phones'] as $company_phone)
+            {
+                $company_phones[] = new CompanyPhone(['name' => $company_phone]) ;
+            }
+            $company->company_phones()->saveMany($company_phones) ;
+        }
+        
 
         
         return CompanyResource::make($company->with

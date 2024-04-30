@@ -36,19 +36,17 @@ class CreateCompanyRequest extends FormRequest
             'contact_links' => ['array'] ,
             'contact_links.*' => ['string' , 'min:5' , 'distinct'] , //TODO
 
-            //no phone in store
-            /*'company_phones' => ['array'] ,
-            'company_phones.*' => ['regex:/^09[0-9]{8}$/' , 'distinct'] ,*/
+            'company_phones' => ['array'] ,
+            'company_phones.*' => ['regex:/^09[0-9]{8}$/' , 'distinct'] ,
         ];
     }
 
-   /* public function messages():array
+    public function messages():array
     {
         return [
             'company_phones.*.regex' => 'company phone must be a valid syrian phone 09 then 8 digits' ,
         ];
-    } */
-
+    } 
     public function bodyParameters()
     {
         return [

@@ -1,9 +1,11 @@
 <?php
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
+
+namespace Tests\Feature;
+
 use Tests\TestCase;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class LoginTest extends TestCase
 {
@@ -35,13 +37,13 @@ class LoginTest extends TestCase
 
         $response->assertStatus(422)
         ->assertJson([
-        'message' => 'The selected email is invalid.',
-        'errors' => [
-            'email' => [
-                'The selected email is invalid.'
+            'message' => 'The selected email is invalid.',
+            'errors' => [
+                'email' => [
+                    'The selected email is invalid.'
+                ]
             ]
-        ]
-    ]);
+        ]);
     }
 
     public function test_login_with_unverified_email()
