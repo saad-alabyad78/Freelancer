@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Company\Commands;
 
 use App\Models\Company;
+use App\Models\Industry;
 use App\Models\ContactLink;
 use App\Models\CompanyPhone;
 use App\Models\GalleryImage;
@@ -34,12 +35,12 @@ class CreateCompany extends Controller
      * @return CompanyResource
      * 
      **/
-    public function __invoke(CreateCompanyRequest $request) : CompanyResource
+    public function __invoke(CreateCompanyRequest $request , Industry $industry) 
     {
         $data = $request->validated();
 
         //create company
-
+        
         $company = Company::create([
                 'username' => auth()->user()->slug ,
                 'name' => $data['name'] , 
@@ -47,8 +48,11 @@ class CreateCompany extends Controller
                 'size' => $data['size'] , 
                 'city' => $data['city'] , 
                 'region' => $data['region']  , 
-                'street_address' => $data['street_address'] , 
+                'street_address' => $data['street_address'] ,
+                'industry_name' => $industry->name 
         ]);
+
+        $company->user()->save(auth()->user()) ;
 
         //create links 
 
@@ -83,18 +87,16 @@ class CreateCompany extends Controller
 
         //create phones 
 
-        if(array_key_exists('contact_links' , $data))
+        if(array_key_exists('company_phones' , $data))
         {
             $company_phones = [] ;
         
             foreach($data['company_phones'] as $company_phone)
             {
-                $company_phones[] = new CompanyPhone(['name' => $company_phone]) ;
+                $company_phones[] = new CompanyPhone(['number' => $company_phone]) ;
             }
             $company->company_phones()->saveMany($company_phones) ;
         }
-        
-
         
         return CompanyResource::make($company->with
             ([

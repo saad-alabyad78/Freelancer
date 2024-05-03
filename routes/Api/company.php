@@ -16,7 +16,7 @@ Route::group(['prefix' => 'company'] , function()
             ],
         ],
         function(){
-            Route::post('store' , CreateCompany::class) ;
+            Route::post('/store/{industry}' , CreateCompany::class) ;
             
         });
     

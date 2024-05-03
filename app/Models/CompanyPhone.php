@@ -10,6 +10,7 @@ class CompanyPhone extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['number'] ;
     public function company():BelongsTo
     {
         return $this->belongsTo(Company::class);

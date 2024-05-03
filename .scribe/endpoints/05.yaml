@@ -4,7 +4,7 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/company/store
+    uri: 'api/company/store/{industry_name}'
     metadata:
       groupName: 'Company Managment'
       groupDescription: ''
@@ -18,8 +18,18 @@ endpoints:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: multipart/form-data
       Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
+    urlParameters:
+      industry_name:
+        name: industry_name
+        description: ''
+        required: true
+        example: ipsam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      industry_name: ipsam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -27,7 +37,7 @@ endpoints:
         name: name
         description: 'name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters.'
         required: true
-        example: bonknpubojt
+        example: kccf
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -36,7 +46,7 @@ endpoints:
         name: description
         description: 'Must not be greater than 4000 characters.'
         required: true
-        example: 'Adipisci nihil nihil ab suscipit.'
+        example: 'Nihil sed voluptates delectus et fugiat ducimus.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -45,7 +55,7 @@ endpoints:
         name: size
         description: 'Must be at least 5 characters. Must not be greater than 20 characters.'
         required: true
-        example: mmiwnyqlys
+        example: nbdqnszuffucrhwx
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -63,7 +73,7 @@ endpoints:
         name: region
         description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
         required: true
-        example: dtfa
+        example: rwlvghdsgqdrxm
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -72,7 +82,7 @@ endpoints:
         name: street_address
         description: 'Must be at least 3 characters. Must not be greater than 30 characters.'
         required: true
-        example: voibjkpvuhd
+        example: r
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -92,20 +102,32 @@ endpoints:
         description: 'Must be at least 5 characters.'
         required: false
         example:
-          - zzkwwmmdawvvrowndtgvmwccvkub
+          - wtighjygkpqukyicwjpjooazqeozrkgnrazsxdrjhiaphfrqqvsurtbbkkegoqggrznugnvtltervjaxyyiqceus
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      company_phones:
+        name: company_phones
+        description: 'Must match the regex /^09[0-9]{8}$/.'
+        required: false
+        example:
+          - '0933354130'
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: bonknpubojt
-      description: 'Adipisci nihil nihil ab suscipit.'
-      size: mmiwnyqlys
+      name: kccf
+      description: 'Nihil sed voluptates delectus et fugiat ducimus.'
+      size: nbdqnszuffucrhwx
       city: دمشق
-      region: dtfa
-      street_address: voibjkpvuhd
+      region: rwlvghdsgqdrxm
+      street_address: r
       contact_links:
-        - zzkwwmmdawvvrowndtgvmwccvkub
+        - wtighjygkpqukyicwjpjooazqeozrkgnrazsxdrjhiaphfrqqvsurtbbkkegoqggrznugnvtltervjaxyyiqceus
+      company_phones:
+        - '0933354130'
     fileParameters:
       gallery_images:
         - null
@@ -120,7 +142,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZV51cDv6ePkE346gh8bdaaf'
+      - 'Bearer Pfh6ZacV8a6gEe4vkD3d5b1'
     controller: null
     method: null
     route: null
@@ -150,13 +172,13 @@ endpoints:
         name: image
         description: ''
         required: true
-        example: et
+        example: perspiciatis
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      image: et
+      image: perspiciatis
     fileParameters: []
     responses:
       -
@@ -166,7 +188,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '54'
+          x-ratelimit-remaining: '55'
           access-control-allow-origin: '*'
         description: null
         custom: []

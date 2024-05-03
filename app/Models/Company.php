@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -20,13 +21,19 @@ class Company extends Model
         'city' ,
         'region' ,
         'username' ,
+        'industry_name' ,
     ] ;
 
-    protected $with = ['user' , 'contact_links'] ;
+    protected $with = ['user' , 'contact_links' , 'company_phones'] ;
 
     public function user():MorphOne
     {
         return $this->morphOne(User::class,"role") ;
+    }
+
+    public function industry():HasOne
+    {
+        return $this->hasOne(Industry::class , 'industry_name' , 'name');
     }
 
     public function company_phones():HasMany
