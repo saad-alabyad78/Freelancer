@@ -26,13 +26,13 @@ class LogController extends Controller
        if(!$user || !Hash::check($request->password , $user->password)){
             return response()->json([
                 'error' => 'the provided credentials are incorrect :(' ,
-            ]);
+            ] , 401 );
         }
 
-        if(!!! $user->email_verified_at){
+        if(! $user->email_verified_at){
             return response()->json([
                 'error'=> 'you need to verify your email' ,
-            ]);
+            ] , 401);
         }
 
         $device = substr($request->userAgent() ?? '' , 0 , 255) ;
