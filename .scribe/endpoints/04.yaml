@@ -22,13 +22,13 @@ endpoints:
         name: command_string
         description: ''
         required: true
-        example: libero
+        example: ab
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      command_string: libero
+      command_string: ab
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -39,7 +39,7 @@ endpoints:
         status: 500
         content: |-
           {
-              "message": "The command \"libero\" does not exist.",
+              "message": "The command \"ab\" does not exist.",
               "exception": "Symfony\\Component\\Console\\Exception\\CommandNotFoundException",
               "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php",
               "line": 159,
@@ -607,11 +607,14 @@ endpoints:
 
              INFO  Seeding database.  
 
-            Database\Seeders\SuperAdminSeeder ............................................................... RUNNING  
-            Database\Seeders\SuperAdminSeeder ......................................................... 1,347 ms DONE  
+            Database\Seeders\SuperAdminSeeder .............................................................................. RUNNING  
+            Database\Seeders\SuperAdminSeeder ........................................................................ 1,508 ms DONE  
 
-            Database\Seeders\NoRoleUserSeeder ............................................................... RUNNING  
-            Database\Seeders\NoRoleUserSeeder ........................................................... 266 ms DONE  
+            Database\Seeders\NoRoleUserSeeder .............................................................................. RUNNING  
+            Database\Seeders\NoRoleUserSeeder .......................................................................... 238 ms DONE  
+
+            Database\Seeders\IndustrySeeder ................................................................................ RUNNING  
+            Database\Seeders\IndustrySeeder ............................................................................. 87 ms DONE  
 
         headers:
           content-type: 'text/html; charset=UTF-8'

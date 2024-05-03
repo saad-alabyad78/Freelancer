@@ -46,7 +46,7 @@ paths:
                 token:
                   type: string
                   description: ''
-                  example: earum
+                  example: voluptatem
               required:
                 - token
       security: []
@@ -69,11 +69,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: eric67@example.net
+                  example: may05@example.net
                 password:
                   type: string
                   description: ''
-                  example: 'EIr-zBE~J&'
+                  example: '[uPT7qA3<]TD1(w.$0\'
               required:
                 - email
                 - password
@@ -106,6 +106,7 @@ paths:
                     name: null
                     description: null
                     size: null
+                    industry_name: null
                     gallery_images: []
                     contact_links: []
                     company_phones: []
@@ -123,6 +124,9 @@ paths:
                         type: string
                         example: null
                       size:
+                        type: string
+                        example: null
+                      industry_name:
                         type: string
                         example: null
                       gallery_images:
@@ -146,15 +150,15 @@ paths:
                 name:
                   type: string
                   description: 'name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters.'
-                  example: kccf
+                  example: fkckr
                 description:
                   type: string
                   description: 'Must not be greater than 4000 characters.'
-                  example: 'Nihil sed voluptates delectus et fugiat ducimus.'
+                  example: 'Beatae et quo doloremque.'
                 size:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 20 characters.'
-                  example: nbdqnszuffucrhwx
+                  example: ctfzgkfc
                 city:
                   type: string
                   description: 'this must be a syrian city.'
@@ -162,11 +166,11 @@ paths:
                 region:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
-                  example: rwlvghdsgqdrxm
+                  example: lafloenvbuswqkjqh
                 street_address:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 30 characters.'
-                  example: r
+                  example: ymieefrf
                 gallery_images:
                   type: array
                   description: 'Must be an image. Must be at least 10 kilobytes. Must not be greater than 2000 kilobytes.'
@@ -177,14 +181,14 @@ paths:
                   type: array
                   description: 'Must be at least 5 characters.'
                   example:
-                    - wtighjygkpqukyicwjpjooazqeozrkgnrazsxdrjhiaphfrqqvsurtbbkkegoqggrznugnvtltervjaxyyiqceus
+                    - kjnmgfekfapvuhmrrvakavseokbrqquvffasbvbzziqvtnfzvqnaboqmwnckhhqtwueyigodprcmdfcpcwc
                   items:
                     type: string
                 company_phones:
                   type: array
                   description: 'Must match the regex /^09[0-9]{8}$/.'
                   example:
-                    - '0933354130'
+                    - '0944053257'
                   items:
                     type: string
               required:
@@ -199,7 +203,7 @@ paths:
         in: path
         name: industry_name
         description: ''
-        example: ipsam
+        example: industry1
         required: true
         schema:
           type: string
@@ -246,7 +250,7 @@ paths:
                 image:
                   type: string
                   description: ''
-                  example: perspiciatis
+                  example: voluptatem
               required:
                 - image
       security: []
@@ -269,19 +273,19 @@ paths:
                 first_name:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: hdiuddhpvrgjwbhyxaesdd
+                  example: gh
                 last_name:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: bbynnfibfwijcdkatq
+                  example: hdhblmuzrdigote
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: rkoch@example.com
+                  example: gino.hessel@example.com
                 password:
                   type: string
                   description: 'Must be at least 8 characters. Must not be greater than 255 characters.'
-                  example: ',2^3?9g"XG)8r`%'
+                  example: o.=A@pk!Pb0Z;0$=
               required:
                 - first_name
                 - email
@@ -306,11 +310,11 @@ paths:
                 email_otp_code:
                   type: string
                   description: ''
-                  example: perspiciatis
+                  example: facere
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: jamel.kilback@example.com
+                  example: dblanda@example.org
               required:
                 - email_otp_code
                 - email
@@ -334,7 +338,7 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: hailee.gislason@example.org
+                  example: emard.armando@example.org
               required:
                 - email
       security: []
@@ -352,7 +356,7 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'The command "libero" does not exist.'
+                  message: 'The command "ab" does not exist.'
                   exception: Symfony\Component\Console\Exception\CommandNotFoundException
                   file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php
                   line: 159
@@ -768,7 +772,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: 'The command "libero" does not exist.'
+                    example: 'The command "ab" does not exist.'
                   exception:
                     type: string
                     example: Symfony\Component\Console\Exception\CommandNotFoundException
@@ -1215,7 +1219,7 @@ paths:
         in: path
         name: command_string
         description: ''
-        example: libero
+        example: ab
         required: true
         schema:
           type: string
@@ -1249,7 +1253,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "\n   INFO  Seeding database.  \n\n  Database\\Seeders\\SuperAdminSeeder ............................................................... RUNNING  \n  Database\\Seeders\\SuperAdminSeeder ......................................................... 1,347 ms DONE  \n\n  Database\\Seeders\\NoRoleUserSeeder ............................................................... RUNNING  \n  Database\\Seeders\\NoRoleUserSeeder ........................................................... 266 ms DONE  \n\n"
+                example: "\n   INFO  Seeding database.  \n\n  Database\\Seeders\\SuperAdminSeeder .............................................................................. RUNNING  \n  Database\\Seeders\\SuperAdminSeeder ........................................................................ 1,508 ms DONE  \n\n  Database\\Seeders\\NoRoleUserSeeder .............................................................................. RUNNING  \n  Database\\Seeders\\NoRoleUserSeeder .......................................................................... 238 ms DONE  \n\n  Database\\Seeders\\IndustrySeeder ................................................................................ RUNNING  \n  Database\\Seeders\\IndustrySeeder ............................................................................. 87 ms DONE  \n\n"
       tags:
         - Endpoints
       security: []
@@ -1308,7 +1312,7 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: becker.alexie@example.org
+                  example: howell.raymond@example.com
               required:
                 - email
       security: []
@@ -1331,15 +1335,15 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: ugaylord@example.net
+                  example: lauren.johnston@example.com
                 password:
                   type: string
                   description: ''
-                  example: neque
+                  example: id
                 password_otp_code:
                   type: string
                   description: ''
-                  example: illum
+                  example: enim
               required:
                 - email
                 - password

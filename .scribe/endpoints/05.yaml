@@ -23,13 +23,13 @@ endpoints:
         name: industry_name
         description: ''
         required: true
-        example: ipsam
+        example: industry1
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      industry_name: ipsam
+      industry_name: industry1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -37,7 +37,7 @@ endpoints:
         name: name
         description: 'name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters.'
         required: true
-        example: kccf
+        example: fkckr
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -46,7 +46,7 @@ endpoints:
         name: description
         description: 'Must not be greater than 4000 characters.'
         required: true
-        example: 'Nihil sed voluptates delectus et fugiat ducimus.'
+        example: 'Beatae et quo doloremque.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -55,7 +55,7 @@ endpoints:
         name: size
         description: 'Must be at least 5 characters. Must not be greater than 20 characters.'
         required: true
-        example: nbdqnszuffucrhwx
+        example: ctfzgkfc
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -73,7 +73,7 @@ endpoints:
         name: region
         description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
         required: true
-        example: rwlvghdsgqdrxm
+        example: lafloenvbuswqkjqh
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -82,7 +82,7 @@ endpoints:
         name: street_address
         description: 'Must be at least 3 characters. Must not be greater than 30 characters.'
         required: true
-        example: r
+        example: ymieefrf
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -102,7 +102,7 @@ endpoints:
         description: 'Must be at least 5 characters.'
         required: false
         example:
-          - wtighjygkpqukyicwjpjooazqeozrkgnrazsxdrjhiaphfrqqvsurtbbkkegoqggrznugnvtltervjaxyyiqceus
+          - kjnmgfekfapvuhmrrvakavseokbrqquvffasbvbzziqvtnfzvqnaboqmwnckhhqtwueyigodprcmdfcpcwc
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
@@ -112,29 +112,29 @@ endpoints:
         description: 'Must match the regex /^09[0-9]{8}$/.'
         required: false
         example:
-          - '0933354130'
+          - '0944053257'
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: kccf
-      description: 'Nihil sed voluptates delectus et fugiat ducimus.'
-      size: nbdqnszuffucrhwx
+      name: fkckr
+      description: 'Beatae et quo doloremque.'
+      size: ctfzgkfc
       city: دمشق
-      region: rwlvghdsgqdrxm
-      street_address: r
+      region: lafloenvbuswqkjqh
+      street_address: ymieefrf
       contact_links:
-        - wtighjygkpqukyicwjpjooazqeozrkgnrazsxdrjhiaphfrqqvsurtbbkkegoqggrznugnvtltervjaxyyiqceus
+        - kjnmgfekfapvuhmrrvakavseokbrqquvffasbvbzziqvtnfzvqnaboqmwnckhhqtwueyigodprcmdfcpcwc
       company_phones:
-        - '0933354130'
+        - '0944053257'
     fileParameters:
       gallery_images:
         - null
     responses:
       -
         status: 200
-        content: '{"data":{"username":null,"name":null,"description":null,"size":null,"gallery_images":[],"contact_links":[],"company_phones":[]}}'
+        content: '{"data":{"username":null,"name":null,"description":null,"size":null,"industry_name":null,"gallery_images":[],"contact_links":[],"company_phones":[]}}'
         headers: []
         description: ''
         custom: []
@@ -142,7 +142,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Pfh6ZacV8a6gEe4vkD3d5b1'
+      - 'Bearer Z8DaakPVv1ed5gEbcf3h646'
     controller: null
     method: null
     route: null
@@ -172,13 +172,13 @@ endpoints:
         name: image
         description: ''
         required: true
-        example: perspiciatis
+        example: voluptatem
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      image: perspiciatis
+      image: voluptatem
     fileParameters: []
     responses:
       -

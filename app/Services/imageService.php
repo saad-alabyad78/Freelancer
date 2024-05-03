@@ -27,12 +27,7 @@ class imageService
 
     public static function get_image($disk , $image) 
     {
-        if(!array_key_exists($disk , config('filesystems.disks'))){
-            throw new FileNotFonudException('disk ' . $disk . ' not found' , 404 ) ;
-        }
-        if(!Storage::disk($disk)->exists($image)){
-            throw new FileNotFonudException('image ' . $image . ' not found' , 404 ) ;
-        }
+        static::validate($disk , $image) ;
 
         $file = Storage::disk($disk)->get($image) ;
         $type = Storage::disk($disk)->mimeType($image) ;
@@ -43,17 +38,28 @@ class imageService
 
     public static function get_type($disk , $image) 
     {
-        if(!array_key_exists($disk , config('filesystems.disks'))){
-            throw new FileNotFonudException('disk ' . $disk . ' not found' , 404 ) ;
-        }
-        if(!Storage::disk($disk)->exists($image)){
-            throw new FileNotFonudException('image ' . $image . ' not found' , 404 ) ;
-        }
+        static::validate($disk , $image) ;
 
         $type = Storage::disk($disk)->mimeType($image) ;
 
         return $type ;
     } 
 
+    public static function delete($disk , $image)
+    {
+        static::validate($disk , $image);
+
+        Storage::disk($disk)->delete($image) ;
+    }
+
+    private static function validate($disk , $image) : void
+    {
+        if(!array_key_exists($disk , config('filesystems.disks'))){
+            throw new FileNotFonudException('disk ' . $disk . ' not found' , 404 ) ;
+        }
+        if(!Storage::disk($disk)->exists($image)){
+            throw new FileNotFonudException('image ' . $image . ' not found' , 404 ) ;
+        }
+    }
     
 }

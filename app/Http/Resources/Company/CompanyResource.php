@@ -19,6 +19,7 @@ class CompanyResource extends JsonResource
             'name' => $this->name ,
             'description' => $this->description ,
             'size' => $this->size , 
+            'industry_name' => $this->industry_name ,
             'gallery_images' => GalleryImageResource::collection($this->gallery_images) ,
             'contact_links' => ContactLinkResource::collection($this->contact_links) ,
             'company_phones' => CompanyPhoneResource::collection($this->company_phones) ,

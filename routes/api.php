@@ -4,6 +4,7 @@ use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Company;
 use App\Models\Profile;
+use App\Models\GalleryImage;
 use App\Services\xmlService;
 use Illuminate\Http\Response;
 use App\Services\imageService;
@@ -31,7 +32,9 @@ require 'Api/company.php' ;
 
 
 Route::post('test' , function(){
-   return 'ok' ;
+   $image = 'LLWuJiPSbaeXWC4sm5q9FgpGW3St52rq.png' ;
+
+   return GalleryImage::first()->delete() ;
     
 });
 
