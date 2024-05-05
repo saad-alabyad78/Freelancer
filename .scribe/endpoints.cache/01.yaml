@@ -32,17 +32,17 @@ endpoints:
         name: token
         description: ''
         required: true
-        example: voluptatem
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      token: voluptatem
+      token: qui
     fileParameters: []
     responses:
       -
-        status: 200
+        status: 401
         content: '{"provider":"google","error":"failed to authenticate the user with google oauth token ","message":"Client error: `GET https:\/\/www.googleapis.com\/oauth2\/v3\/userinfo?prettyPrint=false` resulted in a `401 Unauthorized` response:\n{\n  \"error\": \"invalid_request\",\n  \"error_description\": \"Invalid Credentials\"\n}\n"}'
         headers:
           cache-control: 'no-cache, private'

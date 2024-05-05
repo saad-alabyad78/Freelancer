@@ -2,6 +2,8 @@
 
 namespace App\Observers;
 
+
+use App\Constants\Disks;
 use App\Models\GalleryImage;
 use App\Services\imageService;
 
@@ -12,6 +14,6 @@ class GalleryImageObserver
      */
     public function deleted(GalleryImage $galleryImage): void
     {
-        (new imageService())->delete('company' , $galleryImage->name) ;
+        (new imageService())->delete(Disks::COMPANY , $galleryImage->name) ;
     }
 }
