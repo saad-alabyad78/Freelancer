@@ -53,7 +53,7 @@ class otpRegisterController extends Controller
         {
             return response()->json([
                 'error' => ' try again please' ,
-            ]);
+            ] , 401);
         }
 
         $device = substr($request->userAgent() ?? '' , 0 , 255) ;

@@ -45,7 +45,7 @@ class otpPasswordController extends Controller
             return response()->json([
                 'error' => ' try again pleas' ,
                 'password_otp_expired_date' => $user->password_otp_expired_date ,
-            ]);
+            ] , 401);
         }
 
         //TODO : test there is no double hashing from the model

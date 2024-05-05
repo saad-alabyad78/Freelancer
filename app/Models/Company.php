@@ -24,8 +24,6 @@ class Company extends Model
         'industry_name' ,
     ] ;
 
-    protected $with = ['user' , 'contact_links' , 'company_phones'] ;
-
     public function user():MorphOne
     {
         return $this->morphOne(User::class,"role") ;

@@ -51,23 +51,9 @@ class User extends Authenticatable implements MustVerifyEmail
         );
     }
 
-    /**
-     * Get the profile associated with the User
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function profile(): HasOne
-    {
-        return $this->hasOne(Profile::class);
-    }
-
     public function role():MorphTo
     {
         return $this->morphTo();
     }
 
-    public function phone():HasOne
-    {
-        return $this->hasOne(Phone::class) ;
-    }
 }

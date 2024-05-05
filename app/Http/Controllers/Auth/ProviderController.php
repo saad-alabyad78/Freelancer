@@ -44,7 +44,7 @@ class ProviderController extends Controller
                 'provider' => 'google' ,
                 'error' => 'failed to authenticate the user with google oauth token ' ,
                 'message' => $e->getMessage() ,
-            ]);
+            ] , 401 );
         }
     }
 }

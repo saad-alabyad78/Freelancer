@@ -19,4 +19,8 @@ class Industry extends Model
     {
         return $this->hasMany(Company::class , 'industry_name' , 'name'); 
     }
+    public function job_offers():HasMany
+    {
+        return $this->hasMany(Job_Offer::class , 'industry_name' , 'name');
+    }
 }
