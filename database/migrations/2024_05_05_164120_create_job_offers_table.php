@@ -26,7 +26,7 @@ return new class extends Migration
             $table->tinyInteger('max_age')->nullable() ;
             $table->tinyInteger('min_age')->nullable() ;
 
-            $table->string('gender');
+            $table->string('gender')->nullable();
 
             $table->foreignId('job_role_id')->constrained();
             $table->foreignId('company_id')->constrained();

@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
             SuperAdminSeeder::class ,
             NoRoleUserSeeder::class ,
             IndustrySeeder::class ,
+            SkillSeeder::class ,
+            Job_RoleSeeder::class ,
         ]);
 
     }

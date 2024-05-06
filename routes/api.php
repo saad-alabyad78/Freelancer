@@ -25,11 +25,25 @@ require 'Api/company.php' ;
 
 Route::post('test' , function(){
 
-    
+  $xmlService = new xmlService('dynamics/job_roles.xml') ;
 
-  return 'hi ' ;
+  $job_roles = xmlService::toJson($xmlService->xmlContent)->job_role ;
+
+  foreach($job_roles as $job_role)
+  {
+    return $job_role ;
+  }
+
 });
 
 Route::get('test' , function(){
-    return 'ok' ;
+  $xmlService = new xmlService('dynamics/job_roles.xml') ;
+
+  $job_roles = xmlService::toJson($xmlService->xmlContent)->job_role ;
+
+  $tt = [] ;
+  foreach($job_roles as $job_role)
+  {
+    return $job_role ;
+  }
 });

@@ -23,6 +23,8 @@ class CreateCompanyRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'profile_image' => ['image' , 'min:10' , 'max:2000'] ,
+            'background_image' => ['image' , 'min:10' , 'max:2000'] ,
             'name' => ['required' , 'min:3' , 'max:20' , 'string' , 'unique:companies,name'] ,
             'description' => ['required' , 'string' , 'max:4000' ] ,
             'size' => ['required' , 'string' , 'min:5' , 'max:20'] , //TODO 

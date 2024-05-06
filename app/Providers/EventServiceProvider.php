@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Company;
 use App\Models\GalleryImage;
+use App\Observers\CompanyObserver;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
 use App\Observers\GalleryImageObserver;
@@ -25,6 +27,9 @@ class EventServiceProvider extends ServiceProvider
     protected $observers = [
         GalleryImage::class => [
             GalleryImageObserver::class ,
+        ],
+        Company::class => [
+            CompanyObserver::class ,
         ],
     ];
 

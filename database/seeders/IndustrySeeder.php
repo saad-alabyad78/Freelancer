@@ -13,6 +13,7 @@ class IndustrySeeder extends Seeder
      */
     public function run(): void
     {
-        Industry::updateOrCreate(['name' => 'industry1']) ;
+        Industry::updateOrCreate(['name' => 'برمجي']) ;     
+        Industry::updateOrCreate(['name' => 'خدمي']) ;     
     }
 }

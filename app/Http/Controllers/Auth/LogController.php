@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\Auth\LogInRequest;
+use App\Http\Resources\Auth\UserResource;
 
 /**
  * @group Auth log
@@ -23,21 +24,22 @@ class LogController extends Controller
 
         $user = User::where('email' , $request->email)->first();
 
+        if(! $user->email_verified_at){
+            return response()->json([
+                'error'=> 'you need to verify your email' ,
+            ] , 401);
+        }
+        
        if(!$user || !Hash::check($request->password , $user->password)){
             return response()->json([
                 'error' => 'the provided credentials are incorrect :(' ,
             ] , 401 );
         }
 
-        if(! $user->email_verified_at){
-            return response()->json([
-                'error'=> 'you need to verify your email' ,
-            ] , 401);
-        }
-
         $device = substr($request->userAgent() ?? '' , 0 , 255) ;
 
         return response()->json([
+            'user' => UserResource::make($user) ,
             'access_token' => $user->createToken($device)->plainTextToken ,
         ]);
     }

@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use App\Constants\Defaults;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
@@ -14,6 +16,8 @@ class Company extends Model
 
     protected $fillable = 
     [
+        'profile_iamge' ,
+        'background_image' ,
         'name' ,
         'size' ,
         'description' ,
@@ -45,5 +49,13 @@ class Company extends Model
     public function gallery_images():HasMany
     {
         return $this->hasMany(GalleryImage::class) ;
+    }
+
+    public function profile_image():Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->attributes['profile_image'] ?? Defaults::COMPANY_PROFILE_IMAGE ,
+            set: fn () => $this->attributes['background_image'] ?? Defaults::COMPANY_BACKGROUND_IMAGE ,
+        );
     }
 }

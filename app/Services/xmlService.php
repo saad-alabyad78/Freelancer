@@ -34,7 +34,7 @@ class xmlService
         return simplexml_load_string($content) ;
     }
 
-    public function sortJobSkill(string $path = 'dynamics/job_roles.xml')
+    public function sortJobRoles(string $path = 'dynamics/job_roles.xml')
     {
         $xs = new xmlService($path) ;
 
@@ -95,14 +95,7 @@ class xmlService
         $this->putXML($path , $sortedSkills) ;
     }
 
-    public function sortJobRoles(string $path = 'dynamics/job_roles.xml' ) : void
-    {
-        $xs = new xmlService($path) ;
-
-        $job_roles = [] ;
-    }
-    
-    public static function toJson(SimpleXMLElement $xml)
+    public static function toJson(SimpleXMLElement $xml) 
     {
         return json_decode(json_encode($xml)) ;
     }

@@ -42,6 +42,8 @@ class CreateCompany extends Controller
         //create company
         
         $company = Company::create([
+                'profile_image' => $this->imageService->store_image($data['profile_image'] , 'company') ,
+                'background_image' => $this->imageService->store_image($data['background_image'] , 'company') ,
                 'username' => auth()->user()->slug ,
                 'name' => $data['name'] , 
                 'description' => $data['description'] , 

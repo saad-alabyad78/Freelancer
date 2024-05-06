@@ -12,13 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('skillables', function (Blueprint $table) {
-            $table->id();
             $table->foreignId('skill_id')->constrained()->onDelete('cascade') ;
 
             $table->unsignedBigInteger('skillable_id');
             $table->string('skillable_type');
-            
-            $table->timestamps();
+
         });
     }
 

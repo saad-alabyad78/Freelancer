@@ -10,6 +10,8 @@ class Job_Role extends Model
 {
     use HasFactory;
 
+    protected $table = 'job_roles' ;
+
     public function skills():MorphToMany
     {
         return $this->morphToMany(Skill::class , 'skillable');
