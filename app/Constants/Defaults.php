@@ -3,6 +3,8 @@
 namespace App\Constants;
 
 class Defaults{
-    const COMPANY_PROFILE_IMAGE = '' ;
-    const COMPANY_BACKGROUND_IMAGE = '' ;
+
+    private $prefix = 'default/' ;
+    const COMPANY_PROFILE_IMAGE = $prefix . 'profile_image.png' ;
+    const COMPANY_BACKGROUND_IMAGE = $prefix . 'background_image.png' ;
 }
