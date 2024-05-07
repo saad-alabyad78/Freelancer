@@ -46,7 +46,7 @@ paths:
                 token:
                   type: string
                   description: ''
-                  example: qui
+                  example: quasi
               required:
                 - token
       security: []
@@ -69,11 +69,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: inicolas@example.net
+                  example: gilda.roberts@example.org
                 password:
                   type: string
                   description: ''
-                  example: M/7<c~@6v6
+                  example: 'P8ogs[~mIk3'
               required:
                 - email
                 - password
@@ -87,126 +87,6 @@ paths:
       responses: {  }
       tags:
         - 'Auth log'
-  '/api/company/store/{industry_name}':
-    post:
-      summary: 'Create/Store New Company .'
-      operationId: createStoreNewCompany
-      description: ''
-      parameters: []
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  data:
-                    username: null
-                    name: null
-                    description: null
-                    size: null
-                    industry_name: null
-                    gallery_images: []
-                    contact_links: []
-                    company_phones: []
-                properties:
-                  data:
-                    type: object
-                    properties:
-                      username:
-                        type: string
-                        example: null
-                      name:
-                        type: string
-                        example: null
-                      description:
-                        type: string
-                        example: null
-                      size:
-                        type: string
-                        example: null
-                      industry_name:
-                        type: string
-                        example: null
-                      gallery_images:
-                        type: array
-                        example: []
-                      contact_links:
-                        type: array
-                        example: []
-                      company_phones:
-                        type: array
-                        example: []
-      tags:
-        - 'Company Managment'
-      requestBody:
-        required: true
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  description: 'name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters.'
-                  example: jbeyejiioyjtrasjbk
-                description:
-                  type: string
-                  description: 'Must not be greater than 4000 characters.'
-                  example: 'Sunt dolores voluptatem asperiores repudiandae voluptatem dolorem possimus.'
-                size:
-                  type: string
-                  description: 'Must be at least 5 characters. Must not be greater than 20 characters.'
-                  example: lhrvnd
-                city:
-                  type: string
-                  description: 'this must be a syrian city.'
-                  example: دمشق
-                region:
-                  type: string
-                  description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
-                  example: taaevu
-                street_address:
-                  type: string
-                  description: 'Must be at least 3 characters. Must not be greater than 30 characters.'
-                  example: piftpkp
-                gallery_images:
-                  type: array
-                  description: 'Must be an image. Must be at least 10 kilobytes. Must not be greater than 2000 kilobytes.'
-                  items:
-                    type: string
-                    format: binary
-                contact_links:
-                  type: array
-                  description: 'Must be at least 5 characters.'
-                  example:
-                    - urwgcyyqiwqmjekmwcrbthjajmltnmovfqwyzpezmtbijboemjudoncxuvofequfstzxklucwbndbgl
-                  items:
-                    type: string
-                company_phones:
-                  type: array
-                  description: 'Must match the regex /^09[0-9]{8}$/.'
-                  example:
-                    - '0974380297'
-                  items:
-                    type: string
-              required:
-                - name
-                - description
-                - size
-                - city
-                - region
-                - street_address
-    parameters:
-      -
-        in: path
-        name: industry_name
-        description: ''
-        example: quia
-        required: true
-        schema:
-          type: string
   /api/company/gallery:
     get:
       summary: 'Get A Gallary Image'
@@ -250,7 +130,7 @@ paths:
                 image:
                   type: string
                   description: ''
-                  example: quis
+                  example: et
               required:
                 - image
       security: []
@@ -273,19 +153,19 @@ paths:
                 first_name:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: wdf
+                  example: fnkcgrtjdbipjaaqyv
                 last_name:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: bxgqrmzutfaauwmdbbvny
+                  example: ubttkm
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: jedediah05@example.net
+                  example: kristin03@example.com
                 password:
                   type: string
                   description: 'Must be at least 8 characters. Must not be greater than 255 characters.'
-                  example: '|~jFK3*-cz9=EqK'
+                  example: L/0q~EfdqlW=Cdft
               required:
                 - first_name
                 - email
@@ -310,11 +190,11 @@ paths:
                 email_otp_code:
                   type: string
                   description: ''
-                  example: asperiores
+                  example: culpa
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: msimonis@example.net
+                  example: jakubowski.art@example.org
               required:
                 - email_otp_code
                 - email
@@ -338,7 +218,7 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: danielle.bayer@example.net
+                  example: koberbrunner@example.net
               required:
                 - email
       security: []
@@ -356,7 +236,7 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'The command "dolorem" does not exist.'
+                  message: 'The command "quasi" does not exist.'
                   exception: Symfony\Component\Console\Exception\CommandNotFoundException
                   file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php
                   line: 159
@@ -772,7 +652,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: 'The command "dolorem" does not exist.'
+                    example: 'The command "quasi" does not exist.'
                   exception:
                     type: string
                     example: Symfony\Component\Console\Exception\CommandNotFoundException
@@ -1219,7 +1099,7 @@ paths:
         in: path
         name: command_string
         description: ''
-        example: dolorem
+        example: quasi
         required: true
         schema:
           type: string
@@ -1230,1384 +1110,13 @@ paths:
       description: ''
       parameters: []
       responses:
-        500:
+        200:
           description: ''
           content:
-            application/json:
+            text/plain:
               schema:
-                type: object
-                example:
-                  message: 'SQLSTATE[42703]: Undefined column: 7 ERROR:  column "id" referenced in foreign key constraint does not exist (Connection: pgsql, SQL: alter table "skillables" add constraint "skillables_skill_id_foreign" foreign key ("skill_id") references "skills" ("id") on delete cascade)'
-                  exception: Illuminate\Database\QueryException
-                  file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Connection.php
-                  line: 829
-                  trace:
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Connection.php
-                      line: 783
-                      function: runQueryCallback
-                      class: Illuminate\Database\Connection
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Connection.php
-                      line: 576
-                      function: run
-                      class: Illuminate\Database\Connection
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php
-                      line: 110
-                      function: statement
-                      class: Illuminate\Database\Connection
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php
-                      line: 602
-                      function: build
-                      class: Illuminate\Database\Schema\Blueprint
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php
-                      line: 456
-                      function: build
-                      class: Illuminate\Database\Schema\Builder
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php
-                      line: 355
-                      function: create
-                      class: Illuminate\Database\Schema\Builder
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/database/migrations/2024_05_05_164036_create_skillables_table.php
-                      line: 14
-                      function: __callStatic
-                      class: Illuminate\Support\Facades\Facade
-                      type: '::'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php
-                      line: 493
-                      function: up
-                      class: "Illuminate\\Database\\Migrations\\Migration@anonymous\0/home/saad/Desktop/Freelancer/database/migrations/2024_05_05_164036_create_skillables_table.php:7$1cc"
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php
-                      line: 410
-                      function: runMethod
-                      class: Illuminate\Database\Migrations\Migrator
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Concerns/ManagesTransactions.php
-                      line: 30
-                      function: 'Illuminate\Database\Migrations\{closure}'
-                      class: Illuminate\Database\Migrations\Migrator
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php
-                      line: 418
-                      function: transaction
-                      class: Illuminate\Database\Connection
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php
-                      line: 216
-                      function: runMigration
-                      class: Illuminate\Database\Migrations\Migrator
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/View/Components/Task.php
-                      line: 37
-                      function: 'Illuminate\Database\Migrations\{closure}'
-                      class: Illuminate\Database\Migrations\Migrator
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php
-                      line: 756
-                      function: render
-                      class: Illuminate\Console\View\Components\Task
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php
-                      line: 216
-                      function: write
-                      class: Illuminate\Database\Migrations\Migrator
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php
-                      line: 181
-                      function: runUp
-                      class: Illuminate\Database\Migrations\Migrator
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php
-                      line: 124
-                      function: runPending
-                      class: Illuminate\Database\Migrations\Migrator
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php
-                      line: 90
-                      function: run
-                      class: Illuminate\Database\Migrations\Migrator
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php
-                      line: 633
-                      function: 'Illuminate\Database\Console\Migrations\{closure}'
-                      class: Illuminate\Database\Console\Migrations\MigrateCommand
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php
-                      line: 83
-                      function: usingConnection
-                      class: Illuminate\Database\Migrations\Migrator
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                      line: 36
-                      function: handle
-                      class: Illuminate\Database\Console\Migrations\MigrateCommand
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Util.php
-                      line: 41
-                      function: 'Illuminate\Container\{closure}'
-                      class: Illuminate\Container\BoundMethod
-                      type: '::'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                      line: 93
-                      function: unwrapIfClosure
-                      class: Illuminate\Container\Util
-                      type: '::'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                      line: 35
-                      function: callBoundMethod
-                      class: Illuminate\Container\BoundMethod
-                      type: '::'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Container.php
-                      line: 662
-                      function: call
-                      class: Illuminate\Container\BoundMethod
-                      type: '::'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php
-                      line: 211
-                      function: call
-                      class: Illuminate\Container\Container
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Command/Command.php
-                      line: 326
-                      function: execute
-                      class: Illuminate\Console\Command
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php
-                      line: 180
-                      function: run
-                      class: Symfony\Component\Console\Command\Command
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php
-                      line: 67
-                      function: run
-                      class: Illuminate\Console\Command
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php
-                      line: 28
-                      function: runCommand
-                      class: Illuminate\Console\Command
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/FreshCommand.php
-                      line: 53
-                      function: call
-                      class: Illuminate\Console\Command
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                      line: 36
-                      function: handle
-                      class: Illuminate\Database\Console\Migrations\FreshCommand
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Util.php
-                      line: 41
-                      function: 'Illuminate\Container\{closure}'
-                      class: Illuminate\Container\BoundMethod
-                      type: '::'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                      line: 93
-                      function: unwrapIfClosure
-                      class: Illuminate\Container\Util
-                      type: '::'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                      line: 35
-                      function: callBoundMethod
-                      class: Illuminate\Container\BoundMethod
-                      type: '::'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Container.php
-                      line: 662
-                      function: call
-                      class: Illuminate\Container\BoundMethod
-                      type: '::'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php
-                      line: 211
-                      function: call
-                      class: Illuminate\Container\Container
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Command/Command.php
-                      line: 326
-                      function: execute
-                      class: Illuminate\Console\Command
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php
-                      line: 180
-                      function: run
-                      class: Symfony\Component\Console\Command\Command
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php
-                      line: 1096
-                      function: run
-                      class: Illuminate\Console\Command
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php
-                      line: 324
-                      function: doRunCommand
-                      class: Symfony\Component\Console\Application
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php
-                      line: 175
-                      function: doRun
-                      class: Symfony\Component\Console\Application
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php
-                      line: 162
-                      function: run
-                      class: Symfony\Component\Console\Application
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php
-                      line: 400
-                      function: call
-                      class: Illuminate\Console\Application
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php
-                      line: 355
-                      function: call
-                      class: Illuminate\Foundation\Console\Kernel
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/routes/Api/render-commands.php
-                      line: 13
-                      function: __callStatic
-                      class: Illuminate\Support\Facades\Facade
-                      type: '::'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/CallableDispatcher.php
-                      line: 40
-                      function: '{closure}'
-                      class: Illuminate\Routing\RouteFileRegistrar
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Route.php
-                      line: 237
-                      function: dispatch
-                      class: Illuminate\Routing\CallableDispatcher
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Route.php
-                      line: 208
-                      function: runCallable
-                      class: Illuminate\Routing\Route
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                      line: 806
-                      function: run
-                      class: Illuminate\Routing\Route
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 144
-                      function: 'Illuminate\Routing\{closure}'
-                      class: Illuminate\Routing\Router
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php
-                      line: 50
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 183
-                      function: handle
-                      class: Illuminate\Routing\Middleware\SubstituteBindings
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
-                      line: 159
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
-                      line: 125
-                      function: handleRequest
-                      class: Illuminate\Routing\Middleware\ThrottleRequests
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
-                      line: 87
-                      function: handleRequestUsingNamedLimiter
-                      class: Illuminate\Routing\Middleware\ThrottleRequests
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 183
-                      function: handle
-                      class: Illuminate\Routing\Middleware\ThrottleRequests
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php
-                      line: 25
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 144
-                      function: 'Laravel\Sanctum\Http\Middleware\{closure}'
-                      class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 119
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php
-                      line: 24
-                      function: then
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 183
-                      function: handle
-                      class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 119
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                      line: 805
-                      function: then
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                      line: 784
-                      function: runRouteWithinStack
-                      class: Illuminate\Routing\Router
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                      line: 748
-                      function: runRoute
-                      class: Illuminate\Routing\Router
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                      line: 737
-                      function: dispatchToRoute
-                      class: Illuminate\Routing\Router
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
-                      line: 200
-                      function: dispatch
-                      class: Illuminate\Routing\Router
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 144
-                      function: 'Illuminate\Foundation\Http\{closure}'
-                      class: Illuminate\Foundation\Http\Kernel
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php
-                      line: 21
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php
-                      line: 31
-                      function: handle
-                      class: Illuminate\Foundation\Http\Middleware\TransformsRequest
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 183
-                      function: handle
-                      class: Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php
-                      line: 21
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php
-                      line: 40
-                      function: handle
-                      class: Illuminate\Foundation\Http\Middleware\TransformsRequest
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 183
-                      function: handle
-                      class: Illuminate\Foundation\Http\Middleware\TrimStrings
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php
-                      line: 27
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 183
-                      function: handle
-                      class: Illuminate\Foundation\Http\Middleware\ValidatePostSize
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php
-                      line: 99
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 183
-                      function: handle
-                      class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php
-                      line: 62
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 183
-                      function: handle
-                      class: Illuminate\Http\Middleware\HandleCors
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php
-                      line: 39
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 183
-                      function: handle
-                      class: Illuminate\Http\Middleware\TrustProxies
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 119
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
-                      line: 175
-                      function: then
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
-                      line: 144
-                      function: sendRequestThroughRouter
-                      class: Illuminate\Foundation\Http\Kernel
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
-                      line: 300
-                      function: handle
-                      class: Illuminate\Foundation\Http\Kernel
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
-                      line: 288
-                      function: callLaravelOrLumenRoute
-                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
-                      line: 91
-                      function: makeApiCall
-                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
-                      line: 44
-                      function: makeResponseCall
-                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
-                      line: 35
-                      function: makeResponseCallIfConditionsPass
-                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
-                      line: 236
-                      function: __invoke
-                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
-                      line: 163
-                      function: iterateThroughStrategies
-                      class: Knuckles\Scribe\Extracting\Extractor
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
-                      line: 95
-                      function: fetchResponses
-                      class: Knuckles\Scribe\Extracting\Extractor
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
-                      line: 125
-                      function: processRoute
-                      class: Knuckles\Scribe\Extracting\Extractor
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
-                      line: 72
-                      function: extractEndpointsInfoFromLaravelApp
-                      class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
-                      line: 50
-                      function: extractEndpointsInfoAndWriteToDisk
-                      class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php
-                      line: 53
-                      function: get
-                      class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                      line: 36
-                      function: handle
-                      class: Knuckles\Scribe\Commands\GenerateDocumentation
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Util.php
-                      line: 41
-                      function: 'Illuminate\Container\{closure}'
-                      class: Illuminate\Container\BoundMethod
-                      type: '::'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                      line: 93
-                      function: unwrapIfClosure
-                      class: Illuminate\Container\Util
-                      type: '::'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                      line: 35
-                      function: callBoundMethod
-                      class: Illuminate\Container\BoundMethod
-                      type: '::'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Container.php
-                      line: 662
-                      function: call
-                      class: Illuminate\Container\BoundMethod
-                      type: '::'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php
-                      line: 211
-                      function: call
-                      class: Illuminate\Container\Container
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Command/Command.php
-                      line: 326
-                      function: execute
-                      class: Illuminate\Console\Command
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php
-                      line: 180
-                      function: run
-                      class: Symfony\Component\Console\Command\Command
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php
-                      line: 1096
-                      function: run
-                      class: Illuminate\Console\Command
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php
-                      line: 324
-                      function: doRunCommand
-                      class: Symfony\Component\Console\Application
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php
-                      line: 175
-                      function: doRun
-                      class: Symfony\Component\Console\Application
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php
-                      line: 201
-                      function: run
-                      class: Symfony\Component\Console\Application
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/artisan
-                      line: 35
-                      function: handle
-                      class: Illuminate\Foundation\Console\Kernel
-                      type: '->'
-                properties:
-                  message:
-                    type: string
-                    example: 'SQLSTATE[42703]: Undefined column: 7 ERROR:  column "id" referenced in foreign key constraint does not exist (Connection: pgsql, SQL: alter table "skillables" add constraint "skillables_skill_id_foreign" foreign key ("skill_id") references "skills" ("id") on delete cascade)'
-                  exception:
-                    type: string
-                    example: Illuminate\Database\QueryException
-                  file:
-                    type: string
-                    example: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Connection.php
-                  line:
-                    type: integer
-                    example: 829
-                  trace:
-                    type: array
-                    example:
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Connection.php
-                        line: 783
-                        function: runQueryCallback
-                        class: Illuminate\Database\Connection
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Connection.php
-                        line: 576
-                        function: run
-                        class: Illuminate\Database\Connection
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php
-                        line: 110
-                        function: statement
-                        class: Illuminate\Database\Connection
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php
-                        line: 602
-                        function: build
-                        class: Illuminate\Database\Schema\Blueprint
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php
-                        line: 456
-                        function: build
-                        class: Illuminate\Database\Schema\Builder
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php
-                        line: 355
-                        function: create
-                        class: Illuminate\Database\Schema\Builder
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/database/migrations/2024_05_05_164036_create_skillables_table.php
-                        line: 14
-                        function: __callStatic
-                        class: Illuminate\Support\Facades\Facade
-                        type: '::'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php
-                        line: 493
-                        function: up
-                        class: "Illuminate\\Database\\Migrations\\Migration@anonymous\0/home/saad/Desktop/Freelancer/database/migrations/2024_05_05_164036_create_skillables_table.php:7$1cc"
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php
-                        line: 410
-                        function: runMethod
-                        class: Illuminate\Database\Migrations\Migrator
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Concerns/ManagesTransactions.php
-                        line: 30
-                        function: 'Illuminate\Database\Migrations\{closure}'
-                        class: Illuminate\Database\Migrations\Migrator
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php
-                        line: 418
-                        function: transaction
-                        class: Illuminate\Database\Connection
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php
-                        line: 216
-                        function: runMigration
-                        class: Illuminate\Database\Migrations\Migrator
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/View/Components/Task.php
-                        line: 37
-                        function: 'Illuminate\Database\Migrations\{closure}'
-                        class: Illuminate\Database\Migrations\Migrator
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php
-                        line: 756
-                        function: render
-                        class: Illuminate\Console\View\Components\Task
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php
-                        line: 216
-                        function: write
-                        class: Illuminate\Database\Migrations\Migrator
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php
-                        line: 181
-                        function: runUp
-                        class: Illuminate\Database\Migrations\Migrator
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php
-                        line: 124
-                        function: runPending
-                        class: Illuminate\Database\Migrations\Migrator
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php
-                        line: 90
-                        function: run
-                        class: Illuminate\Database\Migrations\Migrator
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php
-                        line: 633
-                        function: 'Illuminate\Database\Console\Migrations\{closure}'
-                        class: Illuminate\Database\Console\Migrations\MigrateCommand
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php
-                        line: 83
-                        function: usingConnection
-                        class: Illuminate\Database\Migrations\Migrator
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                        line: 36
-                        function: handle
-                        class: Illuminate\Database\Console\Migrations\MigrateCommand
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Util.php
-                        line: 41
-                        function: 'Illuminate\Container\{closure}'
-                        class: Illuminate\Container\BoundMethod
-                        type: '::'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                        line: 93
-                        function: unwrapIfClosure
-                        class: Illuminate\Container\Util
-                        type: '::'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                        line: 35
-                        function: callBoundMethod
-                        class: Illuminate\Container\BoundMethod
-                        type: '::'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Container.php
-                        line: 662
-                        function: call
-                        class: Illuminate\Container\BoundMethod
-                        type: '::'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php
-                        line: 211
-                        function: call
-                        class: Illuminate\Container\Container
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Command/Command.php
-                        line: 326
-                        function: execute
-                        class: Illuminate\Console\Command
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php
-                        line: 180
-                        function: run
-                        class: Symfony\Component\Console\Command\Command
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php
-                        line: 67
-                        function: run
-                        class: Illuminate\Console\Command
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php
-                        line: 28
-                        function: runCommand
-                        class: Illuminate\Console\Command
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/FreshCommand.php
-                        line: 53
-                        function: call
-                        class: Illuminate\Console\Command
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                        line: 36
-                        function: handle
-                        class: Illuminate\Database\Console\Migrations\FreshCommand
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Util.php
-                        line: 41
-                        function: 'Illuminate\Container\{closure}'
-                        class: Illuminate\Container\BoundMethod
-                        type: '::'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                        line: 93
-                        function: unwrapIfClosure
-                        class: Illuminate\Container\Util
-                        type: '::'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                        line: 35
-                        function: callBoundMethod
-                        class: Illuminate\Container\BoundMethod
-                        type: '::'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Container.php
-                        line: 662
-                        function: call
-                        class: Illuminate\Container\BoundMethod
-                        type: '::'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php
-                        line: 211
-                        function: call
-                        class: Illuminate\Container\Container
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Command/Command.php
-                        line: 326
-                        function: execute
-                        class: Illuminate\Console\Command
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php
-                        line: 180
-                        function: run
-                        class: Symfony\Component\Console\Command\Command
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php
-                        line: 1096
-                        function: run
-                        class: Illuminate\Console\Command
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php
-                        line: 324
-                        function: doRunCommand
-                        class: Symfony\Component\Console\Application
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php
-                        line: 175
-                        function: doRun
-                        class: Symfony\Component\Console\Application
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php
-                        line: 162
-                        function: run
-                        class: Symfony\Component\Console\Application
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php
-                        line: 400
-                        function: call
-                        class: Illuminate\Console\Application
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php
-                        line: 355
-                        function: call
-                        class: Illuminate\Foundation\Console\Kernel
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/routes/Api/render-commands.php
-                        line: 13
-                        function: __callStatic
-                        class: Illuminate\Support\Facades\Facade
-                        type: '::'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/CallableDispatcher.php
-                        line: 40
-                        function: '{closure}'
-                        class: Illuminate\Routing\RouteFileRegistrar
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Route.php
-                        line: 237
-                        function: dispatch
-                        class: Illuminate\Routing\CallableDispatcher
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Route.php
-                        line: 208
-                        function: runCallable
-                        class: Illuminate\Routing\Route
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                        line: 806
-                        function: run
-                        class: Illuminate\Routing\Route
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 144
-                        function: 'Illuminate\Routing\{closure}'
-                        class: Illuminate\Routing\Router
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php
-                        line: 50
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 183
-                        function: handle
-                        class: Illuminate\Routing\Middleware\SubstituteBindings
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
-                        line: 159
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
-                        line: 125
-                        function: handleRequest
-                        class: Illuminate\Routing\Middleware\ThrottleRequests
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
-                        line: 87
-                        function: handleRequestUsingNamedLimiter
-                        class: Illuminate\Routing\Middleware\ThrottleRequests
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 183
-                        function: handle
-                        class: Illuminate\Routing\Middleware\ThrottleRequests
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php
-                        line: 25
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 144
-                        function: 'Laravel\Sanctum\Http\Middleware\{closure}'
-                        class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 119
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php
-                        line: 24
-                        function: then
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 183
-                        function: handle
-                        class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 119
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                        line: 805
-                        function: then
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                        line: 784
-                        function: runRouteWithinStack
-                        class: Illuminate\Routing\Router
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                        line: 748
-                        function: runRoute
-                        class: Illuminate\Routing\Router
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                        line: 737
-                        function: dispatchToRoute
-                        class: Illuminate\Routing\Router
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
-                        line: 200
-                        function: dispatch
-                        class: Illuminate\Routing\Router
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 144
-                        function: 'Illuminate\Foundation\Http\{closure}'
-                        class: Illuminate\Foundation\Http\Kernel
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php
-                        line: 21
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php
-                        line: 31
-                        function: handle
-                        class: Illuminate\Foundation\Http\Middleware\TransformsRequest
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 183
-                        function: handle
-                        class: Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php
-                        line: 21
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php
-                        line: 40
-                        function: handle
-                        class: Illuminate\Foundation\Http\Middleware\TransformsRequest
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 183
-                        function: handle
-                        class: Illuminate\Foundation\Http\Middleware\TrimStrings
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php
-                        line: 27
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 183
-                        function: handle
-                        class: Illuminate\Foundation\Http\Middleware\ValidatePostSize
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php
-                        line: 99
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 183
-                        function: handle
-                        class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php
-                        line: 62
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 183
-                        function: handle
-                        class: Illuminate\Http\Middleware\HandleCors
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php
-                        line: 39
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 183
-                        function: handle
-                        class: Illuminate\Http\Middleware\TrustProxies
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 119
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
-                        line: 175
-                        function: then
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
-                        line: 144
-                        function: sendRequestThroughRouter
-                        class: Illuminate\Foundation\Http\Kernel
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
-                        line: 300
-                        function: handle
-                        class: Illuminate\Foundation\Http\Kernel
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
-                        line: 288
-                        function: callLaravelOrLumenRoute
-                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
-                        line: 91
-                        function: makeApiCall
-                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
-                        line: 44
-                        function: makeResponseCall
-                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
-                        line: 35
-                        function: makeResponseCallIfConditionsPass
-                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
-                        line: 236
-                        function: __invoke
-                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
-                        line: 163
-                        function: iterateThroughStrategies
-                        class: Knuckles\Scribe\Extracting\Extractor
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
-                        line: 95
-                        function: fetchResponses
-                        class: Knuckles\Scribe\Extracting\Extractor
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
-                        line: 125
-                        function: processRoute
-                        class: Knuckles\Scribe\Extracting\Extractor
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
-                        line: 72
-                        function: extractEndpointsInfoFromLaravelApp
-                        class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
-                        line: 50
-                        function: extractEndpointsInfoAndWriteToDisk
-                        class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php
-                        line: 53
-                        function: get
-                        class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                        line: 36
-                        function: handle
-                        class: Knuckles\Scribe\Commands\GenerateDocumentation
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Util.php
-                        line: 41
-                        function: 'Illuminate\Container\{closure}'
-                        class: Illuminate\Container\BoundMethod
-                        type: '::'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                        line: 93
-                        function: unwrapIfClosure
-                        class: Illuminate\Container\Util
-                        type: '::'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                        line: 35
-                        function: callBoundMethod
-                        class: Illuminate\Container\BoundMethod
-                        type: '::'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Container.php
-                        line: 662
-                        function: call
-                        class: Illuminate\Container\BoundMethod
-                        type: '::'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php
-                        line: 211
-                        function: call
-                        class: Illuminate\Container\Container
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Command/Command.php
-                        line: 326
-                        function: execute
-                        class: Illuminate\Console\Command
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php
-                        line: 180
-                        function: run
-                        class: Symfony\Component\Console\Command\Command
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php
-                        line: 1096
-                        function: run
-                        class: Illuminate\Console\Command
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php
-                        line: 324
-                        function: doRunCommand
-                        class: Symfony\Component\Console\Application
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php
-                        line: 175
-                        function: doRun
-                        class: Symfony\Component\Console\Application
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php
-                        line: 201
-                        function: run
-                        class: Symfony\Component\Console\Application
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/artisan
-                        line: 35
-                        function: handle
-                        class: Illuminate\Foundation\Console\Kernel
-                        type: '->'
-                    items:
-                      type: object
-                      properties:
-                        file:
-                          type: string
-                          example: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Connection.php
-                        line:
-                          type: integer
-                          example: 783
-                        function:
-                          type: string
-                          example: runQueryCallback
-                        class:
-                          type: string
-                          example: Illuminate\Database\Connection
-                        type:
-                          type: string
-                          example: '->'
+                type: string
+                example: ''
       tags:
         - Endpoints
       security: []
@@ -2624,7 +1133,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "\n   INFO  Seeding database.  \n\n  Database\\Seeders\\SuperAdminSeeder ........................................................................................................ RUNNING  \n  Database\\Seeders\\SuperAdminSeeder .................................................................................................. 1,581 ms DONE  \n\n  Database\\Seeders\\NoRoleUserSeeder ........................................................................................................ RUNNING  \n  Database\\Seeders\\NoRoleUserSeeder .................................................................................................... 387 ms DONE  \n\n  Database\\Seeders\\IndustrySeeder .......................................................................................................... RUNNING  \n  Database\\Seeders\\IndustrySeeder ........................................................................................................ 2 ms DONE  \n\n"
+                example: "\n   INFO  Seeding database.  \n\n  Database\\Seeders\\SuperAdminSeeder .................................. RUNNING  \n  Database\\Seeders\\SuperAdminSeeder ............................ 1,560 ms DONE  \n\n  Database\\Seeders\\NoRoleUserSeeder .................................. RUNNING  \n  Database\\Seeders\\NoRoleUserSeeder .............................. 240 ms DONE  \n\n  Database\\Seeders\\IndustrySeeder .................................... RUNNING  \n  Database\\Seeders\\IndustrySeeder .................................. 2 ms DONE  \n\n  Database\\Seeders\\SkillSeeder ....................................... RUNNING  \n  Database\\Seeders\\SkillSeeder .................................... 97 ms DONE  \n\n  Database\\Seeders\\Job_RoleSeeder .................................... RUNNING  \n  Database\\Seeders\\Job_RoleSeeder ................................. 78 ms DONE  \n\n"
       tags:
         - Endpoints
       security: []
@@ -2661,15 +1170,15 @@ paths:
                 max_salary:
                   type: integer
                   description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
-                  example: 24
+                  example: 5
                 min_salary:
                   type: integer
                   description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
-                  example: 5
+                  example: 13
                 max_age:
                   type: integer
                   description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
-                  example: 13
+                  example: 11
                 min_age:
                   type: integer
                   description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
@@ -2677,7 +1186,7 @@ paths:
                 transportation:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 health_insurance:
                   type: boolean
                   description: ''
@@ -2693,16 +1202,16 @@ paths:
                 decription:
                   type: string
                   description: 'Must be at least 100 characters. Must not be greater than 40000 characters.'
-                  example: qdbkzanjtlm
+                  example: mvcoxikbqrzxsywlcobuqfgyj
                 job_role:
                   type: string
                   description: ''
-                  example: cumque
+                  example: et
                 skills:
                   type: array
-                  description: 'Must be at least 3 characters.'
+                  description: ''
                   example:
-                    - cymtahpbxlskvvkbdfwshcavsky
+                    - aspernatur
                   items:
                     type: string
               required:
@@ -2719,7 +1228,7 @@ paths:
         in: path
         name: company_username
         description: ''
-        example: 7
+        example: 2
         required: true
         schema:
           type: integer
@@ -2727,7 +1236,7 @@ paths:
         in: path
         name: industry_name
         description: ''
-        example: doloremque
+        example: برمجي
         required: true
         schema:
           type: string
@@ -2750,10 +1259,33 @@ paths:
         200:
           description: ''
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
-                example: ok
+                type: object
+                example:
+                  '@attributes':
+                    name: 'android developer'
+                  skills:
+                    skill:
+                      - kotlin
+                      - java
+                properties:
+                  '@attributes':
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        example: 'android developer'
+                  skills:
+                    type: object
+                    properties:
+                      skill:
+                        type: array
+                        example:
+                          - kotlin
+                          - java
+                        items:
+                          type: string
       tags:
         - Endpoints
       security: []
@@ -2776,7 +1308,7 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: hyman30@example.net
+                  example: towne.angelica@example.com
               required:
                 - email
       security: []
@@ -2799,15 +1331,15 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: zwilliamson@example.com
+                  example: msatterfield@example.org
                 password:
                   type: string
                   description: ''
-                  example: ut
+                  example: nam
                 password_otp_code:
                   type: string
                   description: ''
-                  example: exercitationem
+                  example: non
               required:
                 - email
                 - password

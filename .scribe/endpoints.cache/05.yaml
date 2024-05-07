@@ -5,152 +5,6 @@ description: ''
 endpoints:
   -
     httpMethods:
-      - POST
-    uri: 'api/company/store/{industry_name}'
-    metadata:
-      groupName: 'Company Managment'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Create/Store New Company .'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: multipart/form-data
-      Accept: application/json
-    urlParameters:
-      industry_name:
-        name: industry_name
-        description: ''
-        required: true
-        example: quia
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      industry_name: quia
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: 'name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters.'
-        required: true
-        example: jbeyejiioyjtrasjbk
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      description:
-        name: description
-        description: 'Must not be greater than 4000 characters.'
-        required: true
-        example: 'Sunt dolores voluptatem asperiores repudiandae voluptatem dolorem possimus.'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      size:
-        name: size
-        description: 'Must be at least 5 characters. Must not be greater than 20 characters.'
-        required: true
-        example: lhrvnd
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      city:
-        name: city
-        description: 'this must be a syrian city.'
-        required: true
-        example: دمشق
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      region:
-        name: region
-        description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
-        required: true
-        example: taaevu
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      street_address:
-        name: street_address
-        description: 'Must be at least 3 characters. Must not be greater than 30 characters.'
-        required: true
-        example: piftpkp
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      gallery_images:
-        name: gallery_images
-        description: 'Must be an image. Must be at least 10 kilobytes. Must not be greater than 2000 kilobytes.'
-        required: false
-        example:
-          - null
-        type: 'file[]'
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      contact_links:
-        name: contact_links
-        description: 'Must be at least 5 characters.'
-        required: false
-        example:
-          - urwgcyyqiwqmjekmwcrbthjajmltnmovfqwyzpezmtbijboemjudoncxuvofequfstzxklucwbndbgl
-        type: 'string[]'
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      company_phones:
-        name: company_phones
-        description: 'Must match the regex /^09[0-9]{8}$/.'
-        required: false
-        example:
-          - '0974380297'
-        type: 'string[]'
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      name: jbeyejiioyjtrasjbk
-      description: 'Sunt dolores voluptatem asperiores repudiandae voluptatem dolorem possimus.'
-      size: lhrvnd
-      city: دمشق
-      region: taaevu
-      street_address: piftpkp
-      contact_links:
-        - urwgcyyqiwqmjekmwcrbthjajmltnmovfqwyzpezmtbijboemjudoncxuvofequfstzxklucwbndbgl
-      company_phones:
-        - '0974380297'
-    fileParameters:
-      gallery_images:
-        - null
-    responses:
-      -
-        status: 200
-        content: '{"data":{"username":null,"name":null,"description":null,"size":null,"industry_name":null,"gallery_images":[],"contact_links":[],"company_phones":[]}}'
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer ke6DdVv8f4PbZaa6c53hEg1'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
       - GET
     uri: api/company/gallery
     metadata:
@@ -174,13 +28,13 @@ endpoints:
         name: image
         description: ''
         required: true
-        example: quis
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      image: quis
+      image: et
     fileParameters: []
     responses:
       -

@@ -22,13 +22,13 @@ endpoints:
         name: command_string
         description: ''
         required: true
-        example: dolorem
+        example: quasi
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      command_string: dolorem
+      command_string: quasi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -39,7 +39,7 @@ endpoints:
         status: 500
         content: |-
           {
-              "message": "The command \"dolorem\" does not exist.",
+              "message": "The command \"quasi\" does not exist.",
               "exception": "Symfony\\Component\\Console\\Exception\\CommandNotFoundException",
               "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php",
               "line": 159,
@@ -561,796 +561,11 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 500
-        content: |-
-          {
-              "message": "SQLSTATE[42703]: Undefined column: 7 ERROR:  column \"id\" referenced in foreign key constraint does not exist (Connection: pgsql, SQL: alter table \"skillables\" add constraint \"skillables_skill_id_foreign\" foreign key (\"skill_id\") references \"skills\" (\"id\") on delete cascade)",
-              "exception": "Illuminate\\Database\\QueryException",
-              "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
-              "line": 829,
-              "trace": [
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
-                      "line": 783,
-                      "function": "runQueryCallback",
-                      "class": "Illuminate\\Database\\Connection",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
-                      "line": 576,
-                      "function": "run",
-                      "class": "Illuminate\\Database\\Connection",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php",
-                      "line": 110,
-                      "function": "statement",
-                      "class": "Illuminate\\Database\\Connection",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php",
-                      "line": 602,
-                      "function": "build",
-                      "class": "Illuminate\\Database\\Schema\\Blueprint",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php",
-                      "line": 456,
-                      "function": "build",
-                      "class": "Illuminate\\Database\\Schema\\Builder",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php",
-                      "line": 355,
-                      "function": "create",
-                      "class": "Illuminate\\Database\\Schema\\Builder",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/database/migrations/2024_05_05_164036_create_skillables_table.php",
-                      "line": 14,
-                      "function": "__callStatic",
-                      "class": "Illuminate\\Support\\Facades\\Facade",
-                      "type": "::"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php",
-                      "line": 493,
-                      "function": "up",
-                      "class": "Illuminate\\Database\\Migrations\\Migration@anonymous\u0000/home/saad/Desktop/Freelancer/database/migrations/2024_05_05_164036_create_skillables_table.php:7$1cc",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php",
-                      "line": 410,
-                      "function": "runMethod",
-                      "class": "Illuminate\\Database\\Migrations\\Migrator",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Concerns/ManagesTransactions.php",
-                      "line": 30,
-                      "function": "Illuminate\\Database\\Migrations\\{closure}",
-                      "class": "Illuminate\\Database\\Migrations\\Migrator",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php",
-                      "line": 418,
-                      "function": "transaction",
-                      "class": "Illuminate\\Database\\Connection",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php",
-                      "line": 216,
-                      "function": "runMigration",
-                      "class": "Illuminate\\Database\\Migrations\\Migrator",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/View/Components/Task.php",
-                      "line": 37,
-                      "function": "Illuminate\\Database\\Migrations\\{closure}",
-                      "class": "Illuminate\\Database\\Migrations\\Migrator",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php",
-                      "line": 756,
-                      "function": "render",
-                      "class": "Illuminate\\Console\\View\\Components\\Task",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php",
-                      "line": 216,
-                      "function": "write",
-                      "class": "Illuminate\\Database\\Migrations\\Migrator",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php",
-                      "line": 181,
-                      "function": "runUp",
-                      "class": "Illuminate\\Database\\Migrations\\Migrator",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php",
-                      "line": 124,
-                      "function": "runPending",
-                      "class": "Illuminate\\Database\\Migrations\\Migrator",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php",
-                      "line": 90,
-                      "function": "run",
-                      "class": "Illuminate\\Database\\Migrations\\Migrator",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php",
-                      "line": 633,
-                      "function": "Illuminate\\Database\\Console\\Migrations\\{closure}",
-                      "class": "Illuminate\\Database\\Console\\Migrations\\MigrateCommand",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php",
-                      "line": 83,
-                      "function": "usingConnection",
-                      "class": "Illuminate\\Database\\Migrations\\Migrator",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
-                      "line": 36,
-                      "function": "handle",
-                      "class": "Illuminate\\Database\\Console\\Migrations\\MigrateCommand",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Util.php",
-                      "line": 41,
-                      "function": "Illuminate\\Container\\{closure}",
-                      "class": "Illuminate\\Container\\BoundMethod",
-                      "type": "::"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
-                      "line": 93,
-                      "function": "unwrapIfClosure",
-                      "class": "Illuminate\\Container\\Util",
-                      "type": "::"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
-                      "line": 35,
-                      "function": "callBoundMethod",
-                      "class": "Illuminate\\Container\\BoundMethod",
-                      "type": "::"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Container.php",
-                      "line": 662,
-                      "function": "call",
-                      "class": "Illuminate\\Container\\BoundMethod",
-                      "type": "::"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php",
-                      "line": 211,
-                      "function": "call",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/symfony/console/Command/Command.php",
-                      "line": 326,
-                      "function": "execute",
-                      "class": "Illuminate\\Console\\Command",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php",
-                      "line": 180,
-                      "function": "run",
-                      "class": "Symfony\\Component\\Console\\Command\\Command",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php",
-                      "line": 67,
-                      "function": "run",
-                      "class": "Illuminate\\Console\\Command",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php",
-                      "line": 28,
-                      "function": "runCommand",
-                      "class": "Illuminate\\Console\\Command",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/FreshCommand.php",
-                      "line": 53,
-                      "function": "call",
-                      "class": "Illuminate\\Console\\Command",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
-                      "line": 36,
-                      "function": "handle",
-                      "class": "Illuminate\\Database\\Console\\Migrations\\FreshCommand",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Util.php",
-                      "line": 41,
-                      "function": "Illuminate\\Container\\{closure}",
-                      "class": "Illuminate\\Container\\BoundMethod",
-                      "type": "::"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
-                      "line": 93,
-                      "function": "unwrapIfClosure",
-                      "class": "Illuminate\\Container\\Util",
-                      "type": "::"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
-                      "line": 35,
-                      "function": "callBoundMethod",
-                      "class": "Illuminate\\Container\\BoundMethod",
-                      "type": "::"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Container.php",
-                      "line": 662,
-                      "function": "call",
-                      "class": "Illuminate\\Container\\BoundMethod",
-                      "type": "::"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php",
-                      "line": 211,
-                      "function": "call",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/symfony/console/Command/Command.php",
-                      "line": 326,
-                      "function": "execute",
-                      "class": "Illuminate\\Console\\Command",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php",
-                      "line": 180,
-                      "function": "run",
-                      "class": "Symfony\\Component\\Console\\Command\\Command",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php",
-                      "line": 1096,
-                      "function": "run",
-                      "class": "Illuminate\\Console\\Command",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php",
-                      "line": 324,
-                      "function": "doRunCommand",
-                      "class": "Symfony\\Component\\Console\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php",
-                      "line": 175,
-                      "function": "doRun",
-                      "class": "Symfony\\Component\\Console\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php",
-                      "line": 162,
-                      "function": "run",
-                      "class": "Symfony\\Component\\Console\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php",
-                      "line": 400,
-                      "function": "call",
-                      "class": "Illuminate\\Console\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php",
-                      "line": 355,
-                      "function": "call",
-                      "class": "Illuminate\\Foundation\\Console\\Kernel",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/routes/Api/render-commands.php",
-                      "line": 13,
-                      "function": "__callStatic",
-                      "class": "Illuminate\\Support\\Facades\\Facade",
-                      "type": "::"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/CallableDispatcher.php",
-                      "line": 40,
-                      "function": "{closure}",
-                      "class": "Illuminate\\Routing\\RouteFileRegistrar",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
-                      "line": 237,
-                      "function": "dispatch",
-                      "class": "Illuminate\\Routing\\CallableDispatcher",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
-                      "line": 208,
-                      "function": "runCallable",
-                      "class": "Illuminate\\Routing\\Route",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 806,
-                      "function": "run",
-                      "class": "Illuminate\\Routing\\Route",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 144,
-                      "function": "Illuminate\\Routing\\{closure}",
-                      "class": "Illuminate\\Routing\\Router",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php",
-                      "line": 50,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 183,
-                      "function": "handle",
-                      "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
-                      "line": 159,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
-                      "line": 125,
-                      "function": "handleRequest",
-                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
-                      "line": 87,
-                      "function": "handleRequestUsingNamedLimiter",
-                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 183,
-                      "function": "handle",
-                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php",
-                      "line": 25,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 144,
-                      "function": "Laravel\\Sanctum\\Http\\Middleware\\{closure}",
-                      "class": "Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 119,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php",
-                      "line": 24,
-                      "function": "then",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 183,
-                      "function": "handle",
-                      "class": "Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 119,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 805,
-                      "function": "then",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 784,
-                      "function": "runRouteWithinStack",
-                      "class": "Illuminate\\Routing\\Router",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 748,
-                      "function": "runRoute",
-                      "class": "Illuminate\\Routing\\Router",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-                      "line": 737,
-                      "function": "dispatchToRoute",
-                      "class": "Illuminate\\Routing\\Router",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
-                      "line": 200,
-                      "function": "dispatch",
-                      "class": "Illuminate\\Routing\\Router",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 144,
-                      "function": "Illuminate\\Foundation\\Http\\{closure}",
-                      "class": "Illuminate\\Foundation\\Http\\Kernel",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
-                      "line": 21,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
-                      "line": 31,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 183,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
-                      "line": 21,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
-                      "line": 40,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 183,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php",
-                      "line": 27,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 183,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
-                      "line": 99,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 183,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
-                      "line": 62,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 183,
-                      "function": "handle",
-                      "class": "Illuminate\\Http\\Middleware\\HandleCors",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
-                      "line": 39,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 183,
-                      "function": "handle",
-                      "class": "Illuminate\\Http\\Middleware\\TrustProxies",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 119,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
-                      "line": 175,
-                      "function": "then",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
-                      "line": 144,
-                      "function": "sendRequestThroughRouter",
-                      "class": "Illuminate\\Foundation\\Http\\Kernel",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
-                      "line": 300,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Kernel",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
-                      "line": 288,
-                      "function": "callLaravelOrLumenRoute",
-                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
-                      "line": 91,
-                      "function": "makeApiCall",
-                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
-                      "line": 44,
-                      "function": "makeResponseCall",
-                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
-                      "line": 35,
-                      "function": "makeResponseCallIfConditionsPass",
-                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
-                      "line": 236,
-                      "function": "__invoke",
-                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
-                      "line": 163,
-                      "function": "iterateThroughStrategies",
-                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
-                      "line": 95,
-                      "function": "fetchResponses",
-                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
-                      "line": 125,
-                      "function": "processRoute",
-                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
-                      "line": 72,
-                      "function": "extractEndpointsInfoFromLaravelApp",
-                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
-                      "line": 50,
-                      "function": "extractEndpointsInfoAndWriteToDisk",
-                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php",
-                      "line": 53,
-                      "function": "get",
-                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
-                      "line": 36,
-                      "function": "handle",
-                      "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Util.php",
-                      "line": 41,
-                      "function": "Illuminate\\Container\\{closure}",
-                      "class": "Illuminate\\Container\\BoundMethod",
-                      "type": "::"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
-                      "line": 93,
-                      "function": "unwrapIfClosure",
-                      "class": "Illuminate\\Container\\Util",
-                      "type": "::"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
-                      "line": 35,
-                      "function": "callBoundMethod",
-                      "class": "Illuminate\\Container\\BoundMethod",
-                      "type": "::"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Container.php",
-                      "line": 662,
-                      "function": "call",
-                      "class": "Illuminate\\Container\\BoundMethod",
-                      "type": "::"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php",
-                      "line": 211,
-                      "function": "call",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/symfony/console/Command/Command.php",
-                      "line": 326,
-                      "function": "execute",
-                      "class": "Illuminate\\Console\\Command",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php",
-                      "line": 180,
-                      "function": "run",
-                      "class": "Symfony\\Component\\Console\\Command\\Command",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php",
-                      "line": 1096,
-                      "function": "run",
-                      "class": "Illuminate\\Console\\Command",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php",
-                      "line": 324,
-                      "function": "doRunCommand",
-                      "class": "Symfony\\Component\\Console\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php",
-                      "line": 175,
-                      "function": "doRun",
-                      "class": "Symfony\\Component\\Console\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php",
-                      "line": 201,
-                      "function": "run",
-                      "class": "Symfony\\Component\\Console\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "/home/saad/Desktop/Freelancer/artisan",
-                      "line": 35,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Console\\Kernel",
-                      "type": "->"
-                  }
-              ]
-          }
+        status: 200
+        content: ''
         headers:
+          content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'
-          content-type: application/json
           x-ratelimit-limit: '60'
           x-ratelimit-remaining: '57'
           access-control-allow-origin: '*'
@@ -1392,14 +607,20 @@ endpoints:
 
              INFO  Seeding database.  
 
-            Database\Seeders\SuperAdminSeeder ........................................................................................................ RUNNING  
-            Database\Seeders\SuperAdminSeeder .................................................................................................. 1,581 ms DONE  
+            Database\Seeders\SuperAdminSeeder .................................. RUNNING  
+            Database\Seeders\SuperAdminSeeder ............................ 1,560 ms DONE  
 
-            Database\Seeders\NoRoleUserSeeder ........................................................................................................ RUNNING  
-            Database\Seeders\NoRoleUserSeeder .................................................................................................... 387 ms DONE  
+            Database\Seeders\NoRoleUserSeeder .................................. RUNNING  
+            Database\Seeders\NoRoleUserSeeder .............................. 240 ms DONE  
 
-            Database\Seeders\IndustrySeeder .......................................................................................................... RUNNING  
-            Database\Seeders\IndustrySeeder ........................................................................................................ 2 ms DONE  
+            Database\Seeders\IndustrySeeder .................................... RUNNING  
+            Database\Seeders\IndustrySeeder .................................. 2 ms DONE  
+
+            Database\Seeders\SkillSeeder ....................................... RUNNING  
+            Database\Seeders\SkillSeeder .................................... 97 ms DONE  
+
+            Database\Seeders\Job_RoleSeeder .................................... RUNNING  
+            Database\Seeders\Job_RoleSeeder ................................. 78 ms DONE  
 
         headers:
           content-type: 'text/html; charset=UTF-8'
@@ -1466,7 +687,7 @@ endpoints:
         name: company_username
         description: ''
         required: true
-        example: 7
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -1475,14 +696,14 @@ endpoints:
         name: industry_name
         description: ''
         required: true
-        example: doloremque
+        example: برمجي
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      company_username: 7
-      industry_name: doloremque
+      company_username: 2
+      industry_name: برمجي
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -1499,7 +720,7 @@ endpoints:
         name: max_salary
         description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
         required: false
-        example: 24
+        example: 5
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -1508,7 +729,7 @@ endpoints:
         name: min_salary
         description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
         required: false
-        example: 5
+        example: 13
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -1517,7 +738,7 @@ endpoints:
         name: max_age
         description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
         required: false
-        example: 13
+        example: 11
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -1535,7 +756,7 @@ endpoints:
         name: transportation
         description: ''
         required: true
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -1571,7 +792,7 @@ endpoints:
         name: decription
         description: 'Must be at least 100 characters. Must not be greater than 40000 characters.'
         required: true
-        example: qdbkzanjtlm
+        example: mvcoxikbqrzxsywlcobuqfgyj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1580,35 +801,35 @@ endpoints:
         name: job_role
         description: ''
         required: true
-        example: cumque
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
       skills:
         name: skills
-        description: 'Must be at least 3 characters.'
+        description: ''
         required: true
         example:
-          - cymtahpbxlskvvkbdfwshcavsky
+          - aspernatur
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
       type: 'full-time , part-time , remotely , on-site'
-      max_salary: 24
-      min_salary: 5
-      max_age: 13
+      max_salary: 5
+      min_salary: 13
+      max_age: 11
       min_age: 13
-      transportation: true
+      transportation: false
       health_insurance: true
       military_service: true
       gender: male
-      decription: qdbkzanjtlm
-      job_role: cumque
+      decription: mvcoxikbqrzxsywlcobuqfgyj
+      job_role: et
       skills:
-        - cymtahpbxlskvvkbdfwshcavsky
+        - aspernatur
     fileParameters: []
     responses: []
     responseFields: []
@@ -1673,10 +894,10 @@ endpoints:
     responses:
       -
         status: 200
-        content: ok
+        content: '{"@attributes":{"name":"android developer"},"skills":{"skill":["kotlin","java"]}}'
         headers:
-          content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'
+          content-type: application/json
           x-ratelimit-limit: '60'
           x-ratelimit-remaining: '54'
           access-control-allow-origin: '*'
