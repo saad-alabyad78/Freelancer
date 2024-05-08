@@ -22,7 +22,7 @@ endpoints:
         name: company_username
         description: ''
         required: true
-        example: 9
+        example: 8
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -37,7 +37,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      company_username: 9
+      company_username: 8
       industry_name: برمجي
     queryParameters: []
     cleanQueryParameters: []
@@ -55,7 +55,7 @@ endpoints:
         name: max_salary
         description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
         required: false
-        example: 12
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -64,7 +64,7 @@ endpoints:
         name: min_salary
         description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
         required: false
-        example: 18
+        example: 8
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -73,7 +73,7 @@ endpoints:
         name: max_age
         description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
         required: false
-        example: 19
+        example: 20
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -82,7 +82,7 @@ endpoints:
         name: min_age
         description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
         required: false
-        example: 6
+        example: 14
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -109,7 +109,7 @@ endpoints:
         name: military_service
         description: ''
         required: true
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -127,7 +127,7 @@ endpoints:
         name: decription
         description: 'Must be at least 100 characters. Must not be greater than 40000 characters.'
         required: true
-        example: rjtxy
+        example: k
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -136,7 +136,7 @@ endpoints:
         name: job_role
         description: ''
         required: true
-        example: et
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -146,25 +146,25 @@ endpoints:
         description: ''
         required: true
         example:
-          - sit
+          - temporibus
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
       type: 'full-time , part-time , remotely , on-site'
-      max_salary: 12
-      min_salary: 18
-      max_age: 19
-      min_age: 6
+      max_salary: 17
+      min_salary: 8
+      max_age: 20
+      min_age: 14
       transportation: true
       health_insurance: false
-      military_service: false
+      military_service: true
       gender: male
-      decription: rjtxy
-      job_role: et
+      decription: k
+      job_role: qui
       skills:
-        - sit
+        - temporibus
     fileParameters: []
     responses: []
     responseFields: []
@@ -198,13 +198,13 @@ endpoints:
         name: image
         description: ''
         required: true
-        example: fuga
+        example: voluptatem
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      image: fuga
+      image: voluptatem
     fileParameters: []
     responses:
       -

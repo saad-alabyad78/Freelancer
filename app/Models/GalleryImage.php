@@ -16,8 +16,8 @@ class GalleryImage extends Model
 
     public function Url():Attribute
     {
-        return Attribute::get(fn () 
-            =>config('app.url').'api/company/gallery?image='.$this->attributes['name'] ) ;
+        return Attribute::get(fn () =>
+            'api/company/gallery?image='.$this->attributes['name'] ) ;
     }
     
     public function company():BelongsTo

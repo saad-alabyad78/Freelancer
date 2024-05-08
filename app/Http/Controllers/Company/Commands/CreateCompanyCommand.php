@@ -54,6 +54,7 @@ class CreateCompanyCommand extends Controller
                 'industry_name' => $industry->name 
         ]);
 
+        
         $company->user()->save(auth()->user()) ;
 
         //create links 

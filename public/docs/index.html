@@ -110,22 +110,22 @@
                             </li>
                                                                         </ul>
                             </ul>
-                    <ul id="tocify-header-ducker-image-commands" class="tocify-header">
-                <li class="tocify-item level-1" data-unique="ducker-image-commands">
-                    <a href="#ducker-image-commands">Ducker Image Commands</a>
+                    <ul id="tocify-header-docker-image-commands" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="docker-image-commands">
+                    <a href="#docker-image-commands">Docker Image Commands</a>
                 </li>
-                                    <ul id="tocify-subheader-ducker-image-commands" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="ducker-image-commands-GETapi-command--command_string-">
-                                <a href="#ducker-image-commands-GETapi-command--command_string-">GET api/command/{command_string}</a>
+                                    <ul id="tocify-subheader-docker-image-commands" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="docker-image-commands-GETapi-command--command_string-">
+                                <a href="#docker-image-commands-GETapi-command--command_string-">GET api/command/{command_string}</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="ducker-image-commands-GETapi-command-database-fresh">
-                                <a href="#ducker-image-commands-GETapi-command-database-fresh">GET api/command/database/fresh</a>
+                                                                                <li class="tocify-item level-2" data-unique="docker-image-commands-GETapi-command-database-fresh">
+                                <a href="#docker-image-commands-GETapi-command-database-fresh">GET api/command/database/fresh</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="ducker-image-commands-GETapi-command-database-seed">
-                                <a href="#ducker-image-commands-GETapi-command-database-seed">GET api/command/database/seed</a>
+                                                                                <li class="tocify-item level-2" data-unique="docker-image-commands-GETapi-command-database-seed">
+                                <a href="#docker-image-commands-GETapi-command-database-seed">GET api/command/database/seed</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="ducker-image-commands-DELETEapi-command-storage-delete">
-                                <a href="#ducker-image-commands-DELETEapi-command-storage-delete">DELETE api/command/storage/delete</a>
+                                                                                <li class="tocify-item level-2" data-unique="docker-image-commands-DELETEapi-command-storage-delete">
+                                <a href="#docker-image-commands-DELETEapi-command-storage-delete">DELETE api/command/storage/delete</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -134,7 +134,13 @@
                     <a href="#endpoints">Endpoints</a>
                 </li>
                                     <ul id="tocify-subheader-endpoints" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-test">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-company-image--company_username--profile">
+                                <a href="#endpoints-GETapi-company-image--company_username--profile">GET api/company/image/{company_username}/profile</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-company-image--company_username--background">
+                                <a href="#endpoints-GETapi-company-image--company_username--background">GET api/company/image/{company_username}/background</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-test">
                                 <a href="#endpoints-POSTapi-test">POST api/test</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-test">
@@ -192,8 +198,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"phoebe.bergstrom@example.com\",
-    \"password\": \"K)2^Br~Wj|*\"
+    \"email\": \"mable66@example.org\",
+    \"password\": \")^sQ:H9j.^d^&lt;j\"
 }"
 </code></pre></div>
 
@@ -209,8 +215,8 @@ const headers = {
 };
 
 let body = {
-    "email": "phoebe.bergstrom@example.com",
-    "password": "K)2^Br~Wj|*"
+    "email": "mable66@example.org",
+    "password": ")^sQ:H9j.^d^&lt;j"
 };
 
 fetch(url, {
@@ -299,10 +305,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-login"
-               value="phoebe.bergstrom@example.com"
+               value="mable66@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>phoebe.bergstrom@example.com</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>mable66@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -310,10 +316,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-login"
-               value="K)2^Br~Wj|*"
+               value=")^sQ:H9j.^d^<j"
                data-component="body">
     <br>
-<p>Example: <code>K)2^Br~Wj|*</code></p>
+<p>Example: <code>)^sQ:H9j.^d^&lt;j</code></p>
         </div>
         </form>
 
@@ -456,7 +462,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"token\": \"dolor\"
+    \"token\": \"placeat\"
 }"
 </code></pre></div>
 
@@ -472,7 +478,7 @@ const headers = {
 };
 
 let body = {
-    "token": "dolor"
+    "token": "placeat"
 };
 
 fetch(url, {
@@ -581,10 +587,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="token"                data-endpoint="GETapi-provider-google"
-               value="dolor"
+               value="placeat"
                data-component="body">
     <br>
-<p>Example: <code>dolor</code></p>
+<p>Example: <code>placeat</code></p>
         </div>
         </form>
 
@@ -605,10 +611,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"first_name\": \"gvrvpio\",
-    \"last_name\": \"rgcww\",
-    \"email\": \"alexandra.stracke@example.net\",
-    \"password\": \"@X-HwqVKM$Y&amp;0f;\"
+    \"first_name\": \"qhbkowsosuafotzkfllroo\",
+    \"last_name\": \"jqyzmvejwdle\",
+    \"email\": \"daniel.chadrick@example.com\",
+    \"password\": \"hh&amp;\\\"+No[fhW\\/{R1\"
 }"
 </code></pre></div>
 
@@ -624,10 +630,10 @@ const headers = {
 };
 
 let body = {
-    "first_name": "gvrvpio",
-    "last_name": "rgcww",
-    "email": "alexandra.stracke@example.net",
-    "password": "@X-HwqVKM$Y&amp;0f;"
+    "first_name": "qhbkowsosuafotzkfllroo",
+    "last_name": "jqyzmvejwdle",
+    "email": "daniel.chadrick@example.com",
+    "password": "hh&amp;\"+No[fhW\/{R1"
 };
 
 fetch(url, {
@@ -716,10 +722,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="first_name"                data-endpoint="POSTapi-otp-register"
-               value="gvrvpio"
+               value="qhbkowsosuafotzkfllroo"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>gvrvpio</code></p>
+<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>qhbkowsosuafotzkfllroo</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
@@ -727,10 +733,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="last_name"                data-endpoint="POSTapi-otp-register"
-               value="rgcww"
+               value="jqyzmvejwdle"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>rgcww</code></p>
+<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>jqyzmvejwdle</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -738,10 +744,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-otp-register"
-               value="alexandra.stracke@example.net"
+               value="daniel.chadrick@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>alexandra.stracke@example.net</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>daniel.chadrick@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -749,10 +755,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-otp-register"
-               value="@X-HwqVKM$Y&0f;"
+               value="hh&"+No[fhW/{R1"
                data-component="body">
     <br>
-<p>Must be at least 8 characters. Must not be greater than 255 characters. Example: <code>@X-HwqVKM$Y&amp;0f;</code></p>
+<p>Must be at least 8 characters. Must not be greater than 255 characters. Example: <code>hh&amp;"+No[fhW/{R1</code></p>
         </div>
         </form>
 
@@ -773,8 +779,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email_otp_code\": \"velit\",
-    \"email\": \"jazmin36@example.net\"
+    \"email_otp_code\": \"ut\",
+    \"email\": \"liliana55@example.net\"
 }"
 </code></pre></div>
 
@@ -790,8 +796,8 @@ const headers = {
 };
 
 let body = {
-    "email_otp_code": "velit",
-    "email": "jazmin36@example.net"
+    "email_otp_code": "ut",
+    "email": "liliana55@example.net"
 };
 
 fetch(url, {
@@ -880,10 +886,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email_otp_code"                data-endpoint="POSTapi-otp-email-verify"
-               value="velit"
+               value="ut"
                data-component="body">
     <br>
-<p>Example: <code>velit</code></p>
+<p>Example: <code>ut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -891,10 +897,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-otp-email-verify"
-               value="jazmin36@example.net"
+               value="liliana55@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>jazmin36@example.net</code></p>
+<p>Must be a valid email address. Example: <code>liliana55@example.net</code></p>
         </div>
         </form>
 
@@ -915,7 +921,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"phagenes@example.net\"
+    \"email\": \"bauch.jaida@example.org\"
 }"
 </code></pre></div>
 
@@ -931,7 +937,7 @@ const headers = {
 };
 
 let body = {
-    "email": "phagenes@example.net"
+    "email": "bauch.jaida@example.org"
 };
 
 fetch(url, {
@@ -1020,10 +1026,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-otp-resend"
-               value="phagenes@example.net"
+               value="bauch.jaida@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>phagenes@example.net</code></p>
+<p>Must be a valid email address. Example: <code>bauch.jaida@example.org</code></p>
         </div>
         </form>
 
@@ -1044,7 +1050,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"vdietrich@example.org\"
+    \"email\": \"aparker@example.net\"
 }"
 </code></pre></div>
 
@@ -1060,7 +1066,7 @@ const headers = {
 };
 
 let body = {
-    "email": "vdietrich@example.org"
+    "email": "aparker@example.net"
 };
 
 fetch(url, {
@@ -1149,10 +1155,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-otp-forgot-password"
-               value="vdietrich@example.org"
+               value="aparker@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>vdietrich@example.org</code></p>
+<p>Must be a valid email address. Example: <code>aparker@example.net</code></p>
         </div>
         </form>
 
@@ -1173,9 +1179,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"lizzie19@example.net\",
-    \"password\": \"qui\",
-    \"password_otp_code\": \"culpa\"
+    \"email\": \"ylittle@example.org\",
+    \"password\": \"et\",
+    \"password_otp_code\": \"provident\"
 }"
 </code></pre></div>
 
@@ -1191,9 +1197,9 @@ const headers = {
 };
 
 let body = {
-    "email": "lizzie19@example.net",
-    "password": "qui",
-    "password_otp_code": "culpa"
+    "email": "ylittle@example.org",
+    "password": "et",
+    "password_otp_code": "provident"
 };
 
 fetch(url, {
@@ -1282,10 +1288,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-otp-reset-password"
-               value="lizzie19@example.net"
+               value="ylittle@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>lizzie19@example.net</code></p>
+<p>Must be a valid email address. Example: <code>ylittle@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -1293,10 +1299,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-otp-reset-password"
-               value="qui"
+               value="et"
                data-component="body">
     <br>
-<p>Example: <code>qui</code></p>
+<p>Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password_otp_code</code></b>&nbsp;&nbsp;
@@ -1304,10 +1310,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password_otp_code"                data-endpoint="POSTapi-otp-reset-password"
-               value="culpa"
+               value="provident"
                data-component="body">
     <br>
-<p>Example: <code>culpa</code></p>
+<p>Example: <code>provident</code></p>
         </div>
         </form>
 
@@ -1328,23 +1334,23 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/company/9/job_offer/store/برمجي" \
+    "http://localhost/api/company/8/job_offer/store/برمجي" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
     \"type\": \"full-time , part-time , remotely , on-site\",
-    \"max_salary\": 12,
-    \"min_salary\": 18,
-    \"max_age\": 19,
-    \"min_age\": 6,
+    \"max_salary\": 17,
+    \"min_salary\": 8,
+    \"max_age\": 20,
+    \"min_age\": 14,
     \"transportation\": true,
     \"health_insurance\": false,
-    \"military_service\": false,
+    \"military_service\": true,
     \"gender\": \"male\",
-    \"decription\": \"rjtxy\",
-    \"job_role\": \"et\",
+    \"decription\": \"k\",
+    \"job_role\": \"qui\",
     \"skills\": [
-        \"sit\"
+        \"temporibus\"
     ]
 }"
 </code></pre></div>
@@ -1352,7 +1358,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/company/9/job_offer/store/برمجي"
+    "http://localhost/api/company/8/job_offer/store/برمجي"
 );
 
 const headers = {
@@ -1362,18 +1368,18 @@ const headers = {
 
 let body = {
     "type": "full-time , part-time , remotely , on-site",
-    "max_salary": 12,
-    "min_salary": 18,
-    "max_age": 19,
-    "min_age": 6,
+    "max_salary": 17,
+    "min_salary": 8,
+    "max_age": 20,
+    "min_age": 14,
     "transportation": true,
     "health_insurance": false,
-    "military_service": false,
+    "military_service": true,
     "gender": "male",
-    "decription": "rjtxy",
-    "job_role": "et",
+    "decription": "k",
+    "job_role": "qui",
     "skills": [
-        "sit"
+        "temporibus"
     ]
 };
 
@@ -1463,10 +1469,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="company_username"                data-endpoint="POSTapi-company--company_username--job_offer-store--industry_name-"
-               value="9"
+               value="8"
                data-component="url">
     <br>
-<p>Example: <code>9</code></p>
+<p>Example: <code>8</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>industry_name</code></b>&nbsp;&nbsp;
@@ -1497,10 +1503,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="max_salary"                data-endpoint="POSTapi-company--company_username--job_offer-store--industry_name-"
-               value="12"
+               value="17"
                data-component="body">
     <br>
-<p>fields must be either together or none Must be at least 0. Must not be greater than 100000000. Example: <code>12</code></p>
+<p>fields must be either together or none Must be at least 0. Must not be greater than 100000000. Example: <code>17</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>min_salary</code></b>&nbsp;&nbsp;
@@ -1508,10 +1514,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="min_salary"                data-endpoint="POSTapi-company--company_username--job_offer-store--industry_name-"
-               value="18"
+               value="8"
                data-component="body">
     <br>
-<p>fields must be either together or none Must be at least 0. Must not be greater than 100000000. Example: <code>18</code></p>
+<p>fields must be either together or none Must be at least 0. Must not be greater than 100000000. Example: <code>8</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>max_age</code></b>&nbsp;&nbsp;
@@ -1519,10 +1525,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="max_age"                data-endpoint="POSTapi-company--company_username--job_offer-store--industry_name-"
-               value="19"
+               value="20"
                data-component="body">
     <br>
-<p>fields must be either together or none Must be at least 18. Must not be greater than 60. Example: <code>19</code></p>
+<p>fields must be either together or none Must be at least 18. Must not be greater than 60. Example: <code>20</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>min_age</code></b>&nbsp;&nbsp;
@@ -1530,10 +1536,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="min_age"                data-endpoint="POSTapi-company--company_username--job_offer-store--industry_name-"
-               value="6"
+               value="14"
                data-component="body">
     <br>
-<p>fields must be either together or none Must be at least 18. Must not be greater than 60. Example: <code>6</code></p>
+<p>fields must be either together or none Must be at least 18. Must not be greater than 60. Example: <code>14</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>transportation</code></b>&nbsp;&nbsp;
@@ -1596,7 +1602,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>false</code></p>
+<p>Example: <code>true</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>gender</code></b>&nbsp;&nbsp;
@@ -1615,10 +1621,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="decription"                data-endpoint="POSTapi-company--company_username--job_offer-store--industry_name-"
-               value="rjtxy"
+               value="k"
                data-component="body">
     <br>
-<p>Must be at least 100 characters. Must not be greater than 40000 characters. Example: <code>rjtxy</code></p>
+<p>Must be at least 100 characters. Must not be greater than 40000 characters. Example: <code>k</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>job_role</code></b>&nbsp;&nbsp;
@@ -1626,10 +1632,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="job_role"                data-endpoint="POSTapi-company--company_username--job_offer-store--industry_name-"
-               value="et"
+               value="qui"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>qui</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>skills</code></b>&nbsp;&nbsp;
@@ -1663,7 +1669,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"image\": \"fuga\"
+    \"image\": \"voluptatem\"
 }"
 </code></pre></div>
 
@@ -1679,7 +1685,7 @@ const headers = {
 };
 
 let body = {
-    "image": "fuga"
+    "image": "voluptatem"
 };
 
 fetch(url, {
@@ -1791,18 +1797,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="image"                data-endpoint="GETapi-company-gallery"
-               value="fuga"
+               value="voluptatem"
                data-component="body">
     <br>
-<p>Example: <code>fuga</code></p>
+<p>Example: <code>voluptatem</code></p>
         </div>
         </form>
 
-                <h1 id="ducker-image-commands">Ducker Image Commands</h1>
+                <h1 id="docker-image-commands">Docker Image Commands</h1>
 
     
 
-                                <h2 id="ducker-image-commands-GETapi-command--command_string-">GET api/command/{command_string}</h2>
+                                <h2 id="docker-image-commands-GETapi-command--command_string-">GET api/command/{command_string}</h2>
 
 <p>
 </p>
@@ -1815,14 +1821,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/command/labore" \
+    --get "http://localhost/api/command/tempore" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/command/labore"
+    "http://localhost/api/command/tempore"
 );
 
 const headers = {
@@ -1853,7 +1859,7 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;The command \&quot;labore\&quot; does not exist.&quot;,
+    &quot;message&quot;: &quot;The command \&quot;tempore\&quot; does not exist.&quot;,
     &quot;exception&quot;: &quot;Symfony\\Component\\Console\\Exception\\CommandNotFoundException&quot;,
     &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php&quot;,
     &quot;line&quot;: 159,
@@ -2414,14 +2420,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="command_string"                data-endpoint="GETapi-command--command_string-"
-               value="labore"
+               value="tempore"
                data-component="url">
     <br>
-<p>Example: <code>labore</code></p>
+<p>Example: <code>tempore</code></p>
             </div>
                     </form>
 
-                    <h2 id="ducker-image-commands-GETapi-command-database-fresh">GET api/command/database/fresh</h2>
+                    <h2 id="docker-image-commands-GETapi-command-database-fresh">GET api/command/database/fresh</h2>
 
 <p>
 </p>
@@ -2545,7 +2551,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="ducker-image-commands-GETapi-command-database-seed">GET api/command/database/seed</h2>
+                    <h2 id="docker-image-commands-GETapi-command-database-seed">GET api/command/database/seed</h2>
 
 <p>
 </p>
@@ -2598,20 +2604,20 @@ access-control-allow-origin: *
 <code class="language-json" style="max-height: 300px;">
    INFO  Seeding database.  
 
-  Database\Seeders\SuperAdminSeeder ........................................................................................................ RUNNING  
-  Database\Seeders\SuperAdminSeeder .................................................................................................... 976 ms DONE  
+  Database\Seeders\SuperAdminSeeder .................................................................... RUNNING  
+  Database\Seeders\SuperAdminSeeder ................................................................ 972 ms DONE  
 
-  Database\Seeders\NoRoleUserSeeder ........................................................................................................ RUNNING  
-  Database\Seeders\NoRoleUserSeeder .................................................................................................... 238 ms DONE  
+  Database\Seeders\NoRoleUserSeeder .................................................................... RUNNING  
+  Database\Seeders\NoRoleUserSeeder ................................................................ 238 ms DONE  
 
-  Database\Seeders\IndustrySeeder .......................................................................................................... RUNNING  
-  Database\Seeders\IndustrySeeder ........................................................................................................ 2 ms DONE  
+  Database\Seeders\IndustrySeeder ...................................................................... RUNNING  
+  Database\Seeders\IndustrySeeder .................................................................... 1 ms DONE  
 
-  Database\Seeders\SkillSeeder ............................................................................................................. RUNNING  
-  Database\Seeders\SkillSeeder ........................................................................................................... 3 ms DONE  
+  Database\Seeders\SkillSeeder ......................................................................... RUNNING  
+  Database\Seeders\SkillSeeder ....................................................................... 3 ms DONE  
 
-  Database\Seeders\Job_RoleSeeder .......................................................................................................... RUNNING  
-  Database\Seeders\Job_RoleSeeder ........................................................................................................ 9 ms DONE  
+  Database\Seeders\Job_RoleSeeder ...................................................................... RUNNING  
+  Database\Seeders\Job_RoleSeeder .................................................................... 9 ms DONE  
 
 </code>
  </pre>
@@ -2687,7 +2693,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="ducker-image-commands-DELETEapi-command-storage-delete">DELETE api/command/storage/delete</h2>
+                    <h2 id="docker-image-commands-DELETEapi-command-storage-delete">DELETE api/command/storage/delete</h2>
 
 <p>
 </p>
@@ -2799,7 +2805,1161 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
     
 
-                                <h2 id="endpoints-POSTapi-test">POST api/test</h2>
+                                <h2 id="endpoints-GETapi-company-image--company_username--profile">GET api/company/image/{company_username}/profile</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-company-image--company_username--profile">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/company/image/totam/profile" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/company/image/totam/profile"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-company-image--company_username--profile">
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 54
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;No query results for model [App\\Models\\Company] totam&quot;,
+    &quot;exception&quot;: &quot;Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException&quot;,
+    &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php&quot;,
+    &quot;line&quot;: 487,
+    &quot;trace&quot;: [
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php&quot;,
+            &quot;line&quot;: 463,
+            &quot;function&quot;: &quot;prepareException&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Exceptions\\Handler&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php&quot;,
+            &quot;line&quot;: 54,
+            &quot;function&quot;: &quot;render&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Exceptions\\Handler&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php&quot;,
+            &quot;line&quot;: 51,
+            &quot;function&quot;: &quot;render&quot;,
+            &quot;class&quot;: &quot;NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 188,
+            &quot;function&quot;: &quot;handleException&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php&quot;,
+            &quot;line&quot;: 159,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php&quot;,
+            &quot;line&quot;: 125,
+            &quot;function&quot;: &quot;handleRequest&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php&quot;,
+            &quot;line&quot;: 87,
+            &quot;function&quot;: &quot;handleRequestUsingNamedLimiter&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php&quot;,
+            &quot;line&quot;: 25,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 144,
+            &quot;function&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\{closure}&quot;,
+            &quot;class&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 119,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php&quot;,
+            &quot;line&quot;: 24,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 119,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
+            &quot;line&quot;: 805,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
+            &quot;line&quot;: 784,
+            &quot;function&quot;: &quot;runRouteWithinStack&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
+            &quot;line&quot;: 748,
+            &quot;function&quot;: &quot;runRoute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
+            &quot;line&quot;: 737,
+            &quot;function&quot;: &quot;dispatchToRoute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
+            &quot;line&quot;: 200,
+            &quot;function&quot;: &quot;dispatch&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 144,
+            &quot;function&quot;: &quot;Illuminate\\Foundation\\Http\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php&quot;,
+            &quot;line&quot;: 21,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php&quot;,
+            &quot;line&quot;: 31,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php&quot;,
+            &quot;line&quot;: 21,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php&quot;,
+            &quot;line&quot;: 40,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TrimStrings&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php&quot;,
+            &quot;line&quot;: 27,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php&quot;,
+            &quot;line&quot;: 99,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php&quot;,
+            &quot;line&quot;: 62,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\HandleCors&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php&quot;,
+            &quot;line&quot;: 39,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\TrustProxies&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 119,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
+            &quot;line&quot;: 175,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
+            &quot;line&quot;: 144,
+            &quot;function&quot;: &quot;sendRequestThroughRouter&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
+            &quot;line&quot;: 300,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
+            &quot;line&quot;: 288,
+            &quot;function&quot;: &quot;callLaravelOrLumenRoute&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
+            &quot;line&quot;: 91,
+            &quot;function&quot;: &quot;makeApiCall&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
+            &quot;line&quot;: 44,
+            &quot;function&quot;: &quot;makeResponseCall&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;makeResponseCallIfConditionsPass&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
+            &quot;line&quot;: 236,
+            &quot;function&quot;: &quot;__invoke&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
+            &quot;line&quot;: 163,
+            &quot;function&quot;: &quot;iterateThroughStrategies&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
+            &quot;line&quot;: 95,
+            &quot;function&quot;: &quot;fetchResponses&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 125,
+            &quot;function&quot;: &quot;processRoute&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 72,
+            &quot;function&quot;: &quot;extractEndpointsInfoFromLaravelApp&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 50,
+            &quot;function&quot;: &quot;extractEndpointsInfoAndWriteToDisk&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php&quot;,
+            &quot;line&quot;: 53,
+            &quot;function&quot;: &quot;get&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
+            &quot;line&quot;: 36,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Commands\\GenerateDocumentation&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Util.php&quot;,
+            &quot;line&quot;: 41,
+            &quot;function&quot;: &quot;Illuminate\\Container\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
+            &quot;line&quot;: 93,
+            &quot;function&quot;: &quot;unwrapIfClosure&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Util&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;callBoundMethod&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Container.php&quot;,
+            &quot;line&quot;: 662,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php&quot;,
+            &quot;line&quot;: 211,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Command/Command.php&quot;,
+            &quot;line&quot;: 326,
+            &quot;function&quot;: &quot;execute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Command\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php&quot;,
+            &quot;line&quot;: 1096,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php&quot;,
+            &quot;line&quot;: 324,
+            &quot;function&quot;: &quot;doRunCommand&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php&quot;,
+            &quot;line&quot;: 175,
+            &quot;function&quot;: &quot;doRun&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php&quot;,
+            &quot;line&quot;: 201,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/artisan&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Console\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-company-image--company_username--profile" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-company-image--company_username--profile"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-company-image--company_username--profile"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-company-image--company_username--profile" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-company-image--company_username--profile">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-company-image--company_username--profile" data-method="GET"
+      data-path="api/company/image/{company_username}/profile"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-company-image--company_username--profile', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-company-image--company_username--profile"
+                    onclick="tryItOut('GETapi-company-image--company_username--profile');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-company-image--company_username--profile"
+                    onclick="cancelTryOut('GETapi-company-image--company_username--profile');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-company-image--company_username--profile"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/company/image/{company_username}/profile</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-company-image--company_username--profile"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-company-image--company_username--profile"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>company_username</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="company_username"                data-endpoint="GETapi-company-image--company_username--profile"
+               value="totam"
+               data-component="url">
+    <br>
+<p>Example: <code>totam</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="endpoints-GETapi-company-image--company_username--background">GET api/company/image/{company_username}/background</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-company-image--company_username--background">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/company/image/consequuntur/background" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/company/image/consequuntur/background"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-company-image--company_username--background">
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 53
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;No query results for model [App\\Models\\Company] consequuntur&quot;,
+    &quot;exception&quot;: &quot;Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException&quot;,
+    &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php&quot;,
+    &quot;line&quot;: 487,
+    &quot;trace&quot;: [
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php&quot;,
+            &quot;line&quot;: 463,
+            &quot;function&quot;: &quot;prepareException&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Exceptions\\Handler&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php&quot;,
+            &quot;line&quot;: 54,
+            &quot;function&quot;: &quot;render&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Exceptions\\Handler&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php&quot;,
+            &quot;line&quot;: 51,
+            &quot;function&quot;: &quot;render&quot;,
+            &quot;class&quot;: &quot;NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 188,
+            &quot;function&quot;: &quot;handleException&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php&quot;,
+            &quot;line&quot;: 159,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php&quot;,
+            &quot;line&quot;: 125,
+            &quot;function&quot;: &quot;handleRequest&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php&quot;,
+            &quot;line&quot;: 87,
+            &quot;function&quot;: &quot;handleRequestUsingNamedLimiter&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php&quot;,
+            &quot;line&quot;: 25,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 144,
+            &quot;function&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\{closure}&quot;,
+            &quot;class&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 119,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php&quot;,
+            &quot;line&quot;: 24,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 119,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
+            &quot;line&quot;: 805,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
+            &quot;line&quot;: 784,
+            &quot;function&quot;: &quot;runRouteWithinStack&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
+            &quot;line&quot;: 748,
+            &quot;function&quot;: &quot;runRoute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
+            &quot;line&quot;: 737,
+            &quot;function&quot;: &quot;dispatchToRoute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
+            &quot;line&quot;: 200,
+            &quot;function&quot;: &quot;dispatch&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 144,
+            &quot;function&quot;: &quot;Illuminate\\Foundation\\Http\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php&quot;,
+            &quot;line&quot;: 21,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php&quot;,
+            &quot;line&quot;: 31,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php&quot;,
+            &quot;line&quot;: 21,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php&quot;,
+            &quot;line&quot;: 40,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TrimStrings&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php&quot;,
+            &quot;line&quot;: 27,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php&quot;,
+            &quot;line&quot;: 99,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php&quot;,
+            &quot;line&quot;: 62,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\HandleCors&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php&quot;,
+            &quot;line&quot;: 39,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\TrustProxies&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 119,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
+            &quot;line&quot;: 175,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
+            &quot;line&quot;: 144,
+            &quot;function&quot;: &quot;sendRequestThroughRouter&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
+            &quot;line&quot;: 300,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
+            &quot;line&quot;: 288,
+            &quot;function&quot;: &quot;callLaravelOrLumenRoute&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
+            &quot;line&quot;: 91,
+            &quot;function&quot;: &quot;makeApiCall&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
+            &quot;line&quot;: 44,
+            &quot;function&quot;: &quot;makeResponseCall&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;makeResponseCallIfConditionsPass&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
+            &quot;line&quot;: 236,
+            &quot;function&quot;: &quot;__invoke&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
+            &quot;line&quot;: 163,
+            &quot;function&quot;: &quot;iterateThroughStrategies&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
+            &quot;line&quot;: 95,
+            &quot;function&quot;: &quot;fetchResponses&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 125,
+            &quot;function&quot;: &quot;processRoute&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 72,
+            &quot;function&quot;: &quot;extractEndpointsInfoFromLaravelApp&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 50,
+            &quot;function&quot;: &quot;extractEndpointsInfoAndWriteToDisk&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php&quot;,
+            &quot;line&quot;: 53,
+            &quot;function&quot;: &quot;get&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
+            &quot;line&quot;: 36,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Commands\\GenerateDocumentation&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Util.php&quot;,
+            &quot;line&quot;: 41,
+            &quot;function&quot;: &quot;Illuminate\\Container\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
+            &quot;line&quot;: 93,
+            &quot;function&quot;: &quot;unwrapIfClosure&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Util&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;callBoundMethod&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Container.php&quot;,
+            &quot;line&quot;: 662,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php&quot;,
+            &quot;line&quot;: 211,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Command/Command.php&quot;,
+            &quot;line&quot;: 326,
+            &quot;function&quot;: &quot;execute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Command\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php&quot;,
+            &quot;line&quot;: 1096,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php&quot;,
+            &quot;line&quot;: 324,
+            &quot;function&quot;: &quot;doRunCommand&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php&quot;,
+            &quot;line&quot;: 175,
+            &quot;function&quot;: &quot;doRun&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php&quot;,
+            &quot;line&quot;: 201,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/artisan&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Console\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-company-image--company_username--background" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-company-image--company_username--background"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-company-image--company_username--background"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-company-image--company_username--background" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-company-image--company_username--background">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-company-image--company_username--background" data-method="GET"
+      data-path="api/company/image/{company_username}/background"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-company-image--company_username--background', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-company-image--company_username--background"
+                    onclick="tryItOut('GETapi-company-image--company_username--background');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-company-image--company_username--background"
+                    onclick="cancelTryOut('GETapi-company-image--company_username--background');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-company-image--company_username--background"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/company/image/{company_username}/background</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-company-image--company_username--background"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-company-image--company_username--background"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>company_username</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="company_username"                data-endpoint="GETapi-company-image--company_username--background"
+               value="consequuntur"
+               data-component="url">
+    <br>
+<p>Example: <code>consequuntur</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="endpoints-POSTapi-test">POST api/test</h2>
 
 <p>
 </p>
@@ -2953,7 +4113,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 54
+x-ratelimit-remaining: 52
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 

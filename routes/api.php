@@ -30,13 +30,5 @@ Route::post('test' , function(){
 });
 
 Route::get('test' , function(){
-  $xmlService = new xmlService('dynamics/job_roles.xml') ;
-
-  $job_roles = xmlService::toJson($xmlService->xmlContent)->job_role ;
-
-  $tt = [] ;
-  foreach($job_roles as $job_role)
-  {
-    return $job_role ;
-  }
+  return 'hi' ;
 });

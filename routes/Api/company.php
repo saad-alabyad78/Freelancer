@@ -5,6 +5,8 @@ use App\Http\Controllers\Company\Query\CompanyImageQuery;
 use App\Http\Controllers\Company\Query\GalleryImageQuery;
 use App\Http\Controllers\Company\Commands\CreateCompanyCommand;
 use App\Http\Controllers\Company\Commands\CreateJob_OfferCommand;
+use App\Http\Controllers\Company\Commands\CreateCompanyImageCommand;
+use App\Http\Controllers\Company\Commands\DeleteCompanyImageCommand;
 
 
 Route::group(['prefix' => 'company'] , function()
@@ -29,4 +31,10 @@ Route::group(['prefix' => 'company'] , function()
 
     Route::get('image/{company:username}/profile' , [CompanyImageQuery::class , 'profile_image']);
     Route::get('image/{company:username}/background' , [CompanyImageQuery::class , 'background_image']);
+
+    Route::post('image/{company:username}/profile' , [CreateCompanyImageCommand::class , 'profile_image']);
+    Route::post('image/{company:username}/background' , [CreateCompanyImageCommand::class , 'background_image']);
+
+    Route::delete('image/{company:username}/profile' , [DeleteCompanyImageCommand::class , 'profile_image']);
+    Route::delete('image/{company:username}/background' , [DeleteCompanyImageCommand::class , 'background_image']);
 });
