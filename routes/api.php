@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Company;
 use App\Services\xmlService;
 use Illuminate\Support\Facades\Route;
 
@@ -24,16 +25,8 @@ require 'Api/company.php' ;
 
 
 Route::post('test' , function(){
-
-  $xmlService = new xmlService('dynamics/job_roles.xml') ;
-
-  $job_roles = xmlService::toJson($xmlService->xmlContent)->job_role ;
-
-  foreach($job_roles as $job_role)
-  {
-    return $job_role ;
-  }
-
+    $company = new Company();
+    return $company->background_image ;
 });
 
 Route::get('test' , function(){
