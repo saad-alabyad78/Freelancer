@@ -10,7 +10,7 @@ use App\Http\Requests\Auth\LogInRequest;
 use App\Http\Resources\Auth\UserResource;
 
 /**
- * @group Auth 
+ * @group Auth Managment
  * 
  * APIs to manage the login and logout
  **/

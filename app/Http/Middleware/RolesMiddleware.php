@@ -16,8 +16,9 @@ class RolesMiddleware
     public function handle(Request $request, Closure $next , ...$roles): Response
     {
         if(!auth()->check()){
-            abort(401) ;
+            abort(401 , 'unauthenticated') ;
         }
+        
         if(in_array('no_role' , $roles))
         {
             if(auth()->user()->role_name != null)

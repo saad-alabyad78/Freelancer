@@ -11,7 +11,7 @@ use App\Http\Requests\Auth\ResendOtpRequest;
 use App\Http\Requests\Auth\VerifyEmailRequest;
 
 /**
- * @group Email Managment
+ * @group Auth Managment
  **/
 class otpRegisterController extends Controller
 {

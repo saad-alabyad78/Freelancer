@@ -7,10 +7,47 @@ servers:
   -
     url: 'http://localhost'
 paths:
+  /api/login:
+    post:
+      summary: ''
+      operationId: postApiLogin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Auth Managment'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: phoebe.bergstrom@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: 'K)2^Br~Wj|*'
+              required:
+                - email
+                - password
+      security: []
+  /api/logout:
+    post:
+      summary: ''
+      operationId: postApiLogout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Auth Managment'
   /api/provider/google:
     get:
-      summary: ''
-      operationId: getApiProviderGoogle
+      summary: 'google oauth2 sign in'
+      operationId: googleOauth2SignIn
       description: ''
       parameters: []
       responses:
@@ -35,7 +72,7 @@ paths:
                     type: string
                     example: "Client error: `GET https://www.googleapis.com/oauth2/v3/userinfo?prettyPrint=false` resulted in a `401 Unauthorized` response:\n{\n  \"error\": \"invalid_request\",\n  \"error_description\": \"Invalid Credentials\"\n}\n"
       tags:
-        - 'Auth Google'
+        - 'Auth Managment'
       requestBody:
         required: true
         content:
@@ -46,19 +83,84 @@ paths:
                 token:
                   type: string
                   description: ''
-                  example: quasi
+                  example: dolor
               required:
                 - token
       security: []
-  /api/login:
+  /api/otp/register:
     post:
       summary: ''
-      operationId: postApiLogin
+      operationId: postApiOtpRegister
       description: ''
       parameters: []
       responses: {  }
       tags:
-        - 'Auth log'
+        - 'Auth Managment'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
+                  example: gvrvpio
+                last_name:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
+                  example: rgcww
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: alexandra.stracke@example.net
+                password:
+                  type: string
+                  description: 'Must be at least 8 characters. Must not be greater than 255 characters.'
+                  example: '@X-HwqVKM$Y&0f;'
+              required:
+                - first_name
+                - email
+                - password
+      security: []
+  /api/otp/email/verify:
+    post:
+      summary: ''
+      operationId: postApiOtpEmailVerify
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Auth Managment'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email_otp_code:
+                  type: string
+                  description: ''
+                  example: velit
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: jazmin36@example.net
+              required:
+                - email_otp_code
+                - email
+      security: []
+  /api/otp/resend:
+    post:
+      summary: ''
+      operationId: postApiOtpResend
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Auth Managment'
       requestBody:
         required: true
         content:
@@ -68,25 +170,160 @@ paths:
               properties:
                 email:
                   type: string
-                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: gilda.roberts@example.org
-                password:
-                  type: string
-                  description: ''
-                  example: 'P8ogs[~mIk3'
+                  description: 'Must be a valid email address.'
+                  example: phagenes@example.net
               required:
                 - email
-                - password
       security: []
-  /api/logout:
+  /api/otp/forgot-password:
     post:
       summary: ''
-      operationId: postApiLogout
+      operationId: postApiOtpForgotPassword
       description: ''
       parameters: []
       responses: {  }
       tags:
-        - 'Auth log'
+        - 'Auth Managment'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: vdietrich@example.org
+              required:
+                - email
+      security: []
+  /api/otp/reset-password:
+    post:
+      summary: ''
+      operationId: postApiOtpResetPassword
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Auth Managment'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: lizzie19@example.net
+                password:
+                  type: string
+                  description: ''
+                  example: qui
+                password_otp_code:
+                  type: string
+                  description: ''
+                  example: culpa
+              required:
+                - email
+                - password
+                - password_otp_code
+      security: []
+  '/api/company/{company_username}/job_offer/store/{industry_name}':
+    post:
+      summary: 'create job offer.'
+      operationId: createJobOffer
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Company Managment'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                  description: 'this must be a valid job offer type.'
+                  example: 'full-time , part-time , remotely , on-site'
+                max_salary:
+                  type: integer
+                  description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
+                  example: 12
+                min_salary:
+                  type: integer
+                  description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
+                  example: 18
+                max_age:
+                  type: integer
+                  description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
+                  example: 19
+                min_age:
+                  type: integer
+                  description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
+                  example: 6
+                transportation:
+                  type: boolean
+                  description: ''
+                  example: true
+                health_insurance:
+                  type: boolean
+                  description: ''
+                  example: false
+                military_service:
+                  type: boolean
+                  description: ''
+                  example: false
+                gender:
+                  type: string
+                  description: 'must be a male or female.'
+                  example: male
+                decription:
+                  type: string
+                  description: 'Must be at least 100 characters. Must not be greater than 40000 characters.'
+                  example: rjtxy
+                job_role:
+                  type: string
+                  description: ''
+                  example: et
+                skills:
+                  type: array
+                  description: ''
+                  example:
+                    - sit
+                  items:
+                    type: string
+              required:
+                - type
+                - transportation
+                - health_insurance
+                - military_service
+                - decription
+                - job_role
+                - skills
+      security: []
+    parameters:
+      -
+        in: path
+        name: company_username
+        description: ''
+        example: 9
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: industry_name
+        description: ''
+        example: برمجي
+        required: true
+        schema:
+          type: string
   /api/company/gallery:
     get:
       summary: 'Get A Gallary Image'
@@ -130,97 +367,9 @@ paths:
                 image:
                   type: string
                   description: ''
-                  example: et
+                  example: fuga
               required:
                 - image
-      security: []
-  /api/otp/register:
-    post:
-      summary: ''
-      operationId: postApiOtpRegister
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - 'Email Managment'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                first_name:
-                  type: string
-                  description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: fnkcgrtjdbipjaaqyv
-                last_name:
-                  type: string
-                  description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: ubttkm
-                email:
-                  type: string
-                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: kristin03@example.com
-                password:
-                  type: string
-                  description: 'Must be at least 8 characters. Must not be greater than 255 characters.'
-                  example: L/0q~EfdqlW=Cdft
-              required:
-                - first_name
-                - email
-                - password
-      security: []
-  /api/otp/email/verify:
-    post:
-      summary: ''
-      operationId: postApiOtpEmailVerify
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - 'Email Managment'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                email_otp_code:
-                  type: string
-                  description: ''
-                  example: culpa
-                email:
-                  type: string
-                  description: 'Must be a valid email address.'
-                  example: jakubowski.art@example.org
-              required:
-                - email_otp_code
-                - email
-      security: []
-  /api/otp/resend:
-    post:
-      summary: ''
-      operationId: postApiOtpResend
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - 'Email Managment'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                email:
-                  type: string
-                  description: 'Must be a valid email address.'
-                  example: koberbrunner@example.net
-              required:
-                - email
       security: []
   '/api/command/{command_string}':
     get:
@@ -236,7 +385,7 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'The command "quasi" does not exist.'
+                  message: 'The command "labore" does not exist.'
                   exception: Symfony\Component\Console\Exception\CommandNotFoundException
                   file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php
                   line: 159
@@ -255,7 +404,7 @@ paths:
                       type: '->'
                     -
                       file: /home/saad/Desktop/Freelancer/routes/Api/render-commands.php
-                      line: 8
+                      line: 13
                       function: __callStatic
                       class: Illuminate\Support\Facades\Facade
                       type: '::'
@@ -652,7 +801,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: 'The command "quasi" does not exist.'
+                    example: 'The command "labore" does not exist.'
                   exception:
                     type: string
                     example: Symfony\Component\Console\Exception\CommandNotFoundException
@@ -679,7 +828,7 @@ paths:
                         type: '->'
                       -
                         file: /home/saad/Desktop/Freelancer/routes/Api/render-commands.php
-                        line: 8
+                        line: 13
                         function: __callStatic
                         class: Illuminate\Support\Facades\Facade
                         type: '::'
@@ -1092,14 +1241,14 @@ paths:
                           type: string
                           example: '->'
       tags:
-        - Endpoints
+        - 'Ducker Image Commands'
       security: []
     parameters:
       -
         in: path
         name: command_string
         description: ''
-        example: quasi
+        example: labore
         required: true
         schema:
           type: string
@@ -1118,7 +1267,7 @@ paths:
                 type: string
                 example: ''
       tags:
-        - Endpoints
+        - 'Ducker Image Commands'
       security: []
   /api/command/database/seed:
     get:
@@ -1133,9 +1282,9 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "\n   INFO  Seeding database.  \n\n  Database\\Seeders\\SuperAdminSeeder .................................. RUNNING  \n  Database\\Seeders\\SuperAdminSeeder ............................ 1,560 ms DONE  \n\n  Database\\Seeders\\NoRoleUserSeeder .................................. RUNNING  \n  Database\\Seeders\\NoRoleUserSeeder .............................. 240 ms DONE  \n\n  Database\\Seeders\\IndustrySeeder .................................... RUNNING  \n  Database\\Seeders\\IndustrySeeder .................................. 2 ms DONE  \n\n  Database\\Seeders\\SkillSeeder ....................................... RUNNING  \n  Database\\Seeders\\SkillSeeder .................................... 97 ms DONE  \n\n  Database\\Seeders\\Job_RoleSeeder .................................... RUNNING  \n  Database\\Seeders\\Job_RoleSeeder ................................. 78 ms DONE  \n\n"
+                example: "\n   INFO  Seeding database.  \n\n  Database\\Seeders\\SuperAdminSeeder ........................................................................................................ RUNNING  \n  Database\\Seeders\\SuperAdminSeeder .................................................................................................... 976 ms DONE  \n\n  Database\\Seeders\\NoRoleUserSeeder ........................................................................................................ RUNNING  \n  Database\\Seeders\\NoRoleUserSeeder .................................................................................................... 238 ms DONE  \n\n  Database\\Seeders\\IndustrySeeder .......................................................................................................... RUNNING  \n  Database\\Seeders\\IndustrySeeder ........................................................................................................ 2 ms DONE  \n\n  Database\\Seeders\\SkillSeeder ............................................................................................................. RUNNING  \n  Database\\Seeders\\SkillSeeder ........................................................................................................... 3 ms DONE  \n\n  Database\\Seeders\\Job_RoleSeeder .......................................................................................................... RUNNING  \n  Database\\Seeders\\Job_RoleSeeder ........................................................................................................ 9 ms DONE  \n\n"
       tags:
-        - Endpoints
+        - 'Ducker Image Commands'
       security: []
   /api/command/storage/delete:
     delete:
@@ -1145,101 +1294,8 @@ paths:
       parameters: []
       responses: {  }
       tags:
-        - Endpoints
+        - 'Ducker Image Commands'
       security: []
-  '/api/company/{company_username}/job_offer/store/{industry_name}':
-    post:
-      summary: 'Handle the incoming request.'
-      operationId: handleTheIncomingRequest
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                type:
-                  type: string
-                  description: 'this must be a valid job offer type.'
-                  example: 'full-time , part-time , remotely , on-site'
-                max_salary:
-                  type: integer
-                  description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
-                  example: 5
-                min_salary:
-                  type: integer
-                  description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
-                  example: 13
-                max_age:
-                  type: integer
-                  description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
-                  example: 11
-                min_age:
-                  type: integer
-                  description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
-                  example: 13
-                transportation:
-                  type: boolean
-                  description: ''
-                  example: false
-                health_insurance:
-                  type: boolean
-                  description: ''
-                  example: true
-                military_service:
-                  type: boolean
-                  description: ''
-                  example: true
-                gender:
-                  type: string
-                  description: 'must be a male or female.'
-                  example: male
-                decription:
-                  type: string
-                  description: 'Must be at least 100 characters. Must not be greater than 40000 characters.'
-                  example: mvcoxikbqrzxsywlcobuqfgyj
-                job_role:
-                  type: string
-                  description: ''
-                  example: et
-                skills:
-                  type: array
-                  description: ''
-                  example:
-                    - aspernatur
-                  items:
-                    type: string
-              required:
-                - type
-                - transportation
-                - health_insurance
-                - military_service
-                - decription
-                - job_role
-                - skills
-      security: []
-    parameters:
-      -
-        in: path
-        name: company_username
-        description: ''
-        example: 2
-        required: true
-        schema:
-          type: integer
-      -
-        in: path
-        name: industry_name
-        description: ''
-        example: برمجي
-        required: true
-        schema:
-          type: string
   /api/test:
     post:
       summary: ''
@@ -1289,81 +1345,19 @@ paths:
       tags:
         - Endpoints
       security: []
-  /api/otp/forgot-password:
-    post:
-      summary: ''
-      operationId: postApiOtpForgotPassword
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - 'Password Managment'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                email:
-                  type: string
-                  description: 'Must be a valid email address.'
-                  example: towne.angelica@example.com
-              required:
-                - email
-      security: []
-  /api/otp/reset-password:
-    post:
-      summary: ''
-      operationId: postApiOtpResetPassword
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - 'Password Managment'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                email:
-                  type: string
-                  description: 'Must be a valid email address.'
-                  example: msatterfield@example.org
-                password:
-                  type: string
-                  description: ''
-                  example: nam
-                password_otp_code:
-                  type: string
-                  description: ''
-                  example: non
-              required:
-                - email
-                - password
-                - password_otp_code
-      security: []
 tags:
   -
-    name: 'Auth Google'
-    description: "\nAPI to sign with google oauth2."
-  -
-    name: 'Auth log'
+    name: 'Auth Managment'
     description: "\nAPIs to manage the login and logout"
   -
     name: 'Company Managment'
     description: ''
   -
-    name: 'Email Managment'
+    name: 'Ducker Image Commands'
     description: ''
   -
     name: Endpoints
     description: ''
-  -
-    name: 'Password Managment'
-    description: "\nResent The Password"
 components:
   securitySchemes:
     default:

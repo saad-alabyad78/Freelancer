@@ -1,17 +1,13 @@
-name: 'Password Managment'
-description: |-
-
-  Resent The Password
+name: Endpoints
+description: ''
 endpoints:
   -
     httpMethods:
       - POST
-    uri: api/otp/forgot-password
+    uri: api/test
     metadata:
-      groupName: 'Password Managment'
-      groupDescription: |-
-
-        Resent The Password
+      groupName: Endpoints
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
       title: ''
@@ -25,18 +21,8 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters:
-      email:
-        name: email
-        description: 'Must be a valid email address.'
-        required: true
-        example: towne.angelica@example.com
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      email: towne.angelica@example.com
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
     responses: []
     responseFields: []
@@ -47,13 +33,11 @@ endpoints:
     custom: []
   -
     httpMethods:
-      - POST
-    uri: api/otp/reset-password
+      - GET
+    uri: api/test
     metadata:
-      groupName: 'Password Managment'
-      groupDescription: |-
-
-        Resent The Password
+      groupName: Endpoints
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
       title: ''
@@ -67,40 +51,21 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters:
-      email:
-        name: email
-        description: 'Must be a valid email address.'
-        required: true
-        example: msatterfield@example.org
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      password:
-        name: password
-        description: ''
-        required: true
-        example: nam
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      password_otp_code:
-        name: password_otp_code
-        description: ''
-        required: true
-        example: non
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      email: msatterfield@example.org
-      password: nam
-      password_otp_code: non
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"@attributes":{"name":"android developer"},"skills":{"skill":["kotlin","java"]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '54'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null

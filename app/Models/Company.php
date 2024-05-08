@@ -51,11 +51,17 @@ class Company extends Model
         return $this->hasMany(GalleryImage::class) ;
     }
 
-    public function profile_image():Attribute
+    public function profileImage():Attribute
     {
         return Attribute::make(
-            get: fn () => $this->attributes['profile_image'] ?? Defaults::COMPANY_PROFILE_IMAGE ,
-            set: fn () => $this->attributes['background_image'] ?? Defaults::COMPANY_BACKGROUND_IMAGE ,
+            set: fn () => $this->attributes['profile_image'] ?? Defaults::COMPANY_PROFILE_IMAGE ,
+        );
+    }
+
+    public function backgroundImage():Attribute
+    {
+        return Attribute::make(
+            set: fn () => $this->attributes['background_image'] ?? Defaults::COMPANY_PROFILE_IMAGE ,
         );
     }
 }

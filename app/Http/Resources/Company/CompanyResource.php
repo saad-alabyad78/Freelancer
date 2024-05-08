@@ -16,7 +16,7 @@ class CompanyResource extends JsonResource
     {
         return [
             'profile_image' => $this->profile_image , 
-            'background_image' => $this->background_iamge ,
+            'background_image' => $this->background_image ,
             'username' => $this->username ,
             'name' => $this->name ,
             'description' => $this->description ,

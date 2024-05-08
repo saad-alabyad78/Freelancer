@@ -12,11 +12,14 @@ use App\Rules\Job_OfferStatusRule;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Company\Job_OfferResource;
 use App\Http\Requests\Company\CreateJob_OfferRequest;
-
+/**
+ * @group Company Managment
+ * 
+ **/
 class CreateJob_Offer extends Controller
 {
     /**
-     * Handle the incoming request.
+     * create job offer.
      */
     public function __invoke(Company $company ,Industry $industry , CreateJob_OfferRequest $request)
     {

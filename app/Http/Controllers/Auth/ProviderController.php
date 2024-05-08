@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Requests\Auth\ProviderRequest;
 /**
- * @group Auth Google
+ * @group Auth Managment
  * 
  * API to sign with google oauth2.
  **/
@@ -19,6 +19,9 @@ use App\Http\Requests\Auth\ProviderRequest;
 class ProviderController extends Controller
 {
 
+    /**
+     * google oauth2 sign in  
+     **/
     public function google(ProviderRequest $request)
     {
         try{
