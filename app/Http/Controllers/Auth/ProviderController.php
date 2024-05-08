@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Resources\Auth\UserResource;
 use Throwable;
 use Carbon\Carbon;
 use App\Models\User;
@@ -39,6 +40,7 @@ class ProviderController extends Controller
             $user->save();
             
             return response()->json([
+                'user' => UserResource::make($user) ,
                 'access_token' => $user->createToken('google' . '_token')->plainTextToken ,
             ]);
 

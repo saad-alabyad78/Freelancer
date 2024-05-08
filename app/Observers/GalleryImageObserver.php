@@ -14,6 +14,7 @@ class GalleryImageObserver
      */
     public function deleted(GalleryImage $galleryImage): void
     {
+        // in gallery images there is no defaults
         (new imageService())->delete(Disks::COMPANY , $galleryImage->name) ;
     }
 }

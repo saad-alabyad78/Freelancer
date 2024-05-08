@@ -64,4 +64,17 @@ class Company extends Model
             get: fn () => $this->attributes['background_image'] ?? Defaults::COMPANY_PROFILE_IMAGE ,
         );
     }
+
+    public function profileImageUrl():Attribute
+    {
+        return Attribute::get(fn()=>
+            config('app.url') . 'api/company/image/'.$this->attributes['username'].'/profile'
+        );
+    }
+    public function backgroundImageUrl():Attribute
+    {
+        return Attribute::get(fn()=>
+            config('app.url') . 'api/company/image/'.$this->attributes['username'].'/background'
+        );
+    }
 }

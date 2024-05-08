@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Company\Query\CompanyImageQuery;
 use App\Http\Controllers\Company\Query\GalleryImageQuery;
 use App\Http\Controllers\Company\Commands\CreateCompanyCommand;
 use App\Http\Controllers\Company\Commands\CreateJob_OfferCommand;
@@ -22,8 +23,10 @@ Route::group(['prefix' => 'company'] , function()
                 ->middleware('role:no_role');
 
             Route::post('/{company:username}/job_offer/store/{industry}' , CreateJob_OfferCommand::class) ;
-            
         });
     
     Route::get('gallery' , GalleryImageQuery::class) ;
+
+    Route::get('image/{company:username}/profile' , [CompanyImageQuery::class , 'profile_image']);
+    Route::get('image/{company:username}/background' , [CompanyImageQuery::class , 'background_image']);
 });

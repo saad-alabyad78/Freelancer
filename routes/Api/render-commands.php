@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Storage;
 
 /**
- * @group Ducker Image Commands
+ * @group Docker Image Commands
  * 
  **/
 
@@ -15,7 +15,7 @@ Route::get('command/{command:string}' , function(string $command){
 });
 
 /**
- * @group Ducker Image Commands
+ * @group Docker Image Commands
  * 
  **/
 Route::get('command/database/fresh' , function(){
@@ -24,7 +24,7 @@ Route::get('command/database/fresh' , function(){
 });
 
 /**
- * @group Ducker Image Commands
+ * @group Docker Image Commands
  * 
  **/
 Route::get('command/database/seed' , function(){
@@ -33,7 +33,7 @@ Route::get('command/database/seed' , function(){
 });
 
 /**
- * @group Ducker Image Commands
+ * @group Docker Image Commands
  * 
  **/
 
