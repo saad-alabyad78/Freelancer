@@ -11,6 +11,10 @@ use App\Services\imageService;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Company\CreateCompanyImageRequest;
 
+/**
+ * @group Company Managment
+ * 
+ */
 class CreateCompanyImageCommand extends Controller
 {
     private imageService $imageService ;

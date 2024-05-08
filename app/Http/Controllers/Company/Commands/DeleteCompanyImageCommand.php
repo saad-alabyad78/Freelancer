@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 use App\Services\imageService;
 use App\Http\Controllers\Controller;
 
+/**
+ * @group Company Managment
+ * 
+ */
 class DeleteCompanyImageCommand extends Controller
 {
     private imageService $imageService ;

@@ -29,7 +29,7 @@ class CreateCompanyCommand extends Controller
      * @authenticated
      * 
      * @apiResource App\Http\Resources\Company\CompanyResource
-     * @apiResourceModel App\Models\Company with=ContactLink,GalleryImage
+     * @apiResourceModel App\Models\Company with=ContactLink,GalleryImage,CompanyPhone
      * 
      * 
      * @return CompanyResource
@@ -99,6 +99,7 @@ class CreateCompanyCommand extends Controller
                 $company_phones[] = new CompanyPhone(['number' => $company_phone]) ;
             }
             $company->company_phones()->saveMany($company_phones) ;
+
         }
         
         return CompanyResource::make($company->with

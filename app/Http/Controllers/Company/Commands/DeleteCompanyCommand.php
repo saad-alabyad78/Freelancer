@@ -2,16 +2,33 @@
 
 namespace App\Http\Controllers\Company\Commands;
 
-use App\Http\Controllers\Controller;
+use App\Models\Company;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\Company\DeleteCompanyRequest;
 
+/**
+ * @group Company Managment
+ * 
+ */
 class DeleteCompanyCommand extends Controller
 {
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request)
+    public function __invoke(Company $company , DeleteCompanyRequest $request)
     {
-        //
+        $password = $request->validated()['password'] ;
+
+        if(!Hash::check($password , auth()->user()->getAuthPassword())){
+            return response()->json([
+                'error' => 'wrong password'
+            ]);
+        }
+
+        $company->delete() ;
+
+        return response()->noContent() ;
     }
 }
