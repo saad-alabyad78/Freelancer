@@ -16,7 +16,7 @@ use App\Http\Requests\Company\CreateCompanyRequest;
  * @group Company Managment
  * 
  */
-class CreateCompany extends Controller
+class CreateCompanyCommand extends Controller
 {
     private imageService $imageService ;
     public function __construct(imageService $_imageService)

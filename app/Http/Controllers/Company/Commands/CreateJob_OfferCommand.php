@@ -16,7 +16,7 @@ use App\Http\Requests\Company\CreateJob_OfferRequest;
  * @group Company Managment
  * 
  **/
-class CreateJob_Offer extends Controller
+class CreateJob_OfferCommand extends Controller
 {
     /**
      * create job offer.

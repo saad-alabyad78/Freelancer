@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Company\Commands\CreateCompany;
 use App\Http\Controllers\Company\Query\GalleryImageQuery;
-use App\Http\Controllers\Company\Commands\CreateJob_Offer;
+use App\Http\Controllers\Company\Commands\CreateCompanyCommand;
+use App\Http\Controllers\Company\Commands\CreateJob_OfferCommand;
 
 
 Route::group(['prefix' => 'company'] , function()
@@ -17,11 +17,11 @@ Route::group(['prefix' => 'company'] , function()
             ],
         ],
         function(){
-            Route::post('/store/{industry}' , CreateCompany::class)
+            Route::post('/store/{industry}' , CreateCompanyCommand::class)
                 ->withoutMiddleware('role:company') 
                 ->middleware('role:no_role');
 
-            Route::post('/{company:username}/job_offer/store/{industry}' , CreateJob_Offer::class) ;
+            Route::post('/{company:username}/job_offer/store/{industry}' , CreateJob_OfferCommand::class) ;
             
         });
     
