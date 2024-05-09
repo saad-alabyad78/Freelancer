@@ -1,8 +1,13 @@
 <?php
 
 use App\Models\Company;
+use App\Constants\Disks;
+use App\Constants\Defaults;
+use App\Models\GalleryImage;
 use App\Services\xmlService;
+use App\Services\imageService;
 use Illuminate\Support\Facades\Route;
+use App\Http\Resources\Company\CompanyResource;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,17 +21,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 require 'Api/log.php' ;
+
 require 'Api/socialite.php' ;
+
 require 'Api/otp.php' ;
 
 require 'Api/render-commands.php';
 
 require 'Api/company.php' ;
 
+require 'Api/category.php' ;
+
 
 Route::post('test' , function(){
-    $company = new Company();
-    return $company->background_image ;
+  $company = Company::first() ;
+
+  $company->delete() ;
+
+  return 'ok ' ;
 });
 
 Route::get('test' , function(){

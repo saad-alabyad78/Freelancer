@@ -7,7 +7,7 @@ use App\Http\Resources\Category\SkillResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\Category\Job_RoleResource;
 
-class Job_OfferResource extends JsonResource
+class Job_OfferMiniResource extends JsonResource
 {
     /**
      * Transform the resource into an array.

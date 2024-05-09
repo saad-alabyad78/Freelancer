@@ -16,7 +16,7 @@ class imageService
         //default accessor in the model
         if(!$image)return null ;
 
-        $image_name = Str::random(32 , ) . '.' .
+        $image_name = Str::random(40) . '.' .
         $image->getClientOriginalExtension() ;
 
          Storage::disk($storage_path)

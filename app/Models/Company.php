@@ -16,7 +16,7 @@ class Company extends Model
 
     protected $fillable = 
     [
-        'profile_iamge' ,
+        'profile_image' ,
         'background_image' ,
         'name' ,
         'size' ,
@@ -31,6 +31,10 @@ class Company extends Model
     public function user():MorphOne
     {
         return $this->morphOne(User::class,"role") ;
+    }
+    public function job_offers():HasMany
+    {
+        return $this->hasMany(Job_Offer::class) ;
     }
 
     public function industry():HasOne
@@ -61,7 +65,7 @@ class Company extends Model
     public function backgroundImage():Attribute
     {
         return Attribute::make(
-            get: fn () => $this->attributes['background_image'] ?? Defaults::COMPANY_PROFILE_IMAGE ,
+            get: fn () => $this->attributes['background_image'] ?? Defaults::COMPANY_BACKGROUND_IMAGE ,
         );
     }
 

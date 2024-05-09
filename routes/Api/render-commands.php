@@ -20,7 +20,7 @@ Route::get('command/{command:string}' , function(string $command){
  **/
 Route::get('command/database/fresh' , function(){
     Artisan::call('migrate:fresh') ;
-    Artisan::output() ;
+    return Artisan::output() ;
 });
 
 /**

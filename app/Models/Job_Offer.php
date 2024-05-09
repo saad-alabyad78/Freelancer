@@ -42,4 +42,8 @@ class Job_Offer extends Model
     {
         return $this->hasOne(Job_Role::class);
     }
+    public function company():HasOne
+    {
+        return $this->hasOne(Company::class) ;
+    }
 }

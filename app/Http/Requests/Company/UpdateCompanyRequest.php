@@ -23,14 +23,12 @@ class UpdateCompanyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'profile_image' => ['image' , 'min:10' , 'max:2000'] ,
-            'background_image' => ['image' , 'min:10' , 'max:2000'] ,
-            'name' => ['required' , 'min:3' , 'max:20' , 'string' , 'unique:companies,name'] ,
-            'description' => ['required' , 'string' , 'max:4000' ] ,
-            'size' => ['required' , 'string' , 'min:5' , 'max:20'] , //TODO 
-            'city' => ['required' , 'string' , new SyrianCityRule()] , 
-            'region' => ['required' , 'string' , 'min:3' , 'max:20'] ,
-            'street_address' => ['required' , 'string' , 'min:3' , 'max:30'] ,
+            'name' => ['min:3' , 'max:20' , 'string' , 'unique:companies,name'] ,
+            'description' => ['string' , 'max:4000' ] ,
+            'size' => ['string' , 'min:5' , 'max:20'] , //TODO 
+            'city' => ['string' , new SyrianCityRule()] , 
+            'region' => ['string' , 'min:3' , 'max:20'] ,
+            'street_address' => ['string' , 'min:3' , 'max:30'] ,
 
             'gallery_images' => ['array'] ,
             'gallery_images.*' => ['image' , 'min:10' , 'max:2000' , 'distinct'] , 

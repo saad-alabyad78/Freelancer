@@ -12,6 +12,9 @@ use App\Http\Resources\Category\IndustryResource;
  **/
 class GetAllIndustryQuery extends Controller
 {
+    /**
+     * get all industries
+     */
     public function __invoke()
     {
         return IndustryResource::collection(Industry::all()); 

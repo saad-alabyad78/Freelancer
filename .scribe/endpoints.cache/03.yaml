@@ -24,13 +24,13 @@ endpoints:
         name: company_username
         description: ''
         required: true
-        example: totam
+        example: eum
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      company_username: totam
+      company_username: eum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -41,7 +41,7 @@ endpoints:
         status: 404
         content: |-
           {
-              "message": "No query results for model [App\\Models\\Company] totam",
+              "message": "No query results for model [App\\Models\\Company] eum",
               "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
               "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
               "line": 487,
@@ -517,13 +517,13 @@ endpoints:
         name: company_username
         description: ''
         required: true
-        example: consequuntur
+        example: quo
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      company_username: consequuntur
+      company_username: quo
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -534,7 +534,7 @@ endpoints:
         status: 404
         content: |-
           {
-              "message": "No query results for model [App\\Models\\Company] consequuntur",
+              "message": "No query results for model [App\\Models\\Company] quo",
               "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
               "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
               "line": 487,
@@ -1045,10 +1045,10 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"@attributes":{"name":"android developer"},"skills":{"skill":["kotlin","java"]}}'
+        content: hi
         headers:
+          content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'
-          content-type: application/json
           x-ratelimit-limit: '60'
           x-ratelimit-remaining: '52'
           access-control-allow-origin: '*'

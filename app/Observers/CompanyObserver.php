@@ -25,6 +25,11 @@ class CompanyObserver
 
         $company->company_phones()->delete() ;
         $company->contact_links()->delete() ;
-        $company->gallery_images()->delete() ;
+        
+        $company->gallery_images()->get()->each(function ($gallery_image , $imageServices){
+            $imageServices->delete(Disks::COMPANY , $gallery_image->name) ;
+        }) ; 
+        
+        $company->gallery_images()->delete(); 
     }
 }

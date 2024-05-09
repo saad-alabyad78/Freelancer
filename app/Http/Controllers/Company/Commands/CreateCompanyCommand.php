@@ -12,7 +12,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\Company\CompanyResource;
 use App\Http\Requests\Company\CreateCompanyRequest;
 
-/**
+/**d
  * @group Company Managment
  * 
  */
@@ -38,9 +38,8 @@ class CreateCompanyCommand extends Controller
     public function __invoke(CreateCompanyRequest $request , Industry $industry) 
     {
         $data = $request->validated();
-
-        //create company
         
+        //create company
         $company = Company::create([
                 'profile_image' => $this->imageService->store_image($data['profile_image'] ?? null , 'company') ,
                 'background_image' => $this->imageService->store_image($data['background_image'] ?? null , 'company') ,

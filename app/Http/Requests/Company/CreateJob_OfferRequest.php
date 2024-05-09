@@ -44,7 +44,7 @@ class CreateJob_OfferRequest extends FormRequest
 
             'job_role' => ['required' , 'exists:job_roles,name'] ,
             
-            'skills' => ['required' , 'array' , 'min:5'] ,
+            'skills' => ['required' , 'array' , 'min:5' , 'max:25'] ,
             'skills.*' => ['required' , 'string' ,'exists:skills,name'] ,
         ];
     }
