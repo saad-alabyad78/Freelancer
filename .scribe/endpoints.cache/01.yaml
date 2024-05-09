@@ -24,13 +24,13 @@ endpoints:
         name: command_string
         description: ''
         required: true
-        example: quibusdam
+        example: dolorem
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      command_string: quibusdam
+      command_string: dolorem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -41,7 +41,7 @@ endpoints:
         status: 500
         content: |-
           {
-              "message": "The command \"quibusdam\" does not exist.",
+              "message": "The command \"dolorem\" does not exist.",
               "exception": "Symfony\\Component\\Console\\Exception\\CommandNotFoundException",
               "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php",
               "line": 159,
@@ -564,7 +564,35 @@ endpoints:
     responses:
       -
         status: 200
-        content: ''
+        content: |2+
+
+            Dropping all tables ................................................................................................................... 695ms DONE
+
+             INFO  Preparing database.  
+
+            Creating migration table .............................................................................................................. 199ms DONE
+
+             INFO  Running migrations.  
+
+            2014_10_12_000000_create_users_table .................................................................................................. 264ms DONE
+            2014_10_12_100000_create_password_reset_tokens_table .................................................................................. 115ms DONE
+            2019_08_19_000000_create_failed_jobs_table ............................................................................................ 166ms DONE
+            2019_12_14_000001_create_personal_access_tokens_table ................................................................................. 281ms DONE
+            2024_03_25_042214_create_companies_table .............................................................................................. 216ms DONE
+            2024_03_25_042227_create_clients_table ................................................................................................ 101ms DONE
+            2024_03_25_042235_create_freelancers_table ............................................................................................. 56ms DONE
+            2024_03_25_042242_create_admins_table .................................................................................................. 56ms DONE
+            2024_03_27_163951_create_super_admins_table ........................................................................................... 100ms DONE
+            2024_04_25_213815_create_gallery_images_table ......................................................................................... 149ms DONE
+            2024_04_25_213902_create_contact_links_table ........................................................................................... 59ms DONE
+            2024_04_25_213915_create_company_phones_table .......................................................................................... 69ms DONE
+            2024_05_03_141844_create_industries_table .............................................................................................. 64ms DONE
+            2024_05_03_142242_add_industry_id_to_company ............................................................................................ 6ms DONE
+            2024_05_05_163837_create_skills_table ................................................................................................. 117ms DONE
+            2024_05_05_163918_create_job_roles_table .............................................................................................. 116ms DONE
+            2024_05_05_164036_create_skillables_table ............................................................................................... 8ms DONE
+            2024_05_05_164120_create_job_offers_table ............................................................................................. 327ms DONE
+
         headers:
           content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'
@@ -609,20 +637,20 @@ endpoints:
 
              INFO  Seeding database.  
 
-            Database\Seeders\SuperAdminSeeder .................................. RUNNING  
-            Database\Seeders\SuperAdminSeeder ............................ 1,409 ms DONE  
+            Database\Seeders\SuperAdminSeeder ........................................................................................................ RUNNING  
+            Database\Seeders\SuperAdminSeeder .................................................................................................. 1,192 ms DONE  
 
-            Database\Seeders\NoRoleUserSeeder .................................. RUNNING  
-            Database\Seeders\NoRoleUserSeeder .............................. 248 ms DONE  
+            Database\Seeders\NoRoleUserSeeder ........................................................................................................ RUNNING  
+            Database\Seeders\NoRoleUserSeeder .................................................................................................... 238 ms DONE  
 
-            Database\Seeders\IndustrySeeder .................................... RUNNING  
-            Database\Seeders\IndustrySeeder ................................. 33 ms DONE  
+            Database\Seeders\IndustrySeeder .......................................................................................................... RUNNING  
+            Database\Seeders\IndustrySeeder ....................................................................................................... 16 ms DONE  
 
-            Database\Seeders\SkillSeeder ....................................... RUNNING  
-            Database\Seeders\SkillSeeder .................................... 91 ms DONE  
+            Database\Seeders\SkillSeeder ............................................................................................................. RUNNING  
+            Database\Seeders\SkillSeeder .......................................................................................................... 50 ms DONE  
 
-            Database\Seeders\Job_RoleSeeder .................................... RUNNING  
-            Database\Seeders\Job_RoleSeeder ................................ 151 ms DONE  
+            Database\Seeders\Job_RoleSeeder .......................................................................................................... RUNNING  
+            Database\Seeders\Job_RoleSeeder ....................................................................................................... 82 ms DONE  
 
         headers:
           content-type: 'text/html; charset=UTF-8'

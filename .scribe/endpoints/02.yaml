@@ -22,7 +22,7 @@ endpoints:
         name: company_username
         description: ''
         required: true
-        example: 2
+        example: 16
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -37,7 +37,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      company_username: 2
+      company_username: 16
       industry_name: برمجي
     queryParameters: []
     cleanQueryParameters: []
@@ -55,7 +55,7 @@ endpoints:
         name: max_salary
         description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
         required: false
-        example: 14
+        example: 9
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -64,7 +64,7 @@ endpoints:
         name: min_salary
         description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
         required: false
-        example: 14
+        example: 7
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -73,7 +73,7 @@ endpoints:
         name: max_age
         description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
         required: false
-        example: 3
+        example: 15
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -109,7 +109,7 @@ endpoints:
         name: military_service
         description: ''
         required: true
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -127,7 +127,7 @@ endpoints:
         name: decription
         description: 'Must be at least 100 characters. Must not be greater than 40000 characters.'
         required: true
-        example: nsmearhxwfyoexaoqb
+        example: ualkmpwrvtfyxtiisv
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -136,7 +136,7 @@ endpoints:
         name: job_role
         description: ''
         required: true
-        example: doloremque
+        example: non
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -146,25 +146,75 @@ endpoints:
         description: ''
         required: true
         example:
-          - qui
+          - omnis
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
       type: 'full-time , part-time , remotely , on-site'
-      max_salary: 14
-      min_salary: 14
-      max_age: 3
+      max_salary: 9
+      min_salary: 7
+      max_age: 15
       min_age: 2
       transportation: true
       health_insurance: false
-      military_service: true
+      military_service: false
       gender: male
-      decription: nsmearhxwfyoexaoqb
-      job_role: doloremque
+      decription: ualkmpwrvtfyxtiisv
+      job_role: non
       skills:
-        - qui
+        - omnis
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/company/{company_username}'
+    metadata:
+      groupName: 'Company Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete the company.'
+      description: 'Note: the user will be deleted'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      company_username:
+        name: company_username
+        description: ''
+        required: true
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      company_username: 15
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      password:
+        name: password
+        description: ''
+        required: true
+        example: 'h?H$Jj'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      password: 'h?H$Jj'
     fileParameters: []
     responses: []
     responseFields: []
@@ -198,13 +248,13 @@ endpoints:
         name: image
         description: ''
         required: true
-        example: saepe
+        example: officia
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      image: saepe
+      image: officia
     fileParameters: []
     responses:
       -
@@ -245,13 +295,13 @@ endpoints:
         name: company_username
         description: ''
         required: true
-        example: qui
+        example: porro
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      company_username: qui
+      company_username: porro
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -295,13 +345,13 @@ endpoints:
         name: company_username
         description: ''
         required: true
-        example: ut
+        example: earum
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      company_username: ut
+      company_username: earum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -345,13 +395,13 @@ endpoints:
         name: company_username
         description: ''
         required: true
-        example: facilis
+        example: dolorem
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      company_username: facilis
+      company_username: dolorem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -385,13 +435,13 @@ endpoints:
         name: company_username
         description: ''
         required: true
-        example: omnis
+        example: molestias
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      company_username: omnis
+      company_username: molestias
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
