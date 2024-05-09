@@ -15,7 +15,8 @@ use App\Http\Requests\Company\DeleteCompanyRequest;
 class DeleteCompanyCommand extends Controller
 {
     /**
-     * Handle the incoming request.
+     * Delete the company.
+     * Note: the user will be deleted 
      */
     public function __invoke(Company $company , DeleteCompanyRequest $request)
     {

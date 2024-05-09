@@ -12,7 +12,7 @@ class CompanyObserver
     /**
      * Handle the Company "deleted" event.
      */
-    public function deleted(Company $company): void
+    public function deleting(Company $company): void
     {
         $imageServices = new imageService() ;
         
@@ -23,12 +23,17 @@ class CompanyObserver
             $imageServices->delete(Disks::COMPANY , $company->background_image) ;
         }
 
+        $company->user()->delete() ;
         $company->company_phones()->delete() ;
         $company->contact_links()->delete() ;
         
-        $company->gallery_images()->get()->each(function ($gallery_image , $imageServices){
+        $gallery_images = $company->gallery_images ;
+        
+        \Log::error($gallery_images) ; 
+        foreach($gallery_images as $gallery_image){
+            \Log::info('in foreach') ;
             $imageServices->delete(Disks::COMPANY , $gallery_image->name) ;
-        }) ; 
+        } ; 
         
         $company->gallery_images()->delete(); 
     }

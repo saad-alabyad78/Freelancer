@@ -34,11 +34,9 @@ require 'Api/category.php' ;
 
 
 Route::post('test' , function(){
-  $company = Company::first() ;
-
-  $company->delete() ;
-
-  return 'ok ' ;
+  
+  return Company::first()->delete() ;
+  
 });
 
 Route::get('test' , function(){

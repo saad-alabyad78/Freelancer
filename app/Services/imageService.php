@@ -47,6 +47,7 @@ class imageService
 
     public static function delete($disk , $image)
     {
+        \Log::info('deleting ' . $image ) ;
         static::validate($disk , $image);
 
         Storage::disk($disk)->delete($image) ;
