@@ -49,13 +49,8 @@ class CreateJob_OfferCommand extends Controller
         );
 
         //skills
-
-        $skills = [] ;
         
-        foreach($data['skills'] as $skill)
-        {
-            $skills[] = Skill::where('name' , $skill) ;
-        }
+        $skills = Skill::whereIn('name' , $data['skills'])->get() ;
 
         $job_offer->skills()->saveMany($skills) ;
 
