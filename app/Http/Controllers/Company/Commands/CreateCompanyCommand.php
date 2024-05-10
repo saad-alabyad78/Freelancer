@@ -12,7 +12,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\Company\CompanyResource;
 use App\Http\Requests\Company\CreateCompanyRequest;
 
-/**d
+/**
  * @group Company Managment
  * 
  */
@@ -100,12 +100,24 @@ class CreateCompanyCommand extends Controller
             $company->company_phones()->saveMany($company_phones) ;
 
         }
-        
-        return CompanyResource::make($company->with
+        /*
+        ->with
             ([
                 'contact_links'  ,
                 'gallery_images' ,
                 'company_phones' ,
-            ])->first())->response()->setStatusCode(201) ;
+            ])->first()
+        */
+        
+        $company = Company::where('id' , $company->id)
+        ->with(
+            [
+            'contact_links'  ,
+            'gallery_images' ,
+            'company_phones' ,
+            ]
+        )->firstOrFail() ;
+        
+        return CompanyResource::make($company)->response()->setStatusCode(201) ;
     }
 }

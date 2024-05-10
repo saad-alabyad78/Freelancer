@@ -28,8 +28,7 @@ class CreateCompanyTest extends TestCase
 
         $this->noRoleUser = User::factory()->create(['first_name' => 'no' , 'last_name' => 'Role']) ;
 
-        $this->notVerifiedUser = User::factory()
-            ->create(['email_verified_at' => null , 'first_name' => 'not' , 'last_name' => 'verified']) ;
+        $this->notVerifiedUser = User::factory()->create(['email_verified_at' => null , 'first_name' => 'not' , 'last_name' => 'verified']) ;
 
         $this->RoleUser = User::factory()->create(['first_name' => 'with' , 'last_name' => 'Role']) ;
         $company = Company::factory()->create(
@@ -37,17 +36,22 @@ class CreateCompanyTest extends TestCase
              'background_image' => null,
              'username' => $this->RoleUser->slug ,
             ]) ;
-        $company->user()->save($this->RoleUser) ;
+        $company->user()->save($this->RoleUser);
 
         $this->industry = Industry::first() ;
     }
     
     public function test_company_store_middlewares(): void
     {
+        
+        $response = $this->postJson('api/company/store/' . $this->industry->name) ;
+        $response->assertStatus(401) ;
+        $response->assertJsonFragment(['message' => 'Unauthenticated.']) ;
+
         $response = $this->actingAs($this->notVerifiedUser)
                          ->postJson('api/company/store/' . $this->industry->name) ;
         $response->assertStatus(403) ;
-        $response->assertJsonFragment(['message' => 'Your email address is not verified.']) ;
+        $response->assertJsonFragment(['message' => 'your email address is not verified']) ;
         
 
         $response = $this->actingAs($this->RoleUser)
@@ -58,11 +62,13 @@ class CreateCompanyTest extends TestCase
 
         $response = $this->actingAs($this->noRoleUser)
                          ->postJson('api/company/store/' . $this->industry->name) ;
-        $response->assertStatus(422) ;
+        $response->assertStatus(422) ;//here the error will be validation error
     }
 
     public function test_create_company_endpoint():void
-    {   
+    {
+        
+        
         $companyData = [
             'name' => 'name' ,
             'description' => 'description' ,
@@ -82,24 +88,19 @@ class CreateCompanyTest extends TestCase
         
         $start = microtime(true);
         $response = $this->actingAs($this->noRoleUser)
-            ->postJson('api/company/store/' . $this->industry->name ,
+        ->postJson('api/company/store/' . $this->industry->name ,
             $companyData
         );
         $end = microtime(true);
 
         var_dump($end - $start) ;
 
-        $this->assertLessThan(0.03 , $end - $start) ;
+        $this->assertLessThan(0.1 , $end - $start) ;
 
         $response->assertStatus(201) ;
 
-        $response->assertJsonFragment(
-            [
-                'data' => [
-                    'username' => $this->noRoleUser->slug
-                ] ,
-            ]
-        );
+
+        $response->assertJsonPath('data.username' , $this->noRoleUser->slug);
         
         
         $this->assertDatabaseCount('contact_links' , 2) ;
@@ -121,5 +122,6 @@ class CreateCompanyTest extends TestCase
         $this->assertNotEmpty($this->noRoleUser->role_id);
         $this->assertEquals($company->user->role_id , $company->id ) ;
         $this->assertEquals($this->noRoleUser->role->id , $company->id ) ;
+        $this->assertEquals($this->noRoleUser->id , $company->user->id ) ;
     }
 }

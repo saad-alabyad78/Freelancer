@@ -16,7 +16,7 @@ Route::group(['prefix' => 'company'] , function()
         [
             'middleware' => [
                 'auth:sanctum' ,
-                'verified' ,
+                'verify_email' ,
                 'role:company' ,
             ],
         ],

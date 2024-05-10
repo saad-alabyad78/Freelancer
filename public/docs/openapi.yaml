@@ -26,11 +26,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: alessandra.mclaughlin@example.com
+                  example: maximillia.gislason@example.org
                 password:
                   type: string
                   description: ''
-                  example: 'HTAaq{dkh'
+                  example: '|t{(dT`w'
               required:
                 - email
                 - password
@@ -82,7 +82,7 @@ paths:
                 token:
                   type: string
                   description: ''
-                  example: velit
+                  example: repudiandae
               required:
                 - token
   /api/otp/register:
@@ -104,19 +104,19 @@ paths:
                 first_name:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: nztnfzcnldtpctkbqdnjx
+                  example: ciadhqajmqtvcfhvfawxbengr
                 last_name:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: kxdbhgnolvktvajf
+                  example: sklgelkqhiutkzf
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: keven.parker@example.com
+                  example: hmorissette@example.org
                 password:
                   type: string
                   description: 'Must be at least 8 characters. Must not be greater than 255 characters.'
-                  example: w1Y(48
+                  example: '*EOXL}hkbOwd'
               required:
                 - first_name
                 - email
@@ -140,11 +140,11 @@ paths:
                 email_otp_code:
                   type: string
                   description: ''
-                  example: tenetur
+                  example: et
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: amir45@example.org
+                  example: tom17@example.org
               required:
                 - email_otp_code
                 - email
@@ -167,7 +167,7 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: horacio.renner@example.org
+                  example: russ38@example.net
               required:
                 - email
   /api/otp/forgot-password:
@@ -189,7 +189,7 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: hkutch@example.net
+                  example: alexandra.weber@example.com
               required:
                 - email
   /api/otp/reset-password:
@@ -211,15 +211,15 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: monahan.markus@example.org
+                  example: eusebio04@example.com
                 password:
                   type: string
                   description: ''
-                  example: autem
+                  example: sint
                 password_otp_code:
                   type: string
                   description: ''
-                  example: sunt
+                  example: magnam
               required:
                 - email
                 - password
@@ -259,6 +259,154 @@ paths:
                           example: برمجي
       tags:
         - 'Category Managment'
+  '/api/company/store/{industry_name}':
+    post:
+      summary: 'Create/Store New Company .'
+      operationId: createStoreNewCompany
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    profile_image: default/profile_image.png
+                    background_image: default/background_image.png
+                    profile_image_url: api/company/image//profile
+                    background_image_url: api/company/image//background
+                    verified_at: null
+                    username: null
+                    name: null
+                    description: null
+                    size: null
+                    industry_name: null
+                    gallery_images: []
+                    contact_links: []
+                    company_phones: []
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      profile_image:
+                        type: string
+                        example: default/profile_image.png
+                      background_image:
+                        type: string
+                        example: default/background_image.png
+                      profile_image_url:
+                        type: string
+                        example: api/company/image//profile
+                      background_image_url:
+                        type: string
+                        example: api/company/image//background
+                      verified_at:
+                        type: string
+                        example: null
+                      username:
+                        type: string
+                        example: null
+                      name:
+                        type: string
+                        example: null
+                      description:
+                        type: string
+                        example: null
+                      size:
+                        type: string
+                        example: null
+                      industry_name:
+                        type: string
+                        example: null
+                      gallery_images:
+                        type: array
+                        example: []
+                      contact_links:
+                        type: array
+                        example: []
+                      company_phones:
+                        type: array
+                        example: []
+      tags:
+        - 'Company Managment'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                profile_image:
+                  type: string
+                  format: binary
+                  description: 'Must be an image. Must be at least 10 kilobytes. Must not be greater than 2000 kilobytes.'
+                background_image:
+                  type: string
+                  format: binary
+                  description: 'Must be an image. Must be at least 10 kilobytes. Must not be greater than 2000 kilobytes.'
+                name:
+                  type: string
+                  description: 'name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters.'
+                  example: mul
+                description:
+                  type: string
+                  description: 'Must not be greater than 4000 characters.'
+                  example: 'Natus praesentium odit ut inventore enim corrupti sed accusantium.'
+                size:
+                  type: string
+                  description: 'Must be at least 5 characters. Must not be greater than 20 characters.'
+                  example: kbzow
+                city:
+                  type: string
+                  description: 'this must be a syrian city.'
+                  example: دمشق
+                region:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
+                  example: madmzjahstrexnudet
+                street_address:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 30 characters.'
+                  example: vkqqkgw
+                gallery_images:
+                  type: array
+                  description: 'Must be an image. Must be at least 1 kilobyte. Must not be greater than 2000 kilobytes.'
+                  items:
+                    type: string
+                    format: binary
+                contact_links:
+                  type: array
+                  description: 'Must be at least 5 characters.'
+                  example:
+                    - wvmkmtlimnscfgzemxtorwcricbtrvvopiqpypxsjwsgwk
+                  items:
+                    type: string
+                company_phones:
+                  type: array
+                  description: 'Must match the regex /^09[0-9]{8}$/.'
+                  example:
+                    - '0987182865'
+                  items:
+                    type: string
+              required:
+                - name
+                - description
+                - size
+                - city
+                - region
+                - street_address
+    parameters:
+      -
+        in: path
+        name: industry_name
+        description: ''
+        example: برمجي
+        required: true
+        schema:
+          type: string
   '/api/company/{company_username}/job_offer/store/{industry_name}':
     post:
       summary: 'create job offer.'
@@ -282,27 +430,27 @@ paths:
                 max_salary:
                   type: integer
                   description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
-                  example: 9
+                  example: 3
                 min_salary:
                   type: integer
                   description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
-                  example: 22
+                  example: 14
                 max_age:
                   type: integer
                   description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
-                  example: 16
+                  example: 20
                 min_age:
                   type: integer
                   description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
-                  example: 3
+                  example: 6
                 transportation:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
                 health_insurance:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 military_service:
                   type: boolean
                   description: ''
@@ -314,16 +462,16 @@ paths:
                 decription:
                   type: string
                   description: 'Must be at least 100 characters. Must not be greater than 40000 characters.'
-                  example: pwmtwgdvijwobqexwvw
+                  example: ykdjfbcztga
                 job_role:
                   type: string
                   description: ''
-                  example: vel
+                  example: qui
                 skills:
                   type: array
                   description: ''
                   example:
-                    - delectus
+                    - aut
                   items:
                     type: string
               required:
@@ -339,7 +487,7 @@ paths:
         in: path
         name: company_username
         description: ''
-        example: 11
+        example: 1
         required: true
         schema:
           type: integer
@@ -370,7 +518,7 @@ paths:
                 password:
                   type: string
                   description: ''
-                  example: "o~3I#+&:'<EmE,l6%"
+                  example: 'AUEe;:!31'
               required:
                 - password
     parameters:
@@ -378,7 +526,7 @@ paths:
         in: path
         name: company_username
         description: ''
-        example: 5
+        example: 1
         required: true
         schema:
           type: integer
@@ -425,7 +573,7 @@ paths:
                 image:
                   type: string
                   description: ''
-                  example: aut
+                  example: ad
               required:
                 - image
   '/api/company/image/{company_username}/profile':
@@ -471,7 +619,7 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'No query results for model [App\Models\Company] fugit'
+                  message: 'No query results for model [App\Models\Company] omnis'
                   exception: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
                   file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php
                   line: 487
@@ -851,7 +999,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: 'No query results for model [App\Models\Company] fugit'
+                    example: 'No query results for model [App\Models\Company] omnis'
                   exception:
                     type: string
                     example: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
@@ -1261,7 +1409,7 @@ paths:
         in: path
         name: company_username
         description: ''
-        example: assumenda
+        example: et
         required: true
         schema:
           type: string
@@ -1308,7 +1456,7 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'No query results for model [App\Models\Company] soluta'
+                  message: 'No query results for model [App\Models\Company] enim'
                   exception: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
                   file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php
                   line: 487
@@ -1688,7 +1836,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: 'No query results for model [App\Models\Company] soluta'
+                    example: 'No query results for model [App\Models\Company] enim'
                   exception:
                     type: string
                     example: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
@@ -2098,7 +2246,7 @@ paths:
         in: path
         name: company_username
         description: ''
-        example: porro
+        example: sequi
         required: true
         schema:
           type: string
@@ -2116,7 +2264,7 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'The command "quod" does not exist.'
+                  message: 'The command "facilis" does not exist.'
                   exception: Symfony\Component\Console\Exception\CommandNotFoundException
                   file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php
                   line: 159
@@ -2532,7 +2680,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: 'The command "quod" does not exist.'
+                    example: 'The command "facilis" does not exist.'
                   exception:
                     type: string
                     example: Symfony\Component\Console\Exception\CommandNotFoundException
@@ -2978,7 +3126,7 @@ paths:
         in: path
         name: command_string
         description: ''
-        example: quod
+        example: facilis
         required: true
         schema:
           type: string
@@ -2995,7 +3143,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "\n  Dropping all tables .............................................. 17ms DONE\n\n   INFO  Preparing database.  \n\n  Creating migration table ........................................ 150ms DONE\n\n   INFO  Running migrations.  \n\n  2014_10_12_000000_create_users_table ............................ 236ms DONE\n  2014_10_12_100000_create_password_reset_tokens_table ............ 117ms DONE\n  2019_08_19_000000_create_failed_jobs_table ...................... 167ms DONE\n  2019_12_14_000001_create_personal_access_tokens_table ........... 241ms DONE\n  2024_03_25_042214_create_companies_table ........................ 239ms DONE\n  2024_03_25_042227_create_clients_table ........................... 57ms DONE\n  2024_03_25_042235_create_freelancers_table ....................... 57ms DONE\n  2024_03_25_042242_create_admins_table ............................ 57ms DONE\n  2024_03_27_163951_create_super_admins_table ...................... 57ms DONE\n  2024_04_25_213815_create_gallery_images_table ................... 118ms DONE\n  2024_04_25_213902_create_contact_links_table ..................... 61ms DONE\n  2024_04_25_213915_create_company_phones_table .................... 68ms DONE\n  2024_05_03_141844_create_industries_table ........................ 65ms DONE\n  2024_05_03_142242_add_industry_id_to_company ...................... 6ms DONE\n  2024_05_05_163837_create_skills_table ........................... 156ms DONE\n  2024_05_05_163918_create_job_roles_table ........................ 152ms DONE\n  2024_05_05_164036_create_skillables_table ......................... 8ms DONE\n  2024_05_05_164120_create_job_offers_table ....................... 216ms DONE\n\n"
+                example: "\n  Dropping all tables ................................................................................................................... 278ms DONE\n\n   INFO  Preparing database.  \n\n  Creating migration table .............................................................................................................. 195ms DONE\n\n   INFO  Running migrations.  \n\n  2014_10_12_000000_create_users_table .................................................................................................. 302ms DONE\n  2014_10_12_100000_create_password_reset_tokens_table .................................................................................. 129ms DONE\n  2019_08_19_000000_create_failed_jobs_table ............................................................................................ 254ms DONE\n  2019_12_14_000001_create_personal_access_tokens_table ................................................................................. 240ms DONE\n  2024_03_25_042214_create_companies_table .............................................................................................. 260ms DONE\n  2024_03_25_042227_create_clients_table ................................................................................................. 57ms DONE\n  2024_03_25_042235_create_freelancers_table ............................................................................................. 92ms DONE\n  2024_03_25_042242_create_admins_table .................................................................................................. 67ms DONE\n  2024_03_27_163951_create_super_admins_table ........................................................................................... 122ms DONE\n  2024_04_25_213815_create_gallery_images_table ......................................................................................... 183ms DONE\n  2024_04_25_213902_create_contact_links_table ........................................................................................... 67ms DONE\n  2024_04_25_213915_create_company_phones_table .......................................................................................... 69ms DONE\n  2024_05_03_141844_create_industries_table .............................................................................................. 56ms DONE\n  2024_05_03_142242_add_industry_id_to_company ............................................................................................ 6ms DONE\n  2024_05_05_163837_create_skills_table ................................................................................................. 162ms DONE\n  2024_05_05_163918_create_job_roles_table .............................................................................................. 150ms DONE\n  2024_05_05_164036_create_skillables_table ............................................................................................... 8ms DONE\n  2024_05_05_164120_create_job_offers_table ............................................................................................. 227ms DONE\n\n"
       tags:
         - 'Docker Image Commands'
   /api/command/database/seed:
@@ -3011,7 +3159,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "\n   INFO  Seeding database.  \n\n  Database\\Seeders\\SuperAdminSeeder .................................. RUNNING  \n  Database\\Seeders\\SuperAdminSeeder .............................. 981 ms DONE  \n\n  Database\\Seeders\\NoRoleUserSeeder .................................. RUNNING  \n  Database\\Seeders\\NoRoleUserSeeder .............................. 238 ms DONE  \n\n  Database\\Seeders\\IndustrySeeder .................................... RUNNING  \n  Database\\Seeders\\IndustrySeeder .................................. 2 ms DONE  \n\n  Database\\Seeders\\SkillSeeder ....................................... RUNNING  \n  Database\\Seeders\\SkillSeeder ..................................... 3 ms DONE  \n\n  Database\\Seeders\\Job_RoleSeeder .................................... RUNNING  \n  Database\\Seeders\\Job_RoleSeeder .................................. 8 ms DONE  \n\n"
+                example: "\n   INFO  Seeding database.  \n\n  Database\\Seeders\\SuperAdminSeeder ........................................................................................................ RUNNING  \n  Database\\Seeders\\SuperAdminSeeder .................................................................................................. 1,155 ms DONE  \n\n  Database\\Seeders\\NoRoleUserSeeder ........................................................................................................ RUNNING  \n  Database\\Seeders\\NoRoleUserSeeder .................................................................................................... 476 ms DONE  \n\n  Database\\Seeders\\IndustrySeeder .......................................................................................................... RUNNING  \n  Database\\Seeders\\IndustrySeeder ........................................................................................................ 1 ms DONE  \n\n  Database\\Seeders\\SkillSeeder ............................................................................................................. RUNNING  \n  Database\\Seeders\\SkillSeeder ........................................................................................................... 4 ms DONE  \n\n  Database\\Seeders\\Job_RoleSeeder .......................................................................................................... RUNNING  \n  Database\\Seeders\\Job_RoleSeeder ........................................................................................................ 8 ms DONE  \n\n"
       tags:
         - 'Docker Image Commands'
   /api/command/storage/delete:
@@ -3023,154 +3171,6 @@ paths:
       responses: {  }
       tags:
         - 'Docker Image Commands'
-  '/api/company/store/{industry_name}':
-    post:
-      summary: 'Create/Store New Company .'
-      operationId: createStoreNewCompany
-      description: ''
-      parameters: []
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  data:
-                    profile_image: default/profile_image.png
-                    background_image: default/background_image.png
-                    profile_image_url: api/company/image//profile
-                    background_image_url: api/company/image//background
-                    verified_at: null
-                    username: null
-                    name: null
-                    description: null
-                    size: null
-                    industry_name: null
-                    gallery_images: []
-                    contact_links: []
-                    company_phones: []
-                properties:
-                  data:
-                    type: object
-                    properties:
-                      profile_image:
-                        type: string
-                        example: default/profile_image.png
-                      background_image:
-                        type: string
-                        example: default/background_image.png
-                      profile_image_url:
-                        type: string
-                        example: api/company/image//profile
-                      background_image_url:
-                        type: string
-                        example: api/company/image//background
-                      verified_at:
-                        type: string
-                        example: null
-                      username:
-                        type: string
-                        example: null
-                      name:
-                        type: string
-                        example: null
-                      description:
-                        type: string
-                        example: null
-                      size:
-                        type: string
-                        example: null
-                      industry_name:
-                        type: string
-                        example: null
-                      gallery_images:
-                        type: array
-                        example: []
-                      contact_links:
-                        type: array
-                        example: []
-                      company_phones:
-                        type: array
-                        example: []
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                profile_image:
-                  type: string
-                  format: binary
-                  description: 'Must be an image. Must be at least 10 kilobytes. Must not be greater than 2000 kilobytes.'
-                background_image:
-                  type: string
-                  format: binary
-                  description: 'Must be an image. Must be at least 10 kilobytes. Must not be greater than 2000 kilobytes.'
-                name:
-                  type: string
-                  description: 'name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters.'
-                  example: qhtexjb
-                description:
-                  type: string
-                  description: 'Must not be greater than 4000 characters.'
-                  example: 'Id molestiae sed repellendus inventore unde ut labore.'
-                size:
-                  type: string
-                  description: 'Must be at least 5 characters. Must not be greater than 20 characters.'
-                  example: ryspwkyrauszyqrpqsav
-                city:
-                  type: string
-                  description: 'this must be a syrian city.'
-                  example: دمشق
-                region:
-                  type: string
-                  description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
-                  example: h
-                street_address:
-                  type: string
-                  description: 'Must be at least 3 characters. Must not be greater than 30 characters.'
-                  example: a
-                gallery_images:
-                  type: array
-                  description: 'Must be an image. Must be at least 1 kilobyte. Must not be greater than 2000 kilobytes.'
-                  items:
-                    type: string
-                    format: binary
-                contact_links:
-                  type: array
-                  description: 'Must be at least 5 characters.'
-                  example:
-                    - mrkykcnocjwbardbupawivhzvielfqhyfqklmjpwojzuvyunerjiociwkrxjsuwsyeoowyfw
-                  items:
-                    type: string
-                company_phones:
-                  type: array
-                  description: 'Must match the regex /^09[0-9]{8}$/.'
-                  example:
-                    - '0998274493'
-                  items:
-                    type: string
-              required:
-                - name
-                - description
-                - size
-                - city
-                - region
-                - street_address
-    parameters:
-      -
-        in: path
-        name: industry_name
-        description: ''
-        example: برمجي
-        required: true
-        schema:
-          type: string
   /api/test:
     post:
       summary: ''

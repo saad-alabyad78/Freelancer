@@ -35,7 +35,7 @@ require 'Api/category.php' ;
 
 Route::post('test' , function(){
   
-  return Company::first()->delete() ;
+  return  CompanyResource::collection(Company::all() ) ;
   
 });
 

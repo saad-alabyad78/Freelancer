@@ -22,5 +22,15 @@ class NoRoleUserSeeder extends Seeder
             ] , [
                 'password' => Hash::make('12345678') , 
             ]) ;
+
+        User::updateOrCreate([
+            'first_name' => 'saad' , 
+            'last_name' => 'alabyad' ,
+            'email' => 'saadalabyad2000@gmail.com' ,
+            'email_verified_at' => '2000-11-11' ,
+            ] , [
+                'password' => Hash::make('12345678') , 
+            ]) ;
     } 
+    
 }

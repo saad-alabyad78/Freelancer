@@ -1,12 +1,12 @@
 <?php
 
-use App\Http\Controllers\Auth\LogController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LogController;
 
 Route::post('login' , [LogController::class, 'login'])->middleware('guest');
 
 Route::group([
-    'middleware' => ['auth:sanctum' , 'verified'] ,
+    'middleware' => ['auth:sanctum'] ,
 ],function(){
     Route::post('logout' , [LogController::class , 'logout']) ;
 });
