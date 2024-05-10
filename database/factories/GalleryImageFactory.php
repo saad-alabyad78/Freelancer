@@ -3,12 +3,14 @@
 namespace Database\Factories;
 
 use App\Models\Company;
+use App\Constants\Disks;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\CompanyPhone>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\GalleryImage>
  */
-class CompanyPhoneFactory extends Factory
+class GalleryImageFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,7 +20,7 @@ class CompanyPhoneFactory extends Factory
     public function definition(): array
     {
         return [
-            'number' => fake()->regexify('/^09[0-9]{8}$/') ,
+            'name' => fake()->image('storage/app/' . Disks::COMPANY  , 500 , 500 , null , false) ,
             'company_id' => (Company::factory()->create())->id ,
         ];
     }

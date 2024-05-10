@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Company;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,8 @@ class ContactLinkFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->sentence() ,
+            'company_id' => (Company::factory()->create())->id ,
         ];
     }
 }

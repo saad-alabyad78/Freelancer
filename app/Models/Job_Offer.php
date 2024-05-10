@@ -13,6 +13,7 @@ class Job_Offer extends Model
     use HasFactory;
 
     protected $table = 'job_offers';
+    
     protected $fillable = [
         'status',
         'type',

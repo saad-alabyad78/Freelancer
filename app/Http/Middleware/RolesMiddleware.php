@@ -16,20 +16,29 @@ class RolesMiddleware
     public function handle(Request $request, Closure $next , ...$roles): Response
     {
         if(!auth()->check()){
-            abort(401 , 'unauthenticated') ;
+            return response()->json(
+                ['message' => 'unauthenticated'] ,
+                 401 ,
+                ['Accept' => 'application/json']) ;
         }
         
         if(in_array('no_role' , $roles))
         {
             if(auth()->user()->role_name != null)
             {
-                abort(401 , 'bruh! you already have a role') ;
+                return response()->json(
+                    ['message' =>'bruh! you already have a role'] ,
+                     403 ,
+                     ['Accept' => 'application/json']) ;
             }
             return $next($request);
         }
 
         if(!in_array('any' , $roles) or !in_array(auth()->user()->role_name , $roles)){
-            abort(401 , 'you don\'t have the currect role' ) ;
+            return response()->json(
+                ['message' => 'you don\'t have the currect role'] ,
+                 403 ,
+                 ['Accept' => 'application/json']) ;
         }
 
         return $next($request);
