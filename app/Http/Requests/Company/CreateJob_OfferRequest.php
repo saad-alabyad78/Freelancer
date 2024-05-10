@@ -35,6 +35,7 @@ class CreateJob_OfferRequest extends FormRequest
             'max_age' => ['integer', 'min:18', 'max:60', 'gte:min_salary' , new FieldsTogetherOrNoneRule('min_age')],
             'min_age' => ['integer', 'min:18', 'max:60', 'ste:max_salary' , new FieldsTogetherOrNoneRule('max_age')],
             
+            'description' => ['string' , 'required' , 'min:100' ] ,
 
             'transportation' => ['required' , 'bool'] ,
             'health_insurance' => ['required' , 'bool'] ,

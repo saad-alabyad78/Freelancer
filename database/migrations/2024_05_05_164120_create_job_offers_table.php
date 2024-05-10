@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('job_offers', function (Blueprint $table) {
             $table->id();
+
+            $table->string('description');
+            
             $table->string('status')->index();
             $table->string('type')->index();
 

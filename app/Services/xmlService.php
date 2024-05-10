@@ -70,6 +70,7 @@ class xmlService
             }
         }
         $xs::putXML($path , $sortedXML) ;
+
     }
 
     public function sortSkills(string $path = 'dynamics/skills.xml') : void

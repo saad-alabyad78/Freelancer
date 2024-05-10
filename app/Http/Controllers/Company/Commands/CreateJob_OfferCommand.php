@@ -41,6 +41,7 @@ class CreateJob_OfferCommand extends Controller
                 'max_age' => $data['max_age'] ,
                 'min_age' => $data['min_age'] ,
                 'gender' => $data['gender'] ,
+                'description' => $data['description'],
 
                 'industry_name' => $industry->name ,
                 'company_id' => $company->id ,
@@ -54,6 +55,6 @@ class CreateJob_OfferCommand extends Controller
 
         $job_offer->skills()->saveMany($skills) ;
 
-        return Job_OfferResource::make($job_offer->with(['company' , 'skills' , 'job_role']));
+        return Job_OfferResource::make($job_offer->load(['company' , 'skills' , 'job_role']));
     }
 }

@@ -108,16 +108,12 @@ class CreateCompanyCommand extends Controller
                 'company_phones' ,
             ])->first()
         */
+      
         
-        $company = Company::where('id' , $company->id)
-        ->with(
-            [
+        return CompanyResource::make($company->load([
             'contact_links'  ,
             'gallery_images' ,
             'company_phones' ,
-            ]
-        )->firstOrFail() ;
-        
-        return CompanyResource::make($company)->response()->setStatusCode(201) ;
+            ]))->response()->setStatusCode(201) ;
     }
 }

@@ -17,6 +17,7 @@ class Job_OfferMiniResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
+            'description' => $this->description ,
             'status' => $this->status ,
             'type' => $this->type ,
             'max_sallary' => $this->max_sallary,
