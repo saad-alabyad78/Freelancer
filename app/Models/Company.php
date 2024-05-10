@@ -72,13 +72,13 @@ class Company extends Model
     public function profileImageUrl():Attribute
     {
         return Attribute::get(fn()=>
-            'api/company/image/'.$this->attributes['username'].'/profile'
+            'api/company/image/'.$this->username.'/profile'
         );
     }
     public function backgroundImageUrl():Attribute
     {
         return Attribute::get(fn()=>
-            'api/company/image/'.$this->attributes['username'].'/background'
+            'api/company/image/'.$this->username.'/background'
         );
     }
 }

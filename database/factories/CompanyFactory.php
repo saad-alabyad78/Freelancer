@@ -26,7 +26,7 @@ class CompanyFactory extends Factory
             'name' => fake()->unique()->company() ,
             'profile_image' => fake()->image('storage/app/' . Disks::COMPANY  ,500 , 500 , null , false  ) ,
             'background_image' => fake()->image('storage/app/' . Disks::COMPANY ,500 , 500 , null , false  ) ,
-            'username' => User::factory()->create()->slug , 
+            'username' => null , 
             'description' => fake()->text(40) ,
             'size' => fake()->randomElement([10 , 100 , 1000]) ,
             'verified_at' => null ,

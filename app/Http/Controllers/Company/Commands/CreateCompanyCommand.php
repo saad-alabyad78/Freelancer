@@ -34,11 +34,11 @@ class CreateCompanyCommand extends Controller
      * 
      * @return \Illuminate\Http\JsonResponse
      * 
-     **/
+     */
     public function __invoke(CreateCompanyRequest $request , Industry $industry) 
     {
         $data = $request->validated();
-        
+
         //create company
         $company = Company::create([
                 'profile_image' => $this->imageService->store_image($data['profile_image'] ?? null , 'company') ,

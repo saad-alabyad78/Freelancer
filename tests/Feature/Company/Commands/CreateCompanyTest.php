@@ -26,11 +26,12 @@ class CreateCompanyTest extends TestCase
 
         $this->seed() ;
 
-        $this->noRoleUser = User::factory()->create() ;
+        $this->noRoleUser = User::factory()->create(['first_name' => 'no' , 'last_name' => 'Role']) ;
 
-        $this->notVerifiedUser = User::factory()->create(['email_verified_at' => null]) ;
+        $this->notVerifiedUser = User::factory()
+            ->create(['email_verified_at' => null , 'first_name' => 'not' , 'last_name' => 'verified']) ;
 
-        $this->RoleUser = User::factory()->create() ;
+        $this->RoleUser = User::factory()->create(['first_name' => 'with' , 'last_name' => 'Role']) ;
         $company = Company::factory()->create(
             ['profile_image' => null ,
              'background_image' => null,
@@ -61,9 +62,7 @@ class CreateCompanyTest extends TestCase
     }
 
     public function test_create_company_endpoint():void
-    {
-        var_dump(User::count());
-        
+    {   
         $companyData = [
             'name' => 'name' ,
             'description' => 'description' ,
@@ -93,6 +92,15 @@ class CreateCompanyTest extends TestCase
         $this->assertLessThan(0.03 , $end - $start) ;
 
         $response->assertStatus(201) ;
+
+        $response->assertJsonFragment(
+            [
+                'data' => [
+                    'username' => $this->noRoleUser->slug
+                ] ,
+            ]
+        );
+        
         
         $this->assertDatabaseCount('contact_links' , 2) ;
         $this->assertDatabaseCount('company_phones' , 1) ;
@@ -109,6 +117,7 @@ class CreateCompanyTest extends TestCase
         }
 
         //assert that the user gained a role
+        $this->assertEquals($this->noRoleUser->slug , $company->username);
         $this->assertNotEmpty($this->noRoleUser->role_id);
         $this->assertEquals($company->user->role_id , $company->id ) ;
         $this->assertEquals($this->noRoleUser->role->id , $company->id ) ;
