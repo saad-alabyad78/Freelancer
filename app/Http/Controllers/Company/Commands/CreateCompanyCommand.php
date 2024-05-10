@@ -103,7 +103,7 @@ class CreateCompanyCommand extends Controller
         
         return CompanyResource::make($company->with
             ([
-                'contact_links' ,
+                'contact_links'  ,
                 'gallery_images' ,
                 'company_phones' ,
             ])->first())->response()->setStatusCode(201) ;

@@ -33,7 +33,7 @@ class CreateCompanyRequest extends FormRequest
             'street_address' => ['required' , 'string' , 'min:3' , 'max:30'] ,
 
             'gallery_images' => ['array'] ,
-            'gallery_images.*' => ['image' , 'min:10' , 'max:2000' , 'distinct'] , 
+            'gallery_images.*' => ['image' , 'min:1' , 'max:2000' , 'distinct'] , 
 
             'contact_links' => ['array'] ,
             'contact_links.*' => ['string' , 'min:5' , 'distinct'] , 
