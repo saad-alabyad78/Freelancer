@@ -24,8 +24,8 @@ class CompanyFactory extends Factory
       
         return [
             'name' => fake()->unique()->company() ,
-            'profile_image' => fake()->unique()->image('storage/app/' . Disks::COMPANY  ,500 , 500 , null , false  ) ,
-            'background_image' => fake()->unique()->image('storage/app/' . Disks::COMPANY ,500 , 500 , null , false  ) ,
+            'profile_image' => fake()->image('storage/app/' . Disks::COMPANY  ,500 , 500 , null , false  ) ,
+            'background_image' => fake()->image('storage/app/' . Disks::COMPANY ,500 , 500 , null , false  ) ,
             'username' => User::factory()->create()->slug , 
             'description' => fake()->text(40) ,
             'size' => fake()->randomElement([10 , 100 , 1000]) ,

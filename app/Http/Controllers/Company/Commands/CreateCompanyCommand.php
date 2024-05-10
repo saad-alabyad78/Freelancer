@@ -32,7 +32,7 @@ class CreateCompanyCommand extends Controller
      * @apiResourceModel App\Models\Company with=ContactLink,GalleryImage,CompanyPhone
      * 
      * 
-     * @return CompanyResource
+     * @return \Illuminate\Http\JsonResponse
      * 
      **/
     public function __invoke(CreateCompanyRequest $request , Industry $industry) 
@@ -106,6 +106,6 @@ class CreateCompanyCommand extends Controller
                 'contact_links' ,
                 'gallery_images' ,
                 'company_phones' ,
-            ])->first()) ;
+            ])->first())->response()->setStatusCode(201) ;
     }
 }
