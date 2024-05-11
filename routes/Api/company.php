@@ -54,7 +54,7 @@ Route::group(['prefix' => 'company'] , function()
             ],
         ],
         function(){
-            Route::post('job_offer/store' , CreateJob_OfferCommand::class) ;
+            Route::post('store' , CreateJob_OfferCommand::class) ;
         });
     
     Route::get('image/gallery' , GalleryImageQuery::class) ;

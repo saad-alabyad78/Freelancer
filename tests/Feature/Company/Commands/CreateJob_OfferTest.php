@@ -63,8 +63,9 @@ class CreateJob_OfferTest extends TestCase
             ->actingAs($this->user)
             ->postJson('api/company/job_offer/store' ,
             $data) ;
+        var_dump($response->json()) ;
         
-        //$response->assertStatus(201) ;
+        $response->assertStatus(201) ;
 
         $offer = JobOffer::first() ;
 

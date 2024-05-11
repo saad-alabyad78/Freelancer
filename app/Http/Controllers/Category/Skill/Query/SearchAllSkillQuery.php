@@ -9,7 +9,7 @@ use App\Http\Resources\Category\SkillResource;
 /**
  * @group Category Managment 
  **/
-class GetAllSkillQuery extends Controller
+class SearchAllSkillQuery extends Controller
 {
     /**
      * search throw all the skills.

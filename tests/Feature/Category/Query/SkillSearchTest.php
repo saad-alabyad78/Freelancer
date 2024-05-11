@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Category\Querey;
+namespace Tests\Feature\Category\Query;
 
 use Tests\TestCase;
 use App\Models\Skill;

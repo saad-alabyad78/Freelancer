@@ -42,7 +42,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VP53h646D1a8fvakEgdcebZ'
+      - 'Bearer kZ5gd6ecP1DbE6hafVav843'
     controller: null
     method: null
     route: null
@@ -73,20 +73,64 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: assumenda
+        example: quo
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: assumenda
+      name: quo
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer V6fgc5d16evDEbP4aha8Z3k'
+      - 'Bearer eabkh56vgfE3D6c8V1a4dZP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/category/job_roles/search
+    metadata:
+      groupName: 'Category Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'search for the job role'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: quam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      name: quam
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3dPhf5Z6bacgek61Vv4D8Ea'
     controller: null
     method: null
     route: null
