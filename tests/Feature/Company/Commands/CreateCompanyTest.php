@@ -44,24 +44,24 @@ class CreateCompanyTest extends TestCase
     public function test_company_store_middlewares(): void
     {
         
-        $response = $this->postJson('api/company/store/' . $this->industry->name) ;
+        $response = $this->postJson('api/company/store') ;
         $response->assertStatus(401) ;
         $response->assertJsonFragment(['message' => 'Unauthenticated.']) ;
 
         $response = $this->actingAs($this->notVerifiedUser)
-                         ->postJson('api/company/store/' . $this->industry->name) ;
+                         ->postJson('api/company/store') ;
         $response->assertStatus(403) ;
         $response->assertJsonFragment(['message' => 'your email address is not verified']) ;
         
 
         $response = $this->actingAs($this->RoleUser)
-                         ->postJson('api/company/store/' . $this->industry->name) ;
+                         ->postJson('api/company/store') ;
         $response->assertStatus(403) ;
         $response->assertJsonFragment(['message' => 'bruh! you already have a role']) ;
 
 
         $response = $this->actingAs($this->noRoleUser)
-                         ->postJson('api/company/store/' . $this->industry->name) ;
+                         ->postJson('api/company/store') ;
         $response->assertStatus(422) ;//here the error will be validation error
     }
 
@@ -70,6 +70,7 @@ class CreateCompanyTest extends TestCase
         
         
         $companyData = [
+            'industry_name' => $this->industry->name ,
             'name' => 'name' ,
             'description' => 'description' ,
             'size' => 'small' ,
@@ -88,7 +89,7 @@ class CreateCompanyTest extends TestCase
         
         $start = microtime(true);
         $response = $this->actingAs($this->noRoleUser)
-        ->postJson('api/company/store/' . $this->industry->name ,
+        ->postJson('api/company/store' ,
             $companyData
         );
         $end = microtime(true);

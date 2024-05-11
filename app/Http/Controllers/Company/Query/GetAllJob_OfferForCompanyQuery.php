@@ -4,10 +4,7 @@ namespace App\Http\Controllers\Company\Query;
 
 use App\Models\Company;
 use App\Models\JobRole;
-use App\Models\JobOffer;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\Company\Job_OfferResource;
 use App\Http\Resources\Company\Job_OfferMiniResource;
 use App\Http\Requests\Company\jobOffersForCompanyRequest;
 
@@ -16,8 +13,10 @@ use App\Http\Requests\Company\jobOffersForCompanyRequest;
  **/
 class GetAllJob_OfferQueryForCompany extends Controller
 {
-    public function __invoke(Company $company, jobOffersForCompanyRequest $request)
+    public function __invoke(jobOffersForCompanyRequest $request)
     {
+        $company = Company::findOrFail(auth()->user()->role_id) ;
+
         $filters = $request->validated();
 
         //filter scope

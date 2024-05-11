@@ -21,13 +21,9 @@ class CreateJob_OfferCommand extends Controller
     /**
      * create job offer.
      */
-    public function __invoke(Company $company ,Industry $industry , CreateJob_OfferRequest $request)
+    public function __invoke(CreateJob_OfferRequest $request)
     {
         $data = $request->validated() ;
-
-        $job_role_id = JobRole::where('name' , $data['job_role'])
-            ->pluck('id')
-            ->firstOrFail();
         
         $job_offer = JobOffer::Create(
             [
@@ -43,13 +39,12 @@ class CreateJob_OfferCommand extends Controller
                 'gender' => $data['gender'] ?? null ,
                 'description' => $data['description'],
 
-                'industry_name' => $industry->name ,
-                'company_id' => $company->id ,
-                'job_role_id' => $job_role_id ,
+                'industry_name' => $data['industry_name'] ,
+                'company_id' => $data['company_id'] ,
+                'job_role_id' => $data['job_role_id'] ,
             ]
         );
 
-        //skills
         
         $skills = Skill::whereIn('name' , $data['skills'])->get() ;
 

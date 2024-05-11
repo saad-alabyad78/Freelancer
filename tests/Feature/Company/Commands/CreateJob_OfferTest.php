@@ -8,6 +8,7 @@ use App\Models\Skill;
 use App\Models\Company;
 use App\Models\JobRole;
 use App\Models\Industry;
+use App\Models\JobOffer;
 use App\Constants\Job_OfferTypes;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -40,6 +41,10 @@ class CreateJob_OfferTest extends TestCase
     public function test_create_job_offer(): void
     {
         $data = [
+            'company_id' => $this->company->id ,
+            'industry_name' => $this->industry->name,
+            'job_role_id' =>  JobRole::inRandomOrder()->take(1)->first()->id,
+            
             'type' => Job_OfferTypes::FULL_TIME,
             'max_salary' => 1000,
             'min_salary' => 10,
@@ -51,19 +56,20 @@ class CreateJob_OfferTest extends TestCase
             'military_service' =>  true,
             'gender' =>  null,
             
-            'job_role' =>  JobRole::inRandomOrder()->take(1)->first()->name,
             'skills' =>  Skill::inRandomOrder()->take(5)->pluck('name' , 'name'),
         ] ;
         
         $response = $this
             ->actingAs($this->user)
-            ->postJson('api/company/' . $this->company->username . '/job_offer/store/' . $this->industry->name ,
+            ->postJson('api/company/job_offer/store' ,
             $data) ;
+        
+        //$response->assertStatus(201) ;
+
+        $offer = JobOffer::first() ;
 
         
-        var_dump($response->json()); 
-        
-        $response->assertStatus(201) ;
-            
+        $this->assertDatabaseCount('job_offers' , 1) ;
+        $this->assertEquals($offer->skills()->count() , 5) ;
     }
 }

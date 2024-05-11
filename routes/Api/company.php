@@ -5,9 +5,12 @@ use App\Http\Controllers\Company\Query\CompanyImageQuery;
 use App\Http\Controllers\Company\Query\GalleryImageQuery;
 use App\Http\Controllers\Company\Commands\CreateCompanyCommand;
 use App\Http\Controllers\Company\Commands\DeleteCompanyCommand;
+use App\Http\Controllers\Company\Commands\UpdateCompanyCommand;
 use App\Http\Controllers\Company\Commands\CreateJob_OfferCommand;
 use App\Http\Controllers\Company\Commands\CreateCompanyImageCommand;
+use App\Http\Controllers\Company\Commands\CreateGalleryImageCommand;
 use App\Http\Controllers\Company\Commands\DeleteCompanyImageCommand;
+use App\Http\Controllers\Company\Commands\DeleteGalleryImageCommand;
 
 
 Route::group(['prefix' => 'company'] , function()
@@ -21,22 +24,43 @@ Route::group(['prefix' => 'company'] , function()
             ],
         ],
         function(){
-            Route::post('/store/{industry}' , CreateCompanyCommand::class)
-                ->withoutMiddleware('role:company') 
-                ->middleware('role:no_role');
+            Route::post('/store' , CreateCompanyCommand::class)
+                    ->withoutMiddleware('role:company') 
+                           ->middleware('role:no_role');
+                           
+            Route::delete('/' , DeleteCompanyCommand::class) ;
 
-            Route::post('/{company:username}/job_offer/store/{industry}' , CreateJob_OfferCommand::class) ;
-            Route::delete('{company:username}' , DeleteCompanyCommand::class) ;
+            Route::put('' , UpdateCompanyCommand::class) ; //TODO
+
+            Route::post('image/profile' , [CreateCompanyImageCommand::class , 'profile_image']);
+            Route::post('image/background' , [CreateCompanyImageCommand::class , 'background_image']);
+            Route::post('image/gallery' , CreateGalleryImageCommand::class) ;
+
+            Route::delete('image/profile' , [DeleteCompanyImageCommand::class , 'profile_image']);
+            Route::delete('image/background' , [DeleteCompanyImageCommand::class , 'background_image']);
+            Route::delete('image/gallery' , DeleteGalleryImageCommand::class) ;
+    
+            
         });
     
-    Route::get('gallery' , GalleryImageQuery::class) ;
+    Route::group(
+        [
+            'prefix' => 'job_offer' ,
+    
+            'middleware' => [
+                'auth:sanctum' ,
+                'verify_email' ,
+                'role:company' ,
+            ],
+        ],
+        function(){
+            Route::post('job_offer/store' , CreateJob_OfferCommand::class) ;
+        });
+    
+    Route::get('image/gallery' , GalleryImageQuery::class) ;
 
-    Route::get('image/{company:username}/profile' , [CompanyImageQuery::class , 'profile_image']);
-    Route::get('image/{company:username}/background' , [CompanyImageQuery::class , 'background_image']);
+    Route::get('image/profile/{company:username}' , [CompanyImageQuery::class , 'profile_image']);
+    Route::get('image/background/{company:username}' , [CompanyImageQuery::class , 'background_image']);
 
-    Route::post('image/{company:username}/profile' , [CreateCompanyImageCommand::class , 'profile_image']);
-    Route::post('image/{company:username}/background' , [CreateCompanyImageCommand::class , 'background_image']);
-
-    Route::delete('image/{company:username}/profile' , [DeleteCompanyImageCommand::class , 'profile_image']);
-    Route::delete('image/{company:username}/background' , [DeleteCompanyImageCommand::class , 'background_image']);
+    
 });

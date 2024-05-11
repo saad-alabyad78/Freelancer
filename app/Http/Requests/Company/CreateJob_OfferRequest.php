@@ -26,6 +26,10 @@ class CreateJob_OfferRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'company_id' => ['required' , 'exists:companies,id'] ,
+            'industry_name' => ['required' , 'exists:industries,name' , 'string'] ,
+            'job_role_id' => ['required' , 'exists:job_roles,id'] ,
+            
             'type' => ['required', 'string', new Job_OfferTypesRule()],
 
             'max_salary' => ['integer', 'min:0', 'max:100000000', 'gte:min_salary' , new FieldsTogetherOrNoneRule('min_salary')],
@@ -41,8 +45,6 @@ class CreateJob_OfferRequest extends FormRequest
             'health_insurance' => ['required' , 'bool'] ,
             'military_service' => ['required' , 'bool'] ,
             'gender' => [new GenderRule()] ,
-
-            'job_role' => ['required' , 'exists:job_roles,name'] ,
             
             'skills' => ['required' , 'array' , 'min:5' , 'max:25'] ,
             'skills.*' => ['required' , 'string' ,'exists:skills,name'] ,

@@ -20,8 +20,10 @@ class DeleteCompanyImageCommand extends Controller
     {
         $this->imageService = $_imageService ;
     }
-    public function profile_image(Company $company)
+    public function profile_image()
     {
+        $company = Company::findOrFail(auth()->user()->role_id); 
+        
         if($company->profile_image == Defaults::COMPANY_PROFILE_IMAGE){
             return response()->json([
                 'message' => 'no image to delete' , 
@@ -38,6 +40,8 @@ class DeleteCompanyImageCommand extends Controller
         ]);
     }public function background_image(Company $company)
     {
+        $company = Company::findOrFail(auth()->user()->role_id); 
+        
         if($company->background_image == Defaults::COMPANY_BACKGROUND_IMAGE){
             return response()->json([
                 'message' => 'no image to delete' , 

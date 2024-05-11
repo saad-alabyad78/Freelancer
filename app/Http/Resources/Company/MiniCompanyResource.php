@@ -15,6 +15,7 @@ class MiniCompanyResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
+            'id' => $this->id ,
             'profile_image' => $this->profile_image , 
             'background_image' => $this->background_iamge ,
             'verified_at' => $this->verified_at ,

@@ -18,7 +18,7 @@ class DeleteCompanyCommand extends Controller
      * Delete the company.
      * Note: the user will be deleted 
      */
-    public function __invoke(Company $company , DeleteCompanyRequest $request)
+    public function __invoke(DeleteCompanyRequest $request)
     {
         $password = $request->validated()['password'] ;
 
@@ -27,6 +27,8 @@ class DeleteCompanyCommand extends Controller
                 'error' => 'wrong password'
             ]);
         }
+
+        $company = Company::find(auth()->user()->role_id) ;
 
         $company->delete() ;
 

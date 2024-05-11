@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Category\SkillRequest;
 use App\Http\Resources\Category\SkillResource;
 /**
- * Category Managment 
+ * @group Category Managment 
  **/
 class GetAllSkillQuery extends Controller
 {
@@ -18,6 +18,7 @@ class GetAllSkillQuery extends Controller
     {
         $skill = Skill::where('name' , 'like' , '%'. $request->name .'%')->get() ;
 
-        return SkillResource::collection($skill) ;
+        return SkillResource::collection($skill)
+            ->response()->withHeaders(['Accept' => 'application/json']) ;
     }
 }

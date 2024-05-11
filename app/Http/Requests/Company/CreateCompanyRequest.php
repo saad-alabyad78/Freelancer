@@ -23,6 +23,7 @@ class CreateCompanyRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'industry_name' => ['string' , 'required' , 'exists:industries,name'] ,
             'profile_image' => ['image' , 'min:10' , 'max:2000'] ,
             'background_image' => ['image' , 'min:10' , 'max:2000'] ,
             'name' => ['required' , 'min:3' , 'max:20' , 'string' , 'unique:companies,name'] ,
@@ -39,7 +40,7 @@ class CreateCompanyRequest extends FormRequest
             'contact_links.*' => ['string' , 'min:5' , 'distinct'] , 
 
             'company_phones' => ['array'] ,
-            'company_phones.*' => ['regex:/^09[0-9]{8}$/' , 'distinct'] ,
+            'company_phones.*' => ['regex:/^09[0-9]{8}$/' , 'distinct' , 'string'] ,
         ];
     }
 

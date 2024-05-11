@@ -22,8 +22,10 @@ class CreateCompanyImageCommand extends Controller
     {
         $this->imageService = $_imageService ;
     }
-    public function profile_image(Company $company , CreateCompanyImageRequest $request)
+    public function profile_image(CreateCompanyImageRequest $request)
     {
+        $company = Company::findOrFail(auth()->user()->role_id) ;
+        
         //delete the old image 
         if($company->profile_image != Defaults::COMPANY_PROFILE_IMAGE){
             $this->imageService->delete(Disks::COMPANY , $company->profile_image) ;

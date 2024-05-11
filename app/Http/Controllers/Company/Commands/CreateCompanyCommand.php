@@ -35,7 +35,7 @@ class CreateCompanyCommand extends Controller
      * @return \Illuminate\Http\JsonResponse
      * 
      */
-    public function __invoke(CreateCompanyRequest $request , Industry $industry) 
+    public function __invoke(CreateCompanyRequest $request) 
     {
         $data = $request->validated();
 
@@ -50,7 +50,7 @@ class CreateCompanyCommand extends Controller
                 'city' => $data['city'] , 
                 'region' => $data['region']  , 
                 'street_address' => $data['street_address'] ,
-                'industry_name' => $industry->name 
+                'industry_name' => $data['industry_name']  
         ]);
 
         

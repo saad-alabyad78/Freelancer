@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Company\Query;
 
+use App\Constants\Disks;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Services\imageService;
@@ -29,12 +30,10 @@ class GalleryImageQuery extends Controller
     {
         $image_name = $request->validated()['image'] ;
 
-        $disk = 'company' ;
-
         return new Response(
-            $this->imageService->get_image($disk , $image_name) , 
+            $this->imageService->get_image(Disks::COMPANY , $image_name) , 
             200 ,
-            ['Content-Type' => $this->imageService->get_type($disk , $image_name)] 
+            ['Content-Type' => $this->imageService->get_type(Disks::COMPANY , $image_name)] 
         ) ;
     }
 }
