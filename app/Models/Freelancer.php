@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Freelancer extends Model
+class Freelancer extends BaseModel
 {
     use HasFactory;
 

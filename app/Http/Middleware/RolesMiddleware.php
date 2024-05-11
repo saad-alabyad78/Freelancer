@@ -35,7 +35,7 @@ class RolesMiddleware
             return $next($request);
         }
 
-        if(!in_array('any' , $roles) or !in_array(auth()->user()->role_name , $roles)){
+        if(!in_array('any' , $roles) and !in_array(auth()->user()->role_name , $roles)){
             return response()->json(
                 ['message' => 'you don\'t have the currect role'] ,
                  403 ,

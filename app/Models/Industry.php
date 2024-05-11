@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Industry extends Model
+class Industry extends BaseModel
 {
     use HasFactory;
 
@@ -21,6 +21,6 @@ class Industry extends Model
     }
     public function job_offers():HasMany
     {
-        return $this->hasMany(Job_Offer::class , 'industry_name' , 'name');
+        return $this->hasMany(JobOffer::class , 'industry_name' , 'name');
     }
 }

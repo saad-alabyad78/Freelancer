@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Skill;
-use App\Models\Job_Role;
+use App\Models\JobRole;
 use App\Services\xmlService;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -19,7 +19,7 @@ class Job_RoleSeeder extends Seeder
 
         foreach($xs->xmlContent->job_role as $role)
         {
-            $job_roleModel = Job_Role::updateOrCreate(['name' => $role['name']]) ;
+            $job_roleModel = JobRole::updateOrCreate(['name' => $role['name']]) ;
             $skillModels = [] ;
             foreach($role->skills->skill as $skill)
             {

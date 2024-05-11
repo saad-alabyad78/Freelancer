@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Company\Query;
 
 use App\Models\Company;
-use App\Models\Job_Role;
-use App\Models\Job_Offer;
+use App\Models\JobRole;
+use App\Models\JobOffer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Company\Job_OfferResource;
@@ -32,7 +32,7 @@ class GetAllJob_OfferQueryForCompany extends Controller
 
             })->when($filters['job_role'] , function($query , $filters){
 
-                $job_role = Job_Role::where('name' , $filters['job_role'])->first() ;
+                $job_role = JobRole::where('name' , $filters['job_role'])->first() ;
                 
                 return $query->where('job_role_id' , $job_role->id);
                 

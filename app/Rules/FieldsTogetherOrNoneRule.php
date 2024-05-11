@@ -39,12 +39,13 @@ class FieldsTogetherOrNoneRule implements ValidationRule , DataAwareRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         //To chick:what if the fields are not provided//
-
+        
             //the rest must be empty
             foreach($this->fields as $field)
             {
-                if(in_array($field , $this->data) !== $field ){
-                    $fail('fields ' . $value . ' and ' . $field . ' must be either together or none ') ;
+
+                if((($this->data[$field] ?? null) != null ) == (!$value) ){
+                    $fail('fields ' . $attribute . ' and ' . $field . ' must be either together or none ') ;
                 }
             }
      

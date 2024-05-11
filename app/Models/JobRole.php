@@ -3,14 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
-class Job_Role extends Model
+class JobRole extends BaseModel
 {
     use HasFactory;
 
-    protected $table = 'job_roles' ;
+    public function job_offers():HasMany
+    {
+        return $this->hasMany(JobOffer::class) ;
+    }
 
     public function skills():MorphToMany
     {

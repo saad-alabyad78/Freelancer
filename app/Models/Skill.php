@@ -6,17 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
-class Skill extends Model
+class Skill extends BaseModel
 {
     use HasFactory;
 
+    protected $fillable = ['name'] ;
+
     public function job_roles():MorphToMany
     {
-        return $this->morphToMany(Job_Role::class , 'skillable');
+        return $this->morphToMany(JobRole::class , 'skillable');
     }
 
     public function job_offers():MorphToMany
     {
-        return $this->morphToMany(Job_Offer::class , 'skillable');
+        return $this->morphToMany(JobOffer::class , 'skillable');
     }
 }

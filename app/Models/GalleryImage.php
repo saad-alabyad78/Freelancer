@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class GalleryImage extends Model
+class GalleryImage extends BaseModel
 {
     use HasFactory;
 
-    protected $fillable = ['name'] ;
+    protected $fillable = ['name' , 'company_id'] ;
 
     public function Url():Attribute
     {

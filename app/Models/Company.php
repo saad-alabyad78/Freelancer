@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Company extends Model
+class Company extends BaseModel
 {
     use HasFactory;
 
@@ -34,7 +34,7 @@ class Company extends Model
     }
     public function job_offers():HasMany
     {
-        return $this->hasMany(Job_Offer::class) ;
+        return $this->hasMany(JobOffer::class) ;
     }
 
     public function industry():HasOne

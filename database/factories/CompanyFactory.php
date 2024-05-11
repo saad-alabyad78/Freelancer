@@ -33,7 +33,7 @@ class CompanyFactory extends Factory
             'city' => 'دمشق' ,
             'region' => fake()->streetName() ,
             'street_address' => fake()->streetAddress() ,
-            'industry_name' => 'برمجي' 
+            'industry_name' => Industry::inRandomOrder()->take(1)->first()->name  
         ];
     }
 }

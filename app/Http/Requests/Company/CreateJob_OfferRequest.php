@@ -29,19 +29,18 @@ class CreateJob_OfferRequest extends FormRequest
             'type' => ['required', 'string', new Job_OfferTypesRule()],
 
             'max_salary' => ['integer', 'min:0', 'max:100000000', 'gte:min_salary' , new FieldsTogetherOrNoneRule('min_salary')],
-            'min_salary' => ['integer', 'min:0', 'max:100000000', 'ste:max_salary' , new FieldsTogetherOrNoneRule('max_salary')],
+            'min_salary' => ['integer', 'min:0', 'max:100000000', 'lte:max_salary' , new FieldsTogetherOrNoneRule('max_salary')],
 
 
             'max_age' => ['integer', 'min:18', 'max:60', 'gte:min_salary' , new FieldsTogetherOrNoneRule('min_age')],
-            'min_age' => ['integer', 'min:18', 'max:60', 'ste:max_salary' , new FieldsTogetherOrNoneRule('max_age')],
+            'min_age' => ['integer', 'min:18', 'max:60', 'lte:max_salary' , new FieldsTogetherOrNoneRule('max_age')],
             
-            'description' => ['string' , 'required' , 'min:100' ] ,
+            'description' => ['required' ,'string' ,  'min:40' ,' max:40000' ] ,
 
             'transportation' => ['required' , 'bool'] ,
             'health_insurance' => ['required' , 'bool'] ,
             'military_service' => ['required' , 'bool'] ,
-            'gender' => ['string' , new GenderRule()] ,
-            'decription' => ['required' , 'min:100' , 'max:40000'] ,
+            'gender' => [new GenderRule()] ,
 
             'job_role' => ['required' , 'exists:job_roles,name'] ,
             

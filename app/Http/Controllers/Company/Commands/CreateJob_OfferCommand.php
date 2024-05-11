@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Company\Commands;
 
 use App\Models\Skill;
 use App\Models\Company;
+use App\Models\JobRole;
 use App\Models\Industry;
-use App\Models\Job_Role;
-use App\Models\Job_Offer;
+use App\Models\JobOffer;
 use App\Constants\Job_OfferStatus;
 use App\Rules\Job_OfferStatusRule;
 use App\Http\Controllers\Controller;
@@ -25,22 +25,22 @@ class CreateJob_OfferCommand extends Controller
     {
         $data = $request->validated() ;
 
-        $job_role_id = Job_Role::where('name' , $data['job_role'])
+        $job_role_id = JobRole::where('name' , $data['job_role'])
             ->pluck('id')
             ->firstOrFail();
         
-        $job_offer = Job_Offer::Create(
+        $job_offer = JobOffer::Create(
             [
                 'status' => Job_OfferStatus::PENDING ,
                 'type' => $data['type'] ,
-                'max_sallary' => $data['max_salary'] ,
-                'min_salary' => $data['min_salary'] ,
+                'max_salary' => $data['max_salary'] ?? null ,
+                'min_salary' => $data['min_salary'] ?? null ,
                 'transportation' => $data['transportation'] ,
                 'health_insurance' => $data['health_insurance'] ,
                 'military_service' => $data['military_service'] ,
-                'max_age' => $data['max_age'] ,
-                'min_age' => $data['min_age'] ,
-                'gender' => $data['gender'] ,
+                'max_age' => $data['max_age'] ?? null ,
+                'min_age' => $data['min_age'] ?? null ,
+                'gender' => $data['gender'] ?? null ,
                 'description' => $data['description'],
 
                 'industry_name' => $industry->name ,
@@ -54,7 +54,9 @@ class CreateJob_OfferCommand extends Controller
         $skills = Skill::whereIn('name' , $data['skills'])->get() ;
 
         $job_offer->skills()->saveMany($skills) ;
-
-        return Job_OfferResource::make($job_offer->load(['company' , 'skills' , 'job_role']));
+        
+        return Job_OfferResource::make($job_offer->load(['company' , 'skills' , 'job_role']))
+              ->response()
+              ->withHeaders(['Accept' => 'application/json']);
     }
 }
