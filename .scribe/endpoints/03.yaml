@@ -4,7 +4,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/company/image/{company_username}/profile'
+    uri: 'api/company/image/profile/{company_username}'
     metadata:
       groupName: Endpoints
       groupDescription: ''
@@ -23,13 +23,13 @@ endpoints:
         name: company_username
         description: ''
         required: true
-        example: omnis
+        example: delectus
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      company_username: omnis
+      company_username: delectus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -40,7 +40,7 @@ endpoints:
         status: 404
         content: |-
           {
-              "message": "No query results for model [App\\Models\\Company] omnis",
+              "message": "No query results for model [App\\Models\\Company] delectus",
               "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
               "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
               "line": 487,
@@ -493,7 +493,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8536PVDaf6ZhedbcE1k4gva'
+      - 'Bearer dkg5eDV41f6a3EacPb8h6vZ'
     controller: null
     method: null
     route: null
@@ -501,7 +501,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/company/image/{company_username}/background'
+    uri: 'api/company/image/background/{company_username}'
     metadata:
       groupName: Endpoints
       groupDescription: ''
@@ -520,13 +520,13 @@ endpoints:
         name: company_username
         description: ''
         required: true
-        example: enim
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      company_username: enim
+      company_username: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -537,7 +537,7 @@ endpoints:
         status: 404
         content: |-
           {
-              "message": "No query results for model [App\\Models\\Company] enim",
+              "message": "No query results for model [App\\Models\\Company] et",
               "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
               "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
               "line": 487,
@@ -990,7 +990,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4Pgeb58Zadach6DvV3k6fE1'
+      - 'Bearer 4eP6v68V1acDg5hbfd3EakZ'
     controller: null
     method: null
     route: null
@@ -1024,7 +1024,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fabc84dZg61vVeakDhP63E5'
+      - 'Bearer 6k4hD6ea1d8fcPEVavg5Zb3'
     controller: null
     method: null
     route: null
@@ -1069,7 +1069,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 15VgbP68cdvZ4DkaEa6fhe3'
+      - 'Bearer bc1k3vDZaaf6heE84Vd5P6g'
     controller: null
     method: null
     route: null

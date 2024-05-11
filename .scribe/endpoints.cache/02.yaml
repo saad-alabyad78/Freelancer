@@ -6,7 +6,7 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: 'api/company/store/{industry_name}'
+    uri: api/company/store
     metadata:
       groupName: 'Company Managment'
       groupDescription: ''
@@ -20,21 +20,20 @@ endpoints:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: multipart/form-data
       Accept: application/json
-    urlParameters:
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
       industry_name:
         name: industry_name
         description: ''
         required: true
-        example: برمجي
+        example: ex
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-    cleanUrlParameters:
-      industry_name: برمجي
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
       profile_image:
         name: profile_image
         description: 'Must be an image. Must be at least 10 kilobytes. Must not be greater than 2000 kilobytes.'
@@ -57,7 +56,7 @@ endpoints:
         name: name
         description: 'name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters.'
         required: true
-        example: mul
+        example: mdjsphggfemkrllusnq
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -66,7 +65,7 @@ endpoints:
         name: description
         description: 'Must not be greater than 4000 characters.'
         required: true
-        example: 'Natus praesentium odit ut inventore enim corrupti sed accusantium.'
+        example: 'Et et iure dignissimos neque consequatur quod.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -75,7 +74,7 @@ endpoints:
         name: size
         description: 'Must be at least 5 characters. Must not be greater than 20 characters.'
         required: true
-        example: kbzow
+        example: rwknirondtejniiajhhu
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -93,7 +92,7 @@ endpoints:
         name: region
         description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
         required: true
-        example: madmzjahstrexnudet
+        example: npq
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -102,7 +101,7 @@ endpoints:
         name: street_address
         description: 'Must be at least 3 characters. Must not be greater than 30 characters.'
         required: true
-        example: vkqqkgw
+        example: wtojqsztxkbaxocyh
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -122,7 +121,7 @@ endpoints:
         description: 'Must be at least 5 characters.'
         required: false
         example:
-          - wvmkmtlimnscfgzemxtorwcricbtrvvopiqpypxsjwsgwk
+          - hvwbygpkjbxn
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
@@ -132,22 +131,23 @@ endpoints:
         description: 'Must match the regex /^09[0-9]{8}$/.'
         required: false
         example:
-          - '0987182865'
+          - soluta
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: mul
-      description: 'Natus praesentium odit ut inventore enim corrupti sed accusantium.'
-      size: kbzow
+      industry_name: ex
+      name: mdjsphggfemkrllusnq
+      description: 'Et et iure dignissimos neque consequatur quod.'
+      size: rwknirondtejniiajhhu
       city: دمشق
-      region: madmzjahstrexnudet
-      street_address: vkqqkgw
+      region: npq
+      street_address: wtojqsztxkbaxocyh
       contact_links:
-        - wvmkmtlimnscfgzemxtorwcricbtrvvopiqpypxsjwsgwk
+        - hvwbygpkjbxn
       company_phones:
-        - '0987182865'
+        - soluta
     fileParameters:
       profile_image: null
       background_image: null
@@ -156,7 +156,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"profile_image":"default\/profile_image.png","background_image":"default\/background_image.png","profile_image_url":"api\/company\/image\/\/profile","background_image_url":"api\/company\/image\/\/background","verified_at":null,"username":null,"name":null,"description":null,"size":null,"industry_name":null,"gallery_images":[],"contact_links":[],"company_phones":[]}}'
+        content: '{"data":{"id":null,"profile_image":"default\/profile_image.png","background_image":"default\/background_image.png","profile_image_url":"api\/company\/image\/\/profile","background_image_url":"api\/company\/image\/\/background","verified_at":null,"username":null,"name":null,"description":null,"size":null,"industry_name":null,"gallery_images":[],"contact_links":[],"company_phones":[]}}'
         headers: []
         description: ''
         custom: []
@@ -164,183 +164,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1kE6c5Veg4fvd6aDaPb38Zh'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: 'api/company/{company_username}/job_offer/store/{industry_name}'
-    metadata:
-      groupName: 'Company Managment'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'create job offer.'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      company_username:
-        name: company_username
-        description: ''
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      industry_name:
-        name: industry_name
-        description: ''
-        required: true
-        example: برمجي
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      company_username: 1
-      industry_name: برمجي
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      type:
-        name: type
-        description: 'this must be a valid job offer type.'
-        required: true
-        example: 'full-time , part-time , remotely , on-site'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      max_salary:
-        name: max_salary
-        description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
-        required: false
-        example: 3
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      min_salary:
-        name: min_salary
-        description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
-        required: false
-        example: 14
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      max_age:
-        name: max_age
-        description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
-        required: false
-        example: 20
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      min_age:
-        name: min_age
-        description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
-        required: false
-        example: 6
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      transportation:
-        name: transportation
-        description: ''
-        required: true
-        example: true
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      health_insurance:
-        name: health_insurance
-        description: ''
-        required: true
-        example: false
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      military_service:
-        name: military_service
-        description: ''
-        required: true
-        example: false
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      gender:
-        name: gender
-        description: 'must be a male or female.'
-        required: false
-        example: male
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      decription:
-        name: decription
-        description: 'Must be at least 100 characters. Must not be greater than 40000 characters.'
-        required: true
-        example: ykdjfbcztga
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      job_role:
-        name: job_role
-        description: ''
-        required: true
-        example: qui
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      skills:
-        name: skills
-        description: ''
-        required: true
-        example:
-          - aut
-        type: 'string[]'
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      type: 'full-time , part-time , remotely , on-site'
-      max_salary: 3
-      min_salary: 14
-      max_age: 20
-      min_age: 6
-      transportation: true
-      health_insurance: false
-      military_service: false
-      gender: male
-      decription: ykdjfbcztga
-      job_role: qui
-      skills:
-        - aut
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer hce4gZbP5vE6kaD81fd63Va'
+      - 'Bearer dec6v16D8aPgbZ534akhVEf'
     controller: null
     method: null
     route: null
@@ -348,7 +172,7 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/company/{company_username}'
+    uri: api/company
     metadata:
       groupName: 'Company Managment'
       groupDescription: ''
@@ -362,18 +186,8 @@ endpoints:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
-    urlParameters:
-      company_username:
-        name: company_username
-        description: ''
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      company_username: 1
+    urlParameters: []
+    cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -381,20 +195,474 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: 'AUEe;:!31'
+        example: '|vBPC~j_i\}k.k1y'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      password: 'AUEe;:!31'
+      password: '|vBPC~j_i\}k.k1y'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer fa5d4Vv3cPaD6h1bgk8eZ6E'
+      - 'Bearer f65PhvZVe1E8dagbck3a64D'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: api/company
+    metadata:
+      groupName: 'Company Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ka6afc8bZ1hDE3V4vde56Pg'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/company/image/profile
+    metadata:
+      groupName: 'Company Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      image:
+        name: image
+        description: 'Must be an image. Must not be greater than 2000 kilobytes.'
+        required: true
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters: []
+    fileParameters:
+      image: null
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer PV6cgE1b85eZvakfa6h34dD'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/company/image/background
+    metadata:
+      groupName: 'Company Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      image:
+        name: image
+        description: 'Must be an image. Must not be greater than 2000 kilobytes.'
+        required: true
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters: []
+    fileParameters:
+      image: null
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer kfac3eha66D41PZ8E5Vgvbd'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/company/image/gallery
+    metadata:
+      groupName: 'Company Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      image:
+        name: image
+        description: 'Must be an image. Must not be greater than 2000 kilobytes.'
+        required: true
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters: []
+    fileParameters:
+      image: null
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer vb31aeVkP6ZEDh65adf4gc8'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/company/image/profile
+    metadata:
+      groupName: 'Company Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer cbg8V365vh6ZPaeEakfD41d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/company/image/background
+    metadata:
+      groupName: 'Company Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Ea3df46e1acZDvgbh86PVk5'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/company/image/gallery
+    metadata:
+      groupName: 'Company Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      gallery_image_id:
+        name: gallery_image_id
+        description: ''
+        required: true
+        example: amet
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      gallery_image_id: amet
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer dZ6a1VcgfD5a3bh86kvP4Ee'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/company/job_offer/job_offer/store
+    metadata:
+      groupName: 'Company Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'create job offer.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      company_id:
+        name: company_id
+        description: ''
+        required: true
+        example: ut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      industry_name:
+        name: industry_name
+        description: ''
+        required: true
+        example: corporis
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      job_role_id:
+        name: job_role_id
+        description: ''
+        required: true
+        example: facilis
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      type:
+        name: type
+        description: 'this must be a valid job offer type.'
+        required: true
+        example: 'full-time , part-time , remotely , on-site'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      max_salary:
+        name: max_salary
+        description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
+        required: false
+        example: 5
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      min_salary:
+        name: min_salary
+        description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
+        required: false
+        example: 18
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      max_age:
+        name: max_age
+        description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
+        required: false
+        example: 6
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      min_age:
+        name: min_age
+        description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
+        required: false
+        example: 4
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      description:
+        name: description
+        description: 'Must be at least 40 characters. Must not be greater than 40000 characters.'
+        required: true
+        example: 'Assumenda incidunt quia labore iusto esse sit nisi dolores.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      transportation:
+        name: transportation
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      health_insurance:
+        name: health_insurance
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      military_service:
+        name: military_service
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      gender:
+        name: gender
+        description: 'must be a male or female.'
+        required: false
+        example: male
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      skills:
+        name: skills
+        description: ''
+        required: true
+        example:
+          - nihil
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      company_id: ut
+      industry_name: corporis
+      job_role_id: facilis
+      type: 'full-time , part-time , remotely , on-site'
+      max_salary: 5
+      min_salary: 18
+      max_age: 6
+      min_age: 4
+      description: 'Assumenda incidunt quia labore iusto esse sit nisi dolores.'
+      transportation: false
+      health_insurance: true
+      military_service: true
+      gender: male
+      skills:
+        - nihil
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer gD6de41P3v6ZaEbfk8a5Vch'
     controller: null
     method: null
     route: null
@@ -402,7 +670,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/company/gallery
+    uri: api/company/image/gallery
     metadata:
       groupName: 'Company Managment'
       groupDescription: ''
@@ -425,13 +693,13 @@ endpoints:
         name: image
         description: ''
         required: true
-        example: ad
+        example: omnis
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      image: ad
+      image: omnis
     fileParameters: []
     responses:
       -
@@ -449,203 +717,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZVcEv1hd35eDag648aPkf6b'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: 'api/company/image/{company_username}/profile'
-    metadata:
-      groupName: 'Company Managment'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: multipart/form-data
-      Accept: application/json
-    urlParameters:
-      company_username:
-        name: company_username
-        description: ''
-        required: true
-        example: et
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      company_username: et
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      image:
-        name: image
-        description: 'Must be an image. Must not be greater than 2000 kilobytes.'
-        required: true
-        example: null
-        type: file
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters: []
-    fileParameters:
-      image: null
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer PZ66cbagdveD814fkVa53hE'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: 'api/company/image/{company_username}/background'
-    metadata:
-      groupName: 'Company Managment'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: multipart/form-data
-      Accept: application/json
-    urlParameters:
-      company_username:
-        name: company_username
-        description: ''
-        required: true
-        example: sequi
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      company_username: sequi
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      image:
-        name: image
-        description: 'Must be an image. Must not be greater than 2000 kilobytes.'
-        required: true
-        example: null
-        type: file
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters: []
-    fileParameters:
-      image: null
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer d6ekfaa6v1cg5VPEDb83Z4h'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/company/image/{company_username}/profile'
-    metadata:
-      groupName: 'Company Managment'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      company_username:
-        name: company_username
-        description: ''
-        required: true
-        example: sequi
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      company_username: sequi
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer bZ8dEf65kDge36VcvPh4a1a'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/company/image/{company_username}/background'
-    metadata:
-      groupName: 'Company Managment'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      company_username:
-        name: company_username
-        description: ''
-        required: true
-        example: magnam
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      company_username: magnam
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer k51cVdveaD4P6fgaZ3h8E6b'
+      - 'Bearer a61cEbvgfVZPh4a8k3d65De'
     controller: null
     method: null
     route: null

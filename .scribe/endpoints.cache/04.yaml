@@ -43,7 +43,51 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer d6b31eD4hV5Egc6kaf8ZavP'
+      - 'Bearer aDghce43V6Pa8k56vZ1Edbf'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/category/skills/search
+    metadata:
+      groupName: 'Category Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'search throw all the skills.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: necessitatibus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      name: necessitatibus
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 665hdZkcvD4Vb8gP3e1Eafa'
     controller: null
     method: null
     route: null
