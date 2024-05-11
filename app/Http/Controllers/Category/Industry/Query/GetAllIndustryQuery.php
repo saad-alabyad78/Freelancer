@@ -20,6 +20,8 @@ class GetAllIndustryQuery extends Controller
     {
         //TODO : caching
 
-        return IndustryResource::collection(Industry::all()); 
+        return IndustryResource::collection(Industry::all())
+        ->response()
+        ->withHeaders(['Accept' => 'application/json']); 
     }
 }

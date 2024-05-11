@@ -6,7 +6,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/category/indusrty
+    uri: api/category/industry
     metadata:
       groupName: 'Category Managment'
       groupDescription: ''
@@ -34,6 +34,7 @@ endpoints:
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
+          accept: application/json
           x-ratelimit-limit: '60'
           x-ratelimit-remaining: '52'
           access-control-allow-origin: '*'
@@ -43,7 +44,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aDghce43V6Pa8k56vZ1Edbf'
+      - 'Bearer VP53h646D1a8fvakEgdcebZ'
     controller: null
     method: null
     route: null
@@ -74,20 +75,20 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: necessitatibus
+        example: assumenda
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: necessitatibus
+      name: assumenda
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 665hdZkcvD4Vb8gP3e1Eafa'
+      - 'Bearer V6fgc5d16evDEbP4aha8Z3k'
     controller: null
     method: null
     route: null

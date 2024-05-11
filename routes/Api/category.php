@@ -8,6 +8,6 @@ use App\Http\Controllers\Category\Industry\Query\GetAllIndustryQuery;
 Route::group([
     'prefix' => 'category'
 ] , function(){
-    Route::get('indusrty' , GetAllIndustryQuery::class) ;
+    Route::get('industry' , GetAllIndustryQuery::class) ;
     Route::post('skills/search' , GetAllSkillQuery::class) ;
 });
