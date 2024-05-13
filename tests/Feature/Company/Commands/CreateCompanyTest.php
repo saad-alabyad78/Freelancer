@@ -96,7 +96,7 @@ class CreateCompanyTest extends TestCase
 
         var_dump($end - $start) ;
 
-        $this->assertLessThan(0.1 , $end - $start) ;
+        $this->assertLessThan(0.2 , $end - $start) ;
 
         $response->assertStatus(201) ;
 

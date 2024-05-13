@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use Illuminate\Support\Str;
+use App\Jobs\DeleteImageJob;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 use App\Exceptions\FileNotFonudException;
@@ -30,9 +31,7 @@ class imageService
         static::validate($disk , $image) ;
 
         $file = Storage::disk($disk)->get($image) ;
-        $type = Storage::disk($disk)->mimeType($image) ;
 
-        
         return $file ;
     } 
 
@@ -50,7 +49,7 @@ class imageService
         \Log::info('deleting ' . $image ) ;
         static::validate($disk , $image);
 
-        Storage::disk($disk)->delete($image) ;
+        DeleteImageJob::dispatch($disk , $image ) ;
     }
 
     private static function validate($disk , $image) : void

@@ -37,16 +37,16 @@ class User extends Authenticatable
     protected function RoleName(): Attribute
     {
         return Attribute::make(
-            get: fn () =>Str::lower(Str::afterLast($this->attributes['role_type'] , '\\'))
+            get: fn () =>Str::lower(Str::afterLast($this->role_type , '\\'))
         );
     }
 
     protected function slug(): Attribute
     {
         $name =
-        $this->attributes['first_name'] . ' ' .
-        $this->attributes['last_name'] . ' ' .
-        $this->attributes['id'] ;
+        $this->first_name . ' ' .
+        $this->last_name . ' ' .
+        $this->id ;
         return Attribute::make(
             get: fn() => Str::slug($name)
         );
