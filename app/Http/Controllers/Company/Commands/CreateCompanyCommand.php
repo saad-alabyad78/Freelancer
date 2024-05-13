@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Company\Commands;
 
 use App\Models\Company;
+use App\Constants\Disks;
 use App\Models\Industry;
 use App\Models\ContactLink;
 use App\Models\CompanyPhone;
@@ -41,8 +42,8 @@ class CreateCompanyCommand extends Controller
 
         //create company
         $company = Company::create([
-                'profile_image' => $this->imageService->store_image($data['profile_image'] ?? null , 'company') ,
-                'background_image' => $this->imageService->store_image($data['background_image'] ?? null , 'company') ,
+                'profile_image' => $this->imageService->store_image($data['profile_image'] ?? null , Disks::COMPANY) ,
+                'background_image' => $this->imageService->store_image($data['background_image'] ?? null , Disks::COMPANY) ,
                 'username' => auth()->user()->slug ,
                 'name' => $data['name'] , 
                 'description' => $data['description'] , 
@@ -77,7 +78,7 @@ class CreateCompanyCommand extends Controller
         
             foreach($data['gallery_images'] as $galley_image)
             {
-                $name = $this->imageService->store_image($galley_image , 'company');
+                $name = $this->imageService->store_image($galley_image , Disks::COMPANY);
 
                 if($name)
                 {
@@ -100,14 +101,6 @@ class CreateCompanyCommand extends Controller
             $company->company_phones()->saveMany($company_phones) ;
 
         }
-        /*
-        ->with
-            ([
-                'contact_links'  ,
-                'gallery_images' ,
-                'company_phones' ,
-            ])->first()
-        */
       
         
         return CompanyResource::make($company->load([

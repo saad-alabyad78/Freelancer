@@ -45,7 +45,7 @@ class LogController extends Controller
     }
     /**
      * @authenticated
-     */
+    **/
     public function logout(Request $request)
     {
         $request->user()->tokens()->delete();
