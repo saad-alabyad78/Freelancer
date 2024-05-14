@@ -12,5 +12,3 @@ php artisan route:cache
 echo "Running migrations..."
 php artisan migrate:fresh --force --seed
 
-echo "Running queue"
-php artisan queue:work
