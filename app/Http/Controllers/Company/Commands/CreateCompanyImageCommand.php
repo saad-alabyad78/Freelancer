@@ -19,6 +19,11 @@ use App\Http\Requests\Company\CreateCompanyImageRequest;
  */
 class CreateCompanyImageCommand extends Controller
 {
+    /**
+     *create/update profile image 
+     *
+     * @return \Illuminate\Http\JsonResponse 
+     **/
     public function profile_image(CreateCompanyImageRequest $request)
     {
         $company = Company::findOrFail(auth()->user()->role_id) ;
@@ -43,6 +48,11 @@ class CreateCompanyImageCommand extends Controller
             'profile_image_url' => $company->profile_image_url ,
         ],201);
     }
+    /**
+     *create/update background image 
+     *
+     * @return \Illuminate\Http\JsonResponse
+     **/
     public function background_image(CreateCompanyImageRequest $request)
     {
         $company = Company::findOrFail(auth()->user()->role_id) ;

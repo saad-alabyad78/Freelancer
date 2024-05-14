@@ -13,6 +13,12 @@ class SearchAllSkillQuery extends Controller
 {
     /**
      * search throw all the skills.
+     * 
+     *@apiResource App\Http\Resources\Category\IndustryResource
+     *@apiResourceModel App\Models\Industry
+     * 
+     *@return \Illuminate\Http\JsonResponse
+     *
      */
     public function __invoke(SkillRequest $request)
     {

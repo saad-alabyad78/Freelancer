@@ -13,6 +13,9 @@ use App\Http\Requests\Company\UpdateCompanyRequest;
  */
 class UpdateCompanyCommand extends Controller
 {
+    /**
+     * todo : update company
+     */
     public function __invoke(UpdateCompanyRequest $request)
     {
         //TODO:

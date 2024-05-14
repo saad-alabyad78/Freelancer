@@ -15,6 +15,11 @@ class GetAllIndustryQuery extends Controller
 {
     /**
      * get all industries
+     * 
+     * @apiResource App\Http\Resources\Category\IndustryResource
+     * @apiResourceModel App\Models\Industry
+     * 
+     * @return \Illuminate\Http\JsonResponse
      */
     public function __invoke()
     {

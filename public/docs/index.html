@@ -125,31 +125,31 @@
                                 <a href="#company-managment-DELETEapi-company">Delete the company.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="company-managment-PUTapi-company">
-                                <a href="#company-managment-PUTapi-company">PUT api/company</a>
+                                <a href="#company-managment-PUTapi-company">todo : update company</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="company-managment-POSTapi-company-image-profile">
-                                <a href="#company-managment-POSTapi-company-image-profile">POST api/company/image/profile</a>
+                                <a href="#company-managment-POSTapi-company-image-profile">create/update profile image</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="company-managment-POSTapi-company-image-background">
-                                <a href="#company-managment-POSTapi-company-image-background">POST api/company/image/background</a>
+                                <a href="#company-managment-POSTapi-company-image-background">create/update background image</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="company-managment-POSTapi-company-image-gallery">
-                                <a href="#company-managment-POSTapi-company-image-gallery">POST api/company/image/gallery</a>
+                                <a href="#company-managment-POSTapi-company-image-gallery">create gallary image</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="company-managment-DELETEapi-company-image-profile">
-                                <a href="#company-managment-DELETEapi-company-image-profile">DELETE api/company/image/profile</a>
+                                <a href="#company-managment-DELETEapi-company-image-profile">delete profile image</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="company-managment-DELETEapi-company-image-background">
-                                <a href="#company-managment-DELETEapi-company-image-background">DELETE api/company/image/background</a>
+                                <a href="#company-managment-DELETEapi-company-image-background">delete background image</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="company-managment-DELETEapi-company-image-gallery">
-                                <a href="#company-managment-DELETEapi-company-image-gallery">DELETE api/company/image/gallery</a>
+                                <a href="#company-managment-DELETEapi-company-image-gallery">delete gallary image</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="company-managment-POSTapi-company-job_offer-store">
                                 <a href="#company-managment-POSTapi-company-job_offer-store">create job offer.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="company-managment-GETapi-company-image-gallery">
-                                <a href="#company-managment-GETapi-company-image-gallery">Get A Gallary Image</a>
+                                                                                <li class="tocify-item level-2" data-unique="company-managment-GETapi-company-job_offer-my-job-offers">
+                                <a href="#company-managment-GETapi-company-job_offer-my-job-offers">search job offers</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -177,13 +177,7 @@
                     <a href="#endpoints">Endpoints</a>
                 </li>
                                     <ul id="tocify-subheader-endpoints" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-company-image-profile--company_username-">
-                                <a href="#endpoints-GETapi-company-image-profile--company_username-">GET api/company/image/profile/{company_username}</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-company-image-background--company_username-">
-                                <a href="#endpoints-GETapi-company-image-background--company_username-">GET api/company/image/background/{company_username}</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-test">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-test">
                                 <a href="#endpoints-POSTapi-test">POST api/test</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-test">
@@ -200,7 +194,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: May 11, 2024</li>
+        <li>Last updated: May 14, 2024</li>
     </ul>
 </div>
 
@@ -243,8 +237,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"schmeler.meghan@example.com\",
-    \"password\": \"vndil|-SI\"
+    \"email\": \"jazmyn.schmidt@example.org\",
+    \"password\": \"eT8JdwFMj9#wL\"
 }"
 </code></pre></div>
 
@@ -261,8 +255,8 @@ const headers = {
 };
 
 let body = {
-    "email": "schmeler.meghan@example.com",
-    "password": "vndil|-SI"
+    "email": "jazmyn.schmidt@example.org",
+    "password": "eT8JdwFMj9#wL"
 };
 
 fetch(url, {
@@ -362,10 +356,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-login"
-               value="schmeler.meghan@example.com"
+               value="jazmyn.schmidt@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>schmeler.meghan@example.com</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>jazmyn.schmidt@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -373,10 +367,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-login"
-               value="vndil|-SI"
+               value="eT8JdwFMj9#wL"
                data-component="body">
     <br>
-<p>Example: <code>vndil|-SI</code></p>
+<p>Example: <code>eT8JdwFMj9#wL</code></p>
         </div>
         </form>
 
@@ -521,7 +515,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"token\": \"magnam\"
+    \"token\": \"in\"
 }"
 </code></pre></div>
 
@@ -538,7 +532,7 @@ const headers = {
 };
 
 let body = {
-    "token": "magnam"
+    "token": "in"
 };
 
 fetch(url, {
@@ -658,10 +652,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="token"                data-endpoint="GETapi-provider-google"
-               value="magnam"
+               value="in"
                data-component="body">
     <br>
-<p>Example: <code>magnam</code></p>
+<p>Example: <code>in</code></p>
         </div>
         </form>
 
@@ -684,10 +678,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"first_name\": \"ukbuihfdnyjufptlsibadseh\",
-    \"last_name\": \"wbafdcnmjynv\",
-    \"email\": \"kaitlyn.schiller@example.net\",
-    \"password\": \"\')`fM}o\"
+    \"first_name\": \"qzihbrblwrzmvgl\",
+    \"last_name\": \"fapcpzblunyt\",
+    \"email\": \"romaguera.leonie@example.org\",
+    \"password\": \"&lt;`]s5;%_O&lt;M\"
 }"
 </code></pre></div>
 
@@ -704,10 +698,10 @@ const headers = {
 };
 
 let body = {
-    "first_name": "ukbuihfdnyjufptlsibadseh",
-    "last_name": "wbafdcnmjynv",
-    "email": "kaitlyn.schiller@example.net",
-    "password": "')`fM}o"
+    "first_name": "qzihbrblwrzmvgl",
+    "last_name": "fapcpzblunyt",
+    "email": "romaguera.leonie@example.org",
+    "password": "&lt;`]s5;%_O&lt;M"
 };
 
 fetch(url, {
@@ -807,10 +801,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="first_name"                data-endpoint="POSTapi-otp-register"
-               value="ukbuihfdnyjufptlsibadseh"
+               value="qzihbrblwrzmvgl"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>ukbuihfdnyjufptlsibadseh</code></p>
+<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>qzihbrblwrzmvgl</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
@@ -818,10 +812,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="last_name"                data-endpoint="POSTapi-otp-register"
-               value="wbafdcnmjynv"
+               value="fapcpzblunyt"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>wbafdcnmjynv</code></p>
+<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>fapcpzblunyt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -829,10 +823,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-otp-register"
-               value="kaitlyn.schiller@example.net"
+               value="romaguera.leonie@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>kaitlyn.schiller@example.net</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>romaguera.leonie@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -840,10 +834,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-otp-register"
-               value="')`fM}o"
+               value="<`]s5;%_O<M"
                data-component="body">
     <br>
-<p>Must be at least 8 characters. Must not be greater than 255 characters. Example: <code>')</code>fM}o`</p>
+<p>Must be at least 8 characters. Must not be greater than 255 characters. Example: <code>&lt;</code>]s5;%_O&lt;M`</p>
         </div>
         </form>
 
@@ -866,8 +860,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email_otp_code\": \"maiores\",
-    \"email\": \"sanford.fatima@example.org\"
+    \"email_otp_code\": \"animi\",
+    \"email\": \"jmohr@example.com\"
 }"
 </code></pre></div>
 
@@ -884,8 +878,8 @@ const headers = {
 };
 
 let body = {
-    "email_otp_code": "maiores",
-    "email": "sanford.fatima@example.org"
+    "email_otp_code": "animi",
+    "email": "jmohr@example.com"
 };
 
 fetch(url, {
@@ -985,10 +979,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email_otp_code"                data-endpoint="POSTapi-otp-email-verify"
-               value="maiores"
+               value="animi"
                data-component="body">
     <br>
-<p>Example: <code>maiores</code></p>
+<p>Example: <code>animi</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -996,10 +990,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-otp-email-verify"
-               value="sanford.fatima@example.org"
+               value="jmohr@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>sanford.fatima@example.org</code></p>
+<p>Must be a valid email address. Example: <code>jmohr@example.com</code></p>
         </div>
         </form>
 
@@ -1022,7 +1016,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"heather.welch@example.org\"
+    \"email\": \"monahan.lila@example.org\"
 }"
 </code></pre></div>
 
@@ -1039,7 +1033,7 @@ const headers = {
 };
 
 let body = {
-    "email": "heather.welch@example.org"
+    "email": "monahan.lila@example.org"
 };
 
 fetch(url, {
@@ -1139,10 +1133,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-otp-resend"
-               value="heather.welch@example.org"
+               value="monahan.lila@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>heather.welch@example.org</code></p>
+<p>Must be a valid email address. Example: <code>monahan.lila@example.org</code></p>
         </div>
         </form>
 
@@ -1165,7 +1159,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"lakin.terry@example.com\"
+    \"email\": \"hunter.ratke@example.com\"
 }"
 </code></pre></div>
 
@@ -1182,7 +1176,7 @@ const headers = {
 };
 
 let body = {
-    "email": "lakin.terry@example.com"
+    "email": "hunter.ratke@example.com"
 };
 
 fetch(url, {
@@ -1282,10 +1276,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-otp-forgot-password"
-               value="lakin.terry@example.com"
+               value="hunter.ratke@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>lakin.terry@example.com</code></p>
+<p>Must be a valid email address. Example: <code>hunter.ratke@example.com</code></p>
         </div>
         </form>
 
@@ -1308,9 +1302,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"devon95@example.com\",
+    \"email\": \"delpha.heathcote@example.com\",
     \"password\": \"et\",
-    \"password_otp_code\": \"qui\"
+    \"password_otp_code\": \"quos\"
 }"
 </code></pre></div>
 
@@ -1327,9 +1321,9 @@ const headers = {
 };
 
 let body = {
-    "email": "devon95@example.com",
+    "email": "delpha.heathcote@example.com",
     "password": "et",
-    "password_otp_code": "qui"
+    "password_otp_code": "quos"
 };
 
 fetch(url, {
@@ -1429,10 +1423,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-otp-reset-password"
-               value="devon95@example.com"
+               value="delpha.heathcote@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>devon95@example.com</code></p>
+<p>Must be a valid email address. Example: <code>delpha.heathcote@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -1451,10 +1445,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password_otp_code"                data-endpoint="POSTapi-otp-reset-password"
-               value="qui"
+               value="quos"
                data-component="body">
     <br>
-<p>Example: <code>qui</code></p>
+<p>Example: <code>quos</code></p>
         </div>
         </form>
 
@@ -1504,27 +1498,12 @@ fetch(url, {
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-accept: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 52
-access-control-allow-origin: *
- </code></pre></details>         <pre>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: [
-        {
-            &quot;name&quot;: &quot;برمجي&quot;
-        },
-        {
-            &quot;name&quot;: &quot;خدمي&quot;
-        }
-    ]
+    &quot;data&quot;: {
+        &quot;name&quot;: &quot;برمجي&quot;
+    }
 }</code>
  </pre>
     </span>
@@ -1629,7 +1608,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"quo\"
+    \"name\": \"quod\"
 }"
 </code></pre></div>
 
@@ -1646,7 +1625,7 @@ const headers = {
 };
 
 let body = {
-    "name": "quo"
+    "name": "quod"
 };
 
 fetch(url, {
@@ -1658,7 +1637,18 @@ fetch(url, {
 </span>
 
 <span id="example-responses-POSTapi-category-skills-search">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;name&quot;: &quot;برمجي&quot;
+    }
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-POSTapi-category-skills-search" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-category-skills-search"></span>:
@@ -1746,10 +1736,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-category-skills-search"
-               value="quo"
+               value="quod"
                data-component="body">
     <br>
-<p>Example: <code>quo</code></p>
+<p>Example: <code>quod</code></p>
         </div>
         </form>
 
@@ -1772,7 +1762,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"quam\"
+    \"name\": \"qui\"
 }"
 </code></pre></div>
 
@@ -1789,7 +1779,7 @@ const headers = {
 };
 
 let body = {
-    "name": "quam"
+    "name": "qui"
 };
 
 fetch(url, {
@@ -1801,7 +1791,19 @@ fetch(url, {
 </span>
 
 <span id="example-responses-POSTapi-category-job_roles-search">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;android developer&quot;
+    }
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-POSTapi-category-job_roles-search" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-category-job_roles-search"></span>:
@@ -1889,10 +1891,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-category-job_roles-search"
-               value="quam"
+               value="qui"
                data-component="body">
     <br>
-<p>Example: <code>quam</code></p>
+<p>Example: <code>qui</code></p>
         </div>
         </form>
 
@@ -1918,18 +1920,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "industry_name=aspernatur"\
-    --form "name=rghtguphncabs"\
-    --form "description=Suscipit dolor et voluptas voluptas totam."\
-    --form "size=qufbkzcxu"\
+    --form "industry_name=excepturi"\
+    --form "name=wdvajp"\
+    --form "description=Quam iusto est quia aspernatur et sunt voluptas magnam."\
+    --form "size=fbmkdkhwds"\
     --form "city=دمشق"\
-    --form "region=uyonwayfregkxt"\
-    --form "street_address=pm"\
-    --form "contact_links[]=uoxampfezgukacoghbumezvahcjlnvblnpsthltgkvphvucyijsyrqigjixdxshilmzoievtgiznwpdbwjxsojyb"\
-    --form "company_phones[]=consequuntur"\
-    --form "profile_image=@/tmp/phpeB8NDq" \
-    --form "background_image=@/tmp/phpQO6pZg" \
-    --form "gallery_images[]=@/tmp/phpsDXvdA" </code></pre></div>
+    --form "region=d"\
+    --form "street_address=xsji"\
+    --form "contact_links[]=vxudqujjosshfqwarxsicfbeebxsmqsoukododqhnpmqoagcldqccnd"\
+    --form "company_phones[]=explicabo"\
+    --form "profile_image=@/tmp/phpTi2RGQ" \
+    --form "background_image=@/tmp/phpkTPh0o" \
+    --form "gallery_images[]=@/tmp/phpkBoiTZ" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -1944,15 +1946,15 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('industry_name', 'aspernatur');
-body.append('name', 'rghtguphncabs');
-body.append('description', 'Suscipit dolor et voluptas voluptas totam.');
-body.append('size', 'qufbkzcxu');
+body.append('industry_name', 'excepturi');
+body.append('name', 'wdvajp');
+body.append('description', 'Quam iusto est quia aspernatur et sunt voluptas magnam.');
+body.append('size', 'fbmkdkhwds');
 body.append('city', 'دمشق');
-body.append('region', 'uyonwayfregkxt');
-body.append('street_address', 'pm');
-body.append('contact_links[]', 'uoxampfezgukacoghbumezvahcjlnvblnpsthltgkvphvucyijsyrqigjixdxshilmzoievtgiznwpdbwjxsojyb');
-body.append('company_phones[]', 'consequuntur');
+body.append('region', 'd');
+body.append('street_address', 'xsji');
+body.append('contact_links[]', 'vxudqujjosshfqwarxsicfbeebxsmqsoukododqhnpmqoagcldqccnd');
+body.append('company_phones[]', 'explicabo');
 body.append('profile_image', document.querySelector('input[name="profile_image"]').files[0]);
 body.append('background_image', document.querySelector('input[name="background_image"]').files[0]);
 body.append('gallery_images[]', document.querySelector('input[name="gallery_images[]"]').files[0]);
@@ -1974,10 +1976,8 @@ fetch(url, {
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
         &quot;id&quot;: null,
-        &quot;profile_image&quot;: &quot;default/profile_image.png&quot;,
-        &quot;background_image&quot;: &quot;default/background_image.png&quot;,
-        &quot;profile_image_url&quot;: &quot;api/company/image//profile&quot;,
-        &quot;background_image_url&quot;: &quot;api/company/image//background&quot;,
+        &quot;profile_image_url&quot;: null,
+        &quot;background_image_url&quot;: null,
         &quot;verified_at&quot;: null,
         &quot;username&quot;: null,
         &quot;name&quot;: null,
@@ -2078,10 +2078,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="industry_name"                data-endpoint="POSTapi-company-store"
-               value="aspernatur"
+               value="excepturi"
                data-component="body">
     <br>
-<p>Example: <code>aspernatur</code></p>
+<p>Example: <code>excepturi</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>profile_image</code></b>&nbsp;&nbsp;
@@ -2092,7 +2092,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must be at least 10 kilobytes. Must not be greater than 2000 kilobytes. Example: <code>/tmp/phpeB8NDq</code></p>
+<p>Must be an image. Must be at least 10 kilobytes. Must not be greater than 2000 kilobytes. Example: <code>/tmp/phpTi2RGQ</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>background_image</code></b>&nbsp;&nbsp;
@@ -2103,7 +2103,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must be at least 10 kilobytes. Must not be greater than 2000 kilobytes. Example: <code>/tmp/phpQO6pZg</code></p>
+<p>Must be an image. Must be at least 10 kilobytes. Must not be greater than 2000 kilobytes. Example: <code>/tmp/phpkTPh0o</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
@@ -2111,10 +2111,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-company-store"
-               value="rghtguphncabs"
+               value="wdvajp"
                data-component="body">
     <br>
-<p>name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters. Example: <code>rghtguphncabs</code></p>
+<p>name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters. Example: <code>wdvajp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2122,10 +2122,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-company-store"
-               value="Suscipit dolor et voluptas voluptas totam."
+               value="Quam iusto est quia aspernatur et sunt voluptas magnam."
                data-component="body">
     <br>
-<p>Must not be greater than 4000 characters. Example: <code>Suscipit dolor et voluptas voluptas totam.</code></p>
+<p>Must not be greater than 4000 characters. Example: <code>Quam iusto est quia aspernatur et sunt voluptas magnam.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>size</code></b>&nbsp;&nbsp;
@@ -2133,10 +2133,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="size"                data-endpoint="POSTapi-company-store"
-               value="qufbkzcxu"
+               value="fbmkdkhwds"
                data-component="body">
     <br>
-<p>Must be at least 5 characters. Must not be greater than 20 characters. Example: <code>qufbkzcxu</code></p>
+<p>Must be at least 5 characters. Must not be greater than 20 characters. Example: <code>fbmkdkhwds</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
@@ -2155,10 +2155,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="region"                data-endpoint="POSTapi-company-store"
-               value="uyonwayfregkxt"
+               value="d"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 20 characters. Example: <code>uyonwayfregkxt</code></p>
+<p>Must be at least 3 characters. Must not be greater than 20 characters. Example: <code>d</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>street_address</code></b>&nbsp;&nbsp;
@@ -2166,10 +2166,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="street_address"                data-endpoint="POSTapi-company-store"
-               value="pm"
+               value="xsji"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 30 characters. Example: <code>pm</code></p>
+<p>Must be at least 3 characters. Must not be greater than 30 characters. Example: <code>xsji</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>gallery_images</code></b>&nbsp;&nbsp;
@@ -2219,6 +2219,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </p>
 
 <p>Note: the user will be deleted</p>
+<p>return 422 if password is incurrect</p>
 
 <span id="example-requests-DELETEapi-company">
 <blockquote>Example request:</blockquote>
@@ -2231,7 +2232,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"password\": \"L3WZv^+\"
+    \"password\": \"vSA9)D)P+8c2iz=\"
 }"
 </code></pre></div>
 
@@ -2248,7 +2249,7 @@ const headers = {
 };
 
 let body = {
-    "password": "L3WZv^+"
+    "password": "vSA9)D)P+8c2iz="
 };
 
 fetch(url, {
@@ -2348,14 +2349,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="DELETEapi-company"
-               value="L3WZv^+"
+               value="vSA9)D)P+8c2iz="
                data-component="body">
     <br>
-<p>Example: <code>L3WZv^+</code></p>
+<p>Example: <code>vSA9)D)P+8c2iz=</code></p>
         </div>
         </form>
 
-                    <h2 id="company-managment-PUTapi-company">PUT api/company</h2>
+                    <h2 id="company-managment-PUTapi-company">todo : update company</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -2477,7 +2478,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="company-managment-POSTapi-company-image-profile">POST api/company/image/profile</h2>
+                    <h2 id="company-managment-POSTapi-company-image-profile">create/update profile image</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -2495,7 +2496,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "image=@/tmp/phpYkrfCJ" </code></pre></div>
+    --form "image=@/tmp/phpNqyN8e" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -2612,11 +2613,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 2000 kilobytes. Example: <code>/tmp/phpYkrfCJ</code></p>
+<p>Must be an image. Must not be greater than 2000 kilobytes. Example: <code>/tmp/phpNqyN8e</code></p>
         </div>
         </form>
 
-                    <h2 id="company-managment-POSTapi-company-image-background">POST api/company/image/background</h2>
+                    <h2 id="company-managment-POSTapi-company-image-background">create/update background image</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -2634,7 +2635,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "image=@/tmp/phpe9KLfY" </code></pre></div>
+    --form "image=@/tmp/php51x3TI" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -2751,11 +2752,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 2000 kilobytes. Example: <code>/tmp/phpe9KLfY</code></p>
+<p>Must be an image. Must not be greater than 2000 kilobytes. Example: <code>/tmp/php51x3TI</code></p>
         </div>
         </form>
 
-                    <h2 id="company-managment-POSTapi-company-image-gallery">POST api/company/image/gallery</h2>
+                    <h2 id="company-managment-POSTapi-company-image-gallery">create gallary image</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -2773,7 +2774,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "image=@/tmp/phpzws8t7" </code></pre></div>
+    --form "image=@/tmp/phpSQOfxU" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -2799,7 +2800,19 @@ fetch(url, {
 </span>
 
 <span id="example-responses-POSTapi-company-image-gallery">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: null,
+        &quot;url&quot;: null
+    }
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-POSTapi-company-image-gallery" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-company-image-gallery"></span>:
@@ -2890,17 +2903,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 2000 kilobytes. Example: <code>/tmp/phpzws8t7</code></p>
+<p>Must be an image. Must not be greater than 2000 kilobytes. Example: <code>/tmp/phpSQOfxU</code></p>
         </div>
         </form>
 
-                    <h2 id="company-managment-DELETEapi-company-image-profile">DELETE api/company/image/profile</h2>
+                    <h2 id="company-managment-DELETEapi-company-image-profile">delete profile image</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
 </p>
 
-
+<p>return 404 if the image is null</p>
 
 <span id="example-requests-DELETEapi-company-image-profile">
 <blockquote>Example request:</blockquote>
@@ -3016,13 +3029,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="company-managment-DELETEapi-company-image-background">DELETE api/company/image/background</h2>
+                    <h2 id="company-managment-DELETEapi-company-image-background">delete background image</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
 </p>
 
-
+<p>return 404 if the image is null</p>
 
 <span id="example-requests-DELETEapi-company-image-background">
 <blockquote>Example request:</blockquote>
@@ -3138,7 +3151,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="company-managment-DELETEapi-company-image-gallery">DELETE api/company/image/gallery</h2>
+                    <h2 id="company-managment-DELETEapi-company-image-gallery">delete gallary image</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -3157,7 +3170,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"gallery_image_id\": \"ut\"
+    \"gallery_image_id\": \"aut\"
 }"
 </code></pre></div>
 
@@ -3174,7 +3187,7 @@ const headers = {
 };
 
 let body = {
-    "gallery_image_id": "ut"
+    "gallery_image_id": "aut"
 };
 
 fetch(url, {
@@ -3274,10 +3287,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="gallery_image_id"                data-endpoint="DELETEapi-company-image-gallery"
-               value="ut"
+               value="aut"
                data-component="body">
     <br>
-<p>Example: <code>ut</code></p>
+<p>Example: <code>aut</code></p>
         </div>
         </form>
 
@@ -3300,21 +3313,21 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"company_id\": \"quisquam\",
-    \"industry_name\": \"aliquam\",
-    \"job_role_id\": \"sit\",
+    \"company_id\": \"qui\",
+    \"industry_name\": \"ea\",
+    \"job_role_id\": \"et\",
     \"type\": \"full-time , part-time , remotely , on-site\",
-    \"max_salary\": 12,
-    \"min_salary\": 18,
-    \"max_age\": 14,
-    \"min_age\": 24,
-    \"description\": \"Blanditiis nostrum nihil est illo voluptatum molestiae.\",
-    \"transportation\": true,
+    \"max_salary\": 25,
+    \"min_salary\": 14,
+    \"max_age\": 12,
+    \"min_age\": 18,
+    \"description\": \"Ratione iste itaque excepturi quo.\",
+    \"transportation\": false,
     \"health_insurance\": false,
-    \"military_service\": false,
+    \"military_service\": true,
     \"gender\": \"male\",
     \"skills\": [
-        \"aut\"
+        \"sint\"
     ]
 }"
 </code></pre></div>
@@ -3332,21 +3345,21 @@ const headers = {
 };
 
 let body = {
-    "company_id": "quisquam",
-    "industry_name": "aliquam",
-    "job_role_id": "sit",
+    "company_id": "qui",
+    "industry_name": "ea",
+    "job_role_id": "et",
     "type": "full-time , part-time , remotely , on-site",
-    "max_salary": 12,
-    "min_salary": 18,
-    "max_age": 14,
-    "min_age": 24,
-    "description": "Blanditiis nostrum nihil est illo voluptatum molestiae.",
-    "transportation": true,
+    "max_salary": 25,
+    "min_salary": 14,
+    "max_age": 12,
+    "min_age": 18,
+    "description": "Ratione iste itaque excepturi quo.",
+    "transportation": false,
     "health_insurance": false,
-    "military_service": false,
+    "military_service": true,
     "gender": "male",
     "skills": [
-        "aut"
+        "sint"
     ]
 };
 
@@ -3359,7 +3372,33 @@ fetch(url, {
 </span>
 
 <span id="example-responses-POSTapi-company-job_offer-store">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: null,
+        &quot;description&quot;: null,
+        &quot;status&quot;: null,
+        &quot;type&quot;: null,
+        &quot;max_sallary&quot;: null,
+        &quot;min_salary&quot;: null,
+        &quot;transportation&quot;: null,
+        &quot;health_insurance&quot;: null,
+        &quot;military_service&quot;: null,
+        &quot;max_age&quot;: null,
+        &quot;min_age&quot;: null,
+        &quot;gender&quot;: null,
+        &quot;industry_name&quot;: null,
+        &quot;company&quot;: null,
+        &quot;job_role&quot;: null,
+        &quot;skills&quot;: []
+    }
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-POSTapi-company-job_offer-store" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-company-job_offer-store"></span>:
@@ -3447,10 +3486,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="company_id"                data-endpoint="POSTapi-company-job_offer-store"
-               value="quisquam"
+               value="qui"
                data-component="body">
     <br>
-<p>Example: <code>quisquam</code></p>
+<p>Example: <code>qui</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>industry_name</code></b>&nbsp;&nbsp;
@@ -3458,10 +3497,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="industry_name"                data-endpoint="POSTapi-company-job_offer-store"
-               value="aliquam"
+               value="ea"
                data-component="body">
     <br>
-<p>Example: <code>aliquam</code></p>
+<p>Example: <code>ea</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>job_role_id</code></b>&nbsp;&nbsp;
@@ -3469,10 +3508,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="job_role_id"                data-endpoint="POSTapi-company-job_offer-store"
-               value="sit"
+               value="et"
                data-component="body">
     <br>
-<p>Example: <code>sit</code></p>
+<p>Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>type</code></b>&nbsp;&nbsp;
@@ -3491,10 +3530,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="max_salary"                data-endpoint="POSTapi-company-job_offer-store"
-               value="12"
+               value="25"
                data-component="body">
     <br>
-<p>fields must be either together or none Must be at least 0. Must not be greater than 100000000. Example: <code>12</code></p>
+<p>fields must be either together or none Must be at least 0. Must not be greater than 100000000. Example: <code>25</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>min_salary</code></b>&nbsp;&nbsp;
@@ -3502,10 +3541,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="min_salary"                data-endpoint="POSTapi-company-job_offer-store"
-               value="18"
+               value="14"
                data-component="body">
     <br>
-<p>fields must be either together or none Must be at least 0. Must not be greater than 100000000. Example: <code>18</code></p>
+<p>fields must be either together or none Must be at least 0. Must not be greater than 100000000. Example: <code>14</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>max_age</code></b>&nbsp;&nbsp;
@@ -3513,10 +3552,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="max_age"                data-endpoint="POSTapi-company-job_offer-store"
-               value="14"
+               value="12"
                data-component="body">
     <br>
-<p>fields must be either together or none Must be at least 18. Must not be greater than 60. Example: <code>14</code></p>
+<p>fields must be either together or none Must be at least 18. Must not be greater than 60. Example: <code>12</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>min_age</code></b>&nbsp;&nbsp;
@@ -3524,10 +3563,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="min_age"                data-endpoint="POSTapi-company-job_offer-store"
-               value="24"
+               value="18"
                data-component="body">
     <br>
-<p>fields must be either together or none Must be at least 18. Must not be greater than 60. Example: <code>24</code></p>
+<p>fields must be either together or none Must be at least 18. Must not be greater than 60. Example: <code>18</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -3535,10 +3574,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-company-job_offer-store"
-               value="Blanditiis nostrum nihil est illo voluptatum molestiae."
+               value="Ratione iste itaque excepturi quo."
                data-component="body">
     <br>
-<p>Must be at least 40 characters. Must not be greater than 40000 characters. Example: <code>Blanditiis nostrum nihil est illo voluptatum molestiae.</code></p>
+<p>Must be at least 40 characters. Must not be greater than 40000 characters. Example: <code>Ratione iste itaque excepturi quo.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>transportation</code></b>&nbsp;&nbsp;
@@ -3559,7 +3598,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>health_insurance</code></b>&nbsp;&nbsp;
@@ -3601,7 +3640,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>false</code></p>
+<p>Example: <code>true</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>gender</code></b>&nbsp;&nbsp;
@@ -3629,33 +3668,35 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
-                    <h2 id="company-managment-GETapi-company-image-gallery">Get A Gallary Image</h2>
+                    <h2 id="company-managment-GETapi-company-job_offer-my-job-offers">search job offers</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
 </p>
 
+<p>return all job offers for this company.</p>
 
-
-<span id="example-requests-GETapi-company-image-gallery">
+<span id="example-requests-GETapi-company-job_offer-my-job-offers">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/company/image/gallery" \
+    --get "http://localhost/api/company/job_offer/my-job-offers" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"image\": \"quas\"
+    \"type\": \"full-time , part-time , remotely , on-site\",
+    \"status\": \"pending\",
+    \"job_role\": \"soluta\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/company/image/gallery"
+    "http://localhost/api/company/job_offer/my-job-offers"
 );
 
 const headers = {
@@ -3665,7 +3706,9 @@ const headers = {
 };
 
 let body = {
-    "image": "quas"
+    "type": "full-time , part-time , remotely , on-site",
+    "status": "pending",
+    "job_role": "soluta"
 };
 
 fetch(url, {
@@ -3676,68 +3719,71 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-GETapi-company-image-gallery">
+<span id="example-responses-GETapi-company-job_offer-my-job-offers">
             <blockquote>
-            <p>Example response (422):</p>
+            <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 55
-access-control-allow-origin: *
- </code></pre></details>         <pre>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;The selected image is invalid.&quot;,
-    &quot;errors&quot;: {
-        &quot;image&quot;: [
-            &quot;The selected image is invalid.&quot;
-        ]
+    &quot;data&quot;: {
+        &quot;id&quot;: null,
+        &quot;description&quot;: null,
+        &quot;status&quot;: null,
+        &quot;type&quot;: null,
+        &quot;max_sallary&quot;: null,
+        &quot;min_salary&quot;: null,
+        &quot;transportation&quot;: null,
+        &quot;health_insurance&quot;: null,
+        &quot;military_service&quot;: null,
+        &quot;max_age&quot;: null,
+        &quot;min_age&quot;: null,
+        &quot;gender&quot;: null,
+        &quot;industry_name&quot;: null,
+        &quot;company&quot;: null,
+        &quot;job_role&quot;: null,
+        &quot;skills&quot;: []
     }
 }</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-company-image-gallery" hidden>
+<span id="execution-results-GETapi-company-job_offer-my-job-offers" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-company-image-gallery"></span>:
+                id="execution-response-status-GETapi-company-job_offer-my-job-offers"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-company-image-gallery"
+    <pre class="json"><code id="execution-response-content-GETapi-company-job_offer-my-job-offers"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-company-image-gallery" hidden>
+<span id="execution-error-GETapi-company-job_offer-my-job-offers" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-company-image-gallery">
+    <pre><code id="execution-error-message-GETapi-company-job_offer-my-job-offers">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-company-image-gallery" data-method="GET"
-      data-path="api/company/image/gallery"
+<form id="form-GETapi-company-job_offer-my-job-offers" data-method="GET"
+      data-path="api/company/job_offer/my-job-offers"
       data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-company-image-gallery', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-company-job_offer-my-job-offers', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-company-image-gallery"
-                    onclick="tryItOut('GETapi-company-image-gallery');">Try it out ⚡
+                    id="btn-tryout-GETapi-company-job_offer-my-job-offers"
+                    onclick="tryItOut('GETapi-company-job_offer-my-job-offers');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-company-image-gallery"
-                    onclick="cancelTryOut('GETapi-company-image-gallery');" hidden>Cancel 🛑
+                    id="btn-canceltryout-GETapi-company-job_offer-my-job-offers"
+                    onclick="cancelTryOut('GETapi-company-job_offer-my-job-offers');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-company-image-gallery"
+                    id="btn-executetryout-GETapi-company-job_offer-my-job-offers"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -3745,7 +3791,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/company/image/gallery</code></b>
+            <b><code>api/company/job_offer/my-job-offers</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -3753,7 +3799,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="GETapi-company-image-gallery"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-company-job_offer-my-job-offers"
                value="Bearer {YOUR_AUTH_KEY}"
                data-component="header">
     <br>
@@ -3764,7 +3810,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-company-image-gallery"
+                              name="Content-Type"                data-endpoint="GETapi-company-job_offer-my-job-offers"
                value="application/json"
                data-component="header">
     <br>
@@ -3775,7 +3821,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-company-image-gallery"
+                              name="Accept"                data-endpoint="GETapi-company-job_offer-my-job-offers"
                value="application/json"
                data-component="header">
     <br>
@@ -3783,15 +3829,37 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>image</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>type</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
- &nbsp;
+<i>optional</i> &nbsp;
                 <input type="text" style="display: none"
-                              name="image"                data-endpoint="GETapi-company-image-gallery"
-               value="quas"
+                              name="type"                data-endpoint="GETapi-company-job_offer-my-job-offers"
+               value="full-time , part-time , remotely , on-site"
                data-component="body">
     <br>
-<p>Example: <code>quas</code></p>
+<p>this must be a valid job offer type. Example: <code>full-time , part-time , remotely , on-site</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="GETapi-company-job_offer-my-job-offers"
+               value="pending"
+               data-component="body">
+    <br>
+<p>this must be a valid job offer status. Example: <code>pending</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>job_role</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="job_role"                data-endpoint="GETapi-company-job_offer-my-job-offers"
+               value="soluta"
+               data-component="body">
+    <br>
+<p>Example: <code>soluta</code></p>
         </div>
         </form>
 
@@ -3813,7 +3881,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/command/eos" \
+    --get "http://localhost/api/command/enim" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -3821,7 +3889,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/command/eos"
+    "http://localhost/api/command/enim"
 );
 
 const headers = {
@@ -3853,7 +3921,7 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;The command \&quot;eos\&quot; does not exist.&quot;,
+    &quot;message&quot;: &quot;The command \&quot;enim\&quot; does not exist.&quot;,
     &quot;exception&quot;: &quot;Symfony\\Component\\Console\\Exception\\CommandNotFoundException&quot;,
     &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php&quot;,
     &quot;line&quot;: 159,
@@ -4425,10 +4493,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="command_string"                data-endpoint="GETapi-command--command_string-"
-               value="eos"
+               value="enim"
                data-component="url">
     <br>
-<p>Example: <code>eos</code></p>
+<p>Example: <code>enim</code></p>
             </div>
                     </form>
 
@@ -4486,32 +4554,33 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">
-  Dropping all tables ................................................................................................................... 330ms DONE
+  Dropping all tables .................................................................................................................... 15ms DONE
 
    INFO  Preparing database.  
 
-  Creating migration table .............................................................................................................. 269ms DONE
+  Creating migration table .............................................................................................................. 149ms DONE
 
    INFO  Running migrations.  
 
-  2014_10_12_000000_create_users_table .................................................................................................. 338ms DONE
-  2014_10_12_100000_create_password_reset_tokens_table .................................................................................. 115ms DONE
-  2019_08_19_000000_create_failed_jobs_table ............................................................................................ 166ms DONE
-  2019_12_14_000001_create_personal_access_tokens_table ................................................................................. 239ms DONE
-  2024_03_25_042214_create_companies_table .............................................................................................. 240ms DONE
-  2024_03_25_042227_create_clients_table ................................................................................................. 57ms DONE
+  2003_05_13_221258_create_jobs_table ................................................................................................... 171ms DONE
+  2014_10_12_000000_create_users_table .................................................................................................. 213ms DONE
+  2014_10_12_100000_create_password_reset_tokens_table .................................................................................. 130ms DONE
+  2019_08_19_000000_create_failed_jobs_table ............................................................................................ 178ms DONE
+  2019_12_14_000001_create_personal_access_tokens_table ................................................................................. 240ms DONE
+  2024_03_25_042214_create_companies_table .............................................................................................. 239ms DONE
+  2024_03_25_042227_create_clients_table ................................................................................................. 56ms DONE
   2024_03_25_042235_create_freelancers_table ............................................................................................. 56ms DONE
   2024_03_25_042242_create_admins_table .................................................................................................. 56ms DONE
   2024_03_27_163951_create_super_admins_table ............................................................................................ 56ms DONE
-  2024_04_25_213815_create_gallery_images_table ......................................................................................... 174ms DONE
-  2024_04_25_213902_create_contact_links_table .......................................................................................... 171ms DONE
-  2024_04_25_213915_create_company_phones_table .......................................................................................... 70ms DONE
-  2024_05_03_141844_create_industries_table .............................................................................................. 64ms DONE
+  2024_04_25_213815_create_gallery_images_table ......................................................................................... 176ms DONE
+  2024_04_25_213902_create_contact_links_table ........................................................................................... 60ms DONE
+  2024_04_25_213915_create_company_phones_table .......................................................................................... 66ms DONE
+  2024_05_03_141844_create_industries_table .............................................................................................. 63ms DONE
   2024_05_03_142242_add_industry_id_to_company ............................................................................................ 7ms DONE
-  2024_05_05_163837_create_skills_table ................................................................................................. 116ms DONE
-  2024_05_05_163918_create_job_roles_table .............................................................................................. 238ms DONE
-  2024_05_05_164036_create_skillables_table .............................................................................................. 12ms DONE
-  2024_05_05_164120_create_job_offers_table ............................................................................................. 318ms DONE
+  2024_05_05_163837_create_skills_table ................................................................................................. 130ms DONE
+  2024_05_05_163918_create_job_roles_table .............................................................................................. 168ms DONE
+  2024_05_05_164036_create_skillables_table ............................................................................................... 8ms DONE
+  2024_05_05_164120_create_job_offers_table ............................................................................................. 236ms DONE
 
 </code>
  </pre>
@@ -4655,13 +4724,13 @@ access-control-allow-origin: *
    INFO  Seeding database.  
 
   Database\Seeders\SuperAdminSeeder ........................................................................................................ RUNNING  
-  Database\Seeders\SuperAdminSeeder .................................................................................................. 1,009 ms DONE  
+  Database\Seeders\SuperAdminSeeder .................................................................................................... 961 ms DONE  
 
   Database\Seeders\NoRoleUserSeeder ........................................................................................................ RUNNING  
-  Database\Seeders\NoRoleUserSeeder .................................................................................................... 475 ms DONE  
+  Database\Seeders\NoRoleUserSeeder .................................................................................................... 476 ms DONE  
 
   Database\Seeders\IndustrySeeder .......................................................................................................... RUNNING  
-  Database\Seeders\IndustrySeeder ........................................................................................................ 1 ms DONE  
+  Database\Seeders\IndustrySeeder ........................................................................................................ 2 ms DONE  
 
   Database\Seeders\SkillSeeder ............................................................................................................. RUNNING  
   Database\Seeders\SkillSeeder ........................................................................................................... 3 ms DONE  
@@ -4880,1189 +4949,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
     
 
-                                <h2 id="endpoints-GETapi-company-image-profile--company_username-">GET api/company/image/profile/{company_username}</h2>
-
-<p>
-<small class="badge badge-darkred">requires authentication</small>
-</p>
-
-
-
-<span id="example-requests-GETapi-company-image-profile--company_username-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/company/image/profile/corporis" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/company/image/profile/corporis"
-);
-
-const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-company-image-profile--company_username-">
-            <blockquote>
-            <p>Example response (404):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 54
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;No query results for model [App\\Models\\Company] corporis&quot;,
-    &quot;exception&quot;: &quot;Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException&quot;,
-    &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php&quot;,
-    &quot;line&quot;: 487,
-    &quot;trace&quot;: [
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php&quot;,
-            &quot;line&quot;: 463,
-            &quot;function&quot;: &quot;prepareException&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Exceptions\\Handler&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php&quot;,
-            &quot;line&quot;: 54,
-            &quot;function&quot;: &quot;render&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Exceptions\\Handler&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php&quot;,
-            &quot;line&quot;: 51,
-            &quot;function&quot;: &quot;render&quot;,
-            &quot;class&quot;: &quot;NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 188,
-            &quot;function&quot;: &quot;handleException&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php&quot;,
-            &quot;line&quot;: 159,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php&quot;,
-            &quot;line&quot;: 125,
-            &quot;function&quot;: &quot;handleRequest&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php&quot;,
-            &quot;line&quot;: 87,
-            &quot;function&quot;: &quot;handleRequestUsingNamedLimiter&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php&quot;,
-            &quot;line&quot;: 25,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 144,
-            &quot;function&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\{closure}&quot;,
-            &quot;class&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 119,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php&quot;,
-            &quot;line&quot;: 24,
-            &quot;function&quot;: &quot;then&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 119,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
-            &quot;line&quot;: 805,
-            &quot;function&quot;: &quot;then&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
-            &quot;line&quot;: 784,
-            &quot;function&quot;: &quot;runRouteWithinStack&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
-            &quot;line&quot;: 748,
-            &quot;function&quot;: &quot;runRoute&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
-            &quot;line&quot;: 737,
-            &quot;function&quot;: &quot;dispatchToRoute&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
-            &quot;line&quot;: 200,
-            &quot;function&quot;: &quot;dispatch&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 144,
-            &quot;function&quot;: &quot;Illuminate\\Foundation\\Http\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php&quot;,
-            &quot;line&quot;: 21,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php&quot;,
-            &quot;line&quot;: 31,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php&quot;,
-            &quot;line&quot;: 21,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php&quot;,
-            &quot;line&quot;: 40,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TrimStrings&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php&quot;,
-            &quot;line&quot;: 27,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php&quot;,
-            &quot;line&quot;: 99,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php&quot;,
-            &quot;line&quot;: 62,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\HandleCors&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php&quot;,
-            &quot;line&quot;: 39,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\TrustProxies&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 119,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
-            &quot;line&quot;: 175,
-            &quot;function&quot;: &quot;then&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
-            &quot;line&quot;: 144,
-            &quot;function&quot;: &quot;sendRequestThroughRouter&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
-            &quot;line&quot;: 300,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
-            &quot;line&quot;: 288,
-            &quot;function&quot;: &quot;callLaravelOrLumenRoute&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
-            &quot;line&quot;: 91,
-            &quot;function&quot;: &quot;makeApiCall&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
-            &quot;line&quot;: 44,
-            &quot;function&quot;: &quot;makeResponseCall&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
-            &quot;line&quot;: 35,
-            &quot;function&quot;: &quot;makeResponseCallIfConditionsPass&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
-            &quot;line&quot;: 236,
-            &quot;function&quot;: &quot;__invoke&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
-            &quot;line&quot;: 163,
-            &quot;function&quot;: &quot;iterateThroughStrategies&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
-            &quot;line&quot;: 95,
-            &quot;function&quot;: &quot;fetchResponses&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
-            &quot;line&quot;: 125,
-            &quot;function&quot;: &quot;processRoute&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
-            &quot;line&quot;: 72,
-            &quot;function&quot;: &quot;extractEndpointsInfoFromLaravelApp&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
-            &quot;line&quot;: 50,
-            &quot;function&quot;: &quot;extractEndpointsInfoAndWriteToDisk&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php&quot;,
-            &quot;line&quot;: 53,
-            &quot;function&quot;: &quot;get&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
-            &quot;line&quot;: 36,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Commands\\GenerateDocumentation&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Util.php&quot;,
-            &quot;line&quot;: 41,
-            &quot;function&quot;: &quot;Illuminate\\Container\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
-            &quot;line&quot;: 93,
-            &quot;function&quot;: &quot;unwrapIfClosure&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\Util&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
-            &quot;line&quot;: 35,
-            &quot;function&quot;: &quot;callBoundMethod&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Container.php&quot;,
-            &quot;line&quot;: 662,
-            &quot;function&quot;: &quot;call&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php&quot;,
-            &quot;line&quot;: 211,
-            &quot;function&quot;: &quot;call&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Command/Command.php&quot;,
-            &quot;line&quot;: 326,
-            &quot;function&quot;: &quot;execute&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Command\\Command&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php&quot;,
-            &quot;line&quot;: 1096,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php&quot;,
-            &quot;line&quot;: 324,
-            &quot;function&quot;: &quot;doRunCommand&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php&quot;,
-            &quot;line&quot;: 175,
-            &quot;function&quot;: &quot;doRun&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php&quot;,
-            &quot;line&quot;: 201,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/artisan&quot;,
-            &quot;line&quot;: 35,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Console\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        }
-    ]
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-company-image-profile--company_username-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-company-image-profile--company_username-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-company-image-profile--company_username-"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-company-image-profile--company_username-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-company-image-profile--company_username-">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-company-image-profile--company_username-" data-method="GET"
-      data-path="api/company/image/profile/{company_username}"
-      data-authed="1"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-company-image-profile--company_username-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-company-image-profile--company_username-"
-                    onclick="tryItOut('GETapi-company-image-profile--company_username-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-company-image-profile--company_username-"
-                    onclick="cancelTryOut('GETapi-company-image-profile--company_username-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-company-image-profile--company_username-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/company/image/profile/{company_username}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="GETapi-company-image-profile--company_username-"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-company-image-profile--company_username-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-company-image-profile--company_username-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>company_username</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="company_username"                data-endpoint="GETapi-company-image-profile--company_username-"
-               value="corporis"
-               data-component="url">
-    <br>
-<p>Example: <code>corporis</code></p>
-            </div>
-                    </form>
-
-                    <h2 id="endpoints-GETapi-company-image-background--company_username-">GET api/company/image/background/{company_username}</h2>
-
-<p>
-<small class="badge badge-darkred">requires authentication</small>
-</p>
-
-
-
-<span id="example-requests-GETapi-company-image-background--company_username-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/company/image/background/soluta" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/company/image/background/soluta"
-);
-
-const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-company-image-background--company_username-">
-            <blockquote>
-            <p>Example response (404):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 53
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;No query results for model [App\\Models\\Company] soluta&quot;,
-    &quot;exception&quot;: &quot;Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException&quot;,
-    &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php&quot;,
-    &quot;line&quot;: 487,
-    &quot;trace&quot;: [
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php&quot;,
-            &quot;line&quot;: 463,
-            &quot;function&quot;: &quot;prepareException&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Exceptions\\Handler&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php&quot;,
-            &quot;line&quot;: 54,
-            &quot;function&quot;: &quot;render&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Exceptions\\Handler&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php&quot;,
-            &quot;line&quot;: 51,
-            &quot;function&quot;: &quot;render&quot;,
-            &quot;class&quot;: &quot;NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 188,
-            &quot;function&quot;: &quot;handleException&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php&quot;,
-            &quot;line&quot;: 159,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php&quot;,
-            &quot;line&quot;: 125,
-            &quot;function&quot;: &quot;handleRequest&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php&quot;,
-            &quot;line&quot;: 87,
-            &quot;function&quot;: &quot;handleRequestUsingNamedLimiter&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php&quot;,
-            &quot;line&quot;: 25,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 144,
-            &quot;function&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\{closure}&quot;,
-            &quot;class&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 119,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php&quot;,
-            &quot;line&quot;: 24,
-            &quot;function&quot;: &quot;then&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 119,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
-            &quot;line&quot;: 805,
-            &quot;function&quot;: &quot;then&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
-            &quot;line&quot;: 784,
-            &quot;function&quot;: &quot;runRouteWithinStack&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
-            &quot;line&quot;: 748,
-            &quot;function&quot;: &quot;runRoute&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
-            &quot;line&quot;: 737,
-            &quot;function&quot;: &quot;dispatchToRoute&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
-            &quot;line&quot;: 200,
-            &quot;function&quot;: &quot;dispatch&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 144,
-            &quot;function&quot;: &quot;Illuminate\\Foundation\\Http\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php&quot;,
-            &quot;line&quot;: 21,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php&quot;,
-            &quot;line&quot;: 31,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php&quot;,
-            &quot;line&quot;: 21,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php&quot;,
-            &quot;line&quot;: 40,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TrimStrings&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php&quot;,
-            &quot;line&quot;: 27,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php&quot;,
-            &quot;line&quot;: 99,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php&quot;,
-            &quot;line&quot;: 62,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\HandleCors&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php&quot;,
-            &quot;line&quot;: 39,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\TrustProxies&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 119,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
-            &quot;line&quot;: 175,
-            &quot;function&quot;: &quot;then&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
-            &quot;line&quot;: 144,
-            &quot;function&quot;: &quot;sendRequestThroughRouter&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
-            &quot;line&quot;: 300,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
-            &quot;line&quot;: 288,
-            &quot;function&quot;: &quot;callLaravelOrLumenRoute&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
-            &quot;line&quot;: 91,
-            &quot;function&quot;: &quot;makeApiCall&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
-            &quot;line&quot;: 44,
-            &quot;function&quot;: &quot;makeResponseCall&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
-            &quot;line&quot;: 35,
-            &quot;function&quot;: &quot;makeResponseCallIfConditionsPass&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
-            &quot;line&quot;: 236,
-            &quot;function&quot;: &quot;__invoke&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
-            &quot;line&quot;: 163,
-            &quot;function&quot;: &quot;iterateThroughStrategies&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
-            &quot;line&quot;: 95,
-            &quot;function&quot;: &quot;fetchResponses&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
-            &quot;line&quot;: 125,
-            &quot;function&quot;: &quot;processRoute&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
-            &quot;line&quot;: 72,
-            &quot;function&quot;: &quot;extractEndpointsInfoFromLaravelApp&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
-            &quot;line&quot;: 50,
-            &quot;function&quot;: &quot;extractEndpointsInfoAndWriteToDisk&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php&quot;,
-            &quot;line&quot;: 53,
-            &quot;function&quot;: &quot;get&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
-            &quot;line&quot;: 36,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Commands\\GenerateDocumentation&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Util.php&quot;,
-            &quot;line&quot;: 41,
-            &quot;function&quot;: &quot;Illuminate\\Container\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
-            &quot;line&quot;: 93,
-            &quot;function&quot;: &quot;unwrapIfClosure&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\Util&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
-            &quot;line&quot;: 35,
-            &quot;function&quot;: &quot;callBoundMethod&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Container.php&quot;,
-            &quot;line&quot;: 662,
-            &quot;function&quot;: &quot;call&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php&quot;,
-            &quot;line&quot;: 211,
-            &quot;function&quot;: &quot;call&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Command/Command.php&quot;,
-            &quot;line&quot;: 326,
-            &quot;function&quot;: &quot;execute&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Command\\Command&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php&quot;,
-            &quot;line&quot;: 1096,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php&quot;,
-            &quot;line&quot;: 324,
-            &quot;function&quot;: &quot;doRunCommand&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php&quot;,
-            &quot;line&quot;: 175,
-            &quot;function&quot;: &quot;doRun&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php&quot;,
-            &quot;line&quot;: 201,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/artisan&quot;,
-            &quot;line&quot;: 35,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Console\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        }
-    ]
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-company-image-background--company_username-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-company-image-background--company_username-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-company-image-background--company_username-"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-company-image-background--company_username-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-company-image-background--company_username-">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-company-image-background--company_username-" data-method="GET"
-      data-path="api/company/image/background/{company_username}"
-      data-authed="1"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-company-image-background--company_username-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-company-image-background--company_username-"
-                    onclick="tryItOut('GETapi-company-image-background--company_username-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-company-image-background--company_username-"
-                    onclick="cancelTryOut('GETapi-company-image-background--company_username-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-company-image-background--company_username-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/company/image/background/{company_username}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="GETapi-company-image-background--company_username-"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-company-image-background--company_username-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-company-image-background--company_username-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>company_username</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="company_username"                data-endpoint="GETapi-company-image-background--company_username-"
-               value="soluta"
-               data-component="url">
-    <br>
-<p>Example: <code>soluta</code></p>
-            </div>
-                    </form>
-
-                    <h2 id="endpoints-POSTapi-test">POST api/test</h2>
+                                <h2 id="endpoints-POSTapi-test">POST api/test</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -6233,7 +5120,7 @@ fetch(url, {
             <pre><code class="language-http">content-type: text/html; charset=UTF-8
 cache-control: no-cache, private
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 51
+x-ratelimit-remaining: 55
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 

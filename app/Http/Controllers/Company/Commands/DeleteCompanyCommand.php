@@ -19,6 +19,8 @@ class DeleteCompanyCommand extends Controller
      * Note: the user will be deleted 
      * 
      * return 422 if password is incurrect
+     * 
+     *  @return \Illuminate\Http\Response | \Illuminate\Routing\ResponseFactory
      */
     public function __invoke(DeleteCompanyRequest $request)
     {

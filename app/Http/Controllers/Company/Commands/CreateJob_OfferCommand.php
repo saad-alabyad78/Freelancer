@@ -15,11 +15,19 @@ use App\Http\Requests\Company\CreateJob_OfferRequest;
 /**
  * @group Company Managment
  * 
+ * @return \Illuminate\Http\JsonResponse | Job_OfferResource
+ * 
  **/
 class CreateJob_OfferCommand extends Controller
 {
     /**
      * create job offer.
+     * 
+     * @apiResource App\Http\Resources\Company\Job_OfferResource
+     * @apiResourceModel App\Models\JobOffer with=App\Models\Company,App\Models\Skill,App\Models\JobRole
+     *
+     * @return \Illuminate\Http\JsonResponse | Job_OfferResource
+     * 
      */
     public function __invoke(CreateJob_OfferRequest $request)
     {

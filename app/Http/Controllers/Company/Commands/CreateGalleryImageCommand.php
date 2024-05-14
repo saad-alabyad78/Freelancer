@@ -18,6 +18,14 @@ use App\Http\Requests\Company\CreateCompanyImageRequest;
  */
 class CreateGalleryImageCommand extends Controller
 {
+    /**
+     *create gallary image 
+     *
+     * @apiResource App\Http\Resources\Company\GalleryImageResource
+     * @apiResourceModel App\Models\GalleryImage 
+     *
+     * @return \Illuminate\Http\JsonResponse | GalleryImageResource
+     **/
     public function __invoke(CreateCompanyImageRequest $request)
     {
         $company = Company::findOrFail(auth()->user()->role_id) ;

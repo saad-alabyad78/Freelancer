@@ -1,16 +1,50 @@
-name: 'Category Managment'
+name: Endpoints
 description: ''
 endpoints:
   -
     httpMethods:
-      - GET
-    uri: api/category/industry
+      - POST
+    uri: api/test
     metadata:
-      groupName: 'Category Managment'
+      groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'get all industries'
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer kc4eEbadDV6f835Z1havg6P'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/test
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
       description: ''
       authenticated: true
       custom: []
@@ -28,13 +62,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"name":"\u0628\u0631\u0645\u062c\u064a"},{"name":"\u062e\u062f\u0645\u064a"}]}'
+        content: hi
         headers:
+          content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'
-          content-type: application/json
-          accept: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '52'
+          x-ratelimit-remaining: '55'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -42,95 +75,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kZ5gd6ecP1DbE6hafVav843'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/category/skills/search
-    metadata:
-      groupName: 'Category Managment'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'search throw all the skills.'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: ''
-        required: true
-        example: quo
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      name: quo
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer eabkh56vgfE3D6c8V1a4dZP'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/category/job_roles/search
-    metadata:
-      groupName: 'Category Managment'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'search for the job role'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: ''
-        required: true
-        example: quam
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      name: quam
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 3dPhf5Z6bacgek61Vv4D8Ea'
+      - 'Bearer cP8hfagZevk4d63VDE56ba1'
     controller: null
     method: null
     route: null

@@ -33,10 +33,10 @@ class CreateCompanyCommand extends Controller
      * @authenticated
      * 
      * @apiResource App\Http\Resources\Company\CompanyResource
-     * @apiResourceModel App\Models\Company with=ContactLink,GalleryImage,CompanyPhone
+     * @apiResourceModel App\Models\Company with=App\Models\ContactLink,App\Models\GalleryImage,App\Models\CompanyPhone
      * 
      * 
-     * //@return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\JsonResponse
      * 
      */
     public function __invoke(CreateCompanyRequest $request) 

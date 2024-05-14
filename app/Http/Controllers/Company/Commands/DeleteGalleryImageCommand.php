@@ -14,6 +14,11 @@ use App\Http\Requests\Company\DeleteGalleryImageRequest;
  */
 class DeleteGalleryImageCommand extends Controller
 {
+    /**
+     * delete gallary image
+     * 
+     * @return \Illuminate\Http\Response
+     */
     public function __invoke(DeleteGalleryImageRequest $request)
     {
         $company = Company::findOrFail(auth()->user()->role_id); 

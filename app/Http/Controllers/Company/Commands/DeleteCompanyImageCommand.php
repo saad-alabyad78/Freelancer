@@ -16,6 +16,13 @@ use App\Jobs\DeleteCloudinaryAssetsJob;
  */
 class DeleteCompanyImageCommand extends Controller
 {
+    /**
+     * delete profile image
+     * 
+     * return 404 if the image is null
+     * 
+     * @return \Illuminate\Http\Response | \Illuminate\Routing\ResponseFactory
+     */
     public function profile_image()
     {
         $company = Company::findOrFail(auth()->user()->role_id); 
@@ -38,7 +45,16 @@ class DeleteCompanyImageCommand extends Controller
         return response()->json([
             'profile_image_url' => $company->profile_image_url ,
         ]);
-    }public function background_image(Company $company)
+    }
+    
+    /**
+     * delete background image
+     * 
+     * return 404 if the image is null
+     * 
+     * @return \Illuminate\Http\Response | \Illuminate\Routing\ResponseFactory
+     */
+    public function background_image(Company $company)
     {
         $company = Company::findOrFail(auth()->user()->role_id); 
         

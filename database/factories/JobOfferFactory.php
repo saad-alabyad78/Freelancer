@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\JobOffer>
  */
-class Job_OfferFactory extends Factory
+class JobOfferFactory extends Factory
 {
     /**
      * Define the model's default state.

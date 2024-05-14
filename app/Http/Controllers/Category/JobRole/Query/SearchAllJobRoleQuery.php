@@ -14,6 +14,11 @@ class SearchAllJobRoleQuery extends Controller
 {
     /**
      * search for the job role 
+     * 
+     * @apiResource App\Http\Resources\Category\Job_RoleResource
+     * @apiResourceModel App\Models\JobRole
+     * 
+     * @return \Illuminate\Http\JsonResponse 
      */
     public function __invoke(GetAllJobRolesRequest $request)
     {

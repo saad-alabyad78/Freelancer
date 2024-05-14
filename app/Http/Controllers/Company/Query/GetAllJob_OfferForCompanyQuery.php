@@ -11,8 +11,21 @@ use App\Http\Requests\Company\jobOffersForCompanyRequest;
 /**
  * @group Company Managment
  **/
-class GetAllJob_OfferQueryForCompany extends Controller
+class GetAllJob_OfferForCompanyQuery extends Controller
 {
+    /**
+     * 
+     * search job offers
+     * 
+     * return all job offers for this company.
+     * 
+     * 
+     * @apiResource App\Http\Resources\Company\Job_OfferMiniResource
+     * @apiResourceModel App\Models\JobOffer with=App\Models\Company,App\Models\Skill,App\Models\JobRole
+     *
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     * 
+     */
     public function __invoke(jobOffersForCompanyRequest $request)
     {
         $company = Company::findOrFail(auth()->user()->role_id) ;
