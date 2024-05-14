@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Category\Skill\Query;
 
 use App\Models\Skill;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cache;
 use App\Http\Requests\Category\SkillRequest;
 use App\Http\Resources\Category\SkillResource;
 /**

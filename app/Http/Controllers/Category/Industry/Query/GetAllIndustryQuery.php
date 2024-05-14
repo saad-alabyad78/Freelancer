@@ -25,7 +25,11 @@ class GetAllIndustryQuery extends Controller
     {
         //TODO : caching
 
-        return IndustryResource::collection(Industry::all())
+        $industries = Cache::rememberForever('key' , function(){
+            return Industry::all();
+        });
+
+        return IndustryResource::collection($industries)
         ->response()
         ->withHeaders(['Accept' => 'application/json']); 
     }
