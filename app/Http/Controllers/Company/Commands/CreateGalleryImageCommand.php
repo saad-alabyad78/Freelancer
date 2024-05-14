@@ -7,6 +7,7 @@ use App\Constants\Disks;
 use App\Models\GalleryImage;
 use Illuminate\Http\Request;
 use App\Services\imageService;
+use App\Constants\CloudFolders;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Company\GalleryImageResource;
 use App\Http\Requests\Company\CreateCompanyImageRequest;
@@ -21,8 +22,11 @@ class CreateGalleryImageCommand extends Controller
     {
         $company = Company::findOrFail(auth()->user()->role_id) ;
 
+        $cloudinaryImage = $request->file('image')->storeOnCloudinary(CloudFolders::COMPANY) ;
+
         $gallery_image = GalleryImage::create([
-            'name' => imageService::store_image($request->validated()['image'] , Disks::COMPANY) ,
+            'url' => $cloudinaryImage->getSecurePath() ,
+            'public_id' => $cloudinaryImage->getPublicId() ,
         ]);
 
         $company->gallery_images()->save($gallery_image) ;

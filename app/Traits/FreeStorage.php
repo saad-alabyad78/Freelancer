@@ -11,7 +11,7 @@ trait FreeStorage
      * @var array
      */
     protected $stroageDirectories = [
-        Disks::COMPANY ,
+        
     ];
 
     /**

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Constants ;
-class Disks {
+class CloudFolders {
+    const DEFAULT = 'default' ;
     const COMPANY = 'company' ;
-    const PUBLIC = 'public' ;
 }

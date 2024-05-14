@@ -16,8 +16,11 @@ class Company extends BaseModel
 
     protected $fillable = 
     [
-        'profile_image' ,
-        'background_image' ,
+        'profile_image_url' ,
+        'background_image_url' ,
+        'profile_image_public_id' ,
+        'background_image_public_id' ,
+        
         'name' ,
         'size' ,
         'description' ,
@@ -55,30 +58,4 @@ class Company extends BaseModel
         return $this->hasMany(GalleryImage::class) ;
     }
 
-    public function profileImage():Attribute
-    {
-        return Attribute::make(
-            get: fn () => $this->attributes['profile_image'] ?? Defaults::COMPANY_PROFILE_IMAGE ,
-        );
-    }
-
-    public function backgroundImage():Attribute
-    {
-        return Attribute::make(
-            get: fn () => $this->attributes['background_image'] ?? Defaults::COMPANY_BACKGROUND_IMAGE ,
-        );
-    }
-
-    public function profileImageUrl():Attribute
-    {
-        return Attribute::get(fn()=>
-            'api/company/image/'.$this->username.'/profile'
-        );
-    }
-    public function backgroundImageUrl():Attribute
-    {
-        return Attribute::get(fn()=>
-            'api/company/image/'.$this->username.'/background'
-        );
-    }
 }

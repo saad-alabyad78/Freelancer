@@ -9,9 +9,12 @@ use App\Models\ContactLink;
 use App\Models\CompanyPhone;
 use App\Models\GalleryImage;
 use App\Services\imageService;
+use App\Constants\CloudFolders;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Company\CompanyResource;
 use App\Http\Requests\Company\CreateCompanyRequest;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 /**
  * @group Company Managment
@@ -33,17 +36,34 @@ class CreateCompanyCommand extends Controller
      * @apiResourceModel App\Models\Company with=ContactLink,GalleryImage,CompanyPhone
      * 
      * 
-     * @return \Illuminate\Http\JsonResponse
+     * //@return \Illuminate\Http\JsonResponse
      * 
      */
     public function __invoke(CreateCompanyRequest $request) 
     {
+        DB::beginTransaction();
+        
         $data = $request->validated();
 
+        $s = microtime(true) ;
+        $cloudinaryImage = $request->file('profile_image')?->storeOnCloudinary(CloudFolders::COMPANY) ?? null ;
+            $p_url = $cloudinaryImage?->getSecurePath() ?? null ;
+            $p_id = $cloudinaryImage?->getPublicId() ?? null  ;
+        $cloudinaryImage = $request->file('background_image')?->storeOnCloudinary(CloudFolders::COMPANY) ?? null ;
+            $b_url = $cloudinaryImage?->getSecurePath() ?? null ;
+            $b_id = $cloudinaryImage?->getPublicId() ?? null ;
+        $e = microtime(true) ;
+       
+        //var_dump(['time to store in cloudinary' => $e - $s] ) ;
+        
         //create company
         $company = Company::create([
-                'profile_image' => $this->imageService->store_image($data['profile_image'] ?? null , Disks::COMPANY) ,
-                'background_image' => $this->imageService->store_image($data['background_image'] ?? null , Disks::COMPANY) ,
+                'profile_image_url' =>  $p_url ,
+                'profile_image_public_id' => $p_id ,
+
+                'background_image_url' =>  $b_url ,
+                'background_image_public_id' =>  $b_id ,
+                
                 'username' => auth()->user()->slug ,
                 'name' => $data['name'] , 
                 'description' => $data['description'] , 
@@ -78,12 +98,15 @@ class CreateCompanyCommand extends Controller
         
             foreach($data['gallery_images'] as $galley_image)
             {
-                $name = $this->imageService->store_image($galley_image , Disks::COMPANY);
+                $cloudinaryImage = Cloudinary::upload($galley_image->getRealPath() ,[
+                    'folder' => CloudFolders::COMPANY
+                ]);
 
-                if($name)
-                {
-                    $gallery_images[] = new GalleryImage(['name' => $name]);
-                }
+                $gallery_images[] = new GalleryImage([
+                    'url' => $cloudinaryImage->getSecurePath(),
+                    'public_id' => $cloudinaryImage->getPublicId() ,
+                ]);
+                
             }
             $company->gallery_images()->saveMany($gallery_images) ;
         }
@@ -102,6 +125,7 @@ class CreateCompanyCommand extends Controller
 
         }
       
+        DB::commit() ;
         
         return CompanyResource::make($company->load([
             'contact_links'  ,

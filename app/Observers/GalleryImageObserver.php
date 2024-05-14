@@ -6,6 +6,7 @@ namespace App\Observers;
 use App\Constants\Disks;
 use App\Models\GalleryImage;
 use App\Services\imageService;
+use App\Jobs\DeleteCloudinaryAssetsJob;
 
 class GalleryImageObserver
 {
@@ -14,7 +15,6 @@ class GalleryImageObserver
      */
     public function deleting(GalleryImage $galleryImage): void
     {
-        // in gallery images there is no defaults
-        (new imageService())->delete(Disks::COMPANY , $galleryImage->name) ;
+        DeleteCloudinaryAssetsJob::dispatch($galleryImage->public_id) ;
     }
 }

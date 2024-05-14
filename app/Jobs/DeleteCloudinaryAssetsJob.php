@@ -3,25 +3,22 @@
 namespace App\Jobs;
 
 use Illuminate\Bus\Queueable;
+use Cloudinary\Api\Admin\AdminApi;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
-class DeleteImageJob implements ShouldQueue
+class DeleteCloudinaryAssetsJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-
-    public $disk ;
-    public $image ;
     /**
      * Create a new job instance.
      */
-    public function __construct(string $_disk , string $_image)
+    public function __construct(public array $public_ids)
     {
-        $this->disk = $_disk ;
-        $this->image = $_image ;
+        
     }
 
     /**
@@ -29,6 +26,11 @@ class DeleteImageJob implements ShouldQueue
      */
     public function handle(): void
     {
-        Storage::disk($this->disk)->delete($this->image) ;
+        var_dump(['delete ids ' => $this->public_ids]);
+        
+        if(!empty($this->public_ids))
+        {
+            (new AdminApi())->deleteAssets($this->public_ids) ;
+        }
     }
 }

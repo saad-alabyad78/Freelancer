@@ -4,7 +4,6 @@ namespace Database\Factories;
 
 
 use App\Models\User;
-use App\Constants\Disks;
 use App\Models\Industry;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -24,8 +23,11 @@ class CompanyFactory extends Factory
       
         return [
             'name' => fake()->unique()->company() ,
-            'profile_image' => fake()->image('storage/app/' . Disks::COMPANY  ,500 , 500 , null , false  ) ,
-            'background_image' => fake()->image('storage/app/' . Disks::COMPANY ,500 , 500 , null , false  ) ,
+            'profile_image_url' => null ,
+            'background_image_url' => null ,
+            'profile_image_public_id' => null ,
+            'background_image_public_id' => null ,
+
             'username' => null , 
             'description' => fake()->text(40) ,
             'size' => fake()->randomElement([10 , 100 , 1000]) ,

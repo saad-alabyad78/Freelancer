@@ -18,8 +18,7 @@ class DeleteGalleryImageCommand extends Controller
     {
         $company = Company::findOrFail(auth()->user()->role_id); 
         
-        $galleryImage = $company->gallery_images()
-            ->findOrFail($request->validated()['gallery_images_id']) ;
+        $galleryImage = $company->gallery_images()->findOrFail($request->validated()['gallery_image_id']) ;
         
         $galleryImage->delete() ;
 

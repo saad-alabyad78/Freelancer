@@ -10,7 +10,6 @@ use App\Models\JobRole;
 use App\Models\Industry;
 use App\Models\JobOffer;
 use App\Constants\Job_OfferTypes;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CreateJob_OfferTest extends TestCase
@@ -30,8 +29,6 @@ class CreateJob_OfferTest extends TestCase
         $this->user = User::factory()->create() ;
 
         $this->company = Company::factory()->create([
-            'profile_image' => null,
-            'background_image' => null,
             'username' => $this->user->slug ,
         ]) ;
 
@@ -63,7 +60,7 @@ class CreateJob_OfferTest extends TestCase
             ->actingAs($this->user)
             ->postJson('api/company/job_offer/store' ,
             $data) ;
-        var_dump($response->json()) ;
+        
         
         $response->assertStatus(201) ;
 

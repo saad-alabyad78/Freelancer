@@ -17,6 +17,8 @@ class DeleteCompanyCommand extends Controller
     /**
      * Delete the company.
      * Note: the user will be deleted 
+     * 
+     * return 422 if password is incurrect
      */
     public function __invoke(DeleteCompanyRequest $request)
     {
@@ -25,10 +27,10 @@ class DeleteCompanyCommand extends Controller
         if(!Hash::check($password , auth()->user()->getAuthPassword())){
             return response()->json([
                 'error' => 'wrong password'
-            ]);
+            ] , 422 );
         }
 
-        $company = Company::find(auth()->user()->role_id) ;
+        $company = Company::findOrFail(auth()->user()->role_id) ;
 
         $company->delete() ;
 

@@ -6,6 +6,7 @@ use App\Models\Company;
 use App\Constants\Disks;
 use App\Constants\Defaults;
 use App\Services\imageService;
+use App\Jobs\DeleteCloudinaryAssetsJob;
 
 class CompanyObserver
 {
@@ -14,26 +15,26 @@ class CompanyObserver
      */
     public function deleting(Company $company): void
     {
-        $imageServices = new imageService() ;
-        
-        if($company->profile_image != Defaults::COMPANY_PROFILE_IMAGE){
-            $imageServices->delete(Disks::COMPANY , $company->profile_image) ;
-        }
-        if($company->background_image != Defaults::COMPANY_BACKGROUND_IMAGE){
-            $imageServices->delete(Disks::COMPANY , $company->background_image) ;
-        }
+
+        DeleteCloudinaryAssetsJob::dispatchIf(
+            $company->profile_image_public_id 
+            ||
+            $company->background_image_public_id 
+        ,[
+            $company->profile_image_public_id ,
+            $company->background_image_public_id ,
+        ]);
 
         $company->user()->delete() ;
         $company->company_phones()->delete() ;
         $company->contact_links()->delete() ;
+      
+        $public_ids = $company->gallery_images()->pluck('public_id')->toArray() ;
         
-        $gallery_images = $company->gallery_images ;
-        
-        \Log::error($gallery_images) ; 
-        foreach($gallery_images as $gallery_image){
-            \Log::info('in foreach') ;
-            $imageServices->delete(Disks::COMPANY , $gallery_image->name) ;
-        } ; 
+        DeleteCloudinaryAssetsJob::dispatchIf(
+            !empty($public_ids) ,
+            $public_ids
+        ) ;
         
         $company->gallery_images()->delete(); 
     }

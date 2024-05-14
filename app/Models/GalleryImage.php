@@ -12,13 +12,7 @@ class GalleryImage extends BaseModel
 {
     use HasFactory;
 
-    protected $fillable = ['name' , 'company_id'] ;
-
-    public function Url():Attribute
-    {
-        return Attribute::get(fn () =>
-            'api/company/gallery?image='.$this->attributes['name'] ) ;
-    }
+    protected $fillable = ['id' , 'url' , 'public_id' , 'company_id'] ;
     
     public function company():BelongsTo
     {

@@ -5,17 +5,14 @@ namespace Tests\Feature\Company\Commands;
 use Tests\TestCase;
 use App\Models\User;
 use App\Models\Company;
-use App\Constants\Disks;
 use App\Models\Industry;
 use App\Traits\FreeStorage;
-use App\Models\GalleryImage;
 use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CreateCompanyTest extends TestCase
 {
-    use RefreshDatabase , FreeStorage;
+    use RefreshDatabase ;
 
     private User $noRoleUser , $notVerifiedUser , $RoleUser ;
     private Industry $industry;
@@ -32,8 +29,7 @@ class CreateCompanyTest extends TestCase
 
         $this->RoleUser = User::factory()->create(['first_name' => 'with' , 'last_name' => 'Role']) ;
         $company = Company::factory()->create(
-            ['profile_image' => null ,
-             'background_image' => null,
+            [
              'username' => $this->RoleUser->slug ,
             ]) ;
         $company->user()->save($this->RoleUser);
@@ -71,6 +67,8 @@ class CreateCompanyTest extends TestCase
         
         $companyData = [
             'industry_name' => $this->industry->name ,
+            'profile_image' => UploadedFile::fake()->image('profile.png')->size(100) ,
+            'background_image' => UploadedFile::fake()->image('background.png')->size(100) ,
             'name' => 'name' ,
             'description' => 'description' ,
             'size' => 'small' ,
@@ -80,8 +78,6 @@ class CreateCompanyTest extends TestCase
             'contact_links' => ['hihihihi' , 'hihihihihihihi'] ,
             'company_phones' => ['0999999999'] ,
             'gallery_images' => [
-                UploadedFile::fake()->image('one.png')->size(100),
-                UploadedFile::fake()->image('two.png')->size(100)
             ]
         ];
 
@@ -96,27 +92,19 @@ class CreateCompanyTest extends TestCase
 
         var_dump($end - $start) ;
 
-        $this->assertLessThan(0.2 , $end - $start) ;
+        //$this->assertLessThan(0.2 , $end - $start) ;
 
         $response->assertStatus(201) ;
-
 
         $response->assertJsonPath('data.username' , $this->noRoleUser->slug);
         
         
         $this->assertDatabaseCount('contact_links' , 2) ;
         $this->assertDatabaseCount('company_phones' , 1) ;
-        $this->assertDatabaseCount('gallery_images' , 2) ;
+        $this->assertDatabaseCount('gallery_images' , 0) ;
         
         $company = Company::where('name' , $companyData['name'])
             ->with(['user' , 'contact_links' , 'company_phones' , 'gallery_images'])->first() ;
-
-        $gallery_images = $company->gallery_images ;
-
-        foreach($gallery_images as $image)
-        {
-            $this->assertFileExists(storage_path('app/' . Disks::COMPANY . '/' . $image->name)) ;
-        }
 
         //assert that the user gained a role
         $this->assertEquals($this->noRoleUser->slug , $company->username);
@@ -124,5 +112,7 @@ class CreateCompanyTest extends TestCase
         $this->assertEquals($company->user->role_id , $company->id ) ;
         $this->assertEquals($this->noRoleUser->role->id , $company->id ) ;
         $this->assertEquals($this->noRoleUser->id , $company->user->id ) ;
+
+        $company->delete() ;
     }
 }

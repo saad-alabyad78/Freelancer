@@ -5,9 +5,11 @@ use App\Constants\Disks;
 use App\Constants\Defaults;
 use App\Models\GalleryImage;
 use App\Services\xmlService;
+use Illuminate\Http\Request;
 use App\Services\imageService;
 use Illuminate\Support\Facades\Route;
 use App\Http\Resources\Company\CompanyResource;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,10 +35,8 @@ require 'Api/company.php' ;
 require 'Api/category.php' ;
 
 
-Route::post('test' , function(){
-  
-  return  CompanyResource::collection(Company::all() ) ;
-  
+Route::post('test' , function(Request $request){
+  return Company::findOrFail(1)->delete();
 });
 
 Route::get('test' , function(){

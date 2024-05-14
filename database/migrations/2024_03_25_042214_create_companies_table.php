@@ -14,8 +14,12 @@ return new class extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('profile_image')->nullable();
-            $table->string('background_image')->nullable();
+
+            $table->string('profile_image_url')->nullable();
+            $table->string('background_image_url')->nullable();
+
+            $table->string('profile_image_public_id')->nullable();
+            $table->string('background_image_public_id')->nullable();
 
             $table->string('username')->unique();
             $table->text('description')->nullable();

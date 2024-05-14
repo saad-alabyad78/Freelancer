@@ -16,8 +16,8 @@ class MiniCompanyResource extends JsonResource
     {
         return [
             'id' => $this->id ,
-            'profile_image' => $this->profile_image , 
-            'background_image' => $this->background_iamge ,
+            'profile_image_url' => $this->profile_image_url , 
+            'background_image_url' => $this->background_image_url ,
             'verified_at' => $this->verified_at ,
             'username' => $this->username ,
             'name' => $this->name ,
