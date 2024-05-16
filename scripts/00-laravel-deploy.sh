@@ -5,6 +5,9 @@ composer update
 
 echo "Clear..."
 php artisan cache:clear
+php artisan route:clear
+php artisan view:clear
+php artisan clear
 
 echo "Caching config..."
 php artisan config:cache
