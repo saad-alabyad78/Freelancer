@@ -20,7 +20,7 @@ class GetAllJob_OfferForCompanyQuery extends Controller
      * return all job offers for this company.
      * 
      * 
-     * @apiResource App\Http\Resources\Company\Job_OfferMiniResource
+     * @apiResourceCollection App\Http\Resources\Company\Job_OfferMiniResource
      * @apiResourceModel App\Models\JobOffer with=App\Models\Company,App\Models\Skill,App\Models\JobRole
      *
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
