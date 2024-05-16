@@ -16,10 +16,9 @@ endpoints:
       subgroupDescription: ''
       title: ''
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -31,7 +30,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: jordane58@example.net
+        example: torphy.vella@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -40,21 +39,18 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: '~xls!f%Z9,s^cm#_O'
+        example: '~qS:!p&eq'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: jordane58@example.net
-      password: '~xls!f%Z9,s^cm#_O'
+      email: torphy.vella@example.net
+      password: '~qS:!p&eq'
     fileParameters: []
     responses: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer Vkd3aDc6PhvZgab5E81e6f4'
+    auth: []
     controller: null
     method: null
     route: null
@@ -90,7 +86,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer be6cE5ad4aVg3PZDhvk68f1'
+      - 'Bearer hPb3da6V6Zev4k8fEg1cDa5'
     controller: null
     method: null
     route: null
@@ -108,10 +104,9 @@ endpoints:
       subgroupDescription: ''
       title: 'google oauth2 sign in'
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -123,13 +118,13 @@ endpoints:
         name: token
         description: ''
         required: true
-        example: illo
+        example: voluptate
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      token: illo
+      token: voluptate
     fileParameters: []
     responses:
       -
@@ -144,10 +139,7 @@ endpoints:
         description: null
         custom: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer aDEV43cdk6v81hZebfPa56g'
+    auth: []
     controller: null
     method: null
     route: null
@@ -163,10 +155,9 @@ endpoints:
       subgroupDescription: ''
       title: ''
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -178,7 +169,7 @@ endpoints:
         name: first_name
         description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
         required: true
-        example: twssybldflotccwwowf
+        example: snhoboqu
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -187,7 +178,7 @@ endpoints:
         name: last_name
         description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
         required: false
-        example: wmubiajdntmfcnl
+        example: gevguenswrixrttavqne
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -196,7 +187,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: delilah17@example.org
+        example: cronin.bette@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -205,23 +196,20 @@ endpoints:
         name: password
         description: 'Must be at least 8 characters. Must not be greater than 255 characters.'
         required: true
-        example: Kb`7\JT$-qvZY
+        example: 'r\MH%lX+XH_d4E79"'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      first_name: twssybldflotccwwowf
-      last_name: wmubiajdntmfcnl
-      email: delilah17@example.org
-      password: Kb`7\JT$-qvZY
+      first_name: snhoboqu
+      last_name: gevguenswrixrttavqne
+      email: cronin.bette@example.net
+      password: 'r\MH%lX+XH_d4E79"'
     fileParameters: []
     responses: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer d34hg6aV8ZPeE1bak65fvDc'
+    auth: []
     controller: null
     method: null
     route: null
@@ -237,10 +225,9 @@ endpoints:
       subgroupDescription: ''
       title: ''
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -252,7 +239,7 @@ endpoints:
         name: email_otp_code
         description: ''
         required: true
-        example: cupiditate
+        example: incidunt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -261,21 +248,18 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: waelchi.earnest@example.com
+        example: fern.boehm@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email_otp_code: cupiditate
-      email: waelchi.earnest@example.com
+      email_otp_code: incidunt
+      email: fern.boehm@example.net
     fileParameters: []
     responses: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer vV5fh3DadkE61eacb486gZP'
+    auth: []
     controller: null
     method: null
     route: null
@@ -291,10 +275,9 @@ endpoints:
       subgroupDescription: ''
       title: ''
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -306,20 +289,17 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: nathan12@example.org
+        example: nicolas.arlie@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: nathan12@example.org
+      email: nicolas.arlie@example.net
     fileParameters: []
     responses: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer DPa6vgEVc14ka35fe86hZdb'
+    auth: []
     controller: null
     method: null
     route: null
@@ -337,10 +317,9 @@ endpoints:
       subgroupDescription: ''
       title: ''
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -352,20 +331,17 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: murazik.stacy@example.org
+        example: goldner.tanner@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: murazik.stacy@example.org
+      email: goldner.tanner@example.org
     fileParameters: []
     responses: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 5bPD36gVa8fEveZ1hcd64ak'
+    auth: []
     controller: null
     method: null
     route: null
@@ -383,10 +359,9 @@ endpoints:
       subgroupDescription: ''
       title: ''
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -398,7 +373,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: noemy83@example.net
+        example: neal82@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -407,7 +382,7 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: dignissimos
+        example: quis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -416,22 +391,19 @@ endpoints:
         name: password_otp_code
         description: ''
         required: true
-        example: facere
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: noemy83@example.net
-      password: dignissimos
-      password_otp_code: facere
+      email: neal82@example.com
+      password: quis
+      password_otp_code: aut
     fileParameters: []
     responses: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer adPh6vcbg4Z5EaV6e8fk31D'
+    auth: []
     controller: null
     method: null
     route: null

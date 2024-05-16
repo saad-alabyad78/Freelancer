@@ -14,10 +14,9 @@ endpoints:
       subgroupDescription: ''
       title: 'get all industries'
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -35,10 +34,7 @@ endpoints:
         description: ''
         custom: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer cv6d48Pahbak1eZ65EDV3fg'
+    auth: []
     controller: null
     method: null
     route: null
@@ -54,10 +50,9 @@ endpoints:
       subgroupDescription: ''
       title: 'search throw all the skills.'
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -69,13 +64,13 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: alias
+        example: quidem
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: alias
+      name: quidem
     fileParameters: []
     responses:
       -
@@ -85,10 +80,7 @@ endpoints:
         description: ''
         custom: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer DVfdv8h615kgeZ3Paca64bE'
+    auth: []
     controller: null
     method: null
     route: null
@@ -104,10 +96,9 @@ endpoints:
       subgroupDescription: ''
       title: 'search for the job role'
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -119,13 +110,13 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: dolore
+        example: cupiditate
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: dolore
+      name: cupiditate
     fileParameters: []
     responses:
       -
@@ -135,10 +126,7 @@ endpoints:
         description: ''
         custom: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer dkVgafh664aPc5bvD1EZe38'
+    auth: []
     controller: null
     method: null
     route: null

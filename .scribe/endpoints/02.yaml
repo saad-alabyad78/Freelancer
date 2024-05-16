@@ -27,7 +27,7 @@ endpoints:
         name: industry_name
         description: ''
         required: true
-        example: autem
+        example: magnam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -54,7 +54,7 @@ endpoints:
         name: name
         description: 'name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters.'
         required: true
-        example: lpd
+        example: yhmjeephx
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -63,7 +63,7 @@ endpoints:
         name: description
         description: 'Must not be greater than 4000 characters.'
         required: true
-        example: 'Recusandae ex explicabo voluptates deserunt rerum repellat.'
+        example: 'Non molestiae ut dolor quia expedita ea est.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -72,7 +72,7 @@ endpoints:
         name: size
         description: 'Must be at least 5 characters. Must not be greater than 20 characters.'
         required: true
-        example: o
+        example: fasmlyuvdw
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,7 +90,7 @@ endpoints:
         name: region
         description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
         required: true
-        example: pnspgkmlpjzeg
+        example: maolfwsomgcwhcbyttbq
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -99,7 +99,7 @@ endpoints:
         name: street_address
         description: 'Must be at least 3 characters. Must not be greater than 30 characters.'
         required: true
-        example: jijjihsinevnkl
+        example: lbxzhgebwjqgppsj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -119,7 +119,7 @@ endpoints:
         description: 'Must be at least 5 characters.'
         required: false
         example:
-          - zloxnooseugsdbonbckhuyvonrvmbqsllppjezupjiy
+          - wmmskqvcqniodleliovonjai
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
@@ -129,23 +129,23 @@ endpoints:
         description: 'Must match the regex /^09[0-9]{8}$/.'
         required: false
         example:
-          - molestiae
+          - harum
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      industry_name: autem
-      name: lpd
-      description: 'Recusandae ex explicabo voluptates deserunt rerum repellat.'
-      size: o
+      industry_name: magnam
+      name: yhmjeephx
+      description: 'Non molestiae ut dolor quia expedita ea est.'
+      size: fasmlyuvdw
       city: دمشق
-      region: pnspgkmlpjzeg
-      street_address: jijjihsinevnkl
+      region: maolfwsomgcwhcbyttbq
+      street_address: lbxzhgebwjqgppsj
       contact_links:
-        - zloxnooseugsdbonbckhuyvonrvmbqsllppjezupjiy
+        - wmmskqvcqniodleliovonjai
       company_phones:
-        - molestiae
+        - harum
     fileParameters:
       profile_image: null
       background_image: null
@@ -162,7 +162,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VPZfE48hc13kdg6eva6Dab5'
+      - 'Bearer 4Da1h6a6PEg8vkZcV3ebfd5'
     controller: null
     method: null
     route: null
@@ -181,10 +181,9 @@ endpoints:
         Note: the user will be deleted
 
         return 422 if password is incurrect
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -196,20 +195,17 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: ')T^?r),|7A'
+        example: ']r/%VG\II<d?n'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      password: ')T^?r),|7A'
+      password: ']r/%VG\II<d?n'
     fileParameters: []
     responses: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer ca8V56ka4Z1dP63eEbvfDgh'
+    auth: []
     controller: null
     method: null
     route: null
@@ -225,10 +221,9 @@ endpoints:
       subgroupDescription: ''
       title: 'todo : update company'
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -240,10 +235,7 @@ endpoints:
     fileParameters: []
     responses: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer Evf1a3c8hdZb6gae4k6DV5P'
+    auth: []
     controller: null
     method: null
     route: null
@@ -259,10 +251,9 @@ endpoints:
       subgroupDescription: ''
       title: 'create/update profile image'
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
@@ -284,10 +275,7 @@ endpoints:
       image: null
     responses: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer hdb6aka5fDvecZ3P4V61g8E'
+    auth: []
     controller: null
     method: null
     route: null
@@ -303,10 +291,9 @@ endpoints:
       subgroupDescription: ''
       title: 'create/update background image'
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
@@ -328,10 +315,7 @@ endpoints:
       image: null
     responses: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer gDk6dPb5feE3Vva1h8aZc64'
+    auth: []
     controller: null
     method: null
     route: null
@@ -347,10 +331,9 @@ endpoints:
       subgroupDescription: ''
       title: 'create gallary image'
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
@@ -378,10 +361,7 @@ endpoints:
         description: ''
         custom: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer Ea4vcD3a1hb8Z6ge5dPV6kf'
+    auth: []
     controller: null
     method: null
     route: null
@@ -397,10 +377,9 @@ endpoints:
       subgroupDescription: ''
       title: 'delete profile image'
       description: 'return 404 if the image is null'
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -412,10 +391,7 @@ endpoints:
     fileParameters: []
     responses: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 4ZVcP3k8h6bafa5gE1e6vDd'
+    auth: []
     controller: null
     method: null
     route: null
@@ -431,10 +407,9 @@ endpoints:
       subgroupDescription: ''
       title: 'delete background image'
       description: 'return 404 if the image is null'
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -446,10 +421,7 @@ endpoints:
     fileParameters: []
     responses: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer gecEbZfa4dV35kvhaD6P861'
+    auth: []
     controller: null
     method: null
     route: null
@@ -465,10 +437,9 @@ endpoints:
       subgroupDescription: ''
       title: 'delete gallary image'
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -480,20 +451,17 @@ endpoints:
         name: gallery_image_id
         description: ''
         required: true
-        example: optio
+        example: rerum
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      gallery_image_id: optio
+      gallery_image_id: rerum
     fileParameters: []
     responses: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer dk5vZhg3DVaP6f4be861Eca'
+    auth: []
     controller: null
     method: null
     route: null
@@ -509,10 +477,9 @@ endpoints:
       subgroupDescription: ''
       title: 'create job offer.'
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -524,7 +491,7 @@ endpoints:
         name: company_id
         description: ''
         required: true
-        example: dignissimos
+        example: debitis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -533,7 +500,7 @@ endpoints:
         name: industry_name
         description: ''
         required: true
-        example: eos
+        example: voluptatum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -542,7 +509,7 @@ endpoints:
         name: job_role_id
         description: ''
         required: true
-        example: voluptatum
+        example: iure
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -560,7 +527,7 @@ endpoints:
         name: max_salary
         description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
         required: false
-        example: 18
+        example: 25
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -569,7 +536,7 @@ endpoints:
         name: min_salary
         description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
         required: false
-        example: 11
+        example: 9
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -578,7 +545,7 @@ endpoints:
         name: max_age
         description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
         required: false
-        example: 4
+        example: 5
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -596,7 +563,7 @@ endpoints:
         name: description
         description: 'Must be at least 40 characters. Must not be greater than 40000 characters.'
         required: true
-        example: 'Eum in aut nihil minima enim sit expedita.'
+        example: 'Accusamus atque voluptatem dolor.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -642,27 +609,27 @@ endpoints:
         description: ''
         required: true
         example:
-          - aut
+          - explicabo
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      company_id: dignissimos
-      industry_name: eos
-      job_role_id: voluptatum
+      company_id: debitis
+      industry_name: voluptatum
+      job_role_id: iure
       type: 'full-time , part-time , remotely , on-site'
-      max_salary: 18
-      min_salary: 11
-      max_age: 4
+      max_salary: 25
+      min_salary: 9
+      max_age: 5
       min_age: 9
-      description: 'Eum in aut nihil minima enim sit expedita.'
+      description: 'Accusamus atque voluptatem dolor.'
       transportation: false
       health_insurance: false
       military_service: true
       gender: male
       skills:
-        - aut
+        - explicabo
     fileParameters: []
     responses:
       -
@@ -672,10 +639,7 @@ endpoints:
         description: ''
         custom: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 8hcak3fv4d1DE6PVZb6ae5g'
+    auth: []
     controller: null
     method: null
     route: null
@@ -691,10 +655,9 @@ endpoints:
       subgroupDescription: ''
       title: 'search job offers'
       description: 'return all job offers for this company.'
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -724,7 +687,7 @@ endpoints:
         name: job_role
         description: ''
         required: false
-        example: qui
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -732,7 +695,7 @@ endpoints:
     cleanBodyParameters:
       type: 'full-time , part-time , remotely , on-site'
       status: pending
-      job_role: qui
+      job_role: ut
     fileParameters: []
     responses:
       -
@@ -742,10 +705,7 @@ endpoints:
         description: ''
         custom: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer e1EZaP66f5vh8DVdk3cab4g'
+    auth: []
     controller: null
     method: null
     route: null

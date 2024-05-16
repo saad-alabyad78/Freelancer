@@ -17,6 +17,10 @@ use App\Http\Resources\Auth\UserResource;
 class LogController extends Controller
 {
 
+    /**
+     * @noauthintication
+     * 
+     */
     public function login(LogInRequest $request)
     {
         //TODO: the otp code must be when loggin in not when register

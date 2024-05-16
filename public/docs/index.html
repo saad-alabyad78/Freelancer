@@ -221,7 +221,6 @@ You can switch the language used with the tabs at the top right (or from the nav
                                 <h2 id="auth-managment-POSTapi-login">POST api/login</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -233,12 +232,11 @@ You can switch the language used with the tabs at the top right (or from the nav
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost/api/login" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"jordane58@example.net\",
-    \"password\": \"~xls!f%Z9,s^cm#_O\"
+    \"email\": \"torphy.vella@example.net\",
+    \"password\": \"~qS:!p&amp;eq\"
 }"
 </code></pre></div>
 
@@ -249,14 +247,13 @@ You can switch the language used with the tabs at the top right (or from the nav
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "email": "jordane58@example.net",
-    "password": "~xls!f%Z9,s^cm#_O"
+    "email": "torphy.vella@example.net",
+    "password": "~qS:!p&amp;eq"
 };
 
 fetch(url, {
@@ -286,7 +283,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-login" data-method="POST"
       data-path="api/login"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -317,17 +314,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-login"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -356,10 +342,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-login"
-               value="jordane58@example.net"
+               value="torphy.vella@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>jordane58@example.net</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>torphy.vella@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -367,10 +353,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-login"
-               value="~xls!f%Z9,s^cm#_O"
+               value="~qS:!p&eq"
                data-component="body">
     <br>
-<p>Example: <code>~xls!f%Z9,s^cm#_O</code></p>
+<p>Example: <code>~qS:!p&amp;eq</code></p>
         </div>
         </form>
 
@@ -499,7 +485,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="auth-managment-GETapi-provider-google">google oauth2 sign in</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -511,11 +496,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost/api/provider/google" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"token\": \"illo\"
+    \"token\": \"voluptate\"
 }"
 </code></pre></div>
 
@@ -526,13 +510,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "token": "illo"
+    "token": "voluptate"
 };
 
 fetch(url, {
@@ -582,7 +565,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-provider-google" data-method="GET"
       data-path="api/provider/google"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -613,17 +596,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="GETapi-provider-google"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -652,17 +624,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="token"                data-endpoint="GETapi-provider-google"
-               value="illo"
+               value="voluptate"
                data-component="body">
     <br>
-<p>Example: <code>illo</code></p>
+<p>Example: <code>voluptate</code></p>
         </div>
         </form>
 
                     <h2 id="auth-managment-POSTapi-otp-register">POST api/otp/register</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -674,14 +645,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost/api/otp/register" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"first_name\": \"twssybldflotccwwowf\",
-    \"last_name\": \"wmubiajdntmfcnl\",
-    \"email\": \"delilah17@example.org\",
-    \"password\": \"Kb`7\\\\JT$-qvZY\"
+    \"first_name\": \"snhoboqu\",
+    \"last_name\": \"gevguenswrixrttavqne\",
+    \"email\": \"cronin.bette@example.net\",
+    \"password\": \"r\\\\MH%lX+XH_d4E79\\\"\"
 }"
 </code></pre></div>
 
@@ -692,16 +662,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "first_name": "twssybldflotccwwowf",
-    "last_name": "wmubiajdntmfcnl",
-    "email": "delilah17@example.org",
-    "password": "Kb`7\\JT$-qvZY"
+    "first_name": "snhoboqu",
+    "last_name": "gevguenswrixrttavqne",
+    "email": "cronin.bette@example.net",
+    "password": "r\\MH%lX+XH_d4E79\""
 };
 
 fetch(url, {
@@ -731,7 +700,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-otp-register" data-method="POST"
       data-path="api/otp/register"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -762,17 +731,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-otp-register"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -801,10 +759,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="first_name"                data-endpoint="POSTapi-otp-register"
-               value="twssybldflotccwwowf"
+               value="snhoboqu"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>twssybldflotccwwowf</code></p>
+<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>snhoboqu</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
@@ -812,10 +770,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="last_name"                data-endpoint="POSTapi-otp-register"
-               value="wmubiajdntmfcnl"
+               value="gevguenswrixrttavqne"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>wmubiajdntmfcnl</code></p>
+<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>gevguenswrixrttavqne</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -823,10 +781,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-otp-register"
-               value="delilah17@example.org"
+               value="cronin.bette@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>delilah17@example.org</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>cronin.bette@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -834,17 +792,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-otp-register"
-               value="Kb`7\JT$-qvZY"
+               value="r\MH%lX+XH_d4E79""
                data-component="body">
     <br>
-<p>Must be at least 8 characters. Must not be greater than 255 characters. Example: <code>Kb</code>7\JT$-qvZY`</p>
+<p>Must be at least 8 characters. Must not be greater than 255 characters. Example: <code>r\MH%lX+XH_d4E79"</code></p>
         </div>
         </form>
 
                     <h2 id="auth-managment-POSTapi-otp-email-verify">POST api/otp/email/verify</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -856,12 +813,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost/api/otp/email/verify" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email_otp_code\": \"cupiditate\",
-    \"email\": \"waelchi.earnest@example.com\"
+    \"email_otp_code\": \"incidunt\",
+    \"email\": \"fern.boehm@example.net\"
 }"
 </code></pre></div>
 
@@ -872,14 +828,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "email_otp_code": "cupiditate",
-    "email": "waelchi.earnest@example.com"
+    "email_otp_code": "incidunt",
+    "email": "fern.boehm@example.net"
 };
 
 fetch(url, {
@@ -909,7 +864,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-otp-email-verify" data-method="POST"
       data-path="api/otp/email/verify"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -940,17 +895,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-otp-email-verify"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -979,10 +923,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email_otp_code"                data-endpoint="POSTapi-otp-email-verify"
-               value="cupiditate"
+               value="incidunt"
                data-component="body">
     <br>
-<p>Example: <code>cupiditate</code></p>
+<p>Example: <code>incidunt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -990,17 +934,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-otp-email-verify"
-               value="waelchi.earnest@example.com"
+               value="fern.boehm@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>waelchi.earnest@example.com</code></p>
+<p>Must be a valid email address. Example: <code>fern.boehm@example.net</code></p>
         </div>
         </form>
 
                     <h2 id="auth-managment-POSTapi-otp-resend">POST api/otp/resend</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1012,11 +955,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost/api/otp/resend" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"nathan12@example.org\"
+    \"email\": \"nicolas.arlie@example.net\"
 }"
 </code></pre></div>
 
@@ -1027,13 +969,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "email": "nathan12@example.org"
+    "email": "nicolas.arlie@example.net"
 };
 
 fetch(url, {
@@ -1063,7 +1004,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-otp-resend" data-method="POST"
       data-path="api/otp/resend"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1094,17 +1035,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-otp-resend"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -1133,17 +1063,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-otp-resend"
-               value="nathan12@example.org"
+               value="nicolas.arlie@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>nathan12@example.org</code></p>
+<p>Must be a valid email address. Example: <code>nicolas.arlie@example.net</code></p>
         </div>
         </form>
 
                     <h2 id="auth-managment-POSTapi-otp-forgot-password">POST api/otp/forgot-password</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1155,11 +1084,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost/api/otp/forgot-password" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"murazik.stacy@example.org\"
+    \"email\": \"goldner.tanner@example.org\"
 }"
 </code></pre></div>
 
@@ -1170,13 +1098,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "email": "murazik.stacy@example.org"
+    "email": "goldner.tanner@example.org"
 };
 
 fetch(url, {
@@ -1206,7 +1133,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-otp-forgot-password" data-method="POST"
       data-path="api/otp/forgot-password"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1237,17 +1164,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-otp-forgot-password"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -1276,17 +1192,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-otp-forgot-password"
-               value="murazik.stacy@example.org"
+               value="goldner.tanner@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>murazik.stacy@example.org</code></p>
+<p>Must be a valid email address. Example: <code>goldner.tanner@example.org</code></p>
         </div>
         </form>
 
                     <h2 id="auth-managment-POSTapi-otp-reset-password">POST api/otp/reset-password</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1298,13 +1213,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost/api/otp/reset-password" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"noemy83@example.net\",
-    \"password\": \"dignissimos\",
-    \"password_otp_code\": \"facere\"
+    \"email\": \"neal82@example.com\",
+    \"password\": \"quis\",
+    \"password_otp_code\": \"aut\"
 }"
 </code></pre></div>
 
@@ -1315,15 +1229,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "email": "noemy83@example.net",
-    "password": "dignissimos",
-    "password_otp_code": "facere"
+    "email": "neal82@example.com",
+    "password": "quis",
+    "password_otp_code": "aut"
 };
 
 fetch(url, {
@@ -1353,7 +1266,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-otp-reset-password" data-method="POST"
       data-path="api/otp/reset-password"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1384,17 +1297,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-otp-reset-password"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -1423,10 +1325,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-otp-reset-password"
-               value="noemy83@example.net"
+               value="neal82@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>noemy83@example.net</code></p>
+<p>Must be a valid email address. Example: <code>neal82@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -1434,10 +1336,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-otp-reset-password"
-               value="dignissimos"
+               value="quis"
                data-component="body">
     <br>
-<p>Example: <code>dignissimos</code></p>
+<p>Example: <code>quis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password_otp_code</code></b>&nbsp;&nbsp;
@@ -1445,10 +1347,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password_otp_code"                data-endpoint="POSTapi-otp-reset-password"
-               value="facere"
+               value="aut"
                data-component="body">
     <br>
-<p>Example: <code>facere</code></p>
+<p>Example: <code>aut</code></p>
         </div>
         </form>
 
@@ -1459,7 +1361,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
                                 <h2 id="category-managment-GETapi-category-industry">get all industries</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1471,7 +1372,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost/api/category/industry" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -1482,7 +1382,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -1524,7 +1423,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-category-industry" data-method="GET"
       data-path="api/category/industry"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1555,17 +1454,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="GETapi-category-industry"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -1592,7 +1480,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="category-managment-POSTapi-category-skills-search">search throw all the skills.</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1604,11 +1491,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost/api/category/skills/search" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"alias\"
+    \"name\": \"quidem\"
 }"
 </code></pre></div>
 
@@ -1619,13 +1505,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "name": "alias"
+    "name": "quidem"
 };
 
 fetch(url, {
@@ -1666,7 +1551,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-category-skills-search" data-method="POST"
       data-path="api/category/skills/search"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1697,17 +1582,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-category-skills-search"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -1736,17 +1610,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-category-skills-search"
-               value="alias"
+               value="quidem"
                data-component="body">
     <br>
-<p>Example: <code>alias</code></p>
+<p>Example: <code>quidem</code></p>
         </div>
         </form>
 
                     <h2 id="category-managment-POSTapi-category-job_roles-search">search for the job role</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1758,11 +1631,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost/api/category/job_roles/search" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"dolore\"
+    \"name\": \"cupiditate\"
 }"
 </code></pre></div>
 
@@ -1773,13 +1645,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "name": "dolore"
+    "name": "cupiditate"
 };
 
 fetch(url, {
@@ -1821,7 +1692,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-category-job_roles-search" data-method="POST"
       data-path="api/category/job_roles/search"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1852,17 +1723,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-category-job_roles-search"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -1891,10 +1751,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-category-job_roles-search"
-               value="dolore"
+               value="cupiditate"
                data-component="body">
     <br>
-<p>Example: <code>dolore</code></p>
+<p>Example: <code>cupiditate</code></p>
         </div>
         </form>
 
@@ -1920,18 +1780,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "industry_name=autem"\
-    --form "name=lpd"\
-    --form "description=Recusandae ex explicabo voluptates deserunt rerum repellat."\
-    --form "size=o"\
+    --form "industry_name=magnam"\
+    --form "name=yhmjeephx"\
+    --form "description=Non molestiae ut dolor quia expedita ea est."\
+    --form "size=fasmlyuvdw"\
     --form "city=دمشق"\
-    --form "region=pnspgkmlpjzeg"\
-    --form "street_address=jijjihsinevnkl"\
-    --form "contact_links[]=zloxnooseugsdbonbckhuyvonrvmbqsllppjezupjiy"\
-    --form "company_phones[]=molestiae"\
-    --form "profile_image=@/tmp/phppJU49d" \
-    --form "background_image=@/tmp/phpxxzjYm" \
-    --form "gallery_images[]=@/tmp/phpEiUNPV" </code></pre></div>
+    --form "region=maolfwsomgcwhcbyttbq"\
+    --form "street_address=lbxzhgebwjqgppsj"\
+    --form "contact_links[]=wmmskqvcqniodleliovonjai"\
+    --form "company_phones[]=harum"\
+    --form "profile_image=@/tmp/phpX1LmzC" \
+    --form "background_image=@/tmp/phpcfzewb" \
+    --form "gallery_images[]=@/tmp/phpuwXjGB" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -1946,15 +1806,15 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('industry_name', 'autem');
-body.append('name', 'lpd');
-body.append('description', 'Recusandae ex explicabo voluptates deserunt rerum repellat.');
-body.append('size', 'o');
+body.append('industry_name', 'magnam');
+body.append('name', 'yhmjeephx');
+body.append('description', 'Non molestiae ut dolor quia expedita ea est.');
+body.append('size', 'fasmlyuvdw');
 body.append('city', 'دمشق');
-body.append('region', 'pnspgkmlpjzeg');
-body.append('street_address', 'jijjihsinevnkl');
-body.append('contact_links[]', 'zloxnooseugsdbonbckhuyvonrvmbqsllppjezupjiy');
-body.append('company_phones[]', 'molestiae');
+body.append('region', 'maolfwsomgcwhcbyttbq');
+body.append('street_address', 'lbxzhgebwjqgppsj');
+body.append('contact_links[]', 'wmmskqvcqniodleliovonjai');
+body.append('company_phones[]', 'harum');
 body.append('profile_image', document.querySelector('input[name="profile_image"]').files[0]);
 body.append('background_image', document.querySelector('input[name="background_image"]').files[0]);
 body.append('gallery_images[]', document.querySelector('input[name="gallery_images[]"]').files[0]);
@@ -2078,10 +1938,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="industry_name"                data-endpoint="POSTapi-company-store"
-               value="autem"
+               value="magnam"
                data-component="body">
     <br>
-<p>Example: <code>autem</code></p>
+<p>Example: <code>magnam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>profile_image</code></b>&nbsp;&nbsp;
@@ -2092,7 +1952,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must be at least 10 kilobytes. Must not be greater than 2000 kilobytes. Example: <code>/tmp/phppJU49d</code></p>
+<p>Must be an image. Must be at least 10 kilobytes. Must not be greater than 2000 kilobytes. Example: <code>/tmp/phpX1LmzC</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>background_image</code></b>&nbsp;&nbsp;
@@ -2103,7 +1963,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must be at least 10 kilobytes. Must not be greater than 2000 kilobytes. Example: <code>/tmp/phpxxzjYm</code></p>
+<p>Must be an image. Must be at least 10 kilobytes. Must not be greater than 2000 kilobytes. Example: <code>/tmp/phpcfzewb</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
@@ -2111,10 +1971,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-company-store"
-               value="lpd"
+               value="yhmjeephx"
                data-component="body">
     <br>
-<p>name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters. Example: <code>lpd</code></p>
+<p>name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters. Example: <code>yhmjeephx</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2122,10 +1982,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-company-store"
-               value="Recusandae ex explicabo voluptates deserunt rerum repellat."
+               value="Non molestiae ut dolor quia expedita ea est."
                data-component="body">
     <br>
-<p>Must not be greater than 4000 characters. Example: <code>Recusandae ex explicabo voluptates deserunt rerum repellat.</code></p>
+<p>Must not be greater than 4000 characters. Example: <code>Non molestiae ut dolor quia expedita ea est.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>size</code></b>&nbsp;&nbsp;
@@ -2133,10 +1993,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="size"                data-endpoint="POSTapi-company-store"
-               value="o"
+               value="fasmlyuvdw"
                data-component="body">
     <br>
-<p>Must be at least 5 characters. Must not be greater than 20 characters. Example: <code>o</code></p>
+<p>Must be at least 5 characters. Must not be greater than 20 characters. Example: <code>fasmlyuvdw</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
@@ -2155,10 +2015,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="region"                data-endpoint="POSTapi-company-store"
-               value="pnspgkmlpjzeg"
+               value="maolfwsomgcwhcbyttbq"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 20 characters. Example: <code>pnspgkmlpjzeg</code></p>
+<p>Must be at least 3 characters. Must not be greater than 20 characters. Example: <code>maolfwsomgcwhcbyttbq</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>street_address</code></b>&nbsp;&nbsp;
@@ -2166,10 +2026,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="street_address"                data-endpoint="POSTapi-company-store"
-               value="jijjihsinevnkl"
+               value="lbxzhgebwjqgppsj"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 30 characters. Example: <code>jijjihsinevnkl</code></p>
+<p>Must be at least 3 characters. Must not be greater than 30 characters. Example: <code>lbxzhgebwjqgppsj</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>gallery_images</code></b>&nbsp;&nbsp;
@@ -2215,7 +2075,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="company-managment-DELETEapi-company">Delete the company.</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>Note: the user will be deleted</p>
@@ -2228,11 +2087,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost/api/company" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"password\": \")T^?r),|7A\"
+    \"password\": \"]r\\/%VG\\\\II&lt;d?n\"
 }"
 </code></pre></div>
 
@@ -2243,13 +2101,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "password": ")T^?r),|7A"
+    "password": "]r\/%VG\\II&lt;d?n"
 };
 
 fetch(url, {
@@ -2279,7 +2136,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-DELETEapi-company" data-method="DELETE"
       data-path="api/company"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -2310,17 +2167,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-company"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -2349,17 +2195,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="DELETEapi-company"
-               value=")T^?r),|7A"
+               value="]r/%VG\II<d?n"
                data-component="body">
     <br>
-<p>Example: <code>)T^?r),|7A</code></p>
+<p>Example: <code>]r/%VG\II&lt;d?n</code></p>
         </div>
         </form>
 
                     <h2 id="company-managment-PUTapi-company">todo : update company</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -2371,7 +2216,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "http://localhost/api/company" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -2382,7 +2226,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -2413,7 +2256,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-PUTapi-company" data-method="PUT"
       data-path="api/company"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -2444,17 +2287,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="PUTapi-company"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -2481,7 +2313,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="company-managment-POSTapi-company-image-profile">create/update profile image</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -2493,10 +2324,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost/api/company/image/profile" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "image=@/tmp/phpU5Fw6g" </code></pre></div>
+    --form "image=@/tmp/phpvPkQzB" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -2505,7 +2335,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
@@ -2540,7 +2369,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-company-image-profile" data-method="POST"
       data-path="api/company/image/profile"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="1"
       data-isarraybody="0"
       autocomplete="off"
@@ -2570,17 +2399,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/company/image/profile</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-company-image-profile"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -2613,14 +2431,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 2000 kilobytes. Example: <code>/tmp/phpU5Fw6g</code></p>
+<p>Must be an image. Must not be greater than 2000 kilobytes. Example: <code>/tmp/phpvPkQzB</code></p>
         </div>
         </form>
 
                     <h2 id="company-managment-POSTapi-company-image-background">create/update background image</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -2632,10 +2449,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost/api/company/image/background" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "image=@/tmp/phptKVmY0" </code></pre></div>
+    --form "image=@/tmp/phpDxE87k" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -2644,7 +2460,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
@@ -2679,7 +2494,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-company-image-background" data-method="POST"
       data-path="api/company/image/background"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="1"
       data-isarraybody="0"
       autocomplete="off"
@@ -2709,17 +2524,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/company/image/background</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-company-image-background"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -2752,14 +2556,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 2000 kilobytes. Example: <code>/tmp/phptKVmY0</code></p>
+<p>Must be an image. Must not be greater than 2000 kilobytes. Example: <code>/tmp/phpDxE87k</code></p>
         </div>
         </form>
 
                     <h2 id="company-managment-POSTapi-company-image-gallery">create gallary image</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -2771,10 +2574,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost/api/company/image/gallery" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "image=@/tmp/php3FNmrh" </code></pre></div>
+    --form "image=@/tmp/phpajFOiN" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -2783,7 +2585,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
@@ -2830,7 +2631,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-company-image-gallery" data-method="POST"
       data-path="api/company/image/gallery"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="1"
       data-isarraybody="0"
       autocomplete="off"
@@ -2860,17 +2661,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/company/image/gallery</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-company-image-gallery"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -2903,14 +2693,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 2000 kilobytes. Example: <code>/tmp/php3FNmrh</code></p>
+<p>Must be an image. Must not be greater than 2000 kilobytes. Example: <code>/tmp/phpajFOiN</code></p>
         </div>
         </form>
 
                     <h2 id="company-managment-DELETEapi-company-image-profile">delete profile image</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>return 404 if the image is null</p>
@@ -2922,7 +2711,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost/api/company/image/profile" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -2933,7 +2721,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -2964,7 +2751,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-DELETEapi-company-image-profile" data-method="DELETE"
       data-path="api/company/image/profile"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -2995,17 +2782,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-company-image-profile"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -3032,7 +2808,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="company-managment-DELETEapi-company-image-background">delete background image</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>return 404 if the image is null</p>
@@ -3044,7 +2819,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost/api/company/image/background" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -3055,7 +2829,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -3086,7 +2859,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-DELETEapi-company-image-background" data-method="DELETE"
       data-path="api/company/image/background"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -3117,17 +2890,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-company-image-background"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -3154,7 +2916,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="company-managment-DELETEapi-company-image-gallery">delete gallary image</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -3166,11 +2927,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost/api/company/image/gallery" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"gallery_image_id\": \"optio\"
+    \"gallery_image_id\": \"rerum\"
 }"
 </code></pre></div>
 
@@ -3181,13 +2941,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "gallery_image_id": "optio"
+    "gallery_image_id": "rerum"
 };
 
 fetch(url, {
@@ -3217,7 +2976,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-DELETEapi-company-image-gallery" data-method="DELETE"
       data-path="api/company/image/gallery"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -3248,17 +3007,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-company-image-gallery"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -3287,17 +3035,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="gallery_image_id"                data-endpoint="DELETEapi-company-image-gallery"
-               value="optio"
+               value="rerum"
                data-component="body">
     <br>
-<p>Example: <code>optio</code></p>
+<p>Example: <code>rerum</code></p>
         </div>
         </form>
 
                     <h2 id="company-managment-POSTapi-company-job_offer-store">create job offer.</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -3309,25 +3056,24 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost/api/company/job_offer/store" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"company_id\": \"dignissimos\",
-    \"industry_name\": \"eos\",
-    \"job_role_id\": \"voluptatum\",
+    \"company_id\": \"debitis\",
+    \"industry_name\": \"voluptatum\",
+    \"job_role_id\": \"iure\",
     \"type\": \"full-time , part-time , remotely , on-site\",
-    \"max_salary\": 18,
-    \"min_salary\": 11,
-    \"max_age\": 4,
+    \"max_salary\": 25,
+    \"min_salary\": 9,
+    \"max_age\": 5,
     \"min_age\": 9,
-    \"description\": \"Eum in aut nihil minima enim sit expedita.\",
+    \"description\": \"Accusamus atque voluptatem dolor.\",
     \"transportation\": false,
     \"health_insurance\": false,
     \"military_service\": true,
     \"gender\": \"male\",
     \"skills\": [
-        \"aut\"
+        \"explicabo\"
     ]
 }"
 </code></pre></div>
@@ -3339,27 +3085,26 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "company_id": "dignissimos",
-    "industry_name": "eos",
-    "job_role_id": "voluptatum",
+    "company_id": "debitis",
+    "industry_name": "voluptatum",
+    "job_role_id": "iure",
     "type": "full-time , part-time , remotely , on-site",
-    "max_salary": 18,
-    "min_salary": 11,
-    "max_age": 4,
+    "max_salary": 25,
+    "min_salary": 9,
+    "max_age": 5,
     "min_age": 9,
-    "description": "Eum in aut nihil minima enim sit expedita.",
+    "description": "Accusamus atque voluptatem dolor.",
     "transportation": false,
     "health_insurance": false,
     "military_service": true,
     "gender": "male",
     "skills": [
-        "aut"
+        "explicabo"
     ]
 };
 
@@ -3416,7 +3161,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-company-job_offer-store" data-method="POST"
       data-path="api/company/job_offer/store"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -3447,17 +3192,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-company-job_offer-store"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -3486,10 +3220,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="company_id"                data-endpoint="POSTapi-company-job_offer-store"
-               value="dignissimos"
+               value="debitis"
                data-component="body">
     <br>
-<p>Example: <code>dignissimos</code></p>
+<p>Example: <code>debitis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>industry_name</code></b>&nbsp;&nbsp;
@@ -3497,10 +3231,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="industry_name"                data-endpoint="POSTapi-company-job_offer-store"
-               value="eos"
+               value="voluptatum"
                data-component="body">
     <br>
-<p>Example: <code>eos</code></p>
+<p>Example: <code>voluptatum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>job_role_id</code></b>&nbsp;&nbsp;
@@ -3508,10 +3242,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="job_role_id"                data-endpoint="POSTapi-company-job_offer-store"
-               value="voluptatum"
+               value="iure"
                data-component="body">
     <br>
-<p>Example: <code>voluptatum</code></p>
+<p>Example: <code>iure</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>type</code></b>&nbsp;&nbsp;
@@ -3530,10 +3264,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="max_salary"                data-endpoint="POSTapi-company-job_offer-store"
-               value="18"
+               value="25"
                data-component="body">
     <br>
-<p>fields must be either together or none Must be at least 0. Must not be greater than 100000000. Example: <code>18</code></p>
+<p>fields must be either together or none Must be at least 0. Must not be greater than 100000000. Example: <code>25</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>min_salary</code></b>&nbsp;&nbsp;
@@ -3541,10 +3275,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="min_salary"                data-endpoint="POSTapi-company-job_offer-store"
-               value="11"
+               value="9"
                data-component="body">
     <br>
-<p>fields must be either together or none Must be at least 0. Must not be greater than 100000000. Example: <code>11</code></p>
+<p>fields must be either together or none Must be at least 0. Must not be greater than 100000000. Example: <code>9</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>max_age</code></b>&nbsp;&nbsp;
@@ -3552,10 +3286,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="max_age"                data-endpoint="POSTapi-company-job_offer-store"
-               value="4"
+               value="5"
                data-component="body">
     <br>
-<p>fields must be either together or none Must be at least 18. Must not be greater than 60. Example: <code>4</code></p>
+<p>fields must be either together or none Must be at least 18. Must not be greater than 60. Example: <code>5</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>min_age</code></b>&nbsp;&nbsp;
@@ -3574,10 +3308,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-company-job_offer-store"
-               value="Eum in aut nihil minima enim sit expedita."
+               value="Accusamus atque voluptatem dolor."
                data-component="body">
     <br>
-<p>Must be at least 40 characters. Must not be greater than 40000 characters. Example: <code>Eum in aut nihil minima enim sit expedita.</code></p>
+<p>Must be at least 40 characters. Must not be greater than 40000 characters. Example: <code>Accusamus atque voluptatem dolor.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>transportation</code></b>&nbsp;&nbsp;
@@ -3671,7 +3405,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="company-managment-GETapi-company-job_offer-my-job-offers">search job offers</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>return all job offers for this company.</p>
@@ -3683,13 +3416,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost/api/company/job_offer/my-job-offers" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
     \"type\": \"full-time , part-time , remotely , on-site\",
     \"status\": \"pending\",
-    \"job_role\": \"qui\"
+    \"job_role\": \"ut\"
 }"
 </code></pre></div>
 
@@ -3700,7 +3432,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -3708,7 +3439,7 @@ const headers = {
 let body = {
     "type": "full-time , part-time , remotely , on-site",
     "status": "pending",
-    "job_role": "qui"
+    "job_role": "ut"
 };
 
 fetch(url, {
@@ -3784,7 +3515,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-company-job_offer-my-job-offers" data-method="GET"
       data-path="api/company/job_offer/my-job-offers"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -3814,17 +3545,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/company/job_offer/my-job-offers</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="GETapi-company-job_offer-my-job-offers"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -3876,10 +3596,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="job_role"                data-endpoint="GETapi-company-job_offer-my-job-offers"
-               value="qui"
+               value="ut"
                data-component="body">
     <br>
-<p>Example: <code>qui</code></p>
+<p>Example: <code>ut</code></p>
         </div>
         </form>
 
@@ -3890,7 +3610,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
                                 <h2 id="docker-image-commands-GETapi-command--command_string-">GET api/command/{command_string}</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -3901,19 +3620,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/command/aliquid" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --get "http://localhost/api/command/facilis" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/command/aliquid"
+    "http://localhost/api/command/facilis"
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -3941,7 +3658,7 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;The command \&quot;aliquid\&quot; does not exist.&quot;,
+    &quot;message&quot;: &quot;The command \&quot;facilis\&quot; does not exist.&quot;,
     &quot;exception&quot;: &quot;Symfony\\Component\\Console\\Exception\\CommandNotFoundException&quot;,
     &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php&quot;,
     &quot;line&quot;: 159,
@@ -4443,7 +4160,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-command--command_string-" data-method="GET"
       data-path="api/command/{command_string}"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -4474,17 +4191,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="GETapi-command--command_string-"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -4513,17 +4219,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="command_string"                data-endpoint="GETapi-command--command_string-"
-               value="aliquid"
+               value="facilis"
                data-component="url">
     <br>
-<p>Example: <code>aliquid</code></p>
+<p>Example: <code>facilis</code></p>
             </div>
                     </form>
 
                     <h2 id="docker-image-commands-GETapi-command-database-fresh">GET api/command/database/fresh</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -4535,7 +4240,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost/api/command/database/fresh" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -4546,7 +4250,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -4574,33 +4277,33 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">
-  Dropping all tables ........................................................... 18ms DONE
+  Dropping all tables .............................................. 16ms DONE
 
    INFO  Preparing database.  
 
-  Creating migration table ..................................................... 147ms DONE
+  Creating migration table ........................................ 150ms DONE
 
    INFO  Running migrations.  
 
-  2003_05_13_221258_create_jobs_table .......................................... 164ms DONE
-  2014_10_12_000000_create_users_table ......................................... 236ms DONE
-  2014_10_12_100000_create_password_reset_tokens_table ......................... 184ms DONE
-  2019_08_19_000000_create_failed_jobs_table ................................... 166ms DONE
-  2019_12_14_000001_create_personal_access_tokens_table ........................ 238ms DONE
-  2024_03_25_042214_create_companies_table ..................................... 294ms DONE
-  2024_03_25_042227_create_clients_table ........................................ 57ms DONE
-  2024_03_25_042235_create_freelancers_table .................................... 78ms DONE
-  2024_03_25_042242_create_admins_table ......................................... 58ms DONE
-  2024_03_27_163951_create_super_admins_table ................................... 57ms DONE
-  2024_04_25_213815_create_gallery_images_table ................................ 166ms DONE
-  2024_04_25_213902_create_contact_links_table .................................. 73ms DONE
-  2024_04_25_213915_create_company_phones_table ................................. 67ms DONE
-  2024_05_03_141844_create_industries_table ..................................... 67ms DONE
-  2024_05_03_142242_add_industry_id_to_company ................................... 8ms DONE
-  2024_05_05_163837_create_skills_table ........................................ 106ms DONE
-  2024_05_05_163918_create_job_roles_table ..................................... 117ms DONE
-  2024_05_05_164036_create_skillables_table ...................................... 9ms DONE
-  2024_05_05_164120_create_job_offers_table .................................... 215ms DONE
+  2003_05_13_221258_create_jobs_table ............................. 170ms DONE
+  2014_10_12_000000_create_users_table ............................ 227ms DONE
+  2014_10_12_100000_create_password_reset_tokens_table ............ 117ms DONE
+  2019_08_19_000000_create_failed_jobs_table ...................... 293ms DONE
+  2019_12_14_000001_create_personal_access_tokens_table ........... 299ms DONE
+  2024_03_25_042214_create_companies_table ........................ 244ms DONE
+  2024_03_25_042227_create_clients_table ........................... 94ms DONE
+  2024_03_25_042235_create_freelancers_table ....................... 93ms DONE
+  2024_03_25_042242_create_admins_table ............................ 71ms DONE
+  2024_03_27_163951_create_super_admins_table ...................... 56ms DONE
+  2024_04_25_213815_create_gallery_images_table ................... 158ms DONE
+  2024_04_25_213902_create_contact_links_table ..................... 76ms DONE
+  2024_04_25_213915_create_company_phones_table .................... 57ms DONE
+  2024_05_03_141844_create_industries_table ........................ 55ms DONE
+  2024_05_03_142242_add_industry_id_to_company ...................... 2ms DONE
+  2024_05_05_163837_create_skills_table ........................... 107ms DONE
+  2024_05_05_163918_create_job_roles_table ........................ 106ms DONE
+  2024_05_05_164036_create_skillables_table ......................... 5ms DONE
+  2024_05_05_164120_create_job_offers_table ....................... 246ms DONE
 
 </code>
  </pre>
@@ -4622,7 +4325,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-command-database-fresh" data-method="GET"
       data-path="api/command/database/fresh"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -4653,17 +4356,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="GETapi-command-database-fresh"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -4690,7 +4382,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="docker-image-commands-GETapi-command-database-seed">GET api/command/database/seed</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -4702,7 +4393,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost/api/command/database/seed" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -4713,7 +4403,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -4743,20 +4432,20 @@ access-control-allow-origin: *
 <code class="language-json" style="max-height: 300px;">
    INFO  Seeding database.  
 
-  Database\Seeders\SuperAdminSeeder ............................................... RUNNING  
-  Database\Seeders\SuperAdminSeeder ........................................... 970 ms DONE  
+  Database\Seeders\SuperAdminSeeder .................................. RUNNING  
+  Database\Seeders\SuperAdminSeeder .............................. 979 ms DONE  
 
-  Database\Seeders\NoRoleUserSeeder ............................................... RUNNING  
-  Database\Seeders\NoRoleUserSeeder ........................................... 480 ms DONE  
+  Database\Seeders\NoRoleUserSeeder .................................. RUNNING  
+  Database\Seeders\NoRoleUserSeeder .............................. 477 ms DONE  
 
-  Database\Seeders\IndustrySeeder ................................................. RUNNING  
-  Database\Seeders\IndustrySeeder ............................................... 1 ms DONE  
+  Database\Seeders\IndustrySeeder .................................... RUNNING  
+  Database\Seeders\IndustrySeeder .................................. 1 ms DONE  
 
-  Database\Seeders\SkillSeeder .................................................... RUNNING  
-  Database\Seeders\SkillSeeder .................................................. 3 ms DONE  
+  Database\Seeders\SkillSeeder ....................................... RUNNING  
+  Database\Seeders\SkillSeeder ..................................... 4 ms DONE  
 
-  Database\Seeders\Job_RoleSeeder ................................................. RUNNING  
-  Database\Seeders\Job_RoleSeeder .............................................. 11 ms DONE  
+  Database\Seeders\Job_RoleSeeder .................................... RUNNING  
+  Database\Seeders\Job_RoleSeeder .................................. 8 ms DONE  
 
 </code>
  </pre>
@@ -4778,7 +4467,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-command-database-seed" data-method="GET"
       data-path="api/command/database/seed"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -4809,17 +4498,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="GETapi-command-database-seed"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -4846,7 +4524,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="docker-image-commands-DELETEapi-command-storage-delete">DELETE api/command/storage/delete</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -4858,7 +4535,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
     "http://localhost/api/command/storage/delete" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -4869,7 +4545,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -4900,7 +4575,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-DELETEapi-command-storage-delete" data-method="DELETE"
       data-path="api/command/storage/delete"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -4930,17 +4605,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/command/storage/delete</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-command-storage-delete"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -4972,7 +4636,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
                                 <h2 id="endpoints-POSTapi-test">POST api/test</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -4984,7 +4647,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost/api/test" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -4995,7 +4657,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -5026,7 +4687,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-test" data-method="POST"
       data-path="api/test"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -5057,17 +4718,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-test"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -5094,7 +4744,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="endpoints-GETapi-test">GET api/test</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -5106,7 +4755,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost/api/test" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -5117,7 +4765,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -5164,7 +4811,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-test" data-method="GET"
       data-path="api/test"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -5194,17 +4841,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/test</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="GETapi-test"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
