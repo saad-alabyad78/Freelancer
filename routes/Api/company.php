@@ -26,7 +26,7 @@ Route::group(['prefix' => 'company'] , function()
             ],
         ],
         function(){
-            Route::post('/store' , CreateCompanyCommand::class)
+            Route::post('/store' , CreateCompanyCommand::class)->name('create-company')
                     ->withoutMiddleware('role:company') 
                            ->middleware('role:no_role');
                            
