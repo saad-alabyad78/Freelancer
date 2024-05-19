@@ -13,6 +13,8 @@ class RequestMe extends Controller
     /**
      * Who Am I
      * 
+     * @authenticated
+     * 
      * @apiResource App\Http\Resources\Auth\UserResource
      * @apiResourceModel App\Models\User
      * 

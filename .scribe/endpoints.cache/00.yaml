@@ -32,7 +32,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: stewart.barton@example.com
+        example: vonrueden.brett@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -41,14 +41,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: 'wd;c6Cl''"o_hryp-lf6s'
+        example: '>tu@3X=>-XlqcCGR%'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: stewart.barton@example.com
-      password: 'wd;c6Cl''"o_hryp-lf6s'
+      email: vonrueden.brett@example.org
+      password: '>tu@3X=>-XlqcCGR%'
     fileParameters: []
     responses: []
     responseFields: []
@@ -88,7 +88,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 463cavVa5ghP6ed1fEkb8ZD'
+      - 'Bearer 3f4ae6E6ckag5vhDdZbPV18'
     controller: null
     method: null
     route: null
@@ -104,9 +104,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Who Am I'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -119,12 +120,15 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":73,"first_name":"Molly","last_name":"Braun","email":"abbott.raymond@example.com","role":""}}'
+        content: '{"data":{"id":79,"first_name":"Albertha","last_name":"Armstrong","email":"janiya.lebsack@example.com","role":""}}'
         headers: []
         description: ''
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer f3EakDhcg16Zae5bPv64d8V'
     controller: null
     method: null
     route: null
@@ -156,13 +160,13 @@ endpoints:
         name: token
         description: ''
         required: true
-        example: eligendi
+        example: rem
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      token: eligendi
+      token: rem
     fileParameters: []
     responses:
       -
@@ -207,7 +211,7 @@ endpoints:
         name: first_name
         description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
         required: true
-        example: hdyorhz
+        example: vvjzrzmeljtakfaua
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -216,7 +220,7 @@ endpoints:
         name: last_name
         description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
         required: false
-        example: mtktqwwyyjdgkpjj
+        example: lbbpzosatspwafbk
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -225,7 +229,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: norval.mohr@example.net
+        example: kaylah81@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -234,16 +238,16 @@ endpoints:
         name: password
         description: 'Must be at least 8 characters. Must not be greater than 255 characters.'
         required: true
-        example: 'h*kXxWejfY_KWXD8'
+        example: tCiEN>RY
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      first_name: hdyorhz
-      last_name: mtktqwwyyjdgkpjj
-      email: norval.mohr@example.net
-      password: 'h*kXxWejfY_KWXD8'
+      first_name: vvjzrzmeljtakfaua
+      last_name: lbbpzosatspwafbk
+      email: kaylah81@example.com
+      password: tCiEN>RY
     fileParameters: []
     responses: []
     responseFields: []
@@ -277,7 +281,7 @@ endpoints:
         name: email_otp_code
         description: ''
         required: true
-        example: itaque
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -286,14 +290,14 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: xjacobson@example.org
+        example: moore.gilda@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email_otp_code: itaque
-      email: xjacobson@example.org
+      email_otp_code: est
+      email: moore.gilda@example.org
     fileParameters: []
     responses: []
     responseFields: []
@@ -327,13 +331,13 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: schroeder.shanel@example.net
+        example: auer.golden@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: schroeder.shanel@example.net
+      email: auer.golden@example.net
     fileParameters: []
     responses: []
     responseFields: []
@@ -369,13 +373,13 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: bonnie.hammes@example.net
+        example: tillman.cristopher@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: bonnie.hammes@example.net
+      email: tillman.cristopher@example.net
     fileParameters: []
     responses: []
     responseFields: []
@@ -411,7 +415,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: chris.abshire@example.org
+        example: reyna81@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -420,7 +424,7 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: qui
+        example: ea
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -429,15 +433,15 @@ endpoints:
         name: password_otp_code
         description: ''
         required: true
-        example: nam
+        example: dolorum
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: chris.abshire@example.org
-      password: qui
-      password_otp_code: nam
+      email: reyna81@example.org
+      password: ea
+      password_otp_code: dolorum
     fileParameters: []
     responses: []
     responseFields: []
