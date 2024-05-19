@@ -15,7 +15,7 @@ class SearchAllJobRoleQuery extends Controller
     /**
      * search for the job role 
      * 
-     * @apiResource App\Http\Resources\Category\Job_RoleResource
+     * @apiResourceCollection App\Http\Resources\Category\Job_RoleResource
      * @apiResourceModel App\Models\JobRole
      * 
      * @return \Illuminate\Http\JsonResponse 

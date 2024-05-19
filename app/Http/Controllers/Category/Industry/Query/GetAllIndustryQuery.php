@@ -16,7 +16,7 @@ class GetAllIndustryQuery extends Controller
     /**
      * get all industries
      * 
-     * @apiResource App\Http\Resources\Category\IndustryResource
+     * @apiResourceCollecton App\Http\Resources\Category\IndustryResource
      * @apiResourceModel App\Models\Industry
      * 
      * @return \Illuminate\Http\JsonResponse

@@ -29,9 +29,15 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"name":"\u0628\u0631\u0645\u062c\u064a"}}'
-        headers: []
-        description: ''
+        content: '{"data":[{"name":"\u0628\u0631\u0645\u062c\u064a"},{"name":"\u062e\u062f\u0645\u064a"}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          accept: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '55'
+          access-control-allow-origin: '*'
+        description: null
         custom: []
     responseFields: []
     auth: []
@@ -64,18 +70,18 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: quidem
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: quidem
+      name: ut
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"name":"\u0628\u0631\u0645\u062c\u064a"}}'
+        content: '{"data":[{"name":"\u0628\u0631\u0645\u062c\u064a"},{"name":"\u0628\u0631\u0645\u062c\u064a"}]}'
         headers: []
         description: ''
         custom: []
@@ -110,18 +116,18 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: cupiditate
+        example: accusantium
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: cupiditate
+      name: accusantium
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"android developer"}}'
+        content: '{"data":[{"id":1,"name":"android developer"},{"id":1,"name":"android developer"}]}'
         headers: []
         description: ''
         custom: []
