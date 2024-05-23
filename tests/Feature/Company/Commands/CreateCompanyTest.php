@@ -67,8 +67,8 @@ class CreateCompanyTest extends TestCase
         
         $companyData = [
             'industry_name' => $this->industry->name ,
-            'profile_image' => UploadedFile::fake()->image('profile.png')->size(100) ,
-            'background_image' => UploadedFile::fake()->image('background.png')->size(100) ,
+            'profile_image' => UploadedFile::fake()->image('profile.png')->size(1000) ,
+            'background_image' => UploadedFile::fake()->image('background.png')->size(1000) ,
             'name' => 'name' ,
             'description' => 'description' ,
             'size' => 'small' ,

@@ -22,7 +22,8 @@ class SkillRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required' , 'string'] ,
+            'name' => ['min:1' , 'string'] ,
+            'job_role' => ['string' , 'exists:job_roles,name' ] ,
         ];
     }
 }
