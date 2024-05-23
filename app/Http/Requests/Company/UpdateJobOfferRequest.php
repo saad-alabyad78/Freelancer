@@ -3,22 +3,18 @@
 namespace App\Http\Requests\Company;
 
 use App\Rules\GenderRule;
-use App\Constants\LocationType;
 use Illuminate\Validation\Rule;
-use App\Constants\AttendenceType;
-use App\Rules\Job_OfferTypesRule;
-use App\Rules\Job_OfferStatusRule;
 use App\Rules\FieldsTogetherOrNoneRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateJob_OfferRequest extends FormRequest
+class UpdateJobOfferRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -49,8 +45,8 @@ class CreateJob_OfferRequest extends FormRequest
             'military_service' => ['required' , 'bool'] ,
             'gender' => [new GenderRule()] ,
             
-            'skills' => ['array' , 'min:5' , 'max:25'] ,
-            'skills.*' => ['string' ,'exists:skills,name'] ,
+            'skills' => ['required' , 'array' , 'min:5' , 'max:25'] ,
+            'skills.*' => ['required' , 'string' ,'exists:skills,name'] ,
         ];
     }
 }

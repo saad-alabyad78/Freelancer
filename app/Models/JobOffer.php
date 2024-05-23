@@ -16,7 +16,8 @@ class JobOffer extends BaseModel
     
     protected $fillable = [
         'status',
-        'type',
+        'location_type',
+        'attendence_type',
         'max_sallary',
         'min_salary',
         'transportation',

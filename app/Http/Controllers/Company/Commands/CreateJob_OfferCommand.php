@@ -23,6 +23,8 @@ class CreateJob_OfferCommand extends Controller
     /**
      * create job offer.
      * 
+     * @authenticated
+     * 
      * @apiResource App\Http\Resources\Company\Job_OfferResource
      * @apiResourceModel App\Models\JobOffer with=App\Models\Company,App\Models\Skill,App\Models\JobRole
      *
@@ -31,12 +33,14 @@ class CreateJob_OfferCommand extends Controller
      */
     public function __invoke(CreateJob_OfferRequest $request)
     {
+
         $data = $request->validated() ;
         
         $job_offer = JobOffer::Create(
             [
                 'status' => Job_OfferStatus::PENDING ,
-                'type' => $data['type'] ,
+                'location_type' => $data['location_type'],
+                'attendence_type' => $data['attendence_type'],
                 'max_salary' => $data['max_salary'] ?? null ,
                 'min_salary' => $data['min_salary'] ?? null ,
                 'transportation' => $data['transportation'] ,
@@ -48,7 +52,7 @@ class CreateJob_OfferCommand extends Controller
                 'description' => $data['description'],
 
                 'industry_name' => $data['industry_name'] ,
-                'company_id' => $data['company_id'] ,
+                'company_id' => auth()->user()->role['id'] ,
                 'job_role_id' => $data['job_role_id'] ,
             ]
         );

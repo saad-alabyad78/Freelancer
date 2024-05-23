@@ -9,6 +9,8 @@ use App\Models\Company;
 use App\Models\JobRole;
 use App\Models\Industry;
 use App\Models\JobOffer;
+use App\Constants\LocationType;
+use App\Constants\AttendenceType;
 use App\Constants\Job_OfferTypes;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -38,11 +40,12 @@ class CreateJob_OfferTest extends TestCase
     public function test_create_job_offer(): void
     {
         $data = [
-            'company_id' => $this->company->id ,
+            
             'industry_name' => $this->industry->name,
             'job_role_id' =>  JobRole::inRandomOrder()->take(1)->first()->id,
             
-            'type' => Job_OfferTypes::FULL_TIME,
+            'attendence_type' => AttendenceType::FULL_TIME ,
+            'location_type' => LocationType::ON_SITE ,
             'max_salary' => 1000,
             'min_salary' => 10,
             // 'max_age' => 30,
@@ -60,6 +63,7 @@ class CreateJob_OfferTest extends TestCase
             ->actingAs($this->user)
             ->postJson('api/company/job_offer/store' ,
             $data) ;
+        
         
         
         $response->assertStatus(201) ;
