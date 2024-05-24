@@ -32,7 +32,7 @@ Route::group(['prefix' => 'company'] , function()
                            
             Route::delete('/' , DeleteCompanyCommand::class) ;
 
-            Route::put('' , UpdateCompanyCommand::class) ; //TODO
+            Route::put('/' , UpdateCompanyCommand::class) ; //TODO
 
             Route::post('image/profile' , [CreateCompanyImageCommand::class , 'profile_image']);
             Route::post('image/background' , [CreateCompanyImageCommand::class , 'background_image']);

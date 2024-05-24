@@ -14,7 +14,7 @@ class UpdateJobOfferRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,6 +25,8 @@ class UpdateJobOfferRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'job_offer_id' => ['required' , 'exists:job_offers,id'] ,
+            
             'industry_name' => ['required' , 'exists:industries,name' , 'string'] ,
             'job_role_id' => ['required' , 'exists:job_roles,id'] ,
             
@@ -33,7 +35,6 @@ class UpdateJobOfferRequest extends FormRequest
 
             'max_salary' => ['integer', 'min:0', 'max:100000000', 'gte:min_salary' , new FieldsTogetherOrNoneRule('min_salary')],
             'min_salary' => ['integer', 'min:0', 'max:100000000', 'lte:max_salary' , new FieldsTogetherOrNoneRule('max_salary')],
-
 
             'max_age' => ['integer', 'min:18', 'max:60', 'gte:min_salary' , new FieldsTogetherOrNoneRule('min_age')],
             'min_age' => ['integer', 'min:18', 'max:60', 'lte:max_salary' , new FieldsTogetherOrNoneRule('max_age')],
