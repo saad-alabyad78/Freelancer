@@ -26,11 +26,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: lyda.smitham@example.org
+                  example: danyka27@example.com
                 password:
                   type: string
                   description: ''
-                  example: 'Y"4%[''0GMc:}#'
+                  example: '$Wi56N?_m\H._\RhJU,='
               required:
                 - email
                 - password
@@ -59,10 +59,10 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 11
-                    first_name: Jesus
-                    last_name: Schumm
-                    email: bmayert@example.net
+                    id: 13
+                    first_name: Rene
+                    last_name: Gorczany
+                    email: stracke.geo@example.com
                     role: ''
                 properties:
                   data:
@@ -70,16 +70,16 @@ paths:
                     properties:
                       id:
                         type: integer
-                        example: 11
+                        example: 13
                       first_name:
                         type: string
-                        example: Jesus
+                        example: Rene
                       last_name:
                         type: string
-                        example: Schumm
+                        example: Gorczany
                       email:
                         type: string
-                        example: bmayert@example.net
+                        example: stracke.geo@example.com
                       role:
                         type: string
                         example: ''
@@ -124,7 +124,7 @@ paths:
                 token:
                   type: string
                   description: ''
-                  example: est
+                  example: beatae
               required:
                 - token
       security: []
@@ -147,19 +147,19 @@ paths:
                 first_name:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: ptpnrpnijuzrwcetsyjenapxn
+                  example: w
                 last_name:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: qkaxuardszdtkxjhqdafyglib
+                  example: gcp
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: yundt.lue@example.net
+                  example: jerrell52@example.net
                 password:
                   type: string
                   description: 'Must be at least 8 characters. Must not be greater than 255 characters.'
-                  example: "8{'m=/"
+                  example: '#<1#S]oT'
               required:
                 - first_name
                 - email
@@ -184,11 +184,11 @@ paths:
                 email_otp_code:
                   type: string
                   description: ''
-                  example: molestiae
+                  example: non
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: delta33@example.org
+                  example: pkuhic@example.net
               required:
                 - email_otp_code
                 - email
@@ -212,7 +212,7 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: uschimmel@example.org
+                  example: keeling.kian@example.com
               required:
                 - email
       security: []
@@ -235,7 +235,7 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: dmcclure@example.com
+                  example: rocio00@example.org
               required:
                 - email
       security: []
@@ -258,15 +258,15 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: zwisozk@example.org
+                  example: grady02@example.net
                 password:
                   type: string
                   description: ''
-                  example: ut
+                  example: impedit
                 password_otp_code:
                   type: string
                   description: ''
-                  example: et
+                  example: perspiciatis
               required:
                 - email
                 - password
@@ -353,11 +353,11 @@ paths:
                 name:
                   type: string
                   description: 'Must be at least 1 character.'
-                  example: zdzwztfxmjucywvbzoklfyfzvkklaqouqwwwzqvjalcezsohrvnvrpgsexzykxhuuyarxxajxlmmjw
+                  example: lycaatlvtuuuohectfhlrsrokjcvxjbeldvauefhrgynhlxkkv
                 job_role:
                   type: string
                   description: ''
-                  example: quidem
+                  example: et
       security: []
   /api/category/job_roles/search:
     post:
@@ -411,7 +411,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: eius
+                  example: numquam
               required:
                 - name
       security: []
@@ -490,7 +490,7 @@ paths:
         in: path
         name: company_id
         description: 'The ID of the company.'
-        example: 16
+        example: 20
         required: true
         schema:
           type: integer
@@ -573,7 +573,7 @@ paths:
                 industry_name:
                   type: string
                   description: ''
-                  example: debitis
+                  example: fugiat
                 profile_image:
                   type: string
                   format: binary
@@ -585,15 +585,15 @@ paths:
                 name:
                   type: string
                   description: 'name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters.'
-                  example: csxfbqmoamqupp
+                  example: ps
                 description:
                   type: string
                   description: 'Must not be greater than 4000 characters.'
-                  example: 'Eveniet quod pariatur eos qui omnis qui quam.'
+                  example: 'Dolor sit ea quibusdam quis natus magni quaerat est.'
                 size:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 20 characters.'
-                  example: gnhphzwlx
+                  example: kwrfkvierdruoiphamyg
                 city:
                   type: string
                   description: 'this must be a syrian city.'
@@ -601,11 +601,11 @@ paths:
                 region:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
-                  example: p
+                  example: chq
                 street_address:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 30 characters.'
-                  example: r
+                  example: kysshjvsevoxmpogcrluyg
                 gallery_images:
                   type: array
                   description: 'Must be an image. Must be at least 1 kilobyte. Must not be greater than 2000 kilobytes.'
@@ -616,14 +616,14 @@ paths:
                   type: array
                   description: 'Must be at least 5 characters.'
                   example:
-                    - yvzvqeavybnfbowqgwixfhomji
+                    - hzmlxlhfazovjoiiqjzmkhqxajv
                   items:
                     type: string
                 company_phones:
                   type: array
                   description: 'Must match the regex /^09[0-9]{8}$/.'
                   example:
-                    - dicta
+                    - dolorem
                   items:
                     type: string
               required:
@@ -653,7 +653,7 @@ paths:
                 password:
                   type: string
                   description: ''
-                  example: ')9TD#w[878OZbLJ]3"{D'
+                  example: '"dK@X&'
               required:
                 - password
       security: []
@@ -735,15 +735,15 @@ paths:
                 name:
                   type: string
                   description: 'name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters.'
-                  example: malmhzwfrdsbh
+                  example: siqxqms
                 description:
                   type: string
                   description: 'Must not be greater than 4000 characters.'
-                  example: 'Praesentium dolor veniam vitae ratione rerum.'
+                  example: 'Tempore sit ex dolorem minima cum voluptatem.'
                 size:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 20 characters.'
-                  example: z
+                  example: pm
                 city:
                   type: string
                   description: 'this must be a syrian city.'
@@ -751,23 +751,23 @@ paths:
                 region:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
-                  example: s
+                  example: ppxzmm
                 street_address:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 30 characters.'
-                  example: ddknxzlkwzjfhohq
+                  example: brqgnf
                 contact_links:
                   type: array
                   description: 'Must be at least 5 characters.'
                   example:
-                    - khswnwhiisdvomdrkzihnmttoquuevwejluinnqescdhxoexdmklhazzjzeoswlmodavtnpdizqcw
+                    - mftvcvhqegebrlndzgbbzbofesvlyzqarhzojacxh
                   items:
                     type: string
                 company_phones:
                   type: array
                   description: 'Must match the regex /^09[0-9]{8}$/.'
                   example:
-                    - '0951472043'
+                    - '0936423655'
                   items:
                     type: string
   /api/company/image/profile:
@@ -895,7 +895,7 @@ paths:
                 gallery_image_id:
                   type: string
                   description: ''
-                  example: totam
+                  example: eos
               required:
                 - gallery_image_id
       security: []
@@ -982,11 +982,11 @@ paths:
                 industry_name:
                   type: string
                   description: ''
-                  example: consectetur
+                  example: consequatur
                 job_role_id:
                   type: string
                   description: ''
-                  example: sapiente
+                  example: numquam
                 location_type:
                   type: string
                   description: ''
@@ -1004,31 +1004,31 @@ paths:
                 max_salary:
                   type: integer
                   description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
-                  example: 25
+                  example: 13
                 min_salary:
                   type: integer
                   description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
-                  example: 10
+                  example: 13
                 max_age:
                   type: integer
                   description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
-                  example: 20
+                  example: 22
                 min_age:
                   type: integer
                   description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
-                  example: 11
+                  example: 10
                 description:
                   type: string
                   description: 'Must be at least 40 characters. Must not be greater than 40000 characters.'
-                  example: 'Dignissimos ad enim porro esse et iste corporis.'
+                  example: 'Qui repudiandae eos repellendus aut consequatur quam ut accusantium.'
                 transportation:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
                 health_insurance:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
                 military_service:
                   type: boolean
                   description: ''
@@ -1041,7 +1041,7 @@ paths:
                   type: array
                   description: ''
                   example:
-                    - reiciendis
+                    - quia
                   items:
                     type: string
               required:
@@ -1136,26 +1136,26 @@ paths:
                 job_offer_id:
                   type: string
                   description: ''
-                  example: illo
+                  example: corrupti
                 industry_name:
                   type: string
                   description: ''
-                  example: vel
+                  example: ad
                 job_role_id:
                   type: string
                   description: ''
-                  example: non
+                  example: ipsam
                 location_type:
                   type: string
                   description: ''
-                  example: on-site
+                  example: remotly
                   enum:
                     - on-site
                     - remotly
                 attendence_type:
                   type: string
                   description: ''
-                  example: full-time
+                  example: part-time
                   enum:
                     - full-time
                     - part-time
@@ -1166,31 +1166,31 @@ paths:
                 min_salary:
                   type: integer
                   description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
-                  example: 6
+                  example: 4
                 max_age:
                   type: integer
                   description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
-                  example: 8
+                  example: 15
                 min_age:
                   type: integer
                   description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
-                  example: 9
+                  example: 14
                 description:
                   type: string
                   description: 'Must be at least 40 characters. Must not be greater than 40000 characters.'
-                  example: 'Unde distinctio repellat ut voluptatum.'
+                  example: 'Eum molestiae sed veniam alias assumenda qui.'
                 transportation:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 health_insurance:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
                 military_service:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 gender:
                   type: string
                   description: 'must be a male or female.'
@@ -1199,7 +1199,7 @@ paths:
                   type: array
                   description: ''
                   example:
-                    - consectetur
+                    - ut
                   items:
                     type: string
               required:
@@ -1349,18 +1349,23 @@ paths:
                 attendence_type:
                   type: string
                   description: ''
-                  example: full-time
+                  example: part-time
                   enum:
                     - full-time
                     - part-time
                 status:
                   type: string
-                  description: 'this must be a valid job offer status.'
+                  description: ''
                   example: pending
+                  enum:
+                    - pending
+                    - active
+                    - closed
+                    - deleted
                 job_role:
                   type: string
                   description: ''
-                  example: ut
+                  example: est
       security: []
   '/api/command/{command_string}':
     get:
@@ -1376,7 +1381,7 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'The command "quod" does not exist.'
+                  message: 'The command "in" does not exist.'
                   exception: Symfony\Component\Console\Exception\CommandNotFoundException
                   file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php
                   line: 159
@@ -1792,7 +1797,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: 'The command "quod" does not exist.'
+                    example: 'The command "in" does not exist.'
                   exception:
                     type: string
                     example: Symfony\Component\Console\Exception\CommandNotFoundException
@@ -2239,7 +2244,7 @@ paths:
         in: path
         name: command_string
         description: ''
-        example: quod
+        example: in
         required: true
         schema:
           type: string
@@ -2256,7 +2261,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "\n  Dropping all tables .................................................................................................................... 30ms DONE\n\n   INFO  Preparing database.  \n\n  Creating migration table ............................................................................................................... 99ms DONE\n\n   INFO  Running migrations.  \n\n  2003_05_13_221258_create_jobs_table ................................................................................................... 162ms DONE\n  2014_10_12_000000_create_users_table .................................................................................................. 242ms DONE\n  2014_10_12_100000_create_password_reset_tokens_table .................................................................................. 115ms DONE\n  2019_08_19_000000_create_failed_jobs_table ............................................................................................ 158ms DONE\n  2019_12_14_000001_create_personal_access_tokens_table ................................................................................. 228ms DONE\n  2024_03_25_042214_create_companies_table .............................................................................................. 273ms DONE\n  2024_03_25_042227_create_clients_table ................................................................................................. 56ms DONE\n  2024_03_25_042235_create_freelancers_table ............................................................................................. 81ms DONE\n  2024_03_25_042242_create_admins_table .................................................................................................. 55ms DONE\n  2024_03_27_163951_create_super_admins_table ............................................................................................ 58ms DONE\n  2024_04_25_213815_create_gallery_images_table ......................................................................................... 157ms DONE\n  2024_04_25_213902_create_contact_links_table ........................................................................................... 60ms DONE\n  2024_04_25_213915_create_company_phones_table .......................................................................................... 59ms DONE\n  2024_05_03_141844_create_industries_table .............................................................................................. 72ms DONE\n  2024_05_03_142242_add_industry_id_to_company ............................................................................................ 7ms DONE\n  2024_05_05_163837_create_skills_table ................................................................................................. 115ms DONE\n  2024_05_05_163918_create_job_roles_table .............................................................................................. 173ms DONE\n  2024_05_05_164036_create_skillables_table ............................................................................................... 3ms DONE\n  2024_05_05_164120_create_job_offers_table ............................................................................................. 290ms DONE\n\n"
+                example: "\n  Dropping all tables .................................................................................................................... 25ms DONE\n\n   INFO  Preparing database.  \n\n  Creating migration table .............................................................................................................. 177ms DONE\n\n   INFO  Running migrations.  \n\n  2003_05_13_221258_create_jobs_table ................................................................................................... 163ms DONE\n  2014_10_12_000000_create_users_table .................................................................................................. 283ms DONE\n  2014_10_12_100000_create_password_reset_tokens_table .................................................................................. 105ms DONE\n  2019_08_19_000000_create_failed_jobs_table ............................................................................................ 177ms DONE\n  2019_12_14_000001_create_personal_access_tokens_table ................................................................................. 239ms DONE\n  2024_03_25_042214_create_companies_table .............................................................................................. 275ms DONE\n  2024_03_25_042227_create_clients_table ................................................................................................. 56ms DONE\n  2024_03_25_042235_create_freelancers_table ............................................................................................. 69ms DONE\n  2024_03_25_042242_create_admins_table .................................................................................................. 56ms DONE\n  2024_03_27_163951_create_super_admins_table ............................................................................................ 56ms DONE\n  2024_04_25_213815_create_gallery_images_table ......................................................................................... 165ms DONE\n  2024_04_25_213902_create_contact_links_table ........................................................................................... 60ms DONE\n  2024_04_25_213915_create_company_phones_table .......................................................................................... 67ms DONE\n  2024_05_03_141844_create_industries_table .............................................................................................. 63ms DONE\n  2024_05_03_142242_add_industry_id_to_company ............................................................................................ 6ms DONE\n  2024_05_05_163837_create_skills_table ................................................................................................. 116ms DONE\n  2024_05_05_163918_create_job_roles_table .............................................................................................. 118ms DONE\n  2024_05_05_164036_create_skillables_table ............................................................................................... 7ms DONE\n  2024_05_05_164120_create_job_offers_table ............................................................................................. 278ms DONE\n\n"
       tags:
         - 'Docker Image Commands'
       security: []
@@ -2273,7 +2278,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "\n   INFO  Seeding database.  \n\n  Database\\Seeders\\NoRoleUserSeeder ........................................................................................................ RUNNING  \n  Database\\Seeders\\NoRoleUserSeeder .................................................................................................. 2,346 ms DONE  \n\n  Database\\Seeders\\IndustrySeeder .......................................................................................................... RUNNING  \n  Database\\Seeders\\IndustrySeeder ........................................................................................................ 2 ms DONE  \n\n  Database\\Seeders\\SkillSeeder ............................................................................................................. RUNNING  \n  Database\\Seeders\\SkillSeeder ........................................................................................................... 5 ms DONE  \n\n  Database\\Seeders\\Job_RoleSeeder .......................................................................................................... RUNNING  \n  Database\\Seeders\\Job_RoleSeeder ....................................................................................................... 14 ms DONE  \n\n"
+                example: "\n   INFO  Seeding database.  \n\n  Database\\Seeders\\NoRoleUserSeeder ........................................................................................................ RUNNING  \n  Database\\Seeders\\NoRoleUserSeeder .................................................................................................. 2,319 ms DONE  \n\n  Database\\Seeders\\IndustrySeeder .......................................................................................................... RUNNING  \n  Database\\Seeders\\IndustrySeeder ........................................................................................................ 2 ms DONE  \n\n  Database\\Seeders\\SkillSeeder ............................................................................................................. RUNNING  \n  Database\\Seeders\\SkillSeeder ........................................................................................................... 6 ms DONE  \n\n  Database\\Seeders\\Job_RoleSeeder .......................................................................................................... RUNNING  \n  Database\\Seeders\\Job_RoleSeeder ....................................................................................................... 14 ms DONE  \n\n"
       tags:
         - 'Docker Image Commands'
       security: []

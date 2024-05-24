@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Company;
 
+use App\Constants\Gender;
 use App\Rules\GenderRule;
 use App\Constants\LocationType;
 use Illuminate\Validation\Rule;
@@ -29,11 +30,11 @@ class UpdateJobOfferRequest extends FormRequest
         return [
             'job_offer_id' => ['required' , 'exists:job_offers,id'] ,
             
-            'industry_name' => ['required' , 'exists:industries,name' , 'string'] ,
-            'job_role_id' => ['required' , 'exists:job_roles,id'] ,
+            'industry_name' => [ 'exists:industries,name' , 'string'] ,
+            'job_role_id' => [ 'exists:job_roles,id'] ,
             
-            'location_type' => ['required', 'string', Rule::in(LocationType::$types)],
-            'attendence_type' => ['required', 'string', Rule::in(AttendenceType::$types)],
+            'location_type' => [ 'string', Rule::in(LocationType::$types)],
+            'attendence_type' => [ 'string', Rule::in(AttendenceType::$types)],
 
             'max_salary' => ['integer', 'min:0', 'max:100000000', 'gte:min_salary' , new FieldsTogetherOrNoneRule('min_salary')],
             'min_salary' => ['integer', 'min:0', 'max:100000000', 'lte:max_salary' , new FieldsTogetherOrNoneRule('max_salary')],
@@ -41,15 +42,15 @@ class UpdateJobOfferRequest extends FormRequest
             'max_age' => ['integer', 'min:18', 'max:60', 'gte:min_salary' , new FieldsTogetherOrNoneRule('min_age')],
             'min_age' => ['integer', 'min:18', 'max:60', 'lte:max_salary' , new FieldsTogetherOrNoneRule('max_age')],
             
-            'description' => ['required' ,'string' ,  'min:40' ,' max:40000' ] ,
+            'description' => ['string' ,  'min:40' ,' max:40000' ] ,
 
-            'transportation' => ['required' , 'bool'] ,
-            'health_insurance' => ['required' , 'bool'] ,
-            'military_service' => ['required' , 'bool'] ,
-            'gender' => [new GenderRule()] ,
+            'transportation' => [ 'bool'] ,
+            'health_insurance' => [ 'bool'] ,
+            'military_service' => [ 'bool'] ,
+            'gender' => ['nullable' , Rule::in(Gender::$types)] ,
             
-            'skills' => ['required' , 'array' , 'min:5' , 'max:25'] ,
-            'skills.*' => ['required' , 'string' ,'exists:skills,name'] ,
+            'skills' => ['array' , 'min:5' , 'max:25'] ,
+            'skills.*' => [ 'string' ,'exists:skills,name'] ,
         ];
     }
 }

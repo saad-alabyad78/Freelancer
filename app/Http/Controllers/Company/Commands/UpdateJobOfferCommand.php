@@ -50,13 +50,18 @@ class UpdateJobOfferCommand extends Controller
             $job_offer->update($data) ;
 
             //update relations (skills .. etc)
-            $job_offer->skills()->detach() ;
+            if(array_key_exists('skills' , $data))
+            {
+                $job_offer->skills()->detach() ;
 
-            $skills = Skill::whereIn('name' , $data['skills'])->get() ;
+                $skills = Skill::whereIn('name' , $data['skills'])->get() ;
 
-            $job_offer->skills()->saveMany($skills) ;
+                $job_offer->skills()->saveMany($skills) ;
+            }
             
             DB::commit();
+
+            
             
             return Job_OfferResource::make($job_offer->load(['company' , 'skills' , 'job_role']))
                 ->response()
@@ -64,7 +69,7 @@ class UpdateJobOfferCommand extends Controller
 
         } catch (\Throwable $th) {
             DB::rollBack() ;
-            return response('something went wrong' , 400) ;
+            return response('something went wrong ' . $th->getMessage() , 400) ;
         }
     }
 }

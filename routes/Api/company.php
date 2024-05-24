@@ -9,6 +9,7 @@ use App\Http\Controllers\Company\Commands\DeleteCompanyCommand;
 use App\Http\Controllers\Company\Commands\UpdateCompanyCommand;
 use App\Http\Controllers\Company\Commands\UpdateJobOfferCommand;
 use App\Http\Controllers\Company\Commands\CreateJob_OfferCommand;
+use App\Http\Controllers\Company\Commands\DeleteJob_OfferCommand;
 use App\Http\Controllers\Company\Commands\CreateCompanyImageCommand;
 use App\Http\Controllers\Company\Commands\CreateGalleryImageCommand;
 use App\Http\Controllers\Company\Commands\DeleteCompanyImageCommand;
@@ -61,6 +62,7 @@ Route::group(['prefix' => 'company'] , function()
         function(){
             Route::post('store' , CreateJob_OfferCommand::class) ;
             Route::put('' , UpdateJobOfferCommand::class);
+            Route::delete('' , DeleteJob_OfferCommand::class);
             Route::get('my-job-offers' , GetAllJob_OfferForCompanyQuery::class) ;
         });
 });

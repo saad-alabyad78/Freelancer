@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Company;
 
+use App\Constants\Gender;
 use App\Rules\GenderRule;
 use App\Constants\LocationType;
 use Illuminate\Validation\Rule;
@@ -47,9 +48,9 @@ class CreateJob_OfferRequest extends FormRequest
             'transportation' => ['required' , 'bool'] ,
             'health_insurance' => ['required' , 'bool'] ,
             'military_service' => ['required' , 'bool'] ,
-            'gender' => [new GenderRule()] ,
+            'gender' => ['nullable' , Rule::in(Gender::$types)] ,
             
-            'skills' => ['array' , 'min:5' , 'max:25'] ,
+            'skills' => ['required' , 'array' , 'min:5' , 'max:25'] ,
             'skills.*' => ['string' ,'exists:skills,name'] ,
         ];
     }
