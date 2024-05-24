@@ -74,7 +74,7 @@ class CreateCompanyImageCommand extends Controller
         ]) ;
 
         return response()->json([
-            'background_image_url' => $company->profile_image_url ,
+            'background_image_url' => $company->background_image_url ,
         ],201);
     }
 }

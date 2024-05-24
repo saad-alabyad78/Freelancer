@@ -31,6 +31,7 @@ class UpdateCompanyCommand extends Controller
      */
     public function __invoke(UpdateCompanyRequest $request)
     {
+        
         DB::beginTransaction() ;
         
         $data = $request->validated() ;
@@ -39,7 +40,8 @@ class UpdateCompanyCommand extends Controller
             $company = Company::findOrFail(auth()->user()->role['id']);
 
             $company->update($data) ;
-
+            
+            
             //create links 
 
             $company->contact_links()->delete() ;

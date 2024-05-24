@@ -27,6 +27,6 @@ class DeleteGalleryImageCommand extends Controller
         
         $galleryImage->delete() ;
 
-        return response()->noContent() ;
+        return response('deleted') ;
     }
 }

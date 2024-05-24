@@ -21,7 +21,9 @@ class UpdateJobOfferCommand extends Controller
      * 
      * @authenticated
      * 
-     * 
+     * @apiResource App\Http\Resources\Company\Job_OfferResource
+     * @apiResourceModel App\Models\JobOffer with=App\Models\Company,App\Models\Skill,App\Models\JobRole
+     *
      * @return \Illuminate\Http\JsonResponse | \Illuminate\Http\Response
      * 
      */

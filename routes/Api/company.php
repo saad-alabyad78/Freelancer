@@ -7,6 +7,7 @@ use App\Http\Controllers\Company\Query\GalleryImageQuery;
 use App\Http\Controllers\Company\Commands\CreateCompanyCommand;
 use App\Http\Controllers\Company\Commands\DeleteCompanyCommand;
 use App\Http\Controllers\Company\Commands\UpdateCompanyCommand;
+use App\Http\Controllers\Company\Commands\UpdateJobOfferCommand;
 use App\Http\Controllers\Company\Commands\CreateJob_OfferCommand;
 use App\Http\Controllers\Company\Commands\CreateCompanyImageCommand;
 use App\Http\Controllers\Company\Commands\CreateGalleryImageCommand;
@@ -34,7 +35,6 @@ Route::group(['prefix' => 'company'] , function()
                            ->middleware('role:no_role');
                            
             Route::delete('/' , DeleteCompanyCommand::class) ;
-
             Route::put('/' , UpdateCompanyCommand::class) ; 
 
             Route::post('image/profile' , [CreateCompanyImageCommand::class , 'profile_image']);
@@ -60,6 +60,7 @@ Route::group(['prefix' => 'company'] , function()
         ],
         function(){
             Route::post('store' , CreateJob_OfferCommand::class) ;
+            Route::put('' , UpdateJobOfferCommand::class);
             Route::get('my-job-offers' , GetAllJob_OfferForCompanyQuery::class) ;
         });
 });

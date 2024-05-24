@@ -36,6 +36,6 @@ class DeleteCompanyCommand extends Controller
 
         $company->delete() ;
 
-        return response()->noContent() ;
+        return response('deleted') ;
     }
 }

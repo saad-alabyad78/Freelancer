@@ -35,8 +35,10 @@ class CreateGalleryImageCommand extends Controller
         $gallery_image = GalleryImage::create([
             'url' => $cloudinaryImage->getSecurePath() ,
             'public_id' => $cloudinaryImage->getPublicId() ,
+            'company_id' => $company->id ,
         ]);
 
+        //just in case
         $company->gallery_images()->save($gallery_image) ;
 
         return GalleryImageResource::make($gallery_image)

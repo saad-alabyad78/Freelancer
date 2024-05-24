@@ -3,7 +3,9 @@
 namespace App\Http\Requests\Company;
 
 use App\Rules\GenderRule;
+use App\Constants\LocationType;
 use Illuminate\Validation\Rule;
+use App\Constants\AttendenceType;
 use App\Rules\FieldsTogetherOrNoneRule;
 use Illuminate\Foundation\Http\FormRequest;
 
