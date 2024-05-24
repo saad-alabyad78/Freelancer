@@ -34,9 +34,14 @@ class GetAllJob_OfferForCompanyQuery extends Controller
 
         //filter scope
         $job_offers = $company->job_offers()
-            ->when($filters['type'], function ($query, $filters) {
+            ->when($filters['location_type'], function ($query, $filters) {
 
-                return $query->where('type', $filters['type']);
+                return $query->where('location_type', $filters['location_type']);
+
+            })
+            ->when($filters['attendence_type'], function ($query, $filters) {
+
+                return $query->where('attendence_type', $filters['attendence_type']);
 
             })->when($filters['status'], function ($query, $filters) {
 

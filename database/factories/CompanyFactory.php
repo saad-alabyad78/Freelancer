@@ -27,8 +27,7 @@ class CompanyFactory extends Factory
             'background_image_url' => null ,
             'profile_image_public_id' => null ,
             'background_image_public_id' => null ,
-
-            'username' => null , 
+            'username' => fake()->unique()->randomDigit() , 
             'description' => fake()->text(40) ,
             'size' => fake()->randomElement([10 , 100 , 1000]) ,
             'verified_at' => null ,

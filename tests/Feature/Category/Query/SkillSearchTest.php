@@ -21,10 +21,8 @@ class SkillSearchTest extends TestCase
         $this->assertDatabaseCount('skills' , 3) ;
 
         $response = $this->postJson('api/category/skills/search' , []) ;
-        //var_dump($response->json()) ;
-        $response->assertJsonCount(3 , 'data') ;
         
-
+        $response->assertJsonCount(3 , 'data') ;
 
         $response = $this->postJson('api/category/skills/search' , ['name' => 's']) ;
         $response->assertJsonCount(3 , 'data') ;
@@ -71,17 +69,8 @@ class SkillSearchTest extends TestCase
             'job_role' => 'r1' ,
         ]) ;
         $response->assertJsonCount(1 , 'data') ;
-        var_dump($response->json()) ;
-        $response->assertJsonPath('data.0.name' , 's1') ;
-
-
-
-
-
-
-
-
         
+        $response->assertJsonPath('data.0.name' , 's1') ;
 
     }
 }

@@ -11,7 +11,7 @@ class UpdateJob_OfferTest extends TestCase
     /**
      * A basic feature test example.
      */
-    public function test_example(): void
+    public function test_update_job_offer(): void
     {
         
     }

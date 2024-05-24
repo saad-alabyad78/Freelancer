@@ -55,7 +55,7 @@ class CreateCompanyCommand extends Controller
                 $b_id = $cloudinaryImage?->getPublicId() ?? null ;
             $e = microtime(true) ;
        
-            //var_dump(['time to store in cloudinary' => $e - $s] ) ;
+            
             
             //create company
             $company = Company::create([

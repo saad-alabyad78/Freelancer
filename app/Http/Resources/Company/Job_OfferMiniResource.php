@@ -31,9 +31,9 @@ class Job_OfferMiniResource extends JsonResource
             'min_age' => $this->min_age ,
             'gender' => $this->gender ,
             'industry_name' => $this->industry_name ,
-            'company' =>  MiniCompanyResource::make($this->company),
-            'job_role' => Job_RoleResource::make($this->job_role) ,
-            'skills' => SkillResource::collection($this->skills) ,
+            'company' =>  MiniCompanyResource::make($this->whenLoaded('company')),
+            'job_role' => Job_RoleResource::make($this->whenLoaded('job_role')) ,
+            'skills' => SkillResource::collection($this->whenLoaded('skills')) ,
         ];
     }
 }

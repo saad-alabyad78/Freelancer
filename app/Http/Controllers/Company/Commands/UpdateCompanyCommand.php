@@ -77,7 +77,8 @@ class UpdateCompanyCommand extends Controller
                 'contact_links'  ,
                 'gallery_images' ,
                 'company_phones' ,
-                ]))->response()->setStatusCode(201) ;
+                ]))->response()->setStatusCode(200) ;
+                
         } catch (\Throwable $th) {
             DB::rollBack() ;
             return response('something went wrong' , 400) ;

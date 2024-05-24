@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Company\Query\GetCompanyQuery;
 use App\Http\Controllers\Company\Query\CompanyImageQuery;
 use App\Http\Controllers\Company\Query\GalleryImageQuery;
 use App\Http\Controllers\Company\Commands\CreateCompanyCommand;
@@ -17,6 +18,8 @@ use App\Http\Controllers\Company\Query\GetAllJob_OfferQueryForCompany;
 
 Route::group(['prefix' => 'company'] , function()
 {
+    Route::get('/{company:id}' , GetCompanyQuery::class) ;
+    
     Route::group(
         [
             'middleware' => [
@@ -32,7 +35,7 @@ Route::group(['prefix' => 'company'] , function()
                            
             Route::delete('/' , DeleteCompanyCommand::class) ;
 
-            Route::put('/' , UpdateCompanyCommand::class) ; //TODO
+            Route::put('/' , UpdateCompanyCommand::class) ; 
 
             Route::post('image/profile' , [CreateCompanyImageCommand::class , 'profile_image']);
             Route::post('image/background' , [CreateCompanyImageCommand::class , 'background_image']);

@@ -15,6 +15,9 @@ class CompanyResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
+            'street_address' => $this->street_address,
+            'city' => $this->city ,
+            'region' => $this->region ,
             'id' => $this->id,
             'profile_image_url' => $this->profile_image_url , 
             'background_image_url' => $this->background_image_url ,
@@ -24,9 +27,9 @@ class CompanyResource extends JsonResource
             'description' => $this->description ,
             'size' => $this->size , 
             'industry_name' => $this->industry_name ,
-            'gallery_images' => GalleryImageResource::collection($this->gallery_images) ,
-            'contact_links' => ContactLinkResource::collection($this->contact_links) ,
-            'company_phones' => CompanyPhoneResource::collection($this->company_phones) ,
+            'gallery_images' => GalleryImageResource::collection($this->whenLoaded('gallery_images')) ,
+            'contact_links' => ContactLinkResource::collection($this->whenLoaded('contact_links')) ,
+            'company_phones' => CompanyPhoneResource::collection($this->whenLoaded('company_phones')) ,
         ];
     }
 }

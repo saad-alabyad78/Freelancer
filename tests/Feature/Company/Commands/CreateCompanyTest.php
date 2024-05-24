@@ -88,10 +88,10 @@ class CreateCompanyTest extends TestCase
         ->postJson('api/company/store' ,
             $companyData
         );
-        //var_dump($response->json()) ;
+        
         $end = microtime(true);
 
-        var_dump($end - $start) ;
+        //var_dump($end - $start) ;
 
         //$this->assertLessThan(0.2 , $end - $start) ;
 

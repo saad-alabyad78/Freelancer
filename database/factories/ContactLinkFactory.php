@@ -19,7 +19,7 @@ class ContactLinkFactory extends Factory
     {
         return [
             'name' => fake()->sentence() ,
-            'company_id' => (Company::factory()->create())->id ,
+            'company_id' => null ,
         ];
     }
 }

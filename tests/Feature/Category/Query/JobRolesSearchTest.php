@@ -11,7 +11,7 @@ class JobRolesSearchTest extends TestCase
 {
     use RefreshDatabase ;
     
-    public function test_example(): void
+    public function test_job_role_search(): void
     {
         JobRole::create(['name' => 's1']) ;
         JobRole::create(['name' => 's2']) ;
