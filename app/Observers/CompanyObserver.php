@@ -16,6 +16,8 @@ class CompanyObserver
     public function deleting(Company $company): void
     {
 
+        var_dump('deleting company observer');
+        
         DeleteCloudinaryAssetsJob::dispatchIf(
             $company->profile_image_public_id 
             ||

@@ -63,6 +63,6 @@ Route::group(['prefix' => 'company'] , function()
             Route::post('store' , CreateJob_OfferCommand::class) ;
             Route::put('' , UpdateJobOfferCommand::class);
             Route::delete('' , DeleteJob_OfferCommand::class);
-            Route::get('my-job-offers' , GetAllJob_OfferForCompanyQuery::class) ;
+            Route::post('my-job-offers' , GetAllJob_OfferForCompanyQuery::class) ;
         });
 });

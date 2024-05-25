@@ -15,8 +15,8 @@ class GalleryImageObserver
      */
     public function deleting(GalleryImage $galleryImage): void
     {
-        var_dump('gallery image observer ' . $galleryImage->public_id ) ;
-        $array = [$galleryImage->public_id] ;
-        DeleteCloudinaryAssetsJob::dispatchIf(true , $array ) ;
+        var_dump('deleting gallery image observer ') ;
+
+        DeleteCloudinaryAssetsJob::dispatch([$galleryImage->public_id]) ;
     }
 }
