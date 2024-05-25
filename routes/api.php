@@ -32,6 +32,8 @@ require 'Api/render-commands.php';
 
 require 'Api/company.php' ;
 
+require 'Api/client.php' ;
+
 require 'Api/category.php' ;
 
 

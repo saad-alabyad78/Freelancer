@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Company\Commands;
+namespace App\Http\Controllers\Client\Commands;
 
-use App\Models\Company;
+use App\Models\Client;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Jobs\DeleteCloudinaryAssetsJob;
-
 /**
- * @group Company Managment
+ * @group Client Managment
  * 
- */
-class DeleteCompanyImageCommand extends Controller
+ **/
+class DeleteClientImageCommand extends Controller
 {
     /**
      * delete profile image
@@ -21,25 +21,25 @@ class DeleteCompanyImageCommand extends Controller
      */
     public function profile_image()
     {
-        $company = Company::findOrFail(auth()->user()->role_id); 
+        $client = Client::findOrFail(auth()->user()->role_id); 
         
-        if($company->profile_image_public_id == null){
+        if($client->profile_image_public_id == null){
             return response()->json([
                 'message' => 'no image to delete' , 
             ] , 404);
         }
 
         DeleteCloudinaryAssetsJob::dispatchAfterResponse([
-            $company->profile_image_public_id 
+            $client->profile_image_public_id 
         ]);
         
-        $company->update([
+        $client->update([
             'profile_image_public_id' => null ,
             'profile_image_url' => null ,
         ]); ;
         
         return response()->json([
-            'profile_image_url' => $company->profile_image_url ,
+            'profile_image_url' => $client->profile_image_url ,
         ]);
     }
     
@@ -52,26 +52,24 @@ class DeleteCompanyImageCommand extends Controller
      */
     public function background_image()
     {
-        $company = Company::findOrFail(auth()->user()->role_id); 
+        $client = Client::findOrFail(auth()->user()->role_id); 
         
-        if($company->background_image_public_id == null){
+        if($client->background_image_public_id == null){
             return response()->json([
                 'message' => 'no image to delete' , 
             ] , 404);
         }
 
         DeleteCloudinaryAssetsJob::dispatchAfterResponse([
-            $company->background_image_public_id ,
+            $client->background_image_public_id ,
         ]);
 
-        $company->update([
+        $client->update([
             'background_image_url' => null ,
         ]);
         
         return response()->json([
-            'background_image_url' => $company->background_image_url ,
+            'background_image_url' => $client->background_image_url ,
         ]);
     }
-
-
 }

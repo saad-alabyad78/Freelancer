@@ -10,7 +10,17 @@ class Client extends BaseModel
 {
     use HasFactory;
 
-    protected $with = ['user'] ;
+    protected $fillable = 
+    [
+        'profile_image_url' ,
+        'background_image_url',
+        'profile_image_public_id',
+        'background_image_public_id',
+        'gender',
+        'date_of_birth',
+        'city',
+        'username' ,
+    ];
 
     public function user():MorphOne
     {

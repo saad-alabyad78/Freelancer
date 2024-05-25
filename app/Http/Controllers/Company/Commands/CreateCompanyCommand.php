@@ -28,7 +28,7 @@ class CreateCompanyCommand extends Controller
         $this->imageService = $_imageService ;
     }
     /**
-     * Create/Store New Company .
+     * Store New Company .
      * 
      * @authenticated
      * 
@@ -104,10 +104,9 @@ class CreateCompanyCommand extends Controller
                     ]);
 
                     $gallery_images[] = new GalleryImage([
-                        'url' => $cloudinaryImage->getSecurePath(),
+                        'url' => $cloudinaryImage->getSecurePath()  ,
                         'public_id' => $cloudinaryImage->getPublicId() ,
                     ]);
-                    
                 }
                 $company->gallery_images()->saveMany($gallery_images) ;
             }

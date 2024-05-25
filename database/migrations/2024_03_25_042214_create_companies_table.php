@@ -31,7 +31,7 @@ return new class extends Migration
             $table->string('street_address');
             $table->timestamps();
 
-            $table->index(['username']);
+            
 
             
         });
