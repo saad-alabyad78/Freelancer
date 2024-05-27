@@ -5,10 +5,12 @@ namespace App\Providers;
 use App\Models\Client;
 use App\Models\Company;
 use App\Models\JobOffer;
+use App\Models\Freelancer;
 use App\Models\GalleryImage;
 use App\Observers\ClientObserver;
 use App\Observers\CompanyObserver;
 use App\Observers\JobOfferObserver;
+use App\Observers\FreelancerObserver;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
 use App\Observers\GalleryImageObserver;
@@ -40,6 +42,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         Client::class => [
             ClientObserver::class ,
+        ],
+        Freelancer::class => [
+            FreelancerObserver::class ,
         ],
     ];
 

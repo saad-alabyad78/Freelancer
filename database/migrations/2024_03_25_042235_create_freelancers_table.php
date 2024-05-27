@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -13,6 +13,22 @@ return new class extends Migration
     {
         Schema::create('freelancers', function (Blueprint $table) {
             $table->id();
+            $table->string('username')->unique();
+
+            $table->string('profile_image_url')->nullable();
+            $table->string('background_image_url')->nullable();
+
+            $table->string('profile_image_public_id')->nullable();
+            $table->string('background_image_public_id')->nullable();
+
+            $table->string('headline');
+            $table->string('description');
+            $table->string('city');
+            $table->string('gender');
+            $table->date('date_of_birth');
+
+            $table->foreignId('job_role_id')->constrained();
+
             $table->timestamps();
         });
     }

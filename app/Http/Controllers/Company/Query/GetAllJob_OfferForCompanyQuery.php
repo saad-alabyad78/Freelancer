@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Company\Query;
 
 use App\Models\Company;
 use App\Models\JobRole;
+use App\Models\JobOffer;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Builder;
+use App\Http\Resources\Company\Job_OfferResource;
 use App\Http\Resources\Company\Job_OfferMiniResource;
 use App\Http\Requests\Company\jobOffersForCompanyRequest;
 
@@ -66,6 +68,6 @@ class GetAllJob_OfferForCompanyQuery extends Controller
         
         //return for the company only
 
-        return Job_OfferMiniResource::collection($job_offers) ;
+        return Job_OfferResource::collection($job_offers) ;
     }
 }

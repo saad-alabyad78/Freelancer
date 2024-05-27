@@ -15,6 +15,8 @@ class DeleteClientImageCommand extends Controller
     /**
      * delete profile image
      * 
+     * @authenticated
+     * 
      * return 404 if the image is null
      * 
      * @return \Illuminate\Http\Response | \Illuminate\Routing\ResponseFactory
@@ -45,6 +47,8 @@ class DeleteClientImageCommand extends Controller
     
     /**
      * delete background image
+     * 
+     * @authenticated
      * 
      * return 404 if the image is null
      * 

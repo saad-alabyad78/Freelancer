@@ -17,6 +17,8 @@ class DeleteGalleryImageCommand extends Controller
     /**
      * delete gallary image
      * 
+     * @authenticated
+     * 
      * @return \Illuminate\Http\Response
      */
     public function __invoke(DeleteGalleryImageRequest $request)

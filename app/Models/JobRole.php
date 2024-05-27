@@ -15,9 +15,12 @@ class JobRole extends BaseModel
     {
         return $this->hasMany(JobOffer::class) ;
     }
-
     public function skills():MorphToMany
     {
         return $this->morphToMany(Skill::class , 'skillable');
+    }
+    public function freelancers():HasMany
+    {
+        return $this->hasMany(Freelancer::class);
     }
 }

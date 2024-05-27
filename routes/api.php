@@ -36,6 +36,8 @@ require 'Api/client.php' ;
 
 require 'Api/category.php' ;
 
+require 'Api/freelancer.php' ;
+
 
 Route::post('test' , function(Request $request){
   return Company::findOrFail(1)->delete();

@@ -46,6 +46,8 @@ class DeleteCompanyImageCommand extends Controller
     /**
      * delete background image
      * 
+     * @authenticated
+     * 
      * return 404 if the image is null
      * 
      * @return \Illuminate\Http\Response | \Illuminate\Routing\ResponseFactory

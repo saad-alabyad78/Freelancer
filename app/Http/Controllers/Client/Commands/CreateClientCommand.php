@@ -16,7 +16,7 @@ use App\Http\Requests\Client\CreateClientRequest;
 class CreateClientCommand extends Controller
 {
     /**
-     * Store New Company .
+     * Store New Client .
      * 
      * @authenticated
      * 

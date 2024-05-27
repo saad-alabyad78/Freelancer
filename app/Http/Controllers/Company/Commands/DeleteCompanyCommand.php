@@ -18,6 +18,8 @@ class DeleteCompanyCommand extends Controller
      * Delete the company.
      * Note: the user will be deleted 
      * 
+     * @authenticated
+     * 
      * return 422 if password is incurrect
      * 
      *  @return \Illuminate\Http\Response | \Illuminate\Routing\ResponseFactory

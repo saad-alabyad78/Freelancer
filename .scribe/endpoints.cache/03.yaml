@@ -24,13 +24,13 @@ endpoints:
         name: client_id
         description: 'The ID of the client.'
         required: true
-        example: 9
+        example: 7
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      client_id: 9
+      client_id: 7
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -41,7 +41,7 @@ endpoints:
         status: 404
         content: |-
           {
-              "message": "No query results for model [App\\Models\\Client] 9",
+              "message": "No query results for model [App\\Models\\Client] 7",
               "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
               "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
               "line": 487,
@@ -486,7 +486,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '50'
+          x-ratelimit-remaining: '55'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -505,7 +505,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Store New Company .'
+      title: 'Store New Client .'
       description: ''
       authenticated: true
       custom: []
@@ -538,9 +538,9 @@ endpoints:
         custom: []
       date_of_birth:
         name: date_of_birth
-        description: 'Must be a valid date. Must be a date before or equal to <code>2008-05-25</code>.'
+        description: 'Must be a valid date. Must be a date before or equal to <code>2008-05-26</code>.'
         required: true
-        example: '1998-04-05'
+        example: '1999-07-20'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -566,7 +566,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      date_of_birth: '1998-04-05'
+      date_of_birth: '1999-07-20'
       city: دمشق
       gender: female
     fileParameters:
@@ -583,7 +583,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Ed6he4V1akDfvZ368acPgb5'
+      - 'Bearer cgE41ha3d8b66aVZefkvP5D'
     controller: null
     method: null
     route: null
@@ -612,9 +612,9 @@ endpoints:
     bodyParameters:
       date_of_birth:
         name: date_of_birth
-        description: 'Must be a valid date. Must be a date before or equal to <code>2008-05-25</code>.'
+        description: 'Must be a valid date. Must be a date before or equal to <code>2008-05-26</code>.'
         required: false
-        example: '1995-05-04'
+        example: '1994-12-01'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -632,7 +632,7 @@ endpoints:
         name: gender
         description: ''
         required: false
-        example: male
+        example: female
         type: string
         enumValues:
           - male
@@ -640,9 +640,9 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      date_of_birth: '1995-05-04'
+      date_of_birth: '1994-12-01'
       city: دمشق
-      gender: male
+      gender: female
     fileParameters: []
     responses:
       -
@@ -655,7 +655,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8ab3dZ4PDhgE1566cVvakef'
+      - 'Bearer 1vVbkh4dacP8fD6Ea6Z3eg5'
     controller: null
     method: null
     route: null
@@ -671,21 +671,35 @@ endpoints:
       subgroupDescription: ''
       title: 'create/update profile image'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
-      Content-Type: application/json
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
+    bodyParameters:
+      image:
+        name: image
+        description: 'Must be an image. Must not be greater than 2000 kilobytes.'
+        required: true
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
     cleanBodyParameters: []
-    fileParameters: []
+    fileParameters:
+      image: null
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer EfZvdgPka3hc4D6168ebV5a'
     controller: null
     method: null
     route: null
@@ -701,21 +715,35 @@ endpoints:
       subgroupDescription: ''
       title: 'create/update background image'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
-      Content-Type: application/json
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
+    bodyParameters:
+      image:
+        name: image
+        description: 'Must be an image. Must not be greater than 2000 kilobytes.'
+        required: true
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
     cleanBodyParameters: []
-    fileParameters: []
+    fileParameters:
+      image: null
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer kcZaEh1eb8DV5vd6aPf634g'
     controller: null
     method: null
     route: null
@@ -730,10 +758,11 @@ endpoints:
       subgroup: ''
       subgroupDescription: ''
       title: 'delete profile image'
-      description: 'return 404 if the image is null'
-      authenticated: false
+      description: ''
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -745,7 +774,10 @@ endpoints:
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 8ePfVa4Za6E3vc5kgd6hbD1'
     controller: null
     method: null
     route: null
@@ -760,10 +792,11 @@ endpoints:
       subgroup: ''
       subgroupDescription: ''
       title: 'delete background image'
-      description: 'return 404 if the image is null'
-      authenticated: false
+      description: ''
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -775,7 +808,10 @@ endpoints:
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 15a48VZ3cDPkEab6e6dvfgh'
     controller: null
     method: null
     route: null

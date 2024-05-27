@@ -51,7 +51,7 @@ class CreateJob_OfferRequest extends FormRequest
             'gender' => ['nullable' , Rule::in(Gender::$types)] ,
             
             'skills' => ['required' , 'array' , 'min:5' , 'max:25'] ,
-            'skills.*' => ['string' ,'exists:skills,name'] ,
+            'skills.*' => ['string' ,'exists:skills,name' , 'distinct'] ,
         ];
     }
 }

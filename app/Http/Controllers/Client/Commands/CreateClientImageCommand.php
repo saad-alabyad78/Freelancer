@@ -17,6 +17,8 @@ class CreateClientImageCommand extends Controller
     /**
      *create/update profile image 
      *
+     * @authenticated
+     * 
      * @return \Illuminate\Http\JsonResponse 
      **/
     public function profile_image(CreateClientImageRequest $request)
@@ -46,6 +48,8 @@ class CreateClientImageCommand extends Controller
     /**
      *create/update background image 
      *
+     * @authenticated
+     * 
      * @return \Illuminate\Http\JsonResponse
      **/
     public function background_image(CreateClientImageRequest $request)

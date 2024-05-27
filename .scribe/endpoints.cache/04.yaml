@@ -35,7 +35,7 @@ endpoints:
           content-type: application/json
           accept: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '49'
+          x-ratelimit-remaining: '54'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -70,7 +70,7 @@ endpoints:
         name: name
         description: 'Must be at least 1 character.'
         required: false
-        example: czuohrfzuxovnhpppircbudvjcytwioxzvbcrelfgehbmaxzttjvvbfuomqtdmtzudxtairrdtozg
+        example: ywefcjbjqtfzxzykrazsxxudxznml
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -79,19 +79,19 @@ endpoints:
         name: job_role
         description: ''
         required: false
-        example: illum
+        example: odio
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: czuohrfzuxovnhpppircbudvjcytwioxzvbcrelfgehbmaxzttjvvbfuomqtdmtzudxtairrdtozg
-      job_role: illum
+      name: ywefcjbjqtfzxzykrazsxxudxznml
+      job_role: odio
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":[{"name":"\u0628\u0631\u0645\u062c\u064a"},{"name":"\u0628\u0631\u0645\u062c\u064a"}]}'
+        content: '{"data":[{"name":null},{"name":null}]}'
         headers: []
         description: ''
         custom: []
@@ -126,18 +126,18 @@ endpoints:
         name: name
         description: ''
         required: false
-        example: quia
+        example: minima
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: quia
+      name: minima
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"android developer"},{"id":1,"name":"android developer"}]}'
+        content: '{"data":[{"id":null,"name":null},{"id":null,"name":null}]}'
         headers: []
         description: ''
         custom: []

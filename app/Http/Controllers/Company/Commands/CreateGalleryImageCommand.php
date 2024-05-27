@@ -21,6 +21,8 @@ class CreateGalleryImageCommand extends Controller
     /**
      *create gallary image 
      *
+     * @authenticated
+     * 
      * @apiResource App\Http\Resources\Company\GalleryImageResource
      * @apiResourceModel App\Models\GalleryImage 
      *

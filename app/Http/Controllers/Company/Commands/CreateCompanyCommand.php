@@ -135,7 +135,10 @@ class CreateCompanyCommand extends Controller
 
         } catch (\Throwable $th) {
             DB::rollBack() ;
-            return response('something went wrong' , 400) ;
+            return response()->json([
+                'message' => 'something went wrong' ,
+                'error' => $th->getMessage() 
+                ] , 400) ;
         }
     }
 }

@@ -22,6 +22,8 @@ class CreateCompanyImageCommand extends Controller
     /**
      *create/update profile image 
      *
+     * @authenticated
+     * 
      * @return \Illuminate\Http\JsonResponse 
      **/
     public function profile_image(CreateCompanyImageRequest $request)
@@ -51,6 +53,8 @@ class CreateCompanyImageCommand extends Controller
     /**
      *create/update background image 
      *
+     * @authenticated
+     * 
      * @return \Illuminate\Http\JsonResponse
      **/
     public function background_image(CreateCompanyImageRequest $request)

@@ -32,26 +32,3 @@ Route::get('command/database/seed' , function(){
     return Artisan::output() ;
 });
 
-/**
- * @group Docker Image Commands
- * 
- **/
-
-Route::delete('command/storage/delete' , function(){
-
-    $directories = ['company'] ;
-
-    $total_size = 0 ;
-    foreach($directories as $directory)
-    {
-        $files = Storage::files($directory) ;
-
-        foreach($files as $file)
-        {
-            $total_size += Storage::size($file) ;
-
-            Storage::delete($file) ;
-        }
-    }
-    return $total_size . ' KB are freed from the storage' ;
-});
