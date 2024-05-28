@@ -16,6 +16,7 @@ class Portfolio extends Model
         'url' ,
         'date' ,
         'description' ,
+        'freelancer_id' ,
     ] ;
     
     public function skills():MorphMany

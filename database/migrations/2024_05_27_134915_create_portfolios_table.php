@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('portfolios', function (Blueprint $table) {
             $table->id();
             $table->foreignId('freelancer_id')->constrained() ;
-            $table->string('url');
+            $table->string('url')->nullable();
             $table->string('title');
             $table->string('description');
-            $table->date('date');
+            $table->date('date')->nullable();
             $table->timestamps();
         });
     }

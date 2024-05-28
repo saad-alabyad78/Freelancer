@@ -22,7 +22,9 @@ class SearchAllJobRoleQuery extends Controller
      */
     public function __invoke(GetAllJobRolesRequest $request)
     {
-        $job_roles = JobRole::where('name' , 'like' , '%'.$request->name.'%')->get() ;
+        $job_roles = JobRole::where('name' , 'like' , '%'.$request->name.'%')
+        ->limit(100)
+        ->get() ;
 
         return Job_RoleResource::collection($job_roles)
             ->response()

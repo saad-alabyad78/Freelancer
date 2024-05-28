@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Freelancer\Query\GetPortfolioQuery;
 use App\Http\Controllers\Freelancer\Query\GetFreelancerQuery;
 use App\Http\Controllers\Freelancer\Commands\CreatePortfolioCommand;
+use App\Http\Controllers\Freelancer\Commands\DeletePortfolioCommand;
+use App\Http\Controllers\Freelancer\Commands\UpdatePortfolioCommand;
 use App\Http\Controllers\Freelancer\Commands\CreateFreelancerCommand;
 use App\Http\Controllers\Freelancer\Commands\UpdateFreelancerCommand;
 use App\Http\Controllers\Freelancer\Commands\CreateFreelancerImageCommand;
@@ -44,10 +46,11 @@ Route::group([
         ->withoutMiddleware(['auth:sanctum' , 'role:freelancer' , 'verify_email']) ;
         //create portfolio
         Route::post('store' , CreatePortfolioCommand::class) ;
-
         //update portfolio
+        Route::put('' , UpdatePortfolioCommand::class) ;
         //delete portfolio
-        
+        Route::delete('' , DeletePortfolioCommand::class) ;
+
         //create file
         //delete file
     });

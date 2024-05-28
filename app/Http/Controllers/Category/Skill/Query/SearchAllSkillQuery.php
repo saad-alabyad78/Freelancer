@@ -42,7 +42,9 @@ class SearchAllSkillQuery extends Controller
         })
         ->when($name , function(Builder $query , string $name){
             $query->where('skills.name' , 'like' , "%{$name}%");
-        })->get();
+        })
+        ->limit(100)
+        ->get();
 
         return SkillResource::collection($skills)
             ->response()->withHeaders(['Accept' => 'application/json']) ;

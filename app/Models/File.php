@@ -20,12 +20,11 @@ class File extends Model
         'type' ,
         'filable_id' ,
         'filable_type' ,
+        'extention' ,
     ] ;
 
     public function protfolio():MorphTo
     {
         return $this->morphTo(Portfolio::class , 'filable') ;
     }
-
-    
 }

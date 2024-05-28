@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Freelancer;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -26,6 +26,13 @@ class CreatePortfolioRequest extends FormRequest
             'url' => ['string'],
             'date' => ['date'],
             'description' => ['required' , 'string' , 'min:20'],
+            'files' => ['array' , 'max:6'] ,
+                'files.*' => [
+                    'required',
+                    'file',
+                    'mimes:pdf,jpeg,png,gif,mp4,mov,mp3,wav,docx,txt,pptx,zip,html,css,js',
+                    'max:20480' // The file size limit is 20MB
+                ]
         ];
     }
 }
