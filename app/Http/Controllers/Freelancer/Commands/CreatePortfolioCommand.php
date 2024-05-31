@@ -40,7 +40,7 @@ class CreatePortfolioCommand extends Controller
                 
                 foreach($data['files'] as $file)
                 {   
-                    $cloudinaryImage = Cloudinary::uploadFile($file->getRealPath(),[
+                    $cloudinaryFile = Cloudinary::uploadFile($file->getRealPath(),[
                         'folder' => CloudFolders::FREELANCER ,
                         'use_filename' => true ,
                         //'public_id' => $fullFilename ,
@@ -50,10 +50,10 @@ class CreatePortfolioCommand extends Controller
 
         
                     $fileModels[] = new File([
-                        'url' => $cloudinaryImage->getSecurePath(),
-                        'public_id' => $cloudinaryImage->getPublicId(),
-                        'size' =>  $cloudinaryImage->getSize(), 
-                        'extention' =>  $cloudinaryImage?->getExtension() ,
+                        'url' => $cloudinaryFile->getSecurePath(),
+                        'public_id' => $cloudinaryFile->getPublicId(),
+                        'size' =>  $cloudinaryFile->getSize(), 
+                        'extention' =>  $cloudinaryFile?->getExtension() ,
                     ]);
                 }
                 

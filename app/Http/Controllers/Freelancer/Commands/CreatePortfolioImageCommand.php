@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers\Freelancer\Commands;
 
+use App\Models\Image;
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
+use App\Constants\CloudFolders;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Freelancer\PortfolioResource;
-use App\Http\Requests\Freelancer\UpdatePortfolioRequest;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+use App\Http\Requests\Freelancer\CreatePortfolioImageRequest;
 
-class UpdatePortfolioCommand extends Controller
+class CreatePortfolioImageCommand extends Controller
 {
     /**
      * Handle the incoming request.
      */
-    public function __invoke(UpdatePortfolioRequest $request)
+    public function __invoke(CreatePortfolioImageRequest $request)
     {
         $portfolio = Portfolio::where([
             'id' => $request->portfolio_id ,
@@ -27,7 +30,18 @@ class UpdatePortfolioCommand extends Controller
             ] , 404);
         }
 
-        $portfolio->update($request->validated()) ;
+        $cloudinaryImage = Cloudinary::upload($request->file('image')->getRealPath() ,[
+            'folder' => CloudFolders::FREELANCER
+        ]);
+    
+        $imageModel = new Image([
+            'url' => $cloudinaryImage->getSecurePath(),
+            'public_id' => $cloudinaryImage->getPublicId(),
+            'size' =>  $cloudinaryImage->getSize(), 
+            'extention' => $cloudinaryImage?->getExtension() ,
+        ]);
+
+        $portfolio->files()->save($imageModel) ;
 
         return PortfolioResource::make($portfolio->load(['files' , 'images']))
                 ->response()

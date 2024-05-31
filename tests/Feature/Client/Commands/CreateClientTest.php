@@ -38,7 +38,6 @@ class CreateClientTest extends TestCase
 
         $response = $this->actingAs($this->user)
         ->postJson('/api/client/store' , $data , ['Accept' => 'application/json']);
-        var_dump($response->json());
 
         $response->assertStatus(201);
 

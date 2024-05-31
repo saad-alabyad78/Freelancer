@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers\Freelancer\Commands;
 
+use App\Models\Image;
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\Freelancer\PortfolioResource;
-use App\Http\Requests\Freelancer\UpdatePortfolioRequest;
+use App\Http\Requests\Freelancer\DeletePortfolioImageRequest;
 
-class UpdatePortfolioCommand extends Controller
+class DeletePortfolioImageCommand extends Controller
 {
     /**
      * Handle the incoming request.
      */
-    public function __invoke(UpdatePortfolioRequest $request)
+    public function __invoke(DeletePortfolioImageRequest $request)
     {
         $portfolio = Portfolio::where([
             'id' => $request->portfolio_id ,
@@ -27,11 +27,17 @@ class UpdatePortfolioCommand extends Controller
             ] , 404);
         }
 
-        $portfolio->update($request->validated()) ;
+        $image = Image::find($request->image_id) ;
 
-        return PortfolioResource::make($portfolio->load(['files' , 'images']))
-                ->response()
-                ->setStatusCode(201)
-                ->withHeaders(['Content-Type' => 'application/json']);
+        if($image == null)
+        {
+            return response()->json([
+                'message' => 'you do not have a image with id = ' . $request->image_id
+            ] , 404);
+        }
+
+        $image->delete() ;
+
+        return response()->json(['message' => 'deleted']) ;
     }
 }

@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers\Freelancer\Commands;
 
+use App\Models\File;
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\Freelancer\PortfolioResource;
-use App\Http\Requests\Freelancer\UpdatePortfolioRequest;
+use App\Http\Requests\Freelancer\DeletePortfolioFileRequest;
 
-class UpdatePortfolioCommand extends Controller
+class DeletePortfolioFileCommand extends Controller
 {
     /**
      * Handle the incoming request.
      */
-    public function __invoke(UpdatePortfolioRequest $request)
+    public function __invoke(DeletePortfolioFileRequest $request)
     {
         $portfolio = Portfolio::where([
             'id' => $request->portfolio_id ,
@@ -27,11 +27,17 @@ class UpdatePortfolioCommand extends Controller
             ] , 404);
         }
 
-        $portfolio->update($request->validated()) ;
+        $file = File::find($request->file_id) ;
 
-        return PortfolioResource::make($portfolio->load(['files' , 'images']))
-                ->response()
-                ->setStatusCode(201)
-                ->withHeaders(['Content-Type' => 'application/json']);
+        if($file == null)
+        {
+            return response()->json([
+                'message' => 'you do not have a file with id = ' . $request->file_id
+            ] , 404);
+        }
+
+        $file->delete() ;
+
+        return response()->json(['message' => 'deleted']) ;
     }
 }

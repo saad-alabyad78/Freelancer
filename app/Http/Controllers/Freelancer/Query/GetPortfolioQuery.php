@@ -12,7 +12,7 @@ class GetPortfolioQuery extends Controller
     
     public function __invoke(Portfolio $portfolio)
     {
-        return PortfolioResource::make($portfolio->load(['skills' , 'files']))
+        return PortfolioResource::make($portfolio->load(['skills' , 'files' , 'images']))
             ->response()
             ->withHeaders(['Content-Type' => 'application/json']) ;
     }

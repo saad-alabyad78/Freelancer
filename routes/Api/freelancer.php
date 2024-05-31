@@ -8,6 +8,10 @@ use App\Http\Controllers\Freelancer\Commands\DeletePortfolioCommand;
 use App\Http\Controllers\Freelancer\Commands\UpdatePortfolioCommand;
 use App\Http\Controllers\Freelancer\Commands\CreateFreelancerCommand;
 use App\Http\Controllers\Freelancer\Commands\UpdateFreelancerCommand;
+use App\Http\Controllers\Freelancer\Commands\CreatePortfolioFileCommand;
+use App\Http\Controllers\Freelancer\Commands\DeletePortfolioFileCommand;
+use App\Http\Controllers\Freelancer\Commands\CreatePortfolioImageCommand;
+use App\Http\Controllers\Freelancer\Commands\DeletePortfolioImageCommand;
 use App\Http\Controllers\Freelancer\Commands\CreateFreelancerImageCommand;
 use App\Http\Controllers\Freelancer\Commands\DeleteFreelancerImageCommand;
 
@@ -52,15 +56,18 @@ Route::group([
         //get portfolio // no middlewares
         Route::get('{portfolio:id}' , GetPortfolioQuery::class)
         ->withoutMiddleware(['auth:sanctum' , 'role:freelancer' , 'verify_email']) ;
-        //create portfolio
         Route::post('store' , CreatePortfolioCommand::class) ;
-        //update portfolio
         Route::put('' , UpdatePortfolioCommand::class) ;
-        //delete portfolio
         Route::delete('' , DeletePortfolioCommand::class) ;
 
         //create file
+        Route::post('file/create' , CreatePortfolioFileCommand::class) ;
         //delete file
+        Route::delete('file', DeletePortfolioFileCommand::class);
+        //create image
+        Route::post('image/create' , CreatePortfolioImageCommand::class);
+        //delete image
+        Route::delete('image' , DeletePortfolioImageCommand::class);
     });
     
 });

@@ -31,7 +31,7 @@ class CreatePortfolioRequest extends FormRequest
                 'files.*' => [
                     'required', 
                     'file',
-                    'mimes:pdf,zip,csv',
+                    'mimes:pdf,zip',
                     'max:10240' // The file size limit is 10MB
                 ] ,
             'images' => ['array' , 'max:6'] ,
