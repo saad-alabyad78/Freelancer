@@ -2,14 +2,20 @@
 
 namespace App\Providers;
 
+use App\Models\File;
+use App\Models\Image;
 use App\Models\Client;
 use App\Models\Company;
 use App\Models\JobOffer;
+use App\Models\Portfolio;
 use App\Models\Freelancer;
 use App\Models\GalleryImage;
+use App\Observers\FileObserver;
+use App\Observers\ImageObserver;
 use App\Observers\ClientObserver;
 use App\Observers\CompanyObserver;
 use App\Observers\JobOfferObserver;
+use App\Observers\PortfolioObserver;
 use App\Observers\FreelancerObserver;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
@@ -45,6 +51,15 @@ class EventServiceProvider extends ServiceProvider
         ],
         Freelancer::class => [
             FreelancerObserver::class ,
+        ],
+        Portfolio::class => [
+            PortfolioObserver::class ,
+        ],
+        File::class => [
+            FileObserver::class ,
+        ],
+        Image::class => [
+            ImageObserver::class ,
         ],
     ];
 

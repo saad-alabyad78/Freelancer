@@ -1,7 +1,9 @@
 <?php
 
+use App\Models\User;
 use App\Models\Company;
 use App\Constants\Disks;
+use App\Models\Freelancer;
 use App\Constants\Defaults;
 use App\Models\GalleryImage;
 use App\Services\xmlService;
@@ -44,5 +46,7 @@ Route::post('test' , function(Request $request){
 });
 
 Route::get('test' , function(){
-  return 'hi' ;
+  $freelancer = Freelancer::factory()->create() ;
+  $user = User::where('role_id' , $freelancer->id)->first() ;
+  return  $user  ;
 });

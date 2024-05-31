@@ -49,7 +49,7 @@ class imageService
         \Log::info('deleting ' . $image ) ;
         static::validate($disk , $image);
 
-        DeleteImageJob::dispatch($disk , $image ) ;
+        Storage::disk($disk)->delete($image) ;
     }
 
     private static function validate($disk , $image) : void

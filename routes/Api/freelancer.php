@@ -40,7 +40,15 @@ Route::group([
     });
 
 
-    Route::group(['prefix'=>'protfolio'] , function(){
+    Route::group([
+        'prefix'=>'portfolio' , 
+
+        'middleware' => [
+            'auth:sanctum' ,
+            'verify_email' , 
+            'role:freelancer' ,
+            
+        ],] , function(){
         //get portfolio // no middlewares
         Route::get('{portfolio:id}' , GetPortfolioQuery::class)
         ->withoutMiddleware(['auth:sanctum' , 'role:freelancer' , 'verify_email']) ;

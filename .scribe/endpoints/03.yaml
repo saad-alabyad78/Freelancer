@@ -22,13 +22,13 @@ endpoints:
         name: client_id
         description: 'The ID of the client.'
         required: true
-        example: 7
+        example: 18
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      client_id: 7
+      client_id: 18
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -39,7 +39,7 @@ endpoints:
         status: 404
         content: |-
           {
-              "message": "No query results for model [App\\Models\\Client] 7",
+              "message": "No query results for model [App\\Models\\Client] 18",
               "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
               "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
               "line": 487,
@@ -536,9 +536,9 @@ endpoints:
         custom: []
       date_of_birth:
         name: date_of_birth
-        description: 'Must be a valid date. Must be a date before or equal to <code>2008-05-26</code>.'
+        description: 'Must be a valid date. Must be a date before or equal to <code>2008-05-31</code>.'
         required: true
-        example: '1999-07-20'
+        example: '2002-05-02'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -556,7 +556,7 @@ endpoints:
         name: gender
         description: ''
         required: true
-        example: female
+        example: male
         type: string
         enumValues:
           - male
@@ -564,9 +564,9 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      date_of_birth: '1999-07-20'
+      date_of_birth: '2002-05-02'
       city: دمشق
-      gender: female
+      gender: male
     fileParameters:
       profile_image: null
       background_image: null
@@ -581,7 +581,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cgE41ha3d8b66aVZefkvP5D'
+      - 'Bearer 3v8ha6VaD5fd4ZEkPb6g1ec'
     controller: null
     method: null
     route: null
@@ -610,9 +610,9 @@ endpoints:
     bodyParameters:
       date_of_birth:
         name: date_of_birth
-        description: 'Must be a valid date. Must be a date before or equal to <code>2008-05-26</code>.'
+        description: 'Must be a valid date. Must be a date before or equal to <code>2008-05-31</code>.'
         required: false
-        example: '1994-12-01'
+        example: '2008-02-22'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -638,7 +638,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      date_of_birth: '1994-12-01'
+      date_of_birth: '2008-02-22'
       city: دمشق
       gender: female
     fileParameters: []
@@ -653,7 +653,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1vVbkh4dacP8fD6Ea6Z3eg5'
+      - 'Bearer gfke5b6hDPEZ1vd8acVa346'
     controller: null
     method: null
     route: null
@@ -697,7 +697,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer EfZvdgPka3hc4D6168ebV5a'
+      - 'Bearer 5Dd1baPa8EVvhg6ek3cZ46f'
     controller: null
     method: null
     route: null
@@ -741,7 +741,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kcZaEh1eb8DV5vd6aPf634g'
+      - 'Bearer hP8vfE3Dg564Za6kbacdVe1'
     controller: null
     method: null
     route: null
@@ -775,7 +775,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8ePfVa4Za6E3vc5kgd6hbD1'
+      - 'Bearer Z4DcaPhaEVk5d38ve661gbf'
     controller: null
     method: null
     route: null
@@ -809,7 +809,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 15a48VZ3cDPkEab6e6dvfgh'
+      - 'Bearer kZv5efaEdV3P8g46acDh1b6'
     controller: null
     method: null
     route: null

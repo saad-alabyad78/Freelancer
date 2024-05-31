@@ -24,13 +24,13 @@ endpoints:
         name: freelancer_id
         description: 'The ID of the freelancer.'
         required: true
-        example: 14
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      freelancer_id: 14
+      freelancer_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -93,7 +93,7 @@ endpoints:
         name: headline
         description: 'Must be at least 20 characters. Must not be greater than 200 characters.'
         required: true
-        example: uggjehdm
+        example: zrbbocpkrkg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -102,7 +102,7 @@ endpoints:
         name: description
         description: 'Must be at least 60 characters. Must not be greater than 4000 characters.'
         required: true
-        example: 'Numquam cumque omnis qui totam veritatis.'
+        example: 'Neque ut aut qui beatae aut veritatis.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -120,7 +120,7 @@ endpoints:
         name: gender
         description: ''
         required: true
-        example: female
+        example: male
         type: string
         enumValues:
           - male
@@ -129,9 +129,9 @@ endpoints:
         custom: []
       date_of_birth:
         name: date_of_birth
-        description: 'Must be a valid date. Must be a date before or equal to <code>2008-05-26</code>.'
+        description: 'Must be a valid date. Must be a date before or equal to <code>2008-05-31</code>.'
         required: true
-        example: '2005-07-16'
+        example: '2008-02-01'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -140,7 +140,7 @@ endpoints:
         name: job_role_id
         description: ''
         required: true
-        example: fugiat
+        example: vel
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -150,20 +150,20 @@ endpoints:
         description: ''
         required: false
         example:
-          - doloribus
+          - nemo
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      headline: uggjehdm
-      description: 'Numquam cumque omnis qui totam veritatis.'
+      headline: zrbbocpkrkg
+      description: 'Neque ut aut qui beatae aut veritatis.'
       city: دمشق
-      gender: female
-      date_of_birth: '2005-07-16'
-      job_role_id: fugiat
+      gender: male
+      date_of_birth: '2008-02-01'
+      job_role_id: vel
       skills:
-        - doloribus
+        - nemo
     fileParameters:
       profile_image: null
       background_image: null
@@ -178,7 +178,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Dahv36e8V14f5P6ZgaEbkcd'
+      - 'Bearer e61c83EfbVdaZ4gPaDkhv56'
     controller: null
     method: null
     route: null
@@ -218,7 +218,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6ag6cVZ83PDkfev4ha5b1Ed'
+      - 'Bearer a66eD41V8cgvad3Ekf5PbhZ'
     controller: null
     method: null
     route: null
@@ -262,7 +262,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer v36de4DP5ck1hV8abfEaZg6'
+      - 'Bearer 61dEbhVgPZD5afcv63ea84k'
     controller: null
     method: null
     route: null
@@ -306,7 +306,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8PaE56Vd4fgk13ZbaDv6hce'
+      - 'Bearer E3V4hcvka6Pbea1g8ZD5d6f'
     controller: null
     method: null
     route: null
@@ -340,7 +340,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer DdE34k68av6Zhf1ecVbPa5g'
+      - 'Bearer P6ab6cavh3Vdfe451D8kgEZ'
     controller: null
     method: null
     route: null
@@ -374,7 +374,101 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer f3e4a1dVaZhc5v6Ebg6kDP8'
+      - 'Bearer Z1D8vh6aE5dafeVP436ckbg'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/freelancer/portfolio/store
+    metadata:
+      groupName: 'Freelancer Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
+        required: true
+        example: ve
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      url:
+        name: url
+        description: 'Must match the regex ^(https?://)?([da-z.-]+).([a-z.]{2,6})([/w .-]*)*/?(?:?[^s]*)?(?:#[^s]*)?$.'
+        required: false
+        example: 'https://tw#up)))/:^s^^^^^^s):#^s'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      date:
+        name: date
+        description: 'Must be a valid date.'
+        required: false
+        example: '2024-05-31T22:10:14'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      description:
+        name: description
+        description: 'Must be at least 20 characters.'
+        required: true
+        example: 'Numquam qui et at velit sint magni.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      files:
+        name: files
+        description: 'Must be a file. Must not be greater than 10240 kilobytes.'
+        required: true
+        example:
+          - null
+        type: 'file[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      images:
+        name: images
+        description: 'Must be an image. Must not be greater than 10240 kilobytes.'
+        required: true
+        example:
+          - null
+        type: 'file[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      title: ve
+      url: 'https://tw#up)))/:^s^^^^^^s):#^s'
+      date: '2024-05-31T22:10:14'
+      description: 'Numquam qui et at velit sint magni.'
+    fileParameters:
+      files:
+        - null
+      images:
+        - null
+    responses: []
+    responseFields: []
+    auth: []
     controller: null
     method: null
     route: null

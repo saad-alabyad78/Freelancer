@@ -23,15 +23,23 @@ class CreatePortfolioRequest extends FormRequest
     {
         return [
             'title' => ['required' , 'string' , 'min:3' , 'max:255'] ,
-            'url' => ['string'],
+            'url' => 
+                [ 'nullable' , 'string' , 'regex:^(https?://)?([da-z.-]+).([a-z.]{2,6})([/w .-]*)*/?(?:?[^s]*)?(?:#[^s]*)?$'],
             'date' => ['date'],
             'description' => ['required' , 'string' , 'min:20'],
             'files' => ['array' , 'max:6'] ,
                 'files.*' => [
-                    'required',
+                    'required', 
                     'file',
-                    'mimes:pdf,jpeg,png,gif,mp4,mov,mp3,wav,docx,txt,pptx,zip,html,css,js',
-                    'max:20480' // The file size limit is 20MB
+                    'mimes:pdf,zip,csv',
+                    'max:10240' // The file size limit is 10MB
+                ] ,
+            'images' => ['array' , 'max:6'] ,
+                'images.*' => [
+                    'required',
+                    'image',
+                    'mimes:jpeg,png,jpg',
+                    'max:10240' // The file size limit is 10MB
                 ]
         ];
     }

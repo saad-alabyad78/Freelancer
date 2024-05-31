@@ -11,13 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('portfolios', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('freelancer_id')->constrained();
-            $table->string('url')->nullable();
-            $table->string('title');
-            $table->string('description');
-            $table->date('date')->nullable();
+            $table->string('url');
+            $table->string('public_id');
+            $table->integer('size');
+            $table->string('type');
+            $table->string('extention');
+
+            $table->unsignedBigInteger('imagable_id');
+            $table->string('imagable_type');
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('portfolios');
+        Schema::dropIfExists('images');
     }
 };

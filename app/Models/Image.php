@@ -4,12 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Illuminate\Database\Eloquent\Relations\MorphOne;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class File extends Model
+class Image extends Model
 {
     use HasFactory;
 
@@ -17,8 +14,9 @@ class File extends Model
         'url' ,
         'public_id' ,
         'size' , 
-        'filable_id' ,
-        'filable_type' ,
+        'type' ,
+        'imagable_id' ,
+        'imagable_type' ,
         'extention' ,
     ] ;
 

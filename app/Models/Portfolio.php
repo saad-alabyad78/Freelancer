@@ -23,10 +23,13 @@ class Portfolio extends Model
     {
         return $this->morphMany(Skill::class , 'skillable');
     }
-    
     public function files():MorphMany
     {
         return $this->morphMany(File::class , 'filable') ;
+    }
+    public function images():MorphMany
+    {
+        return $this->morphMany(Image::class , 'imagable') ;
     }
     public function freelancer():BelongsTo
     {

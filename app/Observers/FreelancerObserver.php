@@ -20,6 +20,9 @@ class FreelancerObserver
             $freelancer->background_image_public_id ,
         ]);
 
+        //TODO : test delete multiable portfolios will fire the observer 
+        $freelancer->portfolios()->delete() ;
+
         $freelancer->skills()->detach() ;
         $freelancer->user()->delete() ;
     }

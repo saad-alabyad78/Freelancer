@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('url');
             $table->string('public_id');
             $table->integer('size');
-            $table->string('type');
             $table->string('extention');
 
             $table->unsignedBigInteger('filable_id');
