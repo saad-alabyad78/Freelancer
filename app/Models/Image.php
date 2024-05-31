@@ -14,7 +14,6 @@ class Image extends Model
         'url' ,
         'public_id' ,
         'size' , 
-        'type' ,
         'imagable_id' ,
         'imagable_type' ,
         'extention' ,

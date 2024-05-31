@@ -40,8 +40,6 @@ class CreateFreelancerTest extends TestCase
             ->actingAs($this->user)
             ->postJson('/api/freelancer/store' , $data , ['Accept'=>'application/json'] );
         
-
-        var_dump($response->json()) ;
         
         $response->assertStatus(201);
 

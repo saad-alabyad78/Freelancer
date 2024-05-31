@@ -38,13 +38,12 @@ class CreatePortfolioTest extends TestCase
             'url' => null,
             'date' => Carbon::now()->subYears(15),
             'description' => 'af dsf  dsf d fds df ds fds ',
-            'files' => [UploadedFile::fake()->createWithContent('hi.pdf' , "sdkfkdsfklsdf")],
+            //'files' => [UploadedFile::fake()->createWithContent('hi.pdf' , "sdkfkdsfklsdf")],
             'images' => [UploadedFile::fake()->image('hi.png' , 200 , 200)->size(2000)],
             'skills' => ['vue' , 'php' , 'css' , 'c++' , 'mysq']
         ] ;
         $response = $this->postJson('api/freelancer/portfolio/store' , $data);
-
-        var_dump($response->json()) ;
+            
         
         $response->assertStatus(201) ;
 

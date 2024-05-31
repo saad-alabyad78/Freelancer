@@ -53,7 +53,6 @@ class CreatePortfolioCommand extends Controller
                         'url' => $cloudinaryImage->getSecurePath(),
                         'public_id' => $cloudinaryImage->getPublicId(),
                         'size' =>  $cloudinaryImage->getSize(), 
-                        'type' => $cloudinaryImage->getFileType() ,
                         'extention' =>  $cloudinaryImage?->getExtension() ,
                     ]);
                 }
