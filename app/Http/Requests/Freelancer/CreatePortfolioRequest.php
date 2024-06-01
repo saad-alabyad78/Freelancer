@@ -23,8 +23,11 @@ class CreatePortfolioRequest extends FormRequest
     {
         return [
             'title' => ['required' , 'string' , 'min:3' , 'max:255'] ,
-            'url' => 
-                [ 'nullable' , 'string' , 'regex:^(https?://)?([da-z.-]+).([a-z.]{2,6})([/w .-]*)*/?(?:?[^s]*)?(?:#[^s]*)?$'],
+            'url' => [
+                'nullable',
+                'string',
+                'regex:/\b(?:https?|ftp):\/\/[a-zA-Z0-9-.]+\.[a-zA-Z]{2,}(?:\/\S*)?\b/',
+            ],  
             'date' => ['date'],
             'description' => ['required' , 'string' , 'min:20'],
             'files' => ['array' , 'max:6'] ,
@@ -40,7 +43,9 @@ class CreatePortfolioRequest extends FormRequest
                     'image',
                     'mimes:jpeg,png,jpg',
                     'max:10240' // The file size limit is 10MB
-                ]
+                ],
+            'skills' => ['required' , 'array' , 'min:5' , 'max:50'] ,
+            'skills.*' => ['string' , 'exists:skills,name' , 'distinct'] ,
         ];
     }
 }

@@ -24,8 +24,12 @@ class UpdatePortfolioRequest extends FormRequest
         return [
             'portfolio_id' => ['required'] ,
             'title' => ['string' , 'min:3' , 'max:255'] ,
-            'url' => [ 'nullable' , 'string' , 'regex:^(https?://)?([da-z.-]+).([a-z.]{2,6})([/w .-]*)*/?(?:?[^s]*)?(?:#[^s]*)?$'],
-            'date' => ['date'],
+            'url' => [
+                'nullable',
+                'string',
+                'regex:/\b(?:https?|ftp):\/\/[a-zA-Z0-9-.]+\.[a-zA-Z]{2,}(?:\/\S*)?\b/',
+            ],  
+            'date' => ['date' , 'nullable'],
             'description' => [ 'string' , 'min:20'],
         ];
     }

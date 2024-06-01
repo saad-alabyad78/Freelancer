@@ -7,17 +7,26 @@ use App\Models\Portfolio;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Freelancer\DeletePortfolioImageRequest;
-
+/**
+ *@group Freelancer Managment 
+ **/
 class DeletePortfolioImageCommand extends Controller
 {
-    /**
-     * Handle the incoming request.
+
+   /**
+     * Store/Update New Portfolio's File .
+     * 
+     * @authenticated
+     * 
+     * 
+     * @return \Illuminate\Http\JsonResponse | \Illuminate\Http\Response
+     * 
      */
     public function __invoke(DeletePortfolioImageRequest $request)
     {
         $portfolio = Portfolio::where([
             'id' => $request->portfolio_id ,
-            'freelancr_id' => auth()->user()->role['id'] 
+            'freelancer_id' => auth()->user()->role['id'] 
         ])->first() ;
 
         if($portfolio == null)
@@ -27,7 +36,7 @@ class DeletePortfolioImageCommand extends Controller
             ] , 404);
         }
 
-        $image = Image::find($request->image_id) ;
+        $image = $portfolio->images()->find($request->image_id) ;
 
         if($image == null)
         {

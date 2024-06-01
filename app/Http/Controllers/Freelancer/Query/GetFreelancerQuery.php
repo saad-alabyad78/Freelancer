@@ -24,7 +24,7 @@ class GetFreelancerQuery extends Controller
      */
     public function __invoke(Freelancer $freelancer)
     {
-        return FreelancerResource::make($freelancer->load(['skills' , 'job_role']))
+        return FreelancerResource::make($freelancer->load(['skills' , 'job_role'  , 'portfolios.files' , 'portfolios.skills' , 'portfolios.images']))
             ->response()->setStatusCode(200);
     }
 }

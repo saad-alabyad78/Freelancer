@@ -4,12 +4,11 @@ namespace App\Http\Controllers\Freelancer\Commands;
 
 use App\Models\File;
 use App\Models\Image;
+use App\Models\Skill;
 use App\Models\Portfolio;
-use Illuminate\Http\Request;
 use App\Constants\CloudFolders;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Storage;
 use App\Http\Resources\Freelancer\PortfolioResource;
 use App\Http\Requests\Freelancer\CreatePortfolioRequest;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
@@ -18,6 +17,18 @@ use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
  **/
 class CreatePortfolioCommand extends Controller
 {
+    /**
+     * Store New Portfolio .
+     * 
+     * @authenticated
+     * 
+     * @apiResource App\Http\Resources\Freelancer\PortfolioResource with=App\Http\Resources\Category\SkillResource
+     * @apiResourceModel App\Models\Portfolio with=App\Models\Skill,App\Models\File,App\Models\Image
+     * 
+     * 
+     * @return \Illuminate\Http\JsonResponse | \Illuminate\Http\Response
+     * 
+     */
     public function __invoke(CreatePortfolioRequest $request)
     {
         DB::beginTransaction();
@@ -33,6 +44,9 @@ class CreatePortfolioCommand extends Controller
                 'url' => $data['url'] ?? null ,
                 'freelancer_id' => auth()->user()->role['id'] ,
             ]);
+            
+            $skills = Skill::whereIn('name' , $data['skills'])->get();
+            $portfolio->skills()->saveMany($skills); 
 
             if(array_key_exists('files' , $data))
             {
@@ -80,11 +94,12 @@ class CreatePortfolioCommand extends Controller
                 
                 $portfolio->images()->saveMany($imageModels) ;
             }
+
             
             DB::commit() ;
  
 
-            return PortfolioResource::make($portfolio->load(['files' , 'images']))
+            return PortfolioResource::make($portfolio->load(['skills' , 'files' , 'images']))
                 ->response()
                 ->setStatusCode(201)
                 ->withHeaders(['Content-Type' => 'application/json']);

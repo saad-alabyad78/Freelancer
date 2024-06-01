@@ -40,7 +40,7 @@ class CreatePortfolioTest extends TestCase
             'description' => 'af dsf  dsf d fds df ds fds ',
             //'files' => [UploadedFile::fake()->createWithContent('hi.pdf' , "sdkfkdsfklsdf")],
             'images' => [UploadedFile::fake()->image('hi.png' , 200 , 200)->size(2000)],
-            'skills' => ['vue' , 'php' , 'css' , 'c++' , 'mysq']
+            'skills' => ['vue' , 'php' , 'css' , 'c++' , 'mysql']
         ] ;
         $response = $this->postJson('api/freelancer/portfolio/store' , $data);
             

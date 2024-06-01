@@ -26,7 +26,7 @@ class GetAllJob_OfferForCompanyQuery extends Controller
      * 
      * 
      * 
-     * @apiResourceCollection App\Http\Resources\Company\Job_OfferMiniResource
+     * @apiResourceCollection App\Http\Resources\Company\Job_OfferResource
      * @apiResourceModel App\Models\JobOffer paginate=20 with=App\Models\Company,App\Models\Skill,App\Models\JobRole
      *
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection

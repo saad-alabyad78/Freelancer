@@ -14,7 +14,11 @@ class Skill extends BaseModel
 
     public function freelancers():MorphToMany
     {
-        return $this->morphToMany(Freelancer::class , 'skillable');
+        return $this->morphedByMany(Freelancer::class , 'skillable');
+    }
+    public function portfolios():MorphToMany
+    {
+        return $this->morphedByMany(Portfolio::class , 'skillable');
     }
 
     public function job_roles():MorphToMany

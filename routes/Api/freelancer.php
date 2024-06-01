@@ -20,6 +20,7 @@ Route::group([
     'prefix' => 'freelancer'
 ] , function(){
 
+    //get freelancer by id 
     Route::get('{freelancer:id}' , GetFreelancerQuery::class) ;
     
     Route::group([
@@ -29,21 +30,26 @@ Route::group([
             'role:freelancer' ,
         ],
     ] , function(){
+    //create freelancer profile
      Route::post('store' , CreateFreelancerCommand::class)
         ->withoutMiddleware('role:freelancer')
         ->withoutMiddleware('role:no_role');
-        
+    //update freelancer profile
     Route::put('' , UpdateFreelancerCommand::class);
-    
+    //create/update freelancer profile image
     Route::post('image/profile' , [CreateFreelancerImageCommand::class , 'profile_image']);
+    //create/update freelancer background image
     Route::post('image/background' , [CreateFreelancerImageCommand::class , 'background_image']);
-
+    //delete freelancer profile image
     Route::delete('image/profile' , [DeleteFreelancerImageCommand::class , 'profile_image']);
+    //delete freelancer profile image
     Route::delete('image/background' , [DeleteFreelancerImageCommand::class , 'background_image']);
        
     });
 
-
+    //get portfolio // no middlewares 
+    Route::get('portfolio/{portfolio:id}' , GetPortfolioQuery::class);
+    
     Route::group([
         'prefix'=>'portfolio' , 
 
@@ -53,20 +59,18 @@ Route::group([
             'role:freelancer' ,
             
         ],] , function(){
-        //get portfolio // no middlewares
-        Route::get('{portfolio:id}' , GetPortfolioQuery::class)
-        ->withoutMiddleware(['auth:sanctum' , 'role:freelancer' , 'verify_email']) ;
+        //create portfolio
         Route::post('store' , CreatePortfolioCommand::class) ;
+        //update portfolio
         Route::put('' , UpdatePortfolioCommand::class) ;
+        //delete portfolio
         Route::delete('' , DeletePortfolioCommand::class) ;
 
-        //create file
+        //create portfolio file
         Route::post('file/create' , CreatePortfolioFileCommand::class) ;
-        //delete file
+        //delete portfolio file
         Route::delete('file', DeletePortfolioFileCommand::class);
-        //create image
         Route::post('image/create' , CreatePortfolioImageCommand::class);
-        //delete image
         Route::delete('image' , DeletePortfolioImageCommand::class);
     });
     

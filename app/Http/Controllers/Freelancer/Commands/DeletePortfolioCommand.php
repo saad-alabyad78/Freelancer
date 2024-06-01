@@ -6,14 +6,25 @@ use App\Models\Portfolio;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Freelancer\DeletePortfolioRequest;
-
+/**
+ *@group Freelancer Managment 
+ **/
 class DeletePortfolioCommand extends Controller
 {
+    /**
+     * Delete Portfolio.
+     * 
+     * @authenticated
+     * 
+     * 
+     * @return \Illuminate\Http\JsonResponse | \Illuminate\Http\Response
+     * 
+     */
     public function __invoke(DeletePortfolioRequest $request)
     {
         $portfolio = Portfolio::where([
             'id' => $request->portfolio_id ,
-            'freelancr_id' => auth()->user()->role['id'] 
+            'freelancer_id' => auth()->user()->role['id'] 
         ])->first() ;
 
         if($portfolio == null)

@@ -28,6 +28,7 @@ class FreelancerResource extends JsonResource
             'gender' => $this->gender ,
             'job_role_id' => Job_RoleResource::make($this->whenLoaded('job_role'))  ,
             'skills' => SkillResource::collection($this->whenLoaded('skills')) ,
+            'portfolios' => PortfolioResource::collection($this->whenLoaded('portfolios'))
         ];
     }
 }

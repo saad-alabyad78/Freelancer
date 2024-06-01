@@ -9,17 +9,29 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\Freelancer\PortfolioResource;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use App\Http\Requests\Freelancer\CreatePortfolioFileRequest;
-
+/**
+ *@group Freelancer Managment 
+ **/
 class CreatePortfolioFileCommand extends Controller
 {
+
     /**
-     * Handle the incoming request.
+     * Store/Update New Portfolio's File .
+     * 
+     * @authenticated
+     * 
+     * @apiResource App\Http\Resources\Freelancer\PortfolioResource with=App\Http\Resources\Category\SkillResource
+     * @apiResourceModel App\Models\Portfolio with=App\Models\Skill,App\Models\File,App\Models\Image
+     * 
+     * 
+     * @return \Illuminate\Http\JsonResponse | \Illuminate\Http\Response
+     * 
      */
     public function __invoke(CreatePortfolioFileRequest $request)
     {
         $portfolio = Portfolio::where([
             'id' => $request->portfolio_id ,
-            'freelancr_id' => auth()->user()->role['id'] 
+            'freelancer_id' => auth()->user()->role['id'] 
         ])->first() ;
 
         if($portfolio == null)

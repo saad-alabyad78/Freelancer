@@ -8,16 +8,26 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Freelancer\DeletePortfolioFileRequest;
 
+/**
+ *@group Freelancer Managment 
+ **/
 class DeletePortfolioFileCommand extends Controller
 {
+  
     /**
-     * Handle the incoming request.
+     * Delete New Portfolio's File .
+     * 
+     * @authenticated
+     * 
+     * 
+     * @return \Illuminate\Http\JsonResponse | \Illuminate\Http\Response
+     * 
      */
     public function __invoke(DeletePortfolioFileRequest $request)
     {
         $portfolio = Portfolio::where([
             'id' => $request->portfolio_id ,
-            'freelancr_id' => auth()->user()->role['id'] 
+            'freelancer_id' => auth()->user()->role['id'] 
         ])->first() ;
 
         if($portfolio == null)
@@ -27,7 +37,7 @@ class DeletePortfolioFileCommand extends Controller
             ] , 404);
         }
 
-        $file = File::find($request->file_id) ;
+        $file = $portfolio->files()->find($request->file_id) ;
 
         if($file == null)
         {

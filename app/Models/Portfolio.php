@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 class Portfolio extends Model
 {
@@ -19,9 +20,9 @@ class Portfolio extends Model
         'freelancer_id' ,
     ] ;
     
-    public function skills():MorphMany
+    public function skills():MorphToMany
     {
-        return $this->morphMany(Skill::class , 'skillable');
+        return $this->morphToMany(Skill::class , 'skillable');
     }
     public function files():MorphMany
     {

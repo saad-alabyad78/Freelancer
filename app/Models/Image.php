@@ -21,6 +21,6 @@ class Image extends Model
 
     public function protfolio():MorphTo
     {
-        return $this->morphTo(Portfolio::class , 'filable') ;
+        return $this->morphTo(Portfolio::class , 'imagable') ;
     }
 }
