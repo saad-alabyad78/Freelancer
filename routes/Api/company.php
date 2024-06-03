@@ -1,26 +1,14 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Company\Query\GetCompanyQuery;
-use App\Http\Controllers\Company\Query\CompanyImageQuery;
-use App\Http\Controllers\Company\Query\GalleryImageQuery;
-use App\Http\Controllers\Company\Commands\CreateCompanyCommand;
-use App\Http\Controllers\Company\Commands\DeleteCompanyCommand;
-use App\Http\Controllers\Company\Commands\UpdateCompanyCommand;
-use App\Http\Controllers\Company\Commands\UpdateJobOfferCommand;
-use App\Http\Controllers\Company\Commands\CreateJob_OfferCommand;
-use App\Http\Controllers\Company\Commands\DeleteJob_OfferCommand;
-use App\Http\Controllers\Company\Commands\CreateCompanyImageCommand;
-use App\Http\Controllers\Company\Commands\CreateGalleryImageCommand;
-use App\Http\Controllers\Company\Commands\DeleteCompanyImageCommand;
-use App\Http\Controllers\Company\Commands\DeleteGalleryImageCommand;
-use App\Http\Controllers\Company\Query\GetAllJob_OfferForCompanyQuery;
-use App\Http\Controllers\Company\Query\GetAllJob_OfferQueryForCompany;
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Company\CompanyController;
+use App\Http\Controllers\Company\JobOfferController;
+use App\Http\Controllers\Company\GetAllJobOfferForCompanyQuery;
 
 Route::group(['prefix' => 'company'] , function()
 {
-    Route::get('/{company:id}' , GetCompanyQuery::class) ;
+    Route::get('/{company:id}' , [CompanyController::class , 'show']) ;
     
     Route::group(
         [
@@ -31,22 +19,12 @@ Route::group(['prefix' => 'company'] , function()
             ],
         ],
         function(){
-            Route::post('/store' , CreateCompanyCommand::class)->name('create-company')
-                    ->withoutMiddleware('role:company') 
-                           ->middleware('role:no_role');
-                           
-            Route::delete('/' , DeleteCompanyCommand::class) ;
-            Route::put('/' , UpdateCompanyCommand::class) ; 
-
-            Route::post('image/profile' , [CreateCompanyImageCommand::class , 'profile_image']);
-            Route::post('image/background' , [CreateCompanyImageCommand::class , 'background_image']);
-            Route::post('image/gallery' , CreateGalleryImageCommand::class) ;
-
-            Route::delete('image/profile' , [DeleteCompanyImageCommand::class , 'profile_image']);
-            Route::delete('image/background' , [DeleteCompanyImageCommand::class , 'background_image']);
-            Route::delete('image/gallery' , DeleteGalleryImageCommand::class) ;
-    
-            
+            Route::post('store' , [CompanyController::class , 'store'])
+                ->withoutMiddleware('role:company')
+                ->middleware('role:no_role') ;
+                
+            Route::put('' , [CompanyController::class , 'update']) ;
+            Route::delete('' , [CompanyController::class , 'delete']) ;    
         });
     
     Route::group(
@@ -60,9 +38,10 @@ Route::group(['prefix' => 'company'] , function()
             ],
         ],
         function(){
-            Route::post('store' , CreateJob_OfferCommand::class) ;
-            Route::put('' , UpdateJobOfferCommand::class);
-            Route::delete('' , DeleteJob_OfferCommand::class);
-            Route::post('my-job-offers' , GetAllJob_OfferForCompanyQuery::class) ;
+            Route::post('store' , [JobOfferController::class , 'store']) ;
+            Route::put('' ,  [JobOfferController::class , 'update']);
+            Route::delete('' ,  [JobOfferController::class , 'delete']);
+            
+            Route::post('my-job-offers' , GetAllJobOfferForCompanyQuery::class) ;
         });
 });

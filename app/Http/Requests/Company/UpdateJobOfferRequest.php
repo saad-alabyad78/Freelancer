@@ -49,8 +49,8 @@ class UpdateJobOfferRequest extends FormRequest
             'military_service' => [ 'bool'] ,
             'gender' => ['nullable' , Rule::in(Gender::$types)] ,
             
-            'skills' => ['array' , 'min:5' , 'max:25'] ,
-            'skills.*' => [ 'string' ,'exists:skills,name'] ,
+            'skill_ids' => ['array' , 'min:5' , 'max:25'] ,
+            'skill_ids.*' => ['exists:skills,id'] ,
         ];
     }
 }

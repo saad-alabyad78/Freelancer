@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
 class JobRole extends BaseModel
 {
     use HasFactory;
+    public $timestamps = false;
+    protected $fillable = ['name'];
 
     public function job_offers():HasMany
     {

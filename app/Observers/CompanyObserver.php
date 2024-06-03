@@ -17,27 +17,15 @@ class CompanyObserver
     {
 
         var_dump('deleting company observer');
-        
-        DeleteCloudinaryAssetsJob::dispatchIf(
-            $company->profile_image_public_id 
-            ||
-            $company->background_image_public_id 
-        ,[
-            $company->profile_image_public_id ,
-            $company->background_image_public_id ,
-        ]);
 
         $company->user()->delete() ;
         $company->company_phones()->delete() ;
         $company->contact_links()->delete() ;
       
-        $public_ids = $company->gallery_images()->pluck('public_id')->toArray() ;
-        
-        DeleteCloudinaryAssetsJob::dispatchIf(
-            !empty($public_ids) ,
-            $public_ids
-        ) ;
-        
-        $company->gallery_images()->delete(); 
+        $company->gallery_images()->update([
+            'deleted' => true ,
+            'imagable_id' => null , 
+            'imagable_type' => null ,
+        ]) ;
     }
 }

@@ -11,16 +11,15 @@ class Image extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id' ,
         'url' ,
-        'public_id' ,
-        'size' , 
         'imagable_id' ,
         'imagable_type' ,
-        'extention' ,
+        'deleted' ,
     ] ;
 
-    public function protfolio():MorphTo
+    public function imagable()
     {
-        return $this->morphTo(Portfolio::class , 'imagable') ;
+        return $this->morphTo();
     }
 }

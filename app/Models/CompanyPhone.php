@@ -10,7 +10,7 @@ class CompanyPhone extends BaseModel
 {
     use HasFactory;
 
-    protected $fillable = ['number' , 'company_id'] ;
+    protected $fillable = ['number' , 'company_id' , 'verified_at'] ;
     public function company():BelongsTo
     {
         return $this->belongsTo(Company::class);

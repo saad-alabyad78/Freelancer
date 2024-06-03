@@ -12,6 +12,13 @@ use App\Exceptions\FileNotFonudException;
 
 class imageService
 {
+    public static function image_url($imageName)
+    {
+        if($imageName == null){
+            return null ;
+        }
+        return Storage::url($imageName) ;
+    }
     public static function store_image($image , $storage_path = 'public')
     {
         //default accessor in the model

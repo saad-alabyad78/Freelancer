@@ -23,9 +23,15 @@ class UpdateCompanyRequest extends FormRequest
     public function rules(): array
     {
         return [
+
+            'profile_image_url' => ['required_with:profile_image_id' ,'string' , 'nullable'] ,
+            'profile_image_id' => ['required_with:profile_image_url' , 'exists:images,id' , 'nullable'] ,
+            'background_image_url' => ['required_with:background_image_id' ,'strign' , 'nullable'] ,
+            'background_image_id' => ['required_with:background_image_id' , 'exists:images,id' , 'nullable'] ,
+
             'name' => ['min:3' , 'max:20' , 'string' , 'unique:companies,name'] ,
             'description' => ['string' , 'max:4000' ] ,
-            'size' => ['string' , 'min:5' , 'max:20'] , //TODO 
+            'size' => ['string' , 'min:5' , 'max:20'] , 
             'city' => ['string' , new SyrianCityRule()] , 
             'region' => ['string' , 'min:3' , 'max:20'] ,
             'street_address' => ['string' , 'min:3' , 'max:30'] ,
@@ -35,6 +41,11 @@ class UpdateCompanyRequest extends FormRequest
 
             'company_phones' => ['array'] ,
             'company_phones.*' => ['regex:/^09[0-9]{8}$/' , 'distinct'] ,
+
+            'gallery_images' => ['array'] ,
+            'gallery_images.*.id' => ['required' , 'exists:images,id' , 'distinct'] , 
+            'gallery_images.*.url' => ['required' ,'exists:images,url' , 'distinct'] , 
+            
         ];
     }
 

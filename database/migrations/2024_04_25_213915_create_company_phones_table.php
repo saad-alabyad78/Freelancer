@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('number');
             $table->foreignId('company_id')->constrained()->cascadeOnDelete();
+            $table->date('verified_at')->nullable() ;
             $table->timestamps();
         });
     }

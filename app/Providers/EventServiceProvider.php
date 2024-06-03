@@ -37,29 +37,11 @@ class EventServiceProvider extends ServiceProvider
     ];
 
     protected $observers = [
-        GalleryImage::class => [
-            GalleryImageObserver::class ,
-        ],
         Company::class => [
             CompanyObserver::class ,
         ],
         JobOffer::class => [
             JobOfferObserver::class ,
-        ],
-        Client::class => [
-            ClientObserver::class ,
-        ],
-        Freelancer::class => [
-            FreelancerObserver::class ,
-        ],
-        Portfolio::class => [
-            PortfolioObserver::class ,
-        ],
-        File::class => [
-            FileObserver::class ,
-        ],
-        Image::class => [
-            ImageObserver::class ,
         ],
     ];
 

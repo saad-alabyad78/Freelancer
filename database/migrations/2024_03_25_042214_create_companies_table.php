@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('profile_image_url')->nullable();
             $table->string('background_image_url')->nullable();
 
-            $table->string('profile_image_public_id')->nullable();
-            $table->string('background_image_public_id')->nullable();
+            $table->string('profile_image_id')->nullable();
+            $table->string('background_image_id')->nullable();
 
             $table->string('username')->unique();
             $table->text('description')->nullable();
@@ -29,10 +29,16 @@ return new class extends Migration
             $table->string('city');
             $table->string('region');
             $table->string('street_address');
+
+            $table->string('industry_name');
+
+            $table->foreign('industry_name')
+                ->references('name')
+                ->on('industries')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
+                
             $table->timestamps();
-
-            
-
             
         });
     }

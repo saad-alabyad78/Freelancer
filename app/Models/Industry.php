@@ -10,6 +10,8 @@ class Industry extends BaseModel
 {
     use HasFactory;
 
+    public $timestamps = false;
+    public $incrementing = false;
     protected $primaryKey = 'name' ;
     protected $keyType = 'string' ;
 

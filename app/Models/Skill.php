@@ -10,7 +10,8 @@ class Skill extends BaseModel
 {
     use HasFactory;
 
-    protected $fillable = ['name'] ;
+    public $timestamps = false;
+    protected $fillable = ['name'];
 
     public function freelancers():MorphToMany
     {
@@ -23,7 +24,7 @@ class Skill extends BaseModel
 
     public function job_roles():MorphToMany
     {
-        return $this->morphToMany(JobRole::class , 'skillable');
+        return $this->morphedByMany(JobRole::class , 'skillable');
     }
 
     public function job_offers():MorphToMany

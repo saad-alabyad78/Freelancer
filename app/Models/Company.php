@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Company extends BaseModel
@@ -18,8 +19,8 @@ class Company extends BaseModel
     [
         'profile_image_url' ,
         'background_image_url' ,
-        'profile_image_public_id' ,
-        'background_image_public_id' ,
+        'profile_image_id' ,
+        'background_image_id' ,
         
         'name' ,
         'size' ,
@@ -53,9 +54,10 @@ class Company extends BaseModel
     {
         return $this->hasMany(ContactLink::class) ;
     }
-    public function gallery_images():HasMany
+
+    public function gallery_images():MorphMany
     {
-        return $this->hasMany(GalleryImage::class) ;
+        return $this->morphMany(Image::class , 'imagable');
     }
 
 }

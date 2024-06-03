@@ -14,12 +14,9 @@ return new class extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->id();
             $table->string('url');
-            $table->string('public_id');
-            $table->integer('size');
-            $table->string('extention');
-
-            $table->unsignedBigInteger('imagable_id');
-            $table->string('imagable_type');
+            $table->unsignedBigInteger('imagable_id')->nullable();
+            $table->string('imagable_type')->nullable();
+            $table->boolean('deleted') ;
             $table->timestamps();
         });
     }

@@ -24,23 +24,27 @@ class CreateCompanyRequest extends FormRequest
     {
         return [
             'industry_name' => ['string' , 'required' , 'exists:industries,name'] ,
-            'profile_image' => ['image' , 'min:10' , 'max:2000'] ,
-            'background_image' => ['image' , 'min:10' , 'max:2000'] ,
+
+            'profile_image_url' => ['required_with:profile_image_id' ,'string' , 'nullable'] ,
+            'profile_image_id' => ['required_with:profile_image_url' , 'exists:images,id' , 'nullable'] ,
+            'background_image_url' => ['required_with:background_image_id' ,'strign' , 'nullable'] ,
+            'background_image_id' => ['required_with:background_image_id' , 'exists:images,id' , 'nullable'] ,
+
             'name' => ['required' , 'min:3' , 'max:20' , 'string' , 'unique:companies,name'] ,
             'description' => ['required' , 'string' , 'max:4000' ] ,
-            'size' => ['required' , 'string' , 'min:5' , 'max:20'] , //TODO 
+            'size' => ['required' , 'string'] , 
             'city' => ['required' , 'string' , new SyrianCityRule()] , 
             'region' => ['required' , 'string' , 'min:3' , 'max:20'] ,
             'street_address' => ['required' , 'string' , 'min:3' , 'max:30'] ,
 
-            'gallery_images' => ['array'] ,
-            'gallery_images.*' => ['image' , 'min:1' , 'max:2000' , 'distinct'] , 
+            'gallery_image_ids' => ['array' , 'max:25'] ,
+            'gallery_images_ids.*' => ['exists:images,id' , 'max:2000' , 'distinct'] , 
 
             'contact_links' => ['array'] ,
             'contact_links.*' => ['string' , 'min:5' , 'distinct'] , 
 
             'company_phones' => ['array'] ,
-            'company_phones.*' => ['regex:/^09[0-9]{8}$/' , 'distinct' , 'string'] ,
+            'company_phones.*' => ['string' , 'regex:/^09[0-9]{8}$/' , 'distinct'] ,
         ];
     }
 
