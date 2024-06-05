@@ -26,8 +26,11 @@ class CreateClientRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'profile_image' => ['image' , 'max:2000' , 'nullable'] ,
-            'background_image' => ['image' , 'max:2000' , 'nullable'] ,
+            'profile_image_url' => ['required_with:profile_image_id' ,'string' , 'nullable'] ,
+            'profile_image_id' => ['required_with:profile_image_url' , 'exists:images,id' , 'nullable'] ,
+            'background_image_url' => ['required_with:background_image_id' ,'strign' , 'nullable'] ,
+            'background_image_id' => ['required_with:background_image_id' , 'exists:images,id' , 'nullable'] ,
+
             'date_of_birth' => ['required' , 'date' , 'before_or_equal:' . Carbon::now()->subYears(16)->toDateString()] ,
             'city' => ['required' , new SyrianCityRule() ] ,
             'gender' => ['required' , Rule::in(Gender::$types)] ,

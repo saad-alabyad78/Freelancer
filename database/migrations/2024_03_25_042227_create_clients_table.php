@@ -17,9 +17,8 @@ return new class extends Migration
 
             $table->string('profile_image_url')->nullable();
             $table->string('background_image_url')->nullable();
-
-            $table->string('profile_image_public_id')->nullable();
-            $table->string('background_image_public_id')->nullable();
+            $table->string('profile_image_id')->nullable();
+            $table->string('background_image_id')->nullable();
 
             $table->string('gender');
             $table->date('date_of_birth');

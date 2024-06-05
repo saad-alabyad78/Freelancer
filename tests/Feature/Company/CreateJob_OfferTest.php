@@ -56,7 +56,7 @@ class CreateJob_OfferTest extends TestCase
             'military_service' =>  true,
             'gender' =>  null,
             
-            'skills' =>  Skill::inRandomOrder()->take(5)->pluck('name' , 'name'),
+            'skill_ids' =>  Skill::inRandomOrder()->take(5)->pluck('id'),
         ] ;
         
         $response = $this

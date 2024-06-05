@@ -26,14 +26,20 @@ class UpdateFreelancerRequest extends FormRequest
     public function rules(): array
     {
         return [
+
+                'profile_image_url' => ['required_with:profile_image_id' ,'string' , 'nullable'] ,
+                'profile_image_id' => ['required_with:profile_image_url' , 'exists:images,id' , 'nullable'] ,
+                'background_image_url' => ['required_with:background_image_id' ,'strign' , 'nullable'] ,
+                'background_image_id' => ['required_with:background_image_id' , 'exists:images,id' , 'nullable'] ,
+
                 'headline' => [ 'string' , 'min:20' , 'max:200'],
                 'description' => [ 'string' , 'min:60' , 'max:4000'],
                 'city' => [ new SyrianCityRule()],
                 'gender' => [ Rule::in(Gender::$types)],
                 'date_of_birth' => [ 'date' , 'before_or_equal:' . Carbon::now()->subYears(16)->toDateString()],
                 'job_role_id' => [ 'exists:job_roles,id'],
-                'skills' => ['array' , 'min:5' , 'max:50'] ,
-                'skills.*' => ['string' , 'exists:skills,name' , 'distinct'] ,
+                'skill_ids' => ['array' , 'min:5' , 'max:50'] ,
+                'skill_ids.*' => ['exists:skills,id' , 'distinct'] ,
                 
         ];
     }

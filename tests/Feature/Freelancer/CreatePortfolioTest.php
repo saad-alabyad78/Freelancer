@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Freelancer\Commands;
+namespace Tests\Feature\Freelancer;
 
 use Carbon\Carbon;
 use Tests\TestCase;

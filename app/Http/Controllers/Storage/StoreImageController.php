@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Services\imageService;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
-use App\Http\Resources\Utility\ImageResource;
+use App\Http\Resources\Storage\ImageResource;
 use App\Http\Requests\Storage\StoreImageRequest;
 /**
  * $group Storage Managment

@@ -38,7 +38,7 @@ require 'Api/storage.php' ;
 
 require 'Api/company.php' ;
 
-// require 'Api/client.php' ;
+require 'Api/client.php' ;
 
 // require 'Api/freelancer.php' ;
 

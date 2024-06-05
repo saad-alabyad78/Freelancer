@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Freelancer\FreelancerController;
 use App\Http\Controllers\Freelancer\Query\GetPortfolioQuery;
 use App\Http\Controllers\Freelancer\Query\GetFreelancerQuery;
 use App\Http\Controllers\Freelancer\Commands\CreatePortfolioCommand;
@@ -20,8 +21,7 @@ Route::group([
     'prefix' => 'freelancer'
 ] , function(){
 
-    //get freelancer by id 
-    Route::get('{freelancer:id}' , GetFreelancerQuery::class) ;
+    Route::get('{freelancer:id}' , [FreelancerController::class , 'show']) ;
     
     Route::group([
         'middleware' => [
@@ -30,21 +30,10 @@ Route::group([
             'role:freelancer' ,
         ],
     ] , function(){
-    //create freelancer profile
-     Route::post('store' , CreateFreelancerCommand::class)
+     Route::post('store' , [FreelancerController::class , 'store'])
         ->withoutMiddleware('role:freelancer')
         ->withoutMiddleware('role:no_role');
-    //update freelancer profile
-    Route::put('' , UpdateFreelancerCommand::class);
-    //create/update freelancer profile image
-    Route::post('image/profile' , [CreateFreelancerImageCommand::class , 'profile_image']);
-    //create/update freelancer background image
-    Route::post('image/background' , [CreateFreelancerImageCommand::class , 'background_image']);
-    //delete freelancer profile image
-    Route::delete('image/profile' , [DeleteFreelancerImageCommand::class , 'profile_image']);
-    //delete freelancer profile image
-    Route::delete('image/background' , [DeleteFreelancerImageCommand::class , 'background_image']);
-       
+    Route::put('' , [FreelancerController::class , 'update']);
     });
 
     //get portfolio // no middlewares 

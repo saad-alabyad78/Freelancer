@@ -3,8 +3,8 @@
 namespace App\Http\Resources\Freelancer;
 
 use Illuminate\Http\Request;
-use App\Http\Resources\Utility\FileResource;
-use App\Http\Resources\Utility\ImageResource;
+use App\Http\Resources\Storage\FileResource;
+use App\Http\Resources\Storage\ImageResource;
 use App\Http\Resources\Category\SkillResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 

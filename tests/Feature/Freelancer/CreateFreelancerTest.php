@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Freelancer\Commands;
+namespace Tests\Feature\Freelancer;
 
 
 use Tests\TestCase;

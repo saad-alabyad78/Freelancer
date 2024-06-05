@@ -119,7 +119,7 @@ class CompanyController extends Controller
      * @apiResourceModel App\Models\Company with=App\Models\ContactLink,App\Models\GalleryImage,App\Models\CompanyPhone
      * 
      * 
-     * @return \Illuminate\Http\JsonResponse 
+     * @return CompanyResource 
      * 
      */
     public function show(Company $company)
@@ -128,7 +128,7 @@ class CompanyController extends Controller
             'contact_links'  ,
             'gallery_images' ,
             'company_phones' ,
-            ]))->response()->setStatusCode(200) ; ;
+            ])); 
     }
     /**
      * Update Company .

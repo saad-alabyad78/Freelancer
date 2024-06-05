@@ -20,6 +20,8 @@ class ClientResource extends JsonResource
             'gender' => $this->gender ,
             'city' => $this->city ,
             'date_of_birth' => $this->date_of_birth ,
+            'profile_image_id' => $this->profile_image_id , 
+            'background_image_id' => $this->background_image_id ,
             'profile_image_url' => $this->profile_image_url , 
             'background_image_url' => $this->background_image_url ,
         ];

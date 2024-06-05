@@ -17,8 +17,8 @@ class Freelancer extends BaseModel
     [
         'profile_image_url',
         'background_image_url',
-        'profile_image_public_id',
-        'background_image_public_id',
+        'profile_image_id',
+        'background_image_id',
         'headline',
         'description',
         'city',

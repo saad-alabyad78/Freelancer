@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Client\Commands;
+namespace Tests\Feature\Client;
 
 use Carbon\Carbon;
 use Tests\TestCase;
@@ -28,8 +28,10 @@ class CreateClientTest extends TestCase
         $this->assertDatabaseCount('clients' , 0) ;
 
         $data = [
-            'profile_image' => UploadedFile::fake()->image('profile.png',100,100)->size(1500) ,
-            'background_image' => UploadedFile::fake()->image('background.jpg',100,100)->size(1500) ,
+            'profile_image_url' => null ,
+            'background_image_url' => null ,
+            'profile_image_id' => null ,
+            'background_image_id' => null ,
             'gender' => Gender::MALE ,
             'date_of_birth' => Carbon::now()->subYears(16)->toDateString() ,
             'city' => 'دمشق'

@@ -3,7 +3,7 @@
 namespace App\Http\Resources\Company;
 
 use Illuminate\Http\Request;
-use App\Http\Resources\Utility\ImageResource;
+use App\Http\Resources\Storage\ImageResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class CompanyResource extends JsonResource
