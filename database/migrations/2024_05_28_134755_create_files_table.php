@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('extention');
             $table->unsignedBigInteger('filable_id')->nullable();
             $table->string('filable_type')->nullable();
+            $table->boolean('deleted');
             $table->timestamps();
         });
     }

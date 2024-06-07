@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Models\Image;
 use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Interfaces\IClientRepository;
 use App\Http\Resources\Client\ClientResource;
 use App\Http\Requests\Client\CreateClientRequest;
 use App\Http\Requests\Client\UpdateClientRequest;
@@ -15,6 +17,10 @@ use App\Http\Requests\Client\UpdateClientRequest;
  **/
 class ClientController extends Controller
 {
+    public function __construct(protected IClientRepository $clientRepository)
+    {
+
+    }
     /**
      * Show Client .
      * 
@@ -47,6 +53,11 @@ class ClientController extends Controller
         DB::beginTransaction();
 
         $data = $request->validated();
+
+        if($data['profile_image_id'] ?? false)
+            $data['profile_image_url'] = Image::findOrFail($data['profile_image_id'])->first() ;
+        if($data['background_image_url'] ?? false)
+            $data['background_image_url'] = Image::findOrFail($data['background_image_id'])->first();
         
         $data['username'] = auth()->user()->slug ;
 
@@ -84,7 +95,7 @@ class ClientController extends Controller
     {
         $client = Client::findOrFail(auth()->user()->role['id']) ;
 
-        $client->update($request->validated());
+        $client = $this->clientRepository->update($client , $request->validated()) ;
 
         return ClientResource::make($client) ;
     }

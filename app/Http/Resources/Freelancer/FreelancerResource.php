@@ -4,8 +4,8 @@ namespace App\Http\Resources\Freelancer;
 
 use Illuminate\Http\Request;
 use App\Http\Resources\Category\SkillResource;
+use App\Http\Resources\Category\JobRoleResource;
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Http\Resources\Category\Job_RoleResource;
 
 class FreelancerResource extends JsonResource
 {
@@ -26,7 +26,7 @@ class FreelancerResource extends JsonResource
             'city' => $this->city , 
             'date_of_birth' => $this->date_of_birth ,
             'gender' => $this->gender ,
-            'job_role_id' => Job_RoleResource::make($this->whenLoaded('job_role'))  ,
+            'job_role_id' => JobRoleResource::make($this->whenLoaded('job_role'))  ,
             'skills' => SkillResource::collection($this->whenLoaded('skills')) ,
             'portfolios' => PortfolioResource::collection($this->whenLoaded('portfolios'))
         ];

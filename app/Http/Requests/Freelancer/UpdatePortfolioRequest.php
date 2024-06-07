@@ -30,7 +30,16 @@ class UpdatePortfolioRequest extends FormRequest
                 'regex:/\b(?:https?|ftp):\/\/[a-zA-Z0-9-.]+\.[a-zA-Z]{2,}(?:\/\S*)?\b/',
             ],  
             'date' => ['date' , 'nullable'],
-            'description' => [ 'string' , 'min:20'],
+            'description' => ['string' , 'min:20'],
+
+            'file_ids' => ['array' , 'max:6'] ,
+            'file_ids.*' => ['required','exists:files,id'],
+
+            'image_ids' => ['array' , 'max:6'] ,
+            'image_ids.*' => ['required','exists:images,id'],
+
+            'skill_ids' => ['required' , 'array' , 'min:5' , 'max:50'] ,
+            'skill_ids.*' => ['exists:skills,id' , 'distinct'] ,
         ];
     }
 }

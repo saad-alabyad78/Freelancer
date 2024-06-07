@@ -47,7 +47,10 @@ class CompanyController extends Controller
         DB::beginTransaction();
         
         $data = $request->validated();
-
+        
+        $data['profile_image_url'] = Image::findOrFail($data['profile_image_id'])->first() ;
+        $data['background_image_url'] = Image::findOrFail($data['background_image_id'])->first();
+        
         $data['username'] = auth()->user()->slug ;
 
         try {
@@ -154,6 +157,27 @@ class CompanyController extends Controller
             $company = Company::findOrFail(auth()->user()->role['id']);
 
             //todo : delete the old images profile and background in the observer
+
+            $data = $request->validated() ;
+
+        if($data['profile_image_id'] ?? false and $company?->profile_image_id ?? false)
+        {
+            Image::where('id' , $company->profile_image_id)->update([
+                'deleted' => true ,
+                'imagable_id' => $company->id ,
+                'imagable_type' => company::class ,
+            ]);
+            $data['profile_image_url'] = Image::findOrFail($data['profile_image_id'])->first() ;
+        }
+        if($data['background_image_id'] ?? false and $company?->background_image_id ?? false)
+        {
+            Image::where('id' , $company->background_image_id)->update([
+                'deleted' => true ,
+                'imagable_id' => $company->id ,
+                'imagable_type' => company::class ,
+            ]);
+            $data['background_image_url'] = Image::findOrFail($data['profile_image_id'])->first() ;
+        }
 
             $company->update($data) ;
 

@@ -30,22 +30,15 @@ class CreatePortfolioRequest extends FormRequest
             ],  
             'date' => ['date'],
             'description' => ['required' , 'string' , 'min:20'],
-            'files' => ['array' , 'max:6'] ,
-                'files.*' => [
-                    'required', 
-                    'file',
-                    'mimes:pdf,zip',
-                    'max:10240' // The file size limit is 10MB
-                ] ,
-            'images' => ['array' , 'max:6'] ,
-                'images.*' => [
-                    'required',
-                    'image',
-                    'mimes:jpeg,png,jpg',
-                    'max:10240' // The file size limit is 10MB
-                ],
-            'skills' => ['required' , 'array' , 'min:5' , 'max:50'] ,
-            'skills.*' => ['string' , 'exists:skills,name' , 'distinct'] ,
+
+            'file_ids' => ['array' , 'max:6'] ,
+            'file_ids.*' => ['required','exists:files,id'],
+
+            'image_ids' => ['array' , 'max:6'] ,
+            'image_ids.*' => ['required','exists:images,id'],
+
+            'skill_ids' => ['required' , 'array' , 'min:5' , 'max:50'] ,
+            'skill_ids.*' => ['exists:skills,id' , 'distinct'] ,
         ];
     }
 }

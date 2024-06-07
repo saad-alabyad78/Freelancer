@@ -49,7 +49,7 @@ class SkillSearchTest extends TestCase
         $response = $this->postJson('api/category/skill/search' , [
             'job_role_id' => 'invalid role ' ,
         ]) ;
-        var_dump($response->json());
+
         $response->assertStatus(422);
 
         $response = $this->postJson('api/category/skill/search' , [

@@ -27,9 +27,8 @@ class CreateFreelancerRequest extends FormRequest
     {
         return [
         
-        'profile_image_url' => ['required_with:profile_image_id' ,'string' , 'nullable'] ,
+     
         'profile_image_id' => ['required_with:profile_image_url' , 'exists:images,id' , 'nullable'] ,
-        'background_image_url' => ['required_with:background_image_id' ,'strign' , 'nullable'] ,
         'background_image_id' => ['required_with:background_image_id' , 'exists:images,id' , 'nullable'] ,
 
         'headline' => ['required' , 'string' , 'min:20' , 'max:200'],
@@ -38,8 +37,8 @@ class CreateFreelancerRequest extends FormRequest
         'gender' => ['required' , Rule::in(Gender::$types)],
         'date_of_birth' => ['required' , 'date' , 'before_or_equal:' . Carbon::now()->subYears(16)->toDateString()],
         'job_role_id' => ['required' , 'exists:job_roles,id'],
-        'skills' => ['required' , 'array' , 'min:5' , 'max:50'] ,
-        'skills.*' => ['string' , 'exists:skills,name' , 'distinct'] ,
+        'skill_ids' => ['required' , 'array' , 'min:5' , 'max:50'] ,
+        'skills_id.*' => [ 'exists:skills,id' , 'distinct'] ,
         ];
     }
 }

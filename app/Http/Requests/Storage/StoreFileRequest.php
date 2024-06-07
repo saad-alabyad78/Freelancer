@@ -4,14 +4,14 @@ namespace App\Http\Requests\Storage;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreImageRequest extends FormRequest
+class StoreFileRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -22,11 +22,10 @@ class StoreImageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'image' => [
+            'file' => [
                 'required',
-                'image',
-                'mimes:jpeg,png,jpg',
-                'max:2048' // The file size limit is 2MB
+                'file',
+                'max:10240' // The file size limit is 10MB
             ] ,
         ];
     }

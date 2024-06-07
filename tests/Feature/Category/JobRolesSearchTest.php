@@ -4,7 +4,6 @@ namespace Tests\Feature\Category;
 
 use Tests\TestCase;
 use App\Models\JobRole;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class JobRolesSearchTest extends TestCase

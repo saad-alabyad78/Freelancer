@@ -33,13 +33,12 @@ class CreateFreelancerTest extends TestCase
             'gender' => Gender::FEMALE,
             'date_of_birth' => '2002-01-01',
             'job_role_id' => 1,
-            'skills' => ['vue','c++','php','html','css','mysql'] ,
+            'skill_ids' => ['1','2' , '3','4','5','6'] ,
         ] ;
         
         $response = $this
             ->actingAs($this->user)
             ->postJson('/api/freelancer/store' , $data , ['Accept'=>'application/json'] );
-        
         
         $response->assertStatus(201);
 

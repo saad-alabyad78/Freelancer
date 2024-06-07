@@ -15,11 +15,11 @@ class File extends Model
 
     protected $fillable = [
         'url' ,
-        'public_id' ,
         'size' , 
         'filable_id' ,
         'filable_type' ,
         'extention' ,
+        'deleted' ,
     ] ;
 
     public function protfolio():MorphTo
