@@ -137,10 +137,10 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"id":3,"role_id":1,"role_type":"App\\Models\\Client","provider":null,"first_name":"saad","last_name":"alabyad","email":"saadalabyad78@gmail.com","email_verified_at":"2000-11-10T22:00:00.000000Z","email_otp_code":null,"email_otp_expired_date":null,"password_otp_code":null,"password_otp_expired_date":null,"created_at":"2024-06-05T02:54:39.000000Z","updated_at":"2024-06-05T02:58:24.000000Z"}'
+        content: ''
         headers:
+          content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'
-          content-type: application/json
           x-ratelimit-limit: '60'
           x-ratelimit-remaining: '55'
           access-control-allow-origin: '*'

@@ -42,7 +42,7 @@ class PortfolioController extends Controller
         return PortfolioResource::make($portfolio->load(['skills', 'files', 'images']));
     }
     /**
-     * Get Portfolio .
+     * Store New Portfolio .
      * 
      * 
      * @apiResource App\Http\Resources\Freelancer\PortfolioResource with=App\Http\Resources\Category\SkillResource
@@ -77,7 +77,7 @@ class PortfolioController extends Controller
         }
     }
     /**
-     * Get Portfolio .
+     * Update Portfolio .
      * 
      * 
      * @apiResource App\Http\Resources\Freelancer\PortfolioResource with=App\Http\Resources\Category\SkillResource

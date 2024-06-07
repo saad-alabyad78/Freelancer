@@ -91,7 +91,7 @@ endpoints:
         name: date_of_birth
         description: 'Must be a valid date. Must be a date before or equal to <code>2008-06-07</code>.'
         required: true
-        example: '1997-01-18'
+        example: '2005-11-16'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -109,7 +109,7 @@ endpoints:
         name: gender
         description: ''
         required: true
-        example: male
+        example: female
         type: string
         enumValues:
           - male
@@ -117,9 +117,9 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      date_of_birth: '1997-01-18'
+      date_of_birth: '2005-11-16'
       city: دمشق
-      gender: male
+      gender: female
     fileParameters: []
     responses:
       -
@@ -132,7 +132,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gZ583a4DhVbec1Efkd6P6av'
+      - 'Bearer D6Z51ghaPV4eb86fcd3Eakv'
     controller: null
     method: null
     route: null
@@ -181,7 +181,7 @@ endpoints:
         name: date_of_birth
         description: 'Must be a valid date. Must be a date before or equal to <code>2008-06-07</code>.'
         required: false
-        example: '1998-06-06'
+        example: '2007-05-02'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -199,7 +199,7 @@ endpoints:
         name: gender
         description: ''
         required: false
-        example: male
+        example: female
         type: string
         enumValues:
           - male
@@ -207,9 +207,9 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      date_of_birth: '1998-06-06'
+      date_of_birth: '2007-05-02'
       city: دمشق
-      gender: male
+      gender: female
     fileParameters: []
     responses:
       -
@@ -222,7 +222,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vb61cdVgDe6Ph48ZfEk5a3a'
+      - 'Bearer 4afEckbVZehD1d86563Pgva'
     controller: null
     method: null
     route: null

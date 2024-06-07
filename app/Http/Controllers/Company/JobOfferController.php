@@ -107,7 +107,7 @@ class JobOfferController extends Controller
         }
     }
     /**
-     * Update Job Offer .
+     * Delete Job Offer .
      * 
      * @authenticated
      *
