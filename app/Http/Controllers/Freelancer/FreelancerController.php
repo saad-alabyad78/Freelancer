@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Interfaces\IFreelancerRepository;
 use App\Http\Resources\Freelancer\FreelancerResource;
 use App\Http\Requests\Freelancer\CreateFreelancerRequest;
 use App\Http\Requests\Freelancer\UpdateFreelancerRequest;
@@ -19,6 +20,10 @@ use App\Http\Requests\Freelancer\UpdateFreelancerRequest;
  **/
 class FreelancerController extends Controller
 {
+    public function __construct(protected IFreelancerRepository $freelancerRepository)
+    {
+        
+    }
     /**
      * Get Freelancer .
      * 
@@ -58,26 +63,9 @@ class FreelancerController extends Controller
         
         $data = $request->validated() ;
 
-        $data['profile_image_url'] = Image::findOrFail($data['profile_image_id'])->first() ;
-        $data['background_image_url'] = Image::findOrFail($data['background_image_id'])->first();
-        
-        $data['username'] = auth()->user()->slug ;
-
         try {
             //create company
-            $freelancer = Freelancer::create($data);
-
-            $freelancer->user()->save(auth()->user()) ;
-
-            $skillables = array_map(function($item) use ($freelancer){
-                return [
-                    'skill_id' => $item ,
-                    'skillable_id' => $freelancer->id ,
-                    'skillable_type' => Freelancer::class ,
-                ] ;
-            } , $data['skill_ids']);
-            
-            Skillable::insert($skillables) ;
+            $freelancer = $this->freelancerRepository->create($data);
 
             DB::commit() ;
             
@@ -109,38 +97,8 @@ class FreelancerController extends Controller
 
         $freelancer = Freelancer::findOrFail(auth()->user()->role['id']) ;
 
-        $data = $request->validated() ;
-
-        if($data['profile_image_id'] ?? false and $freelancer?->profile_image_id ?? false)
-        {
-            Image::where('id' , $freelancer->profile_image_id)->update([
-                'deleted' => true ,
-                'imagable_id' => $freelancer->id ,
-                'imagable_type' => freelancer::class ,
-            ]);
-            $data['profile_image_url'] = Image::findOrFail($data['profile_image_id'])->first() ;
-        }
-        if($data['background_image_id'] ?? false and $freelancer?->background_image_id ?? false)
-        {
-            Image::where('id' , $freelancer->background_image_id)->update([
-                'deleted' => true ,
-                'imagable_id' => $freelancer->id ,
-                'imagable_type' => freelancer::class ,
-            ]);
-            $data['background_image_url'] = Image::findOrFail($data['profile_image_id'])->first() ;
-        }
-
-        $freelancer->update($data) ;
-
-        if(array_key_exists('skills' , $data))
-        {
-            $freelancer->skills()->detach() ;
-
-            $skills = Skill::findMany($data['skill_ids']) ;
-
-            $freelancer->skills()->saveMany($skills) ;
-        }
-
+        $freelancer = $this->freelancerRepository->update($freelancer  , $data) ;
+        
         return FreelancerResource::make($freelancer->load(['skills' , 'job_role']));
     }
 }
