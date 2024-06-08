@@ -25,9 +25,8 @@ class CreateCompanyRequest extends FormRequest
         return [
             'industry_name' => ['string' , 'required' , 'exists:industries,name'] ,
 
-            
-            'profile_image_id' => ['required_with:profile_image_url' , 'exists:images,id' , 'nullable'] ,
-            'background_image_id' => ['required_with:background_image_id' , 'exists:images,id' , 'nullable'] ,
+            'profile_image_id' => ['exists:images,id' ] ,
+            'background_image_id' => ['exists:images,id' ] ,
 
             'name' => ['required' , 'min:3' , 'max:20' , 'string' , 'unique:companies,name'] ,
             'description' => ['required' , 'string' , 'max:4000' ] ,
@@ -37,13 +36,7 @@ class CreateCompanyRequest extends FormRequest
             'street_address' => ['required' , 'string' , 'min:3' , 'max:30'] ,
 
             'gallery_image_ids' => ['array' , 'max:25'] ,
-            'gallery_images_ids.*' => ['exists:images,id' , 'max:2000' , 'distinct'] , 
-
-            'contact_links' => ['array'] ,
-            'contact_links.*' => ['string' , 'min:5' , 'distinct'] , 
-
-            'company_phones' => ['array'] ,
-            'company_phones.*' => ['string' , 'regex:/^09[0-9]{8}$/' , 'distinct'] ,
+            'gallery_images_ids.*' => ['exists:images,id' , 'max:2048' , 'distinct'] ,
         ];
     }
 

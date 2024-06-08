@@ -35,18 +35,12 @@ class UpdateCompanyTest extends TestCase
    
     public function test_update_company(): void
     {
-        $this->contact_links = ContactLink::factory(5)->create([
-            'company_id' => $this->company->id 
-        ]);
            
         $response = $this->putJson('api/company' , [
-            'region' => 'new region' ,
-            'contact_links' => ['hiihihihih'] 
+            'region' => 'new region' 
         ] , ['Accept'=>'application/json']) ;
 
         
         $response->assertStatus(200) ;
-        $response->assertJsonCount(1 , 'data.contact_links') ;
-        $this->assertDatabaseCount('contact_links' , 1) ;
     }
 }

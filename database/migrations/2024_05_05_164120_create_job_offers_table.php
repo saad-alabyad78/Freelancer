@@ -27,10 +27,15 @@ return new class extends Migration
             $table->boolean('health_insurance')->default(false);
             $table->boolean('military_service')->default(false);
 
+            $table->boolean('military_service_required')->default(false);
+
             $table->tinyInteger('max_age')->nullable() ;
             $table->tinyInteger('min_age')->nullable() ;
 
+            $table->boolean('age_required')->default(false);
+
             $table->string('gender')->nullable();
+            $table->boolean('gender_required')->default(false);
 
             $table->foreignId('job_role_id')->constrained();
             $table->foreignId('company_id')->constrained();

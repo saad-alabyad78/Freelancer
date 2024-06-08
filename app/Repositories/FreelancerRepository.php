@@ -6,13 +6,17 @@ use App\Models\Skill;
 use App\Models\Skillable;
 use App\Models\Freelancer;
 use App\Interfaces\IBaseRepository;
+use App\Interfaces\IFreelancerRepository;
 
-class FreelancerRepository extends BaseRepository implements IBaseRepository
+class FreelancerRepository extends BaseRepository implements IFreelancerRepository
 {
     public function create($data):Freelancer
     {
-        $data['profile_image_url'] = Image::findOrFail($data['profile_image_id'])->first() ;
-        $data['background_image_url'] = Image::findOrFail($data['background_image_id'])->first();
+        if(array_key_exists('profile_image_id',$data) and !is_null($data['profile_image_id']))
+            $data['profile_image_url'] = Image::findOrFail($data['profile_image_id'])->first() ;
+        if(array_key_exists('background_image_id',$data) and !is_null($data['background_image_id']))
+            $data['background_image_url'] = Image::findOrFail($data['background_image_id'])->first();
+    
         
         $data['username'] = auth()->user()->slug ;
 
@@ -55,15 +59,22 @@ class FreelancerRepository extends BaseRepository implements IBaseRepository
 
         $freelancer->update($data) ;
 
-        if(array_key_exists('skills' , $data))
+        if(array_key_exists('skill_ids' , $data))
         {
-            $freelancer->skills()->detach() ;
+            Skillable::where('skillable_id' , $freelancer->id)
+                ->whereNotIn('skill_id' , $data['skill_ids'])
+                ->delete() ;
+                
+            $skillables = array_map(function($id) use ($freelancer){
+                return [
+                    'skill_id' => $id , 
+                    'skillable_id' => $freelancer->id ,
+                    'skillable_type' => Freelancer::class ,
+                ];
+            } , $data['skill_ids']) ;
 
-            $skills = Skill::findMany($data['skill_ids']) ;
-
-            $freelancer->skills()->saveMany($skills) ;
+            Skillable::upsert($skillables , 'id') ;                      
         }
-
         return $freelancer ;
     }
 }

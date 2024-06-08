@@ -17,6 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('skillable_id');
             $table->string('skillable_type');
 
+            $table->boolean('required')->default(false) ;
+
         });
     }
 

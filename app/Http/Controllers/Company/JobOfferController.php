@@ -32,7 +32,7 @@ class JobOfferController extends Controller
      */
     public function store(CreateJobOfferRequest $request)
     {
-        $data = $request->validated() ;
+        return $data = $request->validated() ;
             
         $data['status'] = JobOfferStatus::PENDING  ;
         $data['company_id'] = auth()->user()->role['id'] ;
@@ -41,9 +41,10 @@ class JobOfferController extends Controller
 
         $skillables = array_map(function($item) use ($job_offer){
             return [
-                'skill_id' => $item ,
+                'skill_id' => $item['id'] ,
                 'skillable_id' => $job_offer->id ,
                 'skillable_type' => JobOffer::class ,
+                'required' => $item['required'] ,
             ] ;
         } , $data['skill_ids']);
         

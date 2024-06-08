@@ -31,8 +31,6 @@ class CompanyResource extends JsonResource
             'size' => $this->size , 
             'industry_name' => $this->industry_name ,
             'gallery_images' => ImageResource::collection($this->whenLoaded('gallery_images')) ,
-            'contact_links' => ContactLinkResource::collection($this->whenLoaded('contact_links')) ,
-            'company_phones' => CompanyPhoneResource::collection($this->whenLoaded('company_phones')) ,
-        ];
+            ];
     }
 }

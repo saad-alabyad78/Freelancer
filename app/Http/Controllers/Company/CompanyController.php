@@ -32,7 +32,7 @@ class CompanyController extends Controller
      * @authenticated
      * 
      * @apiResource App\Http\Resources\Company\CompanyResource
-     * @apiResourceModel App\Models\Company with=App\Models\ContactLink,App\Models\GalleryImage,App\Models\CompanyPhone
+     * @apiResourceModel App\Models\Company with=App\Models\GalleryImage
      * 
      * 
      * @return \Illuminate\Http\JsonResponse | \Illuminate\Http\Response
@@ -45,7 +45,7 @@ class CompanyController extends Controller
         $data = $request->validated();
 
         try {
-            //create company
+            
             $company = $this->companyRepository->create($data) ;
 
             DB::commit() ;
@@ -70,7 +70,7 @@ class CompanyController extends Controller
      * 
      * 
      * @apiResource App\Http\Resources\Company\CompanyResource
-     * @apiResourceModel App\Models\Company with=App\Models\ContactLink,App\Models\GalleryImage,App\Models\CompanyPhone
+     * @apiResourceModel App\Models\Company with=App\Models\GalleryImage
      * 
      * 
      * @return CompanyResource 
@@ -90,7 +90,7 @@ class CompanyController extends Controller
      * @authenticated
      * 
      * @apiResource App\Http\Resources\Company\CompanyResource
-     * @apiResourceModel App\Models\Company with=App\Models\ContactLink,App\Models\GalleryImage,App\Models\CompanyPhone
+     * @apiResourceModel App\Models\Company with=App\Models\GalleryImage
      * 
      * 
      * @return \Illuminate\Http\JsonResponse | \Illuminate\Http\Response
@@ -112,9 +112,7 @@ class CompanyController extends Controller
             DB::commit() ;
             
             return CompanyResource::make($company->load([
-                'contact_links'  ,
                 'gallery_images' ,
-                'company_phones' ,
                 ]))->response()->setStatusCode(200) ;
                 
         } catch (\Throwable $th) {

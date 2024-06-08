@@ -19,8 +19,6 @@ class CompanyObserver
         var_dump('deleting company observer');
 
         $company->user()->delete() ;
-        $company->company_phones()->delete() ;
-        $company->contact_links()->delete() ;
       
         $company->gallery_images()->update([
             'deleted' => true ,

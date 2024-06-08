@@ -24,6 +24,8 @@ class ClientResource extends JsonResource
             'background_image_id' => $this->background_image_id ,
             'profile_image_url' => $this->profile_image_url , 
             'background_image_url' => $this->background_image_url ,
+            'created_at' => $this->created_at ,
+            'updated_at' => $this->updated_at ,
         ];
     }
 }

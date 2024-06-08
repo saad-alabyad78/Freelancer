@@ -50,8 +50,12 @@ class CreateJobOfferRequest extends FormRequest
             'military_service' => ['required' , 'bool'] ,
             'gender' => ['nullable' , Rule::in(Gender::$types)] ,
             
-            'skill_ids' => ['required' , 'array' , 'min:5' , 'max:25'] ,
-            'skills_ids.*' => ['exists:skills,id' , 'distinct'] ,
+            'skills' => ['required' , 'array' , 'min:5' , 'max:25'] ,
+            'skills.*.id' => ['required' , 'exists:skills,id' , 'distinct'] ,
+            'skills.*.required' => ['required' , 'boolean'] ,
+
+            'age_required' => ['boolean'] ,
+            'military_service_required' => ['boolean'] ,
         ];
     }
 }

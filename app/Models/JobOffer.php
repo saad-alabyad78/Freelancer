@@ -30,6 +30,8 @@ class JobOffer extends BaseModel
         'company_id',
         'job_role_id',
         'description' ,
+        'military_service_required' ,
+        'age_required' ,
     ];
 
 
@@ -40,7 +42,8 @@ class JobOffer extends BaseModel
 
     public function skills(): MorphToMany
     {
-        return $this->morphToMany(Skill::class, 'skillable');
+        return $this->morphToMany(Skill::class, 'skillable')
+            ->withPivot(['required']);
     }
     public function job_role():BelongsTo
     {

@@ -34,16 +34,8 @@ class UpdateCompanyRequest extends FormRequest
             'region' => ['string' , 'min:3' , 'max:20'] ,
             'street_address' => ['string' , 'min:3' , 'max:30'] ,
 
-            'contact_links' => ['array'] ,
-            'contact_links.*' => ['string' , 'min:5' , 'distinct'] , 
-
-            'company_phones' => ['array'] ,
-            'company_phones.*' => ['regex:/^09[0-9]{8}$/' , 'distinct'] ,
-
-            'gallery_images' => ['array'] ,
-            'gallery_images.*.id' => ['required' , 'exists:images,id' , 'distinct'] , 
-            'gallery_images.*.url' => ['required' ,'exists:images,url' , 'distinct'] , 
-            
+            'gallery_image_ids' => ['array'] ,
+            'gallery_image_ids.*.id' => ['required' , 'exists:images,id' , 'distinct'] ,  
         ];
     }
 

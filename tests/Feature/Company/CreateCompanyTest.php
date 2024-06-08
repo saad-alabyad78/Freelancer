@@ -76,8 +76,6 @@ class CreateCompanyTest extends TestCase
             'region' => 'here' ,
             'street_address' => 'here' ,
             'city' => 'حماة' ,
-            'contact_links' => ['hihihihi' , 'hihihihihihihi'] ,
-            'company_phones' => ['0999999999'] ,
             'gallery_image_ids' => []
         ];
 
@@ -99,13 +97,10 @@ class CreateCompanyTest extends TestCase
 
         $response->assertJsonPath('data.username' , $this->noRoleUser->slug);
         
-        
-        $this->assertDatabaseCount('contact_links' , 2) ;
-        $this->assertDatabaseCount('company_phones' , 1) ;
         $this->assertDatabaseCount('images' , 0) ;
         
         $company = Company::where('name' , $companyData['name'])
-            ->with(['user' , 'contact_links' , 'company_phones' , 'gallery_images'])->first() ;
+            ->with(['user' , 'gallery_images'])->first() ;
 
         //assert that the user gained a role
         $this->assertEquals($this->noRoleUser->slug , $company->username);

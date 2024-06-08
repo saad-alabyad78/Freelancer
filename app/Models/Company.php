@@ -46,15 +46,6 @@ class Company extends BaseModel
         return $this->hasOne(Industry::class , 'industry_name' , 'name');
     }
 
-    public function company_phones():HasMany
-    {
-        return $this->hasMany(CompanyPhone::class ) ;
-    }
-    public function contact_links():HasMany
-    {
-        return $this->hasMany(ContactLink::class) ;
-    }
-
     public function gallery_images():MorphMany
     {
         return $this->morphMany(Image::class , 'imagable');
