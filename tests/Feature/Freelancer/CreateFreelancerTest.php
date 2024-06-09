@@ -47,5 +47,6 @@ class CreateFreelancerTest extends TestCase
         $this->assertCount(6 , $freelancer->skills()->get()) ;
 
         $freelancer->delete() ;
+
     }
 }
