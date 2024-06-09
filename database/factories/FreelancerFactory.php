@@ -23,8 +23,8 @@ class FreelancerFactory extends Factory
         return [
             'profile_image_url' => null ,
             'background_image_url' => null ,
-            'profile_image_public_id' => null ,
-            'background_image_public_id' => null ,
+            'profile_image_id' => null ,
+            'background_image_id' => null ,
             'headline' => fake()->sentence() ,
             'description'=> fake()->paragraph() ,
             'city' => 'دمشق',

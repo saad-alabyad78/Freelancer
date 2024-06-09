@@ -4,6 +4,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Company\CompanyController;
 use App\Http\Controllers\Company\JobOfferController;
+use App\Http\Controllers\Company\JobOfferQueryController;
+use App\Http\Controllers\Company\JobOfferStatusController;
 use App\Http\Controllers\Company\GetAllJobOfferForCompanyQuery;
 
 Route::group(['prefix' => 'company'] , function()
@@ -38,10 +40,12 @@ Route::group(['prefix' => 'company'] , function()
             ],
         ],
         function(){
-            Route::post('store' , [JobOfferController::class , 'store']) ;
+            Route::post('store' , [JobOfferController::class , 'store']);
             Route::put('' ,  [JobOfferController::class , 'update']);
             Route::delete('' ,  [JobOfferController::class , 'delete']);
             
-            Route::post('my-job-offers' , GetAllJobOfferForCompanyQuery::class) ;
+            Route::post('my-job-offers' , [JobOfferQueryController::class , 'ForOwner']) ;
+
+            Route::post('status/change' , [JobOfferStatusController::class , 'change']);
         });
 });

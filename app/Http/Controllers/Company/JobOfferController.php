@@ -32,13 +32,10 @@ class JobOfferController extends Controller
      */
     public function store(CreateJobOfferRequest $request)
     {
-<<<<<<< Updated upstream
         return $data = $request->validated() ;
-            
-=======
+
         $data = $request->validated() ;
 
->>>>>>> Stashed changes
         $data['status'] = JobOfferStatus::PENDING  ;
         $data['company_id'] = auth()->user()->role['id'] ;
 
@@ -114,11 +111,7 @@ class JobOfferController extends Controller
     }
     /**
      * Delete Job Offer .
-<<<<<<< Updated upstream
-     * 
-=======
      *
->>>>>>> Stashed changes
      * @authenticated
      *
      * @return \Illuminate\Http\Response

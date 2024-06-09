@@ -53,4 +53,13 @@ class JobOffer extends BaseModel
     {
         return $this->belongsTo(Company::class) ;
     }
+
+    public function scopeOwnerFilter($filters)
+    {
+        //TODO:
+    }
+    public function scopeFreelancersFilter($filters)
+    {
+        //TODO:
+    }
 }

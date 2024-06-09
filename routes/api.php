@@ -48,7 +48,22 @@ Route::post('test' , function(Request $request){
 });
 
 Route::get('test' , function(){
-  $freelancer = Freelancer::factory()->create() ;
-  $user = User::where('role_id' , $freelancer->id)->first() ;
-  return  $user  ;
+  $path = "/home/saad/Desktop/Freelancer/datasets/technology-skills-25000.xlsx";
+  $row = 1; 
+  if (($handle = fopen($path, "r")) !== FALSE) {
+    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+      $num = count($data);
+      $row++;
+
+      if($row>50) return 'end' ;
+      var_dump($data);
+      
+      // for ($c=0; $c < $num; $c++) {
+      //     //if($c==4)var_dump($data[$c]) ;
+      // }
+    }
+    fclose($handle);
+    return $row;
+    
+}
 });

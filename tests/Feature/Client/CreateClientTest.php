@@ -28,8 +28,6 @@ class CreateClientTest extends TestCase
         $this->assertDatabaseCount('clients' , 0) ;
 
         $data = [
-            'profile_image_id' => null ,
-            'background_image_id' => null ,
             'gender' => Gender::MALE ,
             'date_of_birth' => Carbon::now()->subYears(16)->toDateString() ,
             'city' => 'دمشق'
@@ -39,7 +37,7 @@ class CreateClientTest extends TestCase
         $response = $this->actingAs($this->user)
         ->postJson('/api/client/store' , $data , ['Accept' => 'application/json']);
 
-        var_dump($response->json()) ;
+        //var_dump($response->json()) ;
 
         $response->assertStatus(201);
 

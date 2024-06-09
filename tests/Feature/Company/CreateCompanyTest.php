@@ -66,8 +66,6 @@ class CreateCompanyTest extends TestCase
         
         $companyData = [
             'industry_name' => $this->industry->name ,
-            'profile_image_id' => null ,
-            'background_image_id' => null ,
             'profile_image_url' => null ,
             'background_image_url' => null ,
             'name' => 'name' ,
@@ -92,7 +90,7 @@ class CreateCompanyTest extends TestCase
         //var_dump($end - $start) ;
 
         //$this->assertLessThan(0.2 , $end - $start) ;
-
+        //var_dump($response->json());
         $response->assertStatus(201) ;
 
         $response->assertJsonPath('data.username' , $this->noRoleUser->slug);
