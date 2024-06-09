@@ -51,9 +51,7 @@ class CompanyController extends Controller
             DB::commit() ;
         
             return CompanyResource::make($company->load([
-                'contact_links'  ,
                 'gallery_images' ,
-                'company_phones' ,
                 ]))->response()->setStatusCode(201) ;
 
         } catch (\Throwable $th) {

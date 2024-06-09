@@ -32,7 +32,7 @@ class JobOfferController extends Controller
      */
     public function store(CreateJobOfferRequest $request)
     {
-        return $data = $request->validated() ;
+        $data = $request->validated() ;
             
         $data['status'] = JobOfferStatus::PENDING  ;
         $data['company_id'] = auth()->user()->role['id'] ;
@@ -46,7 +46,7 @@ class JobOfferController extends Controller
                 'skillable_type' => JobOffer::class ,
                 'required' => $item['required'] ,
             ] ;
-        } , $data['skill_ids']);
+        } , $data['skills']);
         
         Skillable::insert($skillables) ;
         

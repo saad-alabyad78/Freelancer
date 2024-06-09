@@ -13,7 +13,7 @@ use App\Http\Requests\Company\jobOffersForCompanyRequest;
 /**
  * @group Company Managment
  **/
-class GetAllJobOfferForCompanyQuery extends Controller
+class JobOfferQueryController extends Controller
 {
     /**
      * 
@@ -31,7 +31,7 @@ class GetAllJobOfferForCompanyQuery extends Controller
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      * 
      */
-    public function __invoke(jobOffersForCompanyRequest $request)
+    public function ForOwner(jobOffersForCompanyRequest $request)
     {
         
         $company = Company::findOrFail(auth()->user()->role_id) ;
@@ -66,5 +66,10 @@ class GetAllJobOfferForCompanyQuery extends Controller
         //return for the company only
 
         return JobOfferResource::collection($job_offers) ;
+    }
+
+    public function ForFreelancer()
+    {
+        //TODO
     }
 }
