@@ -48,14 +48,14 @@ Route::post('test' , function(Request $request){
 });
 
 Route::get('test' , function(){
-  $path = "/home/saad/Desktop/Freelancer/datasets/technology-skills-25000.xlsx";
+  $path = "/home/saad/Desktop/Freelancer/datasets/jobs-1000000.csv";
   $row = 1; 
   if (($handle = fopen($path, "r")) !== FALSE) {
     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
       $num = count($data);
       $row++;
 
-      if($row>50) return 'end' ;
+      if($row>50) return response()->json(['hi'=>'bye']) ;
       var_dump($data);
       
       // for ($c=0; $c < $num; $c++) {
