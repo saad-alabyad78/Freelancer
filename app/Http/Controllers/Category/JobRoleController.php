@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Category\JobRoleResource;
 use App\Http\Requests\Category\JobRoleSearchRequest;
+use App\Http\Requests\Category\JobRoleChunkInsertRequest;
 /**
  * @group Category Managment
  * 
@@ -29,5 +30,9 @@ class JobRoleController extends Controller
         ->get() ;
 
         return JobRoleResource::collection($job_roles);
+    }
+    public function chunkInsert(JobRoleChunkInsertRequest $request)
+    {     
+        JobRole::insertOrIgnore($request->validated()) ;
     }
 }

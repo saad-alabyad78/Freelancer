@@ -19,6 +19,8 @@ return new class extends Migration
 
             $table->boolean('required')->default(false) ;
 
+            $table->index(['skill_id' , 'required' , 'skillable_id' , 'skillable_type']);
+
         });
     }
 

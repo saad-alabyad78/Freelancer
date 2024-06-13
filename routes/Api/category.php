@@ -17,8 +17,12 @@ Route::group([
     });
     Route::prefix('skill')->group(function(){
         Route::post('search' , [SkillController::class , 'search']) ;
+        Route::post('chunk/insert' , [SkillController::class , 'chunkInsert'])
+            ->middleware('throttle:200,1');
     });
     Route::prefix('job_role')->group(function(){
         Route::post('search' , [JobRoleController::class , 'search']) ;
+        Route::post('chunk/insert' , [JobRoleController::class , 'chunkInsert'])
+            ->middleware('throttle:200,1');
     });
 });

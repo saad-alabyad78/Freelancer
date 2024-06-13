@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Database\Query\Builder;
 use App\Http\Resources\Category\SkillResource;
 use App\Http\Requests\Category\SkillSearchRequest;
+use App\Http\Requests\Category\SkillChunkInsertRequest;
 /**
  * @group Category Managment
  * 
@@ -50,5 +51,10 @@ class SkillController extends Controller
         ->get();
         
         return SkillResource::collection($skills) ;
+    }
+
+    public function chunkInsert(SkillChunkInsertRequest $request)
+    {     
+        Skill::insertOrIgnore($request->validated()) ;
     }
 }

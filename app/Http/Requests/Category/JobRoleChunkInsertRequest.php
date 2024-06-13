@@ -4,7 +4,7 @@ namespace App\Http\Requests\Category;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class JobRoleSearchRequest extends FormRequest
+class JobRoleChunkInsertRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +22,7 @@ class JobRoleSearchRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['string' , 'required'] ,
+            '*.name' => ['string' , 'nullable'] ,
         ];
     }
 }

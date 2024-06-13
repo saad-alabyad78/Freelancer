@@ -2,9 +2,12 @@
 
 use App\Models\User;
 use App\Models\Company;
+use App\Models\JobRole;
 use App\Constants\Disks;
+use App\Models\JobOffer;
 use App\Models\Freelancer;
 use App\Constants\Defaults;
+use App\Helpers\ChunkHelper;
 use App\Models\GalleryImage;
 use App\Services\xmlService;
 use Illuminate\Http\Request;
@@ -48,22 +51,19 @@ Route::post('test' , function(Request $request){
 });
 
 Route::get('test' , function(){
-  $path = "/home/saad/Desktop/Freelancer/datasets/jobs-1000000.csv";
+ 
   $row = 1; 
-  if (($handle = fopen($path, "r")) !== FALSE) {
-    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-      $num = count($data);
-      $row++;
+  $start = microtime(true) ;
 
-      if($row>50) return response()->json(['hi'=>'bye']) ;
-      var_dump($data);
-      
-      // for ($c=0; $c < $num; $c++) {
-      //     //if($c==4)var_dump($data[$c]) ;
-      // }
-    }
-    fclose($handle);
-    return $row;
-    
-}
+  
+  $cnt = 1 ; 
+ 
+  DB::statement('ALTER TABLE job_roles DISABLE TRIGGER ALL;');
+  
+  DB::statement('ALTER TABLE job_roles ENABLE TRIGGER ALL;');
+
+  $end = microtime(true) ;
+  return $end - $start;
 });
+
+
