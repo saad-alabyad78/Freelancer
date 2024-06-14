@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Skill;
 use App\Helpers\ChunkHelper;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
@@ -34,19 +35,13 @@ class SkillSeedCommand extends Command
           };  
         $cnt = 0 ;
         $start = microtime(true) ;
-        foreach(ChunkHelper::chunkFile($path , $generator , 1700) as $chunk){
+        foreach(ChunkHelper::chunkFile($path , $generator , 100) as $chunk){
             
-          $this->info('$chunk ' . ++$cnt * 1700) ;
+          $this->info('$chunk ' . ++$cnt * 100) ;
           
           $skills = array_merge(...$chunk) ;
-          $skills = array_map(fn($item)=>['name' => $item] , $skills);
-          
-
-            Http::withHeader('Accept' , 'application/json')
-          ->post('http://127.0.0.1:8000/api/category/skill/chunk/insert' ,
-            $skills) ;
-
-            $this->info('done') ;
+          $skills = array_map(fn($item)=>['name' => $item] , $skills); 
+          Skill::insertOrIgnore($skills) ;
         }
         $end = microtime(true) ;
         $this->info($end - $start) ;
@@ -57,6 +52,9 @@ function processSkillsString(string $skills)
 {
   $skills = explode("," , $skills) ;
   return array_map(function($skill){
-    return  strtolower(trim($skill));
+    $name = strtolower(trim($skill)) ;
+    if (str($name)->length() < 100)
+    return  $name;
+    return null ;
   } , $skills) ;
 }

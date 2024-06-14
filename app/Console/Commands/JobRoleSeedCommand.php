@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Exception;
+use App\Models\JobRole;
 use App\Helpers\ChunkHelper;
 use Illuminate\Console\Command;
 use Illuminate\Http\Client\Pool;
@@ -41,16 +42,15 @@ class JobRoleSeedCommand extends Command
 
         $cnt = 0;
        
-            foreach (ChunkHelper::chunkFile($path, $generator, 20000) as $chunk) {
+            foreach (ChunkHelper::chunkFile($path, $generator, 10000) as $chunk) {
               
-              $this->info('Processing chunk: ' . ++$cnt * 20000);
+              $this->info('Processing chunk: ' . ++$cnt * 10000);
                 
                 $chunk = array_filter($chunk, function($item) {
                     return $item['name'] !== null && $item['name'] !== "";
                 });
 
-                Http::withHeader('Accept', 'application/json')
-                ->post('http://127.0.0.1:8000/api/category/job_role/chunk/insert', $chunk);
+               JobRole::insertOrIgnore($chunk) ;
 
               $this->info('Done') ;
                       
