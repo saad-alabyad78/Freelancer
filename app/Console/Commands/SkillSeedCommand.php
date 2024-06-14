@@ -35,9 +35,9 @@ class SkillSeedCommand extends Command
           };  
         $cnt = 0 ;
         $start = microtime(true) ;
-        foreach(ChunkHelper::chunkFile($path , $generator , 100) as $chunk){
+        foreach(ChunkHelper::chunkFile($path , $generator , 1000) as $chunk){
             
-          $this->info('$chunk ' . ++$cnt * 100) ;
+          $this->info('$chunk ' . ++$cnt * 1000) ;
           
           $skills = array_merge(...$chunk) ;
           $skills = array_map(fn($item)=>['name' => $item] , $skills); 

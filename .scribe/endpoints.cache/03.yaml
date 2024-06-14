@@ -86,6 +86,58 @@ endpoints:
   -
     httpMethods:
       - POST
+    uri: api/company/job_offer/status/change
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      job_offer_id:
+        name: job_offer_id
+        description: ''
+        required: true
+        example: dolore
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      status:
+        name: status
+        description: ''
+        required: true
+        example: active
+        type: string
+        enumValues:
+          - pending
+          - active
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      job_offer_id: dolore
+      status: active
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
     uri: api/test
     metadata:
       groupName: Endpoints
@@ -139,7 +191,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: ''
+        content: '0.00082898139953613'
         headers:
           content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'

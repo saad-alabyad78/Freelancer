@@ -30,13 +30,13 @@ endpoints:
         name: name
         description: ''
         required: false
-        example: non
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: non
+      name: et
     fileParameters: []
     responses: []
     responseFields: []
@@ -72,7 +72,7 @@ endpoints:
         name: name
         description: ''
         required: false
-        example: qui
+        example: illo
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -87,7 +87,37 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: qui
+      name: illo
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/category/skill/chunk/insert
+    metadata:
+      groupName: 'Category Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
     responses: []
     responseFields: []
@@ -116,16 +146,56 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: nobis
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      name: nobis
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"android developer"},{"id":1,"name":"android developer"}]}'
+        content: '{"data":[{"id":12929796,"name":"job_link"},{"id":12929796,"name":"job_link"}]}'
         headers: []
         description: ''
         custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/category/job_role/chunk/insert
+    metadata:
+      groupName: 'Category Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
     responseFields: []
     auth: []
     controller: null

@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "32f84df8-63ca-4652-a5df-433649792021",
+        "_postman_id": "85028e50-82d4-4936-a14c-99933a18e40c",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"mafalda30@example.org\",\"password\":\"_9^)C~H.]&V5\"}"
+                            "raw": "{\"email\":\"fwaters@example.org\",\"password\":\"8)!!8&K(_@\"}"
                         },
                         "description": "",
                         "auth": {
@@ -102,7 +102,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":8,\"first_name\":\"Kiara\",\"last_name\":\"Leuschke\",\"username\":\"kiara-leuschke-8\",\"email\":\"ewatsica@example.org\",\"role\":\"\"}}",
+                            "body": "{\"data\":{\"id\":1,\"first_name\":\"Emmanuel\",\"last_name\":\"McDermott\",\"username\":\"emmanuel-mcdermott-1\",\"email\":\"dora.bernier@example.com\",\"role\":\"\"}}",
                             "name": ""
                         }
                     ]
@@ -129,7 +129,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"token\":\"id\"}"
+                            "raw": "{\"token\":\"qui\"}"
                         },
                         "description": "",
                         "auth": {
@@ -188,7 +188,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"mcotuatkzynuuieclsieuyb\",\"last_name\":\"vkobkcxbdhznxwj\",\"email\":\"abdiel32@example.com\",\"password\":\";DAcqh\\\",t{kU+IS`E\"}"
+                            "raw": "{\"first_name\":\"el\",\"last_name\":\"goagatoynymwgwxrtqsoinkcm\",\"email\":\"hills.damaris@example.net\",\"password\":\"!S8_)f![jRY{-Os%N\"}"
                         },
                         "description": "",
                         "auth": {
@@ -219,7 +219,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email_otp_code\":\"quae\",\"email\":\"monroe.spencer@example.net\"}"
+                            "raw": "{\"email_otp_code\":\"aut\",\"email\":\"savanah54@example.com\"}"
                         },
                         "description": "",
                         "auth": {
@@ -250,7 +250,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"vivian.rice@example.com\"}"
+                            "raw": "{\"email\":\"kenneth25@example.com\"}"
                         },
                         "description": "",
                         "auth": {
@@ -281,7 +281,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"jbaumbach@example.org\"}"
+                            "raw": "{\"email\":\"frunolfsdottir@example.org\"}"
                         },
                         "description": "",
                         "auth": {
@@ -312,7 +312,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"rhermann@example.com\",\"password\":\"sit\",\"password_otp_code\":\"enim\"}"
+                            "raw": "{\"email\":\"wilderman.quinn@example.org\",\"password\":\"autem\",\"password_otp_code\":\"magnam\"}"
                         },
                         "description": "",
                         "auth": {
@@ -349,7 +349,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"non\"}"
+                            "raw": "{\"name\":\"et\"}"
                         },
                         "description": "",
                         "auth": {
@@ -380,8 +380,36 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"qui\"}"
+                            "raw": "{\"name\":\"illo\"}"
                         },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/category\/skill\/chunk\/insert",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/category\/skill\/chunk\/insert",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/category\/skill\/chunk\/insert"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
                         "description": "",
                         "auth": {
                             "type": "noauth"
@@ -409,7 +437,10 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"nobis\"}"
+                        },
                         "description": "",
                         "auth": {
                             "type": "noauth"
@@ -419,10 +450,38 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"name\":\"android developer\"},{\"id\":1,\"name\":\"android developer\"}]}",
+                            "body": "{\"data\":[{\"id\":12929796,\"name\":\"job_link\"},{\"id\":12929796,\"name\":\"job_link\"}]}",
                             "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "POST api\/category\/job_role\/chunk\/insert",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/category\/job_role\/chunk\/insert",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/category\/job_role\/chunk\/insert"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
                 }
             ]
         },
@@ -442,7 +501,7 @@
                                 {
                                     "id": "client_id",
                                     "key": "client_id",
-                                    "value": "1",
+                                    "value": "6",
                                     "description": "The ID of the client."
                                 }
                             ]
@@ -468,7 +527,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"username\":\"saad-alabyad-3\",\"gender\":\"female\",\"city\":\"\\u062f\\u0645\\u0634\\u0642\",\"date_of_birth\":\"2000-01-01\",\"profile_image_id\":\"1\",\"background_image_id\":null,\"profile_image_url\":\"\\\/storage\\\/7GgpFS1ohlQQ5MfsZJwDw0Hx4eiyUYQ0cHwidZZ9.jpg\\\"\",\"background_image_url\":null}}",
+                            "body": "{\"data\":{\"id\":null,\"username\":null,\"gender\":null,\"city\":null,\"date_of_birth\":null,\"profile_image_id\":null,\"background_image_id\":null,\"profile_image_url\":null,\"background_image_url\":null,\"created_at\":null,\"updated_at\":null}}",
                             "name": ""
                         }
                     ]
@@ -495,7 +554,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"date_of_birth\":\"2005-11-16\",\"city\":\"\u062f\u0645\u0634\u0642\",\"gender\":\"female\"}"
+                            "raw": "{\"date_of_birth\":\"1997-08-03\",\"city\":\"\u062f\u0645\u0634\u0642\",\"gender\":\"female\"}"
                         },
                         "description": ""
                     },
@@ -503,7 +562,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"username\":\"saad-alabyad-3\",\"gender\":\"female\",\"city\":\"\\u062f\\u0645\\u0634\\u0642\",\"date_of_birth\":\"2000-01-01\",\"profile_image_id\":\"1\",\"background_image_id\":null,\"profile_image_url\":\"\\\/storage\\\/7GgpFS1ohlQQ5MfsZJwDw0Hx4eiyUYQ0cHwidZZ9.jpg\\\"\",\"background_image_url\":null}}",
+                            "body": "{\"data\":{\"id\":null,\"username\":null,\"gender\":null,\"city\":null,\"date_of_birth\":null,\"profile_image_id\":null,\"background_image_id\":null,\"profile_image_url\":null,\"background_image_url\":null,\"created_at\":null,\"updated_at\":null}}",
                             "name": ""
                         }
                     ]
@@ -530,7 +589,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"date_of_birth\":\"2007-05-02\",\"city\":\"\u062f\u0645\u0634\u0642\",\"gender\":\"female\"}"
+                            "raw": "{\"date_of_birth\":\"2000-01-14\",\"city\":\"\u062f\u0645\u0634\u0642\",\"gender\":\"female\"}"
                         },
                         "description": ""
                     },
@@ -538,7 +597,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"username\":\"saad-alabyad-3\",\"gender\":\"female\",\"city\":\"\\u062f\\u0645\\u0634\\u0642\",\"date_of_birth\":\"2000-01-01\",\"profile_image_id\":\"1\",\"background_image_id\":null,\"profile_image_url\":\"\\\/storage\\\/7GgpFS1ohlQQ5MfsZJwDw0Hx4eiyUYQ0cHwidZZ9.jpg\\\"\",\"background_image_url\":null}}",
+                            "body": "{\"data\":{\"id\":null,\"username\":null,\"gender\":null,\"city\":null,\"date_of_birth\":null,\"profile_image_id\":null,\"background_image_id\":null,\"profile_image_url\":null,\"background_image_url\":null,\"created_at\":null,\"updated_at\":null}}",
                             "name": ""
                         }
                     ]
@@ -561,7 +620,7 @@
                                 {
                                     "id": "company_id",
                                     "key": "company_id",
-                                    "value": "12",
+                                    "value": "7",
                                     "description": "The ID of the company."
                                 }
                             ]
@@ -614,7 +673,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"industry_name\":\"est\",\"name\":\"gzzkwofkq\",\"description\":\"Qui assumenda dignissimos voluptatum non sed ut.\",\"size\":\"exercitationem\",\"city\":\"\u062f\u0645\u0634\u0642\",\"region\":\"mfygumqcbzejr\",\"street_address\":\"umsthbafdwkbrttjkmm\",\"contact_links\":[\"ormxsapywvrkfti\"],\"company_phones\":[\"0902567729\"],\"gallery_images_ids\":[\"rnehjqgwugsdxkagwjci\"]}"
+                            "raw": "{\"industry_name\":\"et\",\"name\":\"wntaroxvoiztm\",\"description\":\"Est aut vero eligendi voluptate.\",\"size\":\"laboriosam\",\"city\":\"\u062f\u0645\u0634\u0642\",\"region\":\"lseqiewxmc\",\"street_address\":\"wmecuqpzmert\",\"gallery_images_ids\":[\"padbkobch\"]}"
                         },
                         "description": ""
                     },
@@ -649,7 +708,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"xufpklxflcvojp\",\"description\":\"Qui possimus enim deserunt ex illum neque aut.\",\"size\":\"hqtz\",\"city\":\"\u062f\u0645\u0634\u0642\",\"region\":\"xtjar\",\"street_address\":\"iszhghgiqyiugzavpsuvtt\",\"contact_links\":[\"ceihnntamrvmxsmjnpbkphof\"],\"company_phones\":[\"0965405020\"],\"gallery_images\":[\"quod\"]}"
+                            "raw": "{\"name\":\"baufnvuwastt\",\"description\":\"Ipsum quibusdam dolorem aut aut ea sunt rerum.\",\"size\":\"d\",\"city\":\"\u062f\u0645\u0634\u0642\",\"region\":\"quuxtkladbbmsmbx\",\"street_address\":\"augswetdp\",\"gallery_image_ids\":[{\"id\":\"odit\"}]}"
                         },
                         "description": ""
                     },
@@ -684,7 +743,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"password\":\"y<\\\\}GCR\"}"
+                            "raw": "{\"password\":\"Wb%o&rPPR@@zRCv-m:Ht\"}"
                         },
                         "description": "Note: the user will be deleted"
                     },
@@ -712,7 +771,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"industry_name\":\"omnis\",\"job_role_id\":\"consequuntur\",\"location_type\":\"on-site\",\"attendence_type\":\"full-time\",\"max_salary\":3,\"min_salary\":1,\"max_age\":4,\"min_age\":2,\"description\":\"Assumenda est excepturi enim sequi ex.\",\"transportation\":false,\"health_insurance\":true,\"military_service\":false,\"gender\":\"male\",\"skill_ids\":[]}"
+                            "raw": "{\"industry_name\":\"dolorem\",\"job_role_id\":\"ipsa\",\"location_type\":\"remotly\",\"attendence_type\":\"intern\",\"max_salary\":22,\"min_salary\":7,\"max_age\":2,\"min_age\":7,\"description\":\"Et cupiditate dolores fugiat eum.\",\"transportation\":true,\"health_insurance\":false,\"military_service\":true,\"gender\":\"female\",\"skills\":[{\"id\":\"enim\",\"required\":true}],\"age_required\":false,\"military_service_required\":true}"
                         },
                         "description": ""
                     },
@@ -747,7 +806,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"job_offer_id\":\"assumenda\",\"industry_name\":\"ab\",\"location_type\":\"remotly\",\"attendence_type\":\"intern\",\"max_salary\":3,\"min_salary\":19,\"max_age\":12,\"min_age\":19,\"description\":\"A ipsam harum quisquam ducimus rem quis ad.\",\"transportation\":true,\"health_insurance\":false,\"military_service\":true,\"gender\":\"male\"}"
+                            "raw": "{\"job_offer_id\":\"aut\",\"industry_name\":\"tempora\",\"location_type\":\"on-site\",\"attendence_type\":\"part-time\",\"max_salary\":4,\"min_salary\":25,\"max_age\":20,\"min_age\":20,\"description\":\"Sit quia reprehenderit pariatur et facere dignissimos.\",\"transportation\":true,\"health_insurance\":true,\"military_service\":false,\"gender\":\"male\"}"
                         },
                         "description": ""
                     },
@@ -782,7 +841,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"job_offer_id\":\"eum\"}"
+                            "raw": "{\"job_offer_id\":\"in\"}"
                         },
                         "description": ""
                     },
@@ -810,7 +869,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"location_type\":\"remotly\",\"attendence_type\":\"part-time\",\"status\":\"active\",\"job_role_id\":20}"
+                            "raw": "{\"location_type\":\"remotly\",\"attendence_type\":\"full-time\",\"status\":\"pending\",\"job_role_id\":11}"
                         },
                         "description": "return all job offers for this company."
                     },
@@ -841,7 +900,7 @@
                                 {
                                     "id": "command_string",
                                     "key": "command_string",
-                                    "value": "nihil",
+                                    "value": "omnis",
                                     "description": ""
                                 }
                             ]
@@ -888,7 +947,7 @@
                                 }
                             ],
                             "code": 500,
-                            "body": "{\n    \"message\": \"The command \\\"nihil\\\" does not exist.\",\n    \"exception\": \"Symfony\\\\Component\\\\Console\\\\Exception\\\\CommandNotFoundException\",\n    \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Application.php\",\n    \"line\": 159,\n    \"trace\": [\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Console\/Kernel.php\",\n            \"line\": 400,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Support\/Facades\/Facade.php\",\n            \"line\": 355,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Console\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/routes\/Api\/render-commands.php\",\n            \"line\": 13,\n            \"function\": \"__callStatic\",\n            \"class\": \"Illuminate\\\\Support\\\\Facades\\\\Facade\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/CallableDispatcher.php\",\n            \"line\": 40,\n            \"function\": \"{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\RouteFileRegistrar\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php\",\n            \"line\": 237,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\CallableDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php\",\n            \"line\": 208,\n            \"function\": \"runCallable\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php\",\n            \"line\": 806,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 144,\n            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/ThrottleRequests.php\",\n            \"line\": 159,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/ThrottleRequests.php\",\n            \"line\": 125,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/ThrottleRequests.php\",\n            \"line\": 87,\n            \"function\": \"handleRequestUsingNamedLimiter\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/sanctum\/src\/Http\/Middleware\/EnsureFrontendRequestsAreStateful.php\",\n            \"line\": 25,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 144,\n            \"function\": \"Laravel\\\\Sanctum\\\\Http\\\\Middleware\\\\{closure}\",\n            \"class\": \"Laravel\\\\Sanctum\\\\Http\\\\Middleware\\\\EnsureFrontendRequestsAreStateful\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/sanctum\/src\/Http\/Middleware\/EnsureFrontendRequestsAreStateful.php\",\n            \"line\": 24,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Laravel\\\\Sanctum\\\\Http\\\\Middleware\\\\EnsureFrontendRequestsAreStateful\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php\",\n            \"line\": 805,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php\",\n            \"line\": 784,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php\",\n            \"line\": 748,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php\",\n            \"line\": 737,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php\",\n            \"line\": 200,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 144,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TrimStrings.php\",\n            \"line\": 40,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/PreventRequestsDuringMaintenance.php\",\n            \"line\": 99,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Http\/Middleware\/HandleCors.php\",\n            \"line\": 62,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Http\/Middleware\/TrustProxies.php\",\n            \"line\": 39,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php\",\n            \"line\": 175,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php\",\n            \"line\": 144,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Strategies\/Responses\/ResponseCalls.php\",\n            \"line\": 300,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Strategies\/Responses\/ResponseCalls.php\",\n            \"line\": 288,\n            \"function\": \"callLaravelOrLumenRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Strategies\/Responses\/ResponseCalls.php\",\n            \"line\": 91,\n            \"function\": \"makeApiCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Strategies\/Responses\/ResponseCalls.php\",\n            \"line\": 44,\n            \"function\": \"makeResponseCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Strategies\/Responses\/ResponseCalls.php\",\n            \"line\": 35,\n            \"function\": \"makeResponseCallIfConditionsPass\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Extractor.php\",\n            \"line\": 236,\n            \"function\": \"__invoke\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Extractor.php\",\n            \"line\": 163,\n            \"function\": \"iterateThroughStrategies\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Extractor.php\",\n            \"line\": 95,\n            \"function\": \"fetchResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/GroupedEndpoints\/GroupedEndpointsFromApp.php\",\n            \"line\": 125,\n            \"function\": \"processRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/GroupedEndpoints\/GroupedEndpointsFromApp.php\",\n            \"line\": 72,\n            \"function\": \"extractEndpointsInfoFromLaravelApp\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/GroupedEndpoints\/GroupedEndpointsFromApp.php\",\n            \"line\": 50,\n            \"function\": \"extractEndpointsInfoAndWriteToDisk\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/Commands\/GenerateDocumentation.php\",\n            \"line\": 53,\n            \"function\": \"get\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"handle\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/Util.php\",\n            \"line\": 41,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php\",\n            \"line\": 35,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/Container.php\",\n            \"line\": 662,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Command.php\",\n            \"line\": 211,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/symfony\/console\/Command\/Command.php\",\n            \"line\": 326,\n            \"function\": \"execute\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Command.php\",\n            \"line\": 180,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Command\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/symfony\/console\/Application.php\",\n            \"line\": 1096,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/symfony\/console\/Application.php\",\n            \"line\": 324,\n            \"function\": \"doRunCommand\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/symfony\/console\/Application.php\",\n            \"line\": 175,\n            \"function\": \"doRun\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Console\/Kernel.php\",\n            \"line\": 201,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/artisan\",\n            \"line\": 35,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Console\\\\Kernel\",\n            \"type\": \"->\"\n        }\n    ]\n}",
+                            "body": "{\n    \"message\": \"The command \\\"omnis\\\" does not exist.\",\n    \"exception\": \"Symfony\\\\Component\\\\Console\\\\Exception\\\\CommandNotFoundException\",\n    \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Application.php\",\n    \"line\": 159,\n    \"trace\": [\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Console\/Kernel.php\",\n            \"line\": 400,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Support\/Facades\/Facade.php\",\n            \"line\": 355,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Console\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/routes\/Api\/render-commands.php\",\n            \"line\": 13,\n            \"function\": \"__callStatic\",\n            \"class\": \"Illuminate\\\\Support\\\\Facades\\\\Facade\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/CallableDispatcher.php\",\n            \"line\": 40,\n            \"function\": \"{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\RouteFileRegistrar\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php\",\n            \"line\": 237,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\CallableDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php\",\n            \"line\": 208,\n            \"function\": \"runCallable\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php\",\n            \"line\": 806,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 144,\n            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/ThrottleRequests.php\",\n            \"line\": 159,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/ThrottleRequests.php\",\n            \"line\": 125,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/ThrottleRequests.php\",\n            \"line\": 87,\n            \"function\": \"handleRequestUsingNamedLimiter\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/sanctum\/src\/Http\/Middleware\/EnsureFrontendRequestsAreStateful.php\",\n            \"line\": 25,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 144,\n            \"function\": \"Laravel\\\\Sanctum\\\\Http\\\\Middleware\\\\{closure}\",\n            \"class\": \"Laravel\\\\Sanctum\\\\Http\\\\Middleware\\\\EnsureFrontendRequestsAreStateful\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/sanctum\/src\/Http\/Middleware\/EnsureFrontendRequestsAreStateful.php\",\n            \"line\": 24,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Laravel\\\\Sanctum\\\\Http\\\\Middleware\\\\EnsureFrontendRequestsAreStateful\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php\",\n            \"line\": 805,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php\",\n            \"line\": 784,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php\",\n            \"line\": 748,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php\",\n            \"line\": 737,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php\",\n            \"line\": 200,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 144,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TrimStrings.php\",\n            \"line\": 40,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/PreventRequestsDuringMaintenance.php\",\n            \"line\": 99,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Http\/Middleware\/HandleCors.php\",\n            \"line\": 62,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Http\/Middleware\/TrustProxies.php\",\n            \"line\": 39,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php\",\n            \"line\": 175,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php\",\n            \"line\": 144,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Strategies\/Responses\/ResponseCalls.php\",\n            \"line\": 310,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Strategies\/Responses\/ResponseCalls.php\",\n            \"line\": 298,\n            \"function\": \"callLaravelOrLumenRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Strategies\/Responses\/ResponseCalls.php\",\n            \"line\": 91,\n            \"function\": \"makeApiCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Strategies\/Responses\/ResponseCalls.php\",\n            \"line\": 44,\n            \"function\": \"makeResponseCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Strategies\/Responses\/ResponseCalls.php\",\n            \"line\": 35,\n            \"function\": \"makeResponseCallIfConditionsPass\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Extractor.php\",\n            \"line\": 236,\n            \"function\": \"__invoke\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Extractor.php\",\n            \"line\": 163,\n            \"function\": \"iterateThroughStrategies\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/Extracting\/Extractor.php\",\n            \"line\": 95,\n            \"function\": \"fetchResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/GroupedEndpoints\/GroupedEndpointsFromApp.php\",\n            \"line\": 125,\n            \"function\": \"processRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/GroupedEndpoints\/GroupedEndpointsFromApp.php\",\n            \"line\": 72,\n            \"function\": \"extractEndpointsInfoFromLaravelApp\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/GroupedEndpoints\/GroupedEndpointsFromApp.php\",\n            \"line\": 50,\n            \"function\": \"extractEndpointsInfoAndWriteToDisk\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/knuckleswtf\/scribe\/src\/Commands\/GenerateDocumentation.php\",\n            \"line\": 53,\n            \"function\": \"get\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"handle\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/Util.php\",\n            \"line\": 41,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php\",\n            \"line\": 35,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/Container.php\",\n            \"line\": 662,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Command.php\",\n            \"line\": 211,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/symfony\/console\/Command\/Command.php\",\n            \"line\": 326,\n            \"function\": \"execute\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Command.php\",\n            \"line\": 180,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Command\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/symfony\/console\/Application.php\",\n            \"line\": 1096,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/symfony\/console\/Application.php\",\n            \"line\": 324,\n            \"function\": \"doRunCommand\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/symfony\/console\/Application.php\",\n            \"line\": 175,\n            \"function\": \"doRun\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Console\/Kernel.php\",\n            \"line\": 201,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\/home\/saad\/Desktop\/Freelancer\/artisan\",\n            \"line\": 35,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Console\\\\Kernel\",\n            \"type\": \"->\"\n        }\n    ]\n}",
                             "name": ""
                         }
                     ]
@@ -944,7 +1003,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "\n  Dropping all tables .................................................................................................................... 17ms DONE\n\n   INFO  Preparing database.  \n\n  Creating migration table ............................................................................................................... 95ms DONE\n\n   INFO  Running migrations.  \n\n  2003_05_13_221258_create_jobs_table ................................................................................................... 183ms DONE\n  2004_02_05_163918_create_job_roles_table .............................................................................................. 115ms DONE\n  2004_05_03_141844_create_industries_table .............................................................................................. 55ms DONE\n  2004_05_05_163837_create_skills_table ................................................................................................. 116ms DONE\n  2004_05_05_164036_create_skillables_table ............................................................................................. 117ms DONE\n  2014_10_12_000000_create_users_table .................................................................................................. 282ms DONE\n  2014_10_12_100000_create_password_reset_tokens_table .................................................................................. 129ms DONE\n  2019_08_19_000000_create_failed_jobs_table ............................................................................................ 187ms DONE\n  2019_12_14_000001_create_personal_access_tokens_table ................................................................................. 229ms DONE\n  2024_03_25_042214_create_companies_table .............................................................................................. 287ms DONE\n  2024_03_25_042227_create_clients_table ................................................................................................ 154ms DONE\n  2024_03_25_042235_create_freelancers_table ............................................................................................ 166ms DONE\n  2024_03_25_042242_create_admins_table .................................................................................................. 56ms DONE\n  2024_03_27_163951_create_super_admins_table ............................................................................................ 56ms DONE\n  2024_04_25_213902_create_contact_links_table ........................................................................................... 58ms DONE\n  2024_04_25_213915_create_company_phones_table .......................................................................................... 56ms DONE\n  2024_05_05_164120_create_job_offers_table ............................................................................................. 271ms DONE\n  2024_05_27_134915_create_portfolios_table ............................................................................................. 122ms DONE\n  2024_05_28_134755_create_files_table .................................................................................................. 113ms DONE\n  2024_05_29_191459_create_images_table ................................................................................................. 119ms DONE\n\n",
+                            "body": "\n  Dropping all tables ................................................................................................................. 1,470ms DONE\n\n   INFO  Preparing database.  \n\n  Creating migration table .............................................................................................................. 372ms DONE\n\n   INFO  Running migrations.  \n\n  2003_05_13_221258_create_jobs_table ................................................................................................... 390ms DONE\n  2004_02_05_163918_create_job_roles_table .............................................................................................. 115ms DONE\n  2004_05_03_141844_create_industries_table ............................................................................................. 112ms DONE\n  2004_05_05_163837_create_skills_table ................................................................................................. 139ms DONE\n  2004_05_05_164036_create_skillables_table ............................................................................................. 167ms DONE\n  2014_10_12_000000_create_users_table .................................................................................................. 470ms DONE\n  2014_10_12_100000_create_password_reset_tokens_table .................................................................................. 250ms DONE\n  2019_08_19_000000_create_failed_jobs_table ............................................................................................ 450ms DONE\n  2019_12_14_000001_create_personal_access_tokens_table ................................................................................. 331ms DONE\n  2024_03_25_042214_create_companies_table .............................................................................................. 243ms DONE\n  2024_03_25_042227_create_clients_table ................................................................................................ 232ms DONE\n  2024_03_25_042235_create_freelancers_table ............................................................................................ 254ms DONE\n  2024_03_25_042242_create_admins_table .................................................................................................. 55ms DONE\n  2024_03_27_163951_create_super_admins_table ............................................................................................ 56ms DONE\n  2024_05_05_164120_create_job_offers_table ............................................................................................. 441ms DONE\n  2024_05_27_134915_create_portfolios_table ............................................................................................. 297ms DONE\n  2024_05_28_134755_create_files_table .................................................................................................. 134ms DONE\n  2024_05_29_191459_create_images_table ................................................................................................. 172ms DONE\n\n",
                             "name": ""
                         }
                     ]
@@ -1000,7 +1059,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "\n   INFO  Seeding database.  \n\n  Database\\Seeders\\NoRoleUserSeeder ........................................................................................................ RUNNING  \n  Database\\Seeders\\NoRoleUserSeeder .................................................................................................. 1,434 ms DONE  \n\n  Database\\Seeders\\IndustrySeeder .......................................................................................................... RUNNING  \n  Database\\Seeders\\IndustrySeeder ........................................................................................................ 1 ms DONE  \n\n  Database\\Seeders\\SkillSeeder ............................................................................................................. RUNNING  \n  Database\\Seeders\\SkillSeeder ........................................................................................................... 3 ms DONE  \n\n  Database\\Seeders\\Job_RoleSeeder .......................................................................................................... RUNNING  \n  Database\\Seeders\\Job_RoleSeeder ........................................................................................................ 8 ms DONE  \n\n",
+                            "body": "\n   INFO  Seeding database.  \n\n  Database\\Seeders\\NoRoleUserSeeder ........................................................................................................ RUNNING  \n  Database\\Seeders\\NoRoleUserSeeder .................................................................................................. 1,776 ms DONE  \n\n  Database\\Seeders\\IndustrySeeder .......................................................................................................... RUNNING  \n  Database\\Seeders\\IndustrySeeder ....................................................................................................... 39 ms DONE  \n\n  Database\\Seeders\\SkillSeeder ............................................................................................................. RUNNING  \n  Database\\Seeders\\SkillSeeder ......................................................................................................... 112 ms DONE  \n\n  Database\\Seeders\\Job_RoleSeeder .......................................................................................................... RUNNING  \n  Database\\Seeders\\Job_RoleSeeder ...................................................................................................... 712 ms DONE  \n\n",
                             "name": ""
                         }
                     ]
@@ -1077,6 +1136,37 @@
                                     "type": "file"
                                 }
                             ]
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/company\/job_offer\/status\/change",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/company\/job_offer\/status\/change",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/company\/job_offer\/status\/change"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"job_offer_id\":\"dolore\",\"status\":\"active\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1164,7 +1254,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "",
+                            "body": "0.00082898139953613",
                             "name": ""
                         }
                     ]
@@ -1187,7 +1277,7 @@
                                 {
                                     "id": "freelancer_id",
                                     "key": "freelancer_id",
-                                    "value": "5",
+                                    "value": "16",
                                     "description": "The ID of the freelancer."
                                 }
                             ]
@@ -1240,7 +1330,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"headline\":\"mtqsuviforkrevjfyz\",\"description\":\"Ut delectus enim fugit sed dolore voluptatem a.\",\"city\":\"\u062f\u0645\u0634\u0642\",\"gender\":\"male\",\"date_of_birth\":\"2004-12-25\",\"job_role_id\":\"alias\",\"skill_ids\":[]}"
+                            "raw": "{\"headline\":\"ujnz\",\"description\":\"In in aut distinctio molestiae consequatur.\",\"city\":\"\u062f\u0645\u0634\u0642\",\"gender\":\"female\",\"date_of_birth\":\"2005-04-29\",\"job_role_id\":\"atque\",\"skill_ids\":[]}"
                         },
                         "description": ""
                     },
@@ -1275,7 +1365,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"headline\":\"yweixekmhjdddvrsqbebo\",\"description\":\"Fugit quam numquam consequatur fugit.\",\"city\":\"\u062f\u0645\u0634\u0642\",\"gender\":\"female\",\"date_of_birth\":\"2002-10-18\"}"
+                            "raw": "{\"headline\":\"uedsaqqlg\",\"description\":\"Ducimus fugiat quasi voluptas quia iusto possimus possimus.\",\"city\":\"\u062f\u0645\u0634\u0642\",\"gender\":\"male\",\"date_of_birth\":\"1995-07-29\"}"
                         },
                         "description": ""
                     },
@@ -1300,7 +1390,7 @@
                                 {
                                     "id": "portfolio_id",
                                     "key": "portfolio_id",
-                                    "value": "5",
+                                    "value": "13",
                                     "description": "The ID of the portfolio."
                                 }
                             ]
@@ -1353,7 +1443,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"jwtkim\",\"url\":\"b:https|ftp):\\\/\\\/X.J{2,}b\",\"date\":\"2024-06-07T23:31:37\",\"description\":\"Quia vel dicta autem aperiam quia nam et natus.\",\"file_ids\":[\"provident\"],\"image_ids\":[\"earum\"]}"
+                            "raw": "{\"title\":\"g\",\"url\":\"bftp:\\\/\\\/eGj.J{2,}b\",\"date\":\"2024-06-14T21:43:50\",\"description\":\"Ut ut rerum nisi harum placeat reprehenderit voluptas repellat.\",\"file_ids\":[\"accusantium\"],\"image_ids\":[\"nulla\"]}"
                         },
                         "description": "",
                         "auth": {
@@ -1391,7 +1481,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"portfolio_id\":\"quis\",\"title\":\"yaqgic\",\"url\":\"bftp:\\\/\\\/iMLs.G{2,}b\",\"date\":\"2024-06-07T23:31:37\",\"description\":\"Sequi sequi numquam fuga et dolores.\",\"file_ids\":[\"enim\"],\"image_ids\":[\"necessitatibus\"]}"
+                            "raw": "{\"portfolio_id\":\"cum\",\"title\":\"wnol\",\"url\":\"b:https|ftp):\\\/\\\/vwLDFDh5.Z{2,}b\",\"date\":\"2024-06-14T21:43:50\",\"description\":\"Sed molestiae soluta est illo.\",\"file_ids\":[\"soluta\"],\"image_ids\":[\"natus\"]}"
                         },
                         "description": "",
                         "auth": {
@@ -1429,7 +1519,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"portfolio_id\":\"ut\"}"
+                            "raw": "{\"portfolio_id\":\"velit\"}"
                         },
                         "description": ""
                     },
