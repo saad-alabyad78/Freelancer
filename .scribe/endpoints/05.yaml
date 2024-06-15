@@ -1,46 +1,53 @@
-name: 'Client Managment'
+name: Endpoints
 description: ''
 endpoints:
   -
     httpMethods:
-      - GET
-    uri: 'api/client/{client_id}'
+      - POST
+    uri: api/company/job_offer/status/change
     metadata:
-      groupName: 'Client Managment'
+      groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Show Client .'
+      title: ''
       description: ''
       authenticated: false
       custom: []
     headers:
       Content-Type: application/json
       Accept: application/json
-    urlParameters:
-      client_id:
-        name: client_id
-        description: 'The ID of the client.'
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      job_offer_id:
+        name: job_offer_id
+        description: ''
         required: true
-        example: 6
-        type: integer
+        example: facere
+        type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-    cleanUrlParameters:
-      client_id: 6
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":{"id":null,"username":null,"gender":null,"city":null,"date_of_birth":null,"profile_image_id":null,"background_image_id":null,"profile_image_url":null,"background_image_url":null,"created_at":null,"updated_at":null}}'
-        headers: []
+      status:
+        name: status
         description: ''
+        required: true
+        example: active
+        type: string
+        enumValues:
+          - pending
+          - active
+          - cloused
+        exampleWasSpecified: false
         custom: []
+    cleanBodyParameters:
+      job_offer_id: facere
+      status: active
+    fileParameters: []
+    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -50,179 +57,70 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/client/store
+    uri: api/test
     metadata:
-      groupName: 'Client Managment'
+      groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Store New Client .'
+      title: ''
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters:
-      profile_image_id:
-        name: profile_image_id
-        description: ''
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      background_image_id:
-        name: background_image_id
-        description: ''
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      date_of_birth:
-        name: date_of_birth
-        description: 'Must be a valid date. Must be a date before or equal to <code>2008-06-14</code>.'
-        required: true
-        example: '1997-08-03'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      city:
-        name: city
-        description: 'this must be a syrian city.'
-        required: true
-        example: دمشق
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      gender:
-        name: gender
-        description: ''
-        required: true
-        example: female
-        type: string
-        enumValues:
-          - male
-          - female
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      date_of_birth: '1997-08-03'
-      city: دمشق
-      gender: female
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":{"id":null,"username":null,"gender":null,"city":null,"date_of_birth":null,"profile_image_id":null,"background_image_id":null,"profile_image_url":null,"background_image_url":null,"created_at":null,"updated_at":null}}'
-        headers: []
-        description: ''
-        custom: []
+    responses: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 6hEgavd4b86kDZV35acPe1f'
+    auth: []
     controller: null
     method: null
     route: null
     custom: []
   -
     httpMethods:
-      - PUT
-    uri: api/client
+      - GET
+    uri: api/test
     metadata:
-      groupName: 'Client Managment'
+      groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update Client .'
+      title: ''
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters:
-      profile_image_id:
-        name: profile_image_id
-        description: 'This field is required when <code>profile_image_url</code> is present.'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      background_image_id:
-        name: background_image_id
-        description: 'This field is required when <code>background_image_id</code> is present.'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      date_of_birth:
-        name: date_of_birth
-        description: 'Must be a valid date. Must be a date before or equal to <code>2008-06-14</code>.'
-        required: false
-        example: '2000-01-14'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      city:
-        name: city
-        description: 'this must be a syrian city.'
-        required: false
-        example: دمشق
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      gender:
-        name: gender
-        description: ''
-        required: false
-        example: female
-        type: string
-        enumValues:
-          - male
-          - female
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      date_of_birth: '2000-01-14'
-      city: دمشق
-      gender: female
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"username":null,"gender":null,"city":null,"date_of_birth":null,"profile_image_id":null,"background_image_id":null,"profile_image_url":null,"background_image_url":null,"created_at":null,"updated_at":null}}'
-        headers: []
-        description: ''
+        content: '0.011941909790039'
+        headers:
+          content-type: 'text/html; charset=UTF-8'
+          cache-control: 'no-cache, private'
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '55'
+          access-control-allow-origin: '*'
+        description: null
         custom: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer aadEZgekP8v145V6fc6D3bh'
+    auth: []
     controller: null
     method: null
     route: null
