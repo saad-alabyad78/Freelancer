@@ -28,16 +28,14 @@ class JobOfferStatusController extends Controller
             ] , 404) ;
         }
 
-        if($jobOffer->status == $newStatus){
-            return response()->json([
-                'message' => 'job offer must be ' . JobOfferStatus::PENDING ,
-            ] , 400) ;
+        if($newStatus == JobOfferStatus::PENDING)
+        {
+            //todo test if this is working
+            $jobOffer->freelancers()->detach() ;
         }
-
-        $jobOffer->status =  $newStatus ;
+        $jobOffer->status = $newStatus ;
         $jobOffer->save() ;
-
+    
         return JobOfferResource::make($jobOffer) ;
     }
-    
 }

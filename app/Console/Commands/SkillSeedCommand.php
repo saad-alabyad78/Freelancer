@@ -14,7 +14,7 @@ class SkillSeedCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'seed:skills';
+    protected $signature = 'seed:skills {--render}';
 
     /**
      * The console command description.
@@ -28,24 +28,47 @@ class SkillSeedCommand extends Command
      */
     public function handle()
     {
-        $path = "/home/saad/Desktop/Freelancer/datasets/job_skills.csv";
-
-        $generator = function($row){
-            return processSkillsString($row[1]) ;
-          };  
-        $cnt = 0 ;
-        $start = microtime(true) ;
-        foreach(ChunkHelper::chunkFile($path , $generator , 1000) as $chunk){
-            
-          $this->info('$chunk ' . ++$cnt * 1000) ;
-          
-          $skills = array_merge(...$chunk) ;
-          $skills = array_map(fn($item)=>['name' => $item] , $skills); 
-          Skill::insertOrIgnore($skills) ;
-        }
-        $end = microtime(true) ;
-        $this->info($end - $start) ;
+      if($this->option('render')) 
+      {
+        chunkSkillsUploadRender($this) ;
+      }else{
+        chunkSkillsInsertLocaly($this) ;
+      }
+        
     }
+}
+
+function chunkSkillsUploadRender(SkillSeedCommand $object)
+{
+  $cnt = 0 ; 
+  Skill::chunk(10000 , function($chunks) use ($object , &$cnt) {
+    Http::timeout(240)->connectTimeout(120)->post('https://freelancer-l1w8.onrender.com/api/category/skill/chunk/insert' , $chunks) ;
+    $object->info('uploade ' . ++$cnt * 10000 ) ;
+  }); 
+}
+
+function chunkSkillsInsertLocaly(SkillSeedCommand $object)
+{
+  $path = "/home/saad/Desktop/Freelancer/datasets/job_skills.csv";
+
+  $generator = function($row){
+      return processSkillsString($row[1]) ;
+    };  
+  $cnt = 0 ;
+  $start = microtime(true) ;
+  foreach(ChunkHelper::chunkFile($path , $generator , 2000) as $chunk){
+      
+    $object->info('$chunk ' . ++$cnt * 2000) ;
+    
+    $skills = array_merge(...$chunk) ;
+    $skills = array_map(fn($item)=>['name' => $item] , $skills); 
+    $skills = array_filter($skills , function($item){return $item['name'] ?? false;}) ;
+    // var_dump($skills) ;
+    // return ;
+    Skill::insertOrIgnore($skills) ;
+  }
+  $end = microtime(true) ;
+  $object->info($end - $start) ;
 }
 
 function processSkillsString(string $skills)
@@ -53,7 +76,7 @@ function processSkillsString(string $skills)
   $skills = explode("," , $skills) ;
   return array_map(function($skill){
     $name = strtolower(trim($skill)) ;
-    if (str($name)->length() < 100)
+    if (str($name)->length() < 40)
     return  $name;
     return null ;
   } , $skills) ;

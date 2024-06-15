@@ -71,5 +71,7 @@ class JobOfferQueryController extends Controller
     public function ForFreelancer()
     {
         //TODO
+        //just cant see pending 
+        //and add the ones that i can see 
     }
 }

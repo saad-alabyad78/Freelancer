@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class JobOffer extends BaseModel
 {
@@ -54,12 +55,24 @@ class JobOffer extends BaseModel
         return $this->belongsTo(Company::class) ;
     }
 
-    public function scopeOwnerFilter($filters)
+    public function freelancers():BelongsToMany
     {
-        //TODO:
+        return $this->belongsToMany(Freelancer::class) ;
     }
-    public function scopeFreelancersFilter($filters)
+
+    public function scopeFilter($query, $filters)
     {
-        //TODO:
+        return $query->when($filters['location_type'] ?? false, function ($query, $locationType) {
+                return $query->where('location_type', $locationType);
+            })
+            ->when($filters['attendence_type'] ?? false, function ($query, $attendenceType) {
+                return $query->where('attendence_type', $attendenceType);
+            })
+            ->when($filters['status'] ?? false, function ($query, $status) {
+                return $query->where('status', $status);
+            })
+            ->when($filters['job_role_id'] ?? false, function ($query, $job_role_id) {
+                return $query->where('job_role_id', $job_role_id);
+            });
     }
 }

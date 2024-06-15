@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Resources\Storage\FileResource;
 use App\Http\Requests\Storage\StoreFileRequest;
 /**
- * $group Storage Managment
+ * @group Storage Managment
  */
 class StoreFileController extends Controller
 {

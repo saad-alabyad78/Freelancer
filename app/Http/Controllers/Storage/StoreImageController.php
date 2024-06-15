@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Resources\Storage\ImageResource;
 use App\Http\Requests\Storage\StoreImageRequest;
 /**
- * $group Storage Managment
+ * @group Storage Managment
  */
 class StoreImageController extends Controller
 {
