@@ -47,23 +47,11 @@ require 'Api/freelancer.php' ;
 
 
 Route::post('test' , function(Request $request){
-  return Company::findOrFail(1)->delete();
+  return 'hi' ;
 });
 
 Route::get('test' , function(){
- 
-  $row = 1; 
-  $start = microtime(true) ;
-
-  
-  $cnt = 1 ; 
- 
-  DB::statement('ALTER TABLE job_roles DISABLE TRIGGER ALL;');
-  
-  DB::statement('ALTER TABLE job_roles ENABLE TRIGGER ALL;');
-
-  $end = microtime(true) ;
-  return $end - $start;
+ return 'hi salah' ;
 });
 
 

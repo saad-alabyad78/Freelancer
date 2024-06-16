@@ -28,7 +28,7 @@ endpoints:
         name: job_offer_id
         description: ''
         required: true
-        example: facere
+        example: numquam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -37,7 +37,7 @@ endpoints:
         name: status
         description: ''
         required: true
-        example: active
+        example: pending
         type: string
         enumValues:
           - pending
@@ -46,8 +46,8 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      job_offer_id: facere
-      status: active
+      job_offer_id: numquam
+      status: pending
     fileParameters: []
     responses: []
     responseFields: []
@@ -112,12 +112,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '0.011941909790039'
+        content: 'hi salah'
         headers:
           content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '55'
+          x-ratelimit-remaining: '51'
           access-control-allow-origin: '*'
         description: null
         custom: []

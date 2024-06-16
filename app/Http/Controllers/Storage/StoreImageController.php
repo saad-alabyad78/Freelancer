@@ -23,8 +23,12 @@ class StoreImageController extends Controller
 
     /**
      * Store Image.
+     * 
+     * @apiResource App\Http\Resources\Storage\ImageResource
+     * @apiResourceModel App\Models\Image
+     * 
      */
-    public function __invoke(StoreImageRequest $request)
+    public function __invoke(StoreImageRequest $request) : ImageResource
     {
         // $name = $this->imageService->store_image($request->file('image') , 'public') ;
 

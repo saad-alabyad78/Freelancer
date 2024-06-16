@@ -11,6 +11,8 @@ use App\Http\Controllers\Company\GetAllJobOfferForCompanyQuery;
 Route::group(['prefix' => 'company'] , function()
 {
     Route::get('/{company:id}' , [CompanyController::class , 'show']) ;
+    //todo
+    Route::post('list-job-offers' , [JobOfferQueryController::class , 'ForFreelancer']) ; 
     
     Route::group(
         [
@@ -46,8 +48,6 @@ Route::group(['prefix' => 'company'] , function()
             
             //todo : test 
             Route::post('my-job-offers' , [JobOfferQueryController::class , 'ForOwner']) ;
-            //todo
-            Route::post('list-job-offers' , [JobOfferQueryController::class , 'ForFreelancer']) ; 
 
             //todo : test
             Route::post('status/change' , [JobOfferStatusController::class , 'change']);
