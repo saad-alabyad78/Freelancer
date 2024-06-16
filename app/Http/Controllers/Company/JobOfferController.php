@@ -79,6 +79,11 @@ class JobOfferController extends Controller
                 422
             ]);
         }
+        if ($job_offer->status != JobOfferStatus::PENDING) {
+            return response()->json([
+                'message' => 'You can only update job offers that are in pending status.',
+            ], 422);
+        }
 
         DB::beginTransaction();
 
