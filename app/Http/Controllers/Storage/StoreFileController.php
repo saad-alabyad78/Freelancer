@@ -18,17 +18,27 @@ class StoreFileController extends Controller
      */
     public function __invoke(StoreFileRequest $request)
     {
-        $file = $request->file('file') ;
-        $filePath = $file->store('public/files');
-        $size = Storage::size($filePath);
-        $extension = $file->getClientOriginalExtension();
-        $url = Storage::url($filePath);
+        // $file = $request->file('file') ;
+        // $filePath = $file->store('public/files');
+        // $size = Storage::size($filePath);
+        // $extension = $file->getClientOriginalExtension();
+        // $url = Storage::url($filePath);
+        
+        // $file = File::create([
+        //     'url' => $url ,
+        //     'size' => $size ,
+        //     'extention' => $extension ,
+        // ]) ;
 
+        $cloudResponse = $request->file('file')->storeOnCloudinary() ;
 
         $file = File::create([
-            'url' => $url ,
-            'size' => $size ,
-            'extention' => $extension ,
+        'title' => $request->only('title')['title'] ,
+        'public_id' => $cloudResponse->getPublicId() ,
+        'url' => $cloudResponse->getSecurePath() ,
+        'size' => $cloudResponse->getSize() , 
+        'extention' => $cloudResponse->getExtension() ,
+        'deleted' => false ,
         ]) ;
 
         return FileResource::make($file) ;

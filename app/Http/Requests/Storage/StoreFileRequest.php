@@ -11,7 +11,7 @@ class StoreFileRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -27,6 +27,8 @@ class StoreFileRequest extends FormRequest
                 'file',
                 'max:10240' // The file size limit is 10MB
             ] ,
+            'title' => ['required' , 'string' , 'max:255'] ,
+            //todo : what file types allowed 
         ];
     }
 }

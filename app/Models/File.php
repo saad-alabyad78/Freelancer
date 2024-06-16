@@ -14,6 +14,9 @@ class File extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id' ,
+        'title' ,   
+        'public_id' ,
         'url' ,
         'size' , 
         'filable_id' ,

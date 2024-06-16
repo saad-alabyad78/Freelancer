@@ -26,10 +26,19 @@ class StoreImageController extends Controller
      */
     public function __invoke(StoreImageRequest $request)
     {
-        $name = $this->imageService->store_image($request->file('image') , 'public') ;
+        // $name = $this->imageService->store_image($request->file('image') , 'public') ;
+
+        // $image = Image::create([
+        //     'url' =>  $this->imageService::image_url($name) ,
+        //     'deleted' => false ,
+        // ]);
+
+        
+        $cloudResponse = $request->file('image')->storeOnCloudinary() ;
 
         $image = Image::create([
-            'url' =>  $this->imageService::image_url($name) ,
+            'public_id' => $cloudResponse->getPublicId() ,
+            'url' =>  $cloudResponse->getSecurePath() ,
             'deleted' => false ,
         ]);
 

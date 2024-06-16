@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->string('url');
+            $table->string('url')->unique();
+            $table->string('public_id')->unique();
             $table->unsignedBigInteger('imagable_id')->nullable();
             $table->string('imagable_type')->nullable();
             $table->boolean('deleted') ;
