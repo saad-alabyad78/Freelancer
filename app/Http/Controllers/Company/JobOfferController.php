@@ -32,7 +32,7 @@ class JobOfferController extends Controller
      */
     public function store(CreateJobOfferRequest $request)
     {
-        return $data = $request->validated() ;
+        // return $data = $request->validated() ;
 
         $data = $request->validated() ;
 
@@ -48,7 +48,7 @@ class JobOfferController extends Controller
                 'skillable_type' => JobOffer::class ,
                 'required' => $item['required'] ,
             ] ;
-        } , $data['skill_ids']);
+        } , $data['skills']);
 
         Skillable::insert($skillables) ;
 
@@ -75,9 +75,14 @@ class JobOfferController extends Controller
 
         if($job_offer->company_id != auth()->user()->role['id']){
             return response()->json([
-                'this is not your job offer !' ,
-                422
-            ]);
+                'message' => 'this is not your job offer !' ,
+            ] , 422 );
+        }
+
+        if ($job_offer->status != JobOfferStatus::PENDING) {
+            return response()->json([
+                'message' => 'You can only update job offers that are in '.JobOfferStatus::PENDING.' status.',
+            ], 422);
         }
 
         DB::beginTransaction();

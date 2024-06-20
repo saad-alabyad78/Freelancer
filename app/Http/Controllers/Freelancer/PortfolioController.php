@@ -16,7 +16,7 @@ use App\Http\Requests\Freelancer\DeletePortfolioRequest;
 use App\Http\Requests\Freelancer\UpdatePortfolioRequest;
 
 /**
- *@group Freelancer Managment 
+ *@group Freelancer Managment
  *
  **/
 class PortfolioController extends Controller
@@ -28,14 +28,14 @@ class PortfolioController extends Controller
     }
     /**
      * Get Portfolio .
-     * 
-     * 
+     *
+     *
      * @apiResource App\Http\Resources\Freelancer\PortfolioResource with=App\Http\Resources\Category\SkillResource
      * @apiResourceModel App\Models\Portfolio with=App\Models\Skill,App\Models\File,App\Models\Image
-     * 
-     * 
+     *
+     *
      * @return \App\Http\Resources\Freelancer\PortfolioResource
-     * 
+     *
      */
     public function show(Portfolio $portfolio)
     {
@@ -43,14 +43,14 @@ class PortfolioController extends Controller
     }
     /**
      * Store New Portfolio .
-     * 
-     * 
+     *
+     *
      * @apiResource App\Http\Resources\Freelancer\PortfolioResource with=App\Http\Resources\Category\SkillResource
      * @apiResourceModel App\Models\Portfolio with=App\Models\Skill,App\Models\File,App\Models\Image
-     * 
-     * 
+     *
+     *
      * @return \App\Http\Resources\Freelancer\PortfolioResource
-     * 
+     *
      */
     public function store(CreatePortfolioRequest $request)
     {
@@ -78,14 +78,14 @@ class PortfolioController extends Controller
     }
     /**
      * Update Portfolio .
-     * 
-     * 
+     *
+     *
      * @apiResource App\Http\Resources\Freelancer\PortfolioResource with=App\Http\Resources\Category\SkillResource
      * @apiResourceModel App\Models\Portfolio with=App\Models\Skill,App\Models\File,App\Models\Image
-     * 
-     * 
+     *
+     *
      * @return \App\Http\Resources\Freelancer\PortfolioResource
-     * 
+     *
      */
     public function update(UpdatePortfolioRequest $request)
     {
@@ -106,7 +106,7 @@ class PortfolioController extends Controller
             $data = $request->validated();
 
             $portfolio = $this->portfolioRepository->update($portfolio, $data);
-            
+
             DB::commit();
 
             return PortfolioResource::make($portfolio->load(['files', 'images', 'skills']));
@@ -125,12 +125,12 @@ class PortfolioController extends Controller
 
     /**
      * Delete Portfolio.
-     * 
+     *
      * @authenticated
-     * 
-     * 
+     *
+     *
      * @return \Illuminate\Http\JsonResponse | \Illuminate\Http\Response
-     * 
+     *
      */
     public function delete(DeletePortfolioRequest $request)
     {

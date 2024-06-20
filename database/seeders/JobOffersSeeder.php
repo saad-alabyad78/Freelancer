@@ -1,0 +1,33 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\User;
+use App\Models\Company;
+use App\Models\JobOffer;
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+class JobOffersSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $user = User::factory()->makeOne([
+           'first_name' => 'company1' ,
+           'last_name' => null ,
+           'email' => 'company1@gmail.com' ,
+          ]) ;
+          
+        $company = Company::factory()->createOne() ;
+
+        $company->user()->save($user) ;
+
+        JobOffer::factory()
+            ->count(30) 
+            //->for($company)['company_id' => $company->id]
+            ->create() ;
+    }
+}

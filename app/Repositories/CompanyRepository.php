@@ -10,9 +10,9 @@ class CompanyRepository extends BaseRepository implements ICompanyRepository
     public function create($data):Company
     {
         if(array_key_exists('profile_image_id',$data) and !is_null($data['profile_image_id']))
-            $data['profile_image_url'] = Image::findOrFail($data['profile_image_id'])->first() ;
+            $data['profile_image_url'] = Image::findOrFail($data['profile_image_id'])->first()->url ;
         if(array_key_exists('background_image_id',$data) and !is_null($data['background_image_id']))
-            $data['background_image_url'] = Image::findOrFail($data['background_image_id'])->first();
+            $data['background_image_url'] = Image::findOrFail($data['background_image_id'])->first()->url;
     
         $data['username'] = auth()->user()->slug ;
         
@@ -24,14 +24,15 @@ class CompanyRepository extends BaseRepository implements ICompanyRepository
 
         //store and create images
 
-        if(array_key_exists('gallery_images_ids' , $data))
+        if(array_key_exists('gallery_image_ids' , $data))
         {
             //todo:chnuk set in the database                 
 
-            $gallery_images = Image::whereIn('id' , $data['gallery_images_ids'])->get() ;
+            $gallery_images = Image::whereIn('id' , $data['gallery_image_ids'])->get() ;
             
             $company->gallery_images()->saveMany($gallery_images) ;
         }
+        
 
         return $company ;
     }

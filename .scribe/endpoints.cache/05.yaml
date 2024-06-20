@@ -28,7 +28,7 @@ endpoints:
         name: job_offer_id
         description: ''
         required: true
-        example: numquam
+        example: quaerat
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -37,7 +37,7 @@ endpoints:
         name: status
         description: ''
         required: true
-        example: pending
+        example: cloused
         type: string
         enumValues:
           - pending
@@ -46,8 +46,8 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      job_offer_id: numquam
-      status: pending
+      job_offer_id: quaerat
+      status: cloused
     fileParameters: []
     responses: []
     responseFields: []
@@ -117,7 +117,7 @@ endpoints:
           content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '51'
+          x-ratelimit-remaining: '56'
           access-control-allow-origin: '*'
         description: null
         custom: []

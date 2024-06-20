@@ -6,10 +6,12 @@ namespace Tests\Feature\Freelancer;
 use Tests\TestCase;
 use App\Models\User;
 use App\Constants\Gender;
+use App\Models\Skillable;
 use App\Models\Freelancer;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Http\Resources\Freelancer\FreelancerResource;
 
 class CreateFreelancerTest extends TestCase
 {
@@ -33,16 +35,17 @@ class CreateFreelancerTest extends TestCase
             'gender' => Gender::FEMALE,
             'date_of_birth' => '2002-01-01',
             'job_role_id' => 1,
-            'skill_ids' => ['1','2' , '3','4','5','6'] ,
+            'skill_ids' => ['1','2', '3','4','5','6'] ,
         ] ;
         
         $response = $this
             ->actingAs($this->user)
             ->postJson('/api/freelancer/store' , $data , ['Accept'=>'application/json'] );
-        
+       
         $response->assertStatus(201);
 
-        $freelancer = Freelancer::first() ;
+       
+        $freelancer = Freelancer::where('date_of_birth' , '2002-01-01')->first() ;
 
         $this->assertCount(6 , $freelancer->skills()->get()) ;
 

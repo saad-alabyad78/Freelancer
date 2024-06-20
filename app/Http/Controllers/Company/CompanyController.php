@@ -19,7 +19,7 @@ use App\Http\Requests\Company\CreateCompanyImageRequest;
 
 /**
  * @group Company Managment
- * 
+ *
  */
 class CompanyController extends Controller
 {
@@ -28,28 +28,28 @@ class CompanyController extends Controller
 
     /**
      * Store New Company .
-     * 
+     *
      * @authenticated
-     * 
+     *
      * @apiResource App\Http\Resources\Company\CompanyResource
      * @apiResourceModel App\Models\Company with=App\Models\GalleryImage
-     * 
-     * 
+     *
+     *
      * @return \Illuminate\Http\JsonResponse | \Illuminate\Http\Response
-     * 
+     *
      */
     public function store(CreateCompanyRequest $request)
     {
         DB::beginTransaction();
-        
+
         $data = $request->validated();
 
         try {
-            
+
             $company = $this->companyRepository->create($data) ;
 
             DB::commit() ;
-        
+
             return CompanyResource::make($company->load([
                 'gallery_images' ,
                 ]))->response()->setStatusCode(201) ;
@@ -58,46 +58,44 @@ class CompanyController extends Controller
             DB::rollBack() ;
             return response()->json([
                 'message' => 'something went wrong' ,
-                'error' => $th->getMessage() 
+                'error' => $th->getMessage()
                 ] , 400) ;
         }
     }
 
     /**
      * Show Company .
-     * 
-     * 
+     *
+     *
      * @apiResource App\Http\Resources\Company\CompanyResource
      * @apiResourceModel App\Models\Company with=App\Models\GalleryImage
-     * 
-     * 
-     * @return CompanyResource 
-     * 
+     *
+     *
+     * @return CompanyResource
+     *
      */
     public function show(Company $company)
     {
         return CompanyResource::make($company->load([
-            'contact_links'  ,
             'gallery_images' ,
-            'company_phones' ,
-            ])); 
+            ]));
     }
     /**
      * Update Company .
-     * 
+     *
      * @authenticated
-     * 
+     *
      * @apiResource App\Http\Resources\Company\CompanyResource
      * @apiResourceModel App\Models\Company with=App\Models\GalleryImage
-     * 
-     * 
+     *
+     *
      * @return \Illuminate\Http\JsonResponse | \Illuminate\Http\Response
-     * 
+     *
      */
     public function update(UpdateCompanyRequest $request)
     {
         DB::beginTransaction() ;
-        
+
         $data = $request->validated() ;
 
         try {
@@ -106,13 +104,13 @@ class CompanyController extends Controller
             //todo : delete the old images profile and background in the observer
 
             $company = $this->companyRepository->update($company , $data);
-            
+
             DB::commit() ;
-            
+
             return CompanyResource::make($company->load([
                 'gallery_images' ,
                 ]))->response()->setStatusCode(200) ;
-                
+
         } catch (\Throwable $th) {
             DB::rollBack() ;
             return response()->json([
@@ -124,12 +122,12 @@ class CompanyController extends Controller
 
     /**
      * Delete the company.
-     * Note: the user will be deleted 
-     * 
+     * Note: the user will be deleted
+     *
      * @authenticated
-     * 
+     *
      * return 422 if password is incurrect
-     * 
+     *
      *  @return \Illuminate\Http\Response | \Illuminate\Routing\ResponseFactory
      */
     public function delete(DeleteCompanyRequest $request)

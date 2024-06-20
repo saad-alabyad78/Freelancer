@@ -45,6 +45,10 @@ require 'Api/client.php' ;
 
 require 'Api/freelancer.php' ;
 
+require 'Api/job-offer-proposal.php' ;
+
+
+
 
 Route::post('test' , function(Request $request){
   return 'hi' ;
