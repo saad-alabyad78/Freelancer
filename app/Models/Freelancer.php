@@ -47,6 +47,6 @@ class Freelancer extends BaseModel
     }
     public function job_offers():BelongsToMany
     {
-        return $this->belongsToMany(JobOffer::class , 'job_offer_proposal') ;
+        return $this->belongsToMany(JobOffer::class , 'job_offer_proposals') ;
     }
 }

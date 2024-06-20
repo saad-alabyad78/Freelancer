@@ -3,6 +3,7 @@
 namespace App\Http\Requests\JobOfferProposal;
 
 use Illuminate\Validation\Rule;
+use App\Models\JobOfferProposal;
 use App\Constants\JobOfferStatus;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -13,7 +14,7 @@ class CreateJobOfferProposalRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,8 +25,23 @@ class CreateJobOfferProposalRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'job_offer_id' => ['required', Rule::exists('job_offers', 'id')->where('status', JobOfferStatus::AVTIVE)] ,
+            'job_offer_id' => [
+                'required',
+
+                Rule::exists('job_offers', 'id')
+                ->where('status', JobOfferStatus::AVTIVE) ,
+
+                Rule::unique('job_offer_proposals' , 'job_offer_id')
+                    ->where('freelancer_id' , (string)auth()->user()->role_id )  , 
+                ] ,
             'message' => ['required' , 'string' , 'max:255'] ,
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'job_offer_id.unique' => ['you can\'t propose for the same job twice '] , 
         ];
     }
 }

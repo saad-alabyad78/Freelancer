@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('files', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('url' , 2000)->unique();
+            $table->string('url' , 2048)->unique();
             $table->string('public_id')->unique();
             $table->integer('size');
             $table->string('extention');

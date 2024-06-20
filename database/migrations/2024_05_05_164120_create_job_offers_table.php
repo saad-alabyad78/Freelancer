@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('job_offers', function (Blueprint $table) {
             $table->id();
 
+            $table->integer('proposals_count')->default(0) ;
+            
             $table->string('description');
             
             $table->string('status')->index();

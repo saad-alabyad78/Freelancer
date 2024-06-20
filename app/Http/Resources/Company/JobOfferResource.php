@@ -36,7 +36,8 @@ class JobOfferResource extends JsonResource
             'skills' => SkillResource::collection($this->whenLoaded('skills')) ,
             'military_service_required' => $this->military_service_required ,
             'gender_required' => $this->gender_required ,
-            'age_required' => $this->age_required ,
+            'age_required' => $this->age_required , 
+            'proposals_count' => $this->proposals_count ,
 
         ];
     }

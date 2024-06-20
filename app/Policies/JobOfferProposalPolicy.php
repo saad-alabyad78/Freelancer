@@ -3,55 +3,59 @@
 namespace App\Policies;
 
 use App\Models\User;
+use App\Models\Company;
+use App\Models\Freelancer;
 use App\Models\JobOfferProposal;
 use Illuminate\Auth\Access\Response;
 
 class JobOfferProposalPolicy
 {
-    /**
-     * Determine whether the user can filter any models.
-     */
+    public function reject(User $user, JobOfferProposal $jobOfferProposal): bool
+    {
+        return false ;
+    }
+    public function accept(User $user, JobOfferProposal $jobOfferProposal): bool
+    {
+        return false ;
+    }
     public function filter(User $user)
     {
         //todo only company
-    }
-    /**
-     * Determine whether the user can view any models.
-     */
-    public function viewAny(User $user): bool
-    {
-        //
+        return false ;
     }
 
-    /**
-     * Determine whether the user can view the model.
-     */
     public function view(User $user, JobOfferProposal $jobOfferProposal): bool
     {
-        //
+        if(
+            $user->role_type == Freelancer::class 
+            and 
+            $user->role_id == $jobOfferProposal->freelancer_id
+        )return true; 
+
+        if(
+            $user->role_type == Company::class 
+            and 
+            $user->role_id == $jobOfferProposal->company()->id
+        )return true; 
+
+        return false ;
     }
 
-    /**
-     * Determine whether the user can create models.
-     */
     public function create(User $user): bool
     {
-        //
+        return true ;
     }
 
-    /**
-     * Determine whether the user can update the model.
-     */
     public function update(User $user, JobOfferProposal $jobOfferProposal): bool
     {
-        //
+        return false ;
     }
 
-    /**
-     * Determine whether the user can delete the model.
-     */
     public function delete(User $user, JobOfferProposal $jobOfferProposal): bool
     {
-        //
+        return 
+        $user->role_type == Freelancer::class
+            and 
+        $jobOfferProposal->freelancer_id == $user->role_id ;
     }
 }

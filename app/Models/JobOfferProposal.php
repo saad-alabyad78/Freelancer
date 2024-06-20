@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOneThrough;
+use Illuminate\Database\Eloquent\Factories\BelongsToRelationship;
 
-class JobOfferProposal extends Pivot
+class JobOfferProposal extends BaseModel
 {
     protected $fillable = [
         'id' ,
@@ -19,6 +22,10 @@ class JobOfferProposal extends Pivot
     public function job_offer():BelongsTo
     {
         return $this->belongsTo(JobOffer::class) ;
+    }
+    public function company():HasOneThrough
+    {
+        return $this->hasOneThrough(Company::class , JobOffer::class);
     }
     public function freelancer():BelongsTo
     {

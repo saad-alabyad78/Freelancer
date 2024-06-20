@@ -32,7 +32,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: eladio78@example.net
+        example: josianne.beatty@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -41,14 +41,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: ';TNz.!X/X]`VE9o^'
+        example: 'ip8[jJx>LPU'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: eladio78@example.net
-      password: ';TNz.!X/X]`VE9o^'
+      email: josianne.beatty@example.com
+      password: 'ip8[jJx>LPU'
     fileParameters: []
     responses: []
     responseFields: []
@@ -88,7 +88,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hkaa45vV66dEfgZD83Pc1be'
+      - 'Bearer 3c5D6PZkgd1bE4aevafV68h'
     controller: null
     method: null
     route: null
@@ -120,7 +120,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":18,"first_name":"Kian","last_name":"Prohaska","username":"kian-prohaska-18","email":"zmcglynn@example.net","role":""}}'
+        content: '{"data":{"id":10,"first_name":"Kelsie","last_name":"Romaguera","username":"kelsie-romaguera-10","email":"vgusikowski@example.org","role":""}}'
         headers: []
         description: ''
         custom: []
@@ -128,7 +128,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kP6bcdaf4Z86513gvVahEeD'
+      - 'Bearer vd6E4gVP8hba5ef36DZka1c'
     controller: null
     method: null
     route: null
@@ -160,13 +160,13 @@ endpoints:
         name: token
         description: ''
         required: true
-        example: rerum
+        example: alias
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      token: rerum
+      token: alias
     fileParameters: []
     responses:
       -
@@ -176,7 +176,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '60'
+          x-ratelimit-remaining: '59'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -211,7 +211,7 @@ endpoints:
         name: first_name
         description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
         required: true
-        example: qtxuoqmftm
+        example: fxyxgizyqwlabjonmallvs
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -220,7 +220,7 @@ endpoints:
         name: last_name
         description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
         required: false
-        example: zdhbmpvlyzrgualgmg
+        example: ze
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -229,7 +229,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: jacobi.troy@example.org
+        example: buckridge.sabryna@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -238,16 +238,16 @@ endpoints:
         name: password
         description: 'Must be at least 8 characters. Must not be greater than 255 characters.'
         required: true
-        example: 'ZxUR^,ypY[u5w+ehX'
+        example: 'Zl[?,\o%\#hYv0.Cuh'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      first_name: qtxuoqmftm
-      last_name: zdhbmpvlyzrgualgmg
-      email: jacobi.troy@example.org
-      password: 'ZxUR^,ypY[u5w+ehX'
+      first_name: fxyxgizyqwlabjonmallvs
+      last_name: ze
+      email: buckridge.sabryna@example.org
+      password: 'Zl[?,\o%\#hYv0.Cuh'
     fileParameters: []
     responses: []
     responseFields: []
@@ -281,7 +281,7 @@ endpoints:
         name: email_otp_code
         description: ''
         required: true
-        example: amet
+        example: illo
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -290,14 +290,14 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: august95@example.net
+        example: ciara.reynolds@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email_otp_code: amet
-      email: august95@example.net
+      email_otp_code: illo
+      email: ciara.reynolds@example.com
     fileParameters: []
     responses: []
     responseFields: []
@@ -331,13 +331,13 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: qcarter@example.org
+        example: luciano51@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: qcarter@example.org
+      email: luciano51@example.net
     fileParameters: []
     responses: []
     responseFields: []
@@ -373,13 +373,13 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: grant.gene@example.org
+        example: ryan.demond@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: grant.gene@example.org
+      email: ryan.demond@example.net
     fileParameters: []
     responses: []
     responseFields: []
@@ -415,7 +415,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: hschneider@example.com
+        example: prohaska.josefa@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -424,7 +424,7 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: enim
+        example: rerum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -433,15 +433,15 @@ endpoints:
         name: password_otp_code
         description: ''
         required: true
-        example: vel
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: hschneider@example.com
-      password: enim
-      password_otp_code: vel
+      email: prohaska.josefa@example.net
+      password: rerum
+      password_otp_code: est
     fileParameters: []
     responses: []
     responseFields: []

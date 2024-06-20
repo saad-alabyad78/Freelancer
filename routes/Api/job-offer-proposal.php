@@ -3,8 +3,9 @@ use App\Models\JobOfferProposal;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobOfferProposalController;
 
+//only freelancer 
 Route::group([
-    'prefix' => 'freelancer/job-offer-proposal' ,
+    'prefix' => 'job-offer-proposal' ,
     'middleware' => [
         'auth:sanctum' ,
         'verify_email' ,
@@ -12,13 +13,28 @@ Route::group([
     ]
 ] , function(){
     Route::post('store' , [JobOfferProposalController::class , 'create']) ;
+    Route::put('' , [JobOfferProposalController::class , 'update']) ;
+    Route::delete('/{jobOfferProposal}' , [JobOfferProposalController::class , 'delete']);
 });
 
+//only company
 Route::group([
-    'prefix' => 'company/job_offer_proposal' ,
+    'prefix' => 'job_offer_proposal' ,
     'middleware' => [
         'auth:sanctum' ,
         'verify_email' ,
-        'role:freelancer' ,
+        'role:company' ,
     ]
 ] , function(){});
+
+//both
+Route::group([
+    'prefix' => 'job_offer_proposal' ,
+    'middleware' => [
+        'auth:sanctum' ,
+        'verify_email' ,
+        'role:company,freelancer' ,
+    ]
+] , function(){
+    Route::get('{job_offer_proposal}' , [JobOfferProposalController::class , 'show']) ;
+});

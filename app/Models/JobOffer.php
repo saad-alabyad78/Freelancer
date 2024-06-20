@@ -34,6 +34,7 @@ class JobOffer extends BaseModel
         'military_service_required' ,
         'age_required' ,
         'gender_required' ,
+        'proposals_count' ,
     ];
 
 
@@ -56,13 +57,9 @@ class JobOffer extends BaseModel
         return $this->belongsTo(Company::class) ;
     }
 
-    public function freelancers():BelongsToMany
-    {
-        return $this->belongsToMany(Freelancer::class) ;
-    }
     public function proposals():BelongsToMany
     {
-        return $this->belongsToMany(Freelancer::class , 'job_offer_proposal') ;
+        return $this->belongsToMany(Freelancer::class , 'job_offer_proposals') ;
     }
 
     protected $equalFilters = 
