@@ -12,11 +12,14 @@ class JobOfferProposalPolicy
 {
     public function reject(User $user, JobOfferProposal $jobOfferProposal): bool
     {
-        return false ;
+        return $user->role_type == Company::class
+            && $user->role_id == $jobOfferProposal->job_offer->company_id;
     }
+
     public function accept(User $user, JobOfferProposal $jobOfferProposal): bool
     {
-        return false ;
+        return $user->role_type == Company::class
+            && $user->role_id == $jobOfferProposal->job_offer->company_id;
     }
     public function filter(User $user)
     {
@@ -27,16 +30,16 @@ class JobOfferProposalPolicy
     public function view(User $user, JobOfferProposal $jobOfferProposal): bool
     {
         if(
-            $user->role_type == Freelancer::class 
-            and 
+            $user->role_type == Freelancer::class
+            and
             $user->role_id == $jobOfferProposal->freelancer_id
-        )return true; 
+        )return true;
 
         if(
-            $user->role_type == Company::class 
-            and 
+            $user->role_type == Company::class
+            and
             $user->role_id == $jobOfferProposal->company()->id
-        )return true; 
+        )return true;
 
         return false ;
     }
@@ -53,9 +56,9 @@ class JobOfferProposalPolicy
 
     public function delete(User $user, JobOfferProposal $jobOfferProposal): bool
     {
-        return 
+        return
         $user->role_type == Freelancer::class
-            and 
+            and
         $jobOfferProposal->freelancer_id == $user->role_id ;
     }
 }
