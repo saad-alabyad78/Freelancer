@@ -16,9 +16,16 @@ use App\Http\Requests\JobOfferProposal\UpdateJobOfferProposalRequest;
 
 class JobOfferProposalController extends Controller
 {
-    public function filter()
+    public function filter(FilterJobOfferProposalRequest $request)
     {
-        //todo show list with filters (job offer id , date)
+        $data = $request->validated();
+
+        $proposals = JobOfferProposal::query()
+            ->filterByJobOfferId($data['job_offer_id'] ?? null)
+            ->filterByDate($data['date'] ?? null)
+            ->get();
+
+        return JobOfferProposalResource::collection($proposals);
     }
     public function index()
     {

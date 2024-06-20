@@ -31,4 +31,18 @@ class JobOfferProposal extends BaseModel
     {
         return $this->belongsTo(Freelancer::class);
     }
+    public function scopeFilterByJobOfferId($query, $jobOfferId)
+    {
+        if ($jobOfferId) {
+            return $query->where('job_offer_id', $jobOfferId);
+        }
+        return $query;
+    }
+    public function scopeFilterByDate($query, $date)
+    {
+        if ($date) {
+            return $query->whereDate('created_at', $date);
+        }
+        return $query;
+    }
 }

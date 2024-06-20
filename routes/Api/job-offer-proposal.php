@@ -28,6 +28,7 @@ Route::group([
 ] , function(){
     Route::post('reject', [JobOfferProposalController::class, 'reject']);
     Route::post('accept/{jobOfferProposal}', [JobOfferProposalController::class, 'accept']);
+    Route::get('filter', [JobOfferProposalController::class, 'filter']);
 });
 
 //both
