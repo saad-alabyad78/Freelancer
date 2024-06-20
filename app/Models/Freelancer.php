@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Freelancer extends BaseModel
 {
@@ -43,5 +44,9 @@ class Freelancer extends BaseModel
     public function portfolios():HasMany
     {
         return $this->hasMany(Portfolio::class) ;
+    }
+    public function job_offers():BelongsToMany
+    {
+        return $this->belongsToMany(JobOffer::class , 'job_offer_proposals') ;
     }
 }

@@ -34,6 +34,11 @@ class JobOfferResource extends JsonResource
             'company' =>  MiniCompanyResource::make($this->whenLoaded('company')),
             'job_role' => JobRoleResource::make($this->whenLoaded('job_role')) ,
             'skills' => SkillResource::collection($this->whenLoaded('skills')) ,
+            'military_service_required' => $this->military_service_required ,
+            'gender_required' => $this->gender_required ,
+            'age_required' => $this->age_required , 
+            'proposals_count' => $this->proposals_count ,
+
         ];
     }
 }

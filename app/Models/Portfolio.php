@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
-class Portfolio extends Model
+class Portfolio extends BaseModel
 {
     use HasFactory;
     

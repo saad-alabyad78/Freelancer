@@ -77,9 +77,7 @@ class CompanyController extends Controller
     public function show(Company $company)
     {
         return CompanyResource::make($company->load([
-            'contact_links'  ,
             'gallery_images' ,
-            'company_phones' ,
             ]));
     }
     /**

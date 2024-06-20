@@ -12,9 +12,9 @@ class FreelancerRepository extends BaseRepository implements IFreelancerReposito
 {
     public function create($data):Freelancer
     {
-        if(array_key_exists('profile_image_id',$data) and !is_null($data['profile_image_id']))
+        if(isset($data['profile_image_id']))
             $data['profile_image_url'] = Image::findOrFail($data['profile_image_id'])->first() ;
-        if(array_key_exists('background_image_id',$data) and !is_null($data['background_image_id']))
+        if(isset($data['background_image_id']))
             $data['background_image_url'] = Image::findOrFail($data['background_image_id'])->first();
     
         
@@ -22,19 +22,11 @@ class FreelancerRepository extends BaseRepository implements IFreelancerReposito
 
         $freelancer = Freelancer::create($data);
 
-            $freelancer->user()->save(auth()->user()) ;
+        $freelancer->user()->save(auth()->user()) ;
 
-            $skillables = array_map(function($item) use ($freelancer){
-                return [
-                    'skill_id' => $item ,
-                    'skillable_id' => $freelancer->id ,
-                    'skillable_type' => Freelancer::class ,
-                ] ;
-            } , $data['skill_ids']);
-            
-            Skillable::insert($skillables) ;
+        $freelancer->skills()->attach($data['skill_ids']) ;
 
-            return $freelancer ;
+        return $freelancer ;
     }
     public function update(Freelancer $freelancer , $data):Freelancer
     {

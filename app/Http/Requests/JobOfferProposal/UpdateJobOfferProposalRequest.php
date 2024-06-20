@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Requests\Category;
+namespace App\Http\Requests\JobOfferProposal;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class JobRoleSearchRequest extends FormRequest
+class UpdateJobOfferProposalRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +23,13 @@ class JobRoleSearchRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['nullable' , 'string' , 'sometimes'] ,
+            'job_offer_proposal_id' => [
+                'required' ,
+                Rule::exists('job_offer_proposals' , 'id')
+                    ->whereNull('rejected_at')
+                    ->whereNull('accepted_at') ,
+                ] ,
+            'message' => ['string' , 'required' , 'max:255'] ,
         ];
     }
 }

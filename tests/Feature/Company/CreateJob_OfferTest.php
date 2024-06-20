@@ -59,7 +59,7 @@ class CreateJob_OfferTest extends TestCase
             'skills' => [
                     ['id'=>1 , 'required'=>true] ,
                     ['id'=>2 , 'required'=>true] ,
-                    ['id'=>3 , 'required'=>true] ,
+                    ['id'=>3 , 'required'=>false] ,
                     ['id'=>4 , 'required'=>true] ,
                     ['id'=>5 , 'required'=>true] ,
                 ],
@@ -70,14 +70,11 @@ class CreateJob_OfferTest extends TestCase
             ->postJson('api/company/job_offer/store' ,
             $data) ;
         
-        
-        
         $response->assertStatus(201) ;
 
-        $offer = JobOffer::first() ;
+        $offer = JobOffer::where('description' ,  'hi there i am using whatsapp ,! haaaaaaaaaaa')->first() ;
 
-        
-        $this->assertDatabaseCount('job_offers' , 1) ;
+        $this->assertDatabaseCount('job_offers' , 31) ;
         $this->assertEquals($offer->skills()->count() , 5) ;
     }
 }

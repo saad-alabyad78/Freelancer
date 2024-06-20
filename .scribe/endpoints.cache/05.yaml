@@ -28,7 +28,7 @@ endpoints:
         name: job_offer_id
         description: ''
         required: true
-        example: numquam
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -46,8 +46,58 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      job_offer_id: numquam
+      job_offer_id: qui
       status: pending
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/freelancer/job-offer-proposal/store
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      job_offer_id:
+        name: job_offer_id
+        description: ''
+        required: true
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      message:
+        name: message
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: aknxgwuiqdkauztuvcliojngj
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      job_offer_id: et
+      message: aknxgwuiqdkauztuvcliojngj
     fileParameters: []
     responses: []
     responseFields: []
@@ -117,7 +167,7 @@ endpoints:
           content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '51'
+          x-ratelimit-remaining: '55'
           access-control-allow-origin: '*'
         description: null
         custom: []

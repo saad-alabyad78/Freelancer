@@ -56,6 +56,7 @@ class CreateJobOfferRequest extends FormRequest
 
             'age_required' => ['boolean'] ,
             'military_service_required' => ['boolean'] ,
+            'gender_required' => ['boolean'] ,
         ];
     }
 }

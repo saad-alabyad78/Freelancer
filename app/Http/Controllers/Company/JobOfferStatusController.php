@@ -9,9 +9,22 @@ use App\Constants\JobOfferStatus;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Company\JobOfferResource;
 use App\Http\Requests\Company\ChangeJobOfferStatusRequest;
-
+/**
+ * @group Company Managment
+ **/
 class JobOfferStatusController extends Controller
 {
+    /**
+     * Update Job Offer Status .
+     *
+     * @authenticated
+     *
+     * @apiResource App\Http\Resources\Company\JobOfferResource
+     * @apiResourceModel App\Models\JobOffer with=App\Models\Company,App\Models\Skill,App\Models\JobRole
+     *
+     * @return \App\Http\Resources\Company\JobOfferResource
+     *
+     */
     public function change(ChangeJobOfferStatusRequest $request)
     {
         $id = $request->validated()['job_offer_id'] ;

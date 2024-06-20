@@ -9,7 +9,7 @@ use App\Constants\JobOfferStatus;
 use App\Constants\Job_OfferStatus;
 use Illuminate\Foundation\Http\FormRequest;
 
-class jobOffersForCompanyRequest extends FormRequest
+class JobOffersForCompanyRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

@@ -148,8 +148,8 @@ get first 100 match</a>
                                                     <li class="tocify-item level-2" data-unique="company-managment-GETapi-company--company_id-">
                                 <a href="#company-managment-GETapi-company--company_id-">Show Company .</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="company-managment-POSTapi-company-list-job-offers">
-                                <a href="#company-managment-POSTapi-company-list-job-offers">POST api/company/list-job-offers</a>
+                                                                                <li class="tocify-item level-2" data-unique="company-managment-POSTapi-company-job_offer-list-job-offer">
+                                <a href="#company-managment-POSTapi-company-job_offer-list-job-offer">list job offers (for company owner)</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="company-managment-POSTapi-company-store">
                                 <a href="#company-managment-POSTapi-company-store">Store New Company .</a>
@@ -197,6 +197,9 @@ get first 100 match</a>
                                     <ul id="tocify-subheader-endpoints" class="tocify-subheader">
                                                     <li class="tocify-item level-2" data-unique="endpoints-POSTapi-company-job_offer-status-change">
                                 <a href="#endpoints-POSTapi-company-job_offer-status-change">POST api/company/job_offer/status/change</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-freelancer-job-offer-proposal-store">
+                                <a href="#endpoints-POSTapi-freelancer-job-offer-proposal-store">POST api/freelancer/job-offer-proposal/store</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-test">
                                 <a href="#endpoints-POSTapi-test">POST api/test</a>
@@ -256,7 +259,7 @@ get first 100 match</a>
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: June 16, 2024</li>
+        <li>Last updated: June 20, 2024</li>
     </ul>
 </div>
 
@@ -297,8 +300,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"joaquin94@example.net\",
-    \"password\": \"5g&gt;U^J~!d`3QmO\"
+    \"email\": \"josianne.beatty@example.com\",
+    \"password\": \"ip8[jJx&gt;LPU\"
 }"
 </code></pre></div>
 
@@ -314,8 +317,8 @@ const headers = {
 };
 
 let body = {
-    "email": "joaquin94@example.net",
-    "password": "5g&gt;U^J~!d`3QmO"
+    "email": "josianne.beatty@example.com",
+    "password": "ip8[jJx&gt;LPU"
 };
 
 fetch(url, {
@@ -404,10 +407,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-login"
-               value="joaquin94@example.net"
+               value="josianne.beatty@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>joaquin94@example.net</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>josianne.beatty@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -415,10 +418,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-login"
-               value="5g>U^J~!d`3QmO"
+               value="ip8[jJx>LPU"
                data-component="body">
     <br>
-<p>Example: <code>5g&gt;U^J~!d</code>3QmO`</p>
+<p>Example: <code>ip8[jJx&gt;LPU</code></p>
         </div>
         </form>
 
@@ -590,11 +593,11 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 8,
-        &quot;first_name&quot;: &quot;Kaley&quot;,
-        &quot;last_name&quot;: &quot;Hermiston&quot;,
-        &quot;username&quot;: &quot;kaley-hermiston-8&quot;,
-        &quot;email&quot;: &quot;yzemlak@example.org&quot;,
+        &quot;id&quot;: 10,
+        &quot;first_name&quot;: &quot;Kelsie&quot;,
+        &quot;last_name&quot;: &quot;Romaguera&quot;,
+        &quot;username&quot;: &quot;kelsie-romaguera-10&quot;,
+        &quot;email&quot;: &quot;vgusikowski@example.org&quot;,
         &quot;role&quot;: &quot;&quot;
     }
 }</code>
@@ -699,7 +702,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"token\": \"autem\"
+    \"token\": \"alias\"
 }"
 </code></pre></div>
 
@@ -715,7 +718,7 @@ const headers = {
 };
 
 let body = {
-    "token": "autem"
+    "token": "alias"
 };
 
 fetch(url, {
@@ -737,7 +740,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 55
+x-ratelimit-remaining: 59
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -824,10 +827,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="token"                data-endpoint="GETapi-provider-google"
-               value="autem"
+               value="alias"
                data-component="body">
     <br>
-<p>Example: <code>autem</code></p>
+<p>Example: <code>alias</code></p>
         </div>
         </form>
 
@@ -848,10 +851,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"first_name\": \"awppgricrkt\",
-    \"last_name\": \"vc\",
-    \"email\": \"mayer.delta@example.com\",
-    \"password\": \"1\\/7?Ec\'\"
+    \"first_name\": \"fxyxgizyqwlabjonmallvs\",
+    \"last_name\": \"ze\",
+    \"email\": \"buckridge.sabryna@example.org\",
+    \"password\": \"Zl[?,\\\\o%\\\\#hYv0.Cuh\"
 }"
 </code></pre></div>
 
@@ -867,10 +870,10 @@ const headers = {
 };
 
 let body = {
-    "first_name": "awppgricrkt",
-    "last_name": "vc",
-    "email": "mayer.delta@example.com",
-    "password": "1\/7?Ec'"
+    "first_name": "fxyxgizyqwlabjonmallvs",
+    "last_name": "ze",
+    "email": "buckridge.sabryna@example.org",
+    "password": "Zl[?,\\o%\\#hYv0.Cuh"
 };
 
 fetch(url, {
@@ -959,10 +962,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="first_name"                data-endpoint="POSTapi-otp-register"
-               value="awppgricrkt"
+               value="fxyxgizyqwlabjonmallvs"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>awppgricrkt</code></p>
+<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>fxyxgizyqwlabjonmallvs</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
@@ -970,10 +973,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="last_name"                data-endpoint="POSTapi-otp-register"
-               value="vc"
+               value="ze"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>vc</code></p>
+<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>ze</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -981,10 +984,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-otp-register"
-               value="mayer.delta@example.com"
+               value="buckridge.sabryna@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>mayer.delta@example.com</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>buckridge.sabryna@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -992,10 +995,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-otp-register"
-               value="1/7?Ec'"
+               value="Zl[?,\o%\#hYv0.Cuh"
                data-component="body">
     <br>
-<p>Must be at least 8 characters. Must not be greater than 255 characters. Example: <code>1/7?Ec'</code></p>
+<p>Must be at least 8 characters. Must not be greater than 255 characters. Example: <code>Zl[?,\o%\#hYv0.Cuh</code></p>
         </div>
         </form>
 
@@ -1016,8 +1019,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email_otp_code\": \"porro\",
-    \"email\": \"xbergnaum@example.com\"
+    \"email_otp_code\": \"illo\",
+    \"email\": \"ciara.reynolds@example.com\"
 }"
 </code></pre></div>
 
@@ -1033,8 +1036,8 @@ const headers = {
 };
 
 let body = {
-    "email_otp_code": "porro",
-    "email": "xbergnaum@example.com"
+    "email_otp_code": "illo",
+    "email": "ciara.reynolds@example.com"
 };
 
 fetch(url, {
@@ -1123,10 +1126,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email_otp_code"                data-endpoint="POSTapi-otp-email-verify"
-               value="porro"
+               value="illo"
                data-component="body">
     <br>
-<p>Example: <code>porro</code></p>
+<p>Example: <code>illo</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -1134,10 +1137,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-otp-email-verify"
-               value="xbergnaum@example.com"
+               value="ciara.reynolds@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>xbergnaum@example.com</code></p>
+<p>Must be a valid email address. Example: <code>ciara.reynolds@example.com</code></p>
         </div>
         </form>
 
@@ -1158,7 +1161,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"mterry@example.com\"
+    \"email\": \"luciano51@example.net\"
 }"
 </code></pre></div>
 
@@ -1174,7 +1177,7 @@ const headers = {
 };
 
 let body = {
-    "email": "mterry@example.com"
+    "email": "luciano51@example.net"
 };
 
 fetch(url, {
@@ -1263,10 +1266,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-otp-resend"
-               value="mterry@example.com"
+               value="luciano51@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>mterry@example.com</code></p>
+<p>Must be a valid email address. Example: <code>luciano51@example.net</code></p>
         </div>
         </form>
 
@@ -1287,7 +1290,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"rempel.newell@example.org\"
+    \"email\": \"ryan.demond@example.net\"
 }"
 </code></pre></div>
 
@@ -1303,7 +1306,7 @@ const headers = {
 };
 
 let body = {
-    "email": "rempel.newell@example.org"
+    "email": "ryan.demond@example.net"
 };
 
 fetch(url, {
@@ -1392,10 +1395,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-otp-forgot-password"
-               value="rempel.newell@example.org"
+               value="ryan.demond@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>rempel.newell@example.org</code></p>
+<p>Must be a valid email address. Example: <code>ryan.demond@example.net</code></p>
         </div>
         </form>
 
@@ -1416,9 +1419,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"tavares95@example.com\",
-    \"password\": \"tempore\",
-    \"password_otp_code\": \"corporis\"
+    \"email\": \"prohaska.josefa@example.net\",
+    \"password\": \"rerum\",
+    \"password_otp_code\": \"est\"
 }"
 </code></pre></div>
 
@@ -1434,9 +1437,9 @@ const headers = {
 };
 
 let body = {
-    "email": "tavares95@example.com",
-    "password": "tempore",
-    "password_otp_code": "corporis"
+    "email": "prohaska.josefa@example.net",
+    "password": "rerum",
+    "password_otp_code": "est"
 };
 
 fetch(url, {
@@ -1525,10 +1528,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-otp-reset-password"
-               value="tavares95@example.com"
+               value="prohaska.josefa@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>tavares95@example.com</code></p>
+<p>Must be a valid email address. Example: <code>prohaska.josefa@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -1536,10 +1539,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-otp-reset-password"
-               value="tempore"
+               value="rerum"
                data-component="body">
     <br>
-<p>Example: <code>tempore</code></p>
+<p>Example: <code>rerum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password_otp_code</code></b>&nbsp;&nbsp;
@@ -1547,10 +1550,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password_otp_code"                data-endpoint="POSTapi-otp-reset-password"
-               value="corporis"
+               value="est"
                data-component="body">
     <br>
-<p>Example: <code>corporis</code></p>
+<p>Example: <code>est</code></p>
         </div>
         </form>
 
@@ -1576,7 +1579,7 @@ get first 100 match</h2>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"soluta\"
+    \"name\": \"cum\"
 }"
 </code></pre></div>
 
@@ -1592,7 +1595,7 @@ const headers = {
 };
 
 let body = {
-    "name": "soluta"
+    "name": "cum"
 };
 
 fetch(url, {
@@ -1681,10 +1684,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-category-industry-search"
-               value="soluta"
+               value="cum"
                data-component="body">
     <br>
-<p>Example: <code>soluta</code></p>
+<p>Example: <code>cum</code></p>
         </div>
         </form>
 
@@ -1706,7 +1709,7 @@ get first 100 match</h2>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"praesentium\"
+    \"name\": \"alias\"
 }"
 </code></pre></div>
 
@@ -1722,7 +1725,7 @@ const headers = {
 };
 
 let body = {
-    "name": "praesentium"
+    "name": "alias"
 };
 
 fetch(url, {
@@ -1811,10 +1814,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-category-skill-search"
-               value="praesentium"
+               value="alias"
                data-component="body">
     <br>
-<p>Example: <code>praesentium</code></p>
+<p>Example: <code>alias</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>job_role_id</code></b>&nbsp;&nbsp;
@@ -1954,7 +1957,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"voluptas\"
+    \"name\": \"sunt\"
 }"
 </code></pre></div>
 
@@ -1970,7 +1973,7 @@ const headers = {
 };
 
 let body = {
-    "name": "voluptas"
+    "name": "sunt"
 };
 
 fetch(url, {
@@ -2074,13 +2077,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
- &nbsp;
+<i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-category-job_role-search"
-               value="voluptas"
+               value="sunt"
                data-component="body">
     <br>
-<p>Example: <code>voluptas</code></p>
+<p>Example: <code>sunt</code></p>
         </div>
         </form>
 
@@ -2209,14 +2212,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/client/10" \
+    --get "http://localhost/api/client/8" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/client/10"
+    "http://localhost/api/client/8"
 );
 
 const headers = {
@@ -2330,10 +2333,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="client_id"                data-endpoint="GETapi-client--client_id-"
-               value="10"
+               value="8"
                data-component="url">
     <br>
-<p>The ID of the client. Example: <code>10</code></p>
+<p>The ID of the client. Example: <code>8</code></p>
             </div>
                     </form>
 
@@ -2356,9 +2359,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"date_of_birth\": \"1995-12-25\",
+    \"date_of_birth\": \"2000-08-14\",
     \"city\": \"دمشق\",
-    \"gender\": \"female\"
+    \"gender\": \"male\"
 }"
 </code></pre></div>
 
@@ -2375,9 +2378,9 @@ const headers = {
 };
 
 let body = {
-    "date_of_birth": "1995-12-25",
+    "date_of_birth": "2000-08-14",
     "city": "دمشق",
-    "gender": "female"
+    "gender": "male"
 };
 
 fetch(url, {
@@ -2520,10 +2523,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date_of_birth"                data-endpoint="POSTapi-client-store"
-               value="1995-12-25"
+               value="2000-08-14"
                data-component="body">
     <br>
-<p>Must be a valid date. Must be a date before or equal to <code>2008-06-16</code>. Example: <code>1995-12-25</code></p>
+<p>Must be a valid date. Must be a date before or equal to <code>2008-06-20</code>. Example: <code>2000-08-14</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
@@ -2542,10 +2545,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="gender"                data-endpoint="POSTapi-client-store"
-               value="female"
+               value="male"
                data-component="body">
     <br>
-<p>Example: <code>female</code></p>
+<p>Example: <code>male</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>male</code></li> <li><code>female</code></li></ul>
         </div>
@@ -2570,9 +2573,9 @@ Must be one of:
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"date_of_birth\": \"1998-03-10\",
+    \"date_of_birth\": \"2001-09-20\",
     \"city\": \"دمشق\",
-    \"gender\": \"male\"
+    \"gender\": \"female\"
 }"
 </code></pre></div>
 
@@ -2589,9 +2592,9 @@ const headers = {
 };
 
 let body = {
-    "date_of_birth": "1998-03-10",
+    "date_of_birth": "2001-09-20",
     "city": "دمشق",
-    "gender": "male"
+    "gender": "female"
 };
 
 fetch(url, {
@@ -2734,10 +2737,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="date_of_birth"                data-endpoint="PUTapi-client"
-               value="1998-03-10"
+               value="2001-09-20"
                data-component="body">
     <br>
-<p>Must be a valid date. Must be a date before or equal to <code>2008-06-16</code>. Example: <code>1998-03-10</code></p>
+<p>Must be a valid date. Must be a date before or equal to <code>2008-06-20</code>. Example: <code>2001-09-20</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
@@ -2756,10 +2759,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="gender"                data-endpoint="PUTapi-client"
-               value="male"
+               value="female"
                data-component="body">
     <br>
-<p>Example: <code>male</code></p>
+<p>Example: <code>female</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>male</code></li> <li><code>female</code></li></ul>
         </div>
@@ -2782,14 +2785,14 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/company/15" \
+    --get "http://localhost/api/company/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/company/15"
+    "http://localhost/api/company/1"
 );
 
 const headers = {
@@ -2906,87 +2909,189 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="company_id"                data-endpoint="GETapi-company--company_id-"
-               value="15"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the company. Example: <code>15</code></p>
+<p>The ID of the company. Example: <code>1</code></p>
             </div>
                     </form>
 
-                    <h2 id="company-managment-POSTapi-company-list-job-offers">POST api/company/list-job-offers</h2>
+                    <h2 id="company-managment-POSTapi-company-job_offer-list-job-offer">list job offers (for company owner)</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
+<p>return all job offers for freelancers screan.</p>
 
-
-<span id="example-requests-POSTapi-company-list-job-offers">
+<span id="example-requests-POSTapi-company-job_offer-list-job-offer">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/company/list-job-offers" \
+    "http://localhost/api/company/job_offer/list-job-offer" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --data "{
+    \"location_type\": \"remotly\",
+    \"attendence_type\": \"full-time\",
+    \"status\": \"active\",
+    \"job_role_id\": 12,
+    \"gender\": \"female\",
+    \"industry_name\": \"incidunt\"
+}"
+</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/company/list-job-offers"
+    "http://localhost/api/company/job_offer/list-job-offer"
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
+};
+
+let body = {
+    "location_type": "remotly",
+    "attendence_type": "full-time",
+    "status": "active",
+    "job_role_id": 12,
+    "gender": "female",
+    "industry_name": "incidunt"
 };
 
 fetch(url, {
     method: "POST",
     headers,
+    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
-<span id="example-responses-POSTapi-company-list-job-offers">
-</span>
-<span id="execution-results-POSTapi-company-list-job-offers" hidden>
+<span id="example-responses-POSTapi-company-job_offer-list-job-offer">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: null,
+            &quot;description&quot;: null,
+            &quot;status&quot;: null,
+            &quot;location_type&quot;: null,
+            &quot;attendence_type&quot;: null,
+            &quot;max_sallary&quot;: null,
+            &quot;min_salary&quot;: null,
+            &quot;transportation&quot;: null,
+            &quot;health_insurance&quot;: null,
+            &quot;military_service&quot;: null,
+            &quot;max_age&quot;: null,
+            &quot;min_age&quot;: null,
+            &quot;gender&quot;: null,
+            &quot;industry_name&quot;: null,
+            &quot;military_service_required&quot;: null,
+            &quot;gender_required&quot;: null,
+            &quot;age_required&quot;: null
+        },
+        {
+            &quot;id&quot;: null,
+            &quot;description&quot;: null,
+            &quot;status&quot;: null,
+            &quot;location_type&quot;: null,
+            &quot;attendence_type&quot;: null,
+            &quot;max_sallary&quot;: null,
+            &quot;min_salary&quot;: null,
+            &quot;transportation&quot;: null,
+            &quot;health_insurance&quot;: null,
+            &quot;military_service&quot;: null,
+            &quot;max_age&quot;: null,
+            &quot;min_age&quot;: null,
+            &quot;gender&quot;: null,
+            &quot;industry_name&quot;: null,
+            &quot;military_service_required&quot;: null,
+            &quot;gender_required&quot;: null,
+            &quot;age_required&quot;: null
+        }
+    ],
+    &quot;links&quot;: {
+        &quot;first&quot;: &quot;/?page=1&quot;,
+        &quot;last&quot;: &quot;/?page=1&quot;,
+        &quot;prev&quot;: null,
+        &quot;next&quot;: null
+    },
+    &quot;meta&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;from&quot;: 1,
+        &quot;last_page&quot;: 1,
+        &quot;links&quot;: [
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;/?page=1&quot;,
+                &quot;label&quot;: &quot;1&quot;,
+                &quot;active&quot;: true
+            },
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                &quot;active&quot;: false
+            }
+        ],
+        &quot;path&quot;: &quot;/&quot;,
+        &quot;per_page&quot;: 20,
+        &quot;to&quot;: 2,
+        &quot;total&quot;: 2
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-company-job_offer-list-job-offer" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-POSTapi-company-list-job-offers"></span>:
+                id="execution-response-status-POSTapi-company-job_offer-list-job-offer"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-company-list-job-offers"
+    <pre class="json"><code id="execution-response-content-POSTapi-company-job_offer-list-job-offer"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-POSTapi-company-list-job-offers" hidden>
+<span id="execution-error-POSTapi-company-job_offer-list-job-offer" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-company-list-job-offers">
+    <pre><code id="execution-error-message-POSTapi-company-job_offer-list-job-offer">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-POSTapi-company-list-job-offers" data-method="POST"
-      data-path="api/company/list-job-offers"
-      data-authed="0"
+<form id="form-POSTapi-company-job_offer-list-job-offer" data-method="POST"
+      data-path="api/company/job_offer/list-job-offer"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-company-list-job-offers', this);">
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-company-job_offer-list-job-offer', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-company-list-job-offers"
-                    onclick="tryItOut('POSTapi-company-list-job-offers');">Try it out ⚡
+                    id="btn-tryout-POSTapi-company-job_offer-list-job-offer"
+                    onclick="tryItOut('POSTapi-company-job_offer-list-job-offer');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-company-list-job-offers"
-                    onclick="cancelTryOut('POSTapi-company-list-job-offers');" hidden>Cancel 🛑
+                    id="btn-canceltryout-POSTapi-company-job_offer-list-job-offer"
+                    onclick="cancelTryOut('POSTapi-company-job_offer-list-job-offer');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-company-list-job-offers"
+                    id="btn-executetryout-POSTapi-company-job_offer-list-job-offer"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -2994,15 +3099,26 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-black">POST</small>
-            <b><code>api/company/list-job-offers</code></b>
+            <b><code>api/company/job_offer/list-job-offer</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-company-job_offer-list-job-offer"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-company-list-job-offers"
+                              name="Content-Type"                data-endpoint="POSTapi-company-job_offer-list-job-offer"
                value="application/json"
                data-component="header">
     <br>
@@ -3013,13 +3129,99 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-company-list-job-offers"
+                              name="Accept"                data-endpoint="POSTapi-company-job_offer-list-job-offer"
                value="application/json"
                data-component="header">
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                        </form>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>company_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="company_id"                data-endpoint="POSTapi-company-job_offer-list-job-offer"
+               value=""
+               data-component="body">
+    <br>
+
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>location_type</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="location_type"                data-endpoint="POSTapi-company-job_offer-list-job-offer"
+               value="remotly"
+               data-component="body">
+    <br>
+<p>Example: <code>remotly</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>on-site</code></li> <li><code>remotly</code></li></ul>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>attendence_type</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="attendence_type"                data-endpoint="POSTapi-company-job_offer-list-job-offer"
+               value="full-time"
+               data-component="body">
+    <br>
+<p>Example: <code>full-time</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>full-time</code></li> <li><code>part-time</code></li> <li><code>intern</code></li></ul>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="POSTapi-company-job_offer-list-job-offer"
+               value="active"
+               data-component="body">
+    <br>
+<p>Example: <code>active</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>active</code></li> <li><code>cloused</code></li></ul>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>job_role_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="job_role_id"                data-endpoint="POSTapi-company-job_offer-list-job-offer"
+               value="12"
+               data-component="body">
+    <br>
+<p>Example: <code>12</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>gender</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="gender"                data-endpoint="POSTapi-company-job_offer-list-job-offer"
+               value="female"
+               data-component="body">
+    <br>
+<p>Example: <code>female</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>male</code></li> <li><code>female</code></li></ul>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>industry_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="industry_name"                data-endpoint="POSTapi-company-job_offer-list-job-offer"
+               value="incidunt"
+               data-component="body">
+    <br>
+<p>Example: <code>incidunt</code></p>
+        </div>
+        </form>
 
                     <h2 id="company-managment-POSTapi-company-store">Store New Company .</h2>
 
@@ -3040,15 +3242,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"industry_name\": \"eos\",
-    \"name\": \"mp\",
-    \"description\": \"Accusantium placeat quia quae qui.\",
-    \"size\": \"odio\",
+    \"industry_name\": \"autem\",
+    \"name\": \"ykcefz\",
+    \"description\": \"Qui voluptate mollitia blanditiis et dolore sequi molestiae.\",
+    \"size\": \"et\",
     \"city\": \"دمشق\",
-    \"region\": \"dbxrlsh\",
-    \"street_address\": \"aelxhxay\",
+    \"region\": \"svoxs\",
+    \"street_address\": \"tbpukygjrbipnwt\",
     \"gallery_images_ids\": [
-        \"lbrjgqzimqrehvq\"
+        \"ifqbfqk\"
     ]
 }"
 </code></pre></div>
@@ -3066,15 +3268,15 @@ const headers = {
 };
 
 let body = {
-    "industry_name": "eos",
-    "name": "mp",
-    "description": "Accusantium placeat quia quae qui.",
-    "size": "odio",
+    "industry_name": "autem",
+    "name": "ykcefz",
+    "description": "Qui voluptate mollitia blanditiis et dolore sequi molestiae.",
+    "size": "et",
     "city": "دمشق",
-    "region": "dbxrlsh",
-    "street_address": "aelxhxay",
+    "region": "svoxs",
+    "street_address": "tbpukygjrbipnwt",
     "gallery_images_ids": [
-        "lbrjgqzimqrehvq"
+        "ifqbfqk"
     ]
 };
 
@@ -3199,10 +3401,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="industry_name"                data-endpoint="POSTapi-company-store"
-               value="eos"
+               value="autem"
                data-component="body">
     <br>
-<p>Example: <code>eos</code></p>
+<p>Example: <code>autem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>profile_image_id</code></b>&nbsp;&nbsp;
@@ -3232,10 +3434,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-company-store"
-               value="mp"
+               value="ykcefz"
                data-component="body">
     <br>
-<p>name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters. Example: <code>mp</code></p>
+<p>name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters. Example: <code>ykcefz</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -3243,10 +3445,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-company-store"
-               value="Accusantium placeat quia quae qui."
+               value="Qui voluptate mollitia blanditiis et dolore sequi molestiae."
                data-component="body">
     <br>
-<p>Must not be greater than 4000 characters. Example: <code>Accusantium placeat quia quae qui.</code></p>
+<p>Must not be greater than 4000 characters. Example: <code>Qui voluptate mollitia blanditiis et dolore sequi molestiae.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>size</code></b>&nbsp;&nbsp;
@@ -3254,10 +3456,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="size"                data-endpoint="POSTapi-company-store"
-               value="odio"
+               value="et"
                data-component="body">
     <br>
-<p>Example: <code>odio</code></p>
+<p>Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
@@ -3276,10 +3478,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="region"                data-endpoint="POSTapi-company-store"
-               value="dbxrlsh"
+               value="svoxs"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 20 characters. Example: <code>dbxrlsh</code></p>
+<p>Must be at least 3 characters. Must not be greater than 20 characters. Example: <code>svoxs</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>street_address</code></b>&nbsp;&nbsp;
@@ -3287,10 +3489,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="street_address"                data-endpoint="POSTapi-company-store"
-               value="aelxhxay"
+               value="tbpukygjrbipnwt"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 30 characters. Example: <code>aelxhxay</code></p>
+<p>Must be at least 3 characters. Must not be greater than 30 characters. Example: <code>tbpukygjrbipnwt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>gallery_image_ids</code></b>&nbsp;&nbsp;
@@ -3337,15 +3539,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"aigpfvghjtzbgddih\",
-    \"description\": \"Molestiae sed sit ut harum nobis quibusdam dolores sed.\",
-    \"size\": \"lvs\",
+    \"name\": \"rzqciitqk\",
+    \"description\": \"Rerum harum quis sapiente quidem illo alias quia nam.\",
+    \"size\": \"ycpbxhuklicoarkpgwz\",
     \"city\": \"دمشق\",
-    \"region\": \"dpfnf\",
-    \"street_address\": \"swsr\",
+    \"region\": \"buhdwtekjl\",
+    \"street_address\": \"ywhztshxfacpjsratkehy\",
     \"gallery_image_ids\": [
         {
-            \"id\": \"dolorem\"
+            \"id\": \"adipisci\"
         }
     ]
 }"
@@ -3364,15 +3566,15 @@ const headers = {
 };
 
 let body = {
-    "name": "aigpfvghjtzbgddih",
-    "description": "Molestiae sed sit ut harum nobis quibusdam dolores sed.",
-    "size": "lvs",
+    "name": "rzqciitqk",
+    "description": "Rerum harum quis sapiente quidem illo alias quia nam.",
+    "size": "ycpbxhuklicoarkpgwz",
     "city": "دمشق",
-    "region": "dpfnf",
-    "street_address": "swsr",
+    "region": "buhdwtekjl",
+    "street_address": "ywhztshxfacpjsratkehy",
     "gallery_image_ids": [
         {
-            "id": "dolorem"
+            "id": "adipisci"
         }
     ]
 };
@@ -3520,10 +3722,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-company"
-               value="aigpfvghjtzbgddih"
+               value="rzqciitqk"
                data-component="body">
     <br>
-<p>name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters. Example: <code>aigpfvghjtzbgddih</code></p>
+<p>name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters. Example: <code>rzqciitqk</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -3531,10 +3733,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-company"
-               value="Molestiae sed sit ut harum nobis quibusdam dolores sed."
+               value="Rerum harum quis sapiente quidem illo alias quia nam."
                data-component="body">
     <br>
-<p>Must not be greater than 4000 characters. Example: <code>Molestiae sed sit ut harum nobis quibusdam dolores sed.</code></p>
+<p>Must not be greater than 4000 characters. Example: <code>Rerum harum quis sapiente quidem illo alias quia nam.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>size</code></b>&nbsp;&nbsp;
@@ -3542,10 +3744,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="size"                data-endpoint="PUTapi-company"
-               value="lvs"
+               value="ycpbxhuklicoarkpgwz"
                data-component="body">
     <br>
-<p>Must be at least 5 characters. Must not be greater than 20 characters. Example: <code>lvs</code></p>
+<p>Must be at least 5 characters. Must not be greater than 20 characters. Example: <code>ycpbxhuklicoarkpgwz</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
@@ -3564,10 +3766,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="region"                data-endpoint="PUTapi-company"
-               value="dpfnf"
+               value="buhdwtekjl"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 20 characters. Example: <code>dpfnf</code></p>
+<p>Must be at least 3 characters. Must not be greater than 20 characters. Example: <code>buhdwtekjl</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>street_address</code></b>&nbsp;&nbsp;
@@ -3575,10 +3777,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="street_address"                data-endpoint="PUTapi-company"
-               value="swsr"
+               value="ywhztshxfacpjsratkehy"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 30 characters. Example: <code>swsr</code></p>
+<p>Must be at least 3 characters. Must not be greater than 30 characters. Example: <code>ywhztshxfacpjsratkehy</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -3595,10 +3797,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="gallery_image_ids.0.id"                data-endpoint="PUTapi-company"
-               value="dolorem"
+               value="adipisci"
                data-component="body">
     <br>
-<p>Example: <code>dolorem</code></p>
+<p>Example: <code>adipisci</code></p>
                     </div>
                                     </details>
         </div>
@@ -3623,7 +3825,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"password\": \"[O`9SDF\"
+    \"password\": \"Qie`XG6\"
 }"
 </code></pre></div>
 
@@ -3640,7 +3842,7 @@ const headers = {
 };
 
 let body = {
-    "password": "[O`9SDF"
+    "password": "Qie`XG6"
 };
 
 fetch(url, {
@@ -3740,10 +3942,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="DELETEapi-company"
-               value="[O`9SDF"
+               value="Qie`XG6"
                data-component="body">
     <br>
-<p>Example: <code>[O</code>9SDF`</p>
+<p>Example: <code>Qie</code>XG6`</p>
         </div>
         </form>
 
@@ -3766,27 +3968,28 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"industry_name\": \"est\",
-    \"job_role_id\": \"hic\",
-    \"location_type\": \"remotly\",
+    \"industry_name\": \"impedit\",
+    \"job_role_id\": \"dolor\",
+    \"location_type\": \"on-site\",
     \"attendence_type\": \"intern\",
-    \"max_salary\": 9,
-    \"min_salary\": 12,
-    \"max_age\": 15,
-    \"min_age\": 15,
-    \"description\": \"Consequatur quae est amet harum sapiente alias qui.\",
-    \"transportation\": true,
+    \"max_salary\": 19,
+    \"min_salary\": 19,
+    \"max_age\": 6,
+    \"min_age\": 24,
+    \"description\": \"Dolore et ab odit vitae.\",
+    \"transportation\": false,
     \"health_insurance\": false,
     \"military_service\": false,
-    \"gender\": \"female\",
+    \"gender\": \"male\",
     \"skills\": [
         {
-            \"id\": \"accusantium\",
-            \"required\": false
+            \"id\": \"dignissimos\",
+            \"required\": true
         }
     ],
-    \"age_required\": true,
-    \"military_service_required\": false
+    \"age_required\": false,
+    \"military_service_required\": true,
+    \"gender_required\": false
 }"
 </code></pre></div>
 
@@ -3803,27 +4006,28 @@ const headers = {
 };
 
 let body = {
-    "industry_name": "est",
-    "job_role_id": "hic",
-    "location_type": "remotly",
+    "industry_name": "impedit",
+    "job_role_id": "dolor",
+    "location_type": "on-site",
     "attendence_type": "intern",
-    "max_salary": 9,
-    "min_salary": 12,
-    "max_age": 15,
-    "min_age": 15,
-    "description": "Consequatur quae est amet harum sapiente alias qui.",
-    "transportation": true,
+    "max_salary": 19,
+    "min_salary": 19,
+    "max_age": 6,
+    "min_age": 24,
+    "description": "Dolore et ab odit vitae.",
+    "transportation": false,
     "health_insurance": false,
     "military_service": false,
-    "gender": "female",
+    "gender": "male",
     "skills": [
         {
-            "id": "accusantium",
-            "required": false
+            "id": "dignissimos",
+            "required": true
         }
     ],
-    "age_required": true,
-    "military_service_required": false
+    "age_required": false,
+    "military_service_required": true,
+    "gender_required": false
 };
 
 fetch(url, {
@@ -3855,7 +4059,10 @@ fetch(url, {
         &quot;max_age&quot;: null,
         &quot;min_age&quot;: null,
         &quot;gender&quot;: null,
-        &quot;industry_name&quot;: null
+        &quot;industry_name&quot;: null,
+        &quot;military_service_required&quot;: null,
+        &quot;gender_required&quot;: null,
+        &quot;age_required&quot;: null
     }
 }</code>
  </pre>
@@ -3947,10 +4154,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="industry_name"                data-endpoint="POSTapi-company-job_offer-store"
-               value="est"
+               value="impedit"
                data-component="body">
     <br>
-<p>Example: <code>est</code></p>
+<p>Example: <code>impedit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>job_role_id</code></b>&nbsp;&nbsp;
@@ -3958,10 +4165,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="job_role_id"                data-endpoint="POSTapi-company-job_offer-store"
-               value="hic"
+               value="dolor"
                data-component="body">
     <br>
-<p>Example: <code>hic</code></p>
+<p>Example: <code>dolor</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>location_type</code></b>&nbsp;&nbsp;
@@ -3969,10 +4176,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="location_type"                data-endpoint="POSTapi-company-job_offer-store"
-               value="remotly"
+               value="on-site"
                data-component="body">
     <br>
-<p>Example: <code>remotly</code></p>
+<p>Example: <code>on-site</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>on-site</code></li> <li><code>remotly</code></li></ul>
         </div>
@@ -3995,10 +4202,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="max_salary"                data-endpoint="POSTapi-company-job_offer-store"
-               value="9"
+               value="19"
                data-component="body">
     <br>
-<p>fields must be either together or none Must be at least 0. Must not be greater than 100000000. Example: <code>9</code></p>
+<p>fields must be either together or none Must be at least 0. Must not be greater than 100000000. Example: <code>19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>min_salary</code></b>&nbsp;&nbsp;
@@ -4006,10 +4213,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="min_salary"                data-endpoint="POSTapi-company-job_offer-store"
-               value="12"
+               value="19"
                data-component="body">
     <br>
-<p>fields must be either together or none Must be at least 0. Must not be greater than 100000000. Example: <code>12</code></p>
+<p>fields must be either together or none Must be at least 0. Must not be greater than 100000000. Example: <code>19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>max_age</code></b>&nbsp;&nbsp;
@@ -4017,10 +4224,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="max_age"                data-endpoint="POSTapi-company-job_offer-store"
-               value="15"
+               value="6"
                data-component="body">
     <br>
-<p>fields must be either together or none Must be at least 18. Must not be greater than 60. Example: <code>15</code></p>
+<p>fields must be either together or none Must be at least 18. Must not be greater than 60. Example: <code>6</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>min_age</code></b>&nbsp;&nbsp;
@@ -4028,10 +4235,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="min_age"                data-endpoint="POSTapi-company-job_offer-store"
-               value="15"
+               value="24"
                data-component="body">
     <br>
-<p>fields must be either together or none Must be at least 18. Must not be greater than 60. Example: <code>15</code></p>
+<p>fields must be either together or none Must be at least 18. Must not be greater than 60. Example: <code>24</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -4039,10 +4246,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-company-job_offer-store"
-               value="Consequatur quae est amet harum sapiente alias qui."
+               value="Dolore et ab odit vitae."
                data-component="body">
     <br>
-<p>Must be at least 40 characters. Must not be greater than 40000 characters. Example: <code>Consequatur quae est amet harum sapiente alias qui.</code></p>
+<p>Must be at least 40 characters. Must not be greater than 40000 characters. Example: <code>Dolore et ab odit vitae.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>transportation</code></b>&nbsp;&nbsp;
@@ -4063,7 +4270,7 @@ Must be one of:
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>health_insurance</code></b>&nbsp;&nbsp;
@@ -4113,10 +4320,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="gender"                data-endpoint="POSTapi-company-job_offer-store"
-               value="female"
+               value="male"
                data-component="body">
     <br>
-<p>Example: <code>female</code></p>
+<p>Example: <code>male</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>male</code></li> <li><code>female</code></li></ul>
         </div>
@@ -4135,10 +4342,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="skills.0.id"                data-endpoint="POSTapi-company-job_offer-store"
-               value="accusantium"
+               value="dignissimos"
                data-component="body">
     <br>
-<p>Example: <code>accusantium</code></p>
+<p>Example: <code>dignissimos</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>required</code></b>&nbsp;&nbsp;
@@ -4159,7 +4366,7 @@ Must be one of:
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>false</code></p>
+<p>Example: <code>true</code></p>
                     </div>
                                     </details>
         </div>
@@ -4182,7 +4389,7 @@ Must be one of:
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>military_service_required</code></b>&nbsp;&nbsp;
@@ -4197,6 +4404,27 @@ Must be one of:
         </label>
         <label data-endpoint="POSTapi-company-job_offer-store" style="display: none">
             <input type="radio" name="military_service_required"
+                   value="false"
+                   data-endpoint="POSTapi-company-job_offer-store"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Example: <code>true</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>gender_required</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+                <label data-endpoint="POSTapi-company-job_offer-store" style="display: none">
+            <input type="radio" name="gender_required"
+                   value="true"
+                   data-endpoint="POSTapi-company-job_offer-store"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="POSTapi-company-job_offer-store" style="display: none">
+            <input type="radio" name="gender_required"
                    value="false"
                    data-endpoint="POSTapi-company-job_offer-store"
                    data-component="body"             >
@@ -4226,15 +4454,15 @@ Must be one of:
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"job_offer_id\": \"optio\",
-    \"industry_name\": \"nihil\",
-    \"location_type\": \"on-site\",
+    \"job_offer_id\": \"cum\",
+    \"industry_name\": \"vero\",
+    \"location_type\": \"remotly\",
     \"attendence_type\": \"full-time\",
-    \"max_salary\": 15,
-    \"min_salary\": 21,
-    \"max_age\": 23,
-    \"min_age\": 22,
-    \"description\": \"Adipisci similique consequatur ut sunt.\",
+    \"max_salary\": 22,
+    \"min_salary\": 17,
+    \"max_age\": 12,
+    \"min_age\": 2,
+    \"description\": \"Est quidem officia adipisci ducimus accusantium distinctio laudantium.\",
     \"transportation\": false,
     \"health_insurance\": true,
     \"military_service\": false,
@@ -4255,15 +4483,15 @@ const headers = {
 };
 
 let body = {
-    "job_offer_id": "optio",
-    "industry_name": "nihil",
-    "location_type": "on-site",
+    "job_offer_id": "cum",
+    "industry_name": "vero",
+    "location_type": "remotly",
     "attendence_type": "full-time",
-    "max_salary": 15,
-    "min_salary": 21,
-    "max_age": 23,
-    "min_age": 22,
-    "description": "Adipisci similique consequatur ut sunt.",
+    "max_salary": 22,
+    "min_salary": 17,
+    "max_age": 12,
+    "min_age": 2,
+    "description": "Est quidem officia adipisci ducimus accusantium distinctio laudantium.",
     "transportation": false,
     "health_insurance": true,
     "military_service": false,
@@ -4299,7 +4527,10 @@ fetch(url, {
         &quot;max_age&quot;: null,
         &quot;min_age&quot;: null,
         &quot;gender&quot;: null,
-        &quot;industry_name&quot;: null
+        &quot;industry_name&quot;: null,
+        &quot;military_service_required&quot;: null,
+        &quot;gender_required&quot;: null,
+        &quot;age_required&quot;: null
     }
 }</code>
  </pre>
@@ -4391,10 +4622,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="job_offer_id"                data-endpoint="PUTapi-company-job_offer"
-               value="optio"
+               value="cum"
                data-component="body">
     <br>
-<p>Example: <code>optio</code></p>
+<p>Example: <code>cum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>industry_name</code></b>&nbsp;&nbsp;
@@ -4402,10 +4633,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="industry_name"                data-endpoint="PUTapi-company-job_offer"
-               value="nihil"
+               value="vero"
                data-component="body">
     <br>
-<p>Example: <code>nihil</code></p>
+<p>Example: <code>vero</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>job_role_id</code></b>&nbsp;&nbsp;
@@ -4424,10 +4655,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="location_type"                data-endpoint="PUTapi-company-job_offer"
-               value="on-site"
+               value="remotly"
                data-component="body">
     <br>
-<p>Example: <code>on-site</code></p>
+<p>Example: <code>remotly</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>on-site</code></li> <li><code>remotly</code></li></ul>
         </div>
@@ -4450,10 +4681,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="max_salary"                data-endpoint="PUTapi-company-job_offer"
-               value="15"
+               value="22"
                data-component="body">
     <br>
-<p>fields must be either together or none Must be at least 0. Must not be greater than 100000000. Example: <code>15</code></p>
+<p>fields must be either together or none Must be at least 0. Must not be greater than 100000000. Example: <code>22</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>min_salary</code></b>&nbsp;&nbsp;
@@ -4461,10 +4692,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="min_salary"                data-endpoint="PUTapi-company-job_offer"
-               value="21"
+               value="17"
                data-component="body">
     <br>
-<p>fields must be either together or none Must be at least 0. Must not be greater than 100000000. Example: <code>21</code></p>
+<p>fields must be either together or none Must be at least 0. Must not be greater than 100000000. Example: <code>17</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>max_age</code></b>&nbsp;&nbsp;
@@ -4472,10 +4703,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="max_age"                data-endpoint="PUTapi-company-job_offer"
-               value="23"
+               value="12"
                data-component="body">
     <br>
-<p>fields must be either together or none Must be at least 18. Must not be greater than 60. Example: <code>23</code></p>
+<p>fields must be either together or none Must be at least 18. Must not be greater than 60. Example: <code>12</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>min_age</code></b>&nbsp;&nbsp;
@@ -4483,10 +4714,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="min_age"                data-endpoint="PUTapi-company-job_offer"
-               value="22"
+               value="2"
                data-component="body">
     <br>
-<p>fields must be either together or none Must be at least 18. Must not be greater than 60. Example: <code>22</code></p>
+<p>fields must be either together or none Must be at least 18. Must not be greater than 60. Example: <code>2</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -4494,10 +4725,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-company-job_offer"
-               value="Adipisci similique consequatur ut sunt."
+               value="Est quidem officia adipisci ducimus accusantium distinctio laudantium."
                data-component="body">
     <br>
-<p>Must be at least 40 characters. Must not be greater than 40000 characters. Example: <code>Adipisci similique consequatur ut sunt.</code></p>
+<p>Must be at least 40 characters. Must not be greater than 40000 characters. Example: <code>Est quidem officia adipisci ducimus accusantium distinctio laudantium.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>transportation</code></b>&nbsp;&nbsp;
@@ -4609,7 +4840,7 @@ Must be one of:
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"job_offer_id\": \"minima\"
+    \"job_offer_id\": \"quia\"
 }"
 </code></pre></div>
 
@@ -4626,7 +4857,7 @@ const headers = {
 };
 
 let body = {
-    "job_offer_id": "minima"
+    "job_offer_id": "quia"
 };
 
 fetch(url, {
@@ -4726,10 +4957,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="job_offer_id"                data-endpoint="DELETEapi-company-job_offer"
-               value="minima"
+               value="quia"
                data-component="body">
     <br>
-<p>Example: <code>minima</code></p>
+<p>Example: <code>quia</code></p>
         </div>
         </form>
 
@@ -4753,9 +4984,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --data "{
     \"location_type\": \"on-site\",
-    \"attendence_type\": \"part-time\",
+    \"attendence_type\": \"full-time\",
     \"status\": \"active\",
-    \"job_role_id\": 13
+    \"job_role_id\": 18
 }"
 </code></pre></div>
 
@@ -4773,9 +5004,9 @@ const headers = {
 
 let body = {
     "location_type": "on-site",
-    "attendence_type": "part-time",
+    "attendence_type": "full-time",
     "status": "active",
-    "job_role_id": 13
+    "job_role_id": 18
 };
 
 fetch(url, {
@@ -4808,7 +5039,10 @@ fetch(url, {
             &quot;max_age&quot;: null,
             &quot;min_age&quot;: null,
             &quot;gender&quot;: null,
-            &quot;industry_name&quot;: null
+            &quot;industry_name&quot;: null,
+            &quot;military_service_required&quot;: null,
+            &quot;gender_required&quot;: null,
+            &quot;age_required&quot;: null
         },
         {
             &quot;id&quot;: null,
@@ -4824,7 +5058,10 @@ fetch(url, {
             &quot;max_age&quot;: null,
             &quot;min_age&quot;: null,
             &quot;gender&quot;: null,
-            &quot;industry_name&quot;: null
+            &quot;industry_name&quot;: null,
+            &quot;military_service_required&quot;: null,
+            &quot;gender_required&quot;: null,
+            &quot;age_required&quot;: null
         }
     ],
     &quot;links&quot;: {
@@ -4962,10 +5199,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="attendence_type"                data-endpoint="POSTapi-company-job_offer-my-job-offers"
-               value="part-time"
+               value="full-time"
                data-component="body">
     <br>
-<p>Example: <code>part-time</code></p>
+<p>Example: <code>full-time</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>full-time</code></li> <li><code>part-time</code></li> <li><code>intern</code></li></ul>
         </div>
@@ -4988,10 +5225,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="job_role_id"                data-endpoint="POSTapi-company-job_offer-my-job-offers"
-               value="13"
+               value="18"
                data-component="body">
     <br>
-<p>Example: <code>13</code></p>
+<p>Example: <code>18</code></p>
         </div>
         </form>
 
@@ -5012,14 +5249,14 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/command/totam" \
+    --get "http://localhost/api/command/rerum" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/command/totam"
+    "http://localhost/api/command/rerum"
 );
 
 const headers = {
@@ -5045,12 +5282,12 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 54
+x-ratelimit-remaining: 58
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;The command \&quot;totam\&quot; does not exist.&quot;,
+    &quot;message&quot;: &quot;The command \&quot;rerum\&quot; does not exist.&quot;,
     &quot;exception&quot;: &quot;Symfony\\Component\\Console\\Exception\\CommandNotFoundException&quot;,
     &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php&quot;,
     &quot;line&quot;: 159,
@@ -5611,10 +5848,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="command_string"                data-endpoint="GETapi-command--command_string-"
-               value="totam"
+               value="rerum"
                data-component="url">
     <br>
-<p>Example: <code>totam</code></p>
+<p>Example: <code>rerum</code></p>
             </div>
                     </form>
 
@@ -5664,38 +5901,38 @@ fetch(url, {
             <pre><code class="language-http">content-type: text/html; charset=UTF-8
 cache-control: no-cache, private
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 53
+x-ratelimit-remaining: 57
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">
-  Dropping all tables ................................................................. 114ms DONE
+  Dropping all tables .................................................................................................................... 51ms DONE
 
    INFO  Preparing database.  
 
-  Creating migration table ............................................................. 90ms DONE
+  Creating migration table .............................................................................................................. 100ms DONE
 
    INFO  Running migrations.  
 
-  2003_05_13_221258_create_jobs_table ................................................. 294ms DONE
-  2004_02_05_163918_create_job_roles_table ............................................ 169ms DONE
-  2004_05_03_141844_create_industries_table ............................................ 74ms DONE
-  2004_05_05_163837_create_skills_table ............................................... 131ms DONE
-  2004_05_05_164036_create_skillables_table ............................................ 68ms DONE
-  2014_10_12_000000_create_users_table ................................................ 238ms DONE
-  2014_10_12_100000_create_password_reset_tokens_table ................................ 151ms DONE
-  2019_08_19_000000_create_failed_jobs_table .......................................... 198ms DONE
-  2019_12_14_000001_create_personal_access_tokens_table ............................... 240ms DONE
-  2024_03_25_042214_create_companies_table ............................................ 191ms DONE
-  2024_03_25_042227_create_clients_table .............................................. 214ms DONE
-  2024_03_25_042235_create_freelancers_table .......................................... 191ms DONE
-  2024_03_25_042242_create_admins_table ................................................ 57ms DONE
-  2024_03_27_163951_create_super_admins_table .......................................... 57ms DONE
-  2024_05_05_164120_create_job_offers_table ........................................... 323ms DONE
-  2024_05_27_134915_create_portfolios_table ........................................... 133ms DONE
-  2024_05_28_134755_create_files_table ................................................ 248ms DONE
-  2024_05_29_191459_create_images_table ............................................... 204ms DONE
-  2024_06_15_185427_create_freelancer_job_offers_table ................................. 77ms DONE
+  2003_05_13_221258_create_jobs_table ................................................................................................... 304ms DONE
+  2004_02_05_163918_create_job_roles_table .............................................................................................. 114ms DONE
+  2004_05_03_141844_create_industries_table .............................................................................................. 56ms DONE
+  2004_05_05_163837_create_skills_table ................................................................................................. 125ms DONE
+  2004_05_05_164036_create_skillables_table .............................................................................................. 89ms DONE
+  2014_10_12_000000_create_users_table .................................................................................................. 259ms DONE
+  2014_10_12_100000_create_password_reset_tokens_table .................................................................................. 104ms DONE
+  2019_08_19_000000_create_failed_jobs_table ............................................................................................ 193ms DONE
+  2019_12_14_000001_create_personal_access_tokens_table ................................................................................. 322ms DONE
+  2024_03_25_042214_create_companies_table .............................................................................................. 189ms DONE
+  2024_03_25_042227_create_clients_table ................................................................................................ 341ms DONE
+  2024_03_25_042235_create_freelancers_table ............................................................................................ 345ms DONE
+  2024_03_25_042242_create_admins_table .................................................................................................. 56ms DONE
+  2024_03_27_163951_create_super_admins_table ............................................................................................ 56ms DONE
+  2024_05_05_164120_create_job_offers_table ............................................................................................. 342ms DONE
+  2024_05_27_134915_create_portfolios_table ............................................................................................. 151ms DONE
+  2024_05_28_134755_create_files_table .................................................................................................. 267ms DONE
+  2024_05_29_191459_create_images_table ................................................................................................. 326ms DONE
+  2024_06_19_194749_create_job_offer_proposal_table ...................................................................................... 74ms DONE
 
 </code>
  </pre>
@@ -5808,35 +6045,818 @@ fetch(url, {
 
 <span id="example-responses-GETapi-command-database-seed">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (500):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
                 <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
             </summary>
-            <pre><code class="language-http">content-type: text/html; charset=UTF-8
-cache-control: no-cache, private
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 52
+x-ratelimit-remaining: 56
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
-<code class="language-json" style="max-height: 300px;">
-   INFO  Seeding database.  
-
-  Database\Seeders\NoRoleUserSeeder ...................................................... RUNNING  
-  Database\Seeders\NoRoleUserSeeder ................................................ 1,438 ms DONE  
-
-  Database\Seeders\IndustrySeeder ........................................................ RUNNING  
-  Database\Seeders\IndustrySeeder ...................................................... 1 ms DONE  
-
-  Database\Seeders\SkillSeeder ........................................................... RUNNING  
-  Database\Seeders\SkillSeeder ......................................................... 3 ms DONE  
-
-  Database\Seeders\Job_RoleSeeder ........................................................ RUNNING  
-  Database\Seeders\Job_RoleSeeder ..................................................... 10 ms DONE  
-
-</code>
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint \&quot;freelancers_username_unique\&quot;\nDETAIL:  Key (username)=(0) already exists. (Connection: pgsql, SQL: insert into \&quot;freelancers\&quot; (\&quot;profile_image_url\&quot;, \&quot;background_image_url\&quot;, \&quot;profile_image_id\&quot;, \&quot;background_image_id\&quot;, \&quot;headline\&quot;, \&quot;description\&quot;, \&quot;city\&quot;, \&quot;gender\&quot;, \&quot;date_of_birth\&quot;, \&quot;job_role_id\&quot;, \&quot;username\&quot;, \&quot;updated_at\&quot;, \&quot;created_at\&quot;) values (?, ?, ?, ?, Quia officia ut eum dolorem voluptatem., Est minima aut non suscipit. Dolor corporis ut quia occaecati earum est sequi omnis. Fugit explicabo dolor qui qui natus et minus. Nemo et accusamus numquam., دمشق, female, 1996-01-22, 2, 0, 2024-06-20 14:28:20, 2024-06-20 14:28:20) returning \&quot;id\&quot;)&quot;,
+    &quot;exception&quot;: &quot;Illuminate\\Database\\UniqueConstraintViolationException&quot;,
+    &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Connection.php&quot;,
+    &quot;line&quot;: 824,
+    &quot;trace&quot;: [
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Connection.php&quot;,
+            &quot;line&quot;: 783,
+            &quot;function&quot;: &quot;runQueryCallback&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Database\\Connection&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Connection.php&quot;,
+            &quot;line&quot;: 414,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Database\\Connection&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Connection.php&quot;,
+            &quot;line&quot;: 401,
+            &quot;function&quot;: &quot;select&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Database\\Connection&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/PostgresProcessor.php&quot;,
+            &quot;line&quot;: 24,
+            &quot;function&quot;: &quot;selectFromWriteConnection&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Database\\Connection&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php&quot;,
+            &quot;line&quot;: 3507,
+            &quot;function&quot;: &quot;processInsertGetId&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Database\\Query\\Processors\\PostgresProcessor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php&quot;,
+            &quot;line&quot;: 1982,
+            &quot;function&quot;: &quot;insertGetId&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Database\\Query\\Builder&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php&quot;,
+            &quot;line&quot;: 1333,
+            &quot;function&quot;: &quot;__call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Database\\Eloquent\\Builder&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php&quot;,
+            &quot;line&quot;: 1298,
+            &quot;function&quot;: &quot;insertAndSetId&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Database\\Eloquent\\Model&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php&quot;,
+            &quot;line&quot;: 1137,
+            &quot;function&quot;: &quot;performInsert&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Database\\Eloquent\\Model&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/Factory.php&quot;,
+            &quot;line&quot;: 338,
+            &quot;function&quot;: &quot;save&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Database\\Eloquent\\Model&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Collections/Traits/EnumeratesValues.php&quot;,
+            &quot;line&quot;: 240,
+            &quot;function&quot;: &quot;Illuminate\\Database\\Eloquent\\Factories\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Database\\Eloquent\\Factories\\Factory&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/Factory.php&quot;,
+            &quot;line&quot;: 333,
+            &quot;function&quot;: &quot;each&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Support\\Collection&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/Factory.php&quot;,
+            &quot;line&quot;: 287,
+            &quot;function&quot;: &quot;store&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Database\\Eloquent\\Factories\\Factory&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/database/seeders/FreelancerSeeder.php&quot;,
+            &quot;line&quot;: 30,
+            &quot;function&quot;: &quot;create&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Database\\Eloquent\\Factories\\Factory&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
+            &quot;line&quot;: 36,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Database\\Seeders\\FreelancerSeeder&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Util.php&quot;,
+            &quot;line&quot;: 41,
+            &quot;function&quot;: &quot;Illuminate\\Container\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
+            &quot;line&quot;: 93,
+            &quot;function&quot;: &quot;unwrapIfClosure&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Util&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;callBoundMethod&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Container.php&quot;,
+            &quot;line&quot;: 662,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Seeder.php&quot;,
+            &quot;line&quot;: 184,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Seeder.php&quot;,
+            &quot;line&quot;: 193,
+            &quot;function&quot;: &quot;Illuminate\\Database\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Database\\Seeder&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Seeder.php&quot;,
+            &quot;line&quot;: 61,
+            &quot;function&quot;: &quot;__invoke&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Database\\Seeder&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/database/seeders/DatabaseSeeder.php&quot;,
+            &quot;line&quot;: 17,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Database\\Seeder&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
+            &quot;line&quot;: 36,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Database\\Seeders\\DatabaseSeeder&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Util.php&quot;,
+            &quot;line&quot;: 41,
+            &quot;function&quot;: &quot;Illuminate\\Container\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
+            &quot;line&quot;: 93,
+            &quot;function&quot;: &quot;unwrapIfClosure&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Util&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;callBoundMethod&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Container.php&quot;,
+            &quot;line&quot;: 662,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Seeder.php&quot;,
+            &quot;line&quot;: 184,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Seeder.php&quot;,
+            &quot;line&quot;: 193,
+            &quot;function&quot;: &quot;Illuminate\\Database\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Database\\Seeder&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php&quot;,
+            &quot;line&quot;: 70,
+            &quot;function&quot;: &quot;__invoke&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Database\\Seeder&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php&quot;,
+            &quot;line&quot;: 155,
+            &quot;function&quot;: &quot;Illuminate\\Database\\Console\\Seeds\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Database\\Console\\Seeds\\SeedCommand&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php&quot;,
+            &quot;line&quot;: 69,
+            &quot;function&quot;: &quot;unguarded&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Database\\Eloquent\\Model&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
+            &quot;line&quot;: 36,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Database\\Console\\Seeds\\SeedCommand&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Util.php&quot;,
+            &quot;line&quot;: 41,
+            &quot;function&quot;: &quot;Illuminate\\Container\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
+            &quot;line&quot;: 93,
+            &quot;function&quot;: &quot;unwrapIfClosure&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Util&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;callBoundMethod&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Container.php&quot;,
+            &quot;line&quot;: 662,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php&quot;,
+            &quot;line&quot;: 211,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Command/Command.php&quot;,
+            &quot;line&quot;: 326,
+            &quot;function&quot;: &quot;execute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Command\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php&quot;,
+            &quot;line&quot;: 1096,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php&quot;,
+            &quot;line&quot;: 324,
+            &quot;function&quot;: &quot;doRunCommand&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php&quot;,
+            &quot;line&quot;: 175,
+            &quot;function&quot;: &quot;doRun&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php&quot;,
+            &quot;line&quot;: 162,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php&quot;,
+            &quot;line&quot;: 400,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php&quot;,
+            &quot;line&quot;: 355,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Console\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/routes/Api/render-commands.php&quot;,
+            &quot;line&quot;: 31,
+            &quot;function&quot;: &quot;__callStatic&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Support\\Facades\\Facade&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/CallableDispatcher.php&quot;,
+            &quot;line&quot;: 40,
+            &quot;function&quot;: &quot;{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\RouteFileRegistrar&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Route.php&quot;,
+            &quot;line&quot;: 237,
+            &quot;function&quot;: &quot;dispatch&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\CallableDispatcher&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Route.php&quot;,
+            &quot;line&quot;: 208,
+            &quot;function&quot;: &quot;runCallable&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Route&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
+            &quot;line&quot;: 806,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Route&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 144,
+            &quot;function&quot;: &quot;Illuminate\\Routing\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php&quot;,
+            &quot;line&quot;: 50,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\SubstituteBindings&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php&quot;,
+            &quot;line&quot;: 159,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php&quot;,
+            &quot;line&quot;: 125,
+            &quot;function&quot;: &quot;handleRequest&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php&quot;,
+            &quot;line&quot;: 87,
+            &quot;function&quot;: &quot;handleRequestUsingNamedLimiter&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php&quot;,
+            &quot;line&quot;: 25,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 144,
+            &quot;function&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\{closure}&quot;,
+            &quot;class&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 119,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php&quot;,
+            &quot;line&quot;: 24,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 119,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
+            &quot;line&quot;: 805,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
+            &quot;line&quot;: 784,
+            &quot;function&quot;: &quot;runRouteWithinStack&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
+            &quot;line&quot;: 748,
+            &quot;function&quot;: &quot;runRoute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
+            &quot;line&quot;: 737,
+            &quot;function&quot;: &quot;dispatchToRoute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
+            &quot;line&quot;: 200,
+            &quot;function&quot;: &quot;dispatch&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 144,
+            &quot;function&quot;: &quot;Illuminate\\Foundation\\Http\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php&quot;,
+            &quot;line&quot;: 21,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php&quot;,
+            &quot;line&quot;: 31,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php&quot;,
+            &quot;line&quot;: 21,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php&quot;,
+            &quot;line&quot;: 40,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TrimStrings&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php&quot;,
+            &quot;line&quot;: 27,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php&quot;,
+            &quot;line&quot;: 99,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php&quot;,
+            &quot;line&quot;: 62,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\HandleCors&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php&quot;,
+            &quot;line&quot;: 39,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\TrustProxies&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 119,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
+            &quot;line&quot;: 175,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
+            &quot;line&quot;: 144,
+            &quot;function&quot;: &quot;sendRequestThroughRouter&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
+            &quot;line&quot;: 310,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
+            &quot;line&quot;: 298,
+            &quot;function&quot;: &quot;callLaravelOrLumenRoute&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
+            &quot;line&quot;: 91,
+            &quot;function&quot;: &quot;makeApiCall&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
+            &quot;line&quot;: 44,
+            &quot;function&quot;: &quot;makeResponseCall&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;makeResponseCallIfConditionsPass&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
+            &quot;line&quot;: 236,
+            &quot;function&quot;: &quot;__invoke&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
+            &quot;line&quot;: 163,
+            &quot;function&quot;: &quot;iterateThroughStrategies&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
+            &quot;line&quot;: 95,
+            &quot;function&quot;: &quot;fetchResponses&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 125,
+            &quot;function&quot;: &quot;processRoute&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 72,
+            &quot;function&quot;: &quot;extractEndpointsInfoFromLaravelApp&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 50,
+            &quot;function&quot;: &quot;extractEndpointsInfoAndWriteToDisk&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php&quot;,
+            &quot;line&quot;: 53,
+            &quot;function&quot;: &quot;get&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
+            &quot;line&quot;: 36,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Commands\\GenerateDocumentation&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Util.php&quot;,
+            &quot;line&quot;: 41,
+            &quot;function&quot;: &quot;Illuminate\\Container\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
+            &quot;line&quot;: 93,
+            &quot;function&quot;: &quot;unwrapIfClosure&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Util&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;callBoundMethod&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Container.php&quot;,
+            &quot;line&quot;: 662,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php&quot;,
+            &quot;line&quot;: 211,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Command/Command.php&quot;,
+            &quot;line&quot;: 326,
+            &quot;function&quot;: &quot;execute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Command\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php&quot;,
+            &quot;line&quot;: 1096,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php&quot;,
+            &quot;line&quot;: 324,
+            &quot;function&quot;: &quot;doRunCommand&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php&quot;,
+            &quot;line&quot;: 175,
+            &quot;function&quot;: &quot;doRun&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php&quot;,
+            &quot;line&quot;: 201,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/home/saad/Desktop/Freelancer/artisan&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Console\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        }
+    ]
+}</code>
  </pre>
     </span>
 <span id="execution-results-GETapi-command-database-seed" hidden>
@@ -5931,7 +6951,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"job_offer_id\": \"numquam\",
+    \"job_offer_id\": \"qui\",
     \"status\": \"pending\"
 }"
 </code></pre></div>
@@ -5948,7 +6968,7 @@ const headers = {
 };
 
 let body = {
-    "job_offer_id": "numquam",
+    "job_offer_id": "qui",
     "status": "pending"
 };
 
@@ -6038,10 +7058,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="job_offer_id"                data-endpoint="POSTapi-company-job_offer-status-change"
-               value="numquam"
+               value="qui"
                data-component="body">
     <br>
-<p>Example: <code>numquam</code></p>
+<p>Example: <code>qui</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -6055,6 +7075,148 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Example: <code>pending</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>pending</code></li> <li><code>active</code></li> <li><code>cloused</code></li></ul>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-POSTapi-freelancer-job-offer-proposal-store">POST api/freelancer/job-offer-proposal/store</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-freelancer-job-offer-proposal-store">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/freelancer/job-offer-proposal/store" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"job_offer_id\": \"et\",
+    \"message\": \"aknxgwuiqdkauztuvcliojngj\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/freelancer/job-offer-proposal/store"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "job_offer_id": "et",
+    "message": "aknxgwuiqdkauztuvcliojngj"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-freelancer-job-offer-proposal-store">
+</span>
+<span id="execution-results-POSTapi-freelancer-job-offer-proposal-store" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-freelancer-job-offer-proposal-store"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-freelancer-job-offer-proposal-store"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-freelancer-job-offer-proposal-store" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-freelancer-job-offer-proposal-store">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-freelancer-job-offer-proposal-store" data-method="POST"
+      data-path="api/freelancer/job-offer-proposal/store"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-freelancer-job-offer-proposal-store', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-freelancer-job-offer-proposal-store"
+                    onclick="tryItOut('POSTapi-freelancer-job-offer-proposal-store');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-freelancer-job-offer-proposal-store"
+                    onclick="cancelTryOut('POSTapi-freelancer-job-offer-proposal-store');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-freelancer-job-offer-proposal-store"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/freelancer/job-offer-proposal/store</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-freelancer-job-offer-proposal-store"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-freelancer-job-offer-proposal-store"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>job_offer_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="job_offer_id"                data-endpoint="POSTapi-freelancer-job-offer-proposal-store"
+               value="et"
+               data-component="body">
+    <br>
+<p>Example: <code>et</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>message</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="message"                data-endpoint="POSTapi-freelancer-job-offer-proposal-store"
+               value="aknxgwuiqdkauztuvcliojngj"
+               data-component="body">
+    <br>
+<p>Must not be greater than 255 characters. Example: <code>aknxgwuiqdkauztuvcliojngj</code></p>
         </div>
         </form>
 
@@ -6212,7 +7374,7 @@ fetch(url, {
             <pre><code class="language-http">content-type: text/html; charset=UTF-8
 cache-control: no-cache, private
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 51
+x-ratelimit-remaining: 55
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -6307,14 +7469,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/freelancer/6" \
+    --get "http://localhost/api/freelancer/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/freelancer/6"
+    "http://localhost/api/freelancer/1"
 );
 
 const headers = {
@@ -6426,10 +7588,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="freelancer_id"                data-endpoint="GETapi-freelancer--freelancer_id-"
-               value="6"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the freelancer. Example: <code>6</code></p>
+<p>The ID of the freelancer. Example: <code>1</code></p>
             </div>
                     </form>
 
@@ -6452,12 +7614,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"headline\": \"ehercpgqxgouzybnqduosuhza\",
-    \"description\": \"Enim in et ducimus possimus ut vero.\",
+    \"headline\": \"aj\",
+    \"description\": \"Voluptates autem minus corrupti libero dolorem numquam ullam nesciunt.\",
     \"city\": \"دمشق\",
     \"gender\": \"female\",
-    \"date_of_birth\": \"2005-11-04\",
-    \"job_role_id\": \"repudiandae\",
+    \"date_of_birth\": \"2002-12-21\",
+    \"job_role_id\": \"ut\",
     \"skill_ids\": []
 }"
 </code></pre></div>
@@ -6475,12 +7637,12 @@ const headers = {
 };
 
 let body = {
-    "headline": "ehercpgqxgouzybnqduosuhza",
-    "description": "Enim in et ducimus possimus ut vero.",
+    "headline": "aj",
+    "description": "Voluptates autem minus corrupti libero dolorem numquam ullam nesciunt.",
     "city": "دمشق",
     "gender": "female",
-    "date_of_birth": "2005-11-04",
-    "job_role_id": "repudiandae",
+    "date_of_birth": "2002-12-21",
+    "job_role_id": "ut",
     "skill_ids": []
 };
 
@@ -6622,10 +7784,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="headline"                data-endpoint="POSTapi-freelancer-store"
-               value="ehercpgqxgouzybnqduosuhza"
+               value="aj"
                data-component="body">
     <br>
-<p>Must be at least 20 characters. Must not be greater than 200 characters. Example: <code>ehercpgqxgouzybnqduosuhza</code></p>
+<p>Must be at least 20 characters. Must not be greater than 200 characters. Example: <code>aj</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -6633,10 +7795,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-freelancer-store"
-               value="Enim in et ducimus possimus ut vero."
+               value="Voluptates autem minus corrupti libero dolorem numquam ullam nesciunt."
                data-component="body">
     <br>
-<p>Must be at least 60 characters. Must not be greater than 4000 characters. Example: <code>Enim in et ducimus possimus ut vero.</code></p>
+<p>Must be at least 60 characters. Must not be greater than 4000 characters. Example: <code>Voluptates autem minus corrupti libero dolorem numquam ullam nesciunt.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
@@ -6668,10 +7830,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="date_of_birth"                data-endpoint="POSTapi-freelancer-store"
-               value="2005-11-04"
+               value="2002-12-21"
                data-component="body">
     <br>
-<p>Must be a valid date. Must be a date before or equal to <code>2008-06-16</code>. Example: <code>2005-11-04</code></p>
+<p>Must be a valid date. Must be a date before or equal to <code>2008-06-20</code>. Example: <code>2002-12-21</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>job_role_id</code></b>&nbsp;&nbsp;
@@ -6679,10 +7841,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="job_role_id"                data-endpoint="POSTapi-freelancer-store"
-               value="repudiandae"
+               value="ut"
                data-component="body">
     <br>
-<p>Example: <code>repudiandae</code></p>
+<p>Example: <code>ut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>skill_ids</code></b>&nbsp;&nbsp;
@@ -6729,11 +7891,11 @@ Must be one of:
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"headline\": \"t\",
-    \"description\": \"Ipsa fugiat architecto saepe.\",
+    \"headline\": \"vwgafxrvrkevo\",
+    \"description\": \"Impedit quod autem dolorem cum mollitia nam expedita.\",
     \"city\": \"دمشق\",
-    \"gender\": \"male\",
-    \"date_of_birth\": \"1996-05-30\"
+    \"gender\": \"female\",
+    \"date_of_birth\": \"2000-03-15\"
 }"
 </code></pre></div>
 
@@ -6750,11 +7912,11 @@ const headers = {
 };
 
 let body = {
-    "headline": "t",
-    "description": "Ipsa fugiat architecto saepe.",
+    "headline": "vwgafxrvrkevo",
+    "description": "Impedit quod autem dolorem cum mollitia nam expedita.",
     "city": "دمشق",
-    "gender": "male",
-    "date_of_birth": "1996-05-30"
+    "gender": "female",
+    "date_of_birth": "2000-03-15"
 };
 
 fetch(url, {
@@ -6895,10 +8057,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="headline"                data-endpoint="PUTapi-freelancer"
-               value="t"
+               value="vwgafxrvrkevo"
                data-component="body">
     <br>
-<p>Must be at least 20 characters. Must not be greater than 200 characters. Example: <code>t</code></p>
+<p>Must be at least 20 characters. Must not be greater than 200 characters. Example: <code>vwgafxrvrkevo</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -6906,10 +8068,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-freelancer"
-               value="Ipsa fugiat architecto saepe."
+               value="Impedit quod autem dolorem cum mollitia nam expedita."
                data-component="body">
     <br>
-<p>Must be at least 60 characters. Must not be greater than 4000 characters. Example: <code>Ipsa fugiat architecto saepe.</code></p>
+<p>Must be at least 60 characters. Must not be greater than 4000 characters. Example: <code>Impedit quod autem dolorem cum mollitia nam expedita.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city</code></b>&nbsp;&nbsp;
@@ -6928,10 +8090,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="gender"                data-endpoint="PUTapi-freelancer"
-               value="male"
+               value="female"
                data-component="body">
     <br>
-<p>Example: <code>male</code></p>
+<p>Example: <code>female</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>male</code></li> <li><code>female</code></li></ul>
         </div>
@@ -6941,10 +8103,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="date_of_birth"                data-endpoint="PUTapi-freelancer"
-               value="1996-05-30"
+               value="2000-03-15"
                data-component="body">
     <br>
-<p>Must be a valid date. Must be a date before or equal to <code>2008-06-16</code>. Example: <code>1996-05-30</code></p>
+<p>Must be a valid date. Must be a date before or equal to <code>2008-06-20</code>. Example: <code>2000-03-15</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>job_role_id</code></b>&nbsp;&nbsp;
@@ -6985,14 +8147,14 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/freelancer/portfolio/11" \
+    --get "http://localhost/api/freelancer/portfolio/17" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/freelancer/portfolio/11"
+    "http://localhost/api/freelancer/portfolio/17"
 );
 
 const headers = {
@@ -7099,10 +8261,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="portfolio_id"                data-endpoint="GETapi-freelancer-portfolio--portfolio_id-"
-               value="11"
+               value="17"
                data-component="url">
     <br>
-<p>The ID of the portfolio. Example: <code>11</code></p>
+<p>The ID of the portfolio. Example: <code>17</code></p>
             </div>
                     </form>
 
@@ -7123,15 +8285,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"cwfvqzuioyhjprganawqpie\",
-    \"url\": \"b:http:\\/\\/YTBM.V{2,}b\",
-    \"date\": \"2024-06-16T23:11:34\",
-    \"description\": \"Debitis exercitationem dolor maiores totam totam optio dolores dolore.\",
+    \"title\": \"tnpexzcjxdofhcdwc\",
+    \"url\": \"b:https|ftp):\\/\\/i.x{2,}:\\/)b\",
+    \"date\": \"2024-06-20T14:28:20\",
+    \"description\": \"Est aut enim et deserunt est modi praesentium.\",
     \"file_ids\": [
-        \"aut\"
+        \"quos\"
     ],
     \"image_ids\": [
-        \"voluptas\"
+        \"aut\"
     ]
 }"
 </code></pre></div>
@@ -7148,15 +8310,15 @@ const headers = {
 };
 
 let body = {
-    "title": "cwfvqzuioyhjprganawqpie",
-    "url": "b:http:\/\/YTBM.V{2,}b",
-    "date": "2024-06-16T23:11:34",
-    "description": "Debitis exercitationem dolor maiores totam totam optio dolores dolore.",
+    "title": "tnpexzcjxdofhcdwc",
+    "url": "b:https|ftp):\/\/i.x{2,}:\/)b",
+    "date": "2024-06-20T14:28:20",
+    "description": "Est aut enim et deserunt est modi praesentium.",
     "file_ids": [
-        "aut"
+        "quos"
     ],
     "image_ids": [
-        "voluptas"
+        "aut"
     ]
 };
 
@@ -7260,10 +8422,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="POSTapi-freelancer-portfolio-store"
-               value="cwfvqzuioyhjprganawqpie"
+               value="tnpexzcjxdofhcdwc"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>cwfvqzuioyhjprganawqpie</code></p>
+<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>tnpexzcjxdofhcdwc</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>url</code></b>&nbsp;&nbsp;
@@ -7271,10 +8433,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="url"                data-endpoint="POSTapi-freelancer-portfolio-store"
-               value="b:http://YTBM.V{2,}b"
+               value="b:https|ftp)://i.x{2,}:/)b"
                data-component="body">
     <br>
-<p>Must match the regex /\b(?:https?|ftp):\/\/[a-zA-Z0-9-.]+.[a-zA-Z]{2,}(?:\/\S*)?\b/. Example: <code>b:http://YTBM.V{2,}b</code></p>
+<p>Must match the regex /\b(?:https?|ftp):\/\/[a-zA-Z0-9-.]+.[a-zA-Z]{2,}(?:\/\S*)?\b/. Example: <code>b:https|ftp)://i.x{2,}:/)b</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
@@ -7282,10 +8444,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="POSTapi-freelancer-portfolio-store"
-               value="2024-06-16T23:11:34"
+               value="2024-06-20T14:28:20"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-06-16T23:11:34</code></p>
+<p>Must be a valid date. Example: <code>2024-06-20T14:28:20</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -7293,10 +8455,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-freelancer-portfolio-store"
-               value="Debitis exercitationem dolor maiores totam totam optio dolores dolore."
+               value="Est aut enim et deserunt est modi praesentium."
                data-component="body">
     <br>
-<p>Must be at least 20 characters. Example: <code>Debitis exercitationem dolor maiores totam totam optio dolores dolore.</code></p>
+<p>Must be at least 20 characters. Example: <code>Est aut enim et deserunt est modi praesentium.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>file_ids</code></b>&nbsp;&nbsp;
@@ -7356,16 +8518,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"portfolio_id\": \"cum\",
-    \"title\": \"jovthqmagcnni\",
-    \"url\": \"b:https|ftp):\\/\\/y8.s{2,}:\\/b\",
-    \"date\": \"2024-06-16T23:11:34\",
-    \"description\": \"Voluptas non rem placeat consectetur labore.\",
+    \"portfolio_id\": \"et\",
+    \"title\": \"prpautbcbwtlujvfubzw\",
+    \"url\": \"b:https|ftp):\\/\\/rm.f{2,}:\\/b\",
+    \"date\": \"2024-06-20T14:28:20\",
+    \"description\": \"Repudiandae veniam deserunt similique voluptates ut pariatur quod cum.\",
     \"file_ids\": [
-        \"reiciendis\"
+        \"et\"
     ],
     \"image_ids\": [
-        \"rerum\"
+        \"dolorem\"
     ]
 }"
 </code></pre></div>
@@ -7382,16 +8544,16 @@ const headers = {
 };
 
 let body = {
-    "portfolio_id": "cum",
-    "title": "jovthqmagcnni",
-    "url": "b:https|ftp):\/\/y8.s{2,}:\/b",
-    "date": "2024-06-16T23:11:34",
-    "description": "Voluptas non rem placeat consectetur labore.",
+    "portfolio_id": "et",
+    "title": "prpautbcbwtlujvfubzw",
+    "url": "b:https|ftp):\/\/rm.f{2,}:\/b",
+    "date": "2024-06-20T14:28:20",
+    "description": "Repudiandae veniam deserunt similique voluptates ut pariatur quod cum.",
     "file_ids": [
-        "reiciendis"
+        "et"
     ],
     "image_ids": [
-        "rerum"
+        "dolorem"
     ]
 };
 
@@ -7495,10 +8657,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="portfolio_id"                data-endpoint="PUTapi-freelancer-portfolio"
-               value="cum"
+               value="et"
                data-component="body">
     <br>
-<p>Example: <code>cum</code></p>
+<p>Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
@@ -7506,10 +8668,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="PUTapi-freelancer-portfolio"
-               value="jovthqmagcnni"
+               value="prpautbcbwtlujvfubzw"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>jovthqmagcnni</code></p>
+<p>Must be at least 3 characters. Must not be greater than 255 characters. Example: <code>prpautbcbwtlujvfubzw</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>url</code></b>&nbsp;&nbsp;
@@ -7517,10 +8679,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="url"                data-endpoint="PUTapi-freelancer-portfolio"
-               value="b:https|ftp)://y8.s{2,}:/b"
+               value="b:https|ftp)://rm.f{2,}:/b"
                data-component="body">
     <br>
-<p>Must match the regex /\b(?:https?|ftp):\/\/[a-zA-Z0-9-.]+.[a-zA-Z]{2,}(?:\/\S*)?\b/. Example: <code>b:https|ftp)://y8.s{2,}:/b</code></p>
+<p>Must match the regex /\b(?:https?|ftp):\/\/[a-zA-Z0-9-.]+.[a-zA-Z]{2,}(?:\/\S*)?\b/. Example: <code>b:https|ftp)://rm.f{2,}:/b</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
@@ -7528,10 +8690,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="PUTapi-freelancer-portfolio"
-               value="2024-06-16T23:11:34"
+               value="2024-06-20T14:28:20"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-06-16T23:11:34</code></p>
+<p>Must be a valid date. Example: <code>2024-06-20T14:28:20</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -7539,10 +8701,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-freelancer-portfolio"
-               value="Voluptas non rem placeat consectetur labore."
+               value="Repudiandae veniam deserunt similique voluptates ut pariatur quod cum."
                data-component="body">
     <br>
-<p>Must be at least 20 characters. Example: <code>Voluptas non rem placeat consectetur labore.</code></p>
+<p>Must be at least 20 characters. Example: <code>Repudiandae veniam deserunt similique voluptates ut pariatur quod cum.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>file_ids</code></b>&nbsp;&nbsp;
@@ -7604,7 +8766,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"portfolio_id\": \"perspiciatis\"
+    \"portfolio_id\": \"ut\"
 }"
 </code></pre></div>
 
@@ -7621,7 +8783,7 @@ const headers = {
 };
 
 let body = {
-    "portfolio_id": "perspiciatis"
+    "portfolio_id": "ut"
 };
 
 fetch(url, {
@@ -7721,10 +8883,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="portfolio_id"                data-endpoint="DELETEapi-freelancer-portfolio"
-               value="perspiciatis"
+               value="ut"
                data-component="body">
     <br>
-<p>Example: <code>perspiciatis</code></p>
+<p>Example: <code>ut</code></p>
         </div>
         </form>
 
@@ -7748,7 +8910,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost/api/storage/image/store" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "image=@/tmp/php7gdU2w" </code></pre></div>
+    --form "image=@/tmp/phpk4crRV" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -7780,8 +8942,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: null,
-        &quot;url&quot;: null
+        &quot;id&quot;: 1,
+        &quot;url&quot;: &quot;https://res.cloudinary.com/dyefbd6jy/image/upload/v1718880640/phprarSqt_n2hynp.png&quot;
     }
 }</code>
  </pre>
@@ -7865,7 +9027,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 2048 kilobytes. Example: <code>/tmp/php7gdU2w</code></p>
+<p>Must be an image. Must not be greater than 2048 kilobytes. Example: <code>/tmp/phpk4crRV</code></p>
         </div>
         </form>
 
@@ -7885,8 +9047,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost/api/storage/file/store" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "title=dklxscfelifkavfqcbzoojl"\
-    --form "file=@/tmp/phpA94qy3" </code></pre></div>
+    --form "title=hnrewsjutdgktpcwfmb"\
+    --form "file=@/tmp/phpRmzqhE" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -7900,7 +9062,7 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('title', 'dklxscfelifkavfqcbzoojl');
+body.append('title', 'hnrewsjutdgktpcwfmb');
 body.append('file', document.querySelector('input[name="file"]').files[0]);
 
 fetch(url, {
@@ -7992,7 +9154,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be a file. Must not be greater than 10240 kilobytes. Example: <code>/tmp/phpA94qy3</code></p>
+<p>Must be a file. Must not be greater than 10240 kilobytes. Example: <code>/tmp/phpRmzqhE</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
@@ -8000,10 +9162,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="POSTapi-storage-file-store"
-               value="dklxscfelifkavfqcbzoojl"
+               value="hnrewsjutdgktpcwfmb"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>dklxscfelifkavfqcbzoojl</code></p>
+<p>Must not be greater than 255 characters. Example: <code>hnrewsjutdgktpcwfmb</code></p>
         </div>
         </form>
 
