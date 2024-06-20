@@ -3,7 +3,7 @@ use App\Models\JobOfferProposal;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobOfferProposalController;
 
-//only freelancer 
+//only freelancer
 Route::group([
     'prefix' => 'job-offer-proposal' ,
     'middleware' => [
@@ -25,7 +25,10 @@ Route::group([
         'verify_email' ,
         'role:company' ,
     ]
-] , function(){});
+] , function(){
+    Route::post('reject', [JobOfferProposalController::class, 'reject']);
+    Route::post('accept/{jobOfferProposal}', [JobOfferProposalController::class, 'accept']);
+});
 
 //both
 Route::group([
