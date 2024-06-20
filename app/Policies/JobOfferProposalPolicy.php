@@ -24,41 +24,40 @@ class JobOfferProposalPolicy
     public function filter(User $user)
     {
         //todo only company
-        return false ;
+        return $user->role_type == Company::class;
     }
 
     public function view(User $user, JobOfferProposal $jobOfferProposal): bool
     {
-        if(
-            $user->role_type == Freelancer::class
-            and
-            $user->role_id == $jobOfferProposal->freelancer_id
-        )return true;
+        if ($user->role_type == Freelancer::class
+            && $user->role_id == $jobOfferProposal->freelancer_id
+        ) {
+            return true;
+        }
 
-        if(
-            $user->role_type == Company::class
-            and
-            $user->role_id == $jobOfferProposal->company()->id
-        )return true;
+        if ($user->role_type == Company::class
+            && $user->role_id == $jobOfferProposal->job_offer->company_id
+        ) {
+            return true;
+        }
 
-        return false ;
+        return false;
     }
 
     public function create(User $user): bool
     {
-        return true ;
+        return $user->role_type == Freelancer::class;
     }
 
     public function update(User $user, JobOfferProposal $jobOfferProposal): bool
     {
-        return false ;
+        return $user->role_type == Freelancer::class
+            && $jobOfferProposal->freelancer_id == $user->role_id;
     }
 
     public function delete(User $user, JobOfferProposal $jobOfferProposal): bool
     {
-        return
-        $user->role_type == Freelancer::class
-            and
-        $jobOfferProposal->freelancer_id == $user->role_id ;
+        return $user->role_type == Freelancer::class
+            && $jobOfferProposal->freelancer_id == $user->role_id;
     }
 }
