@@ -16,6 +16,12 @@ use App\Http\Requests\JobOfferProposal\UpdateJobOfferProposalRequest;
 
 class JobOfferProposalController extends Controller
 {
+/**
+ * Filter job offer proposals based on provided filters.
+ *
+ * @param  FilterJobOfferProposalRequest  $request
+ * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+ */
     public function filter(FilterJobOfferProposalRequest $request)
     {
         $this->authorize('filter', JobOfferProposal::class);
@@ -29,16 +35,41 @@ class JobOfferProposalController extends Controller
 
         return JobOfferProposalResource::collection($proposals);
     }
+/**
+ * Display a listing of job offer proposals for the freelancer.
+ *
+ * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+ */
     public function index()
     {
-        //todo show list of them for freelancer order by date
+    $user = auth()->user();
+
+    $this->authorize('index', JobOfferProposal::class);
+
+    $proposals = JobOfferProposal::where('freelancer_id', $user->role_id)
+                    ->orderBy('created_at', 'desc')
+                    ->get();
+
+      return JobOfferProposalResource::collection($proposals);
     }
+/**
+ * Display the specified job offer proposal.
+ *
+ * @param  JobOfferProposal  $proposal
+ * @return JobOfferProposalResource
+ */
     public function show(JobOfferProposal $proposal)
     {
         $this->authorize('view' , $proposal) ;
 
         return JobOfferProposalResource::make($proposal) ;
     }
+/**
+ * Store a newly created job offer proposal.
+ *
+ * @param  CreateJobOfferProposalRequest  $request
+ * @return JobOfferProposalResource
+ */
     public function create(CreateJobOfferProposalRequest $request)
     {
         $this->authorize('create', JobOfferProposal::class);
@@ -52,6 +83,12 @@ class JobOfferProposalController extends Controller
 
         return JobOfferProposalResource::make($proposal) ;
     }
+/**
+ * Update the specified job offer proposal.
+ *
+ * @param  UpdateJobOfferProposalRequest  $request
+ * @return JobOfferProposalResource
+ */
     public function update(UpdateJobOfferProposalRequest $request)
     {
         $data = $request->validated() ;
@@ -62,6 +99,12 @@ class JobOfferProposalController extends Controller
 
         return JobOfferProposalResource::make($proposal) ;
     }
+/**
+ * Remove the specified job offer proposal.
+ *
+ * @param  JobOfferProposal  $jobOfferProposal
+ * @return \Illuminate\Http\Response
+ */
     public function delete(JobOfferProposal $jobOfferProposal)
     {
 
@@ -71,6 +114,12 @@ class JobOfferProposalController extends Controller
 
         return response()->noContent() ;
     }
+/**
+ * Reject one or more job offer proposals.
+ *
+ * @param  RejectJobOfferProposalRequest  $request
+ * @return \Illuminate\Http\Response
+ */
     public function reject(RejectJobOfferProposalRequest $request)
     {
         $proposalIds = $request->validated()['job_offer_proposal_ids'];
@@ -92,7 +141,12 @@ class JobOfferProposalController extends Controller
 
         return response()->noContent();
     }
-
+/**
+ * Accept a job offer proposal.
+ *
+ * @param  JobOfferProposal  $jobOfferProposal
+ * @return \Illuminate\Http\Response
+ */
     public function accept(JobOfferProposal $jobOfferProposal)
     {
         $this->authorize('accept', $jobOfferProposal);

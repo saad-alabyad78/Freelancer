@@ -15,6 +15,7 @@ Route::group([
     Route::post('store' , [JobOfferProposalController::class , 'create']) ;
     Route::put('' , [JobOfferProposalController::class , 'update']) ;
     Route::delete('/{jobOfferProposal}' , [JobOfferProposalController::class , 'delete']);
+    Route::get('index', [JobOfferProposalController::class, 'index']);
 });
 
 //only company

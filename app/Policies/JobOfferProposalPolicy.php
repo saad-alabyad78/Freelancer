@@ -23,8 +23,11 @@ class JobOfferProposalPolicy
     }
     public function filter(User $user)
     {
-        //todo only company
         return $user->role_type == Company::class;
+    }
+    public function index(User $user): bool
+    {
+        return $user->role_type == Freelancer::class;
     }
 
     public function view(User $user, JobOfferProposal $jobOfferProposal): bool
