@@ -18,6 +18,8 @@ class JobOfferProposalController extends Controller
 {
     public function filter(FilterJobOfferProposalRequest $request)
     {
+        $this->authorize('filter', JobOfferProposal::class);
+
         $data = $request->validated();
 
         $proposals = JobOfferProposal::query()
