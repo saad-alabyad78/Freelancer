@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Company;
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class FilterJobOfferProposalRequest extends FormRequest
@@ -11,7 +13,7 @@ class FilterJobOfferProposalRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return auth()->user()->role_type == Company::class ;
     }
 
     /**
@@ -22,7 +24,11 @@ class FilterJobOfferProposalRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'job_offer_id' => 'nullable|integer|exists:job_offers,id',
+            'job_offer_id' => [
+            'nullable',
+            'integer' , 
+            Rule::exists('job_offers' , 'id')->where('company_id' , auth()->user()->role_id)
+        ],
             'date' => 'nullable|date',
         ];
     }

@@ -2,62 +2,65 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\JobOffer;
-use Illuminate\Http\Request;
 use App\Models\JobOfferProposal;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Gate;
-use Illuminate\Support\Facades\Route;
+use App\Http\Requests\FilterJobOfferProposalRequest;
 use App\Http\Resources\JobOfferProposal\JobOfferProposalResource;
 use App\Http\Requests\JobOfferProposal\CreateJobOfferProposalRequest;
-use App\Http\Requests\JobOfferProposal\DeleteJobOfferProposalRequest;
 use App\Http\Requests\JobOfferProposal\RejectJobOfferProposalRequest;
 use App\Http\Requests\JobOfferProposal\UpdateJobOfferProposalRequest;
-
+/**
+ *@group JobOffer-Proposal Managment
+ *
+ **/
 class JobOfferProposalController extends Controller
 {
-/**
- * Filter job offer proposals based on provided filters.
- *
- * @param  FilterJobOfferProposalRequest  $request
- * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
- */
+    /**
+     * Filter job offer proposals based on provided filters.
+     *
+     * @param  \App\Http\Requests\FilterJobOfferProposalRequest  $request
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     */
     public function filter(FilterJobOfferProposalRequest $request)
     {
         $this->authorize('filter', JobOfferProposal::class);
 
         $data = $request->validated();
 
-        $proposals = JobOfferProposal::query()
+        $company = Company::findOrFail(auth()->user()->role_id) ;
+
+        $proposals =
+            $company->job_offer_proposals()
             ->filterByJobOfferId($data['job_offer_id'] ?? null)
             ->filterByDate($data['date'] ?? null)
-            ->get();
+            ->pagenate(20);
 
         return JobOfferProposalResource::collection($proposals);
     }
-/**
- * Display a listing of job offer proposals for the freelancer.
- *
- * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
- */
+    /**
+     * Display a listing of job offer proposals for the freelancer.
+     *
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     */
     public function index()
     {
         $user = auth()->user();
 
         $this->authorize('index', JobOfferProposal::class);
 
-        $proposals = JobOfferProposal::where('freelancer_id', $user->role_id)
-            ->orderBy('created_at', 'desc')
-            ->get();
+    $proposals = JobOfferProposal::where('freelancer_id', $user->role_id)
+                    ->orderBy('created_at', 'desc')
+                    ->paginate(20);
 
         return JobOfferProposalResource::collection($proposals);
     }
-/**
- * Display the specified job offer proposal.
- *
- * @param  JobOfferProposal  $proposal
- * @return JobOfferProposalResource
- */
+    /**
+     * Display the specified job offer proposal.
+     *
+     * @param  JobOfferProposal  $proposal
+     * @return JobOfferProposalResource
+     */
     public function show(JobOfferProposal $proposal)
     {
         $this->authorize('view' , $proposal) ;
@@ -107,9 +110,10 @@ class JobOfferProposalController extends Controller
  */
     public function delete(JobOfferProposal $jobOfferProposal)
     {
-
         $this->authorize('delete' , $jobOfferProposal) ;
+
         JobOffer::findOrFail($jobOfferProposal->job_offer_id)->decrement('proposals_count') ;
+
         $jobOfferProposal->delete() ;
 
         return response()->noContent() ;
@@ -124,10 +128,11 @@ class JobOfferProposalController extends Controller
     {
         $proposalIds = $request->validated()['job_offer_proposal_ids'];
 
-        foreach ($proposalIds as $proposalId) {
-            $proposal = JobOfferProposal::findOrFail($proposalId);
-            $this->authorize('reject', $proposal);
-        }
+        //the same validation in the request
+        // foreach ($proposalIds as $proposalId) {
+        //     $proposal = JobOfferProposal::findOrFail($proposalId);
+        //     $this->authorize('reject', $proposal);
+        // }
 
         JobOfferProposal::whereIn('id', $proposalIds)
             ->update(['rejected_at' => now()->toDateTimeString()]);
@@ -141,12 +146,12 @@ class JobOfferProposalController extends Controller
 
         return response()->noContent();
     }
-/**
- * Accept a job offer proposal.
- *
- * @param  JobOfferProposal  $jobOfferProposal
- * @return \Illuminate\Http\Response
- */
+    /**
+     * Accept a job offer proposal.
+     *
+     * @param  JobOfferProposal  $jobOfferProposal
+     * @return \Illuminate\Http\Response
+     */
     public function accept(JobOfferProposal $jobOfferProposal)
     {
         $this->authorize('accept', $jobOfferProposal);

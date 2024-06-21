@@ -39,7 +39,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"url":"https:\/\/res.cloudinary.com\/dyefbd6jy\/image\/upload\/v1718880640\/phprarSqt_n2hynp.png"}}'
+        content: '{"data":{"id":null,"url":null}}'
         headers: []
         description: ''
         custom: []
@@ -83,13 +83,13 @@ endpoints:
         name: title
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: hnrewsjutdgktpcwfmb
+        example: qtighaloglxnbfrsc
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      title: hnrewsjutdgktpcwfmb
+      title: qtighaloglxnbfrsc
     fileParameters:
       file: null
     responses: []

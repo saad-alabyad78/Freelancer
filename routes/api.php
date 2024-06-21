@@ -55,7 +55,7 @@ Route::post('test' , function(Request $request){
 });
 
 Route::get('test' , function(){
-  dd(Route::getRoutes()) ;  
+  //dd(Route::getRoutes()) ;  
  return 'hi salah' ;
 });
 
