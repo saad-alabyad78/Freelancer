@@ -42,7 +42,7 @@ class RejectJobOfferProposalRequest extends FormRequest
                     if(!$proposal){
                         $fail('there is no such job offer proposal with id ' . $value . ' or it could be already rejected or accepted') ;
                     }
-                    if($proposal->company()->first()->id != auth()->user()->role_id){
+                    if($proposal->job_offer()->first()->company_id != auth()->user()->role_id){
                         $fail('this is not your job offer proposal ') ;
                     }
 

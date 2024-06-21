@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class Company extends BaseModel
 {
@@ -49,6 +50,10 @@ class Company extends BaseModel
     public function gallery_images():MorphMany
     {
         return $this->morphMany(Image::class , 'imagable');
+    }
+    public function job_offer_proposals():HasManyThrough
+    {
+        return $this->hasManyThrough(JobOfferProposal::class , JobOffer::class) ;
     }
 
 }
