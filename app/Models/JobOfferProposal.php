@@ -38,11 +38,4 @@ class JobOfferProposal extends BaseModel
         }
         return $query;
     }
-    public function scopeFilterByDate($query, $date)
-    {
-        if ($date) {
-            return $query->whereDate('created_at', $date);
-        }
-        return $query;
-    }
 }

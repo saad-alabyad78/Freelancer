@@ -25,12 +25,13 @@ class FilterJobOfferProposalRequest extends FormRequest
     {
         return [
             'job_offer_id' => [
-            'nullable',
-            'integer' , 
-            Rule::exists('job_offers' , 'id')->where('company_id' , auth()->user()->role_id)
-        ],
-            'date' => 'nullable|date',
+                'nullable',
+                'integer',
+                Rule::exists('job_offers', 'id')->where(function ($query) {
+                    $query->where('company_id', auth()->user()->role_id);
+                }),
+            ],
+            'order' => 'nullable|in:asc,desc',
         ];
     }
-
 }

@@ -17,9 +17,9 @@ use App\Http\Requests\JobOfferProposal\UpdateJobOfferProposalRequest;
 class JobOfferProposalController extends Controller
 {
     /**
-     * Filter job offer proposals based on provided filters.
+     * Filter job offer proposals based on job offer id and sort them by created date.
      *
-     * @param  \App\Http\Requests\FilterJobOfferProposalRequest  $request
+     * @param  FilterJobOfferProposalRequest  $request
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function filter(FilterJobOfferProposalRequest $request)
@@ -28,13 +28,11 @@ class JobOfferProposalController extends Controller
 
         $data = $request->validated();
 
-        $company = Company::findOrFail(auth()->user()->role_id) ;
+        $company = Company::findOrFail(auth()->user()->role_id);
 
-        $proposals =
-            $company->job_offer_proposals()
-            ->filterByJobOfferId($data['job_offer_id'] ?? null)
-            ->filterByDate($data['date'] ?? null)
-            ->pagenate(20);
+        $proposals = $company->job_offer_proposals()
+                            ->orderBy('created_at', $data['order'] ?? 'asc')
+                            ->paginate(20);
 
         return JobOfferProposalResource::collection($proposals);
     }
@@ -49,10 +47,10 @@ class JobOfferProposalController extends Controller
 
         $this->authorize('index', JobOfferProposal::class);
 
+
     $proposals = JobOfferProposal::where('freelancer_id', $user->role_id)
                     ->orderBy('created_at', 'desc')
                     ->paginate(20);
-
         return JobOfferProposalResource::collection($proposals);
     }
     /**
@@ -67,12 +65,12 @@ class JobOfferProposalController extends Controller
 
         return JobOfferProposalResource::make($proposal) ;
     }
-/**
- * Store a newly created job offer proposal.
- *
- * @param  CreateJobOfferProposalRequest  $request
- * @return JobOfferProposalResource
- */
+    /**
+     * Store a newly created job offer proposal.
+     *
+     * @param  CreateJobOfferProposalRequest  $request
+     * @return JobOfferProposalResource
+     */
     public function create(CreateJobOfferProposalRequest $request)
     {
         $this->authorize('create', JobOfferProposal::class);
@@ -86,12 +84,12 @@ class JobOfferProposalController extends Controller
 
         return JobOfferProposalResource::make($proposal) ;
     }
-/**
- * Update the specified job offer proposal.
- *
- * @param  UpdateJobOfferProposalRequest  $request
- * @return JobOfferProposalResource
- */
+    /**
+     * Update the specified job offer proposal.
+     *
+     * @param  UpdateJobOfferProposalRequest  $request
+     * @return JobOfferProposalResource
+     */
     public function update(UpdateJobOfferProposalRequest $request)
     {
         $data = $request->validated() ;
@@ -102,12 +100,12 @@ class JobOfferProposalController extends Controller
 
         return JobOfferProposalResource::make($proposal) ;
     }
-/**
- * Remove the specified job offer proposal.
- *
- * @param  JobOfferProposal  $jobOfferProposal
- * @return \Illuminate\Http\Response
- */
+    /**
+     * Remove the specified job offer proposal.
+     *
+     * @param  JobOfferProposal  $jobOfferProposal
+     * @return \Illuminate\Http\Response
+     */
     public function delete(JobOfferProposal $jobOfferProposal)
     {
         $this->authorize('delete' , $jobOfferProposal) ;
@@ -118,12 +116,12 @@ class JobOfferProposalController extends Controller
 
         return response()->noContent() ;
     }
-/**
- * Reject one or more job offer proposals.
- *
- * @param  RejectJobOfferProposalRequest  $request
- * @return \Illuminate\Http\Response
- */
+    /**
+     * Reject one or more job offer proposals.
+     *
+     * @param  RejectJobOfferProposalRequest  $request
+     * @return \Illuminate\Http\Response
+     */
     public function reject(RejectJobOfferProposalRequest $request)
     {
         $proposalIds = $request->validated()['job_offer_proposal_ids'];
@@ -146,6 +144,7 @@ class JobOfferProposalController extends Controller
 
         return response()->noContent();
     }
+
     /**
      * Accept a job offer proposal.
      *
