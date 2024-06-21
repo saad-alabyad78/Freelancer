@@ -22,13 +22,13 @@ endpoints:
         name: client_id
         description: 'The ID of the client.'
         required: true
-        example: 16
+        example: 9
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      client_id: 16
+      client_id: 9
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -89,9 +89,9 @@ endpoints:
         custom: []
       date_of_birth:
         name: date_of_birth
-        description: 'Must be a valid date. Must be a date before or equal to <code>2008-06-21</code>.'
+        description: 'Must be a valid date. Must be a date before or equal to <code>2008-06-22</code>.'
         required: true
-        example: '1999-02-17'
+        example: '2005-12-19'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -117,7 +117,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      date_of_birth: '1999-02-17'
+      date_of_birth: '2005-12-19'
       city: دمشق
       gender: male
     fileParameters: []
@@ -132,7 +132,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5ade1aV8PfvZg64Eh6kc3Db'
+      - 'Bearer EaZkceP16685f4DgdhV3vab'
     controller: null
     method: null
     route: null
@@ -179,9 +179,9 @@ endpoints:
         custom: []
       date_of_birth:
         name: date_of_birth
-        description: 'Must be a valid date. Must be a date before or equal to <code>2008-06-21</code>.'
+        description: 'Must be a valid date. Must be a date before or equal to <code>2008-06-22</code>.'
         required: false
-        example: '1998-08-16'
+        example: '2002-07-19'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -207,7 +207,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      date_of_birth: '1998-08-16'
+      date_of_birth: '2002-07-19'
       city: دمشق
       gender: female
     fileParameters: []
@@ -222,7 +222,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cbge4VPD863EZ6dh1k5vafa'
+      - 'Bearer b6dkDh8Zc6va143geaEPf5V'
     controller: null
     method: null
     route: null

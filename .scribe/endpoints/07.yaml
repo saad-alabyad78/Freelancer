@@ -1,4 +1,4 @@
-name: Endpoints
+name: 'JobOffer-Proposal Managment'
 description: ''
 endpoints:
   -
@@ -6,7 +6,7 @@ endpoints:
       - PUT
     uri: api/job-offer-proposal
     metadata:
-      groupName: Endpoints
+      groupName: 'JobOffer-Proposal Managment'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -26,7 +26,7 @@ endpoints:
         name: job_offer_proposal_id
         description: ''
         required: true
-        example: et
+        example: sapiente
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -35,14 +35,14 @@ endpoints:
         name: message
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: bfkjakufzefbsojuixgvbxf
+        example: okr
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      job_offer_proposal_id: et
-      message: bfkjakufzefbsojuixgvbxf
+      job_offer_proposal_id: sapiente
+      message: okr
     fileParameters: []
     responses: []
     responseFields: []
@@ -56,7 +56,7 @@ endpoints:
       - DELETE
     uri: 'api/job-offer-proposal/{jobOfferProposal_id}'
     metadata:
-      groupName: Endpoints
+      groupName: 'JobOffer-Proposal Managment'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -72,13 +72,13 @@ endpoints:
         name: jobOfferProposal_id
         description: 'The ID of the jobOfferProposal.'
         required: true
-        example: 1
+        example: 4
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      jobOfferProposal_id: 1
+      jobOfferProposal_id: 4
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -96,7 +96,7 @@ endpoints:
       - GET
     uri: api/job-offer-proposal/index
     metadata:
-      groupName: Endpoints
+      groupName: 'JobOffer-Proposal Managment'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -135,7 +135,7 @@ endpoints:
       - POST
     uri: api/job_offer_proposal/reject
     metadata:
-      groupName: Endpoints
+      groupName: 'JobOffer-Proposal Managment'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -156,14 +156,14 @@ endpoints:
         description: ''
         required: true
         example:
-          - magni
+          - laboriosam
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
       job_offer_proposal_ids:
-        - magni
+        - laboriosam
     fileParameters: []
     responses: []
     responseFields: []
@@ -177,7 +177,7 @@ endpoints:
       - POST
     uri: 'api/job_offer_proposal/accept/{jobOfferProposal_id}'
     metadata:
-      groupName: Endpoints
+      groupName: 'JobOffer-Proposal Managment'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -193,13 +193,13 @@ endpoints:
         name: jobOfferProposal_id
         description: 'The ID of the jobOfferProposal.'
         required: true
-        example: 18
+        example: 15
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      jobOfferProposal_id: 18
+      jobOfferProposal_id: 15
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -215,31 +215,21 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/job_offer_proposal/{job_offer_proposal}'
+    uri: api/job_offer_proposal/filter
     metadata:
-      groupName: Endpoints
+      groupName: 'JobOffer-Proposal Managment'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display the specified job offer proposal.'
+      title: 'Filter job offer proposals based on job offer id and sort them by created date.'
       description: ''
       authenticated: false
       custom: []
     headers:
       Content-Type: application/json
       Accept: application/json
-    urlParameters:
-      job_offer_proposal:
-        name: job_offer_proposal
-        description: ''
-        required: true
-        example: 17
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      job_offer_proposal: 17
+    urlParameters: []
+    cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -263,52 +253,32 @@ endpoints:
     custom: []
   -
     httpMethods:
-      - POST
-    uri: api/test
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
       - GET
-    uri: api/test
+    uri: 'api/job_offer_proposal/{job_offer_proposal}'
     metadata:
-      groupName: Endpoints
+      groupName: 'JobOffer-Proposal Managment'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Display the specified job offer proposal.'
       description: ''
       authenticated: false
       custom: []
     headers:
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
+    urlParameters:
+      job_offer_proposal:
+        name: job_offer_proposal
+        description: ''
+        required: true
+        example: 11
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      job_offer_proposal: 11
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -316,13 +286,11 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
-        content: 'hi salah'
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
-          content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '50'
+          content-type: application/json
           access-control-allow-origin: '*'
         description: null
         custom: []

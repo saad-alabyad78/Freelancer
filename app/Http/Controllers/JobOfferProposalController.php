@@ -126,12 +126,6 @@ class JobOfferProposalController extends Controller
     {
         $proposalIds = $request->validated()['job_offer_proposal_ids'];
 
-        //the same validation in the request
-        // foreach ($proposalIds as $proposalId) {
-        //     $proposal = JobOfferProposal::findOrFail($proposalId);
-        //     $this->authorize('reject', $proposal);
-        // }
-
         JobOfferProposal::whereIn('id', $proposalIds)
             ->update(['rejected_at' => now()->toDateTimeString()]);
 
