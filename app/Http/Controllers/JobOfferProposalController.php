@@ -42,15 +42,15 @@ class JobOfferProposalController extends Controller
  */
     public function index()
     {
-    $user = auth()->user();
+        $user = auth()->user();
 
-    $this->authorize('index', JobOfferProposal::class);
+        $this->authorize('index', JobOfferProposal::class);
 
-    $proposals = JobOfferProposal::where('freelancer_id', $user->role_id)
-                    ->orderBy('created_at', 'desc')
-                    ->get();
+        $proposals = JobOfferProposal::where('freelancer_id', $user->role_id)
+            ->orderBy('created_at', 'desc')
+            ->get();
 
-      return JobOfferProposalResource::collection($proposals);
+        return JobOfferProposalResource::collection($proposals);
     }
 /**
  * Display the specified job offer proposal.
