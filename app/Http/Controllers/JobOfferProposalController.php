@@ -10,7 +10,10 @@ use App\Http\Resources\JobOfferProposal\JobOfferProposalResource;
 use App\Http\Requests\JobOfferProposal\CreateJobOfferProposalRequest;
 use App\Http\Requests\JobOfferProposal\RejectJobOfferProposalRequest;
 use App\Http\Requests\JobOfferProposal\UpdateJobOfferProposalRequest;
-
+/**
+ *@group JobOffer-Proposal Managment
+ *
+ **/
 class JobOfferProposalController extends Controller
 {
     /**
