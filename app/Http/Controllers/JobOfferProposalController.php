@@ -17,10 +17,10 @@ use App\Http\Requests\JobOfferProposal\UpdateJobOfferProposalRequest;
 class JobOfferProposalController extends Controller
 {
     /**
-     * Filter (company) 
+     * Filter (company)
      *
      * filter job offer proposal based on job offer id and sort them by created date.
-     * 
+     *
      * @param  FilterJobOfferProposalRequest  $request
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
@@ -43,10 +43,10 @@ class JobOfferProposalController extends Controller
     }
     /**
      * Display list (freelancer)
-     * 
+     *
      * display a listing of proposals .
      * for the freelancer
-     * 
+     *
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index()
@@ -55,18 +55,17 @@ class JobOfferProposalController extends Controller
 
         $this->authorize('index', JobOfferProposal::class);
 
-
         $proposals = JobOfferProposal::where('freelancer_id', $user->role_id)
                         ->orderBy('created_at', 'desc')
                         ->paginate(20);
-                        
+
         return JobOfferProposalResource::collection($proposals);
     }
     /**
      * Display one (company|freelancer).
-     * 
+     *
      * company or freelancer can see the proposal
-     * 
+     *
      * @param  JobOfferProposal  $proposal
      * @return JobOfferProposalResource
      */
@@ -78,7 +77,7 @@ class JobOfferProposalController extends Controller
     }
     /**
      * Propose | Create (freelancer)
-     * 
+     *
      * Store a newly created job offer proposal.
      *
      * @param  CreateJobOfferProposalRequest  $request
@@ -101,13 +100,15 @@ class JobOfferProposalController extends Controller
      * Update (freelancer).
      *
      * freelancer update the proposal message
-     * but that does not updates the date of it 
-     * 
+     * but that does not updates the date of it
+     *
      * @param  UpdateJobOfferProposalRequest  $request
      * @return JobOfferProposalResource
      */
     public function update(UpdateJobOfferProposalRequest $request)
     {
+        $this->authorize('update', JobOfferProposal::class);
+
         $data = $request->validated() ;
 
         $proposal = JobOfferProposal::findOrFail($data['job_offer_proposal_id']) ;
@@ -120,7 +121,7 @@ class JobOfferProposalController extends Controller
      * Delete | Cancel (freelancer).
      *
      * freelancer delete the proposal
-     * 
+     *
      * @param  JobOfferProposal  $jobOfferProposal
      * @return \Illuminate\Http\Response
      */
@@ -136,11 +137,11 @@ class JobOfferProposalController extends Controller
     }
     /**
      * Reject (company)
-     * 
+     *
      * reject one or more job offer proposals.
      *
      * company reject one or more proposals
-     * 
+     *
      * @param  RejectJobOfferProposalRequest  $request
      * @return \Illuminate\Http\Response
      */
@@ -163,11 +164,11 @@ class JobOfferProposalController extends Controller
 
     /**
      * Accept (company)
-     * 
+     *
      * accept a job offer proposal.
      *
      *company accepts the proposal
-     * 
+     *
      * @param  JobOfferProposal  $jobOfferProposal
      * @return JobOfferProposalResource
      */
