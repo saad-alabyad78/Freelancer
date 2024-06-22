@@ -10,7 +10,6 @@ class Admin extends BaseModel
 {
     use HasFactory;
 
-
     public function user():MorphOne
     {
         return $this->morphOne(User::class,"role");
