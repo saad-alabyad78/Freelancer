@@ -18,8 +18,8 @@ return new class extends Migration
             $table->foreignIdFor(JobOffer::class)->constrained()->cascadeOnDelete() ;
             $table->foreignIdFor(Freelancer::class)->constrained()->cascadeOnDelete() ;
             $table->string('message') ;
-            $table->date('rejected_at')->nullable() ;
-            $table->date('accepted_at')->nullable() ;
+            $table->dateTime('rejected_at')->nullable() ;
+            $table->dateTime('accepted_at')->nullable() ;
             $table->timestamps() ;
         });
     }

@@ -19,7 +19,9 @@ class JobOfferProposalPolicy
     public function accept(User $user, JobOfferProposal $jobOfferProposal): bool
     {
         return $user->role_type == Company::class
-            && $user->role_id == $jobOfferProposal->job_offer->company_id;
+            && $user->role_id == $jobOfferProposal->job_offer->company_id
+            && $jobOfferProposal->accepted_at == null 
+            && $jobOfferProposal->rejected_at == null;
     }
     public function filter(User $user)
     {

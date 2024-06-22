@@ -14,7 +14,7 @@ class CreateJobOfferProposalRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return auth()->check();
     }
 
     /**
@@ -24,6 +24,7 @@ class CreateJobOfferProposalRequest extends FormRequest
      */
     public function rules(): array
     {
+        var_dump(auth()->user()) ;
         return [
             'job_offer_id' => [
                 'required',
@@ -32,7 +33,7 @@ class CreateJobOfferProposalRequest extends FormRequest
                 ->where('status', JobOfferStatus::AVTIVE) ,
 
                 Rule::unique('job_offer_proposals' , 'job_offer_id')
-                    ->where('freelancer_id' , (string)auth()->user()->role_id )  , 
+                    ->where('freelancer_id' , (string)auth()->user()?->role_id )  , 
                 ] ,
             'message' => ['required' , 'string' , 'max:255'] ,
         ];

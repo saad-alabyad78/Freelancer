@@ -14,9 +14,10 @@ endpoints:
         search industry
         get first 100 match
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -28,17 +29,20 @@ endpoints:
         name: name
         description: ''
         required: false
-        example: sed
+        example: explicabo
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: sed
+      name: explicabo
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 683f5DcveP1Eah4baVdgk6Z'
     controller: null
     method: null
     route: null
@@ -56,9 +60,10 @@ endpoints:
         search skill
         get first 100 match
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -70,7 +75,7 @@ endpoints:
         name: name
         description: ''
         required: false
-        example: ipsa
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -85,11 +90,14 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: ipsa
+      name: et
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 14Vea68fb5aD3P6EchkgZvd'
     controller: null
     method: null
     route: null
@@ -105,9 +113,10 @@ endpoints:
       subgroupDescription: ''
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -119,7 +128,10 @@ endpoints:
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer e1ZaEb6fP5dv3Vhkcg84a6D'
     controller: null
     method: null
     route: null
@@ -135,9 +147,10 @@ endpoints:
       subgroupDescription: ''
       title: 'search for the job role'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -149,13 +162,13 @@ endpoints:
         name: name
         description: ''
         required: false
-        example: officiis
+        example: nemo
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: officiis
+      name: nemo
     fileParameters: []
     responses:
       -
@@ -165,7 +178,10 @@ endpoints:
         description: ''
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 4PaEvc386dZfe1hb6k5gVDa'
     controller: null
     method: null
     route: null
@@ -181,9 +197,10 @@ endpoints:
       subgroupDescription: ''
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -195,7 +212,10 @@ endpoints:
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3vkhZ45ea1d6gaPDEbVf68c'
     controller: null
     method: null
     route: null

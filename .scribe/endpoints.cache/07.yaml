@@ -5,6 +5,60 @@ description: ''
 endpoints:
   -
     httpMethods:
+      - POST
+    uri: api/job-offer-proposal/store
+    metadata:
+      groupName: 'JobOffer-Proposal Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store a newly created job offer proposal.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      job_offer_id:
+        name: job_offer_id
+        description: ''
+        required: true
+        example: similique
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      message:
+        name: message
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: gmklfnzdvpqhqiwsaf
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      job_offer_id: similique
+      message: gmklfnzdvpqhqiwsaf
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer g5ah138aPDVZ6d46bcfevEk'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
       - PUT
     uri: api/job-offer-proposal
     metadata:
@@ -13,10 +67,13 @@ endpoints:
       subgroup: ''
       subgroupDescription: ''
       title: 'Update the specified job offer proposal.'
-      description: ''
-      authenticated: false
+      description: |-
+        freelancer update the proposal message
+        but that does not updates the date of it
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -28,7 +85,7 @@ endpoints:
         name: job_offer_proposal_id
         description: ''
         required: true
-        example: sapiente
+        example: vel
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -37,18 +94,21 @@ endpoints:
         name: message
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: okr
+        example: xjciqsvfei
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      job_offer_proposal_id: sapiente
-      message: okr
+      job_offer_proposal_id: vel
+      message: xjciqsvfei
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer PhV8d1564gZeEvfcaa36Dkb'
     controller: null
     method: null
     route: null
@@ -63,10 +123,11 @@ endpoints:
       subgroup: ''
       subgroupDescription: ''
       title: 'Remove the specified job offer proposal.'
-      description: ''
-      authenticated: false
+      description: 'freelancer delete the proposal'
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -74,13 +135,13 @@ endpoints:
         name: jobOfferProposal_id
         description: 'The ID of the jobOfferProposal.'
         required: true
-        example: 4
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      jobOfferProposal_id: 4
+      jobOfferProposal_id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -88,7 +149,10 @@ endpoints:
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 8DkV35bdfava66gZhcE4eP1'
     controller: null
     method: null
     route: null
@@ -104,9 +168,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Display a listing of job offer proposals for the freelancer.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -127,7 +192,10 @@ endpoints:
         description: null
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer g4eEZP5c1a8k6ab6dD3Vvfh'
     controller: null
     method: null
     route: null
@@ -135,17 +203,18 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/job_offer_proposal/reject
+    uri: api/job-offer-proposal/reject
     metadata:
       groupName: 'JobOffer-Proposal Managment'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
       title: 'Reject one or more job offer proposals.'
-      description: ''
-      authenticated: false
+      description: 'company reject one or more proposals'
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -158,18 +227,21 @@ endpoints:
         description: ''
         required: true
         example:
-          - laboriosam
+          - soluta
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
       job_offer_proposal_ids:
-        - laboriosam
+        - soluta
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Z45hfVP16daD863gacEbvke'
     controller: null
     method: null
     route: null
@@ -177,17 +249,18 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: 'api/job_offer_proposal/accept/{jobOfferProposal_id}'
+    uri: 'api/job-offer-proposal/accept/{jobOfferProposal_id}'
     metadata:
       groupName: 'JobOffer-Proposal Managment'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
       title: 'Accept a job offer proposal.'
-      description: ''
-      authenticated: false
+      description: 'company accepts the proposal'
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -195,13 +268,13 @@ endpoints:
         name: jobOfferProposal_id
         description: 'The ID of the jobOfferProposal.'
         required: true
-        example: 15
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      jobOfferProposal_id: 15
+      jobOfferProposal_id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -209,7 +282,10 @@ endpoints:
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Zgv6he3b1dk4a6cD5Vfa8PE'
     controller: null
     method: null
     route: null
@@ -217,7 +293,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/job_offer_proposal/filter
+    uri: api/job-offer-proposal/filter
     metadata:
       groupName: 'JobOffer-Proposal Managment'
       groupDescription: ''
@@ -225,17 +301,40 @@ endpoints:
       subgroupDescription: ''
       title: 'Filter job offer proposals based on job offer id and sort them by created date.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    bodyParameters:
+      job_offer_id:
+        name: job_offer_id
+        description: ''
+        required: false
+        example: 8
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      order:
+        name: order
+        description: ''
+        required: false
+        example: asc
+        type: string
+        enumValues:
+          - asc
+          - desc
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      job_offer_id: 8
+      order: asc
     fileParameters: []
     responses:
       -
@@ -248,7 +347,10 @@ endpoints:
         description: null
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Ded85Egb3hf64Vckav16PaZ'
     controller: null
     method: null
     route: null
@@ -256,31 +358,32 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/job_offer_proposal/{job_offer_proposal}'
+    uri: 'api/job-offer-proposal/{jobOfferProposal_id}'
     metadata:
       groupName: 'JobOffer-Proposal Managment'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
       title: 'Display the specified job offer proposal.'
-      description: ''
-      authenticated: false
+      description: 'company or freelancer can see the proposal'
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      job_offer_proposal:
-        name: job_offer_proposal
-        description: ''
+      jobOfferProposal_id:
+        name: jobOfferProposal_id
+        description: 'The ID of the jobOfferProposal.'
         required: true
-        example: 11
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      job_offer_proposal: 11
+      jobOfferProposal_id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -297,7 +400,10 @@ endpoints:
         description: null
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer D16acVdeaZ8Pvgf6Ebhk345'
     controller: null
     method: null
     route: null

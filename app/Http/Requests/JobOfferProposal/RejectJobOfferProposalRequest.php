@@ -31,23 +31,18 @@ class RejectJobOfferProposalRequest extends FormRequest
                 'distinct' ,
                 function($attribute ,$value , $fail){
 
-                    $proposal = JobOfferProposal::whereAll(
-                        [
-                            'id' => $value ,
-                            'rejected_at' => null ,
-                            'accepted_at' => null ,
-                        ]
-                    )->first() ;
+                    $proposal = JobOfferProposal::where('id', $value) 
+                    ->whereNull('rejected_at')->whereNull('accepted_at')->first() ;
 
                     if(!$proposal){
                         $fail('there is no such job offer proposal with id ' . $value . ' or it could be already rejected or accepted') ;
+                        return ;
                     }
                     if($proposal->job_offer()->first()->company_id != auth()->user()->role_id){
                         $fail('this is not your job offer proposal ') ;
                     }
 
                 }
-
                 ]
         ];
     }

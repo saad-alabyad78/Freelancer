@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\JobOfferProposal;
 
 use App\Models\Company;
 use Illuminate\Validation\Rule;
@@ -13,7 +13,7 @@ class FilterJobOfferProposalRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return auth()->user()->role_type == Company::class ;
+        return auth()->check() and auth()->user()->role_type == Company::class ;
     }
 
     /**

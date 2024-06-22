@@ -12,9 +12,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Store Image.'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
@@ -42,7 +43,10 @@ endpoints:
         description: ''
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Vvkca61fPeag36E5dbh84DZ'
     controller: null
     method: null
     route: null
@@ -58,9 +62,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Store File'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
@@ -81,18 +86,21 @@ endpoints:
         name: title
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: yfumemfzrj
+        example: bpyxjkvzmapoq
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      title: yfumemfzrj
+      title: bpyxjkvzmapoq
     fileParameters:
       file: null
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer EkcaP6a4Zd5DhbfV83gev16'
     controller: null
     method: null
     route: null

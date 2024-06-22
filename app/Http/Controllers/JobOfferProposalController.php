@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Company;
 use App\Models\JobOffer;
 use App\Models\JobOfferProposal;
-use App\Http\Requests\FilterJobOfferProposalRequest;
 use App\Http\Resources\JobOfferProposal\JobOfferProposalResource;
 use App\Http\Requests\JobOfferProposal\CreateJobOfferProposalRequest;
+use App\Http\Requests\JobOfferProposal\FilterJobOfferProposalRequest;
 use App\Http\Requests\JobOfferProposal\RejectJobOfferProposalRequest;
 use App\Http\Requests\JobOfferProposal\UpdateJobOfferProposalRequest;
 /**
@@ -31,6 +31,9 @@ class JobOfferProposalController extends Controller
         $company = Company::findOrFail(auth()->user()->role_id);
 
         $proposals = $company->job_offer_proposals()
+                            ->when($data['job_offer_id'] ?? false , function($query) use ($data){
+                                return $query->where('job_offer_id' , $data['job_offer_id']) ;
+                            })
                             ->orderBy('created_at', $data['order'] ?? 'asc')
                             ->paginate(20);
 
@@ -48,26 +51,33 @@ class JobOfferProposalController extends Controller
         $this->authorize('index', JobOfferProposal::class);
 
 
-    $proposals = JobOfferProposal::where('freelancer_id', $user->role_id)
-                    ->orderBy('created_at', 'desc')
-                    ->paginate(20);
+        $proposals = JobOfferProposal::where('freelancer_id', $user->role_id)
+                        ->orderBy('created_at', 'desc')
+                        ->paginate(20);
+                        
         return JobOfferProposalResource::collection($proposals);
     }
     /**
      * Display the specified job offer proposal.
+     * 
      *
+     * 
+     * company or freelancer can see the proposal
+     * 
      * @param  JobOfferProposal  $proposal
      * @return JobOfferProposalResource
      */
-    public function show(JobOfferProposal $proposal)
+    public function show(JobOfferProposal $jobOfferProposal)
     {
-        $this->authorize('view' , $proposal) ;
+        $this->authorize('view' , $jobOfferProposal) ;
 
-        return JobOfferProposalResource::make($proposal) ;
+        return JobOfferProposalResource::make($jobOfferProposal) ;
     }
     /**
      * Store a newly created job offer proposal.
      *
+     *
+     * 
      * @param  CreateJobOfferProposalRequest  $request
      * @return JobOfferProposalResource
      */
@@ -87,6 +97,9 @@ class JobOfferProposalController extends Controller
     /**
      * Update the specified job offer proposal.
      *
+     * freelancer update the proposal message
+     * but that does not updates the date of it 
+     * 
      * @param  UpdateJobOfferProposalRequest  $request
      * @return JobOfferProposalResource
      */
@@ -103,6 +116,8 @@ class JobOfferProposalController extends Controller
     /**
      * Remove the specified job offer proposal.
      *
+     * freelancer delete the proposal
+     * 
      * @param  JobOfferProposal  $jobOfferProposal
      * @return \Illuminate\Http\Response
      */
@@ -119,6 +134,8 @@ class JobOfferProposalController extends Controller
     /**
      * Reject one or more job offer proposals.
      *
+     * company reject one or more proposals
+     * 
      * @param  RejectJobOfferProposalRequest  $request
      * @return \Illuminate\Http\Response
      */
@@ -142,8 +159,10 @@ class JobOfferProposalController extends Controller
     /**
      * Accept a job offer proposal.
      *
+     *company accepts the proposal
+     * 
      * @param  JobOfferProposal  $jobOfferProposal
-     * @return \Illuminate\Http\Response
+     * @return JobOfferProposalResource
      */
     public function accept(JobOfferProposal $jobOfferProposal)
     {
@@ -155,7 +174,7 @@ class JobOfferProposalController extends Controller
         // TODO: send notification to freelancer (firebase)
         // Allows the freelancer and the company to access the chat with each other
 
-        return response()->noContent();
+        return JobOfferProposalResource::make($jobOfferProposal);
     }
 
 

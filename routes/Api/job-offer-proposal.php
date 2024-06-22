@@ -20,7 +20,7 @@ Route::group([
 
 //only company
 Route::group([
-    'prefix' => 'job_offer_proposal' ,
+    'prefix' => 'job-offer-proposal' ,
     'middleware' => [
         'auth:sanctum' ,
         'verify_email' ,
@@ -34,12 +34,12 @@ Route::group([
 
 //both
 Route::group([
-    'prefix' => 'job_offer_proposal' ,
+    'prefix' => 'job-offer-proposal' ,
     'middleware' => [
         'auth:sanctum' ,
         'verify_email' ,
         'role:company,freelancer' ,
     ]
 ] , function(){
-    Route::get('{job_offer_proposal}' , [JobOfferProposalController::class , 'show']) ;
+    Route::get('{jobOfferProposal}' , [JobOfferProposalController::class , 'show']) ;
 });
