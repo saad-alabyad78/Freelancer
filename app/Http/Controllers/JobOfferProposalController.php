@@ -42,7 +42,7 @@ class JobOfferProposalController extends Controller
         return JobOfferProposalResource::collection($proposals);
     }
     /**
-     * Display a list(freelancer)
+     * Display list (freelancer)
      * 
      * display a listing of proposals .
      * for the freelancer
@@ -63,7 +63,7 @@ class JobOfferProposalController extends Controller
         return JobOfferProposalResource::collection($proposals);
     }
     /**
-     * Display specified proposal (company|freelancer).
+     * Display one (company|freelancer).
      * 
      * company or freelancer can see the proposal
      * 
