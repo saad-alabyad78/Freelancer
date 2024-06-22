@@ -12,8 +12,8 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Store a newly created job offer proposal.'
-      description: ''
+      title: 'Propose | Create (freelancer)'
+      description: 'Store a newly created job offer proposal.'
       authenticated: true
       custom: []
     headers:
@@ -29,7 +29,7 @@ endpoints:
         name: job_offer_id
         description: ''
         required: true
-        example: similique
+        example: cum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -38,21 +38,21 @@ endpoints:
         name: message
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: gmklfnzdvpqhqiwsaf
+        example: wpzdoxvfneyuxjbxnr
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      job_offer_id: similique
-      message: gmklfnzdvpqhqiwsaf
+      job_offer_id: cum
+      message: wpzdoxvfneyuxjbxnr
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer g5ah138aPDVZ6d46bcfevEk'
+      - 'Bearer 45e3DEcv16V6bkPg8fhadaZ'
     controller: null
     method: null
     route: null
@@ -66,7 +66,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update the specified job offer proposal.'
+      title: 'Update (freelancer).'
       description: |-
         freelancer update the proposal message
         but that does not updates the date of it
@@ -85,7 +85,7 @@ endpoints:
         name: job_offer_proposal_id
         description: ''
         required: true
-        example: vel
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -94,21 +94,21 @@ endpoints:
         name: message
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: xjciqsvfei
+        example: twfftdnvzxapzwcmf
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      job_offer_proposal_id: vel
-      message: xjciqsvfei
+      job_offer_proposal_id: est
+      message: twfftdnvzxapzwcmf
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer PhV8d1564gZeEvfcaa36Dkb'
+      - 'Bearer aaeZgP6vE5Dfc1h3k4dV6b8'
     controller: null
     method: null
     route: null
@@ -122,7 +122,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Remove the specified job offer proposal.'
+      title: 'Delete | Cancel (freelancer).'
       description: 'freelancer delete the proposal'
       authenticated: true
       custom: []
@@ -152,7 +152,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8DkV35bdfava66gZhcE4eP1'
+      - 'Bearer Z81a5e3fakDg6hb4P6vVdcE'
     controller: null
     method: null
     route: null
@@ -166,8 +166,10 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display a listing of job offer proposals for the freelancer.'
-      description: ''
+      title: 'Display a list(freelancer)'
+      description: |-
+        display a listing of proposals .
+        for the freelancer
       authenticated: true
       custom: []
     headers:
@@ -195,7 +197,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g4eEZP5c1a8k6ab6dD3Vvfh'
+      - 'Bearer 4k1dh6ecaZa6D358PbVvfEg'
     controller: null
     method: null
     route: null
@@ -209,8 +211,11 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Reject one or more job offer proposals.'
-      description: 'company reject one or more proposals'
+      title: 'Reject (company)'
+      description: |-
+        reject one or more job offer proposals.
+
+        company reject one or more proposals
       authenticated: true
       custom: []
     headers:
@@ -227,21 +232,21 @@ endpoints:
         description: ''
         required: true
         example:
-          - soluta
+          - eveniet
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
       job_offer_proposal_ids:
-        - soluta
+        - eveniet
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Z45hfVP16daD863gacEbvke'
+      - 'Bearer fZ4aav8egDbkc63165hVEdP'
     controller: null
     method: null
     route: null
@@ -255,8 +260,11 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Accept a job offer proposal.'
-      description: 'company accepts the proposal'
+      title: 'Accept (company)'
+      description: |-
+        accept a job offer proposal.
+
+        company accepts the proposal
       authenticated: true
       custom: []
     headers:
@@ -285,7 +293,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Zgv6he3b1dk4a6cD5Vfa8PE'
+      - 'Bearer 4aDVZP863fEcbda65gekvh1'
     controller: null
     method: null
     route: null
@@ -299,8 +307,8 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Filter job offer proposals based on job offer id and sort them by created date.'
-      description: ''
+      title: 'Filter (company)'
+      description: 'filter job offer proposal based on job offer id and sort them by created date.'
       authenticated: true
       custom: []
     headers:
@@ -316,7 +324,7 @@ endpoints:
         name: job_offer_id
         description: ''
         required: false
-        example: 8
+        example: 13
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -325,7 +333,7 @@ endpoints:
         name: order
         description: ''
         required: false
-        example: asc
+        example: desc
         type: string
         enumValues:
           - asc
@@ -333,8 +341,8 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      job_offer_id: 8
-      order: asc
+      job_offer_id: 13
+      order: desc
     fileParameters: []
     responses:
       -
@@ -350,7 +358,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Ded85Egb3hf64Vckav16PaZ'
+      - 'Bearer VvgD3Z66ehacfa854PbEkd1'
     controller: null
     method: null
     route: null
@@ -364,7 +372,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display the specified job offer proposal.'
+      title: 'Display specified proposal (company|freelancer).'
       description: 'company or freelancer can see the proposal'
       authenticated: true
       custom: []
@@ -403,7 +411,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer D16acVdeaZ8Pvgf6Ebhk345'
+      - 'Bearer 68Pvahbe5a63dZV4kgEDcf1'
     controller: null
     method: null
     route: null

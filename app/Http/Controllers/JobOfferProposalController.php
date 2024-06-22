@@ -17,8 +17,10 @@ use App\Http\Requests\JobOfferProposal\UpdateJobOfferProposalRequest;
 class JobOfferProposalController extends Controller
 {
     /**
-     * Filter job offer proposals based on job offer id and sort them by created date.
+     * Filter (company) 
      *
+     * filter job offer proposal based on job offer id and sort them by created date.
+     * 
      * @param  FilterJobOfferProposalRequest  $request
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
@@ -40,8 +42,11 @@ class JobOfferProposalController extends Controller
         return JobOfferProposalResource::collection($proposals);
     }
     /**
-     * Display a listing of job offer proposals for the freelancer.
-     *
+     * Display a list(freelancer)
+     * 
+     * display a listing of proposals .
+     * for the freelancer
+     * 
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index()
@@ -58,9 +63,7 @@ class JobOfferProposalController extends Controller
         return JobOfferProposalResource::collection($proposals);
     }
     /**
-     * Display the specified job offer proposal.
-     * 
-     *
+     * Display specified proposal (company|freelancer).
      * 
      * company or freelancer can see the proposal
      * 
@@ -74,10 +77,10 @@ class JobOfferProposalController extends Controller
         return JobOfferProposalResource::make($jobOfferProposal) ;
     }
     /**
+     * Propose | Create (freelancer)
+     * 
      * Store a newly created job offer proposal.
      *
-     *
-     * 
      * @param  CreateJobOfferProposalRequest  $request
      * @return JobOfferProposalResource
      */
@@ -95,7 +98,7 @@ class JobOfferProposalController extends Controller
         return JobOfferProposalResource::make($proposal) ;
     }
     /**
-     * Update the specified job offer proposal.
+     * Update (freelancer).
      *
      * freelancer update the proposal message
      * but that does not updates the date of it 
@@ -114,7 +117,7 @@ class JobOfferProposalController extends Controller
         return JobOfferProposalResource::make($proposal) ;
     }
     /**
-     * Remove the specified job offer proposal.
+     * Delete | Cancel (freelancer).
      *
      * freelancer delete the proposal
      * 
@@ -132,7 +135,9 @@ class JobOfferProposalController extends Controller
         return response()->noContent() ;
     }
     /**
-     * Reject one or more job offer proposals.
+     * Reject (company)
+     * 
+     * reject one or more job offer proposals.
      *
      * company reject one or more proposals
      * 
@@ -157,7 +162,9 @@ class JobOfferProposalController extends Controller
     }
 
     /**
-     * Accept a job offer proposal.
+     * Accept (company)
+     * 
+     * accept a job offer proposal.
      *
      *company accepts the proposal
      * 
