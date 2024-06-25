@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Resources\Auth\UserResource;
 use Throwable;
 use Carbon\Carbon;
 use App\Models\User;
@@ -10,6 +9,7 @@ use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
+use App\Http\Resources\Auth\UserResource;
 use App\Http\Requests\Auth\ProviderRequest;
 /**
  * @group Auth Managment
@@ -38,6 +38,8 @@ class ProviderController extends Controller
 
             $user->email_verified_at = Carbon::now()->format('Y-m-d H:i:s');
             $user->save();
+
+            //todo send a welcom email 
             
             return response()->json([
                 'user' => UserResource::make($user) ,

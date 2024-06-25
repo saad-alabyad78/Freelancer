@@ -51,6 +51,7 @@ class UpdateJobOfferRequest extends FormRequest
             
             'skill_ids' => ['array' , 'min:5' , 'max:25'] ,
             'skill_ids.*' => ['exists:skills,id'] ,
+
         ];
     }
 }

@@ -44,6 +44,7 @@ return new class extends Migration
 
             $table->string('industry_name');
 
+
             $table->foreign('industry_name')
                 ->references('name')
                 ->on('industries')

@@ -29,6 +29,7 @@ class UpdateFreelancerRequest extends FormRequest
 
                 'profile_image_id' => ['required_with:profile_image_url' , 'exists:images,id' , 'nullable'] ,
                 'background_image_id' => ['required_with:background_image_id' , 'exists:images,id' , 'nullable'] ,
+                
 
                 'headline' => [ 'string' , 'min:20' , 'max:200'],
                 'description' => [ 'string' , 'min:60' , 'max:4000'],

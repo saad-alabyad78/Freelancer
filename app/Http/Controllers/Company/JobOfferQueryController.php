@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Company;
 use App\Models\Company;
 use App\Models\JobRole;
 use App\Models\JobOffer;
+use App\Models\Freelancer;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Builder;
@@ -74,7 +75,15 @@ class JobOfferQueryController extends Controller
         //just cant see pending (handle it in form request)
         $filters = $request->validated() ; 
 
-        $offers = JobOffer::filter($filters)
+        $freelancer = null ;
+        
+        if(auth()->user() != null )
+        {
+            $freelancer = Freelancer::findOrFail(auth()->user()->role_id)  ;
+        }
+        
+        
+        $offers = JobOffer::filter($filters , $freelancer)
             ->with('job_role' , 'skills' , 'company' , 'skills.skillable') 
             ->orderBy('created_at')//todo : add order by scope 
             ->paginate(20) ;

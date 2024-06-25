@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Company;
 
 use App\Constants\Gender;
+use App\Models\Freelancer;
 use App\Constants\LocationType;
 use Illuminate\Validation\Rule;
 use App\Constants\AttendenceType;
@@ -16,7 +17,7 @@ class JobOfferForFreelancersRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return true ;
     }
 
     /**
@@ -34,9 +35,9 @@ class JobOfferForFreelancersRequest extends FormRequest
             'job_role_id' => ['integer' , 'exists:job_roles,id'] ,  
             // 'max_sallary' => ['integer'] ,
             // 'min_salary' => ['integer'] ,
-            // 'transportation' => ['boolean'] ,
-            // 'health_insurance' => ['boolean'] ,
-            // 'military_service' => ['boolean'] ,
+            'transportation' => ['boolean'] ,
+            'health_insurance' => ['boolean'] ,
+            'military_service' => ['boolean'] ,
             // 'max_age' => ['integer'] ,
             // 'min_age' => ['integer'],
             'gender' => ['nullable' , Rule::in(Gender::$types)],

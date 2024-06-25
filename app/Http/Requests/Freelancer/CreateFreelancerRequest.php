@@ -30,6 +30,7 @@ class CreateFreelancerRequest extends FormRequest
         'profile_image_id' => ['exists:images,id'] ,
         'background_image_id' => ['exists:images,id'] ,
 
+
         'headline' => ['required' , 'string' , 'min:20' , 'max:200'],
         'description' => ['required' , 'string' , 'min:60' , 'max:4000'],
         'city' => ['required' , new SyrianCityRule()],
