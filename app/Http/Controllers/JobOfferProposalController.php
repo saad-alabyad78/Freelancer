@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Company;
 use App\Models\JobOffer;
 use App\Models\JobOfferProposal;
+use App\Models\Conversation;
 use App\Http\Resources\JobOfferProposal\JobOfferProposalResource;
 use App\Http\Requests\JobOfferProposal\CreateJobOfferProposalRequest;
 use App\Http\Requests\JobOfferProposal\FilterJobOfferProposalRequest;
@@ -179,11 +180,14 @@ class JobOfferProposalController extends Controller
         $jobOfferProposal->update(['accepted_at' => now()->toDateTimeString()]);
         JobOffer::where('id', $jobOfferProposal->job_offer_id)->decrement('proposals_count');
 
+        $conversation = Conversation::create();
+        $conversation->participants()->attach([$jobOfferProposal->freelancer_id, $jobOfferProposal->company_id]);
+
         // TODO: send notification to freelancer (firebase)
-        // Allows the freelancer and the company to access the chat with each other
 
-        return JobOfferProposalResource::make($jobOfferProposal);
+        return JobOfferProposalResource::make($jobOfferProposal)->additional([
+            'conversation' => $conversation
+        ]);
     }
-
 
 }

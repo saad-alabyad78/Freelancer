@@ -37,4 +37,38 @@ class InvitationController extends Controller
 
         return response()->json($invitations);
     }
+    public function deleteInvitation($id)
+    {
+        $invitation = Invitation::findOrFail($id);
+        $this->authorize('deleteInvitation', $invitation);
+
+        $invitation->delete();
+        return response()->json(['message' => 'Invitation deleted successfully']);
+    }
+
+    public function acceptInvitation($id)
+    {
+        $invitation = Invitation::findOrFail($id);
+        $this->authorize('respondToInvitation', $invitation);
+
+        $invitation->status = InvitationStatus::ACCEPTED;
+        $invitation->save();
+
+        $conversation = Conversation::create();
+        $conversation->participants()->attach([$invitation->company_id, $invitation->freelancer_id]);
+
+        return response()->json(['message' => 'Invitation accepted', 'conversation' => $conversation]);
+    }
+
+    public function rejectInvitation($id)
+    {
+        $invitation = Invitation::findOrFail($id);
+        $this->authorize('respondToInvitation', $invitation);
+
+        $invitation->status = InvitationStatus::REJECTED;
+        $invitation->save();
+
+        return response()->json(['message' => 'Invitation rejected']);
+    }
 }
+

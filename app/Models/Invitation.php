@@ -10,7 +10,11 @@ class Invitation extends Model
     use HasFactory;
 
     protected $fillable = [
-        'company_id', 'freelancer_id', 'job_offer_id',
+        'company_id', 'freelancer_id', 'job_offer_id', 'status',
+    ];
+
+    protected $attributes = [
+        'status' => InvitationStatus::PENDING,
     ];
 
     public function company()

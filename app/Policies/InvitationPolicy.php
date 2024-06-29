@@ -13,5 +13,14 @@ class InvitationPolicy
     {
         return $user->role === 'company';
     }
+    public function deleteInvitation(User $user, Invitation $invitation)
+    {
+        return $user->id === $invitation->company_id;
+    }
+
+    public function respondToInvitation(User $user, Invitation $invitation)
+    {
+        return $user->id === $invitation->freelancer_id;
+    }
 }
 

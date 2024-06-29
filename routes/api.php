@@ -49,9 +49,7 @@ require 'Api/job-offer-proposal.php' ;
 
 require 'Api/chat.php' ;
 
-
-
-
+require 'Api/invitation.php' ;
 
 Route::post('test' , function(Request $request){
   return 'hi' ;
