@@ -5,18 +5,20 @@ namespace App\Http\Controllers\Chat;
 use App\Models\Conversation;
 use App\Models\Message;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateConversationRequest;
+use App\Http\Requests\SendMessageRequest;
 use App\Events\MessageSent;
 
 class ConversationController extends Controller
 {
-    public function createConversation(Request $request)
+    public function createConversation(CreateConversationRequest $request)
     {
         $conversation = Conversation::create();
         $conversation->participants()->attach($request->user_ids);
         return response()->json($conversation);
     }
 
-    public function sendMessage(Request $request, $conversationId)
+    public function sendMessage(SendMessageRequest $request, $conversationId)
     {
         $message = Message::create([
             'conversation_id' => $conversationId,
