@@ -8,14 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Invitation extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-        'company_id', 'freelancer_id', 'job_offer_id', 'status',
+        'company_id', 'freelancer_id', 'job_offer_id', 'status', 'accepted_at', 'rejected_at',
     ];
 
     protected $attributes = [
         'status' => InvitationStatus::PENDING,
     ];
+
+    protected $dates = ['accepted_at', 'rejected_at'];
+
 
     public function company()
     {
