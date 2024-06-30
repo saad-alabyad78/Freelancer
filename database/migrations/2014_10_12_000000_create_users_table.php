@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
 
+            $table->string('fcm_token')->nullable();
+            
             $table->unsignedBigInteger('role_id')->nullable();
             $table->string('role_type')->nullable();
 
