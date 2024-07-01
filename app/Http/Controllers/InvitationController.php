@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Invitation;
+use App\Models\Conversation;
+use Illuminate\Http\Request;
+use App\Constants\InvitationStatus;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\SendInvitationRequest;
 use App\Http\Requests\AcceptInvitationRequest;
 use App\Http\Requests\RejectInvitationRequest;
-use App\Models\Conversation;
-use App\Models\Invitation;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Constants\InvitationStatus;
 
 class InvitationController extends Controller
 {
