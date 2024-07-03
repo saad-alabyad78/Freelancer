@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('company_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('freelancer_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('job_offer_id')->constrained('job_offers')->onDelete('cascade');
-            $table->string('status')->default('pending');
             $table->timestamp('accepted_at')->nullable();
             $table->timestamp('rejected_at')->nullable();
             $table->timestamps();

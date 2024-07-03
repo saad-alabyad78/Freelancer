@@ -2,21 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Invitation;
-use App\Models\Conversation;
-use Illuminate\Http\Request;
-use App\Constants\InvitationStatus;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\SendInvitationRequest;
 use App\Http\Requests\AcceptInvitationRequest;
 use App\Http\Requests\RejectInvitationRequest;
+use App\Models\Conversation;
+use App\Models\Invitation;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class InvitationController extends Controller
 {
     /**
-     * Send an invitation
+     * Send an invitation.
      *
-     * Sends an invitation from a company to a freelancer for a job offer.
+     * Sends an invitation from a company to a freelancer.
      *
      * @param  \App\Http\Requests\SendInvitationRequest  $request
      * @return \Illuminate\Http\Response
@@ -28,8 +27,6 @@ class InvitationController extends Controller
         $invitation = Invitation::create([
             'company_id' => auth()->user()->id,
             'freelancer_id' => $request->freelancer_id,
-            'job_offer_id' => $request->job_offer_id,
-            'status' => InvitationStatus::PENDING,
         ]);
 
         // send a notification to freelancer
@@ -38,7 +35,7 @@ class InvitationController extends Controller
     }
 
     /**
-     * Get invitations
+     * Get invitations.
      *
      * Retrieves all invitations for the authenticated user (company or freelancer).
      *
@@ -60,7 +57,7 @@ class InvitationController extends Controller
     }
 
     /**
-     * Delete an invitation
+     * Delete an invitation.
      *
      * Deletes a specific invitation.
      *
@@ -77,7 +74,7 @@ class InvitationController extends Controller
     }
 
     /**
-     * Accept an invitation
+     * Accept an invitation.
      *
      * Accepts a specific invitation by the freelancer.
      *
@@ -90,10 +87,10 @@ class InvitationController extends Controller
         $invitation = Invitation::findOrFail($id);
         $this->authorize('respondToInvitation', $invitation);
 
-        $invitation->status = InvitationStatus::ACCEPTED;
         $invitation->accepted_at = now();
         $invitation->save();
 
+        // Create a conversation between the company and the freelancer
         $conversation = Conversation::create();
         $conversation->participants()->attach([$invitation->company_id, $invitation->freelancer_id]);
 
@@ -101,7 +98,7 @@ class InvitationController extends Controller
     }
 
     /**
-     * Reject an invitation
+     * Reject an invitation.
      *
      * Rejects a specific invitation by the freelancer.
      *
@@ -114,7 +111,6 @@ class InvitationController extends Controller
         $invitation = Invitation::findOrFail($id);
         $this->authorize('respondToInvitation', $invitation);
 
-        $invitation->status = InvitationStatus::REJECTED;
         $invitation->rejected_at = now();
         $invitation->save();
 
