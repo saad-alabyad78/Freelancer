@@ -53,4 +53,24 @@ class ConversationController extends Controller
         $conversations = $request->user()->conversations;
         return response()->json($conversations);
     }
+
+    public function getMessagesByMessageId($conversationId, $messageId)
+    {
+        $message = Message::where('conversation_id', $conversationId)
+            ->where('id', $messageId)
+            ->firstOrFail();
+
+        $messagePosition = Message::where('conversation_id', $conversationId)
+            ->where('id', '<=', $messageId)
+            ->count();
+
+        $page = ceil($messagePosition / 50);
+
+        $messages = Message::where('conversation_id', $conversationId)
+            ->with('replies', 'parent')
+            ->orderBy('created_at', 'asc')
+            ->paginate(50, ['*'], 'page', $page);
+
+        return response()->json($messages);
+    }
 }
