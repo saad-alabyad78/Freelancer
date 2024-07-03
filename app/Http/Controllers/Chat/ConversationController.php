@@ -20,11 +20,20 @@ class ConversationController extends Controller
 
     public function sendMessage(SendMessageRequest $request, $conversationId)
     {
-        $message = Message::create([
+        $validated = $request->validated();
+
+        $messageData = [
             'conversation_id' => $conversationId,
             'user_id' => $request->user()->id,
-            'message' => $request->message,
-        ]);
+            'message' => $validated['message'] ?? null,
+            'parent_id' => $validated['parent_id'] ?? null,
+        ];
+
+        if ($request->hasFile('image')) {
+            $messageData['image'] = $request->file('image')->store('images', 'public');
+        }
+
+        $message = Message::create($messageData);
 
         broadcast(new MessageSent($message))->toOthers();
 
@@ -33,7 +42,9 @@ class ConversationController extends Controller
 
     public function getMessages($conversationId)
     {
-        $messages = Message::where('conversation_id', $conversationId)->get();
+        $messages = Message::where('conversation_id', $conversationId)
+            ->with('replies', 'parent')
+            ->paginate(50);
         return response()->json($messages);
     }
 

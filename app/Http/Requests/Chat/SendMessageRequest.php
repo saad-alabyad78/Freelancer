@@ -22,7 +22,9 @@ class SendMessageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'message' => 'required|string',
+            'message' => 'nullable|string',
+            'image' => 'nullable|image',
+            'parent_id' => 'nullable|exists:messages,id',
         ];
     }
 }
