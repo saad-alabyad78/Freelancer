@@ -14,6 +14,7 @@ use App\Models\PortfolioLike;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\RequestMe;
 use App\Interfaces\IPortfolioRepository;
 use App\Http\Resources\Freelancer\PortfolioResource;
 use App\Http\Requests\Freelancer\CreatePortfolioRequest;
@@ -44,6 +45,8 @@ class PortfolioController extends Controller
      */
     public function show(Portfolio $portfolio)
     {
+        //return app(RequestMe::class)->__invoke();
+
         return PortfolioResource::make($portfolio->load(['skills', 'files', 'images']));
     }
     /**
@@ -161,7 +164,7 @@ class PortfolioController extends Controller
      * return yes or no 
      */
     public function liked_by_me(Portfolio $portfolio)
-    {
+    {   
         $like = Like::where([
             'user_id' => Auth::id() ,
             'likable_id' => $portfolio->id ,

@@ -23,6 +23,10 @@ class RequestMe extends Controller
      **/
     public function __invoke()
     {
+        if(!auth()->check()){
+            return response()->json(['unauthenticated']) ;
+        }
+
         $userId = auth()->id();
         $userRole = auth()->user()->role; 
 
