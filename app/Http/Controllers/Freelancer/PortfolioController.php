@@ -45,8 +45,6 @@ class PortfolioController extends Controller
      */
     public function show(Portfolio $portfolio)
     {
-        //return app(RequestMe::class)->__invoke();
-
         return PortfolioResource::make($portfolio->load(['skills', 'files', 'images']));
     }
     /**
