@@ -41,6 +41,17 @@ Route::group([
         Route::post('store' ,  [PortfolioController::class , 'store']) ;
         Route::put('' ,  [PortfolioController::class , 'update']) ;
         Route::delete('' ,  [PortfolioController::class , 'delete']) ;
+
+
+        Route::withoutMiddleware('role:freelancer')->middleware('role:company,client')
+        ->group(function (){
+            Route::get('{portfolio}/liked-by-me' , [PortfolioController::class , 'liked_by_me']);
+            Route::get('{portfolio}/like' , [PortfolioController::class , 'like']);
+            Route::get('{portfolio}/unlike' , [PortfolioController::class , 'unlike']);
+            Route::get('{portfolio}/view' , [PortfolioController::class , 'view']);
+        });
+
     });
+
     
 });

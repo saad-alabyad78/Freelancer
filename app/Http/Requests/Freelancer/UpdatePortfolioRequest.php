@@ -40,6 +40,8 @@ class UpdatePortfolioRequest extends FormRequest
 
             'skill_ids' => ['required' , 'array' , 'min:5' , 'max:50'] ,
             'skill_ids.*' => ['exists:skills,id' , 'distinct'] ,
+
+            'section' => ['string' , 'min:3' , 'max:255'] ,
         ];
     }
 }

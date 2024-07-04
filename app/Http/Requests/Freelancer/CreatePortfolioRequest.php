@@ -32,13 +32,15 @@ class CreatePortfolioRequest extends FormRequest
             'description' => ['required' , 'string' , 'min:20'],
 
             'file_ids' => ['array' , 'max:6'] ,
-            'file_ids.*' => ['required','exists:files,id'],
+            'file_ids.*' => ['integer' , 'required','exists:files,id'],
 
             'image_ids' => ['array' , 'max:6'] ,
-            'image_ids.*' => ['required','exists:images,id'],
+            'image_ids.*' => ['integer' , 'required','exists:images,id'],
 
             'skill_ids' => ['required' , 'array' , 'min:5' , 'max:50'] ,
-            'skill_ids.*' => ['exists:skills,id' , 'distinct'] ,
+            'skill_ids.*' => ['integer' , 'exists:skills,id' , 'distinct'] ,
+
+            'section' => ['required' , 'string' , 'min:3' , 'max:255'] ,
         ];
     }
 }

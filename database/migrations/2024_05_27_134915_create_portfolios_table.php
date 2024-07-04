@@ -15,9 +15,15 @@ return new class extends Migration
             $table->id();
             $table->foreignId('freelancer_id')->constrained();
             $table->string('url')->nullable();
+
             $table->string('title');
+            $table->string('section');
+
             $table->string('description');
             $table->date('date')->nullable();
+
+            $table->integer('views_count')->default(0) ;
+            $table->integer('likes_count')->default(0) ;
             $table->timestamps();
         });
     }

@@ -20,11 +20,16 @@ class PortfolioResource extends JsonResource
         return [
             'id' => $this->id ,
             'title' => $this->title ,
+            'section' => $this->section ,
+            'views_count' => $this->views_count ,
+            'likes_count' => $this->likes_count ,
             'url' => $this->url , 
             'date' => $this->date , 
             'skills' => SkillResource::collection($this->whenLoaded('skills')) ,
             'files' => FileResource::collection($this->whenLoaded('files')) ,
             'images' => ImageResource::collection($this->whenLoaded('images')) ,
+            'updated_at' => $this->updated_at , 
+            'created_at' => $this->created_at ,
         ];
     }
 }

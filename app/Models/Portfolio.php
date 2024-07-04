@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -18,6 +19,9 @@ class Portfolio extends BaseModel
         'date' ,
         'description' ,
         'freelancer_id' ,
+        'views_count' ,
+        'likes_count' ,
+        'section' ,
     ] ;
     
     public function skills():MorphToMany
@@ -35,5 +39,13 @@ class Portfolio extends BaseModel
     public function freelancer():BelongsTo
     {
         return $this->belongsTo(Freelancer::class) ;
+    }
+    public function likes():MorphToMany
+    {
+        return $this->morphToMany(Like::class , 'likable') ;
+    }
+    public function views():MorphToMany
+    {
+        return $this->morphToMany(View::class , 'viewable') ;
     }
 }

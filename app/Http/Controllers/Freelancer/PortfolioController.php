@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers\Freelancer;
 
+use Exception;
 use App\Models\File;
+use App\Models\Like;
+use App\Models\View;
 use App\Models\Image;
 use App\Models\Portfolio;
 use App\Models\Skillable;
 use Illuminate\Http\Request;
+use App\Models\PortfolioLike;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Interfaces\IPortfolioRepository;
 use App\Http\Resources\Freelancer\PortfolioResource;
 use App\Http\Requests\Freelancer\CreatePortfolioRequest;
@@ -148,5 +153,99 @@ class PortfolioController extends Controller
         $portfolio->delete();
 
         return response()->json(['message' => 'deleted']);
+    }
+
+    /**
+     * Liked By Me
+     * 
+     * return yes or no 
+     */
+    public function liked_by_me(Portfolio $portfolio)
+    {
+        $like = Like::where([
+            'user_id' => Auth::id() ,
+            'likable_id' => $portfolio->id ,
+            'likable_type' => Portfolio::class , 
+        ])->exists() ;
+
+        return response()->json([
+            'message' => $like? 'yes' : 'no' ,
+        ]) ;
+    }
+    /**
+     * Like
+     * 
+     */
+    public function like(Portfolio $portfolio)
+    {
+        $like = Like::where([
+            'user_id' => Auth::id() ,
+            'likable_id' => $portfolio->id ,
+            'likable_type' => Portfolio::class , 
+        ])->exists() ;
+
+        if($like){
+            return response()->json([
+                'message' => 'you did like this one before' ,
+            ] , 403) ;
+        }
+
+        Like::create([
+            'user_id' => Auth::id() ,
+            'likable_id' => $portfolio->id ,
+            'likable_type' => Portfolio::class , 
+        ]);
+        
+        $portfolio->increment('likes_count') ;
+        
+        return PortfolioResource::make($portfolio) ;
+        
+    }
+    /**
+     * UnLike
+     */
+    public function unlike(Portfolio $portfolio)
+    {
+        $like = Like::where([
+            'user_id' => Auth::id() ,
+            'likable_id' => $portfolio->id ,
+            'likable_type' => Portfolio::class , 
+        ])->first() ;
+
+        if(!$like){
+            return response()->json([
+                'message' => 'you did not like this one before' ,
+            ] , 403) ;
+        }
+
+        $like->delete() ;
+        
+        $portfolio->decrement('likes_count') ;
+        
+        return PortfolioResource::make($portfolio) ;
+    }
+    /**
+     * View
+     */
+    public function view(Portfolio $portfolio)
+    {
+        $view = View::where([
+            'user_id' => Auth::id() ,
+            'viewable_id' => $portfolio->id ,
+            'viewable_type' => Portfolio::class , 
+        ])->exists() ;
+
+        if(!$view)
+        {
+            View::create([
+                'user_id' => Auth::id() ,
+                'viewable_id' => $portfolio->id ,
+                'viewable_type' => Portfolio::class , 
+            ]);
+
+            $portfolio->increment('views_count') ;
+        }
+       
+        return PortfolioResource::make($portfolio) ;
     }
 }
