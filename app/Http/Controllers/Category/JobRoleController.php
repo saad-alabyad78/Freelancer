@@ -17,6 +17,8 @@ class JobRoleController extends Controller
     /**
      * search for the job role 
      * 
+     * @unauthenticated
+     * 
      * @apiResourceCollection App\Http\Resources\Category\JobRoleResource
      * @apiResourceModel App\Models\JobRole
      * 
@@ -31,6 +33,9 @@ class JobRoleController extends Controller
 
         return JobRoleResource::collection($job_roles);
     }
+    /**
+     * insert new job roles
+     */
     public function chunkInsert(JobRoleChunkInsertRequest $request)
     {     
         JobRole::insertOrIgnore($request->validated()) ;

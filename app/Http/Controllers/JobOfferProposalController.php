@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Company;
 use App\Models\JobOffer;
-use App\Models\JobOfferProposal;
 use App\Models\Conversation;
+use App\Models\JobOfferProposal;
 use App\Http\Resources\JobOfferProposal\JobOfferProposalResource;
 use App\Http\Requests\JobOfferProposal\CreateJobOfferProposalRequest;
 use App\Http\Requests\JobOfferProposal\FilterJobOfferProposalRequest;
@@ -134,7 +134,7 @@ class JobOfferProposalController extends Controller
 
         $jobOfferProposal->delete() ;
 
-        return response()->noContent() ;
+        return response()->json(['message' => 'deleted']) ;
     }
     /**
      * Reject (company)
@@ -160,7 +160,7 @@ class JobOfferProposalController extends Controller
 
         JobOffer::whereIn('id', $jobOfferIds)->decrement('proposals_count');
 
-        return response()->noContent();
+        return response()->json(['message' => 'deleted']);
     }
 
     /**

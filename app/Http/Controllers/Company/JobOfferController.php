@@ -150,7 +150,7 @@ class JobOfferController extends Controller
 
         $job_offer->delete() ;
 
-        return response()->noContent();
+        return response()->json(['message' => 'deleted']);
     }
 
 }

@@ -21,6 +21,7 @@ class SkillController extends Controller
      * search skill
      * get first 100 match
      * 
+     * @unauthenticated
      * 
      * @apiResourceCollecton App\Http\Resources\Category\skillResource
      * @apiResourceModel App\Models\skill
@@ -53,6 +54,9 @@ class SkillController extends Controller
         return SkillResource::collection($skills) ;
     }
 
+    /**
+     * insert new skills
+     */
     public function chunkInsert(SkillChunkInsertRequest $request)
     {     
         Skill::insertOrIgnore($request->validated()) ;
