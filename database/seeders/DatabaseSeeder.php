@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             IndustrySeeder::class ,
             SkillSeeder::class ,
             Job_RoleSeeder::class ,
+            CategorySeeder::class ,
             FreelancerSeeder::class ,
             JobOffersSeeder::class ,
         ]);
