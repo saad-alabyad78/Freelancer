@@ -11,8 +11,14 @@ use App\Http\Controllers\Company\GetAllJobOfferForCompanyQuery;
 Route::group(['prefix' => 'company'] , function()
 {
     Route::get('/{company:id}' , [CompanyController::class , 'show']) ;
-    //todo : test
-    Route::post('job_offer/list-job-offer' , [JobOfferQueryController::class , 'ForFreelancer']) ; 
+    
+    Route::get('job_offer/list-job-offer' , [JobOfferQueryController::class , 'ForGuest']) ;
+    Route::post('job_offer/list-job-offer' , [JobOfferQueryController::class , 'ForFreelancer'])
+        ->middleware([
+            'auth:sanctum' ,
+            'verify_email' ,
+            'role:freelancer' ,
+            ]) ; 
 
     
     Route::group(

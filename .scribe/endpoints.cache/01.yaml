@@ -25,13 +25,13 @@ endpoints:
         name: command_string
         description: ''
         required: true
-        example: minima
+        example: maiores
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      command_string: minima
+      command_string: maiores
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -42,7 +42,7 @@ endpoints:
         status: 500
         content: |-
           {
-              "message": "The command \"minima\" does not exist.",
+              "message": "The command \"maiores\" does not exist.",
               "exception": "Symfony\\Component\\Console\\Exception\\CommandNotFoundException",
               "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php",
               "line": 159,
@@ -537,7 +537,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vb6ahcD64Edf5Pe3Z1gVk8a'
+      - 'Bearer aZ8VgcfDb615ha6dkP34Eev'
     controller: null
     method: null
     route: null
@@ -571,40 +571,40 @@ endpoints:
         status: 200
         content: |2+
 
-            Dropping all tables .................................................................................................................... 22ms DONE
+            Dropping all tables ............................................. 299ms DONE
 
              INFO  Preparing database.  
 
-            Creating migration table ............................................................................................................... 97ms DONE
+            Creating migration table ........................................ 373ms DONE
 
              INFO  Running migrations.  
 
-            2003_05_13_221258_create_jobs_table ................................................................................................... 170ms DONE
-            2004_02_05_163918_create_job_roles_table .............................................................................................. 116ms DONE
-            2004_05_03_141844_create_industries_table .............................................................................................. 56ms DONE
-            2004_05_05_163837_create_skills_table ................................................................................................. 116ms DONE
-            2004_05_05_164036_create_skillables_table .............................................................................................. 66ms DONE
-            2014_10_12_000000_create_users_table .................................................................................................. 525ms DONE
-            2014_10_12_100000_create_password_reset_tokens_table .................................................................................. 116ms DONE
-            2019_08_19_000000_create_failed_jobs_table ............................................................................................ 476ms DONE
-            2019_12_14_000001_create_personal_access_tokens_table ................................................................................. 933ms DONE
-            2024_03_25_042214_create_companies_table .............................................................................................. 333ms DONE
-            2024_03_25_042227_create_clients_table ................................................................................................ 643ms DONE
-            2024_03_25_042235_create_freelancers_table ............................................................................................ 176ms DONE
-            2024_03_25_042242_create_admins_table .................................................................................................. 67ms DONE
-            2024_03_27_163951_create_super_admins_table ........................................................................................... 200ms DONE
-            2024_05_05_164120_create_job_offers_table ............................................................................................. 655ms DONE
-            2024_05_27_134915_create_portfolios_table ............................................................................................. 133ms DONE
-            2024_05_28_134755_create_files_table .................................................................................................. 247ms DONE
-            2024_05_29_191459_create_images_table ................................................................................................. 239ms DONE
-            2024_06_19_194749_create_job_offer_proposals_table ..................................................................................... 72ms DONE
-            2024_06_25_004931_create_conversations_table ........................................................................................... 82ms DONE
-            2024_06_25_004952_create_messages_table ............................................................................................... 210ms DONE
-            2024_06_25_005020_conversation_user ................................................................................................... 243ms DONE
-            2024_06_29_233421_invitations .......................................................................................................... 70ms DONE
-            2024_07_04_020146_create_user_user_table ............................................................................................... 67ms DONE
-            2024_07_04_225329_create_likes_table .................................................................................................. 347ms DONE
-            2024_07_04_225335_create_views_table .................................................................................................. 320ms DONE
+            2003_05_13_221258_create_jobs_table ............................. 184ms DONE
+            2004_02_05_163918_create_job_roles_table ........................ 106ms DONE
+            2004_05_03_141844_create_industries_table ........................ 80ms DONE
+            2004_05_05_163837_create_skills_table ........................... 131ms DONE
+            2004_05_05_164036_create_skillables_table ....................... 101ms DONE
+            2014_10_12_000000_create_users_table ............................ 219ms DONE
+            2014_10_12_100000_create_password_reset_tokens_table ............ 120ms DONE
+            2019_08_19_000000_create_failed_jobs_table ...................... 189ms DONE
+            2019_12_14_000001_create_personal_access_tokens_table ........... 230ms DONE
+            2024_03_25_042214_create_companies_table ........................ 189ms DONE
+            2024_03_25_042227_create_clients_table .......................... 155ms DONE
+            2024_03_25_042235_create_freelancers_table ...................... 188ms DONE
+            2024_03_25_042242_create_admins_table ............................ 58ms DONE
+            2024_03_27_163951_create_super_admins_table ...................... 57ms DONE
+            2024_05_05_164120_create_job_offers_table ....................... 290ms DONE
+            2024_05_27_134915_create_portfolios_table ....................... 110ms DONE
+            2024_05_28_134755_create_files_table ............................ 225ms DONE
+            2024_05_29_191459_create_images_table ........................... 207ms DONE
+            2024_06_19_194749_create_job_offer_proposals_table ............... 79ms DONE
+            2024_06_25_004931_create_conversations_table ..................... 90ms DONE
+            2024_06_25_004952_create_messages_table ......................... 126ms DONE
+            2024_06_25_005020_conversation_user .............................. 66ms DONE
+            2024_06_29_233421_invitations .................................... 83ms DONE
+            2024_07_04_020146_create_user_user_table ......................... 90ms DONE
+            2024_07_04_225329_create_likes_table ............................ 254ms DONE
+            2024_07_04_225335_create_views_table ............................ 173ms DONE
 
         headers:
           content-type: 'text/html; charset=UTF-8'
@@ -618,7 +618,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer afZV8PecdDb3vEha51466gk'
+      - 'Bearer ka6febgZ4a5E3c1P8vDVh6d'
     controller: null
     method: null
     route: null
@@ -652,10 +652,10 @@ endpoints:
         status: 500
         content: |-
           {
-              "message": "SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint \"users_email_unique\"\nDETAIL:  Key (email)=(freelancer1@gmail.com) already exists. (Connection: pgsql, SQL: insert into \"users\" (\"first_name\", \"last_name\", \"role_id\", \"role_type\", \"provider\", \"email\", \"email_verified_at\", \"password\", \"remember_token\", \"updated_at\", \"created_at\") values (freelancer1, ?, 9, App\\Models\\Freelancer, ?, freelancer1@gmail.com, 2024-07-05 00:01:47, $2y$12$IFb/Gc1XCp6UEc/hxhqqH.e/cSKnE7X833rlEyC2aEfgxkITM.jkW, jxACzUaDPx, 2024-07-05 00:01:47, 2024-07-05 00:01:47) returning \"id\")",
-              "exception": "Illuminate\\Database\\UniqueConstraintViolationException",
+              "message": "SQLSTATE[22001]: String data, right truncated: 7 ERROR:  value too long for type character varying(255) (Connection: pgsql, SQL: insert into \"freelancers\" (\"profile_image_url\", \"background_image_url\", \"profile_image_id\", \"background_image_id\", \"headline\", \"description\", \"city\", \"gender\", \"date_of_birth\", \"job_role_id\", \"username\", \"updated_at\", \"created_at\") values (?, ?, ?, ?, Aliquam vel temporibus illo est qui et nemo., Nihil facere libero veniam quidem. Qui exercitationem molestiae dicta aspernatur necessitatibus. Praesentium aperiam accusantium et voluptatibus magni id qui. Ea dolores eligendi consequuntur consequatur iure et dolorum voluptatem. Dolorem odio est assumenda., \u062f\u0645\u0634\u0642, male, 1977-09-04, 3, 3, 2024-07-05 21:00:12, 2024-07-05 21:00:12) returning \"id\")",
+              "exception": "Illuminate\\Database\\QueryException",
               "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
-              "line": 824,
+              "line": 829,
               "trace": [
                   {
                       "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
@@ -721,17 +721,38 @@ endpoints:
                       "type": "->"
                   },
                   {
-                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/HasOneOrMany.php",
-                      "line": 287,
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/Factory.php",
+                      "line": 338,
                       "function": "save",
                       "class": "Illuminate\\Database\\Eloquent\\Model",
                       "type": "->"
                   },
                   {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Collections/Traits/EnumeratesValues.php",
+                      "line": 240,
+                      "function": "Illuminate\\Database\\Eloquent\\Factories\\{closure}",
+                      "class": "Illuminate\\Database\\Eloquent\\Factories\\Factory",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/Factory.php",
+                      "line": 333,
+                      "function": "each",
+                      "class": "Illuminate\\Support\\Collection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/Factory.php",
+                      "line": 287,
+                      "function": "store",
+                      "class": "Illuminate\\Database\\Eloquent\\Factories\\Factory",
+                      "type": "->"
+                  },
+                  {
                       "file": "/home/saad/Desktop/Freelancer/database/seeders/FreelancerSeeder.php",
-                      "line": 32,
-                      "function": "save",
-                      "class": "Illuminate\\Database\\Eloquent\\Relations\\HasOneOrMany",
+                      "line": 30,
+                      "function": "create",
+                      "class": "Illuminate\\Database\\Eloquent\\Factories\\Factory",
                       "type": "->"
                   },
                   {
@@ -1441,7 +1462,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer EcaPD5d13fae4bkZg8v6hV6'
+      - 'Bearer aDea5g6hEZcV3kbfv8P146d'
     controller: null
     method: null
     route: null

@@ -56,7 +56,7 @@ class JobOfferQueryController extends Controller
 
      /**
      * 
-     * list job offers (for company owner)
+     * list job offers (for freelancers)
      * 
      * return all job offers for freelancers screan.
      * 
@@ -75,13 +75,7 @@ class JobOfferQueryController extends Controller
         //just cant see pending (handle it in form request)
         $filters = $request->validated() ; 
 
-        $freelancer = null ;
-        
-        if(auth()->user() != null )
-        {
-            $freelancer = Freelancer::findOrFail(auth()->user()->role_id)  ;
-        }
-        
+        $freelancer = Freelancer::findOrFail(auth()->user()->role_id)  ;
         
         $offers = JobOffer::filter($filters , $freelancer)
             ->with('job_role' , 'skills' , 'company' , 'skills.skillable') 
@@ -90,4 +84,33 @@ class JobOfferQueryController extends Controller
 
         return JobOfferResource::collection($offers) ;
     }
+
+     /**
+     * 
+     * list job offers (for all)
+     * 
+     * return all job offers for guests screan.
+     * 
+     * @unauthenticated
+     * 
+     * 
+     * 
+     * @apiResourceCollection App\Http\Resources\Company\JobOfferResource
+     * @apiResourceModel App\Models\JobOffer paginate=20 with=App\Models\Company,App\Models\Skill,App\Models\JobRole
+     *
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     * 
+     */
+    public function ForGuest()
+    {
+
+        $offers = JobOffer::
+              with('job_role' , 'skills' , 'company' , 'skills.skillable') 
+              ->orderBy('created_at')
+              ->paginate(20) ;
+
+        return JobOfferResource::collection($offers) ;
+    }
+
+
 }

@@ -20,7 +20,7 @@ class JobOffer extends BaseModel
         'status',
         'location_type',
         'attendence_type',
-        'max_sallary',
+        'max_salary',
         'min_salary',
         'transportation',
         'health_insurance',
@@ -78,9 +78,9 @@ class JobOffer extends BaseModel
         'transportation' => '=' ,
         'health_insurance' => '=' ,
         'military_service' => '=' ,
-        'max_sallary' => '=<' ,
+        'max_salary' => '<=' ,
         'min_salary' => '>=' ,
-        'max_age' => '=<' ,
+        'max_age' => '<=' ,
         'min_age' => '>=' ,
     ];
     
@@ -90,39 +90,53 @@ class JobOffer extends BaseModel
         foreach($filters as $key => $value)
         {
             if($value === null || !array_key_exists($key , $this->Filters))continue ;
-            
+             
             $builder->where( $key , $this->Filters[$key] ,$value) ;
         }
 
-        if($freelancer != null)
+        if($freelancer != null and $filters['i_can_apply_for_it'] ?? false )
         {
-            
-            //if 'age_required' , offer.max_age >= free.age >= offer.min_age  ,
-            if($filters['age_required'] ?? false)
-            {
-                
-                //todo
-                //what if max min age null
-                //chick the query operator (or and)  
-                $builder->whereNull(['max_age' , 'min_age'])
-                        ->orWhere('max_age' , '>=' , $freelancer->age)
-                        ->where('min_age' , '<=' , $freelancer->age) ;
-            }
-            if($filters['gender_required'] ?? false)
-            {
-                //if 'gender_required' offer.gender == free.gender (exception := offer.gender == null),
-                $builder->whereNull('gender')->orWhere('gender' , $freelancer->gender) ;
-            }
-            
-            //'military_service_required' idk wtf i will do,
+            //same as my job role 
+            $builder->where('job_role_id' , $freelancer->job_role_id) ;
 
-            // if()
-
-            //every skils required => freelancer must have it
+            //same as my gender if gender is required 
+            $builder->whereNull('gender_required')
+                    ->orWhereNull('gender')
+                    ->orWhere('gender' , $freelancer->gender) ;
+                    
+            //my age is between min and max ,,,,, if age required
             
+            $builder->whereNull('age_required')
+                    ->orWhereNull(['max_age' , 'min_age'])
+                    ->where(function($query)use($freelancer){
+                        $query->whereNull('max_age')
+                              ->orWhere('max_age' , '>=' , 1) ;
+                    })
+                    ->where(function($query)use($freelancer){
+                        $query->whereNull('min_age')
+                              ->orWhere('min_age' , '<=' , $freelancer->age) ;
+                    });
+
+            $freelancerSkills = $freelancer->skills()->pluck('id')->toArray() ;
+
+            //the required skills all are in my skills 
+            $builder->leftJoin('skillables' , function($join){
+                $join->on('job_offers.id' , '=' , 'skillables.skillable_id')
+                    ->where('skillable_type' , '=' , JobOffer::class);
+            })
+            ->where(function($query) use($freelancerSkills){
+                $query->where('skillables.required' , true)
+                      ->whereIn('skillables.skill_id' , $freelancerSkills) ;
+            })
+            ->orWhere(function($quere){
+                $quere->where('skillables.required' , false) ;
+            })
+            ->select('job_offers.*')
+            ->groupBy('job_offers.id')
+            ->havingRaw('COUNT(skillables.skill_id) > 0');
         }
 
-        var_dump($builder->getQuery()) ;
+        \Log::warning($builder->getQuery()->toRawSql()) ;
         
         return $builder ;
     }

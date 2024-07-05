@@ -26,7 +26,7 @@ class JobOffersSeeder extends Seeder
         $company->user()->save($user) ;
 
         JobOffer::factory()
-            ->count(30) 
+            ->count(50) 
             //->for($company)['company_id' => $company->id]
             ->create() ;
     }

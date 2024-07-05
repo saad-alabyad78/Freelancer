@@ -23,13 +23,13 @@ endpoints:
         name: client_id
         description: 'The ID of the client.'
         required: true
-        example: 18
+        example: 5
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      client_id: 18
+      client_id: 5
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer e8Eg45D3VZahkv6b61fcdPa'
+      - 'Bearer 8cbhad165PvEfeD6gkaZV34'
     controller: null
     method: null
     route: null
@@ -95,7 +95,7 @@ endpoints:
         name: date_of_birth
         description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-05</code>.'
         required: true
-        example: '1998-05-09'
+        example: '1996-08-14'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -121,7 +121,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      date_of_birth: '1998-05-09'
+      date_of_birth: '1996-08-14'
       city: دمشق
       gender: female
     fileParameters: []
@@ -136,7 +136,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer bea6Dd314Pv8k56fEcZghaV'
+      - 'Bearer 4b56eE6aPfgV8kc1avZDh3d'
     controller: null
     method: null
     route: null
@@ -185,7 +185,7 @@ endpoints:
         name: date_of_birth
         description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-05</code>.'
         required: false
-        example: '1997-04-27'
+        example: '2001-04-14'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -203,7 +203,7 @@ endpoints:
         name: gender
         description: ''
         required: false
-        example: male
+        example: female
         type: string
         enumValues:
           - male
@@ -211,9 +211,9 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      date_of_birth: '1997-04-27'
+      date_of_birth: '2001-04-14'
       city: دمشق
-      gender: male
+      gender: female
     fileParameters: []
     responses:
       -
@@ -226,7 +226,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer bh8316f4VDvPcEgd56Zeaak'
+      - 'Bearer 3Pa45abc8hvfgDkdZe1EV66'
     controller: null
     method: null
     route: null

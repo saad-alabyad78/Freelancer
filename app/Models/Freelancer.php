@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
@@ -28,6 +30,13 @@ class Freelancer extends BaseModel
         'job_role_id',
         'username' ,
     ];
+
+    public function Age():Attribute
+    {
+        return Attribute::make(
+            get: fn() => Carbon::parse($this->date_of_birth)->age
+        );
+    }
 
     public function user():MorphOne
     {

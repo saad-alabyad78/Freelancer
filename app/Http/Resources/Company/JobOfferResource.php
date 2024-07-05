@@ -22,7 +22,7 @@ class JobOfferResource extends JsonResource
             'status' => $this->status ,
             'location_type' => $this->location_type ,
             'attendence_type' => $this->attendence_type ,
-            'max_sallary' => $this->max_sallary,
+            'max_salary' => $this->max_salary,
             'min_salary' => $this->min_salary , 
             'transportation' => $this->transportation ,
             'health_insurance' => $this->health_insurance ,
