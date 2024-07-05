@@ -45,7 +45,7 @@ class JobOfferQueryController extends Controller
         //filter scope
         $job_offers = JobOffer::filter($filters)
                     ->with(['job_role' , 'skills' , 'company'])
-                    ->orderBy('created_at')
+                    ->orderByDesc('created_at')
                     ->paginate(20);
 
         
@@ -79,7 +79,7 @@ class JobOfferQueryController extends Controller
         
         $offers = JobOffer::filter($filters , $freelancer)
             ->with('job_role' , 'skills' , 'company' , 'skills.skillable') 
-            ->orderBy('created_at')//todo : add order by scope 
+            ->orderByDesc('created_at')//todo : add order by scope 
             ->paginate(20) ;
 
         return JobOfferResource::collection($offers) ;
@@ -106,7 +106,7 @@ class JobOfferQueryController extends Controller
 
         $offers = JobOffer::
               with('job_role' , 'skills' , 'company' , 'skills.skillable') 
-              ->orderBy('created_at')
+              ->orderByDesc('created_at')
               ->paginate(20) ;
 
         return JobOfferResource::collection($offers) ;

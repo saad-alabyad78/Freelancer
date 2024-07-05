@@ -38,7 +38,7 @@ class JobOfferResource extends JsonResource
             'gender_required' => $this->gender_required ,
             'age_required' => $this->age_required , 
             'proposals_count' => $this->proposals_count ,
-
+            'created_at' => $this->created_at ,
         ];
     }
 }
