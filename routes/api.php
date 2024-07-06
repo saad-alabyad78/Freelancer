@@ -51,6 +51,8 @@ require 'Api/chat.php' ;
 
 require 'Api/invitation.php' ;
 
+require 'Api/client_offer.php' ;
+
 Route::post('test' , function(Request $request){
   return 'hi' ;
 });

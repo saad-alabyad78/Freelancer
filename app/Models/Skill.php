@@ -13,6 +13,11 @@ class Skill extends BaseModel
     public $timestamps = false;
     protected $fillable = ['name'];
 
+    public function client_offers():MorphToMany
+    {
+        return $this->morphedByMany(ClientOffer::class , 'skillable') ;
+    }
+
     public function freelancers():MorphToMany
     {
         return $this->morphedByMany(Freelancer::class , 'skillable');

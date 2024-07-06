@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -11,17 +12,18 @@ class Controller extends BaseController
     use AuthorizesRequests, ValidatesRequests;
 
     protected $user;
-    protected $user_id;
 
-
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->middleware(function ($request, $next) {
 
-            $this->user = $request->user();
-
-            $this->user_id = $this->user ? $this->user->id : null;  
-              
+            $this->user = auth('sanctum')->user();
+            
             return $next($request);
         });
     }
