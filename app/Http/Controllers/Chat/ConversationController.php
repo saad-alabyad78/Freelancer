@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Chat;
 use App\Models\Message;
 use App\Events\MessageSent;
 use App\Models\Conversation;
+use App\Models\MessageLike;
+use App\Models\ConversationUserBan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Chat\SendMessageRequest;
@@ -21,6 +23,13 @@ class ConversationController extends Controller
 
     public function sendMessage(SendMessageRequest $request, $conversationId)
     {
+        $conversation = Conversation::findOrFail($conversationId);
+
+        if (ConversationUserBan::where('conversation_id', $conversationId)
+            ->where('user_id', $request->user()->id)->exists()) {
+            return response()->json(['message' => 'You are banned from this conversation'], 403);
+        }
+
         $validated = $request->validated();
 
         $messageData = [
@@ -40,7 +49,6 @@ class ConversationController extends Controller
 
         return response()->json($message);
     }
-
     public function getMessages($conversationId)
     {
         $messages = Message::where('conversation_id', $conversationId)
@@ -73,5 +81,39 @@ class ConversationController extends Controller
             ->paginate(50, ['*'], 'page', $page);
 
         return response()->json($messages);
+    }
+    public function banUser(Request $request, $conversationId)
+    {
+        $request->validate([
+            'user_id' => 'required|exists:users,id',
+        ]);
+
+        $conversation = Conversation::findOrFail($conversationId);
+
+        if ($conversation->users()->where('user_id', auth()->id())->doesntExist()) {
+            return response()->json(['message' => 'You are not a participant in this conversation'], 403);
+        }
+
+        $ban = ConversationUserBan::create([
+            'conversation_id' => $conversationId,
+            'user_id' => $request->user_id,
+        ]);
+
+        return response()->json($ban, 201);
+    }
+    public function likeMessage(Request $request, $messageId)
+    {
+        $message = Message::findOrFail($messageId);
+
+        if ($message->conversation->users()->where('user_id', auth()->id())->doesntExist()) {
+            return response()->json(['message' => 'You are not a participant in this conversation'], 403);
+        }
+
+        $like = MessageLike::create([
+            'message_id' => $messageId,
+            'user_id' => auth()->id(),
+        ]);
+
+        return response()->json($like, 201);
     }
 }
