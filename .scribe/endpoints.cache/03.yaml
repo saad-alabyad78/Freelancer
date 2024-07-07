@@ -29,7 +29,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":2,"name":"dfsa","category_id":3}],"links":{"first":"http:\/\/localhost\/api\/category\/sub-category?page=1","last":"http:\/\/localhost\/api\/category\/sub-category?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/category\/sub-category?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/category\/sub-category","per_page":20,"to":1,"total":1}}'
+        content: '{"data":[{"id":1,"name":"ui","category_id":1},{"id":2,"name":"western","category_id":2},{"id":3,"name":"eastern","category_id":2}],"links":{"first":"http:\/\/localhost\/api\/category\/sub-category?page=1","last":"http:\/\/localhost\/api\/category\/sub-category?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/category\/sub-category?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/category\/sub-category","per_page":20,"to":3,"total":3}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -65,13 +65,13 @@ endpoints:
         name: category
         description: ''
         required: true
-        example: 2
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      category: 2
+      category: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -121,7 +121,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: dolores
+        example: fugit
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -130,21 +130,21 @@ endpoints:
         name: category_id
         description: ''
         required: true
-        example: 3
+        example: 16
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: dolores
-      category_id: 3
+      name: fugit
+      category_id: 16
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer aPe4k6avbZ6Vg3E185Ddfch'
+      - 'Bearer DakZha66vdb5c14E3gePfV8'
     controller: null
     method: null
     route: null
@@ -171,13 +171,13 @@ endpoints:
         name: sub_category_id
         description: 'The ID of the sub category.'
         required: true
-        example: 2
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      sub_category_id: 2
+      sub_category_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -185,20 +185,20 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: qui
+        example: voluptates
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: qui
+      name: voluptates
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer fvhcagEPe34186DVkab5Z6d'
+      - 'Bearer ZP63cVkhe6dbf5DvEa8g4a1'
     controller: null
     method: null
     route: null
@@ -225,13 +225,13 @@ endpoints:
         name: sub_category_id
         description: 'The ID of the sub category.'
         required: true
-        example: 2
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      sub_category_id: 2
+      sub_category_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -242,7 +242,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer DPehgadaV63Z1vcfkbE4658'
+      - 'Bearer 4hPkd6V8DgE31faZcabve65'
     controller: null
     method: null
     route: null

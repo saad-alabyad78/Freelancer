@@ -41,7 +41,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 83eac5DkadvPZgE64hb6f1V'
+      - 'Bearer Zdf3bePa6gDaEh86k5v1cV4'
     controller: null
     method: null
     route: null
@@ -68,13 +68,13 @@ endpoints:
         name: conversationId
         description: ''
         required: true
-        example: facere
+        example: nulla
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      conversationId: facere
+      conversationId: nulla
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -82,7 +82,7 @@ endpoints:
         name: message
         description: ''
         required: false
-        example: impedit
+        example: dolores
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -106,7 +106,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      message: impedit
+      message: dolores
     fileParameters:
       image: null
     responses: []
@@ -114,7 +114,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 65dZ3hV8beavgfPkD4c1aE6'
+      - 'Bearer D61bahgPd3Ecv86ZVk54fae'
     controller: null
     method: null
     route: null
@@ -141,13 +141,13 @@ endpoints:
         name: conversationId
         description: ''
         required: true
-        example: nulla
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      conversationId: nulla
+      conversationId: aut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -167,7 +167,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer bedh86cD3VE6Z4P1vakagf5'
+      - 'Bearer ahec6E85Zf361DPgbVdk4va'
     controller: null
     method: null
     route: null
@@ -194,7 +194,7 @@ endpoints:
         name: conversationId
         description: ''
         required: true
-        example: sit
+        example: enim
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -203,14 +203,14 @@ endpoints:
         name: messageId
         description: ''
         required: true
-        example: et
+        example: quo
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      conversationId: sit
-      messageId: et
+      conversationId: enim
+      messageId: quo
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -230,7 +230,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer eh8VcfbZaaD4gE1vkd6635P'
+      - 'Bearer 4Dgv563ekaEc68dfPab1VZh'
     controller: null
     method: null
     route: null
@@ -273,7 +273,105 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4hE6a1vfagZDkVb68ePdc53'
+      - 'Bearer hekdVP54Z8aga6b61EDcf3v'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/conversations/{conversation}/ban'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      conversation:
+        name: conversation
+        description: 'The conversation.'
+        required: true
+        example: sit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      conversation: sit
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      user_id:
+        name: user_id
+        description: ''
+        required: true
+        example: eligendi
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      user_id: eligendi
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer aZVe8vaEhg5b413P6fD6cdk'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/messages/{message}/like'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      message:
+        name: message
+        description: 'The message.'
+        required: true
+        example: dignissimos
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      message: dignissimos
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6DPvVgE6fZd4bhak8a351ec'
     controller: null
     method: null
     route: null
@@ -304,7 +402,7 @@ endpoints:
         name: freelancer_id
         description: ''
         required: true
-        example: eligendi
+        example: quasi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -313,21 +411,21 @@ endpoints:
         name: job_offer_id
         description: ''
         required: true
-        example: consequatur
+        example: consequuntur
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      freelancer_id: eligendi
-      job_offer_id: consequatur
+      freelancer_id: quasi
+      job_offer_id: consequuntur
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer g1akb64hZPac53edEv6f8VD'
+      - 'Bearer EdP8vkfaDc6Vb1eZ4ah5g36'
     controller: null
     method: null
     route: null
@@ -354,13 +452,13 @@ endpoints:
         name: id
         description: 'The ID of the invitation.'
         required: true
-        example: voluptatem
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: voluptatem
+      id: est
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -371,7 +469,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gbkdP6f63c4DhaE1ZV5vae8'
+      - 'Bearer av4kE6ePa1b6hg3Ddcf58ZV'
     controller: null
     method: null
     route: null
@@ -398,13 +496,13 @@ endpoints:
         name: id
         description: 'The ID of the invitation.'
         required: true
-        example: accusamus
+        example: molestiae
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: accusamus
+      id: molestiae
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -415,7 +513,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4fPaV6Z5vdea31gcE6Dhkb8'
+      - 'Bearer fcv63a184kZVDePb6Edha5g'
     controller: null
     method: null
     route: null
@@ -442,13 +540,13 @@ endpoints:
         name: id
         description: 'The ID of the invitation.'
         required: true
-        example: doloremque
+        example: hic
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: doloremque
+      id: hic
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -459,7 +557,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kPE4hcf1Za8ea5dbVg63vD6'
+      - 'Bearer 6aDav14Pk6V8Z3bfdEg5ceh'
     controller: null
     method: null
     route: null
@@ -502,7 +600,186 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer PcEv61b6dafZ5e84gha3kDV'
+      - 'Bearer g4aecP3EV8a1vd5bhkZ6Df6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/client-offer/admin/admin-filter
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Admin-Filter List Client Offers'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      status:
+        name: status
+        description: ''
+        required: false
+        example: active
+        type: string
+        enumValues:
+          - pending
+          - active
+          - cloused
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      status: active
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Zkf685dhg63aDEP4avbV1ce'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/client-offer/admin/{client_offer_id}/accept'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: Admin
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      client_offer_id:
+        name: client_offer_id
+        description: 'The ID of the client offer.'
+        required: true
+        example: dolores
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      client_offer_id: dolores
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ga4fVk5Zdac38vD6beE6h1P'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/client-offer/admin/{client_offer_id}/reject'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: Admin
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      client_offer_id:
+        name: client_offer_id
+        description: 'The ID of the client offer.'
+        required: true
+        example: quas
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      client_offer_id: quas
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 1aakvZb3deghVEcf586D64P'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/client-offer/admin/{client_offer_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: Delete
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      client_offer_id:
+        name: client_offer_id
+        description: 'The ID of the client offer.'
+        required: true
+        example: neque
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      client_offer_id: neque
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer hEfd4V8a61gbcPaeZ65kD3v'
     controller: null
     method: null
     route: null
@@ -536,7 +813,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6ck8hDZbE1gvfaVa345Pe6d'
+      - 'Bearer 4De5VbZaa1v3P6kcd8gEf6h'
     controller: null
     method: null
     route: null
@@ -573,7 +850,7 @@ endpoints:
           content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '51'
+          x-ratelimit-remaining: '50'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -581,7 +858,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3P6kDbcv1aa6Zeh8fg5VEd4'
+      - 'Bearer bcPa35kfhVg8Zda61EDe6v4'
     controller: null
     method: null
     route: null

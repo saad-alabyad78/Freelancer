@@ -11,10 +11,16 @@ use App\Http\Resources\ClientOfferResource;
 use App\Http\Requests\ClientOffer\CreateClientOfferRequest;
 use App\Http\Requests\ClientOffer\FilterClientOfferRequest;
 use App\Http\Requests\ClientOffer\UpdateClientOfferRequest;
-
+/**
+ * @group Client Offer Managment
+ * 
+ */
 class ClientOfferController extends Controller
 {
-    public function filter(FilterClientOfferRequest $request)
+    /**
+     * Client-Filter List Client Offers
+     */
+    public function clientFilter(FilterClientOfferRequest $request)
     {
         $clientOffers = ClientOffer::filter($request->validated())
         ->where('client_id' , $this->user->role_id)
@@ -25,7 +31,7 @@ class ClientOfferController extends Controller
         return ClientOfferResource::collection($clientOffers) ;
     }
     /**
-     * Store a newly created resource in storage.
+     * Store
      */
     public function store(CreateClientOfferRequest $request)
     {
@@ -55,7 +61,7 @@ class ClientOfferController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Show
      */
     public function show(ClientOffer $clientOffer)
     {
@@ -69,7 +75,7 @@ class ClientOfferController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update .
      */
     public function update(UpdateClientOfferRequest $request)
     {   
@@ -112,7 +118,7 @@ class ClientOfferController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete
      */
     public function destroy(ClientOffer $clientOffer)
     {
