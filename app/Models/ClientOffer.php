@@ -47,6 +47,23 @@ class ClientOffer extends BaseModel
         {
             $builder->where('status' , $filters['status']) ;
         }
+        if($filters['sub_category_id']??false)
+        {
+            $builder->where('sub_category_id' , $filters['sub_category_id']) ;
+        }
+        if($filters['skill_ids']??false)
+        {
+            $filtersSkillIds = $filters['skill_ids']; 
+            
+            $builder->leftJoin('skillables',function($join){
+                $join->on('client_offers.id' , '=' , 'skillables.skillable_id')
+                    ->where('skillables.skillable_type' , ClientOffer::class) ;
+            })->where(function($query)use($filtersSkillIds){
+                $query->whereIn('skillables.skill_id' , $filtersSkillIds) ;
+            })->select('client_offers.*')
+              ->groupBy('client_offers.id')
+              ->havingRow('COUNT(skillables.skill_id) = ?' , [count($filtersSkillIds)]);
+        }
         
         return $builder ;
     }
