@@ -9,7 +9,9 @@ use App\Constants\ClientOfferStatus;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ClientOfferResource;
 use App\Http\Requests\ClientOffer\FilterClientOfferForAdminRequest;
-
+/**
+ * @group Client Offer Managment
+ */
 class ClientOfferAdminController extends Controller
 {
     /**
@@ -25,7 +27,7 @@ class ClientOfferAdminController extends Controller
         return ClientOfferResource::collection($clientOffers) ;
     }
     /**
-     * Admin
+     * Admin Accept
      */
     public function accept(ClientOffer $clientOffer)
     {
@@ -46,7 +48,7 @@ class ClientOfferAdminController extends Controller
         return ClientOfferResource::make($clientOffer) ;
     }
     /**
-     * Reject
+     * Admin Reject
      */
     public function reject(ClientOffer $clientOffer)
     {
@@ -64,7 +66,7 @@ class ClientOfferAdminController extends Controller
         return response()->json(['message'=>'deleted']) ;
     }
     /**
-     * Delete
+     * Admin Delete
      */
     public function delete(ClientOffer $clientOffer)
     {
