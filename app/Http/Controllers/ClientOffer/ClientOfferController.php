@@ -17,6 +17,7 @@ class ClientOfferController extends Controller
     public function filter(FilterClientOfferRequest $request)
     {
         $clientOffers = ClientOffer::filter($request->validated())
+        ->where('client_id' , $this->user->role_id)
         ->with(['skills' , 'files' , 'sub_category'])
         ->orderByDesc('created_at')
         ->paginate(20) ;
@@ -58,7 +59,8 @@ class ClientOfferController extends Controller
      */
     public function show(ClientOffer $clientOffer)
     {
-        //todo only mine
+        $this->authorize('view' , $clientOffer) ;
+        
         return ClientOfferResource::make($clientOffer->load([
             'files' ,
             'sub_category' ,
@@ -70,12 +72,13 @@ class ClientOfferController extends Controller
      * Update the specified resource in storage.
      */
     public function update(UpdateClientOfferRequest $request)
-    {
-        //todo only mine
+    {   
         $data = $request->validated() ;
         
         $clientOffer = ClientOffer::findOrFail($data['client_offer_id']) ;
 
+        $this->authorize('update' , $clientOffer) ;
+    
         if($clientOffer->status != ClientOfferStatus::PENDING)
         {
             return response()->json(
@@ -113,7 +116,8 @@ class ClientOfferController extends Controller
      */
     public function destroy(ClientOffer $clientOffer)
     {
-        //todo only mine
+        $this->authorize('delete' , $clientOffer) ;
+        
         $clientOffer->delete() ;
 
         return response()->json(['massage'=>'deleted']) ;
