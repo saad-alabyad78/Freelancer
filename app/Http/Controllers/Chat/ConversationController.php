@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Chat;
 
 use App\Models\Message;
 use App\Events\MessageSent;
-use App\Models\Conversation;
 use App\Models\MessageLike;
-use App\Models\ConversationUserBan;
+use App\Models\Conversation;
 use Illuminate\Http\Request;
+use App\Models\ConversationUserBan;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Chat\SendMessageRequest;
 use App\Http\Requests\Chat\CreateConversationRequest;
