@@ -10,7 +10,7 @@ class ClientOfferProposal extends Model
 {
     use HasFactory;
 
-    protected $fillabe =
+    protected $fillable =
     [
         'id' ,
         'freelancer_id' ,

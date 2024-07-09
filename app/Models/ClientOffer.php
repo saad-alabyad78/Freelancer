@@ -51,6 +51,22 @@ class ClientOffer extends BaseModel
         {
             $builder->where('sub_category_id' , $filters['sub_category_id']) ;
         }
+        if($filters['min_days']??false)
+        {
+            $builder->where('days' , '>=' ,$filters['min_days']) ;
+        }
+        if($filters['max_days']??false)
+        {
+            $builder->where('days' , '<=' , $filters['max_days']) ;
+        }
+        if($filters['min_price']??false)
+        {
+            $builder->where('min_price' , '>=' , $filters['min_price']) ;
+        }
+        if($filters['max_price']??false)
+        {
+            $builder->where('max_price' , '<=' ,$filters['max_price']) ;
+        }
         if($filters['skill_ids']??false)
         {
             $filtersSkillIds = $filters['skill_ids']; 
@@ -62,7 +78,7 @@ class ClientOffer extends BaseModel
                 $query->whereIn('skillables.skill_id' , $filtersSkillIds) ;
             })->select('client_offers.*')
               ->groupBy('client_offers.id')
-              ->havingRow('COUNT(skillables.skill_id) = ?' , [count($filtersSkillIds)]);
+              ->havingRaw('COUNT(skillables.skill_id) = ?' , [count($filtersSkillIds)]);
         }
         
         return $builder ;

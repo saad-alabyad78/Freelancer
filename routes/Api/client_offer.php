@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientOffer\ClientOfferController;
 use App\Http\Controllers\ClientOffer\ClientOfferAdminController;
+use App\Http\Controllers\ClientOffer\ClientOfferFreelancerController;
 
 
 
@@ -41,6 +42,8 @@ Route::group([
         Route::post('{client_offer}/accept' , [ClientOfferAdminController::class , 'accept']) ;
         Route::post('{client_offer}/reject' , [ClientOfferAdminController::class , 'accept']) ;
         Route::delete('{client_offer}' , [ClientOfferAdminController::class , 'delete']) ;
+        //Route::post('accept' , )
+        //Route::post('reject' , )
     });
 });
 
@@ -56,5 +59,11 @@ Route::group([
             'role:freelancer' ,
         ]
     ],function(){
+        Route::post('freelancer-filter' , [ClientOfferFreelancerController::class , 'freelancerFilter']) ;
+        Route::get( '{client_offer}' , [ClientOfferFreelancerController::class , 'showClientOffer']) ;
+        Route::post('proposal/store' , [ClientOfferFreelancerController::class , 'createProposal']) ;
+        Route::put('propose' , [ClientOfferFreelancerController::class , 'updateProposal']) ;
+        Route::delete('{client_offer_proposal}' , [ClientOfferFreelancerController::class , 'deleteProposal']) ;
+
     });
 });
