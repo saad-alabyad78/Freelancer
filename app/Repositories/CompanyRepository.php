@@ -45,7 +45,7 @@ class CompanyRepository extends BaseRepository implements ICompanyRepository
                 'imagable_id' => $company->id ,
                 'imagable_type' => company::class ,
             ]);
-            $data['profile_image_url'] = Image::findOrFail($data['profile_image_id'])->first() ;
+            $data['profile_image_url'] = Image::findOrFail($data['profile_image_id'])->first()->url ;
         }
         if($data['background_image_id'] ?? false and $company?->background_image_id ?? false)
         {
@@ -54,7 +54,7 @@ class CompanyRepository extends BaseRepository implements ICompanyRepository
                 'imagable_id' => $company->id ,
                 'imagable_type' => company::class ,
             ]);
-            $data['background_image_url'] = Image::findOrFail($data['profile_image_id'])->first() ;
+            $data['background_image_url'] = Image::findOrFail($data['profile_image_id'])->first()->url ;
         }
 
         $company->update($data) ;
