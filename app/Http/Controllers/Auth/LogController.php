@@ -8,10 +8,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\Auth\LogInRequest;
 use App\Http\Resources\Auth\UserResource;
+use Illuminate\Support\Facades\Cache;
 
 /**
  * @group Auth Managment
- * 
+ *
  * APIs to manage the login and logout
  **/
 class LogController extends Controller
@@ -19,7 +20,7 @@ class LogController extends Controller
 
     /**
      * @noauthintication
-     * 
+     *
      */
     public function login(LogInRequest $request)
     {
@@ -33,7 +34,7 @@ class LogController extends Controller
                 'error'=> 'you need to verify your email' ,
             ] , 401);
         }
-        
+
        if(!$user || !Hash::check($request->password , $user->password)){
             return response()->json([
                 'error' => 'the provided credentials are incorrect :(' ,
@@ -41,6 +42,9 @@ class LogController extends Controller
         }
 
         $device = substr($request->userAgent() ?? '' , 0 , 255) ;
+
+          // Update online status
+          Cache::put('user-is-online-' . $user->id, true, now()->addMinutes(5));
 
         return response()->json([
             'user' => UserResource::make($user) ,
@@ -52,7 +56,11 @@ class LogController extends Controller
     **/
     public function logout(Request $request)
     {
-        auth('sanctum')->user()->tokens()->delete();
+        $user = auth('sanctum')->user();
+        $user->tokens()->delete();
+
+        // Remove online status
+        Cache::forget('user-is-online-' . $user->id);
 
         return response()->json(['message' => 'Logout successful']);
     }

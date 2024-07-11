@@ -12,6 +12,8 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\Cache;
+
 
 class User extends Authenticatable
 {
@@ -24,6 +26,7 @@ class User extends Authenticatable
         'first_name',
         'last_name',
         'provider',
+        'last_seen'
     ];
 
     protected $hidden = [
@@ -34,6 +37,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        'last_seen' => 'datetime',
     ];
 
     protected function RoleName(): Attribute
@@ -72,4 +76,20 @@ class User extends Authenticatable
         return $this->hasMany(Invitation::class, 'freelancer_id');
     }
 
+    public function isOnline()
+    {
+        return Cache::has('user-is-online-' . $this->id);
+    }
+
+    public function markOnline()
+    {
+        Cache::put('user-is-online-' . $this->id, true, now()->addMinutes(5));
+        $this->update(['last_seen' => now()]);
+    }
+
+    public function markOffline()
+    {
+        Cache::forget('user-is-online-' . $this->id);
+        $this->update(['last_seen' => now()]);
+    }
 }

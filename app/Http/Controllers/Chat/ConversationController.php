@@ -61,6 +61,8 @@ class ConversationController extends Controller
 
         broadcast(new MessageSent($message))->toOthers();
 
+        Cache::put('user-is-online-' . $request->user()->id, true, now()->addMinutes(5));
+
         return response()->json($message);
     }
 
@@ -166,4 +168,27 @@ class ConversationController extends Controller
 
         return response()->json($like, 201);
     }
-}
+     // دالة تحديث حالة الأونلاين
+     public function updateOnlineStatus()
+     {
+         $user = auth()->user();
+         Cache::put('user-is-online-' . $user->id, true, now()->addMinutes(5));
+         $user->update(['last_seen' => now()]);
+
+         broadcast(new UserOnlineStatusUpdated($user))->toOthers();
+
+         return response()->json(['message' => 'Status updated']);
+     }
+
+     // دالة الحصول على حالة المستخدم
+     public function getUserStatus($userId)
+     {
+         $user = User::findOrFail($userId);
+         $isOnline = Cache::has('user-is-online-' . $user->id);
+
+         return response()->json([
+             'is_online' => $isOnline,
+             'last_seen' => $user->last_seen,
+         ]);
+     }
+ }

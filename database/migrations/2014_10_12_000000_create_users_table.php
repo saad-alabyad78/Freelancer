@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('fcm_token')->nullable();
-            
+
             $table->unsignedBigInteger('role_id')->nullable();
             $table->string('role_type')->nullable();
 
@@ -32,8 +32,10 @@ return new class extends Migration
             $table->string('password');
             $table->string('password_otp_code')->nullable();
             $table->dateTime('password_otp_expired_date')->nullable();
-            
+
             $table->index(['role_id' , 'role_type' , 'email']);
+
+            $table->timestamp('last_seen')->nullable();
 
             $table->rememberToken();
             $table->timestamps();

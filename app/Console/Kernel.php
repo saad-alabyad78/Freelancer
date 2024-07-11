@@ -4,6 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Console\Commands\UpdateOnlineStatus;
 
 class Kernel extends ConsoleKernel
 {
@@ -12,8 +13,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $render_url = 'https://freelancer-l1w8.onrender.com' ;
-        // $schedule->command('send:request '.$render_url)->cron('*/14') ;
+        $schedule->job(new \App\Jobs\UpdateUserOnlineStatus)->everyFiveMinutes();
+
     }
 
     /**
