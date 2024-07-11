@@ -14,6 +14,12 @@ use App\Http\Requests\Chat\CreateConversationRequest;
 
 class ConversationController extends Controller
 {
+    /**
+     * Create a new conversation.
+     *
+     * @param  \App\Http\Requests\Chat\CreateConversationRequest  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function createConversation(CreateConversationRequest $request)
     {
         $conversation = Conversation::create();
@@ -21,10 +27,18 @@ class ConversationController extends Controller
         return response()->json($conversation);
     }
 
+    /**
+     * Send a message in a conversation.
+     *
+     * @param  \App\Http\Requests\Chat\SendMessageRequest  $request
+     * @param  int  $conversationId
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function sendMessage(SendMessageRequest $request, $conversationId)
     {
         $conversation = Conversation::findOrFail($conversationId);
 
+        // Check if the user is banned from the conversation
         if (ConversationUserBan::where('conversation_id', $conversationId)
             ->where('user_id', $request->user()->id)->exists()) {
             return response()->json(['message' => 'You are banned from this conversation'], 403);
@@ -49,6 +63,13 @@ class ConversationController extends Controller
 
         return response()->json($message);
     }
+
+    /**
+     * Get messages from a conversation.
+     *
+     * @param  int  $conversationId
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function getMessages($conversationId)
     {
         $messages = Message::where('conversation_id', $conversationId)
@@ -57,12 +78,25 @@ class ConversationController extends Controller
         return response()->json($messages);
     }
 
+    /**
+     * Get all conversations for the authenticated user.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function getConversations(Request $request)
     {
         $conversations = $request->user()->conversations;
         return response()->json($conversations);
     }
 
+    /**
+     * Get messages from a specific message in a conversation.
+     *
+     * @param  int  $conversationId
+     * @param  int  $messageId
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function getMessagesByMessageId($conversationId, $messageId)
     {
         $message = Message::where('conversation_id', $conversationId)
@@ -82,6 +116,14 @@ class ConversationController extends Controller
 
         return response()->json($messages);
     }
+
+    /**
+     * Ban a user from a conversation.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $conversationId
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function banUser(Request $request, $conversationId)
     {
         $request->validate([
@@ -101,6 +143,14 @@ class ConversationController extends Controller
 
         return response()->json($ban, 201);
     }
+
+    /**
+     * Like a message in a conversation.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $messageId
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function likeMessage(Request $request, $messageId)
     {
         $message = Message::findOrFail($messageId);
