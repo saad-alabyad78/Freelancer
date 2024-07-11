@@ -126,14 +126,14 @@ class JobOffer extends BaseModel
             })
             ->where(function($query) use($freelancerSkills){
                 $query->where('skillables.required' , true)
-                      ->whereIn('skillables.skill_id' , $freelancerSkills) ;
+                      ->whereNotIn('skillables.skill_id' , $freelancerSkills) ;
             })
-            ->orWhere(function($quere){
-                $quere->where('skillables.required' , false) ;
-            })
+            // ->orWhere(function($quere){
+            //     $quere->where('skillables.required' , false) ;
+            // })
             ->select('job_offers.*')
             ->groupBy('job_offers.id')
-            ->havingRaw('COUNT(skillables.skill_id) > 0');
+            ->havingRaw('COUNT(skillables.skill_id) = 0');
         }
 
         \Log::warning($builder->getQuery()->toRawSql()) ;

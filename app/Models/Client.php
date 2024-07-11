@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -25,5 +26,9 @@ class Client extends BaseModel
     public function user():MorphOne
     {
         return $this->morphOne(User::class,"role");
+    }
+    public function client_offer_proposals():HasMany
+    {
+        return $this->hasMany(ClientOfferProposal::class) ;
     }
 }

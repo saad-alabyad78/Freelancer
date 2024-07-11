@@ -25,13 +25,13 @@ endpoints:
         name: client_id
         description: 'The ID of the client.'
         required: true
-        example: 5
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      client_id: 5
+      client_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -40,7 +40,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"username":null,"gender":null,"city":null,"date_of_birth":null,"profile_image_id":null,"background_image_id":null,"profile_image_url":null,"background_image_url":null,"created_at":null,"updated_at":null}}'
+        content: '{"data":{"id":1,"username":"client-client-1","gender":"male","city":"\u062f\u0645\u0634\u0642","date_of_birth":"2024-07-07","profile_image_id":null,"background_image_id":null,"profile_image_url":null,"background_image_url":null,"created_at":"2024-07-07T09:07:19.000000Z","updated_at":"2024-07-07T09:07:19.000000Z"}}'
         headers: []
         description: ''
         custom: []
@@ -48,7 +48,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gP58Vac361veEZk6dDaf4hb'
+      - 'Bearer 8E5Pa6hVgkcv63fZdDe14ba'
     controller: null
     method: null
     route: null
@@ -95,9 +95,9 @@ endpoints:
         custom: []
       date_of_birth:
         name: date_of_birth
-        description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-05</code>.'
+        description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-09</code>.'
         required: true
-        example: '2006-08-05'
+        example: '1994-11-17'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -115,7 +115,7 @@ endpoints:
         name: gender
         description: ''
         required: true
-        example: male
+        example: female
         type: string
         enumValues:
           - male
@@ -123,14 +123,14 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      date_of_birth: '2006-08-05'
+      date_of_birth: '1994-11-17'
       city: دمشق
-      gender: male
+      gender: female
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"username":null,"gender":null,"city":null,"date_of_birth":null,"profile_image_id":null,"background_image_id":null,"profile_image_url":null,"background_image_url":null,"created_at":null,"updated_at":null}}'
+        content: '{"data":{"id":1,"username":"client-client-1","gender":"male","city":"\u062f\u0645\u0634\u0642","date_of_birth":"2024-07-07","profile_image_id":null,"background_image_id":null,"profile_image_url":null,"background_image_url":null,"created_at":"2024-07-07T09:07:19.000000Z","updated_at":"2024-07-07T09:07:19.000000Z"}}'
         headers: []
         description: ''
         custom: []
@@ -138,7 +138,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8PZ41adEgf6h6DaV3ekv5cb'
+      - 'Bearer b4vZEa5fk66c3hdag8PD1Ve'
     controller: null
     method: null
     route: null
@@ -185,9 +185,9 @@ endpoints:
         custom: []
       date_of_birth:
         name: date_of_birth
-        description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-05</code>.'
+        description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-09</code>.'
         required: false
-        example: '2005-04-11'
+        example: '2005-05-22'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -205,7 +205,7 @@ endpoints:
         name: gender
         description: ''
         required: false
-        example: male
+        example: female
         type: string
         enumValues:
           - male
@@ -213,14 +213,14 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      date_of_birth: '2005-04-11'
+      date_of_birth: '2005-05-22'
       city: دمشق
-      gender: male
+      gender: female
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"username":null,"gender":null,"city":null,"date_of_birth":null,"profile_image_id":null,"background_image_id":null,"profile_image_url":null,"background_image_url":null,"created_at":null,"updated_at":null}}'
+        content: '{"data":{"id":1,"username":"client-client-1","gender":"male","city":"\u062f\u0645\u0634\u0642","date_of_birth":"2024-07-07","profile_image_id":null,"background_image_id":null,"profile_image_url":null,"background_image_url":null,"created_at":"2024-07-07T09:07:19.000000Z","updated_at":"2024-07-07T09:07:19.000000Z"}}'
         headers: []
         description: ''
         custom: []
@@ -228,7 +228,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3VckDfh58bPag4eEad1Z6v6'
+      - 'Bearer 6acb1k8dh5fEZv63V4eDPag'
     controller: null
     method: null
     route: null

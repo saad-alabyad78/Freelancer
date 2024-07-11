@@ -52,7 +52,7 @@ class LogController extends Controller
     **/
     public function logout(Request $request)
     {
-        $request->user()->tokens()->delete();
+        auth('sanctum')->user()->tokens()->delete();
 
         return response()->json(['message' => 'Logout successful']);
     }
