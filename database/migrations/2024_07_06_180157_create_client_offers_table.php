@@ -28,6 +28,8 @@ return new class extends Migration
             $table->integer('max_price') ;
             $table->integer('days') ;
 
+            $table->integer('proposals_count')->default(0)->nullable() ;
+
             $table->timestamp('posted_at')->nullable() ;
              
             $table->timestamps();

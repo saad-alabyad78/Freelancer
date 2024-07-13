@@ -10,7 +10,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Create a new conversation.'
       description: ''
       authenticated: true
       custom: []
@@ -39,7 +39,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Dhv1EV6bPaZcge8f6k54d3a'
+      - 'Bearer E6va83cbPg5akV1DZe6h4fd'
     controller: null
     method: null
     route: null
@@ -53,7 +53,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Send a message in a conversation.'
       description: ''
       authenticated: true
       custom: []
@@ -66,13 +66,13 @@ endpoints:
         name: conversationId
         description: ''
         required: true
-        example: quidem
+        example: voluptatum
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      conversationId: quidem
+      conversationId: voluptatum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -80,7 +80,7 @@ endpoints:
         name: message
         description: ''
         required: false
-        example: voluptas
+        example: quia
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -104,7 +104,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      message: voluptas
+      message: quia
     fileParameters:
       image: null
     responses: []
@@ -112,7 +112,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer P46VeDvgEd5kZahcf6a31b8'
+      - 'Bearer f3k1v5Pcd6gaaV6E4DbhZ8e'
     controller: null
     method: null
     route: null
@@ -126,7 +126,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Get messages from a conversation.'
       description: ''
       authenticated: true
       custom: []
@@ -139,13 +139,13 @@ endpoints:
         name: conversationId
         description: ''
         required: true
-        example: voluptatem
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      conversationId: voluptatem
+      conversationId: qui
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -165,7 +165,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer V43dPga5v6EDbcZ8kf6ha1e'
+      - 'Bearer e8V3EP65kdZvaafc6b1hD4g'
     controller: null
     method: null
     route: null
@@ -179,7 +179,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Get messages from a specific message in a conversation.'
       description: ''
       authenticated: true
       custom: []
@@ -192,7 +192,7 @@ endpoints:
         name: conversationId
         description: ''
         required: true
-        example: pariatur
+        example: vitae
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -201,14 +201,14 @@ endpoints:
         name: messageId
         description: ''
         required: true
-        example: recusandae
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      conversationId: pariatur
-      messageId: recusandae
+      conversationId: vitae
+      messageId: ut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -228,7 +228,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZEh861dac4aVevbk3D5fPg6'
+      - 'Bearer E8e5Da1vafZ6Vb6kP4d3cgh'
     controller: null
     method: null
     route: null
@@ -242,7 +242,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Get all conversations for the authenticated user.'
       description: ''
       authenticated: true
       custom: []
@@ -271,7 +271,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3656cd1gVfEaPbehaZ8D4kv'
+      - 'Bearer 8eD1Vaahv663ZEdPgcfbk54'
     controller: null
     method: null
     route: null
@@ -285,7 +285,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Ban a user from a conversation.'
       description: ''
       authenticated: true
       custom: []
@@ -298,13 +298,13 @@ endpoints:
         name: conversation
         description: 'The conversation.'
         required: true
-        example: perferendis
+        example: mollitia
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      conversation: perferendis
+      conversation: mollitia
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -312,20 +312,20 @@ endpoints:
         name: user_id
         description: ''
         required: true
-        example: aperiam
+        example: delectus
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      user_id: aperiam
+      user_id: delectus
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6cg4hk6V8Eb1aPeZ3vdDaf5'
+      - 'Bearer 56dZEV81ghaP3bva6cfD4ek'
     controller: null
     method: null
     route: null
@@ -334,6 +334,84 @@ endpoints:
     httpMethods:
       - POST
     uri: 'api/messages/{message}/like'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Like a message in a conversation.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      message:
+        name: message
+        description: 'The message.'
+        required: true
+        example: voluptas
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      message: voluptas
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer aZdaPE45vk6g3e8h6D1Vcfb'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/user/status
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer acZebv86V346EhP1f5dagkD'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/user/{userId}/status'
     metadata:
       groupName: Endpoints
       groupDescription: ''
@@ -348,28 +426,37 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      message:
-        name: message
-        description: 'The message.'
+      userId:
+        name: userId
+        description: ''
         required: true
-        example: quis
-        type: string
+        example: 1
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      message: quis
+      userId: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 85b16h3vdZ6ck4aDEgeaPfV'
+      - 'Bearer 8DkP6dgfe6vE4Va3c1b5haZ'
     controller: null
     method: null
     route: null
@@ -400,7 +487,7 @@ endpoints:
         name: freelancer_id
         description: ''
         required: true
-        example: velit
+        example: eligendi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -409,21 +496,21 @@ endpoints:
         name: job_offer_id
         description: ''
         required: true
-        example: dolore
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      freelancer_id: velit
-      job_offer_id: dolore
+      freelancer_id: eligendi
+      job_offer_id: est
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer e156PahkVEfacDvgZb468d3'
+      - 'Bearer 6gfZ4h5aak3VDdbE18Pcv6e'
     controller: null
     method: null
     route: null
@@ -450,13 +537,13 @@ endpoints:
         name: id
         description: 'The ID of the invitation.'
         required: true
-        example: repellat
+        example: odio
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: repellat
+      id: odio
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -467,7 +554,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer D8P61hfceb6ZdaV34kEav5g'
+      - 'Bearer hvb14Ed3ea5ZgVckP8a66Df'
     controller: null
     method: null
     route: null
@@ -494,13 +581,13 @@ endpoints:
         name: id
         description: 'The ID of the invitation.'
         required: true
-        example: quis
+        example: enim
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: quis
+      id: enim
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -511,7 +598,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gPkbaa66VhZe3cf58E41vdD'
+      - 'Bearer 6Vab5PDc3k6Zg8hd41Eevfa'
     controller: null
     method: null
     route: null
@@ -538,13 +625,13 @@ endpoints:
         name: id
         description: 'The ID of the invitation.'
         required: true
-        example: ut
+        example: omnis
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: ut
+      id: omnis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -555,7 +642,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer P638VhZfk51aDcgabdE6e4v'
+      - 'Bearer 643fVd18gcv6aebah5kZPED'
     controller: null
     method: null
     route: null
@@ -598,268 +685,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 34f6g8vd6aZkcDhaEb5eV1P'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/client-offer/freelancer/freelancer-filter
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      status:
-        name: status
-        description: ''
-        required: false
-        example: cloused
-        type: string
-        enumValues:
-          - active
-          - cloused
-        exampleWasSpecified: false
-        custom: []
-      sub_category_id:
-        name: sub_category_id
-        description: ''
-        required: false
-        example: 12
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      skill_ids:
-        name: skill_ids
-        description: ''
-        required: false
-        example:
-          - 2
-        type: 'integer[]'
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      min_days:
-        name: min_days
-        description: ''
-        required: false
-        example: 11
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      max_days:
-        name: max_days
-        description: ''
-        required: false
-        example: 13
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      min_price:
-        name: min_price
-        description: ''
-        required: false
-        example: 15
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      max_price:
-        name: max_price
-        description: ''
-        required: false
-        example: 8
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      status: cloused
-      sub_category_id: 12
-      skill_ids:
-        - 2
-      min_days: 11
-      max_days: 13
-      min_price: 15
-      max_price: 8
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 564dkg1ac8ZDaE3hPfvbV6e'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/client-offer/freelancer/{client_offer_id}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      client_offer_id:
-        name: client_offer_id
-        description: 'The ID of the client offer.'
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      client_offer_id: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":{"id":1,"client_id":1,"title":"title","status":"active","description":"description 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111","min_price":3,"max_price":10,"days":100,"posted_at":null,"created_at":"2024-07-07T09:10:19.000000Z","updated_at":"2024-07-07T21:25:53.000000Z"}}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '50'
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer cPvV6kd6D8f3Eh5egZ4b1aa'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/client-offer/freelancer/proposal/store
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      client_offer_id:
-        name: client_offer_id
-        description: ''
-        required: true
-        example: 9
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      message:
-        name: message
-        description: 'Must be at least 10 characters. Must not be greater than 255 characters.'
-        required: true
-        example: vb
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      client_offer_id: 9
-      message: vb
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer aEh6fb83Vg61kDZvd5ec4Pa'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/client-offer/freelancer/{client_offer_proposal_id}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      client_offer_proposal_id:
-        name: client_offer_proposal_id
-        description: 'The ID of the client offer proposal.'
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      client_offer_proposal_id: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer Pgvk6dc5e3EZb4VDf16h8aa'
+      - 'Bearer k6e4a1bv86fhaPV53EdZcDg'
     controller: null
     method: null
     route: null
@@ -893,7 +719,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 86cbZa54f3EDdP1vkehg6aV'
+      - 'Bearer kDada1Vbg53c4P8eZ6Ev6hf'
     controller: null
     method: null
     route: null
@@ -930,7 +756,7 @@ endpoints:
           content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '49'
+          x-ratelimit-remaining: '41'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -938,7 +764,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ghV5ZePc643aE8vk6Ddba1f'
+      - 'Bearer 13dVDg54va86hcfEeaZPbk6'
     controller: null
     method: null
     route: null

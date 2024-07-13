@@ -40,10 +40,8 @@ Route::group([
     ],function(){
         Route::post('admin-filter' , [ClientOfferAdminController::class , 'adminFilter']) ;
         Route::post('{client_offer}/accept' , [ClientOfferAdminController::class , 'accept']) ;
-        Route::post('{client_offer}/reject' , [ClientOfferAdminController::class , 'accept']) ;
+        Route::post('{client_offer}/reject' , [ClientOfferAdminController::class , 'reject']) ;
         Route::delete('{client_offer}' , [ClientOfferAdminController::class , 'delete']) ;
-        //Route::post('accept' , )
-        //Route::post('reject' , )
     });
 });
 
@@ -56,14 +54,14 @@ Route::group([
         [
             'auth:sanctum' ,
             'verify_email' ,
-            'role:freelancer' ,
+            'role:freelancer' 
         ]
     ],function(){
         Route::post('freelancer-filter' , [ClientOfferFreelancerController::class , 'freelancerFilter']) ;
         Route::get( '{client_offer}' , [ClientOfferFreelancerController::class , 'showClientOffer']) ;
         Route::post('proposal/store' , [ClientOfferFreelancerController::class , 'createProposal']) ;
-        Route::put('propose' , [ClientOfferFreelancerController::class , 'updateProposal']) ;
-        Route::delete('{client_offer_proposal}' , [ClientOfferFreelancerController::class , 'deleteProposal']) ;
+        Route::put('proposal' , [ClientOfferFreelancerController::class , 'updateProposal']) ;
+        Route::delete('proposal/{client_offer_proposal}' , [ClientOfferFreelancerController::class , 'deleteProposal']) ;
 
     });
 });

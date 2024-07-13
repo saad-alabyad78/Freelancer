@@ -27,6 +27,7 @@ class ClientOfferResource extends JsonResource
             'min_price' => $this->min_price,
             'max_price' => $this->max_price,
             'days' => $this->days,
+            'proposals_count' => $this->proposals_count ,
             'skills' => SkillResource::collection($this->whenLoaded('skills')) ,
             'files' => FileResource::collection($this->whenLoaded('files')) ,
             'posted_at' => $this->posted_at ,

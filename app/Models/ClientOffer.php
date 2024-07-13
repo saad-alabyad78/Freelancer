@@ -22,6 +22,7 @@ class ClientOffer extends BaseModel
         'max_price' ,
         'days' ,
         'posted_at' ,
+        'proposals_count' ,
     ];
 
     public function skills():MorphToMany
@@ -30,7 +31,7 @@ class ClientOffer extends BaseModel
     }
     public function files():MorphMany
     {
-        return $this->morphMany(File::class , 'filable')->whereNull('deleted') ;
+        return $this->morphMany(File::class , 'filable')->where('deleted' , false)->orWhereNull('deleted') ;
     }
     public function sub_category():BelongsTo
     {

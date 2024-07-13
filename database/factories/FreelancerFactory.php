@@ -26,7 +26,7 @@ class FreelancerFactory extends Factory
             'profile_image_id' => null ,
             'background_image_id' => null ,
             'headline' => fake()->sentence() ,
-            'description'=> fake()->paragraph() ,
+            'description'=> fake()->sentence() ,
             'city' => 'دمشق',
             'gender' => fake()->randomElement([Gender::MALE , Gender::FEMALE]),
             'date_of_birth' => fake()->date('Y-m-d' , Carbon::now()->subYears(18)),

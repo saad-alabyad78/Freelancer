@@ -3,6 +3,10 @@
 namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
+use App\Models\ClientOffer;
+use App\Models\JobOfferProposal;
+use App\Policies\ClientOfferPolicy;
+use App\Policies\JobOfferProposalPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -14,6 +18,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         Invitation::class => InvitationPolicy::class,
+        ClientOffer::class => ClientOfferPolicy::class ,
+        JobOfferProposal::class => JobOfferProposalPolicy::class ,
 
     ];
 

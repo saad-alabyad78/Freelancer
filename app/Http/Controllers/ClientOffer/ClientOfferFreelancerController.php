@@ -13,18 +13,38 @@ use App\Http\Requests\ClientOffer\CreateClientOfferProposalRequest;
 use App\Http\Requests\ClientOffer\UpdateClientOfferProposalRequest;
 use App\Http\Requests\ClientOffer\FilterClientOfferForFreelancerRequest;
 
+/**
+ * @group Client Offer Managment
+ * 
+ */
 class ClientOfferFreelancerController extends Controller
 {
+    public function __construct(){
+        $this->middleware('role:freelancer');
+    }
+
+    /**
+     * 
+     * Freelancer Filter
+     * 
+     * @param \App\Http\Requests\ClientOffer\FilterClientOfferForFreelancerRequest $request
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     */
     public function freelancerFilter(FilterClientOfferForFreelancerRequest $request)
     {
         $clientOffers = ClientOffer::whereNot('status' , ClientOfferStatus::PENDING)
         ->filter($request->validated())
-        ->with(['skills' /*, 'files'*/ , 'sub_category'])
+        ->with(['skills' , 'sub_category'])
         ->orderByDesc('created_at')
         ->paginate(20) ;
 
         return ClientOfferResource::collection($clientOffers) ;
     }
+    /**
+     * Freelance Show Offer
+     * @param \App\Models\ClientOffer $clientOffer
+     * @return ClientOfferResource|mixed|\Illuminate\Http\JsonResponse
+     */
     public function showClientOffer(ClientOffer $clientOffer)
     {
         if($clientOffer->status == ClientOfferStatus::PENDING)
@@ -33,32 +53,60 @@ class ClientOfferFreelancerController extends Controller
         }
         return ClientOfferResource::make($clientOffer) ;
     }
+
+    /**
+     * 
+     * Freelancer Propose
+     * 
+     * @param \App\Http\Requests\ClientOffer\CreateClientOfferProposalRequest $request
+     * @return ClientOfferProposalResource
+     */
     public function createProposal(CreateClientOfferProposalRequest $request)
     {
         $data = $request->validated() ;
         $data['freelancer_id'] = $this->user->role_id ;
-        $data['client_id'] = ClientOffer::findOrFail($data['client_offer_id'])->first()->client_id ;
+        $clientOffer = ClientOffer::findOrFail($data['client_offer_id'])->first() ;
+        $data['client_id'] = $clientOffer->client_id ;
         
         $proposal = ClientOfferProposal::create($data) ;
+        
+        $clientOffer->increment('proposals_count') ;
 
         return ClientOfferProposalResource::make($proposal) ;
     }
+
+    /**
+     * 
+     * Freelancer Update Proposal Message
+     * 
+     * @param \App\Http\Requests\ClientOffer\UpdateClientOfferProposalRequest $request
+     * @return ClientOfferProposalResource
+     */
     public function updateProposal(UpdateClientOfferProposalRequest $request)
     {
         $data = $request->validated() ;
 
-        $proposal = ClientOfferProposal::findOrFail($data['client_offer_proposal_id'])->first() ;
+        $proposal = ClientOfferProposal::where('id' , $data['client_offer_proposal_id'])->first() ;
 
         $proposal->update(['message' => $data['message']]) ;
 
-        return ClientOfferProposal::make($proposal) ;
+        return ClientOfferProposalResource::make($proposal) ;
     }
+    /**
+     * Freelancer Delete Proposal
+     * 
+     * @param \App\Models\ClientOfferProposal $clientOfferProposal
+     * @return mixed|\Illuminate\Http\JsonResponse
+     */
     public function deleteProposal(ClientOfferProposal $clientOfferProposal)
     {
         if($clientOfferProposal->freelnacer_id != $this->user->role_id)
         {
             return response()->json(['error'=>'this is not your proposal'],403) ;
         }
+
+        ClientOffer::where('id' , $clientOfferProposal->client_offer_id)->first()->decrement('proposals_count') ;
+        
         $clientOfferProposal->delete() ;
         
         return response()->json(['message' => 'deleted']) ;

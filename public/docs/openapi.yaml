@@ -26,11 +26,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: hoeger.noble@example.com
+                  example: ckshlerin@example.net
                 password:
                   type: string
                   description: ''
-                  example: 'YDn|*H$2`P|>h$B$'
+                  example: 'pd^gjEe?['
               required:
                 - email
                 - password
@@ -58,11 +58,11 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 15
-                    first_name: Margaretta
-                    last_name: Anderson
-                    username: margaretta-anderson-15
-                    email: maximillia94@example.org
+                    id: 16
+                    first_name: Napoleon
+                    last_name: Cummings
+                    username: napoleon-cummings-16
+                    email: greta40@example.net
                     role_id: null
                     role: ''
                 properties:
@@ -71,19 +71,19 @@ paths:
                     properties:
                       id:
                         type: integer
-                        example: 15
+                        example: 16
                       first_name:
                         type: string
-                        example: Margaretta
+                        example: Napoleon
                       last_name:
                         type: string
-                        example: Anderson
+                        example: Cummings
                       username:
                         type: string
-                        example: margaretta-anderson-15
+                        example: napoleon-cummings-16
                       email:
                         type: string
-                        example: maximillia94@example.org
+                        example: greta40@example.net
                       role_id:
                         type: string
                         example: null
@@ -131,7 +131,7 @@ paths:
                 token:
                   type: string
                   description: ''
-                  example: esse
+                  example: ut
               required:
                 - token
   /api/otp/register:
@@ -153,19 +153,19 @@ paths:
                 first_name:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: lgdefyetexkeibxoi
+                  example: fq
                 last_name:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: ic
+                  example: vcwufltluzfkcrjyezkkmvd
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: iliana38@example.com
+                  example: deion99@example.org
                 password:
                   type: string
                   description: 'Must be at least 8 characters. Must not be greater than 255 characters.'
-                  example: 'C&=r\l}$D|DUd.I|'
+                  example: 'vJ&h8D-v7k'
               required:
                 - first_name
                 - email
@@ -189,11 +189,11 @@ paths:
                 email_otp_code:
                   type: string
                   description: ''
-                  example: temporibus
+                  example: placeat
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: von.cathryn@example.com
+                  example: jmertz@example.org
               required:
                 - email_otp_code
                 - email
@@ -216,7 +216,7 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: vanessa43@example.net
+                  example: noble00@example.com
               required:
                 - email
   /api/otp/forgot-password:
@@ -238,7 +238,7 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: mustafa68@example.net
+                  example: runte.caterina@example.net
               required:
                 - email
   /api/otp/reset-password:
@@ -260,15 +260,15 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: julien.leffler@example.net
+                  example: kassulke.milton@example.net
                 password:
                   type: string
                   description: ''
-                  example: sed
+                  example: sequi
                 password_otp_code:
                   type: string
                   description: ''
-                  example: modi
+                  example: id
               required:
                 - email
                 - password
@@ -292,7 +292,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: non
+                  example: id
       security: []
   /api/category/industry/chunk/insert:
     post:
@@ -322,7 +322,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: architecto
+                  example: quam
                 job_role_id:
                   type: string
                   description: ''
@@ -389,7 +389,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: consequatur
+                  example: animi
       security: []
   /api/category/job_role/chunk/insert:
     post:
@@ -654,7 +654,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: voluptas
+                  example: porro
               required:
                 - name
     delete:
@@ -693,7 +693,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: in
+                  example: labore
               required:
                 - name
   '/api/client/{client_id}':
@@ -715,13 +715,13 @@ paths:
                     username: client-client-1
                     gender: male
                     city: دمشق
-                    date_of_birth: '2024-07-07'
+                    date_of_birth: '2024-07-13'
                     profile_image_id: null
                     background_image_id: null
                     profile_image_url: null
                     background_image_url: null
-                    created_at: '2024-07-07T09:07:19.000000Z'
-                    updated_at: '2024-07-07T09:07:19.000000Z'
+                    created_at: '2024-07-13T09:17:00.000000Z'
+                    updated_at: '2024-07-13T09:17:00.000000Z'
                 properties:
                   data:
                     type: object
@@ -740,7 +740,7 @@ paths:
                         example: دمشق
                       date_of_birth:
                         type: string
-                        example: '2024-07-07'
+                        example: '2024-07-13'
                       profile_image_id:
                         type: string
                         example: null
@@ -755,10 +755,10 @@ paths:
                         example: null
                       created_at:
                         type: string
-                        example: '2024-07-07T09:07:19.000000Z'
+                        example: '2024-07-13T09:17:00.000000Z'
                       updated_at:
                         type: string
-                        example: '2024-07-07T09:07:19.000000Z'
+                        example: '2024-07-13T09:17:00.000000Z'
       tags:
         - 'Client Managment'
     parameters:
@@ -789,13 +789,13 @@ paths:
                     username: client-client-1
                     gender: male
                     city: دمشق
-                    date_of_birth: '2024-07-07'
+                    date_of_birth: '2024-07-13'
                     profile_image_id: null
                     background_image_id: null
                     profile_image_url: null
                     background_image_url: null
-                    created_at: '2024-07-07T09:07:19.000000Z'
-                    updated_at: '2024-07-07T09:07:19.000000Z'
+                    created_at: '2024-07-13T09:17:00.000000Z'
+                    updated_at: '2024-07-13T09:17:00.000000Z'
                 properties:
                   data:
                     type: object
@@ -814,7 +814,7 @@ paths:
                         example: دمشق
                       date_of_birth:
                         type: string
-                        example: '2024-07-07'
+                        example: '2024-07-13'
                       profile_image_id:
                         type: string
                         example: null
@@ -829,10 +829,10 @@ paths:
                         example: null
                       created_at:
                         type: string
-                        example: '2024-07-07T09:07:19.000000Z'
+                        example: '2024-07-13T09:17:00.000000Z'
                       updated_at:
                         type: string
-                        example: '2024-07-07T09:07:19.000000Z'
+                        example: '2024-07-13T09:17:00.000000Z'
       tags:
         - 'Client Managment'
       requestBody:
@@ -852,8 +852,8 @@ paths:
                   example: null
                 date_of_birth:
                   type: string
-                  description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-09</code>.'
-                  example: '1994-11-17'
+                  description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-13</code>.'
+                  example: '2000-05-06'
                 city:
                   type: string
                   description: 'this must be a syrian city.'
@@ -888,13 +888,13 @@ paths:
                     username: client-client-1
                     gender: male
                     city: دمشق
-                    date_of_birth: '2024-07-07'
+                    date_of_birth: '2024-07-13'
                     profile_image_id: null
                     background_image_id: null
                     profile_image_url: null
                     background_image_url: null
-                    created_at: '2024-07-07T09:07:19.000000Z'
-                    updated_at: '2024-07-07T09:07:19.000000Z'
+                    created_at: '2024-07-13T09:17:00.000000Z'
+                    updated_at: '2024-07-13T09:17:00.000000Z'
                 properties:
                   data:
                     type: object
@@ -913,7 +913,7 @@ paths:
                         example: دمشق
                       date_of_birth:
                         type: string
-                        example: '2024-07-07'
+                        example: '2024-07-13'
                       profile_image_id:
                         type: string
                         example: null
@@ -928,10 +928,10 @@ paths:
                         example: null
                       created_at:
                         type: string
-                        example: '2024-07-07T09:07:19.000000Z'
+                        example: '2024-07-13T09:17:00.000000Z'
                       updated_at:
                         type: string
-                        example: '2024-07-07T09:07:19.000000Z'
+                        example: '2024-07-13T09:17:00.000000Z'
       tags:
         - 'Client Managment'
       requestBody:
@@ -951,8 +951,8 @@ paths:
                   example: null
                 date_of_birth:
                   type: string
-                  description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-09</code>.'
-                  example: '2005-05-22'
+                  description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-13</code>.'
+                  example: '1999-06-29'
                 city:
                   type: string
                   description: 'this must be a syrian city.'
@@ -983,15 +983,15 @@ paths:
                 status:
                   type: string
                   description: ''
-                  example: pending
+                  example: cloused
                   enum:
                     - pending
                     - active
                     - cloused
   /api/client-offer/client/store:
     post:
-      summary: Store
-      operationId: store
+      summary: 'Client Store Offer'
+      operationId: clientStoreOffer
       description: ''
       parameters: []
       responses: {  }
@@ -1007,39 +1007,39 @@ paths:
                 sub_category_id:
                   type: integer
                   description: ''
-                  example: 4
+                  example: 20
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: xmxcvfrhgrelexydqgydp
+                  example: hkd
                 description:
                   type: string
                   description: 'Must be at least 100 characters. Must not be greater than 2000 characters.'
-                  example: 'Ut est est excepturi sint voluptas accusantium.'
+                  example: 'Ducimus accusamus esse autem vitae.'
                 min_price:
                   type: string
                   description: ''
-                  example: sunt
+                  example: qui
                 max_price:
                   type: string
                   description: ''
-                  example: rerum
+                  example: et
                 days:
                   type: string
                   description: 'Must be between 1 and 3 digits. Must not be greater than 100 characters.'
-                  example: vtnd
+                  example: foqsw
                 skill_ids:
                   type: array
                   description: ''
                   example:
-                    - 7
+                    - 13
                   items:
                     type: integer
                 file_ids:
                   type: array
                   description: ''
                   example:
-                    - 3
+                    - 5
                   items:
                     type: integer
               required:
@@ -1053,854 +1053,28 @@ paths:
                 - file_ids
   '/api/client-offer/client/{client_offer_id}':
     get:
-      summary: Show
-      operationId: show
+      summary: 'Client Show Offers'
+      operationId: clientShowOffers
       description: ''
       parameters: []
       responses:
-        403:
+        401:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: 'This action is unauthorized.'
-                  exception: Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException
-                  file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php
-                  line: 491
-                  trace:
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php
-                      line: 463
-                      function: prepareException
-                      class: Illuminate\Foundation\Exceptions\Handler
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php
-                      line: 54
-                      function: render
-                      class: Illuminate\Foundation\Exceptions\Handler
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php
-                      line: 51
-                      function: render
-                      class: NunoMaduro\Collision\Adapters\Laravel\ExceptionHandler
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 146
-                      function: handleException
-                      class: Illuminate\Routing\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/app/Http/Controllers/Controller.php
-                      line: 27
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 165
-                      function: 'App\Http\Controllers\{closure}'
-                      class: App\Http\Controllers\Controller
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php
-                      line: 50
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 183
-                      function: handle
-                      class: Illuminate\Routing\Middleware\SubstituteBindings
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
-                      line: 159
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
-                      line: 125
-                      function: handleRequest
-                      class: Illuminate\Routing\Middleware\ThrottleRequests
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
-                      line: 87
-                      function: handleRequestUsingNamedLimiter
-                      class: Illuminate\Routing\Middleware\ThrottleRequests
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 183
-                      function: handle
-                      class: Illuminate\Routing\Middleware\ThrottleRequests
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php
-                      line: 25
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 144
-                      function: 'Laravel\Sanctum\Http\Middleware\{closure}'
-                      class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 119
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php
-                      line: 24
-                      function: then
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 183
-                      function: handle
-                      class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 119
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                      line: 805
-                      function: then
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                      line: 784
-                      function: runRouteWithinStack
-                      class: Illuminate\Routing\Router
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                      line: 748
-                      function: runRoute
-                      class: Illuminate\Routing\Router
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                      line: 737
-                      function: dispatchToRoute
-                      class: Illuminate\Routing\Router
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
-                      line: 200
-                      function: dispatch
-                      class: Illuminate\Routing\Router
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 144
-                      function: 'Illuminate\Foundation\Http\{closure}'
-                      class: Illuminate\Foundation\Http\Kernel
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php
-                      line: 21
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php
-                      line: 31
-                      function: handle
-                      class: Illuminate\Foundation\Http\Middleware\TransformsRequest
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 183
-                      function: handle
-                      class: Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php
-                      line: 21
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php
-                      line: 40
-                      function: handle
-                      class: Illuminate\Foundation\Http\Middleware\TransformsRequest
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 183
-                      function: handle
-                      class: Illuminate\Foundation\Http\Middleware\TrimStrings
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php
-                      line: 27
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 183
-                      function: handle
-                      class: Illuminate\Foundation\Http\Middleware\ValidatePostSize
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php
-                      line: 99
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 183
-                      function: handle
-                      class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php
-                      line: 62
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 183
-                      function: handle
-                      class: Illuminate\Http\Middleware\HandleCors
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php
-                      line: 39
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 183
-                      function: handle
-                      class: Illuminate\Http\Middleware\TrustProxies
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                      line: 119
-                      function: 'Illuminate\Pipeline\{closure}'
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
-                      line: 175
-                      function: then
-                      class: Illuminate\Pipeline\Pipeline
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
-                      line: 144
-                      function: sendRequestThroughRouter
-                      class: Illuminate\Foundation\Http\Kernel
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
-                      line: 310
-                      function: handle
-                      class: Illuminate\Foundation\Http\Kernel
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
-                      line: 298
-                      function: callLaravelOrLumenRoute
-                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
-                      line: 91
-                      function: makeApiCall
-                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
-                      line: 44
-                      function: makeResponseCall
-                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
-                      line: 35
-                      function: makeResponseCallIfConditionsPass
-                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
-                      line: 236
-                      function: __invoke
-                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
-                      line: 163
-                      function: iterateThroughStrategies
-                      class: Knuckles\Scribe\Extracting\Extractor
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
-                      line: 95
-                      function: fetchResponses
-                      class: Knuckles\Scribe\Extracting\Extractor
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
-                      line: 125
-                      function: processRoute
-                      class: Knuckles\Scribe\Extracting\Extractor
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
-                      line: 72
-                      function: extractEndpointsInfoFromLaravelApp
-                      class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
-                      line: 50
-                      function: extractEndpointsInfoAndWriteToDisk
-                      class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php
-                      line: 53
-                      function: get
-                      class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                      line: 36
-                      function: handle
-                      class: Knuckles\Scribe\Commands\GenerateDocumentation
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Util.php
-                      line: 41
-                      function: 'Illuminate\Container\{closure}'
-                      class: Illuminate\Container\BoundMethod
-                      type: '::'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                      line: 93
-                      function: unwrapIfClosure
-                      class: Illuminate\Container\Util
-                      type: '::'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                      line: 35
-                      function: callBoundMethod
-                      class: Illuminate\Container\BoundMethod
-                      type: '::'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Container.php
-                      line: 662
-                      function: call
-                      class: Illuminate\Container\BoundMethod
-                      type: '::'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php
-                      line: 211
-                      function: call
-                      class: Illuminate\Container\Container
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Command/Command.php
-                      line: 326
-                      function: execute
-                      class: Illuminate\Console\Command
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php
-                      line: 180
-                      function: run
-                      class: Symfony\Component\Console\Command\Command
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php
-                      line: 1096
-                      function: run
-                      class: Illuminate\Console\Command
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php
-                      line: 324
-                      function: doRunCommand
-                      class: Symfony\Component\Console\Application
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php
-                      line: 175
-                      function: doRun
-                      class: Symfony\Component\Console\Application
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php
-                      line: 201
-                      function: run
-                      class: Symfony\Component\Console\Application
-                      type: '->'
-                    -
-                      file: /home/saad/Desktop/Freelancer/artisan
-                      line: 35
-                      function: handle
-                      class: Illuminate\Foundation\Console\Kernel
-                      type: '->'
+                  message: Unauthenticated.
                 properties:
                   message:
                     type: string
-                    example: 'This action is unauthorized.'
-                  exception:
-                    type: string
-                    example: Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException
-                  file:
-                    type: string
-                    example: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php
-                  line:
-                    type: integer
-                    example: 491
-                  trace:
-                    type: array
-                    example:
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php
-                        line: 463
-                        function: prepareException
-                        class: Illuminate\Foundation\Exceptions\Handler
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php
-                        line: 54
-                        function: render
-                        class: Illuminate\Foundation\Exceptions\Handler
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php
-                        line: 51
-                        function: render
-                        class: NunoMaduro\Collision\Adapters\Laravel\ExceptionHandler
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 146
-                        function: handleException
-                        class: Illuminate\Routing\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/app/Http/Controllers/Controller.php
-                        line: 27
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 165
-                        function: 'App\Http\Controllers\{closure}'
-                        class: App\Http\Controllers\Controller
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php
-                        line: 50
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 183
-                        function: handle
-                        class: Illuminate\Routing\Middleware\SubstituteBindings
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
-                        line: 159
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
-                        line: 125
-                        function: handleRequest
-                        class: Illuminate\Routing\Middleware\ThrottleRequests
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
-                        line: 87
-                        function: handleRequestUsingNamedLimiter
-                        class: Illuminate\Routing\Middleware\ThrottleRequests
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 183
-                        function: handle
-                        class: Illuminate\Routing\Middleware\ThrottleRequests
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php
-                        line: 25
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 144
-                        function: 'Laravel\Sanctum\Http\Middleware\{closure}'
-                        class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 119
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php
-                        line: 24
-                        function: then
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 183
-                        function: handle
-                        class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 119
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                        line: 805
-                        function: then
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                        line: 784
-                        function: runRouteWithinStack
-                        class: Illuminate\Routing\Router
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                        line: 748
-                        function: runRoute
-                        class: Illuminate\Routing\Router
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php
-                        line: 737
-                        function: dispatchToRoute
-                        class: Illuminate\Routing\Router
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
-                        line: 200
-                        function: dispatch
-                        class: Illuminate\Routing\Router
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 144
-                        function: 'Illuminate\Foundation\Http\{closure}'
-                        class: Illuminate\Foundation\Http\Kernel
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php
-                        line: 21
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php
-                        line: 31
-                        function: handle
-                        class: Illuminate\Foundation\Http\Middleware\TransformsRequest
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 183
-                        function: handle
-                        class: Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php
-                        line: 21
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php
-                        line: 40
-                        function: handle
-                        class: Illuminate\Foundation\Http\Middleware\TransformsRequest
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 183
-                        function: handle
-                        class: Illuminate\Foundation\Http\Middleware\TrimStrings
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php
-                        line: 27
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 183
-                        function: handle
-                        class: Illuminate\Foundation\Http\Middleware\ValidatePostSize
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php
-                        line: 99
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 183
-                        function: handle
-                        class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php
-                        line: 62
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 183
-                        function: handle
-                        class: Illuminate\Http\Middleware\HandleCors
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php
-                        line: 39
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 183
-                        function: handle
-                        class: Illuminate\Http\Middleware\TrustProxies
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
-                        line: 119
-                        function: 'Illuminate\Pipeline\{closure}'
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
-                        line: 175
-                        function: then
-                        class: Illuminate\Pipeline\Pipeline
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
-                        line: 144
-                        function: sendRequestThroughRouter
-                        class: Illuminate\Foundation\Http\Kernel
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
-                        line: 310
-                        function: handle
-                        class: Illuminate\Foundation\Http\Kernel
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
-                        line: 298
-                        function: callLaravelOrLumenRoute
-                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
-                        line: 91
-                        function: makeApiCall
-                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
-                        line: 44
-                        function: makeResponseCall
-                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
-                        line: 35
-                        function: makeResponseCallIfConditionsPass
-                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
-                        line: 236
-                        function: __invoke
-                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
-                        line: 163
-                        function: iterateThroughStrategies
-                        class: Knuckles\Scribe\Extracting\Extractor
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
-                        line: 95
-                        function: fetchResponses
-                        class: Knuckles\Scribe\Extracting\Extractor
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
-                        line: 125
-                        function: processRoute
-                        class: Knuckles\Scribe\Extracting\Extractor
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
-                        line: 72
-                        function: extractEndpointsInfoFromLaravelApp
-                        class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
-                        line: 50
-                        function: extractEndpointsInfoAndWriteToDisk
-                        class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php
-                        line: 53
-                        function: get
-                        class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                        line: 36
-                        function: handle
-                        class: Knuckles\Scribe\Commands\GenerateDocumentation
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Util.php
-                        line: 41
-                        function: 'Illuminate\Container\{closure}'
-                        class: Illuminate\Container\BoundMethod
-                        type: '::'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                        line: 93
-                        function: unwrapIfClosure
-                        class: Illuminate\Container\Util
-                        type: '::'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
-                        line: 35
-                        function: callBoundMethod
-                        class: Illuminate\Container\BoundMethod
-                        type: '::'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Container.php
-                        line: 662
-                        function: call
-                        class: Illuminate\Container\BoundMethod
-                        type: '::'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php
-                        line: 211
-                        function: call
-                        class: Illuminate\Container\Container
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Command/Command.php
-                        line: 326
-                        function: execute
-                        class: Illuminate\Console\Command
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php
-                        line: 180
-                        function: run
-                        class: Symfony\Component\Console\Command\Command
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php
-                        line: 1096
-                        function: run
-                        class: Illuminate\Console\Command
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php
-                        line: 324
-                        function: doRunCommand
-                        class: Symfony\Component\Console\Application
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php
-                        line: 175
-                        function: doRun
-                        class: Symfony\Component\Console\Application
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php
-                        line: 201
-                        function: run
-                        class: Symfony\Component\Console\Application
-                        type: '->'
-                      -
-                        file: /home/saad/Desktop/Freelancer/artisan
-                        line: 35
-                        function: handle
-                        class: Illuminate\Foundation\Console\Kernel
-                        type: '->'
-                    items:
-                      type: object
-                      properties:
-                        file:
-                          type: string
-                          example: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php
-                        line:
-                          type: integer
-                          example: 463
-                        function:
-                          type: string
-                          example: prepareException
-                        class:
-                          type: string
-                          example: Illuminate\Foundation\Exceptions\Handler
-                        type:
-                          type: string
-                          example: '->'
+                    example: Unauthenticated.
       tags:
         - 'Client Offer Managment'
     delete:
-      summary: Delete
-      operationId: delete
+      summary: 'Client Delete Offers'
+      operationId: clientDeleteOffers
       description: ''
       parameters: []
       responses: {  }
@@ -1917,8 +1091,8 @@ paths:
           type: integer
   /api/client-offer/client:
     put:
-      summary: 'Update .'
-      operationId: update
+      summary: 'Client Update Pending Offers'
+      operationId: clientUpdatePendingOffers
       description: ''
       parameters: []
       responses: {  }
@@ -1934,19 +1108,19 @@ paths:
                 client_offer_id:
                   type: integer
                   description: ''
-                  example: 2
+                  example: 10
                 sub_category_id:
                   type: integer
                   description: ''
-                  example: 6
+                  example: 8
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: xpnledrvabuqxounbietln
+                  example: gibvpwhijuanzrys
                 description:
                   type: string
                   description: 'Must be at least 100 characters. Must not be greater than 2000 characters.'
-                  example: 'Est sed laboriosam quasi voluptatem et placeat.'
+                  example: 'Quae aspernatur et mollitia ab voluptas.'
                 min_price:
                   type: string
                   description: ''
@@ -1958,19 +1132,19 @@ paths:
                 days:
                   type: string
                   description: 'Must be between 1 and 3 digits. Must not be greater than 100 characters.'
-                  example: ofcq
+                  example: xpywzfouqjdtjhtuwxbkl
                 skill_ids:
                   type: array
                   description: ''
                   example:
-                    - 15
+                    - 12
                   items:
                     type: integer
                 file_ids:
                   type: array
                   description: ''
                   example:
-                    - 19
+                    - 2
                   items:
                     type: integer
               required:
@@ -1994,7 +1168,7 @@ paths:
                 status:
                   type: string
                   description: ''
-                  example: pending
+                  example: cloused
                   enum:
                     - pending
                     - active
@@ -2013,14 +1187,14 @@ paths:
         in: path
         name: client_offer_id
         description: 'The ID of the client offer.'
-        example: sequi
+        example: explicabo
         required: true
         schema:
           type: string
   '/api/client-offer/admin/{client_offer_id}/reject':
     post:
-      summary: 'Admin Accept'
-      operationId: adminAccept
+      summary: 'Admin Reject'
+      operationId: adminReject
       description: ''
       parameters: []
       responses: {  }
@@ -2031,7 +1205,7 @@ paths:
         in: path
         name: client_offer_id
         description: 'The ID of the client offer.'
-        example: laboriosam
+        example: sed
         required: true
         schema:
           type: string
@@ -2049,7 +1223,132 @@ paths:
         in: path
         name: client_offer_id
         description: 'The ID of the client offer.'
-        example: adipisci
+        example: ut
+        required: true
+        schema:
+          type: string
+  /api/client-offer/freelancer/freelancer-filter:
+    post:
+      summary: 'Freelancer Filter'
+      operationId: freelancerFilter
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Client Offer Managment'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  description: ''
+                  example: cloused
+                  enum:
+                    - active
+                    - cloused
+                sub_category_id:
+                  type: integer
+                  description: ''
+                  example: 1
+                skill_ids:
+                  type: array
+                  description: ''
+                  example:
+                    - 15
+                  items:
+                    type: integer
+                min_days:
+                  type: integer
+                  description: ''
+                  example: 7
+                max_days:
+                  type: integer
+                  description: ''
+                  example: 5
+                min_price:
+                  type: integer
+                  description: ''
+                  example: 7
+                max_price:
+                  type: integer
+                  description: ''
+                  example: 7
+  '/api/client-offer/freelancer/{client_offer_id}':
+    get:
+      summary: 'Freelance Show Offer'
+      operationId: freelanceShowOffer
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Client Offer Managment'
+    parameters:
+      -
+        in: path
+        name: client_offer_id
+        description: 'The ID of the client offer.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/client-offer/freelancer/proposal/store:
+    post:
+      summary: 'Freelancer Propose'
+      operationId: freelancerPropose
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Client Offer Managment'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                client_offer_id:
+                  type: integer
+                  description: ''
+                  example: 18
+                message:
+                  type: string
+                  description: 'Must be at least 10 characters. Must not be greater than 255 characters.'
+                  example: xkjqht
+              required:
+                - client_offer_id
+                - message
+  '/api/client-offer/freelancer/proposal/{client_offer_proposal_id}':
+    delete:
+      summary: 'Freelancer Delete Proposal'
+      operationId: freelancerDeleteProposal
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Client Offer Managment'
+    parameters:
+      -
+        in: path
+        name: client_offer_proposal_id
+        description: 'The ID of the client offer proposal.'
+        example: molestiae
         required: true
         schema:
           type: string
@@ -2659,7 +1958,7 @@ paths:
                 location_type:
                   type: string
                   description: ''
-                  example: on-site
+                  example: remotly
                   enum:
                     - on-site
                     - remotly
@@ -2681,46 +1980,46 @@ paths:
                 job_role_id:
                   type: integer
                   description: ''
-                  example: 4
+                  example: 12
                 max_salary:
                   type: integer
                   description: ''
-                  example: 14
+                  example: 19
                 min_salary:
                   type: integer
                   description: ''
-                  example: 4
+                  example: 2
                 transportation:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
                 health_insurance:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
                 military_service:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 max_age:
                   type: integer
                   description: ''
-                  example: 8
+                  example: 4
                 min_age:
                   type: integer
                   description: ''
-                  example: 20
+                  example: 18
                 gender:
                   type: string
                   description: ''
-                  example: female
+                  example: male
                   enum:
                     - male
                     - female
                 industry_name:
                   type: string
                   description: ''
-                  example: tenetur
+                  example: nobis
                 i_can_apply_for_it:
                   type: boolean
                   description: ''
@@ -2812,7 +2111,7 @@ paths:
                 industry_name:
                   type: string
                   description: ''
-                  example: aperiam
+                  example: nesciunt
                 profile_image_id:
                   type: string
                   description: ''
@@ -2824,15 +2123,15 @@ paths:
                 name:
                   type: string
                   description: 'name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters.'
-                  example: nxlajawgqpkmrwdn
+                  example: hojmzgfdie
                 description:
                   type: string
                   description: 'Must not be greater than 4000 characters.'
-                  example: 'Eaque quibusdam omnis non commodi esse et.'
+                  example: 'Esse delectus voluptatem ex dolorem aliquam aperiam et.'
                 size:
                   type: string
                   description: ''
-                  example: aut
+                  example: soluta
                 city:
                   type: string
                   description: 'this must be a syrian city.'
@@ -2840,11 +2139,11 @@ paths:
                 region:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
-                  example: thdkzoubveuo
+                  example: glsmixaguemrthnls
                 street_address:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 30 characters.'
-                  example: asdsjzipsnbmi
+                  example: ndixwyzdppkmnhgxlcslcft
                 gallery_image_ids:
                   type: object
                   description: 'Must not have more than 25 items.'
@@ -2854,7 +2153,7 @@ paths:
                   type: array
                   description: 'Must not be greater than 2048 characters.'
                   example:
-                    - cbjvgvimwtkhetm
+                    - evgacbqdufcvd
                   items:
                     type: string
               required:
@@ -2866,134 +2165,6 @@ paths:
                 - region
                 - street_address
   /api/company:
-    put:
-      summary: 'Update Company .'
-      operationId: updateCompany
-      description: ''
-      parameters: []
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  data:
-                    street_address: null
-                    city: null
-                    region: null
-                    id: null
-                    profile_image_url: null
-                    background_image_url: null
-                    profile_image_id: null
-                    background_image_id: null
-                    verified_at: null
-                    username: null
-                    name: null
-                    description: null
-                    size: null
-                    industry_name: null
-                properties:
-                  data:
-                    type: object
-                    properties:
-                      street_address:
-                        type: string
-                        example: null
-                      city:
-                        type: string
-                        example: null
-                      region:
-                        type: string
-                        example: null
-                      id:
-                        type: string
-                        example: null
-                      profile_image_url:
-                        type: string
-                        example: null
-                      background_image_url:
-                        type: string
-                        example: null
-                      profile_image_id:
-                        type: string
-                        example: null
-                      background_image_id:
-                        type: string
-                        example: null
-                      verified_at:
-                        type: string
-                        example: null
-                      username:
-                        type: string
-                        example: null
-                      name:
-                        type: string
-                        example: null
-                      description:
-                        type: string
-                        example: null
-                      size:
-                        type: string
-                        example: null
-                      industry_name:
-                        type: string
-                        example: null
-      tags:
-        - 'Company Managment'
-      requestBody:
-        required: false
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                profile_image_id:
-                  type: string
-                  description: 'This field is required when <code>profile_image_url</code> is present.'
-                  example: null
-                background_image_id:
-                  type: string
-                  description: 'This field is required when <code>background_image_id</code> is present.'
-                  example: null
-                name:
-                  type: string
-                  description: 'name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters.'
-                  example: ku
-                description:
-                  type: string
-                  description: 'Must not be greater than 4000 characters.'
-                  example: 'Ut eveniet vitae molestiae enim id earum.'
-                size:
-                  type: string
-                  description: 'Must be at least 5 characters. Must not be greater than 20 characters.'
-                  example: inlwwjpjjx
-                city:
-                  type: string
-                  description: 'this must be a syrian city.'
-                  example: دمشق
-                region:
-                  type: string
-                  description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
-                  example: phdlhkdaiupeewd
-                street_address:
-                  type: string
-                  description: 'Must be at least 3 characters. Must not be greater than 30 characters.'
-                  example: uddeguobeqfaotvyantsexuh
-                gallery_image_ids:
-                  type: array
-                  description: ''
-                  example: null
-                  items:
-                    type: object
-                    properties:
-                      id:
-                        type: string
-                        description: ''
-                        example: eum
-                    required:
-                      - id
     delete:
       summary: 'Delete the company.'
       operationId: deleteTheCompany
@@ -3012,7 +2183,7 @@ paths:
                 password:
                   type: string
                   description: ''
-                  example: '%,$R:_X[!!Al#'
+                  example: '8[-;7rF?(7j(]nj!3)y'
               required:
                 - password
   /api/company/job_offer/store:
@@ -3122,11 +2293,11 @@ paths:
                 industry_name:
                   type: string
                   description: ''
-                  example: nihil
+                  example: autem
                 job_role_id:
                   type: string
                   description: ''
-                  example: temporibus
+                  example: omnis
                 location_type:
                   type: string
                   description: ''
@@ -3137,7 +2308,7 @@ paths:
                 attendence_type:
                   type: string
                   description: ''
-                  example: full-time
+                  example: intern
                   enum:
                     - full-time
                     - part-time
@@ -3145,23 +2316,23 @@ paths:
                 max_salary:
                   type: integer
                   description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
-                  example: 15
+                  example: 17
                 min_salary:
                   type: integer
                   description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
-                  example: 5
+                  example: 12
                 max_age:
                   type: integer
                   description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
-                  example: 12
+                  example: 5
                 min_age:
                   type: integer
                   description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
-                  example: 5
+                  example: 12
                 description:
                   type: string
                   description: 'Must be at least 40 characters. Must not be greater than 40000 characters.'
-                  example: 'Corrupti ipsa recusandae sunt omnis doloribus.'
+                  example: 'Sit maiores at ea alias blanditiis.'
                 transportation:
                   type: boolean
                   description: ''
@@ -3169,7 +2340,7 @@ paths:
                 health_insurance:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
                 military_service:
                   type: boolean
                   description: ''
@@ -3192,7 +2363,7 @@ paths:
                       id:
                         type: string
                         description: ''
-                        example: impedit
+                        example: voluptas
                       required:
                         type: boolean
                         description: ''
@@ -3203,11 +2374,11 @@ paths:
                 age_required:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 military_service_required:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
                 gender_required:
                   type: boolean
                   description: ''
@@ -3329,11 +2500,11 @@ paths:
                 job_offer_id:
                   type: string
                   description: ''
-                  example: inventore
+                  example: quia
                 industry_name:
                   type: string
                   description: ''
-                  example: sed
+                  example: sunt
                 job_role_id:
                   type: string
                   description: ''
@@ -3341,14 +2512,14 @@ paths:
                 location_type:
                   type: string
                   description: ''
-                  example: remotly
+                  example: on-site
                   enum:
                     - on-site
                     - remotly
                 attendence_type:
                   type: string
                   description: ''
-                  example: part-time
+                  example: full-time
                   enum:
                     - full-time
                     - part-time
@@ -3356,31 +2527,31 @@ paths:
                 max_salary:
                   type: integer
                   description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
-                  example: 11
+                  example: 8
                 min_salary:
                   type: integer
                   description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
-                  example: 21
+                  example: 19
                 max_age:
                   type: integer
                   description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
-                  example: 1
+                  example: 10
                 min_age:
                   type: integer
                   description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
-                  example: 18
+                  example: 25
                 description:
                   type: string
                   description: 'Must be at least 40 characters. Must not be greater than 40000 characters.'
-                  example: 'Est corrupti vel a magni.'
+                  example: 'Excepturi facere iure doloremque voluptatem ipsum quia est.'
                 transportation:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 health_insurance:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
                 military_service:
                   type: boolean
                   description: ''
@@ -3418,7 +2589,7 @@ paths:
                 job_offer_id:
                   type: string
                   description: ''
-                  example: harum
+                  example: aut
               required:
                 - job_offer_id
   /api/company/job_offer/my-job-offers:
@@ -3684,14 +2855,14 @@ paths:
                 location_type:
                   type: string
                   description: ''
-                  example: remotly
+                  example: on-site
                   enum:
                     - on-site
                     - remotly
                 attendence_type:
                   type: string
                   description: ''
-                  example: full-time
+                  example: intern
                   enum:
                     - full-time
                     - part-time
@@ -3707,7 +2878,7 @@ paths:
                 job_role_id:
                   type: integer
                   description: ''
-                  example: 11
+                  example: 12
   /api/company/job_offer/status/change:
     post:
       summary: 'Update Job Offer Status .'
@@ -3815,11 +2986,11 @@ paths:
                 job_offer_id:
                   type: string
                   description: ''
-                  example: cum
+                  example: quisquam
                 status:
                   type: string
                   description: ''
-                  example: pending
+                  example: active
                   enum:
                     - pending
                     - active
@@ -3841,7 +3012,7 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'The command "qui" does not exist.'
+                  message: 'The command "voluptate" does not exist.'
                   exception: Symfony\Component\Console\Exception\CommandNotFoundException
                   file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php
                   line: 159
@@ -4257,7 +3428,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: 'The command "qui" does not exist.'
+                    example: 'The command "voluptate" does not exist.'
                   exception:
                     type: string
                     example: Symfony\Component\Console\Exception\CommandNotFoundException
@@ -4703,7 +3874,7 @@ paths:
         in: path
         name: command_string
         description: ''
-        example: qui
+        example: voluptate
         required: true
         schema:
           type: string
@@ -4720,7 +3891,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "\n  Dropping all tables ........................................... 1,768ms DONE\n\n   INFO  Preparing database.  \n\n  Creating migration table ........................................ 600ms DONE\n\n   INFO  Running migrations.  \n\n  2003_05_13_221258_create_jobs_table ............................. 307ms DONE\n  2004_02_05_163918_create_job_roles_table ........................ 142ms DONE\n  2004_05_03_141844_create_industries_table ........................ 61ms DONE\n  2004_05_05_163837_create_skills_table ........................... 174ms DONE\n  2004_05_05_164036_create_skillables_table ....................... 235ms DONE\n  2014_10_12_000000_create_users_table ............................ 406ms DONE\n  2014_10_12_100000_create_password_reset_tokens_table ............ 142ms DONE\n  2019_08_19_000000_create_failed_jobs_table ...................... 234ms DONE\n  2019_12_14_000001_create_personal_access_tokens_table ........... 269ms DONE\n  2024_03_25_042214_create_companies_table ........................ 245ms DONE\n  2024_03_25_042227_create_clients_table .......................... 214ms DONE\n  2024_03_25_042235_create_freelancers_table ...................... 634ms DONE\n  2024_03_25_042242_create_admins_table ............................ 58ms DONE\n  2024_03_27_163951_create_super_admins_table ...................... 65ms DONE\n  2024_05_05_164120_create_job_offers_table ....................... 424ms DONE\n  2024_05_27_134915_create_portfolios_table ....................... 131ms DONE\n  2024_05_28_134755_create_files_table ............................ 401ms DONE\n  2024_05_29_191459_create_images_table ........................... 338ms DONE\n  2024_06_19_194749_create_job_offer_proposals_table ............... 86ms DONE\n  2024_06_25_004931_create_conversations_table ..................... 63ms DONE\n  2024_06_25_004952_create_messages_table ......................... 183ms DONE\n  2024_06_25_005020_conversation_user .............................. 65ms DONE\n  2024_06_29_233421_invitations .................................... 68ms DONE\n  2024_07_04_020146_create_user_user_table ........................ 127ms DONE\n  2024_07_04_225329_create_likes_table ............................ 363ms DONE\n  2024_07_04_225335_create_views_table ............................ 395ms DONE\n  2024_07_05_221609_create_categories_table ....................... 106ms DONE\n  2024_07_05_223733_create_sub_categories_table ................... 185ms DONE\n  2024_07_06_180157_create_client_offers_table .................... 612ms DONE\n  2024_07_06_231715_create_conversation_user_bans_table ............ 58ms DONE\n  2024_07_06_231913_create_message_likes_table ..................... 59ms DONE\n  2024_07_07_124326_create_client_offer_proposals_table ............ 61ms DONE\n\n"
+                example: "\n  Dropping all tables .................................................................................................................... 41ms DONE\n\n   INFO  Preparing database.  \n\n  Creating migration table .............................................................................................................. 113ms DONE\n\n   INFO  Running migrations.  \n\n  2003_05_13_221258_create_jobs_table ................................................................................................... 159ms DONE\n  2004_02_05_163918_create_job_roles_table .............................................................................................. 113ms DONE\n  2004_05_03_141844_create_industries_table .............................................................................................. 69ms DONE\n  2004_05_05_163837_create_skills_table ................................................................................................. 194ms DONE\n  2004_05_05_164036_create_skillables_table ............................................................................................. 187ms DONE\n  2014_10_12_000000_create_users_table .................................................................................................. 713ms DONE\n  2014_10_12_100000_create_password_reset_tokens_table .................................................................................. 193ms DONE\n  2019_08_19_000000_create_failed_jobs_table ............................................................................................ 443ms DONE\n  2019_12_14_000001_create_personal_access_tokens_table ................................................................................. 541ms DONE\n  2024_03_25_042214_create_companies_table .............................................................................................. 490ms DONE\n  2024_03_25_042227_create_clients_table ................................................................................................ 265ms DONE\n  2024_03_25_042235_create_freelancers_table ............................................................................................ 697ms DONE\n  2024_03_25_042242_create_admins_table ................................................................................................. 586ms DONE\n  2024_03_27_163951_create_super_admins_table ........................................................................................... 665ms DONE\n  2024_05_05_164120_create_job_offers_table ........................................................................................... 2,479ms DONE\n  2024_05_27_134915_create_portfolios_table ............................................................................................. 374ms DONE\n  2024_05_28_134755_create_files_table .................................................................................................. 484ms DONE\n  2024_05_29_191459_create_images_table ................................................................................................. 755ms DONE\n  2024_06_19_194749_create_job_offer_proposals_table .................................................................................... 104ms DONE\n  2024_06_25_004931_create_conversations_table ........................................................................................... 82ms DONE\n  2024_06_25_004952_create_messages_table ............................................................................................... 195ms DONE\n  2024_06_25_005020_conversation_user .................................................................................................... 94ms DONE\n  2024_06_29_233421_invitations ......................................................................................................... 379ms DONE\n  2024_07_04_020146_create_user_user_table .............................................................................................. 107ms DONE\n  2024_07_04_225329_create_likes_table .................................................................................................. 295ms DONE\n  2024_07_04_225335_create_views_table .................................................................................................. 265ms DONE\n  2024_07_05_221609_create_categories_table ............................................................................................. 240ms DONE\n  2024_07_05_223733_create_sub_categories_table ......................................................................................... 150ms DONE\n  2024_07_06_180157_create_client_offers_table .......................................................................................... 308ms DONE\n  2024_07_06_231715_create_conversation_user_bans_table ................................................................................. 174ms DONE\n  2024_07_06_231913_create_message_likes_table .......................................................................................... 101ms DONE\n  2024_07_07_124326_create_client_offer_proposals_table ................................................................................. 111ms DONE\n\n"
       tags:
         - 'Docker Image Commands'
   /api/command/database/seed:
@@ -4737,7 +3908,7 @@ paths:
               schema:
                 type: object
                 example:
-                  message: "SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint \"clients_username_unique\"\nDETAIL:  Key (username)=(client-client-1) already exists. (Connection: pgsql, SQL: insert into \"clients\" (\"gender\", \"date_of_birth\", \"city\", \"username\", \"updated_at\", \"created_at\") values (male, 2024-07-09, دمشق, client-client-1, 2024-07-09 23:39:18, 2024-07-09 23:39:18) returning \"id\")"
+                  message: "SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint \"clients_username_unique\"\nDETAIL:  Key (username)=(client-client-1) already exists. (Connection: pgsql, SQL: insert into \"clients\" (\"gender\", \"date_of_birth\", \"city\", \"username\", \"updated_at\", \"created_at\") values (male, 2024-07-13, دمشق, client-client-1, 2024-07-13 13:35:47, 2024-07-13 13:35:47) returning \"id\")"
                   exception: Illuminate\Database\UniqueConstraintViolationException
                   file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Connection.php
                   line: 824
@@ -5433,7 +4604,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: "SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint \"clients_username_unique\"\nDETAIL:  Key (username)=(client-client-1) already exists. (Connection: pgsql, SQL: insert into \"clients\" (\"gender\", \"date_of_birth\", \"city\", \"username\", \"updated_at\", \"created_at\") values (male, 2024-07-09, دمشق, client-client-1, 2024-07-09 23:39:18, 2024-07-09 23:39:18) returning \"id\")"
+                    example: "SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint \"clients_username_unique\"\nDETAIL:  Key (username)=(client-client-1) already exists. (Connection: pgsql, SQL: insert into \"clients\" (\"gender\", \"date_of_birth\", \"city\", \"username\", \"updated_at\", \"created_at\") values (male, 2024-07-13, دمشق, client-client-1, 2024-07-13 13:35:47, 2024-07-13 13:35:47) returning \"id\")"
                   exception:
                     type: string
                     example: Illuminate\Database\UniqueConstraintViolationException
@@ -6156,8 +5327,8 @@ paths:
         - 'Docker Image Commands'
   /api/conversations:
     post:
-      summary: ''
-      operationId: postApiConversations
+      summary: 'Create a new conversation.'
+      operationId: createANewConversation
       description: ''
       parameters: []
       responses: {  }
@@ -6177,8 +5348,8 @@ paths:
                   items:
                     type: string
     get:
-      summary: ''
-      operationId: getApiConversations
+      summary: 'Get all conversations for the authenticated user.'
+      operationId: getAllConversationsForTheAuthenticatedUser
       description: ''
       parameters: []
       responses:
@@ -6198,8 +5369,8 @@ paths:
         - Endpoints
   '/api/conversations/{conversationId}/messages':
     post:
-      summary: ''
-      operationId: postApiConversationsConversationIdMessages
+      summary: 'Send a message in a conversation.'
+      operationId: sendAMessageInAConversation
       description: ''
       parameters: []
       responses: {  }
@@ -6215,7 +5386,7 @@ paths:
                 message:
                   type: string
                   description: ''
-                  example: voluptas
+                  example: quia
                 image:
                   type: string
                   format: binary
@@ -6225,8 +5396,8 @@ paths:
                   description: ''
                   example: null
     get:
-      summary: ''
-      operationId: getApiConversationsConversationIdMessages
+      summary: 'Get messages from a conversation.'
+      operationId: getMessagesFromAConversation
       description: ''
       parameters: []
       responses:
@@ -6249,14 +5420,14 @@ paths:
         in: path
         name: conversationId
         description: ''
-        example: quidem
+        example: voluptatum
         required: true
         schema:
           type: string
   '/api/conversations/{conversationId}/messages/{messageId}':
     get:
-      summary: ''
-      operationId: getApiConversationsConversationIdMessagesMessageId
+      summary: 'Get messages from a specific message in a conversation.'
+      operationId: getMessagesFromASpecificMessageInAConversation
       description: ''
       parameters: []
       responses:
@@ -6279,7 +5450,7 @@ paths:
         in: path
         name: conversationId
         description: ''
-        example: pariatur
+        example: vitae
         required: true
         schema:
           type: string
@@ -6287,14 +5458,14 @@ paths:
         in: path
         name: messageId
         description: ''
-        example: recusandae
+        example: ut
         required: true
         schema:
           type: string
   '/api/conversations/{conversation}/ban':
     post:
-      summary: ''
-      operationId: postApiConversationsConversationBan
+      summary: 'Ban a user from a conversation.'
+      operationId: banAUserFromAConversation
       description: ''
       parameters: []
       responses: {  }
@@ -6310,7 +5481,7 @@ paths:
                 user_id:
                   type: string
                   description: ''
-                  example: aperiam
+                  example: delectus
               required:
                 - user_id
     parameters:
@@ -6318,14 +5489,14 @@ paths:
         in: path
         name: conversation
         description: 'The conversation.'
-        example: perferendis
+        example: mollitia
         required: true
         schema:
           type: string
   '/api/messages/{message}/like':
     post:
-      summary: ''
-      operationId: postApiMessagesMessageLike
+      summary: 'Like a message in a conversation.'
+      operationId: likeAMessageInAConversation
       description: ''
       parameters: []
       responses: {  }
@@ -6336,10 +5507,49 @@ paths:
         in: path
         name: message
         description: 'The message.'
-        example: quis
+        example: voluptas
         required: true
         schema:
           type: string
+  /api/user/status:
+    post:
+      summary: ''
+      operationId: postApiUserStatus
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+  '/api/user/{userId}/status':
+    get:
+      summary: ''
+      operationId: getApiUserUserIdStatus
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+    parameters:
+      -
+        in: path
+        name: userId
+        description: ''
+        example: 1
+        required: true
+        schema:
+          type: integer
   /api/invitations:
     post:
       summary: 'Send an invitation.'
@@ -6359,11 +5569,11 @@ paths:
                 freelancer_id:
                   type: string
                   description: ''
-                  example: velit
+                  example: eligendi
                 job_offer_id:
                   type: string
                   description: ''
-                  example: dolore
+                  example: est
               required:
                 - freelancer_id
                 - job_offer_id
@@ -6401,7 +5611,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the invitation.'
-        example: repellat
+        example: odio
         required: true
         schema:
           type: string
@@ -6419,7 +5629,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the invitation.'
-        example: quis
+        example: enim
         required: true
         schema:
           type: string
@@ -6437,179 +5647,10 @@ paths:
         in: path
         name: id
         description: 'The ID of the invitation.'
-        example: ut
+        example: omnis
         required: true
         schema:
           type: string
-  /api/client-offer/freelancer/freelancer-filter:
-    post:
-      summary: ''
-      operationId: postApiClientOfferFreelancerFreelancerFilter
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: false
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                status:
-                  type: string
-                  description: ''
-                  example: cloused
-                  enum:
-                    - active
-                    - cloused
-                sub_category_id:
-                  type: integer
-                  description: ''
-                  example: 12
-                skill_ids:
-                  type: array
-                  description: ''
-                  example:
-                    - 2
-                  items:
-                    type: integer
-                min_days:
-                  type: integer
-                  description: ''
-                  example: 11
-                max_days:
-                  type: integer
-                  description: ''
-                  example: 13
-                min_price:
-                  type: integer
-                  description: ''
-                  example: 15
-                max_price:
-                  type: integer
-                  description: ''
-                  example: 8
-  '/api/client-offer/freelancer/{client_offer_id}':
-    get:
-      summary: ''
-      operationId: getApiClientOfferFreelancerClient_offer_id
-      description: ''
-      parameters: []
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  data:
-                    id: 1
-                    client_id: 1
-                    title: title
-                    status: active
-                    description: 'description 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111'
-                    min_price: 3
-                    max_price: 10
-                    days: 100
-                    posted_at: null
-                    created_at: '2024-07-07T09:10:19.000000Z'
-                    updated_at: '2024-07-07T21:25:53.000000Z'
-                properties:
-                  data:
-                    type: object
-                    properties:
-                      id:
-                        type: integer
-                        example: 1
-                      client_id:
-                        type: integer
-                        example: 1
-                      title:
-                        type: string
-                        example: title
-                      status:
-                        type: string
-                        example: active
-                      description:
-                        type: string
-                        example: 'description 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111'
-                      min_price:
-                        type: integer
-                        example: 3
-                      max_price:
-                        type: integer
-                        example: 10
-                      days:
-                        type: integer
-                        example: 100
-                      posted_at:
-                        type: string
-                        example: null
-                      created_at:
-                        type: string
-                        example: '2024-07-07T09:10:19.000000Z'
-                      updated_at:
-                        type: string
-                        example: '2024-07-07T21:25:53.000000Z'
-      tags:
-        - Endpoints
-    parameters:
-      -
-        in: path
-        name: client_offer_id
-        description: 'The ID of the client offer.'
-        example: 1
-        required: true
-        schema:
-          type: integer
-  /api/client-offer/freelancer/proposal/store:
-    post:
-      summary: ''
-      operationId: postApiClientOfferFreelancerProposalStore
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                client_offer_id:
-                  type: integer
-                  description: ''
-                  example: 9
-                message:
-                  type: string
-                  description: 'Must be at least 10 characters. Must not be greater than 255 characters.'
-                  example: vb
-              required:
-                - client_offer_id
-                - message
-  '/api/client-offer/freelancer/{client_offer_proposal_id}':
-    delete:
-      summary: ''
-      operationId: deleteApiClientOfferFreelancerClient_offer_proposal_id
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-    parameters:
-      -
-        in: path
-        name: client_offer_proposal_id
-        description: 'The ID of the client offer proposal.'
-        example: 1
-        required: true
-        schema:
-          type: integer
   /api/test:
     post:
       summary: ''
@@ -6775,11 +5816,11 @@ paths:
                 headline:
                   type: string
                   description: 'Must be at least 20 characters. Must not be greater than 200 characters.'
-                  example: xgeejffykpg
+                  example: cgeqmynnafcqhitkxpflxjnm
                 description:
                   type: string
                   description: 'Must be at least 60 characters. Must not be greater than 4000 characters.'
-                  example: 'Odio distinctio minus qui nihil hic ut quis.'
+                  example: 'Consequatur enim quasi necessitatibus et repellat rem debitis.'
                 city:
                   type: string
                   description: 'this must be a syrian city.'
@@ -6793,12 +5834,12 @@ paths:
                     - female
                 date_of_birth:
                   type: string
-                  description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-09</code>.'
-                  example: '1995-03-31'
+                  description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-13</code>.'
+                  example: '1995-07-18'
                 job_role_id:
                   type: string
                   description: ''
-                  example: rerum
+                  example: et
                 skill_ids:
                   type: object
                   description: 'Must have at least 5 items. Must not have more than 50 items.'
@@ -6893,11 +5934,11 @@ paths:
                 headline:
                   type: string
                   description: 'Must be at least 20 characters. Must not be greater than 200 characters.'
-                  example: rsgcyntuytahujhbro
+                  example: geeouqzhwga
                 description:
                   type: string
                   description: 'Must be at least 60 characters. Must not be greater than 4000 characters.'
-                  example: 'Rerum dolorem delectus hic dolorem veritatis voluptatem.'
+                  example: 'Natus voluptas quam sunt dolorum repudiandae possimus aperiam.'
                 city:
                   type: string
                   description: 'this must be a syrian city.'
@@ -6905,14 +5946,14 @@ paths:
                 gender:
                   type: string
                   description: ''
-                  example: female
+                  example: male
                   enum:
                     - male
                     - female
                 date_of_birth:
                   type: string
-                  description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-09</code>.'
-                  example: '1996-09-09'
+                  description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-13</code>.'
+                  example: '1994-08-11'
                 job_role_id:
                   type: string
                   description: ''
@@ -6985,7 +6026,7 @@ paths:
         in: path
         name: portfolio_id
         description: 'The ID of the portfolio.'
-        example: 10
+        example: 19
         required: true
         schema:
           type: integer
@@ -7056,44 +6097,44 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: avfyfrnqmpmrkuxvtwpcthfxb
+                  example: puoirchjlxspu
                 url:
                   type: string
                   description: 'Must match the regex /\b(?:https?|ftp):\/\/[a-zA-Z0-9-.]+\.[a-zA-Z]{2,}(?:\/\S*)?\b/.'
-                  example: 'b:https|ftp)://t9vC-.W{2,}b'
+                  example: 'b:http://l.k{2,}b'
                 date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-07-09T23:39:20'
+                  example: '2024-07-13T13:35:47'
                 description:
                   type: string
                   description: 'Must be at least 20 characters.'
-                  example: 'Pariatur dolorem qui nisi sit.'
+                  example: 'Qui accusantium voluptatibus et itaque rerum distinctio et.'
                 file_ids:
                   type: array
                   description: ''
                   example:
-                    - 10
+                    - 17
                   items:
                     type: integer
                 image_ids:
                   type: array
                   description: ''
                   example:
-                    - 15
+                    - 19
                   items:
                     type: integer
                 skill_ids:
                   type: array
                   description: ''
                   example:
-                    - 7
+                    - 18
                   items:
                     type: integer
                 section:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: dfuyxzyxabuiisrqrpb
+                  example: xhbouvfjglqb
               required:
                 - title
                 - description
@@ -7167,35 +6208,35 @@ paths:
                 portfolio_id:
                   type: string
                   description: ''
-                  example: voluptas
+                  example: libero
                 title:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: ieucyzoeavobfxa
+                  example: gqbelahskaqlsryrrcubab
                 url:
                   type: string
                   description: 'Must match the regex /\b(?:https?|ftp):\/\/[a-zA-Z0-9-.]+\.[a-zA-Z]{2,}(?:\/\S*)?\b/.'
-                  example: 'bftp://Q.c{2,}:/SSSb'
+                  example: 'b:https|ftp)://S.u{2,}b'
                 date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-07-09T23:39:20'
+                  example: '2024-07-13T13:35:47'
                 description:
                   type: string
                   description: 'Must be at least 20 characters.'
-                  example: 'Est iste sit et ipsam est expedita sint.'
+                  example: 'Architecto rem totam aut et quaerat reprehenderit.'
                 file_ids:
                   type: array
                   description: ''
                   example:
-                    - aliquid
+                    - sit
                   items:
                     type: string
                 image_ids:
                   type: array
                   description: ''
                   example:
-                    - voluptatem
+                    - maiores
                   items:
                     type: string
                 skill_ids:
@@ -7207,7 +6248,7 @@ paths:
                 section:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: qovzxkvkphh
+                  example: nknpifqmlhooyowpkaokco
               required:
                 - portfolio_id
                 - file_ids
@@ -7230,7 +6271,7 @@ paths:
                 portfolio_id:
                   type: string
                   description: ''
-                  example: consequatur
+                  example: praesentium
               required:
                 - portfolio_id
   '/api/freelancer/portfolio/{portfolio_id}/liked-by-me':
@@ -7259,7 +6300,7 @@ paths:
         in: path
         name: portfolio_id
         description: 'The ID of the portfolio.'
-        example: 8
+        example: 16
         required: true
         schema:
           type: integer
@@ -7289,7 +6330,7 @@ paths:
         in: path
         name: portfolio_id
         description: 'The ID of the portfolio.'
-        example: 8
+        example: 15
         required: true
         schema:
           type: integer
@@ -7319,7 +6360,7 @@ paths:
         in: path
         name: portfolio_id
         description: 'The ID of the portfolio.'
-        example: 11
+        example: 20
         required: true
         schema:
           type: integer
@@ -7349,7 +6390,7 @@ paths:
         in: path
         name: portfolio_id
         description: 'The ID of the portfolio.'
-        example: 20
+        example: 17
         required: true
         schema:
           type: integer
@@ -7372,11 +6413,11 @@ paths:
                 job_offer_id:
                   type: string
                   description: ''
-                  example: vel
+                  example: consequatur
                 message:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: qyopgzmecck
+                  example: mkwxkehkfvxvqzzobfj
               required:
                 - job_offer_id
                 - message
@@ -7399,11 +6440,11 @@ paths:
                 job_offer_proposal_id:
                   type: string
                   description: ''
-                  example: et
+                  example: praesentium
                 message:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ro
+                  example: dkxaydntahgrtsydfdsmudo
               required:
                 - job_offer_proposal_id
                 - message
@@ -7441,7 +6482,7 @@ paths:
         in: path
         name: jobOfferProposal_id
         description: 'The ID of the jobOfferProposal.'
-        example: 16
+        example: 17
         required: true
         schema:
           type: integer
@@ -7486,7 +6527,7 @@ paths:
                   type: array
                   description: ''
                   example:
-                    - perferendis
+                    - repudiandae
                   items:
                     type: string
               required:
@@ -7505,7 +6546,7 @@ paths:
         in: path
         name: jobOfferProposal_id
         description: 'The ID of the jobOfferProposal.'
-        example: 20
+        example: 14
         required: true
         schema:
           type: integer
@@ -7540,11 +6581,11 @@ paths:
                 job_offer_id:
                   type: integer
                   description: ''
-                  example: 10
+                  example: 18
                 order:
                   type: string
                   description: ''
-                  example: asc
+                  example: desc
                   enum:
                     - asc
                     - desc
@@ -7613,7 +6654,7 @@ paths:
                 title:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ysa
+                  example: uatpsmsnw
               required:
                 - file
                 - title
@@ -7829,11 +6870,11 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: quod
+                  example: tempora
                 category_id:
                   type: integer
                   description: ''
-                  example: 2
+                  example: 8
               required:
                 - name
                 - category_id
@@ -7856,7 +6897,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: illo
+                  example: sit
               required:
                 - name
     delete:

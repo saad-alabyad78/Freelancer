@@ -17,21 +17,29 @@ use App\Http\Requests\ClientOffer\UpdateClientOfferRequest;
  */
 class ClientOfferController extends Controller
 {
+    public function __construct(){
+        $this->middleware('role:client');
+    }
     /**
-     * Client-Filter List Client Offers
+     *  Client-Filter List Client Offers
+     * @param \App\Http\Requests\ClientOffer\FilterClientOfferRequest $request
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function clientFilter(FilterClientOfferRequest $request)
     {
         $clientOffers = ClientOffer::filter($request->validated())
         ->where('client_id' , $this->user->role_id)
-        ->with(['skills' , 'files' , 'sub_category'])
+        ->with(['skills' , 'sub_category'])
         ->orderByDesc('created_at')
         ->paginate(20) ;
 
         return ClientOfferResource::collection($clientOffers) ;
     }
     /**
-     * Store
+     * Client Store Offer
+     * 
+     * @param \App\Http\Requests\ClientOffer\CreateClientOfferRequest $request
+     * @return ClientOfferResource
      */
     public function store(CreateClientOfferRequest $request)
     {
@@ -61,11 +69,21 @@ class ClientOfferController extends Controller
     }
 
     /**
-     * Show
+     * Client Show Offers
+     * 
+     * @param \App\Models\ClientOffer $clientOffer
+     * @return ClientOfferResource|mixed|\Illuminate\Http\JsonResponse
      */
     public function show(ClientOffer $clientOffer)
     {
-        $this->authorize('view' , $clientOffer) ;
+        //$this->authorize('view' , $clientOffer) ;
+
+        if($clientOffer->client_id != auth('sanctum')->user()->role_id)
+        {
+            return response()->json([
+                'error' => 'unauthorized' ,
+            ] , 403);
+        }
         
         return ClientOfferResource::make($clientOffer->load([
             'files' ,
@@ -75,7 +93,10 @@ class ClientOfferController extends Controller
     }
 
     /**
-     * Update .
+     * Client Update Pending Offers
+     * 
+     * @param \App\Http\Requests\ClientOffer\UpdateClientOfferRequest $request
+     * @return ClientOfferResource|mixed|\Illuminate\Http\JsonResponse
      */
     public function update(UpdateClientOfferRequest $request)
     {   
@@ -83,7 +104,14 @@ class ClientOfferController extends Controller
         
         $clientOffer = ClientOffer::findOrFail($data['client_offer_id']) ;
 
-        $this->authorize('update' , $clientOffer) ;
+        if($clientOffer->client_id != auth('sanctum')->user()->role_id)
+        {
+            return response()->json([
+                'error' => 'unauthorized' ,
+            ] , 403);
+        }
+
+        //$this->authorize('update' , $clientOffer) ;
     
         if($clientOffer->status != ClientOfferStatus::PENDING)
         {
@@ -118,11 +146,21 @@ class ClientOfferController extends Controller
     }
 
     /**
-     * Delete
+     * Client Delete Offers
+     * 
+     * @param \App\Models\ClientOffer $clientOffer
+     * @return mixed|\Illuminate\Http\JsonResponse
      */
     public function destroy(ClientOffer $clientOffer)
     {
-        $this->authorize('delete' , $clientOffer) ;
+        //$this->authorize('delete' , $clientOffer) ;
+
+        if($clientOffer->client_id != auth('sanctum')->user()->role_id)
+        {
+            return response()->json([
+                'error' => 'unauthorized' ,
+            ] , 403);
+        }
         
         $clientOffer->delete() ;
 

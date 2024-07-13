@@ -14,6 +14,9 @@ use App\Http\Requests\ClientOffer\FilterClientOfferForAdminRequest;
  */
 class ClientOfferAdminController extends Controller
 {
+    public function __construct(){
+        $this->middleware('role:admin');
+    }
     /**
      * Admin-Filter List Client Offers
      */
