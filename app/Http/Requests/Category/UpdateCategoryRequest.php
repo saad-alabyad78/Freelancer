@@ -12,7 +12,7 @@ class UpdateCategoryRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return  auth()->check() and auth()->user()->role_name == 'admin' ;
+        return  auth('sanctum')->check() and auth('sanctum')->user()->role_name == 'admin' ;
     }
 
     /**

@@ -15,7 +15,9 @@ class RolesMiddleware
      */
     public function handle(Request $request, Closure $next , ...$roles): Response
     {   
-        if(!auth()->check()){
+        //var_dump($roles);
+        
+        if(!auth('sanctum')->check()){
             return response()->json(
                 ['message' => 'Unauthenticated.'] ,
                  401 ,
@@ -24,7 +26,7 @@ class RolesMiddleware
         
         if(in_array('no_role' , $roles))
         {
-            if(auth()->user()->role_name != null)
+            if(auth('sanctum')->user()->role_name != null)
             {
                 return response()->json(
                     ['message' =>'bruh! you already have a role'] ,
@@ -34,7 +36,7 @@ class RolesMiddleware
             return $next($request);
         }
 
-        if(!in_array('any' , $roles) and !in_array(auth()->user()->role_name , $roles)){
+        if(!in_array('any' , $roles) and !in_array(auth('sanctum')->user()->role_name , $roles)){
             return response()->json(
                 ['message' => 'you don\'t have the currect role'] ,
                  403 ,

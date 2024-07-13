@@ -32,7 +32,7 @@ class JobOfferStatusController extends Controller
 
         $jobOffer =JobOffer::whereAll([
             'id'=> $id,
-            'company_id'=>auth()->user()->role['id']
+            'company_id'=>auth('sanctum')->user()->role['id']
             ])->first() ;
 
         if($jobOffer == null){

@@ -14,7 +14,7 @@ class RejectJobOfferProposalRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return auth()->check() and auth()->user()->role_type == Company::class ;
+        return auth('sanctum')->check() and auth('sanctum')->user()->role_type == Company::class ;
     }
 
     /**
@@ -38,7 +38,7 @@ class RejectJobOfferProposalRequest extends FormRequest
                         $fail('there is no such job offer proposal with id ' . $value . ' or it could be already rejected or accepted') ;
                         return ;
                     }
-                    if($proposal->job_offer()->first()->company_id != auth()->user()->role_id){
+                    if($proposal->job_offer()->first()->company_id != auth('sanctum')->user()->role_id){
                         $fail('this is not your job offer proposal ') ;
                     }
 

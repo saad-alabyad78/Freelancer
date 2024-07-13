@@ -1,7 +1,6 @@
 <?php
 
 use App\Models\Client;
-use App\Models\Category;
 use App\Models\SubCategory;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;

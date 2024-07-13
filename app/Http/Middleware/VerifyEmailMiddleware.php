@@ -15,14 +15,14 @@ class VerifyEmailMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {   
-        if(!auth()->check()){
+        if(!auth('sanctum')->check()){
             return response()->json(
                 ['message' => 'Unauthenticated.'] ,
                  401 ,
                 ['Accept' => 'application/json']) ;
         }
         
-        if(!auth()->user()->email_verified_at){
+        if(!auth('sanctum')->user()->email_verified_at){
                 return response()->json(
                     ['message' => 'your email address is not verified'] ,
                      403 ,

@@ -37,7 +37,7 @@ class JobOfferQueryController extends Controller
     public function ForOwner(JobOffersForCompanyRequest $request)
     {
         
-        $company = Company::findOrFail(auth()->user()->role_id) ;
+        $company = Company::findOrFail(auth('sanctum')->user()->role_id) ;
 
         $filters = $request->validated();
         $filters['company_id'] = $company->id ;
@@ -75,7 +75,7 @@ class JobOfferQueryController extends Controller
         //just cant see pending (handle it in form request)
         $filters = $request->validated() ; 
 
-        $freelancer = Freelancer::findOrFail(auth()->user()->role_id)  ;
+        $freelancer = Freelancer::findOrFail(auth('sanctum')->user()->role_id)  ;
         
         $offers = JobOffer::filter($filters , $freelancer)
             ->with('job_role' , 'skills' , 'company' , 'skills.skillable') 

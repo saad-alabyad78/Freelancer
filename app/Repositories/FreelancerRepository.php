@@ -18,11 +18,11 @@ class FreelancerRepository extends BaseRepository implements IFreelancerReposito
             $data['background_image_url'] = Image::findOrFail($data['background_image_id'])->first();
     
         
-        $data['username'] = auth()->user()->slug ;
+        $data['username'] = auth('sanctum')->user()->slug ;
 
         $freelancer = Freelancer::create($data);
 
-        $freelancer->user()->save(auth()->user()) ;
+        $freelancer->user()->save(auth('sanctum')->user()) ;
 
         $freelancer->skills()->attach($data['skill_ids']) ;
 

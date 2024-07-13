@@ -99,7 +99,7 @@ class CompanyController extends Controller
         $data = $request->validated() ;
 
         try {
-            $company = Company::findOrFail(auth()->user()->role['id']);
+            $company = Company::findOrFail(auth('sanctum')->user()->role['id']);
 
             //todo : delete the old images profile and background in the observer
 
@@ -134,13 +134,13 @@ class CompanyController extends Controller
     {
         $password = $request->validated()['password'] ;
 
-        if(!Hash::check($password , auth()->user()->getAuthPassword())){
+        if(!Hash::check($password , auth('sanctum')->user()->getAuthPassword())){
             return response()->json([
                 'error' => 'wrong password'
             ] , 422 );
         }
 
-        $company = Company::findOrFail(auth()->user()->role_id) ;
+        $company = Company::findOrFail(auth('sanctum')->user()->role_id) ;
 
         $company->delete() ;
 

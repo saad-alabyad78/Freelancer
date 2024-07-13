@@ -134,7 +134,7 @@ class ConversationController extends Controller
 
         $conversation = Conversation::findOrFail($conversationId);
 
-        if ($conversation->users()->where('user_id', auth()->id())->doesntExist()) {
+        if ($conversation->users()->where('user_id', auth('sanctum')->id())->doesntExist()) {
             return response()->json(['message' => 'You are not a participant in this conversation'], 403);
         }
 
@@ -157,13 +157,13 @@ class ConversationController extends Controller
     {
         $message = Message::findOrFail($messageId);
 
-        if ($message->conversation->users()->where('user_id', auth()->id())->doesntExist()) {
+        if ($message->conversation->users()->where('user_id', auth('sanctum')->id())->doesntExist()) {
             return response()->json(['message' => 'You are not a participant in this conversation'], 403);
         }
 
         $like = MessageLike::create([
             'message_id' => $messageId,
-            'user_id' => auth()->id(),
+            'user_id' => auth('sanctum')->id(),
         ]);
 
         return response()->json($like, 201);
@@ -171,7 +171,7 @@ class ConversationController extends Controller
      // دالة تحديث حالة الأونلاين
      public function updateOnlineStatus()
      {
-         $user = auth()->user();
+         $user = auth('sanctum')->user();
          Cache::put('user-is-online-' . $user->id, true, now()->addMinutes(5));
          $user->update(['last_seen' => now()]);
 

@@ -97,7 +97,7 @@ class PortfolioController extends Controller
     {
         $portfolio = Portfolio::where([
             'id' => $request->portfolio_id,
-            'freelancer_id' => auth()->user()->role['id']
+            'freelancer_id' => auth('sanctum')->user()->role['id']
         ])->first();
 
         if ($portfolio == null) {
@@ -142,7 +142,7 @@ class PortfolioController extends Controller
     {
         $portfolio = Portfolio::where([
             'id' => $request->portfolio_id,
-            'freelancer_id' => auth()->user()->role['id']
+            'freelancer_id' => auth('sanctum')->user()->role['id']
         ])->first();
 
         if ($portfolio == null) {

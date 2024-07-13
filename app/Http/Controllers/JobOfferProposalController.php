@@ -31,7 +31,7 @@ class JobOfferProposalController extends Controller
 
         $data = $request->validated();
 
-        $company = Company::findOrFail(auth()->user()->role_id);
+        $company = Company::findOrFail(auth('sanctum')->user()->role_id);
 
         $proposals = $company->job_offer_proposals()
                             ->when($data['job_offer_id'] ?? false , function($query) use ($data){
@@ -52,7 +52,7 @@ class JobOfferProposalController extends Controller
      */
     public function index()
     {
-        $user = auth()->user();
+        $user = auth('sanctum')->user();
 
         $this->authorize('index', JobOfferProposal::class);
 
@@ -89,7 +89,7 @@ class JobOfferProposalController extends Controller
         $this->authorize('create', JobOfferProposal::class);
 
         $data = $request->validated() ;
-        $data['freelancer_id'] = (string)auth()->user()->role_id ;
+        $data['freelancer_id'] = (string)auth('sanctum')->user()->role_id ;
 
         $proposal = JobOfferProposal::create($data) ;
 

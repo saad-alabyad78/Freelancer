@@ -34,7 +34,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '45'
+          x-ratelimit-remaining: '56'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -85,7 +85,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '44'
+          x-ratelimit-remaining: '55'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -121,7 +121,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: tempora
+        example: quos
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -130,21 +130,21 @@ endpoints:
         name: category_id
         description: ''
         required: true
-        example: 8
+        example: 4
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: tempora
-      category_id: 8
+      name: quos
+      category_id: 4
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer D6acv1egfEh4da8Z36bV5kP'
+      - 'Bearer 6ab5dV4Pf8cEZk6eDga13vh'
     controller: null
     method: null
     route: null
@@ -185,20 +185,20 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: sit
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: sit
+      name: aut
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer E13vch6ZDPVeakfb5a46g8d'
+      - 'Bearer 1aZak6Dhc5vef4gd83bE6PV'
     controller: null
     method: null
     route: null
@@ -242,7 +242,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Df18cakgvZad6b5e46V3PhE'
+      - 'Bearer 4kP8bha5f3aDcvV66gde1ZE'
     controller: null
     method: null
     route: null

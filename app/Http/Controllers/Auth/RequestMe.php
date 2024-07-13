@@ -23,19 +23,19 @@ class RequestMe extends Controller
      **/
     public function __invoke()
     {
-        if(!auth()->check()){
+        if(!auth('sanctum')->check()){
             return response()->json(['unauthenticated']) ;
         }
 
-        $userId = auth()->id();
-        $userRole = auth()->user()->role; 
+        $userId = auth('sanctum')->id();
+        $userRole = auth('sanctum')->user()->role; 
 
         // Generate a unique cache key based on the user's ID
         $cacheKey =  $userId . '_' . $userRole;
 
         // Remember the response in the cache for a given time, e.g., 60 seconds
         $response = Cache::remember($cacheKey, 60*60*24*7, function () {
-            return UserResource::make(auth()->user());
+            return UserResource::make(auth('sanctum')->user());
         });
 
         // Return the response with the necessary headers

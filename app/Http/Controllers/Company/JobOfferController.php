@@ -37,7 +37,7 @@ class JobOfferController extends Controller
         $data = $request->validated() ;
 
         $data['status'] = JobOfferStatus::PENDING  ;
-        $data['company_id'] = auth()->user()->role['id'] ;
+        $data['company_id'] = auth('sanctum')->user()->role['id'] ;
 
         $job_offer = JobOffer::Create($data);
 
@@ -73,7 +73,7 @@ class JobOfferController extends Controller
 
         $job_offer = JobOffer::findOrFail($data['job_offer_id']);
 
-        if($job_offer->company_id != auth()->user()->role['id']){
+        if($job_offer->company_id != auth('sanctum')->user()->role['id']){
             return response()->json([
                 'message' => 'this is not your job offer !' ,
             ] , 422 );
@@ -135,7 +135,7 @@ class JobOfferController extends Controller
 
         $job_offer = JobOffer::findOrFail($data['job_offer_id']);
 
-        if($job_offer->company_id != auth()->user()->role['id']){
+        if($job_offer->company_id != auth('sanctum')->user()->role['id']){
             return response()->json([
                 'this is not your job offer !' ,
                 422

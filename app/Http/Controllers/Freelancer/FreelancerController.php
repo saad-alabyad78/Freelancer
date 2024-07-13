@@ -95,7 +95,7 @@ class FreelancerController extends Controller
     {
         $data = $request->validated() ;
 
-        $freelancer = Freelancer::findOrFail(auth()->user()->role['id']) ;
+        $freelancer = Freelancer::findOrFail(auth('sanctum')->user()->role['id']) ;
 
         $freelancer = $this->freelancerRepository->update($freelancer  , $data) ;
 

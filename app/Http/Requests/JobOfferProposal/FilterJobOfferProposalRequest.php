@@ -13,7 +13,7 @@ class FilterJobOfferProposalRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return auth()->check() and auth()->user()->role_type == Company::class ;
+        return auth('sanctum')->check() and auth('sanctum')->user()->role_type == Company::class ;
     }
 
     /**
@@ -28,7 +28,7 @@ class FilterJobOfferProposalRequest extends FormRequest
                 'nullable',
                 'integer',
                 Rule::exists('job_offers', 'id')->where(function ($query) {
-                    $query->where('company_id', auth()->user()->role_id);
+                    $query->where('company_id', auth('sanctum')->user()->role_id);
                 }),
             ],
             'order' => 'nullable|in:asc,desc',

@@ -53,6 +53,8 @@ require 'Api/invitation.php' ;
 
 require 'Api/client_offer.php' ;
 
+require 'Api/freelancer_offer.php' ;
+
 Route::post('test' , function(Request $request){
   return 'hi' ;
 });
@@ -60,6 +62,6 @@ Route::post('test' , function(Request $request){
 Route::get('test' , function(){
   //dd(Route::getRoutes()) ;
  return 'hi salah' ;
-});
+})->middleware('auth:sanctum');
 
 

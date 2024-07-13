@@ -12,7 +12,7 @@ Route::group([
     'prefix' => 'client-offer/client'
 ] , function(){
     Route::group([
-        'middlware' =>
+        'middleware' =>
         [
             'auth:sanctum' ,
             'verify_email' ,
@@ -31,7 +31,7 @@ Route::group([
     'prefix' => 'client-offer/admin'
 ] , function(){
     Route::group([
-        'middlware' =>
+        'middleware' =>
         [
             'auth:sanctum' ,
             'verify_email' ,
@@ -50,7 +50,7 @@ Route::group([
     'prefix' => 'client-offer/freelancer'
 ] , function(){
     Route::group([
-        'middlware' =>
+        'middleware' =>
         [
             'auth:sanctum' ,
             'verify_email' ,

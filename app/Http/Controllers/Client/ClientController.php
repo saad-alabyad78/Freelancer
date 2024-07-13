@@ -59,13 +59,13 @@ class ClientController extends Controller
         if($data['background_image_url'] ?? false)
             $data['background_image_url'] = Image::findOrFail($data['background_image_id'])->first();
         
-        $data['username'] = auth()->user()->slug ;
+        $data['username'] = auth('sanctum')->user()->slug ;
 
         try {       
             //create company
             $client = Client::create($data);
 
-            $client->user()->save(auth()->user()) ;
+            $client->user()->save(auth('sanctum')->user()) ;
 
             DB::commit() ;
         
@@ -93,7 +93,7 @@ class ClientController extends Controller
      */
     public function update(UpdateClientRequest $request)
     {
-        $client = Client::findOrFail(auth()->user()->role['id']) ;
+        $client = Client::findOrFail(auth('sanctum')->user()->role['id']) ;
 
         $client = $this->clientRepository->update($client , $request->validated()) ;
 

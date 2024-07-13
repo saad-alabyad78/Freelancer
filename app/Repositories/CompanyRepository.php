@@ -14,11 +14,11 @@ class CompanyRepository extends BaseRepository implements ICompanyRepository
         if(array_key_exists('background_image_id',$data) and !is_null($data['background_image_id']))
             $data['background_image_url'] = Image::findOrFail($data['background_image_id'])->first()->url;
     
-        $data['username'] = auth()->user()->slug ;
+        $data['username'] = auth('sanctum')->user()->slug ;
         
         $company = Company::create($data);
         
-        $company->user()->save(auth()->user()) ;
+        $company->user()->save(auth('sanctum')->user()) ;
 
 
 

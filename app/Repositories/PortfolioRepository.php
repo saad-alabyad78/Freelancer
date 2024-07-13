@@ -11,7 +11,7 @@ class PortfolioRepository extends BaseRepository implements IPortfolioRepository
 {
     public function create($data):Portfolio 
     {
-        $data['freelancer_id'] = auth()->user()->role['id'] ;
+        $data['freelancer_id'] = auth('sanctum')->user()->role['id'] ;
 
         $portfolio = Portfolio::create($data);
             

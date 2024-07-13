@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\ClientOfferProposal;
 use App\Constants\ClientOfferStatus;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\ClientOfferResource;
+use App\Http\Resources\ClientOffer\ClientOfferResource;
 use App\Http\Resources\ClientOffer\ClientOfferProposalResource;
 use App\Http\Requests\ClientOffer\CreateClientOfferProposalRequest;
 use App\Http\Requests\ClientOffer\UpdateClientOfferProposalRequest;

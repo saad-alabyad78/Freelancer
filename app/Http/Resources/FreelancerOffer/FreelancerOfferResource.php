@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\FreelancerOffer;
 
 use Illuminate\Http\Request;
 use App\Http\Resources\Storage\FileResource;
@@ -8,7 +8,7 @@ use App\Http\Resources\Category\SkillResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\Category\SubCategoryResource;
 
-class ClientOfferResource extends JsonResource
+class FreelancerOfferResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -19,7 +19,7 @@ class ClientOfferResource extends JsonResource
     {
         return [
             'id' => $this->id ,
-            'client_id' => $this->client_id,
+            'freelancer_id' => $this->freelancer_id,
             'sub_category' => SubCategoryResource::make($this->whenLoaded('sub_category')),
             'title' => $this->title,
             'status' => $this->status,

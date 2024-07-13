@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Invitation;
+use App\Models\Conversation;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\SendInvitationRequest;
 use App\Http\Requests\AcceptInvitationRequest;
 use App\Http\Requests\RejectInvitationRequest;
-use App\Models\Conversation;
-use App\Models\Invitation;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class InvitationController extends Controller
 {
@@ -25,7 +25,7 @@ class InvitationController extends Controller
         $this->authorize('sendInvitation', Invitation::class);
 
         $invitation = Invitation::create([
-            'company_id' => auth()->user()->id,
+            'company_id' => auth('sanctum')->user()->id,
             'freelancer_id' => $request->freelancer_id,
         ]);
 
@@ -43,7 +43,7 @@ class InvitationController extends Controller
      */
     public function getInvitations()
     {
-        $user = auth()->user();
+        $user = auth('sanctum')->user();
 
         if ($user->role === 'company') {
             $invitations = $user->sentInvitations;
