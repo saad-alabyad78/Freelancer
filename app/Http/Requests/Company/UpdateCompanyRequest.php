@@ -27,7 +27,7 @@ class UpdateCompanyRequest extends FormRequest
             'profile_image_id' => ['required_with:profile_image_url' , 'exists:images,id' , 'nullable'] ,
             'background_image_id' => ['required_with:background_image_id' , 'exists:images,id' , 'nullable'] ,
 
-            'name' => ['min:3' , 'max:20' , 'string' , 'unique:companies,name,'.auth('sanctum')->user()->role['id']] ,
+            'name' => ['min:3' , 'max:20' , 'string' , 'unique:companies,name,'.auth('sanctum')->user()?->role['id']] ,
             'description' => ['string' , 'max:4000' ] ,
             'size' => ['string' , 'min:5' , 'max:20'] , 
             'city' => ['string' , new SyrianCityRule()] , 

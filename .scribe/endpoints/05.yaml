@@ -46,7 +46,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer DP4aeagfEV8k513Zhc6dbv6'
+      - 'Bearer a6E3gf8e51ZbVvPD4hkda6c'
     controller: null
     method: null
     route: null
@@ -145,7 +145,7 @@ endpoints:
         name: status
         description: ''
         required: false
-        example: cloused
+        example: active
         type: string
         enumValues:
           - active
@@ -156,7 +156,7 @@ endpoints:
         name: job_role_id
         description: ''
         required: false
-        example: 2
+        example: 20
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -165,7 +165,7 @@ endpoints:
         name: max_salary
         description: ''
         required: false
-        example: 6
+        example: 13
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -174,7 +174,7 @@ endpoints:
         name: min_salary
         description: ''
         required: false
-        example: 17
+        example: 19
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -183,7 +183,7 @@ endpoints:
         name: transportation
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -192,7 +192,7 @@ endpoints:
         name: health_insurance
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -210,7 +210,7 @@ endpoints:
         name: max_age
         description: ''
         required: false
-        example: 10
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -219,7 +219,7 @@ endpoints:
         name: min_age
         description: ''
         required: false
-        example: 15
+        example: 14
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -228,7 +228,7 @@ endpoints:
         name: gender
         description: ''
         required: false
-        example: male
+        example: female
         type: string
         enumValues:
           - male
@@ -239,7 +239,7 @@ endpoints:
         name: industry_name
         description: ''
         required: false
-        example: blanditiis
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -248,7 +248,7 @@ endpoints:
         name: i_can_apply_for_it
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -256,18 +256,18 @@ endpoints:
     cleanBodyParameters:
       location_type: on-site
       attendence_type: full-time
-      status: cloused
-      job_role_id: 2
-      max_salary: 6
-      min_salary: 17
-      transportation: false
-      health_insurance: true
+      status: active
+      job_role_id: 20
+      max_salary: 13
+      min_salary: 19
+      transportation: true
+      health_insurance: false
       military_service: false
-      max_age: 10
-      min_age: 15
-      gender: male
-      industry_name: blanditiis
-      i_can_apply_for_it: true
+      max_age: 2
+      min_age: 14
+      gender: female
+      industry_name: est
+      i_can_apply_for_it: false
     fileParameters: []
     responses:
       -
@@ -280,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aDVhe356PEadZkbf6cgv814'
+      - 'Bearer be3Z64EPVdc61a5kvghfD8a'
     controller: null
     method: null
     route: null
@@ -311,7 +311,7 @@ endpoints:
         name: industry_name
         description: ''
         required: true
-        example: totam
+        example: id
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -338,7 +338,7 @@ endpoints:
         name: name
         description: 'name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters.'
         required: true
-        example: ahrolyrmogst
+        example: wbgz
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -347,7 +347,7 @@ endpoints:
         name: description
         description: 'Must not be greater than 4000 characters.'
         required: true
-        example: 'Voluptatum praesentium velit consequatur.'
+        example: 'Officiis dolor optio tenetur maiores sed ut laborum enim.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -356,7 +356,7 @@ endpoints:
         name: size
         description: ''
         required: true
-        example: facilis
+        example: recusandae
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -374,7 +374,7 @@ endpoints:
         name: region
         description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
         required: true
-        example: i
+        example: dxjqvoa
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -383,7 +383,7 @@ endpoints:
         name: street_address
         description: 'Must be at least 3 characters. Must not be greater than 30 characters.'
         required: true
-        example: dwpmhwcovsu
+        example: l
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -402,21 +402,21 @@ endpoints:
         description: 'Must not be greater than 2048 characters.'
         required: false
         example:
-          - idmwudtedmuyxutghoeg
+          - vmff
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      industry_name: totam
-      name: ahrolyrmogst
-      description: 'Voluptatum praesentium velit consequatur.'
-      size: facilis
+      industry_name: id
+      name: wbgz
+      description: 'Officiis dolor optio tenetur maiores sed ut laborum enim.'
+      size: recusandae
       city: دمشق
-      region: i
-      street_address: dwpmhwcovsu
+      region: dxjqvoa
+      street_address: l
       gallery_images_ids:
-        - idmwudtedmuyxutghoeg
+        - vmff
     fileParameters: []
     responses:
       -
@@ -429,7 +429,146 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 43faVkg1eZ68habd56cEvPD'
+      - 'Bearer VaD3661ZkgdPE5he4cvfab8'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: api/company
+    metadata:
+      groupName: 'Company Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Company .'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      profile_image_id:
+        name: profile_image_id
+        description: 'This field is required when <code>profile_image_url</code> is present.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      background_image_id:
+        name: background_image_id
+        description: 'This field is required when <code>background_image_id</code> is present.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      name:
+        name: name
+        description: 'name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters.'
+        required: false
+        example: tn
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      description:
+        name: description
+        description: 'Must not be greater than 4000 characters.'
+        required: false
+        example: 'Et quidem ut similique nisi officia consequatur.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      size:
+        name: size
+        description: 'Must be at least 5 characters. Must not be greater than 20 characters.'
+        required: false
+        example: zuudnggdwzb
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      city:
+        name: city
+        description: 'this must be a syrian city.'
+        required: false
+        example: دمشق
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      region:
+        name: region
+        description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
+        required: false
+        example: wufav
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      street_address:
+        name: street_address
+        description: 'Must be at least 3 characters. Must not be greater than 30 characters.'
+        required: false
+        example: ybkuxjkyfmrqr
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      gallery_image_ids:
+        name: gallery_image_ids
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'gallery_image_ids[].id':
+        name: 'gallery_image_ids[].id'
+        description: ''
+        required: true
+        example: quisquam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      name: tn
+      description: 'Et quidem ut similique nisi officia consequatur.'
+      size: zuudnggdwzb
+      city: دمشق
+      region: wufav
+      street_address: ybkuxjkyfmrqr
+      gallery_image_ids:
+        -
+          id: quisquam
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"street_address":null,"city":null,"region":null,"id":null,"profile_image_url":null,"background_image_url":null,"profile_image_id":null,"background_image_id":null,"verified_at":null,"username":null,"name":null,"description":null,"size":null,"industry_name":null}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer g4Edh63cV5fvePD1a68Zbak'
     controller: null
     method: null
     route: null
@@ -460,20 +599,20 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: '.4<,`]F(;H{4\"~S%#fi'
+        example: 'ok5"6X[|'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      password: '.4<,`]F(;H{4\"~S%#fi'
+      password: 'ok5"6X[|'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Vg5vk13Pab66Dehafd4Ec8Z'
+      - 'Bearer PcaDefaEhkbZVg8d465v163'
     controller: null
     method: null
     route: null
@@ -504,7 +643,7 @@ endpoints:
         name: industry_name
         description: ''
         required: true
-        example: atque
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -513,7 +652,7 @@ endpoints:
         name: job_role_id
         description: ''
         required: true
-        example: quae
+        example: debitis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -533,7 +672,7 @@ endpoints:
         name: attendence_type
         description: ''
         required: true
-        example: intern
+        example: full-time
         type: string
         enumValues:
           - full-time
@@ -545,7 +684,7 @@ endpoints:
         name: max_salary
         description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
         required: false
-        example: 23
+        example: 19
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -554,7 +693,7 @@ endpoints:
         name: min_salary
         description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
         required: false
-        example: 4
+        example: 8
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -563,7 +702,7 @@ endpoints:
         name: max_age
         description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
         required: false
-        example: 18
+        example: 10
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -572,7 +711,7 @@ endpoints:
         name: min_age
         description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
         required: false
-        example: 23
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -581,7 +720,7 @@ endpoints:
         name: description
         description: 'Must be at least 40 characters. Must not be greater than 40000 characters.'
         required: true
-        example: 'Ea suscipit nulla et.'
+        example: 'Ipsum voluptatum consequuntur quos iure perspiciatis est.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -590,7 +729,7 @@ endpoints:
         name: transportation
         description: ''
         required: true
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -599,7 +738,7 @@ endpoints:
         name: health_insurance
         description: ''
         required: true
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -608,7 +747,7 @@ endpoints:
         name: military_service
         description: ''
         required: true
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -617,7 +756,7 @@ endpoints:
         name: gender
         description: ''
         required: false
-        example: male
+        example: female
         type: string
         enumValues:
           - male
@@ -647,7 +786,7 @@ endpoints:
         name: military_service_required
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -656,7 +795,7 @@ endpoints:
         name: gender_required
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -665,7 +804,7 @@ endpoints:
         name: 'skills[].id'
         description: ''
         required: true
-        example: aut
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -674,32 +813,32 @@ endpoints:
         name: 'skills[].required'
         description: ''
         required: true
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      industry_name: atque
-      job_role_id: quae
+      industry_name: ut
+      job_role_id: debitis
       location_type: remotly
-      attendence_type: intern
-      max_salary: 23
-      min_salary: 4
-      max_age: 18
-      min_age: 23
-      description: 'Ea suscipit nulla et.'
-      transportation: true
-      health_insurance: true
-      military_service: true
-      gender: male
+      attendence_type: full-time
+      max_salary: 19
+      min_salary: 8
+      max_age: 10
+      min_age: 1
+      description: 'Ipsum voluptatum consequuntur quos iure perspiciatis est.'
+      transportation: false
+      health_insurance: false
+      military_service: false
+      gender: female
       skills:
         -
-          id: aut
-          required: false
+          id: qui
+          required: true
       age_required: true
-      military_service_required: false
-      gender_required: true
+      military_service_required: true
+      gender_required: false
     fileParameters: []
     responses:
       -
@@ -712,7 +851,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kd1v6PVaegDfa5864cbZ3Eh'
+      - 'Bearer aeh3dVkfaZ1cP456DEv8bg6'
     controller: null
     method: null
     route: null
@@ -743,7 +882,7 @@ endpoints:
         name: job_offer_id
         description: ''
         required: true
-        example: dolorem
+        example: maiores
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -752,7 +891,7 @@ endpoints:
         name: industry_name
         description: ''
         required: false
-        example: aut
+        example: magni
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -770,7 +909,7 @@ endpoints:
         name: location_type
         description: ''
         required: false
-        example: on-site
+        example: remotly
         type: string
         enumValues:
           - on-site
@@ -781,7 +920,7 @@ endpoints:
         name: attendence_type
         description: ''
         required: false
-        example: intern
+        example: part-time
         type: string
         enumValues:
           - full-time
@@ -793,7 +932,7 @@ endpoints:
         name: max_salary
         description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
         required: false
-        example: 11
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -802,7 +941,7 @@ endpoints:
         name: min_salary
         description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
         required: false
-        example: 10
+        example: 15
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -811,7 +950,7 @@ endpoints:
         name: max_age
         description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
         required: false
-        example: 1
+        example: 14
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -829,7 +968,7 @@ endpoints:
         name: description
         description: 'Must be at least 40 characters. Must not be greater than 40000 characters.'
         required: false
-        example: 'Corrupti sed et tenetur sequi libero atque consequuntur.'
+        example: 'Occaecati et numquam fuga dolore.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -838,7 +977,7 @@ endpoints:
         name: transportation
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -847,7 +986,7 @@ endpoints:
         name: health_insurance
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -865,7 +1004,7 @@ endpoints:
         name: gender
         description: ''
         required: false
-        example: male
+        example: female
         type: string
         enumValues:
           - male
@@ -882,19 +1021,19 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      job_offer_id: dolorem
-      industry_name: aut
-      location_type: on-site
-      attendence_type: intern
-      max_salary: 11
-      min_salary: 10
-      max_age: 1
+      job_offer_id: maiores
+      industry_name: magni
+      location_type: remotly
+      attendence_type: part-time
+      max_salary: 2
+      min_salary: 15
+      max_age: 14
       min_age: 3
-      description: 'Corrupti sed et tenetur sequi libero atque consequuntur.'
-      transportation: true
-      health_insurance: true
+      description: 'Occaecati et numquam fuga dolore.'
+      transportation: false
+      health_insurance: false
       military_service: true
-      gender: male
+      gender: female
     fileParameters: []
     responses:
       -
@@ -907,7 +1046,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Vdah5f3Ebgc1846va6DZkeP'
+      - 'Bearer gaDh4P38cv5bfZdEk1ea66V'
     controller: null
     method: null
     route: null
@@ -938,20 +1077,20 @@ endpoints:
         name: job_offer_id
         description: ''
         required: true
-        example: amet
+        example: facilis
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      job_offer_id: amet
+      job_offer_id: facilis
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer aE68hkaZg6vDVePc41db5f3'
+      - 'Bearer ZDb8gk3e6v6hVd14caafE5P'
     controller: null
     method: null
     route: null
@@ -993,7 +1132,7 @@ endpoints:
         name: attendence_type
         description: ''
         required: false
-        example: intern
+        example: full-time
         type: string
         enumValues:
           - full-time
@@ -1005,7 +1144,7 @@ endpoints:
         name: status
         description: ''
         required: false
-        example: cloused
+        example: pending
         type: string
         enumValues:
           - pending
@@ -1017,16 +1156,16 @@ endpoints:
         name: job_role_id
         description: ''
         required: false
-        example: 16
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
       location_type: remotly
-      attendence_type: intern
-      status: cloused
-      job_role_id: 16
+      attendence_type: full-time
+      status: pending
+      job_role_id: 17
     fileParameters: []
     responses:
       -
@@ -1039,7 +1178,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1E4afav5VDkcdP8eg6hZb36'
+      - 'Bearer ga3h85D4f6cbVea1PZEd6kv'
     controller: null
     method: null
     route: null
@@ -1070,7 +1209,7 @@ endpoints:
         name: job_offer_id
         description: ''
         required: true
-        example: commodi
+        example: dolores
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1088,7 +1227,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      job_offer_id: commodi
+      job_offer_id: dolores
       status: active
     fileParameters: []
     responses:
@@ -1102,7 +1241,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer e6kEVcfg4baDv8P61h3dZa5'
+      - 'Bearer g66VdhDb1e8cEaZ5va3Pfk4'
     controller: null
     method: null
     route: null

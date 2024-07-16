@@ -27,7 +27,7 @@ endpoints:
         name: status
         description: ''
         required: false
-        example: cloused
+        example: active
         type: string
         enumValues:
           - pending
@@ -36,14 +36,14 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      status: cloused
+      status: active
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer EadPc8Zfb4a6D3165egVvhk'
+      - 'Bearer 63VakDZecv1h6EPdg85af4b'
     controller: null
     method: null
     route: null
@@ -74,7 +74,7 @@ endpoints:
         name: sub_category_id
         description: ''
         required: true
-        example: 17
+        example: 6
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -83,7 +83,7 @@ endpoints:
         name: title
         description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
         required: true
-        example: giqlxquwluwepkqmxvhjrje
+        example: jicsyyrecycsdkfijyhsmyhq
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -92,7 +92,7 @@ endpoints:
         name: description
         description: 'Must be at least 100 characters. Must not be greater than 2000 characters.'
         required: true
-        example: 'Aut et corporis molestias dolor dolores.'
+        example: 'Est deserunt et odit error sed.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -101,7 +101,7 @@ endpoints:
         name: min_price
         description: ''
         required: true
-        example: omnis
+        example: velit
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -110,7 +110,7 @@ endpoints:
         name: max_price
         description: ''
         required: true
-        example: quae
+        example: temporibus
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -119,7 +119,7 @@ endpoints:
         name: days
         description: 'Must be between 1 and 3 digits. Must not be greater than 100 characters.'
         required: true
-        example: ofbyoadoasbnxyuntoiol
+        example: jrgsgeshkrotxkjzly
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -129,7 +129,7 @@ endpoints:
         description: ''
         required: true
         example:
-          - 17
+          - 13
         type: 'integer[]'
         enumValues: []
         exampleWasSpecified: false
@@ -139,29 +139,29 @@ endpoints:
         description: ''
         required: true
         example:
-          - 20
+          - 16
         type: 'integer[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      sub_category_id: 17
-      title: giqlxquwluwepkqmxvhjrje
-      description: 'Aut et corporis molestias dolor dolores.'
-      min_price: omnis
-      max_price: quae
-      days: ofbyoadoasbnxyuntoiol
+      sub_category_id: 6
+      title: jicsyyrecycsdkfijyhsmyhq
+      description: 'Est deserunt et odit error sed.'
+      min_price: velit
+      max_price: temporibus
+      days: jrgsgeshkrotxkjzly
       skill_ids:
-        - 17
+        - 13
       file_ids:
-        - 20
+        - 16
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 8hZE6Dabk4Va6edgv3f5c1P'
+      - 'Bearer kVPha5v8DEea16Zf3d6cb4g'
     controller: null
     method: null
     route: null
@@ -214,7 +214,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fvbea6Pg1a6DVZd583h4kEc'
+      - 'Bearer V6fPgD8d3ahEca1b5Z6vk4e'
     controller: null
     method: null
     route: null
@@ -245,7 +245,7 @@ endpoints:
         name: freelancer_offer_id
         description: ''
         required: true
-        example: 4
+        example: 14
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -254,7 +254,7 @@ endpoints:
         name: sub_category_id
         description: ''
         required: false
-        example: 16
+        example: 11
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -263,7 +263,7 @@ endpoints:
         name: title
         description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
         required: false
-        example: ynqgbeeeauclfze
+        example: kpentkurtrjcetxybgv
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -272,7 +272,7 @@ endpoints:
         name: description
         description: 'Must be at least 100 characters. Must not be greater than 2000 characters.'
         required: false
-        example: 'Recusandae inventore at cumque unde rerum est.'
+        example: 'Aut ipsa et inventore minus.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -299,7 +299,7 @@ endpoints:
         name: days
         description: 'Must be between 1 and 3 digits. Must not be greater than 100 characters.'
         required: false
-        example: fiwp
+        example: perijfsavg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -309,7 +309,7 @@ endpoints:
         description: ''
         required: false
         example:
-          - 1
+          - 8
         type: 'integer[]'
         enumValues: []
         exampleWasSpecified: false
@@ -319,28 +319,28 @@ endpoints:
         description: ''
         required: false
         example:
-          - 7
+          - 10
         type: 'integer[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      freelancer_offer_id: 4
-      sub_category_id: 16
-      title: ynqgbeeeauclfze
-      description: 'Recusandae inventore at cumque unde rerum est.'
-      days: fiwp
+      freelancer_offer_id: 14
+      sub_category_id: 11
+      title: kpentkurtrjcetxybgv
+      description: 'Aut ipsa et inventore minus.'
+      days: perijfsavg
       skill_ids:
-        - 1
+        - 8
       file_ids:
-        - 7
+        - 10
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1E4Zfva3ebD6c5P8hdkVg6a'
+      - 'Bearer PvEb6e13aaZh8kfD46gV5dc'
     controller: null
     method: null
     route: null
@@ -384,7 +384,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6h4Vgd35D8avZkc6fEae1bP'
+      - 'Bearer 64ab5hgVv31Efc6ZDa8dePk'
     controller: null
     method: null
     route: null
@@ -415,7 +415,7 @@ endpoints:
         name: status
         description: ''
         required: false
-        example: pending
+        example: active
         type: string
         enumValues:
           - pending
@@ -424,14 +424,14 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      status: pending
+      status: active
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6acahZvgdb165DP8k34EfeV'
+      - 'Bearer 4vk6EPVadfhe36gZD5bac18'
     controller: null
     method: null
     route: null
@@ -458,13 +458,13 @@ endpoints:
         name: freelancer_offer_id
         description: 'The ID of the freelancer offer.'
         required: true
-        example: quibusdam
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      freelancer_offer_id: quibusdam
+      freelancer_offer_id: aut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -475,7 +475,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer PgdZeEkh86fcDa1V456ab3v'
+      - 'Bearer Zh84kb6e6afEd1VcvDg3a5P'
     controller: null
     method: null
     route: null
@@ -519,7 +519,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer DEhbP6cagvekdfa456381ZV'
+      - 'Bearer a4EDkegZcbf6P68ah53V1dv'
     controller: null
     method: null
     route: null
@@ -546,13 +546,13 @@ endpoints:
         name: freelancer_offer_id
         description: 'The ID of the freelancer offer.'
         required: true
-        example: molestiae
+        example: iste
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      freelancer_offer_id: molestiae
+      freelancer_offer_id: iste
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -563,7 +563,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer k6ghDPdac8e5VaZvb461E3f'
+      - 'Bearer Vc3bgda6Eef6h1va45k8PZD'
     controller: null
     method: null
     route: null
@@ -605,7 +605,7 @@ endpoints:
         name: sub_category_id
         description: ''
         required: false
-        example: 20
+        example: 19
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -615,7 +615,7 @@ endpoints:
         description: ''
         required: false
         example:
-          - 15
+          - 20
         type: 'integer[]'
         enumValues: []
         exampleWasSpecified: false
@@ -624,7 +624,7 @@ endpoints:
         name: min_days
         description: ''
         required: false
-        example: 14
+        example: 9
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -633,7 +633,7 @@ endpoints:
         name: max_days
         description: ''
         required: false
-        example: 12
+        example: 4
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -642,7 +642,7 @@ endpoints:
         name: min_price
         description: ''
         required: false
-        example: 4
+        example: 18
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -651,27 +651,27 @@ endpoints:
         name: max_price
         description: ''
         required: false
-        example: 1
+        example: 4
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
       status: active
-      sub_category_id: 20
+      sub_category_id: 19
       skill_ids:
-        - 15
-      min_days: 14
-      max_days: 12
-      min_price: 4
-      max_price: 1
+        - 20
+      min_days: 9
+      max_days: 4
+      min_price: 18
+      max_price: 4
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 51c4ED86h3eVadgZaPfvkb6'
+      - 'Bearer EgedZv5a4663aVh8kbcf1DP'
     controller: null
     method: null
     route: null
@@ -724,7 +724,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fvZkgb16a6d5a3ec8PVh4DE'
+      - 'Bearer g63eEfVv84ZdaPcD1hba5k6'
     controller: null
     method: null
     route: null
@@ -755,7 +755,7 @@ endpoints:
         name: freelancer_offer_id
         description: ''
         required: true
-        example: 11
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -764,21 +764,75 @@ endpoints:
         name: message
         description: 'Must be at least 10 characters. Must not be greater than 255 characters.'
         required: true
-        example: elfwnv
+        example: qnw
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      freelancer_offer_id: 11
-      message: elfwnv
+      freelancer_offer_id: 1
+      message: qnw
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ebv58Vak3Dh1EdaPfg664cZ'
+      - 'Bearer kh35fVcvEeag1db86P6Da4Z'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: api/freelancer-offer/client/proposal
+    metadata:
+      groupName: 'Freelancer Offer Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Client Update Proposal Message'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      freelancer_offer_proposal_id:
+        name: freelancer_offer_proposal_id
+        description: ''
+        required: true
+        example: 19
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      message:
+        name: message
+        description: 'Must be at least 10 characters. Must not be greater than 255 characters.'
+        required: true
+        example: tydaoykfniddjs
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      freelancer_offer_proposal_id: 19
+      message: tydaoykfniddjs
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Vfa1b8E5kPa4gh6ve3cDZ6d'
     controller: null
     method: null
     route: null
@@ -805,13 +859,13 @@ endpoints:
         name: freelancer_offer_proposal_id
         description: 'The ID of the freelancer offer proposal.'
         required: true
-        example: cum
+        example: omnis
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      freelancer_offer_proposal_id: cum
+      freelancer_offer_proposal_id: omnis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -822,7 +876,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VPE1hZvf6dcga53ea4bk68D'
+      - 'Bearer Dak5d3fV6v81ce4ZahbgP6E'
     controller: null
     method: null
     route: null

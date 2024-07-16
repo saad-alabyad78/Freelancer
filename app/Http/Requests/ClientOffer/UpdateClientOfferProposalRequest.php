@@ -28,7 +28,7 @@ class UpdateClientOfferProposalRequest extends FormRequest
                 'required' , 
                 'integer' ,
                 Rule::exists('client_offer_proposals' , 'id')
-                ->where('freelancer_id' , auth('sanctum')->user()->role_id) ,
+                ->where('freelancer_id' , auth('sanctum')->user()?->role_id) ,
             ] ,
             'message' => ['required' , 'string' , 'min:10' , 'max:255'] ,
         ];
