@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Company;
 
+use App\Models\Admin;
 use App\Models\Skill;
 use App\Models\JobOffer;
 use App\Models\Skillable;
@@ -19,6 +20,33 @@ use App\Http\Requests\Company\UpdateJobOfferRequest;
  **/
 class JobOfferController extends Controller
 {
+    /**
+     * show offer by id 
+     * 
+     * if the offer is pending only admins and it's company can see it 
+     * 
+     */
+    public function show(JobOffer $jobOffer)
+    {
+        if($jobOffer->status == JobOfferStatus::PENDING)
+        {
+            $user = auth('sanctum')->user() ;
+
+            if(!$user)
+            {
+                return response()->json([
+                    'message' => 'unauthenticated' ,
+                ] , 401) ;
+            }
+            if(!(($user->role_type == Admin::class) or ($jobOffer->company_id == $user->role_id) ) )
+            {
+                return response()->json([
+                    'message' => 'unauthorized' ,
+                ] , 403) ;
+            }
+        }
+        return JobOfferResource::make($jobOffer) ;
+    }
     /**
      * create job offer.
      *

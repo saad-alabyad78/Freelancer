@@ -75,7 +75,12 @@ class JobOfferQueryController extends Controller
         //just cant see pending (handle it in form request)
         $filters = $request->validated() ; 
 
-        $freelancer = Freelancer::findOrFail(auth('sanctum')->user()->role_id)  ;
+        $freelancer = null ;
+
+        if(auth('sanctum')->check() and auth('sanctum')->user()->role_type==Freelancer::class)
+        {
+            $freelancer = Freelancer::where(auth('sanctum')->user()->role_id)  ;
+        }
         
         $offers = JobOffer::filter($filters , $freelancer)
             ->with('job_role' , 'skills' , 'company' , 'skills.skillable') 
