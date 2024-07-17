@@ -24,7 +24,7 @@ class JobOfferController extends Controller
      * show offer by id 
      * 
      * if the offer is pending only admins and it's company can see it 
-     * 
+     * @unauthenticated
      */
     public function show(JobOffer $jobOffer)
     {
