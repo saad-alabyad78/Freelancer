@@ -43,8 +43,8 @@ class LogController extends Controller
 
         $device = substr($request->userAgent() ?? '' , 0 , 255) ;
 
-          // Update online status
-          Cache::put('user-is-online-' . $user->id, true, now()->addMinutes(5));
+        $user->markOnline();
+        broadcast(new UserOnlineStatusUpdated($user->id, true));
 
         return response()->json([
             'user' => UserResource::make($user) ,
@@ -59,8 +59,8 @@ class LogController extends Controller
         $user = auth('sanctum')->user();
         $user->tokens()->delete();
 
-        // Remove online status
-        Cache::forget('user-is-online-' . $user->id);
+        $user->markOffline();
+        broadcast(new UserOnlineStatusUpdated($user->id, false));
 
         return response()->json(['message' => 'Logout successful']);
     }

@@ -23,3 +23,7 @@ Broadcast::channel('conversations.{conversationId}', function ($user, $conversat
             $query->where('user_id', $user->id);
         })->exists();
 });
+Broadcast::channel('user-status', function ($user) {
+    return Auth::check();
+});
+

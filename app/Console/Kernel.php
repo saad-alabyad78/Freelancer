@@ -4,7 +4,6 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use App\Console\Commands\UpdateOnlineStatus;
 
 class Kernel extends ConsoleKernel
 {
@@ -13,8 +12,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->job(new \App\Jobs\UpdateUserOnlineStatus)->everyFiveMinutes();
-
+     //
     }
 
     /**

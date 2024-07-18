@@ -4,13 +4,17 @@ namespace App\Http\Controllers\Chat;
 
 use App\Models\Message;
 use App\Events\MessageSent;
+use App\Events\UserOnlineStatusUpdated;
 use App\Models\MessageLike;
 use App\Models\Conversation;
-use Illuminate\Http\Request;
 use App\Models\ConversationUserBan;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Chat\SendMessageRequest;
 use App\Http\Requests\Chat\CreateConversationRequest;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Auth;
+
 
 class ConversationController extends Controller
 {
@@ -168,27 +172,41 @@ class ConversationController extends Controller
 
         return response()->json($like, 201);
     }
-     // دالة تحديث حالة الأونلاين
-     public function updateOnlineStatus()
-     {
-         $user = auth('sanctum')->user();
-         Cache::put('user-is-online-' . $user->id, true, now()->addMinutes(5));
-         $user->update(['last_seen' => now()]);
+     /**
+     * Update the online status of the authenticated user.
+     *
+     * This method updates the 'last_seen' and 'online' fields of the authenticated user,
+     * and broadcasts the 'UserOnlineStatusUpdated' event to notify others of the change.
+     *
+     * @authenticated
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function updateOnlineStatus()
+    {
+        $user = auth('sanctum')->user();
+        $user->update(['last_seen' => now(), 'online' => true]);
 
-         broadcast(new UserOnlineStatusUpdated($user))->toOthers();
+        broadcast(new UserOnlineStatusUpdated($user->id, true))->toOthers();
 
-         return response()->json(['message' => 'Status updated']);
-     }
+        return response()->json(['message' => 'Status updated']);
+    }
 
-     // دالة الحصول على حالة المستخدم
-     public function getUserStatus($userId)
-     {
-         $user = User::findOrFail($userId);
-         $isOnline = Cache::has('user-is-online-' . $user->id);
+    /**
+     * Get the online status and last seen time of a user by their ID.
+     *
+     * This method retrieves the 'online' status and 'last_seen' timestamp of the specified user.
+     *
+     * @param  int  $userId
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getUserStatus($userId)
+    {
+        $user = User::findOrFail($userId);
 
-         return response()->json([
-             'is_online' => $isOnline,
-             'last_seen' => $user->last_seen,
-         ]);
-     }
- }
+        return response()->json([
+            'is_online' => $user->isOnline(),
+            'last_seen' => $user->last_seen,
+        ]);
+    }
+}

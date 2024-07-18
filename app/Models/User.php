@@ -14,19 +14,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Cache;
 
-
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+
     protected $fillable = [
-        'fcm_token'  ,
+        'fcm_token',
         'first_name',
         'email',
         'password',
         'first_name',
         'last_name',
         'provider',
-        'last_seen'
+        'last_seen',
+        'online',
     ];
 
     protected $hidden = [
@@ -43,29 +44,28 @@ class User extends Authenticatable
     protected function RoleName(): Attribute
     {
         return Attribute::make(
-            get: fn () =>Str::lower(Str::afterLast($this->role_type , '\\'))
+            get: fn () => Str::lower(Str::afterLast($this->role_type, '\\'))
         );
     }
 
     protected function slug(): Attribute
     {
-        $name =
-        $this->first_name . ' ' .
-        $this->last_name . ' ' .
-        $this->id ;
+        $name = $this->first_name . ' ' . $this->last_name . ' ' . $this->id;
         return Attribute::make(
             get: fn() => Str::slug($name)
         );
     }
 
-    public function role():MorphTo
+    public function role(): MorphTo
     {
         return $this->morphTo();
     }
+
     public function conversations()
     {
         return $this->belongsToMany(Conversation::class, 'conversation_user');
     }
+
     public function sentInvitations()
     {
         return $this->hasMany(Invitation::class, 'company_id');
@@ -78,18 +78,16 @@ class User extends Authenticatable
 
     public function isOnline()
     {
-        return Cache::has('user-is-online-' . $this->id);
+        return $this->online;
     }
 
     public function markOnline()
     {
-        Cache::put('user-is-online-' . $this->id, true, now()->addMinutes(5));
-        $this->update(['last_seen' => now()]);
+        $this->update(['online' => true, 'last_seen' => now()]);
     }
 
     public function markOffline()
     {
-        Cache::forget('user-is-online-' . $this->id);
-        $this->update(['last_seen' => now()]);
+        $this->update(['online' => false, 'last_seen' => now()]);
     }
 }
