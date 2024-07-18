@@ -26,11 +26,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: michelle89@example.com
+                  example: matteo.herzog@example.com
                 password:
                   type: string
                   description: ''
-                  example: )z^y`otYT
+                  example: 'f;m9DM+#7^4:6'
               required:
                 - email
                 - password
@@ -58,11 +58,11 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 24
-                    first_name: Johnathan
-                    last_name: Lehner
-                    username: johnathan-lehner-24
-                    email: glover.ignatius@example.com
+                    id: 26
+                    first_name: Kevon
+                    last_name: Doyle
+                    username: kevon-doyle-26
+                    email: gutkowski.bobbie@example.net
                     role_id: null
                     role: ''
                 properties:
@@ -71,19 +71,19 @@ paths:
                     properties:
                       id:
                         type: integer
-                        example: 24
+                        example: 26
                       first_name:
                         type: string
-                        example: Johnathan
+                        example: Kevon
                       last_name:
                         type: string
-                        example: Lehner
+                        example: Doyle
                       username:
                         type: string
-                        example: johnathan-lehner-24
+                        example: kevon-doyle-26
                       email:
                         type: string
-                        example: glover.ignatius@example.com
+                        example: gutkowski.bobbie@example.net
                       role_id:
                         type: string
                         example: null
@@ -131,7 +131,7 @@ paths:
                 token:
                   type: string
                   description: ''
-                  example: molestiae
+                  example: aut
               required:
                 - token
   /api/otp/register:
@@ -153,19 +153,19 @@ paths:
                 first_name:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: ddafradhee
+                  example: lyhzwpyfcjb
                 last_name:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: xnmrvtopobybwxwnxojqboumm
+                  example: k
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: xbecker@example.net
+                  example: lconsidine@example.net
                 password:
                   type: string
                   description: 'Must be at least 8 characters. Must not be greater than 255 characters.'
-                  example: '\FG#N-fA:cAlyz\'
+                  example: "?;Zk'*(fb"
               required:
                 - first_name
                 - email
@@ -189,11 +189,11 @@ paths:
                 email_otp_code:
                   type: string
                   description: ''
-                  example: distinctio
+                  example: sunt
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: utreutel@example.org
+                  example: shoeger@example.com
               required:
                 - email_otp_code
                 - email
@@ -216,7 +216,7 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: fahey.rachael@example.org
+                  example: abbott.gregory@example.com
               required:
                 - email
   /api/otp/forgot-password:
@@ -238,7 +238,7 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: letha.lemke@example.org
+                  example: louie.kris@example.com
               required:
                 - email
   /api/otp/reset-password:
@@ -260,15 +260,15 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: mckenzie.andy@example.com
+                  example: spencer.shaylee@example.org
                 password:
                   type: string
                   description: ''
-                  example: et
+                  example: neque
                 password_otp_code:
                   type: string
                   description: ''
-                  example: quasi
+                  example: doloremque
               required:
                 - email
                 - password
@@ -292,7 +292,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: repudiandae
+                  example: optio
       security: []
   /api/category/industry/chunk/insert:
     post:
@@ -322,7 +322,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: et
+                  example: odit
                 job_role_id:
                   type: string
                   description: ''
@@ -389,7 +389,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: et
+                  example: ipsa
       security: []
   /api/category/job_role/chunk/insert:
     post:
@@ -654,7 +654,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: molestias
+                  example: excepturi
               required:
                 - name
     delete:
@@ -693,7 +693,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: rerum
+                  example: magnam
               required:
                 - name
   '/api/client/{client_id}':
@@ -852,8 +852,8 @@ paths:
                   example: null
                 date_of_birth:
                   type: string
-                  description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-14</code>.'
-                  example: '2001-09-17'
+                  description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-17</code>.'
+                  example: '2000-10-29'
                 city:
                   type: string
                   description: 'this must be a syrian city.'
@@ -861,7 +861,7 @@ paths:
                 gender:
                   type: string
                   description: ''
-                  example: female
+                  example: male
                   enum:
                     - male
                     - female
@@ -951,8 +951,8 @@ paths:
                   example: null
                 date_of_birth:
                   type: string
-                  description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-14</code>.'
-                  example: '2005-05-26'
+                  description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-17</code>.'
+                  example: '1994-12-23'
                 city:
                   type: string
                   description: 'this must be a syrian city.'
@@ -960,7 +960,7 @@ paths:
                 gender:
                   type: string
                   description: ''
-                  example: female
+                  example: male
                   enum:
                     - male
                     - female
@@ -983,7 +983,7 @@ paths:
                 status:
                   type: string
                   description: ''
-                  example: pending
+                  example: cloused
                   enum:
                     - pending
                     - active
@@ -1007,39 +1007,39 @@ paths:
                 sub_category_id:
                   type: integer
                   description: ''
-                  example: 2
+                  example: 6
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: gun
+                  example: ltczrobgmvpyiujotfqhltca
                 description:
                   type: string
                   description: 'Must be at least 100 characters. Must not be greater than 2000 characters.'
-                  example: 'Earum necessitatibus quidem quas consequuntur et est facere mollitia.'
+                  example: 'Dolores perferendis voluptatem voluptates quod incidunt labore iusto.'
                 min_price:
                   type: string
                   description: ''
-                  example: unde
+                  example: quam
                 max_price:
                   type: string
                   description: ''
-                  example: pariatur
+                  example: iure
                 days:
                   type: string
                   description: 'Must be between 1 and 3 digits. Must not be greater than 100 characters.'
-                  example: ifkiejrnighytspmvmefoiae
+                  example: nrfochryhmsgvrdrqefaxxqc
                 skill_ids:
                   type: array
                   description: ''
                   example:
-                    - 19
+                    - 18
                   items:
                     type: integer
                 file_ids:
                   type: array
                   description: ''
                   example:
-                    - 2
+                    - 6
                   items:
                     type: integer
               required:
@@ -1108,19 +1108,19 @@ paths:
                 client_offer_id:
                   type: integer
                   description: ''
-                  example: 2
+                  example: 6
                 sub_category_id:
                   type: integer
                   description: ''
-                  example: 15
+                  example: 5
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: txtrqubdgpcfevx
+                  example: esffvhreuog
                 description:
                   type: string
                   description: 'Must be at least 100 characters. Must not be greater than 2000 characters.'
-                  example: 'Quis nihil quo sit qui nulla ducimus.'
+                  example: 'Est sint ab possimus molestiae id neque.'
                 min_price:
                   type: string
                   description: ''
@@ -1132,19 +1132,19 @@ paths:
                 days:
                   type: string
                   description: 'Must be between 1 and 3 digits. Must not be greater than 100 characters.'
-                  example: jcfofxukrtdojrl
+                  example: akxsjotaxskvjpajfsx
                 skill_ids:
                   type: array
                   description: ''
                   example:
-                    - 3
+                    - 16
                   items:
                     type: integer
                 file_ids:
                   type: array
                   description: ''
                   example:
-                    - 4
+                    - 15
                   items:
                     type: integer
               required:
@@ -1168,7 +1168,7 @@ paths:
                 status:
                   type: string
                   description: ''
-                  example: cloused
+                  example: pending
                   enum:
                     - pending
                     - active
@@ -1187,7 +1187,7 @@ paths:
         in: path
         name: client_offer_id
         description: 'The ID of the client offer.'
-        example: eligendi
+        example: repellat
         required: true
         schema:
           type: string
@@ -1205,7 +1205,7 @@ paths:
         in: path
         name: client_offer_id
         description: 'The ID of the client offer.'
-        example: error
+        example: eius
         required: true
         schema:
           type: string
@@ -1223,7 +1223,7 @@ paths:
         in: path
         name: client_offer_id
         description: 'The ID of the client offer.'
-        example: expedita
+        example: officia
         required: true
         schema:
           type: string
@@ -1253,26 +1253,26 @@ paths:
                 sub_category_id:
                   type: integer
                   description: ''
-                  example: 2
+                  example: 5
                 skill_ids:
                   type: array
                   description: ''
                   example:
-                    - 15
+                    - 19
                   items:
                     type: integer
                 min_days:
                   type: integer
                   description: ''
-                  example: 1
+                  example: 12
                 max_days:
                   type: integer
                   description: ''
-                  example: 15
+                  example: 4
                 min_price:
                   type: integer
                   description: ''
-                  example: 13
+                  example: 15
                 max_price:
                   type: integer
                   description: ''
@@ -1326,11 +1326,11 @@ paths:
                 client_offer_id:
                   type: integer
                   description: ''
-                  example: 1
+                  example: 2
                 message:
                   type: string
                   description: 'Must be at least 10 characters. Must not be greater than 255 characters.'
-                  example: qxrovudzzwitz
+                  example: ygtfqkuwauchymuaa
               required:
                 - client_offer_id
                 - message
@@ -1353,11 +1353,11 @@ paths:
                 client_offer_proposal_id:
                   type: integer
                   description: ''
-                  example: 14
+                  example: 1
                 message:
                   type: string
                   description: 'Must be at least 10 characters. Must not be greater than 255 characters.'
-                  example: zemhjvtrqzldhyyfevwpbrx
+                  example: scaqdaszydosjuau
               required:
                 - client_offer_proposal_id
                 - message
@@ -1375,10 +1375,117 @@ paths:
         in: path
         name: client_offer_proposal_id
         description: 'The ID of the client offer proposal.'
-        example: omnis
+        example: pariatur
         required: true
         schema:
           type: string
+  '/api/company/job_offer/{job_offer_id}':
+    get:
+      summary: 'show offer by id'
+      operationId: showOfferById
+      description: "if the offer is pending only admins and it's company can see it"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    description: 'Nobis cum ex distinctio qui sunt. Nihil esse sit enim fuga. Est molestias at odio dolorem. Numquam neque fugiat sit.'
+                    status: active
+                    location_type: on-site
+                    attendence_type: part-time
+                    max_salary: 470
+                    min_salary: 56
+                    transportation: false
+                    health_insurance: false
+                    military_service: true
+                    max_age: 30
+                    min_age: 20
+                    gender: female
+                    industry_name: برمجي
+                    military_service_required: true
+                    gender_required: false
+                    age_required: true
+                    proposals_count: 0
+                    created_at: '2024-07-13T20:24:13.000000Z'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      description:
+                        type: string
+                        example: 'Nobis cum ex distinctio qui sunt. Nihil esse sit enim fuga. Est molestias at odio dolorem. Numquam neque fugiat sit.'
+                      status:
+                        type: string
+                        example: active
+                      location_type:
+                        type: string
+                        example: on-site
+                      attendence_type:
+                        type: string
+                        example: part-time
+                      max_salary:
+                        type: integer
+                        example: 470
+                      min_salary:
+                        type: integer
+                        example: 56
+                      transportation:
+                        type: boolean
+                        example: false
+                      health_insurance:
+                        type: boolean
+                        example: false
+                      military_service:
+                        type: boolean
+                        example: true
+                      max_age:
+                        type: integer
+                        example: 30
+                      min_age:
+                        type: integer
+                        example: 20
+                      gender:
+                        type: string
+                        example: female
+                      industry_name:
+                        type: string
+                        example: برمجي
+                      military_service_required:
+                        type: boolean
+                        example: true
+                      gender_required:
+                        type: boolean
+                        example: false
+                      age_required:
+                        type: boolean
+                        example: true
+                      proposals_count:
+                        type: integer
+                        example: 0
+                      created_at:
+                        type: string
+                        example: '2024-07-13T20:24:13.000000Z'
+      tags:
+        - 'Company Managment'
+      security: []
+    parameters:
+      -
+        in: path
+        name: job_offer_id
+        description: 'The ID of the job offer.'
+        example: 1
+        required: true
+        schema:
+          type: integer
   '/api/company/{company_id}':
     get:
       summary: 'Show Company .'
@@ -1992,7 +2099,7 @@ paths:
                 attendence_type:
                   type: string
                   description: ''
-                  example: full-time
+                  example: part-time
                   enum:
                     - full-time
                     - part-time
@@ -2007,46 +2114,46 @@ paths:
                 job_role_id:
                   type: integer
                   description: ''
-                  example: 20
+                  example: 7
                 max_salary:
                   type: integer
                   description: ''
-                  example: 13
+                  example: 2
                 min_salary:
                   type: integer
                   description: ''
-                  example: 19
+                  example: 1
                 transportation:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 health_insurance:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
                 military_service:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
                 max_age:
                   type: integer
                   description: ''
-                  example: 2
+                  example: 17
                 min_age:
                   type: integer
                   description: ''
-                  example: 14
+                  example: 9
                 gender:
                   type: string
                   description: ''
-                  example: female
+                  example: male
                   enum:
                     - male
                     - female
                 industry_name:
                   type: string
                   description: ''
-                  example: est
+                  example: laboriosam
                 i_can_apply_for_it:
                   type: boolean
                   description: ''
@@ -2138,7 +2245,7 @@ paths:
                 industry_name:
                   type: string
                   description: ''
-                  example: id
+                  example: sint
                 profile_image_id:
                   type: string
                   description: ''
@@ -2150,15 +2257,15 @@ paths:
                 name:
                   type: string
                   description: 'name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters.'
-                  example: wbgz
+                  example: d
                 description:
                   type: string
                   description: 'Must not be greater than 4000 characters.'
-                  example: 'Officiis dolor optio tenetur maiores sed ut laborum enim.'
+                  example: 'Sapiente officia voluptas dolor.'
                 size:
                   type: string
                   description: ''
-                  example: recusandae
+                  example: corporis
                 city:
                   type: string
                   description: 'this must be a syrian city.'
@@ -2166,11 +2273,11 @@ paths:
                 region:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
-                  example: dxjqvoa
+                  example: ynhphffhmjpdm
                 street_address:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 30 characters.'
-                  example: l
+                  example: iyip
                 gallery_image_ids:
                   type: object
                   description: 'Must not have more than 25 items.'
@@ -2180,7 +2287,7 @@ paths:
                   type: array
                   description: 'Must not be greater than 2048 characters.'
                   example:
-                    - vmff
+                    - lvywjsb
                   items:
                     type: string
               required:
@@ -2286,15 +2393,15 @@ paths:
                 name:
                   type: string
                   description: 'name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters.'
-                  example: tn
+                  example: dgfdrokzywrpkmjnumw
                 description:
                   type: string
                   description: 'Must not be greater than 4000 characters.'
-                  example: 'Et quidem ut similique nisi officia consequatur.'
+                  example: 'Vero enim quas voluptas necessitatibus sequi sit sint corporis.'
                 size:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 20 characters.'
-                  example: zuudnggdwzb
+                  example: wfvdmsrtntwtbaevu
                 city:
                   type: string
                   description: 'this must be a syrian city.'
@@ -2302,11 +2409,11 @@ paths:
                 region:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
-                  example: wufav
+                  example: nsribplfngqxeck
                 street_address:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 30 characters.'
-                  example: ybkuxjkyfmrqr
+                  example: daksgcbuphnasyai
                 gallery_image_ids:
                   type: array
                   description: ''
@@ -2338,7 +2445,7 @@ paths:
                 password:
                   type: string
                   description: ''
-                  example: 'ok5"6X[|'
+                  example: '?d8hHpE6<T^>BXdW'
               required:
                 - password
   /api/company/job_offer/store:
@@ -2448,11 +2555,11 @@ paths:
                 industry_name:
                   type: string
                   description: ''
-                  example: ut
+                  example: et
                 job_role_id:
                   type: string
                   description: ''
-                  example: debitis
+                  example: amet
                 location_type:
                   type: string
                   description: ''
@@ -2463,7 +2570,7 @@ paths:
                 attendence_type:
                   type: string
                   description: ''
-                  example: full-time
+                  example: part-time
                   enum:
                     - full-time
                     - part-time
@@ -2471,23 +2578,23 @@ paths:
                 max_salary:
                   type: integer
                   description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
-                  example: 19
+                  example: 22
                 min_salary:
                   type: integer
                   description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
-                  example: 8
+                  example: 12
                 max_age:
                   type: integer
                   description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
-                  example: 10
+                  example: 8
                 min_age:
                   type: integer
                   description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
-                  example: 1
+                  example: 18
                 description:
                   type: string
                   description: 'Must be at least 40 characters. Must not be greater than 40000 characters.'
-                  example: 'Ipsum voluptatum consequuntur quos iure perspiciatis est.'
+                  example: 'Qui in labore quia possimus molestiae qui omnis.'
                 transportation:
                   type: boolean
                   description: ''
@@ -2503,7 +2610,7 @@ paths:
                 gender:
                   type: string
                   description: ''
-                  example: female
+                  example: male
                   enum:
                     - male
                     - female
@@ -2518,11 +2625,11 @@ paths:
                       id:
                         type: string
                         description: ''
-                        example: qui
+                        example: reiciendis
                       required:
                         type: boolean
                         description: ''
-                        example: true
+                        example: false
                     required:
                       - id
                       - required
@@ -2533,7 +2640,7 @@ paths:
                 military_service_required:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 gender_required:
                   type: boolean
                   description: ''
@@ -2655,11 +2762,11 @@ paths:
                 job_offer_id:
                   type: string
                   description: ''
-                  example: maiores
+                  example: libero
                 industry_name:
                   type: string
                   description: ''
-                  example: magni
+                  example: eaque
                 job_role_id:
                   type: string
                   description: ''
@@ -2674,7 +2781,7 @@ paths:
                 attendence_type:
                   type: string
                   description: ''
-                  example: part-time
+                  example: full-time
                   enum:
                     - full-time
                     - part-time
@@ -2682,15 +2789,15 @@ paths:
                 max_salary:
                   type: integer
                   description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
-                  example: 2
+                  example: 11
                 min_salary:
                   type: integer
                   description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
-                  example: 15
+                  example: 14
                 max_age:
                   type: integer
                   description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
-                  example: 14
+                  example: 16
                 min_age:
                   type: integer
                   description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
@@ -2698,7 +2805,7 @@ paths:
                 description:
                   type: string
                   description: 'Must be at least 40 characters. Must not be greater than 40000 characters.'
-                  example: 'Occaecati et numquam fuga dolore.'
+                  example: 'Ut quia est iusto numquam veritatis qui neque dolorem.'
                 transportation:
                   type: boolean
                   description: ''
@@ -2706,15 +2813,15 @@ paths:
                 health_insurance:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
                 military_service:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 gender:
                   type: string
                   description: ''
-                  example: female
+                  example: male
                   enum:
                     - male
                     - female
@@ -2744,7 +2851,7 @@ paths:
                 job_offer_id:
                   type: string
                   description: ''
-                  example: facilis
+                  example: eveniet
               required:
                 - job_offer_id
   /api/company/job_offer/my-job-offers:
@@ -3010,14 +3117,14 @@ paths:
                 location_type:
                   type: string
                   description: ''
-                  example: remotly
+                  example: on-site
                   enum:
                     - on-site
                     - remotly
                 attendence_type:
                   type: string
                   description: ''
-                  example: full-time
+                  example: intern
                   enum:
                     - full-time
                     - part-time
@@ -3025,7 +3132,7 @@ paths:
                 status:
                   type: string
                   description: ''
-                  example: pending
+                  example: active
                   enum:
                     - pending
                     - active
@@ -3033,7 +3140,7 @@ paths:
                 job_role_id:
                   type: integer
                   description: ''
-                  example: 17
+                  example: 19
   /api/company/job_offer/status/change:
     post:
       summary: 'Update Job Offer Status .'
@@ -3141,11 +3248,11 @@ paths:
                 job_offer_id:
                   type: string
                   description: ''
-                  example: dolores
+                  example: et
                 status:
                   type: string
                   description: ''
-                  example: active
+                  example: cloused
                   enum:
                     - pending
                     - active
@@ -3167,7 +3274,7 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'The command "distinctio" does not exist.'
+                  message: 'The command "odio" does not exist.'
                   exception: Symfony\Component\Console\Exception\CommandNotFoundException
                   file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php
                   line: 159
@@ -3583,7 +3690,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: 'The command "distinctio" does not exist.'
+                    example: 'The command "odio" does not exist.'
                   exception:
                     type: string
                     example: Symfony\Component\Console\Exception\CommandNotFoundException
@@ -4029,7 +4136,7 @@ paths:
         in: path
         name: command_string
         description: ''
-        example: distinctio
+        example: odio
         required: true
         schema:
           type: string
@@ -4046,7 +4153,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "\n  Dropping all tables .................................................................................................................... 26ms DONE\n\n   INFO  Preparing database.  \n\n  Creating migration table ............................................................................................................... 79ms DONE\n\n   INFO  Running migrations.  \n\n  2003_05_13_221258_create_jobs_table ................................................................................................... 170ms DONE\n  2004_02_05_163918_create_job_roles_table .............................................................................................. 116ms DONE\n  2004_05_03_141844_create_industries_table .............................................................................................. 56ms DONE\n  2004_05_05_163837_create_skills_table ................................................................................................. 116ms DONE\n  2004_05_05_164036_create_skillables_table .............................................................................................. 67ms DONE\n  2014_10_12_000000_create_users_table .................................................................................................. 226ms DONE\n  2014_10_12_100000_create_password_reset_tokens_table .................................................................................. 116ms DONE\n  2019_08_19_000000_create_failed_jobs_table ............................................................................................ 165ms DONE\n  2019_12_14_000001_create_personal_access_tokens_table ................................................................................. 237ms DONE\n  2024_03_25_042214_create_companies_table .............................................................................................. 177ms DONE\n  2024_03_25_042227_create_clients_table ................................................................................................ 231ms DONE\n  2024_03_25_042235_create_freelancers_table ............................................................................................ 177ms DONE\n  2024_03_25_042242_create_admins_table .................................................................................................. 56ms DONE\n  2024_03_27_163951_create_super_admins_table ............................................................................................ 56ms DONE\n  2024_05_05_164120_create_job_offers_table ............................................................................................. 319ms DONE\n  2024_05_27_134915_create_portfolios_table ............................................................................................. 141ms DONE\n  2024_05_28_134755_create_files_table .................................................................................................. 258ms DONE\n  2024_05_29_191459_create_images_table ................................................................................................. 260ms DONE\n  2024_06_19_194749_create_job_offer_proposals_table ..................................................................................... 76ms DONE\n  2024_06_25_004931_create_conversations_table ........................................................................................... 61ms DONE\n  2024_06_25_004952_create_messages_table ............................................................................................... 114ms DONE\n  2024_06_25_005020_conversation_user .................................................................................................... 62ms DONE\n  2024_06_29_233421_invitations .......................................................................................................... 68ms DONE\n  2024_07_04_020146_create_user_user_table ............................................................................................... 66ms DONE\n  2024_07_04_225329_create_likes_table .................................................................................................. 184ms DONE\n  2024_07_04_225335_create_views_table .................................................................................................. 165ms DONE\n  2024_07_05_221609_create_categories_table ............................................................................................. 105ms DONE\n  2024_07_05_223733_create_sub_categories_table ......................................................................................... 130ms DONE\n  2024_07_06_180157_create_client_offers_table .......................................................................................... 179ms DONE\n  2024_07_06_231715_create_conversation_user_bans_table .................................................................................. 62ms DONE\n  2024_07_06_231913_create_message_likes_table ........................................................................................... 65ms DONE\n  2024_07_07_124326_create_client_offer_proposals_table .................................................................................. 56ms DONE\n  2024_07_08_180157_create_freelancer_offers_table ...................................................................................... 178ms DONE\n  2024_07_08_194326_create_freelancer_offer_proposals_table .............................................................................. 67ms DONE\n\n"
+                example: "\n  Dropping all tables ................................................................................................................... 117ms DONE\n\n   INFO  Preparing database.  \n\n  Creating migration table ............................................................................................................... 95ms DONE\n\n   INFO  Running migrations.  \n\n  2003_05_13_221258_create_jobs_table ................................................................................................... 297ms DONE\n  2004_02_05_163918_create_job_roles_table .............................................................................................. 172ms DONE\n  2004_05_03_141844_create_industries_table .............................................................................................. 56ms DONE\n  2004_05_05_163837_create_skills_table ................................................................................................. 140ms DONE\n  2004_05_05_164036_create_skillables_table .............................................................................................. 78ms DONE\n  2014_10_12_000000_create_users_table .................................................................................................. 250ms DONE\n  2014_10_12_100000_create_password_reset_tokens_table .................................................................................. 129ms DONE\n  2019_08_19_000000_create_failed_jobs_table ............................................................................................ 179ms DONE\n  2019_12_14_000001_create_personal_access_tokens_table ................................................................................. 240ms DONE\n  2024_03_25_042214_create_companies_table .............................................................................................. 188ms DONE\n  2024_03_25_042227_create_clients_table ................................................................................................ 166ms DONE\n  2024_03_25_042235_create_freelancers_table ............................................................................................ 372ms DONE\n  2024_03_25_042242_create_admins_table ................................................................................................. 330ms DONE\n  2024_03_27_163951_create_super_admins_table ............................................................................................ 58ms DONE\n  2024_05_05_164120_create_job_offers_table ............................................................................................. 311ms DONE\n  2024_05_27_134915_create_portfolios_table ............................................................................................. 109ms DONE\n  2024_05_28_134755_create_files_table .................................................................................................. 388ms DONE\n  2024_05_29_191459_create_images_table ................................................................................................. 270ms DONE\n  2024_06_19_194749_create_job_offer_proposals_table .................................................................................... 110ms DONE\n  2024_06_25_004931_create_conversations_table .......................................................................................... 214ms DONE\n  2024_06_25_004952_create_messages_table ............................................................................................... 114ms DONE\n  2024_06_25_005020_conversation_user .................................................................................................... 64ms DONE\n  2024_06_29_233421_invitations .......................................................................................................... 68ms DONE\n  2024_07_04_020146_create_user_user_table ............................................................................................... 68ms DONE\n  2024_07_04_225329_create_likes_table .................................................................................................. 194ms DONE\n  2024_07_04_225335_create_views_table .................................................................................................. 176ms DONE\n  2024_07_05_221609_create_categories_table ............................................................................................. 138ms DONE\n  2024_07_05_223733_create_sub_categories_table ......................................................................................... 160ms DONE\n  2024_07_06_180157_create_client_offers_table .......................................................................................... 241ms DONE\n  2024_07_06_231715_create_conversation_user_bans_table .................................................................................. 97ms DONE\n  2024_07_06_231913_create_message_likes_table ........................................................................................... 78ms DONE\n  2024_07_07_124326_create_client_offer_proposals_table .................................................................................. 67ms DONE\n  2024_07_08_180157_create_freelancer_offers_table ...................................................................................... 192ms DONE\n  2024_07_08_194326_create_freelancer_offer_proposals_table ............................................................................. 110ms DONE\n\n"
       tags:
         - 'Docker Image Commands'
   /api/command/database/seed:
@@ -4063,7 +4170,7 @@ paths:
               schema:
                 type: object
                 example:
-                  message: "SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint \"clients_username_unique\"\nDETAIL:  Key (username)=(client-client-1) already exists. (Connection: pgsql, SQL: insert into \"clients\" (\"gender\", \"date_of_birth\", \"city\", \"username\", \"updated_at\", \"created_at\") values (male, 2024-07-14, دمشق, client-client-1, 2024-07-14 01:22:51, 2024-07-14 01:22:51) returning \"id\")"
+                  message: "SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint \"clients_username_unique\"\nDETAIL:  Key (username)=(client-client-1) already exists. (Connection: pgsql, SQL: insert into \"clients\" (\"gender\", \"date_of_birth\", \"city\", \"username\", \"updated_at\", \"created_at\") values (male, 2024-07-17, دمشق, client-client-1, 2024-07-17 23:40:16, 2024-07-17 23:40:16) returning \"id\")"
                   exception: Illuminate\Database\UniqueConstraintViolationException
                   file: /home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Connection.php
                   line: 824
@@ -4759,7 +4866,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: "SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint \"clients_username_unique\"\nDETAIL:  Key (username)=(client-client-1) already exists. (Connection: pgsql, SQL: insert into \"clients\" (\"gender\", \"date_of_birth\", \"city\", \"username\", \"updated_at\", \"created_at\") values (male, 2024-07-14, دمشق, client-client-1, 2024-07-14 01:22:51, 2024-07-14 01:22:51) returning \"id\")"
+                    example: "SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint \"clients_username_unique\"\nDETAIL:  Key (username)=(client-client-1) already exists. (Connection: pgsql, SQL: insert into \"clients\" (\"gender\", \"date_of_birth\", \"city\", \"username\", \"updated_at\", \"created_at\") values (male, 2024-07-17, دمشق, client-client-1, 2024-07-17 23:40:16, 2024-07-17 23:40:16) returning \"id\")"
                   exception:
                     type: string
                     example: Illuminate\Database\UniqueConstraintViolationException
@@ -5541,7 +5648,7 @@ paths:
                 message:
                   type: string
                   description: ''
-                  example: qui
+                  example: molestiae
                 image:
                   type: string
                   format: binary
@@ -5575,7 +5682,7 @@ paths:
         in: path
         name: conversationId
         description: ''
-        example: consequuntur
+        example: qui
         required: true
         schema:
           type: string
@@ -5605,7 +5712,7 @@ paths:
         in: path
         name: conversationId
         description: ''
-        example: sint
+        example: provident
         required: true
         schema:
           type: string
@@ -5613,7 +5720,7 @@ paths:
         in: path
         name: messageId
         description: ''
-        example: doloribus
+        example: sed
         required: true
         schema:
           type: string
@@ -5636,7 +5743,7 @@ paths:
                 user_id:
                   type: string
                   description: ''
-                  example: provident
+                  example: consectetur
               required:
                 - user_id
     parameters:
@@ -5644,7 +5751,7 @@ paths:
         in: path
         name: conversation
         description: 'The conversation.'
-        example: quis
+        example: temporibus
         required: true
         schema:
           type: string
@@ -5662,7 +5769,7 @@ paths:
         in: path
         name: message
         description: 'The message.'
-        example: voluptatibus
+        example: ipsum
         required: true
         schema:
           type: string
@@ -5724,11 +5831,11 @@ paths:
                 freelancer_id:
                   type: string
                   description: ''
-                  example: in
+                  example: aspernatur
                 job_offer_id:
                   type: string
                   description: ''
-                  example: exercitationem
+                  example: earum
               required:
                 - freelancer_id
                 - job_offer_id
@@ -5766,7 +5873,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the invitation.'
-        example: aperiam
+        example: eum
         required: true
         schema:
           type: string
@@ -5784,7 +5891,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the invitation.'
-        example: enim
+        example: et
         required: true
         schema:
           type: string
@@ -5802,7 +5909,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the invitation.'
-        example: et
+        example: maiores
         required: true
         schema:
           type: string
@@ -5976,11 +6083,11 @@ paths:
                 headline:
                   type: string
                   description: 'Must be at least 20 characters. Must not be greater than 200 characters.'
-                  example: fmfncsi
+                  example: jauiaydtdxyobqll
                 description:
                   type: string
                   description: 'Must be at least 60 characters. Must not be greater than 4000 characters.'
-                  example: 'Quia occaecati et modi rerum.'
+                  example: 'Cumque quia harum ipsa ipsa et deserunt.'
                 city:
                   type: string
                   description: 'this must be a syrian city.'
@@ -5988,18 +6095,18 @@ paths:
                 gender:
                   type: string
                   description: ''
-                  example: male
+                  example: female
                   enum:
                     - male
                     - female
                 date_of_birth:
                   type: string
-                  description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-14</code>.'
-                  example: '2005-05-01'
+                  description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-17</code>.'
+                  example: '2008-06-18'
                 job_role_id:
                   type: string
                   description: ''
-                  example: hic
+                  example: sit
                 skill_ids:
                   type: object
                   description: 'Must have at least 5 items. Must not have more than 50 items.'
@@ -6094,11 +6201,11 @@ paths:
                 headline:
                   type: string
                   description: 'Must be at least 20 characters. Must not be greater than 200 characters.'
-                  example: zdeozh
+                  example: m
                 description:
                   type: string
                   description: 'Must be at least 60 characters. Must not be greater than 4000 characters.'
-                  example: 'Voluptates maiores molestias eius delectus.'
+                  example: 'Nihil officia officiis ut consequatur voluptas et.'
                 city:
                   type: string
                   description: 'this must be a syrian city.'
@@ -6106,14 +6213,14 @@ paths:
                 gender:
                   type: string
                   description: ''
-                  example: male
+                  example: female
                   enum:
                     - male
                     - female
                 date_of_birth:
                   type: string
-                  description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-14</code>.'
-                  example: '1996-12-17'
+                  description: 'Must be a valid date. Must be a date before or equal to <code>2008-07-17</code>.'
+                  example: '1994-08-24'
                 job_role_id:
                   type: string
                   description: ''
@@ -6186,7 +6293,7 @@ paths:
         in: path
         name: portfolio_id
         description: 'The ID of the portfolio.'
-        example: 15
+        example: 17
         required: true
         schema:
           type: integer
@@ -6257,44 +6364,44 @@ paths:
                 title:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: mj
+                  example: ietkwdypj
                 url:
                   type: string
                   description: 'Must match the regex /\b(?:https?|ftp):\/\/[a-zA-Z0-9-.]+\.[a-zA-Z]{2,}(?:\/\S*)?\b/.'
-                  example: 'bftp://G.U{2,}b'
+                  example: 'b:https|ftp)://SUhD.q{2,}:/SSSSSSb'
                 date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-07-14T01:22:52'
+                  example: '2024-07-17T23:40:16'
                 description:
                   type: string
                   description: 'Must be at least 20 characters.'
-                  example: 'Eos quidem cumque et sed quisquam.'
+                  example: 'Architecto quo non ad officiis.'
                 file_ids:
                   type: array
                   description: ''
                   example:
-                    - 11
+                    - 13
                   items:
                     type: integer
                 image_ids:
                   type: array
                   description: ''
                   example:
-                    - 15
+                    - 11
                   items:
                     type: integer
                 skill_ids:
                   type: array
                   description: ''
                   example:
-                    - 16
+                    - 13
                   items:
                     type: integer
                 section:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: fsopicmjzytpmw
+                  example: aaulc
               required:
                 - title
                 - description
@@ -6368,35 +6475,35 @@ paths:
                 portfolio_id:
                   type: string
                   description: ''
-                  example: ad
+                  example: ut
                 title:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: cufszsorjdtdmybalpc
+                  example: mlllkqugprwjvog
                 url:
                   type: string
                   description: 'Must match the regex /\b(?:https?|ftp):\/\/[a-zA-Z0-9-.]+\.[a-zA-Z]{2,}(?:\/\S*)?\b/.'
-                  example: 'b:https|ftp)://..Y{2,}b'
+                  example: 'b:https|ftp)://O.Y{2,}:/SSSSSS)b'
                 date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-07-14T01:22:52'
+                  example: '2024-07-17T23:40:16'
                 description:
                   type: string
                   description: 'Must be at least 20 characters.'
-                  example: 'Quis minima accusamus et impedit in sapiente.'
+                  example: 'At quod quibusdam qui vitae tempore voluptatum.'
                 file_ids:
                   type: array
                   description: ''
                   example:
-                    - odit
+                    - amet
                   items:
                     type: string
                 image_ids:
                   type: array
                   description: ''
                   example:
-                    - voluptatem
+                    - iure
                   items:
                     type: string
                 skill_ids:
@@ -6408,7 +6515,7 @@ paths:
                 section:
                   type: string
                   description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-                  example: trlypdlphfjcwrilliyer
+                  example: gtrdpe
               required:
                 - portfolio_id
                 - file_ids
@@ -6431,7 +6538,7 @@ paths:
                 portfolio_id:
                   type: string
                   description: ''
-                  example: cupiditate
+                  example: omnis
               required:
                 - portfolio_id
   '/api/freelancer/portfolio/{portfolio_id}/liked-by-me':
@@ -6460,7 +6567,7 @@ paths:
         in: path
         name: portfolio_id
         description: 'The ID of the portfolio.'
-        example: 14
+        example: 13
         required: true
         schema:
           type: integer
@@ -6490,7 +6597,7 @@ paths:
         in: path
         name: portfolio_id
         description: 'The ID of the portfolio.'
-        example: 7
+        example: 18
         required: true
         schema:
           type: integer
@@ -6520,7 +6627,7 @@ paths:
         in: path
         name: portfolio_id
         description: 'The ID of the portfolio.'
-        example: 19
+        example: 8
         required: true
         schema:
           type: integer
@@ -6550,7 +6657,7 @@ paths:
         in: path
         name: portfolio_id
         description: 'The ID of the portfolio.'
-        example: 5
+        example: 1
         required: true
         schema:
           type: integer
@@ -6573,7 +6680,7 @@ paths:
                 status:
                   type: string
                   description: ''
-                  example: active
+                  example: pending
                   enum:
                     - pending
                     - active
@@ -6597,39 +6704,39 @@ paths:
                 sub_category_id:
                   type: integer
                   description: ''
-                  example: 6
+                  example: 19
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: jicsyyrecycsdkfijyhsmyhq
+                  example: flfoowmefnryroylfki
                 description:
                   type: string
                   description: 'Must be at least 100 characters. Must not be greater than 2000 characters.'
-                  example: 'Est deserunt et odit error sed.'
+                  example: 'Voluptatum corporis sunt maiores maxime provident quis.'
                 min_price:
                   type: string
                   description: ''
-                  example: velit
+                  example: sunt
                 max_price:
                   type: string
                   description: ''
-                  example: temporibus
+                  example: ea
                 days:
                   type: string
                   description: 'Must be between 1 and 3 digits. Must not be greater than 100 characters.'
-                  example: jrgsgeshkrotxkjzly
+                  example: cgipekj
                 skill_ids:
                   type: array
                   description: ''
                   example:
-                    - 13
+                    - 5
                   items:
                     type: integer
                 file_ids:
                   type: array
                   description: ''
                   example:
-                    - 16
+                    - 18
                   items:
                     type: integer
               required:
@@ -6698,19 +6805,19 @@ paths:
                 freelancer_offer_id:
                   type: integer
                   description: ''
-                  example: 14
+                  example: 5
                 sub_category_id:
                   type: integer
                   description: ''
-                  example: 11
+                  example: 15
                 title:
                   type: string
                   description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-                  example: kpentkurtrjcetxybgv
+                  example: xlqezszlazktovukknnhxmgj
                 description:
                   type: string
                   description: 'Must be at least 100 characters. Must not be greater than 2000 characters.'
-                  example: 'Aut ipsa et inventore minus.'
+                  example: 'Sit consequatur officiis temporibus quasi.'
                 min_price:
                   type: string
                   description: ''
@@ -6722,19 +6829,19 @@ paths:
                 days:
                   type: string
                   description: 'Must be between 1 and 3 digits. Must not be greater than 100 characters.'
-                  example: perijfsavg
+                  example: vmcvtsffgjxmmwvzjocixdqa
                 skill_ids:
                   type: array
                   description: ''
                   example:
-                    - 8
+                    - 15
                   items:
                     type: integer
                 file_ids:
                   type: array
                   description: ''
                   example:
-                    - 10
+                    - 16
                   items:
                     type: integer
               required:
@@ -6758,7 +6865,7 @@ paths:
                 status:
                   type: string
                   description: ''
-                  example: active
+                  example: pending
                   enum:
                     - pending
                     - active
@@ -6777,7 +6884,7 @@ paths:
         in: path
         name: freelancer_offer_id
         description: 'The ID of the freelancer offer.'
-        example: aut
+        example: et
         required: true
         schema:
           type: string
@@ -6795,7 +6902,7 @@ paths:
         in: path
         name: freelancer_offer_id
         description: 'The ID of the freelancer offer.'
-        example: et
+        example: tempore
         required: true
         schema:
           type: string
@@ -6813,7 +6920,7 @@ paths:
         in: path
         name: freelancer_offer_id
         description: 'The ID of the freelancer offer.'
-        example: iste
+        example: tenetur
         required: true
         schema:
           type: string
@@ -6843,22 +6950,22 @@ paths:
                 sub_category_id:
                   type: integer
                   description: ''
-                  example: 19
+                  example: 10
                 skill_ids:
                   type: array
                   description: ''
                   example:
-                    - 20
+                    - 18
                   items:
                     type: integer
                 min_days:
                   type: integer
                   description: ''
-                  example: 9
+                  example: 15
                 max_days:
                   type: integer
                   description: ''
-                  example: 4
+                  example: 12
                 min_price:
                   type: integer
                   description: ''
@@ -6866,7 +6973,7 @@ paths:
                 max_price:
                   type: integer
                   description: ''
-                  example: 4
+                  example: 18
   '/api/freelancer-offer/client/{freelancer_offer_id}':
     get:
       summary: 'Client Show Offer'
@@ -6916,11 +7023,11 @@ paths:
                 freelancer_offer_id:
                   type: integer
                   description: ''
-                  example: 1
+                  example: 5
                 message:
                   type: string
                   description: 'Must be at least 10 characters. Must not be greater than 255 characters.'
-                  example: qnw
+                  example: dkdakpdlu
               required:
                 - freelancer_offer_id
                 - message
@@ -6943,11 +7050,11 @@ paths:
                 freelancer_offer_proposal_id:
                   type: integer
                   description: ''
-                  example: 19
+                  example: 3
                 message:
                   type: string
                   description: 'Must be at least 10 characters. Must not be greater than 255 characters.'
-                  example: tydaoykfniddjs
+                  example: hfbjfntdjelksfjdrsv
               required:
                 - freelancer_offer_proposal_id
                 - message
@@ -6965,7 +7072,7 @@ paths:
         in: path
         name: freelancer_offer_proposal_id
         description: 'The ID of the freelancer offer proposal.'
-        example: omnis
+        example: inventore
         required: true
         schema:
           type: string
@@ -6988,11 +7095,11 @@ paths:
                 job_offer_id:
                   type: string
                   description: ''
-                  example: voluptatibus
+                  example: expedita
                 message:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: pzmxspjdptuylqxuorrrmnd
+                  example: fuvgawlvuydrkhzpjcz
               required:
                 - job_offer_id
                 - message
@@ -7015,11 +7122,11 @@ paths:
                 job_offer_proposal_id:
                   type: string
                   description: ''
-                  example: dignissimos
+                  example: veniam
                 message:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: xuwv
+                  example: judiqgmkonazj
               required:
                 - job_offer_proposal_id
                 - message
@@ -7057,7 +7164,7 @@ paths:
         in: path
         name: jobOfferProposal_id
         description: 'The ID of the jobOfferProposal.'
-        example: 5
+        example: 4
         required: true
         schema:
           type: integer
@@ -7102,7 +7209,7 @@ paths:
                   type: array
                   description: ''
                   example:
-                    - exercitationem
+                    - rerum
                   items:
                     type: string
               required:
@@ -7121,7 +7228,7 @@ paths:
         in: path
         name: jobOfferProposal_id
         description: 'The ID of the jobOfferProposal.'
-        example: 2
+        example: 8
         required: true
         schema:
           type: integer
@@ -7156,11 +7263,11 @@ paths:
                 job_offer_id:
                   type: integer
                   description: ''
-                  example: 1
+                  example: 4
                 order:
                   type: string
                   description: ''
-                  example: asc
+                  example: desc
                   enum:
                     - asc
                     - desc
@@ -7229,7 +7336,7 @@ paths:
                 title:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: bddepenxlfmbyoss
+                  example: qovngibogbcriageducipzvaa
               required:
                 - file
                 - title
@@ -7445,11 +7552,11 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: et
+                  example: quos
                 category_id:
                   type: integer
                   description: ''
-                  example: 7
+                  example: 6
               required:
                 - name
                 - category_id
@@ -7472,7 +7579,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: necessitatibus
+                  example: neque
               required:
                 - name
     delete:

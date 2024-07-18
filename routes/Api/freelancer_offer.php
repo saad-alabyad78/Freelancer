@@ -63,6 +63,5 @@ Route::group([
         Route::post('proposal/store' , [FreelancerOfferClientController::class , 'createProposal']) ;
         Route::put('proposal' , [FreelancerOfferClientController::class , 'updateProposal']) ;
         Route::delete('proposal/{freelancer_offer_proposal}' , [FreelancerOfferClientController::class , 'deleteProposal']) ;
-
     });
 });
