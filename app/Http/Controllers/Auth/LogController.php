@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\Auth\LogInRequest;
 use App\Http\Resources\Auth\UserResource;
 use Illuminate\Support\Facades\Cache;
+use App\Events\UserOnlineStatusUpdated;
 
 /**
  * @group Auth Managment

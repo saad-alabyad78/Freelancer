@@ -5,16 +5,16 @@ namespace App\Http\Controllers\Chat;
 use App\Models\Message;
 use App\Events\MessageSent;
 use App\Events\UserOnlineStatusUpdated;
-use App\Models\MessageLike;
 use App\Models\Conversation;
 use App\Models\ConversationUserBan;
+use App\Models\User;
+use App\Models\Like;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Chat\SendMessageRequest;
 use App\Http\Requests\Chat\CreateConversationRequest;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Auth;
-
 
 class ConversationController extends Controller
 {
@@ -26,9 +26,24 @@ class ConversationController extends Controller
      */
     public function createConversation(CreateConversationRequest $request)
     {
+        $authUser = $request->user();
+
+        $otherUserId = $request->user_id;
+
+        if (!User::find($otherUserId)) {
+            return response()->json(['message' => 'User not found'], 404);
+        }
+
         $conversation = Conversation::create();
-        $conversation->participants()->attach($request->user_ids);
-        return response()->json($conversation);
+        $conversation->participants()->attach([$authUser->id, $otherUserId]);
+
+        $participants = $conversation->participants()->get();
+
+        return response()->json([
+            'message' => 'Conversation created successfully',
+            'conversation_id' => $conversation->id,
+            'participants' => $participants
+        ], 201);
     }
 
     /**
@@ -48,6 +63,10 @@ class ConversationController extends Controller
             return response()->json(['message' => 'You are banned from this conversation'], 403);
         }
 
+        if (!$conversation->participants()->where('user_id', $request->user()->id)->exists()) {
+            return response()->json(['message' => 'You are not a participant in this conversation'], 403);
+        }
+
         $validated = $request->validated();
 
         $messageData = [
@@ -65,8 +84,6 @@ class ConversationController extends Controller
 
         broadcast(new MessageSent($message))->toOthers();
 
-        Cache::put('user-is-online-' . $request->user()->id, true, now()->addMinutes(5));
-
         return response()->json($message);
     }
 
@@ -76,11 +93,18 @@ class ConversationController extends Controller
      * @param  int  $conversationId
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getMessages($conversationId)
+    public function getMessages(Request $request, $conversationId)
     {
+        $conversation = Conversation::findOrFail($conversationId);
+
+        if (!$conversation->participants()->where('user_id', $request->user()->id)->exists()) {
+            return response()->json(['message' => 'You are not a participant in this conversation'], 403);
+        }
+
         $messages = Message::where('conversation_id', $conversationId)
             ->with('replies', 'parent')
             ->paginate(50);
+
         return response()->json($messages);
     }
 
@@ -103,8 +127,14 @@ class ConversationController extends Controller
      * @param  int  $messageId
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getMessagesByMessageId($conversationId, $messageId)
+    public function getMessagesByMessageId(Request $request, $conversationId, $messageId)
     {
+        $conversation = Conversation::findOrFail($conversationId);
+
+        if (!$conversation->participants()->where('user_id', $request->user()->id)->exists()) {
+            return response()->json(['message' => 'You are not a participant in this conversation'], 403);
+        }
+
         $message = Message::where('conversation_id', $conversationId)
             ->where('id', $messageId)
             ->firstOrFail();
@@ -128,26 +158,64 @@ class ConversationController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $conversationId
+     * @param  int  $userId
      * @return \Illuminate\Http\JsonResponse
      */
-    public function banUser(Request $request, $conversationId)
+    public function banUser(Request $request, $conversationId, $userId)
     {
-        $request->validate([
-            'user_id' => 'required|exists:users,id',
-        ]);
-
         $conversation = Conversation::findOrFail($conversationId);
 
-        if ($conversation->users()->where('user_id', auth('sanctum')->id())->doesntExist()) {
+        if (!$conversation->participants()->where('user_id', $userId)->exists()) {
+            return response()->json(['message' => 'User is not a participant in this conversation'], 403);
+        }
+
+        if (!$conversation->participants()->where('user_id', $request->user()->id)->exists()) {
             return response()->json(['message' => 'You are not a participant in this conversation'], 403);
         }
 
-        $ban = ConversationUserBan::create([
+        if ($request->user()->id == $userId) {
+            return response()->json(['message' => 'You cannot ban yourself from the conversation'], 403);
+        }
+
+        $ban = ConversationUserBan::firstOrCreate([
             'conversation_id' => $conversationId,
-            'user_id' => $request->user_id,
+            'user_id' => $userId,
         ]);
 
-        return response()->json($ban, 201);
+        return response()->json(['message' => 'User banned successfully', 'ban' => $ban]);
+    }
+
+    /**
+     * Unban a user from a conversation.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $conversationId
+     * @param  int  $userId
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function unbanUser(Request $request, $conversationId, $userId)
+    {
+        $authUser = $request->user();
+
+        if (!$authUser->conversations()->where('conversation_id', $conversationId)->exists()) {
+            return response()->json(['message' => 'You are not a participant in this conversation'], 403);
+        }
+
+        $conversation = Conversation::findOrFail($conversationId);
+        if (!$conversation->participants()->where('user_id', $userId)->exists()) {
+            return response()->json(['message' => 'User is not a participant in this conversation'], 404);
+        }
+
+        $ban = ConversationUserBan::where('conversation_id', $conversationId)
+            ->where('user_id', $userId)
+            ->first();
+
+        if ($ban) {
+            $ban->delete();
+            return response()->json(['message' => 'User unbanned successfully']);
+        } else {
+            return response()->json(['message' => 'User is not banned in this conversation'], 404);
+        }
     }
 
     /**
@@ -160,38 +228,20 @@ class ConversationController extends Controller
     public function likeMessage(Request $request, $messageId)
     {
         $message = Message::findOrFail($messageId);
+        $conversation = $message->conversation;
 
-        if ($message->conversation->users()->where('user_id', auth('sanctum')->id())->doesntExist()) {
+        if (!$conversation->participants()->where('user_id', $request->user()->id)->exists()) {
             return response()->json(['message' => 'You are not a participant in this conversation'], 403);
         }
 
-        $like = MessageLike::create([
-            'message_id' => $messageId,
-            'user_id' => auth('sanctum')->id(),
+        $like = Like::firstOrCreate([
+            'user_id' => $request->user()->id,
+            'likable_id' => $messageId,
+            'likable_type' => Message::class,
         ]);
 
-        return response()->json($like, 201);
+        return response()->json(['message' => 'Message liked successfully', 'like' => $like]);
     }
-     /**
-     * Update the online status of the authenticated user.
-     *
-     * This method updates the 'last_seen' and 'online' fields of the authenticated user,
-     * and broadcasts the 'UserOnlineStatusUpdated' event to notify others of the change.
-     *
-     * @authenticated
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function updateOnlineStatus()
-    {
-        $user = auth('sanctum')->user();
-        $user->update(['last_seen' => now(), 'online' => true]);
-
-        broadcast(new UserOnlineStatusUpdated($user->id, true))->toOthers();
-
-        return response()->json(['message' => 'Status updated']);
-    }
-
     /**
      * Get the online status and last seen time of a user by their ID.
      *

@@ -22,8 +22,7 @@ class CreateConversationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_ids' => 'required|array',
-            'user_ids.*' => 'exists:users,id',
+            'user_id' => 'required|exists:users,id',
         ];
     }
 }
