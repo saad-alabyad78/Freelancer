@@ -25,23 +25,24 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      user_ids:
-        name: user_ids
+      user_id:
+        name: user_id
         description: ''
-        required: false
-        example: null
-        type: 'string[]'
+        required: true
+        example: fugiat
+        type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-    cleanBodyParameters: []
+    cleanBodyParameters:
+      user_id: fugiat
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer kfeVaa4b6gDdc3Z5EvP18h6'
+      - 'Bearer aZDf1hd6Pc3gV5k4Ebva86e'
     controller: null
     method: null
     route: null
@@ -68,13 +69,13 @@ endpoints:
         name: conversationId
         description: ''
         required: true
-        example: qui
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      conversationId: qui
+      conversationId: est
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -82,7 +83,7 @@ endpoints:
         name: message
         description: ''
         required: false
-        example: molestiae
+        example: natus
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -106,7 +107,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      message: molestiae
+      message: natus
     fileParameters:
       image: null
     responses: []
@@ -114,7 +115,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cg5fv86e4ak63PdDhEZVba1'
+      - 'Bearer 5ahEbPZD6384gc1Vkdef6va'
     controller: null
     method: null
     route: null
@@ -141,13 +142,13 @@ endpoints:
         name: conversationId
         description: ''
         required: true
-        example: molestiae
+        example: necessitatibus
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      conversationId: molestiae
+      conversationId: necessitatibus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -167,7 +168,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer P135ebhdkv4D6g6aE8facZV'
+      - 'Bearer kaZae31bDcv6Eh5d8fVP4g6'
     controller: null
     method: null
     route: null
@@ -194,7 +195,7 @@ endpoints:
         name: conversationId
         description: ''
         required: true
-        example: provident
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -203,14 +204,14 @@ endpoints:
         name: messageId
         description: ''
         required: true
-        example: sed
+        example: voluptatibus
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      conversationId: provident
-      messageId: sed
+      conversationId: aut
+      messageId: voluptatibus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -230,7 +231,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gb1hava48Vf3cE656dkDZeP'
+      - 'Bearer 8vZEa6k4PaD5c6dh3eg1fVb'
     controller: null
     method: null
     route: null
@@ -273,61 +274,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6khb6fZ4Da8a5Pd1Egecv3V'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: 'api/conversations/{conversation}/ban'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Ban a user from a conversation.'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      conversation:
-        name: conversation
-        description: 'The conversation.'
-        required: true
-        example: temporibus
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      conversation: temporibus
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      user_id:
-        name: user_id
-        description: ''
-        required: true
-        example: consectetur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      user_id: consectetur
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer E6kP5Vh16v38DdcZgae4fab'
+      - 'Bearer 5he3VkaZDEf46av8Pcbgd61'
     controller: null
     method: null
     route: null
@@ -354,13 +301,13 @@ endpoints:
         name: message
         description: 'The message.'
         required: true
-        example: ipsum
+        example: dolorem
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      message: ipsum
+      message: dolorem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -371,7 +318,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fcbP8d5aEv613geDZVkah46'
+      - 'Bearer Zgeaba6438cD6fPdkV15Ehv'
     controller: null
     method: null
     route: null
@@ -379,13 +326,13 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/user/status
+    uri: 'api/conversations/{conversationId}/ban/{userId}'
     metadata:
       groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Ban a user from a conversation.'
       description: ''
       authenticated: true
       custom: []
@@ -393,8 +340,28 @@ endpoints:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
+    urlParameters:
+      conversationId:
+        name: conversationId
+        description: ''
+        required: true
+        example: accusantium
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      userId:
+        name: userId
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      conversationId: accusantium
+      userId: consequatur
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -405,7 +372,61 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer P663veV1fd8gaDk4hc5EabZ'
+      - 'Bearer EavhP614DgeV3kdcf6aZ85b'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/conversations/{conversationId}/unban/{userId}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Unban a user from a conversation.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      conversationId:
+        name: conversationId
+        description: ''
+        required: true
+        example: quasi
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      userId:
+        name: userId
+        description: ''
+        required: true
+        example: dolorem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      conversationId: quasi
+      userId: dolorem
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer e6aVa8Z4E5D31hdcfbkg6vP'
     controller: null
     method: null
     route: null
@@ -419,8 +440,8 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
-      description: ''
+      title: 'Get the online status and last seen time of a user by their ID.'
+      description: "This method retrieves the 'online' status and 'last_seen' timestamp of the specified user."
       authenticated: true
       custom: []
     headers:
@@ -458,7 +479,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Zc45E8DV6dP1hvega63kbaf'
+      - 'Bearer adv8fPe5gDh16Z6a43cbEVk'
     controller: null
     method: null
     route: null
@@ -489,7 +510,7 @@ endpoints:
         name: freelancer_id
         description: ''
         required: true
-        example: aspernatur
+        example: quas
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -498,21 +519,21 @@ endpoints:
         name: job_offer_id
         description: ''
         required: true
-        example: earum
+        example: necessitatibus
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      freelancer_id: aspernatur
-      job_offer_id: earum
+      freelancer_id: quas
+      job_offer_id: necessitatibus
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 8agcv4Ed6akP5Zh6efVbD31'
+      - 'Bearer Pfh56ga4cV8da3E1Zkeb6vD'
     controller: null
     method: null
     route: null
@@ -539,13 +560,13 @@ endpoints:
         name: id
         description: 'The ID of the invitation.'
         required: true
-        example: eum
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: eum
+      id: ut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -556,7 +577,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer bDg66efdc8E3a5VPvkZah41'
+      - 'Bearer bacg6h4EdD6PfZe8a3kVv15'
     controller: null
     method: null
     route: null
@@ -583,13 +604,13 @@ endpoints:
         name: id
         description: 'The ID of the invitation.'
         required: true
-        example: et
+        example: corrupti
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: et
+      id: corrupti
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -600,7 +621,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vEa4be36PDaf651kc8dZVgh'
+      - 'Bearer a3fk16d6PvaeEDcV84b5hZg'
     controller: null
     method: null
     route: null
@@ -627,13 +648,13 @@ endpoints:
         name: id
         description: 'The ID of the invitation.'
         required: true
-        example: maiores
+        example: dolor
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: maiores
+      id: dolor
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -644,7 +665,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer b416dh5ZDv36a8PeEcgaVfk'
+      - 'Bearer PVb5gZhfadc31D6k4v6aeE8'
     controller: null
     method: null
     route: null
@@ -687,7 +708,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VEPg3h6efcaka41ZDb58v6d'
+      - 'Bearer 34cZfdE8Pae6kb61VDg5vha'
     controller: null
     method: null
     route: null
@@ -721,7 +742,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer e8hPaEDgva6c3b165V4dZkf'
+      - 'Bearer vck865a61Ehe4gbZdDf3VPa'
     controller: null
     method: null
     route: null
@@ -764,7 +785,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer D4k8fa65eaE3dghV6Pb1cvZ'
+      - 'Bearer 8Zb6ve5gkVa463DdhfP1aEc'
     controller: null
     method: null
     route: null
