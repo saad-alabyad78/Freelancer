@@ -64,7 +64,7 @@ class FreelancerController extends Controller
         $data = $request->validated() ;
 
         try {
-            //create company
+
             $freelancer = $this->freelancerRepository->create($data);
 
             DB::commit() ;
