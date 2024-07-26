@@ -40,5 +40,5 @@ class JobOfferResource extends JsonResource
             'proposals_count' => $this->proposals_count ,
             'created_at' => $this->created_at ,
         ];
-    }
+}
 }

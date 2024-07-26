@@ -58,7 +58,7 @@ class FreelancerController extends Controller
      *
      */
     public function store(CreateFreelancerRequest $request)
-    {
+    {        
         DB::beginTransaction();
 
         $data = $request->validated() ;

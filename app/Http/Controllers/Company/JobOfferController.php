@@ -130,7 +130,7 @@ class JobOfferController extends Controller
             {
                 $job_offer->skills()->detach() ;
 
-                $skills = Skill::findMany($data['skills_ids']) ;
+                $skills = Skill::findMany($data['skill_ids']) ;
 
                 $job_offer->skills()->saveMany($skills) ;
             }

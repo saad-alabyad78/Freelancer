@@ -36,9 +36,10 @@ class CreateFreelancerRequest extends FormRequest
         'city' => ['required' , new SyrianCityRule()],
         'gender' => ['required' , Rule::in(Gender::$types)],
         'date_of_birth' => ['required' , 'date' , 'before_or_equal:' . Carbon::now()->subYears(16)->toDateString()],
-        'job_role_id' => ['required' , 'exists:job_roles,id'],
+        'job_role_id' => ['required' , 'integer' , 'exists:job_roles,id'],
         'skill_ids' => ['required' , 'array' , 'min:5' , 'max:50'] ,
-        'skills_id.*' => [ 'exists:skills,id' , 'distinct'] ,
+        'skill_ids.*' => ['required' , 'integer' , 'distinct' , 'exists:skills,id' ] ,
         ];
     }
 }
+    
