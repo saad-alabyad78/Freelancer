@@ -4,15 +4,15 @@ namespace App\Models;
 
 use Illuminate\Support\Str;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Support\Facades\Cache;
 
 class User extends Authenticatable
 {
@@ -50,7 +50,7 @@ class User extends Authenticatable
 
     protected function slug(): Attribute
     {
-        $name = $this->first_name . ' ' . $this->last_name . ' ' . $this->id;
+        $name = $this->first_name . ' ' . $this->last_name . ' ' . uniqid();
         return Attribute::make(
             get: fn() => Str::slug($name)
         );
