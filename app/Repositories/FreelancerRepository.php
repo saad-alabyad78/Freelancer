@@ -13,9 +13,9 @@ class FreelancerRepository extends BaseRepository implements IFreelancerReposito
     public function create($data):Freelancer
     {
         if(isset($data['profile_image_id']))
-            $data['profile_image_url'] = Image::findOrFail($data['profile_image_id'])->first() ;
+            $data['profile_image_url'] = Image::findOrFail($data['profile_image_id'])->pluck('url')->first() ;
         if(isset($data['background_image_id']))
-            $data['background_image_url'] = Image::findOrFail($data['background_image_id'])->first();
+            $data['background_image_url'] = Image::findOrFail($data['background_image_id'])->pluck('url')->first();
     
         
         $data['username'] = auth('sanctum')->user()->slug ;
@@ -37,7 +37,7 @@ class FreelancerRepository extends BaseRepository implements IFreelancerReposito
                 'imagable_id' => $freelancer->id ,
                 'imagable_type' => freelancer::class ,
             ]);
-            $data['profile_image_url'] = Image::findOrFail($data['profile_image_id'])->first() ;
+            $data['profile_image_url'] = Image::findOrFail($data['profile_image_id'])->pluck('url')->first() ;
         }
         if($data['background_image_id'] ?? false and $freelancer?->background_image_id ?? false)
         {
@@ -46,7 +46,7 @@ class FreelancerRepository extends BaseRepository implements IFreelancerReposito
                 'imagable_id' => $freelancer->id ,
                 'imagable_type' => freelancer::class ,
             ]);
-            $data['background_image_url'] = Image::findOrFail($data['profile_image_id'])->first() ;
+            $data['background_image_url'] = Image::findOrFail($data['profile_image_id'])->pluck('url')->first() ;
         }
 
         $freelancer->update($data) ;

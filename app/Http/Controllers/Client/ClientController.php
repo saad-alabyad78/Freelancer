@@ -55,9 +55,9 @@ class ClientController extends Controller
         $data = $request->validated();
 
         if($data['profile_image_id'] ?? false)
-            $data['profile_image_url'] = Image::findOrFail($data['profile_image_id'])->first() ;
+            $data['profile_image_url'] = Image::findOrFail($data['profile_image_id'])->pluck('url')->first() ;
         if($data['background_image_url'] ?? false)
-            $data['background_image_url'] = Image::findOrFail($data['background_image_id'])->first();
+            $data['background_image_url'] = Image::findOrFail($data['background_image_id'])->pluck('url')->first();
         
         $data['username'] = auth('sanctum')->user()->slug ;
 
