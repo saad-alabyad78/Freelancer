@@ -22,7 +22,7 @@ Route::group([
     ] , function(){
      Route::post('store' , [FreelancerController::class , 'store'])
         ->withoutMiddleware('role:freelancer')
-        ->withoutMiddleware('role:no_role');
+        ->middleware('role:no_role');
     Route::put('' , [FreelancerController::class , 'update']);
     });
 
