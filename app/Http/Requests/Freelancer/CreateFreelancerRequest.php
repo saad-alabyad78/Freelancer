@@ -27,8 +27,8 @@ class CreateFreelancerRequest extends FormRequest
     {
         return [
         
-        'profile_image_id' => ['exists:images,id'] ,
-        'background_image_id' => ['exists:images,id'] ,
+        'profile_image_id' => ['nullable' , 'exists:images,id'] ,
+        'background_image_id' => ['nullable' , 'exists:images,id'] ,
 
 
         'headline' => ['required' , 'string' , 'min:20' , 'max:200'],

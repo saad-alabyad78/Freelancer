@@ -25,8 +25,8 @@ class CreateCompanyRequest extends FormRequest
         return [
             'industry_name' => ['string' , 'required' , 'exists:industries,name'] ,
 
-            'profile_image_id' => ['exists:images,id' ] ,
-            'background_image_id' => ['exists:images,id' ] ,
+            'profile_image_id' => ['nullable' , 'exists:images,id' ] ,
+            'background_image_id' => ['nullable' , 'exists:images,id' ] ,
 
             'name' => ['required' , 'min:3' , 'max:20' , 'string' , 'unique:companies,name'] ,
             'description' => ['required' , 'string' , 'max:4000' ] ,

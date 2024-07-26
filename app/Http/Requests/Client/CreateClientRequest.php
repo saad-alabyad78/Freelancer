@@ -27,8 +27,8 @@ class CreateClientRequest extends FormRequest
     {
         return [
 
-            'profile_image_id' => ['exists:images,id' ] ,
-            'background_image_id' => ['exists:images,id' ] ,
+            'profile_image_id' => ['nullable' , 'exists:images,id' ] ,
+            'background_image_id' => ['nullable' , 'exists:images,id' ] ,
 
             'date_of_birth' => ['required' , 'date' , 'before_or_equal:' . Carbon::now()->subYears(16)->toDateString()] ,
             'city' => ['required' , new SyrianCityRule() ] ,

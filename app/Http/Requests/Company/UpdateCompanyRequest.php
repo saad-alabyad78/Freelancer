@@ -24,8 +24,8 @@ class UpdateCompanyRequest extends FormRequest
     {
         return [
 
-            'profile_image_id' => ['required_with:profile_image_url' , 'exists:images,id' , 'nullable'] ,
-            'background_image_id' => ['required_with:background_image_id' , 'exists:images,id' , 'nullable'] ,
+            'profile_image_id' => ['nullable' , 'exists:images,id'] ,
+            'background_image_id' => ['nullable' , 'exists:images,id'] ,
 
             'name' => ['min:3' , 'max:20' , 'string' , 'unique:companies,name,'.auth('sanctum')->user()?->role['id']] ,
             'description' => ['string' , 'max:4000' ] ,
