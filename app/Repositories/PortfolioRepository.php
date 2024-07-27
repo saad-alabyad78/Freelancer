@@ -27,11 +27,7 @@ class PortfolioRepository extends BaseRepository implements IPortfolioRepository
 
             if(array_key_exists('file_ids' , $data))
             {
-                $idsArray = array_map( function($item){
-                    return $item['id'];
-                }, $data['file_ids']) ;
-    
-                File::whereIn('id' , $idsArray)
+                File::whereIn('id' , $data['file_ids'])
                      ->whereNull('filable_id')
                      ->whereNull('filable_type')
                      ->update([

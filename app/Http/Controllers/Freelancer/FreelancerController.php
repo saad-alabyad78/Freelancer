@@ -38,11 +38,11 @@ class FreelancerController extends Controller
     public function show(Freelancer $freelancer)
     {
         return FreelancerResource::make($freelancer->load([
-            'skills' ,
-            'job_role'  ,
-            'portfolios.files' ,
-            'portfolios.skills' ,
-            'portfolios.images' ,
+            // 'skills' ,
+            // 'job_role'  ,
+            // 'portfolios.files' ,
+            // 'portfolios.skills' ,
+            // 'portfolios.images' ,
             ])) ;
     }
     /**
