@@ -28,27 +28,24 @@ class PortfolioRepository extends BaseRepository implements IPortfolioRepository
             if(array_key_exists('file_ids' , $data))
             {
                 File::whereIn('id' , $data['file_ids'])
-                     ->whereNull('filable_id')
-                     ->whereNull('filable_type')
-                     ->update([
+                    ->whereNull('filable_id')
+                    ->whereNull('filable_type')
+                    ->update([
                         'filable_id' => $portfolio->id ,
                         'filable_type' => Portfolio::class ,
-                     ]) ;
+                    ]) ;
             }
             
             if(array_key_exists('image_ids' , $data))
             {
-                $idsArray = array_map( function($item){
-                    return $item['id'];
-                }, $data['image_ids']) ;
 
-                Image::whereIn('id' , $idsArray)
-                     ->whereNull('imagable_id')
-                     ->whereNull('imagable_type')
-                     ->update([
+                Image::whereIn('id' , $data['image_ids'])
+                    ->whereNull('imagable_id')
+                    ->whereNull('imagable_type')
+                    ->update([
                         'imagable_id' => $portfolio->id ,
                         'imagable_type' => Portfolio::class ,
-                     ]) ;
+                    ]) ;
             }
             return $portfolio ;
     }
@@ -101,7 +98,7 @@ class PortfolioRepository extends BaseRepository implements IPortfolioRepository
                     ]);
                     
             Image::where('imagable_id' , $portfolio->id)
-                ->whereIn('id' , $data['file_ids'])
+                ->whereIn('id' , $data['image_ids'])
                 ->update([
                     'imagable_id' => $portfolio->id ,
                     'imagable_type' => Portfolio::class ,

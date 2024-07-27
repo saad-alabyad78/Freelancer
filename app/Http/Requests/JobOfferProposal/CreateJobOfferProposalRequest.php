@@ -24,7 +24,6 @@ class CreateJobOfferProposalRequest extends FormRequest
      */
     public function rules(): array
     {
-        var_dump(auth('sanctum')->user()) ;
         return [
             'job_offer_id' => [
                 'required',

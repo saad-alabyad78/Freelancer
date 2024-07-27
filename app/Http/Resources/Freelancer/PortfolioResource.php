@@ -20,7 +20,7 @@ class PortfolioResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        var_dump(Auth::check()) ;
+
         return [
             'id' => $this->id ,
             'title' => $this->title ,
