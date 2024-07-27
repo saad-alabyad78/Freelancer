@@ -29,7 +29,7 @@ class ClientOfferController extends Controller
     public function clientFilter(FilterClientOfferRequest $request)
     {
         $clientOffers = ClientOffer::filter($request->validated())
-        ->where('client_id' , $this->user->role_id)
+        ->where('client_id' , auth('sanctum')->user()->role_id)
         ->with(['skills' , 'sub_category'])
         ->orderByDesc('created_at')
         ->paginate(20) ;
@@ -46,7 +46,7 @@ class ClientOfferController extends Controller
     {
         
         $data = $request->validated() ;
-        $data['client_id'] = $this->user->role_id ;
+        $data['client_id'] = auth('sanctum')->user()->role_id ;
         $data['status'] = ClientOfferStatus::PENDING ;
 
         $clientOffer = ClientOffer::create($data) ;
