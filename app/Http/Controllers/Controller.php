@@ -20,11 +20,5 @@ class Controller extends BaseController
      */
     public function __construct()
     {
-        $this->middleware(function ($request, $next) {
-
-            $this->user = auth('sanctum')->user();
-            
-            return $next($request);
-        });
     }
 }

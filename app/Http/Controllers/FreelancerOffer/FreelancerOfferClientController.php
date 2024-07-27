@@ -65,7 +65,7 @@ class FreelancerOfferClientController extends Controller
     public function createProposal(CreateFreelancerOfferProposalRequest $request)
     {
         $data = $request->validated() ;
-        $data['client_id'] = $this->user->role_id ;
+        $data['client_id'] = auth('sanctum')->user()->role_id ;
         $freelancerOffer = FreelancerOffer::findOrFail($data['freelancer_offer_id'])->first() ;
         $data['freelancer_id'] = $freelancerOffer->freelancer_id ;
         
@@ -101,7 +101,7 @@ class FreelancerOfferClientController extends Controller
      */
     public function deleteProposal(FreelancerOfferProposal $freelancerOfferProposal)
     {
-        if($freelancerOfferProposal->client_id != $this->user->role_id)
+        if($freelancerOfferProposal->client_id != auth('sanctum')->user()->role_id)
         {
             return response()->json(['error'=>'this is not your proposal'],403) ;
         }
