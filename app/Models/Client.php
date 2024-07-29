@@ -11,6 +11,8 @@ class Client extends BaseModel
 {
     use HasFactory;
 
+    protected $with = ['user'] ;
+
     protected $fillable = 
     [
         'profile_image_url' ,

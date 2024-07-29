@@ -16,6 +16,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Freelancer extends BaseModel
 {
     use HasFactory;
+
+    protected $with = ['user'] ;
     protected $fillable = 
     [
         'profile_image_url',

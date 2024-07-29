@@ -2,8 +2,11 @@
 
 namespace App\Http\Resources\ClientOffer;
 
+use App\Http\Resources\Auth\UserResource;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Resources\Storage\FileResource;
+use App\Http\Resources\Client\ClientResource;
 use App\Http\Resources\Category\SkillResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\Category\SubCategoryResource;
@@ -20,6 +23,8 @@ class ClientOfferResource extends JsonResource
         return [
             'id' => $this->id ,
             'client_id' => $this->client_id,
+            'client' => ClientResource::make($this->client) ,
+            'user' => UserResource::make($this->client->user()) ,
             'sub_category' => SubCategoryResource::make($this->whenLoaded('sub_category')),
             'title' => $this->title,
             'status' => $this->status,
