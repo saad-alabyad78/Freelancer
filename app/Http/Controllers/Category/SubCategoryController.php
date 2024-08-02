@@ -7,12 +7,35 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Category\SubCategoryResource;
 use App\Http\Requests\Category\CreateSubCategoryRequest;
+use App\Http\Requests\Category\SubCategorySearchRequest;
 use App\Http\Requests\Category\UpdateSubCategoryRequest;
 /**
- * @group SubCategory Managment
+ * @group SubCategory Management
  */
 class SubCategoryController extends Controller
 {
+    /**
+     * Search SubCategory.
+     * 
+     * search by name or sub name 
+     * 
+     * name = '' to get all
+     * 
+     * the resault with limit 100 entity if
+     * 
+     * @unauthenticated
+     * 
+     * @pagenate
+     * 
+     */
+    public function search(SubCategorySearchRequest $request)
+    {
+        $subCategories = SubCategory::where('name' , 'LIKE' , '%'.$request->input('name' , '' ).'%')
+        ->limit(100) 
+        ->get() ;
+
+        return SubCategoryResource::collection($subCategories) ;
+    }
     /**
      * Display a listing of the SubCategory.
      * 

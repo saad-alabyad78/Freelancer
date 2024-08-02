@@ -2,20 +2,24 @@
 
 namespace App\Http\Controllers\Chat;
 
+use App\Models\Like;
+use App\Models\User;
 use App\Models\Message;
 use App\Events\MessageSent;
-use App\Events\UserOnlineStatusUpdated;
 use App\Models\Conversation;
-use App\Models\ConversationUserBan;
-use App\Models\User;
-use App\Models\Like;
 use Illuminate\Http\Request;
+use App\Models\ConversationUserBan;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
+use App\Events\UserOnlineStatusUpdated;
 use App\Http\Requests\Chat\SendMessageRequest;
 use App\Http\Requests\Chat\CreateConversationRequest;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Auth;
 
+/**
+ * @group Chat Management
+ * 
+ */
 class ConversationController extends Controller
 {
     /**

@@ -2,9 +2,10 @@
 
 namespace App\Http\Resources\ClientOffer;
 
-use App\Http\Resources\Auth\UserResource;
 use App\Models\User;
+use App\Models\Client;
 use Illuminate\Http\Request;
+use App\Http\Resources\Auth\UserResource;
 use App\Http\Resources\Storage\FileResource;
 use App\Http\Resources\Client\ClientResource;
 use App\Http\Resources\Category\SkillResource;
@@ -20,11 +21,13 @@ class ClientOfferResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        $user = User::where('role_id' , $this->client_id)
+                ->where('role_type' , Client::class)->first() ;
         return [
             'id' => $this->id ,
             'client_id' => $this->client_id,
             'client' => ClientResource::make($this->client) ,
-            'user' => UserResource::make($this->client->user()) ,
+            'user' => UserResource::make($user) ,
             'sub_category' => SubCategoryResource::make($this->whenLoaded('sub_category')),
             'title' => $this->title,
             'status' => $this->status,

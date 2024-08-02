@@ -13,7 +13,7 @@ use App\Http\Requests\ClientOffer\CreateClientOfferRequest;
 use App\Http\Requests\ClientOffer\FilterClientOfferRequest;
 use App\Http\Requests\ClientOffer\UpdateClientOfferRequest;
 /**
- * @group Client Offer Managment
+ * @group Client Offer Management
  * 
  */
 class ClientOfferController extends Controller
@@ -44,7 +44,6 @@ class ClientOfferController extends Controller
      */
     public function store(CreateClientOfferRequest $request)
     {
-        
         $data = $request->validated() ;
         $data['client_id'] = auth('sanctum')->user()->role_id ;
         $data['status'] = ClientOfferStatus::PENDING ;
