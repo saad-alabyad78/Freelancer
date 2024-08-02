@@ -1,4 +1,4 @@
-name: Endpoints
+name: 'Chat Management'
 description: ''
 endpoints:
   -
@@ -6,7 +6,7 @@ endpoints:
       - POST
     uri: api/conversations
     metadata:
-      groupName: Endpoints
+      groupName: 'Chat Management'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -27,20 +27,20 @@ endpoints:
         name: user_id
         description: ''
         required: true
-        example: doloribus
+        example: soluta
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      user_id: doloribus
+      user_id: soluta
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer VfE66h5ae8gkaZP31d4cbvD'
+      - 'Bearer v8DgkP4aehc63afd65bZV1E'
     controller: null
     method: null
     route: null
@@ -50,7 +50,7 @@ endpoints:
       - POST
     uri: 'api/conversations/{conversationId}/messages'
     metadata:
-      groupName: Endpoints
+      groupName: 'Chat Management'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -67,13 +67,13 @@ endpoints:
         name: conversationId
         description: ''
         required: true
-        example: fugit
+        example: voluptas
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      conversationId: fugit
+      conversationId: voluptas
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -81,7 +81,7 @@ endpoints:
         name: message
         description: ''
         required: false
-        example: ad
+        example: eligendi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -105,7 +105,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      message: ad
+      message: eligendi
     fileParameters:
       image: null
     responses: []
@@ -113,7 +113,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vfaE5kabgVe4hc636dZ18PD'
+      - 'Bearer g61b634haPkv5Zf8dVaDEce'
     controller: null
     method: null
     route: null
@@ -123,7 +123,7 @@ endpoints:
       - GET
     uri: 'api/conversations/{conversationId}/messages'
     metadata:
-      groupName: Endpoints
+      groupName: 'Chat Management'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -140,13 +140,13 @@ endpoints:
         name: conversationId
         description: ''
         required: true
-        example: beatae
+        example: id
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      conversationId: beatae
+      conversationId: id
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -166,7 +166,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer DVeahE56gk8cfd4Pb3a16Zv'
+      - 'Bearer VDZvb36EcaP186g4hkdfae5'
     controller: null
     method: null
     route: null
@@ -176,7 +176,7 @@ endpoints:
       - GET
     uri: 'api/conversations/{conversationId}/messages/{messageId}'
     metadata:
-      groupName: Endpoints
+      groupName: 'Chat Management'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -193,7 +193,7 @@ endpoints:
         name: conversationId
         description: ''
         required: true
-        example: sed
+        example: autem
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -202,14 +202,14 @@ endpoints:
         name: messageId
         description: ''
         required: true
-        example: facilis
+        example: quia
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      conversationId: sed
-      messageId: facilis
+      conversationId: autem
+      messageId: quia
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -229,7 +229,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kaaZfg5DPdec1v668Vb34Eh'
+      - 'Bearer 4aD3kZvbc6edE56P1gaV8fh'
     controller: null
     method: null
     route: null
@@ -239,7 +239,7 @@ endpoints:
       - GET
     uri: api/conversations
     metadata:
-      groupName: Endpoints
+      groupName: 'Chat Management'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -272,7 +272,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Pf8eE6aD3d6ab5vhkcZg1V4'
+      - 'Bearer Zf5ge43vhkaDac6P618EbdV'
     controller: null
     method: null
     route: null
@@ -282,7 +282,7 @@ endpoints:
       - POST
     uri: 'api/messages/{message}/like'
     metadata:
-      groupName: Endpoints
+      groupName: 'Chat Management'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -299,13 +299,13 @@ endpoints:
         name: message
         description: 'The message.'
         required: true
-        example: facere
+        example: nostrum
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      message: facere
+      message: nostrum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -316,7 +316,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 635haaZbP86kvfcged1E4VD'
+      - 'Bearer 6Ehc31VZ465gkvfPdeDab8a'
     controller: null
     method: null
     route: null
@@ -326,7 +326,7 @@ endpoints:
       - POST
     uri: 'api/conversations/{conversationId}/ban/{userId}'
     metadata:
-      groupName: Endpoints
+      groupName: 'Chat Management'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -343,7 +343,7 @@ endpoints:
         name: conversationId
         description: ''
         required: true
-        example: minima
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -352,14 +352,14 @@ endpoints:
         name: userId
         description: ''
         required: true
-        example: iste
+        example: cumque
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      conversationId: minima
-      userId: iste
+      conversationId: consequatur
+      userId: cumque
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -370,7 +370,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kVPhfce1Dbdaa8E34gv656Z'
+      - 'Bearer 5ZDgfb8aEchPved3V1ak646'
     controller: null
     method: null
     route: null
@@ -380,7 +380,7 @@ endpoints:
       - POST
     uri: 'api/conversations/{conversationId}/unban/{userId}'
     metadata:
-      groupName: Endpoints
+      groupName: 'Chat Management'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -397,7 +397,7 @@ endpoints:
         name: conversationId
         description: ''
         required: true
-        example: neque
+        example: tempora
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -406,14 +406,14 @@ endpoints:
         name: userId
         description: ''
         required: true
-        example: quod
+        example: inventore
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      conversationId: neque
-      userId: quod
+      conversationId: tempora
+      userId: inventore
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -424,7 +424,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dfcPDV8aEh1k64ev35gb6aZ'
+      - 'Bearer Pb681kehagvfa65d34ZVEDc'
     controller: null
     method: null
     route: null
@@ -434,7 +434,7 @@ endpoints:
       - GET
     uri: 'api/user/{userId}/status'
     metadata:
-      groupName: Endpoints
+      groupName: 'Chat Management'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -477,313 +477,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer agkV6ZPv5dhEf3e4a6b1D8c'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/invitations
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Send an invitation.'
-      description: 'Sends an invitation from a company to a freelancer.'
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      freelancer_id:
-        name: freelancer_id
-        description: ''
-        required: true
-        example: maiores
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      job_offer_id:
-        name: job_offer_id
-        description: ''
-        required: true
-        example: vel
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      freelancer_id: maiores
-      job_offer_id: vel
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer Pfhv1Dc8dEZea6kg3a4V56b'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/invitations/{id}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Delete an invitation.'
-      description: 'Deletes a specific invitation.'
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the invitation.'
-        required: true
-        example: provident
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      id: provident
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer ZkP8b4g636hVd5acfDE1eva'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: 'api/invitations/{id}/accept'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Accept an invitation.'
-      description: 'Accepts a specific invitation by the freelancer.'
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the invitation.'
-        required: true
-        example: nam
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      id: nam
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer davf6V34gh6b58DEeZP1cak'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: 'api/invitations/{id}/reject'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Reject an invitation.'
-      description: 'Rejects a specific invitation by the freelancer.'
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the invitation.'
-        required: true
-        example: qui
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      id: qui
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer V6avZ3aDkcg15ed8b6hPE4f'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/invitations
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Get invitations.'
-      description: 'Retrieves all invitations for the authenticated user (company or freelancer).'
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer v6c6fVZb1kPDdgE4a3aeh85'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/test
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer eakfdPV66EgD34bh51aZ8cv'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/test
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer ZvPb6fe531hDd4akaVEcg86'
+      - 'Bearer baDgdVf1aP4ZE6v38e5k6ch'
     controller: null
     method: null
     route: null

@@ -25,13 +25,13 @@ endpoints:
         name: command_string
         description: ''
         required: true
-        example: dicta
+        example: non
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      command_string: dicta
+      command_string: non
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -42,7 +42,7 @@ endpoints:
         status: 500
         content: |-
           {
-              "message": "The command \"dicta\" does not exist.",
+              "message": "The command \"non\" does not exist.",
               "exception": "Symfony\\Component\\Console\\Exception\\CommandNotFoundException",
               "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Application.php",
               "line": 159,
@@ -537,7 +537,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 146hZc3k5a6VEge8dvfbDaP'
+      - 'Bearer hfP3Zaeb8E1VaD4v65gdc6k'
     controller: null
     method: null
     route: null
@@ -571,48 +571,48 @@ endpoints:
         status: 200
         content: |2+
 
-            Dropping all tables ........................................... 2,119ms DONE
+            Dropping all tables ........................................... 1,631ms DONE
 
              INFO  Preparing database.  
 
-            Creating migration table ........................................ 964ms DONE
+            Creating migration table ........................................ 546ms DONE
 
              INFO  Running migrations.  
 
-            2003_05_13_221258_create_jobs_table ............................. 244ms DONE
-            2004_02_05_163918_create_job_roles_table ........................ 123ms DONE
-            2004_05_03_141844_create_industries_table ........................ 57ms DONE
-            2004_05_05_163837_create_skills_table ........................... 163ms DONE
-            2004_05_05_164036_create_skillables_table ....................... 157ms DONE
-            2014_10_12_000000_create_users_table ............................ 474ms DONE
-            2014_10_12_100000_create_password_reset_tokens_table ............ 131ms DONE
-            2019_08_19_000000_create_failed_jobs_table ...................... 189ms DONE
-            2019_12_14_000001_create_personal_access_tokens_table ........... 227ms DONE
-            2024_03_25_042214_create_companies_table ........................ 167ms DONE
-            2024_03_25_042227_create_clients_table .......................... 299ms DONE
-            2024_03_25_042235_create_freelancers_table ...................... 248ms DONE
-            2024_03_25_042242_create_admins_table ............................ 58ms DONE
-            2024_03_27_163951_create_super_admins_table ...................... 58ms DONE
-            2024_05_05_164120_create_job_offers_table ....................... 332ms DONE
-            2024_05_27_134915_create_portfolios_table ....................... 135ms DONE
-            2024_05_28_134755_create_files_table ............................ 324ms DONE
-            2024_05_29_191459_create_images_table ........................... 441ms DONE
-            2024_06_19_194749_create_job_offer_proposals_table ............... 63ms DONE
-            2024_06_25_004931_create_conversations_table ..................... 63ms DONE
-            2024_06_25_004952_create_messages_table ......................... 130ms DONE
-            2024_06_25_005020_conversation_user ............................. 111ms DONE
-            2024_06_29_233421_invitations .................................... 78ms DONE
-            2024_07_04_020146_create_user_user_table ......................... 84ms DONE
-            2024_07_04_225329_create_likes_table ............................ 304ms DONE
-            2024_07_04_225335_create_views_table ............................ 165ms DONE
-            2024_07_05_221609_create_categories_table ........................ 98ms DONE
-            2024_07_05_223733_create_sub_categories_table ................... 121ms DONE
-            2024_07_06_180157_create_client_offers_table .................... 280ms DONE
-            2024_07_06_231715_create_conversation_user_bans_table ........... 103ms DONE
-            2024_07_07_124326_create_client_offer_proposals_table ............ 69ms DONE
-            2024_07_08_180157_create_freelancer_offers_table ................ 188ms DONE
-            2024_07_08_194326_create_freelancer_offer_proposals_table ........ 90ms DONE
-            2024_07_17_201006_add_online_to_users_table ....................... 2ms DONE
+            2003_05_13_221258_create_jobs_table ............................. 190ms DONE
+            2004_02_05_163918_create_job_roles_table ........................ 156ms DONE
+            2004_05_03_141844_create_industries_table ....................... 104ms DONE
+            2004_05_05_163837_create_skills_table ............................ 98ms DONE
+            2004_05_05_164036_create_skillables_table ....................... 173ms DONE
+            2014_10_12_000000_create_users_table ............................ 232ms DONE
+            2014_10_12_100000_create_password_reset_tokens_table ............. 98ms DONE
+            2019_08_19_000000_create_failed_jobs_table ...................... 169ms DONE
+            2019_12_14_000001_create_personal_access_tokens_table ........... 241ms DONE
+            2024_03_25_042214_create_companies_table ........................ 180ms DONE
+            2024_03_25_042227_create_clients_table .......................... 183ms DONE
+            2024_03_25_042235_create_freelancers_table ...................... 158ms DONE
+            2024_03_25_042242_create_admins_table ........................... 107ms DONE
+            2024_03_27_163951_create_super_admins_table ...................... 59ms DONE
+            2024_05_05_164120_create_job_offers_table ....................... 303ms DONE
+            2024_05_27_134915_create_portfolios_table ....................... 154ms DONE
+            2024_05_28_134755_create_files_table ............................ 256ms DONE
+            2024_05_29_191459_create_images_table ........................... 232ms DONE
+            2024_06_19_194749_create_job_offer_proposals_table .............. 107ms DONE
+            2024_06_25_004931_create_conversations_table ..................... 58ms DONE
+            2024_06_25_004952_create_messages_table ......................... 112ms DONE
+            2024_06_25_005020_conversation_user .............................. 58ms DONE
+            2024_06_29_233421_invitations .................................... 71ms DONE
+            2024_07_04_020146_create_user_user_table ......................... 60ms DONE
+            2024_07_04_225329_create_likes_table ............................ 221ms DONE
+            2024_07_04_225335_create_views_table ............................ 205ms DONE
+            2024_07_05_221609_create_categories_table ........................ 97ms DONE
+            2024_07_05_223733_create_sub_categories_table ................... 131ms DONE
+            2024_07_06_180157_create_client_offers_table .................... 191ms DONE
+            2024_07_06_231715_create_conversation_user_bans_table ............ 73ms DONE
+            2024_07_07_124326_create_client_offer_proposals_table ............ 83ms DONE
+            2024_07_08_180157_create_freelancer_offers_table ................ 265ms DONE
+            2024_07_08_194326_create_freelancer_offer_proposals_table ........ 85ms DONE
+            2024_07_17_201006_add_online_to_users_table ....................... 1ms DONE
 
         headers:
           content-type: 'text/html; charset=UTF-8'
@@ -626,7 +626,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer adc3ka6bE15vhgPVZ4f8eD6'
+      - 'Bearer ahf3154cvZPaeb6k6gVDdE8'
     controller: null
     method: null
     route: null
@@ -660,7 +660,7 @@ endpoints:
         status: 500
         content: |-
           {
-              "message": "SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint \"clients_username_unique\"\nDETAIL:  Key (username)=(client-client-1) already exists. (Connection: pgsql, SQL: insert into \"clients\" (\"gender\", \"date_of_birth\", \"city\", \"username\", \"updated_at\", \"created_at\") values (male, 2024-07-29, \u062f\u0645\u0634\u0642, client-client-1, 2024-07-29 23:32:17, 2024-07-29 23:32:17) returning \"id\")",
+              "message": "SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint \"clients_username_unique\"\nDETAIL:  Key (username)=(client-client-1) already exists. (Connection: pgsql, SQL: insert into \"clients\" (\"gender\", \"date_of_birth\", \"city\", \"username\", \"updated_at\", \"created_at\") values (male, 2024-08-02, \u062f\u0645\u0634\u0642, client-client-1, 2024-08-02 13:10:24, 2024-08-02 13:10:24) returning \"id\")",
               "exception": "Illuminate\\Database\\UniqueConstraintViolationException",
               "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
               "line": 824,
@@ -1482,7 +1482,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fhPg8vVDEZkdba3ea4c1566'
+      - 'Bearer 364k6hDg8aZ5VePa1Efvbdc'
     controller: null
     method: null
     route: null

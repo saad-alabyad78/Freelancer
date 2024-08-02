@@ -1,58 +1,16 @@
-name: 'Category Managment'
+name: 'Client Offer Managment'
 description: ''
 endpoints:
   -
     httpMethods:
       - POST
-    uri: api/category/industry/search
+    uri: api/client-offer/admin/admin-filter
     metadata:
-      groupName: 'Category Managment'
+      groupName: 'Client Offer Managment'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: |-
-        search industry
-        get first 100 match
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: ''
-        required: false
-        example: quo
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      name: quo
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/category/industry/chunk/insert
-    metadata:
-      groupName: 'Category Managment'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'insert new Industries'
+      title: 'Admin-Filter List Client Offers'
       description: ''
       authenticated: true
       custom: []
@@ -64,15 +22,28 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    bodyParameters:
+      status:
+        name: status
+        description: ''
+        required: false
+        example: cloused
+        type: string
+        enumValues:
+          - pending
+          - active
+          - cloused
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      status: cloused
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 8kvh64ZVEbae5g3Pcdf61Da'
+      - 'Bearer 4a5V1bgfvc8hPa36kdZ6DeE'
     controller: null
     method: null
     route: null
@@ -80,256 +51,43 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/category/skill/search
+    uri: 'api/client-offer/admin/{client_offer_id}/accept'
     metadata:
-      groupName: 'Category Managment'
+      groupName: 'Client Offer Managment'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: |-
-        search skill
-        get first 100 match
+      title: 'Admin Accept'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: ''
-        required: false
+    urlParameters:
+      client_offer_id:
+        name: client_offer_id
+        description: 'The ID of the client offer.'
+        required: true
         example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-      job_role_id:
-        name: job_role_id
-        description: ''
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      name: et
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/category/skill/chunk/insert
-    metadata:
-      groupName: 'Category Managment'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'insert new skills'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer PZf466ebcEV31v5h8adakgD'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/category/job_role/search
-    metadata:
-      groupName: 'Category Managment'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'search for the job role'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: ''
-        required: false
-        example: occaecati
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      name: occaecati
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":[{"id":1,"name":"android developer"},{"id":1,"name":"android developer"}]}'
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/category/job_role/chunk/insert
-    metadata:
-      groupName: 'Category Managment'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'insert new job roles'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer Z6ab8Vg6ehD3cav41PkEdf5'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/category/category
-    metadata:
-      groupName: 'Category Managment'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Display a listing of the category.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":[{"id":1,"name":"web design","sub_categories":[{"id":1,"name":"ui","category_id":1}]},{"id":2,"name":"dancing","sub_categories":[{"id":2,"name":"western","category_id":2},{"id":3,"name":"eastern","category_id":2}]}],"links":{"first":"http:\/\/localhost\/api\/category\/category?page=1","last":"http:\/\/localhost\/api\/category\/category?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/category\/category?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/category\/category","per_page":20,"to":2,"total":2}}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '55'
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/category/category/{category_id}'
-    metadata:
-      groupName: 'Category Managment'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Show Category.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      category_id:
-        name: category_id
-        description: 'The ID of the category.'
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
     cleanUrlParameters:
-      category_id: 1
+      client_offer_id: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":{"id":1,"name":"web design","sub_categories":[{"id":1,"name":"ui","category_id":1}]}}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '54'
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
+    responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer vP1hVebD38ka5cf4Zdg6Ea6'
     controller: null
     method: null
     route: null
@@ -337,57 +95,13 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/category/category/store
+    uri: 'api/client-offer/admin/{client_offer_id}/reject'
     metadata:
-      groupName: 'Category Managment'
+      groupName: 'Client Offer Managment'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Store Category.'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: ''
-        required: true
-        example: reprehenderit
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      name: reprehenderit
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer afVg5kad631ecPZEh6D84vb'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/category/category/{category_id}'
-    metadata:
-      groupName: 'Category Managment'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Update Category Name.'
+      title: 'Admin Reject'
       description: ''
       authenticated: true
       custom: []
@@ -396,38 +110,28 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      category_id:
-        name: category_id
-        description: 'The ID of the category.'
+      client_offer_id:
+        name: client_offer_id
+        description: 'The ID of the client offer.'
         required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      category_id: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: ''
-        required: true
-        example: sint
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-    cleanBodyParameters:
-      name: sint
+    cleanUrlParameters:
+      client_offer_id: est
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6ekP3EbvZ5f6hac8g14DaVd'
+      - 'Bearer 56hefEaP3V64cbDdgv8Za1k'
     controller: null
     method: null
     route: null
@@ -435,14 +139,14 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/category/category/{category_id}'
+    uri: 'api/client-offer/admin/{client_offer_id}'
     metadata:
-      groupName: 'Category Managment'
+      groupName: 'Client Offer Managment'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Remove Category'
-      description: 'SubCategory will be removed'
+      title: 'Admin Delete'
+      description: ''
       authenticated: true
       custom: []
     headers:
@@ -450,17 +154,17 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      category_id:
-        name: category_id
-        description: 'The ID of the category.'
+      client_offer_id:
+        name: client_offer_id
+        description: 'The ID of the client offer.'
         required: true
-        example: 1
-        type: integer
+        example: ab
+        type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      category_id: 1
+      client_offer_id: ab
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -471,7 +175,320 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6ED1e3fadackV856b4PhZgv'
+      - 'Bearer Z8e3vaa5hgd4f1Dk66EcVbP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/client-offer/freelancer/freelancer-filter
+    metadata:
+      groupName: 'Client Offer Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Freelancer Filter'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      status:
+        name: status
+        description: ''
+        required: false
+        example: active
+        type: string
+        enumValues:
+          - active
+          - cloused
+        exampleWasSpecified: false
+        custom: []
+      sub_category_id:
+        name: sub_category_id
+        description: ''
+        required: false
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      skill_ids:
+        name: skill_ids
+        description: ''
+        required: false
+        example:
+          - 20
+        type: 'integer[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      min_days:
+        name: min_days
+        description: ''
+        required: false
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      max_days:
+        name: max_days
+        description: ''
+        required: false
+        example: 4
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      min_price:
+        name: min_price
+        description: ''
+        required: false
+        example: 11
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      max_price:
+        name: max_price
+        description: ''
+        required: false
+        example: 6
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      status: active
+      sub_category_id: 17
+      skill_ids:
+        - 20
+      min_days: 2
+      max_days: 4
+      min_price: 11
+      max_price: 6
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Vd863v65aE1b4ehDPZkgacf'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/client-offer/freelancer/{client_offer_id}'
+    metadata:
+      groupName: 'Client Offer Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Freelance Show Offer'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      client_offer_id:
+        name: client_offer_id
+        description: 'The ID of the client offer.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      client_offer_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer vdehg6ck645b1VDa8a3fEPZ'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/client-offer/freelancer/proposal/store
+    metadata:
+      groupName: 'Client Offer Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Freelancer Propose'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      client_offer_id:
+        name: client_offer_id
+        description: ''
+        required: true
+        example: 11
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      message:
+        name: message
+        description: 'Must be at least 10 characters. Must not be greater than 255 characters.'
+        required: true
+        example: sugobhiuuxs
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      client_offer_id: 11
+      message: sugobhiuuxs
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer f46gvVP8eD6bkhd3caa15ZE'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: api/client-offer/freelancer/proposal
+    metadata:
+      groupName: 'Client Offer Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Freelancer Update Proposal Message'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      client_offer_proposal_id:
+        name: client_offer_proposal_id
+        description: ''
+        required: true
+        example: 4
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      message:
+        name: message
+        description: 'Must be at least 10 characters. Must not be greater than 255 characters.'
+        required: true
+        example: bzbxzgsnuifbkwbwwbzidtct
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      client_offer_proposal_id: 4
+      message: bzbxzgsnuifbkwbwwbzidtct
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer a85dDgZ6P1kaeEchf6V4b3v'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/client-offer/freelancer/proposal/{client_offer_proposal_id}'
+    metadata:
+      groupName: 'Client Offer Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Freelancer Delete Proposal'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      client_offer_proposal_id:
+        name: client_offer_proposal_id
+        description: 'The ID of the client offer proposal.'
+        required: true
+        example: possimus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      client_offer_proposal_id: possimus
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer akhZdfg6Pa8bV3ce5v4ED61'
     controller: null
     method: null
     route: null
