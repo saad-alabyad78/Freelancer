@@ -1,4 +1,4 @@
-name: 'JobOffer-Proposal Managment'
+name: 'JobOffer-Proposal Management'
 description: ''
 endpoints:
   -
@@ -6,7 +6,7 @@ endpoints:
       - POST
     uri: api/job-offer-proposal/store
     metadata:
-      groupName: 'JobOffer-Proposal Managment'
+      groupName: 'JobOffer-Proposal Management'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -27,7 +27,7 @@ endpoints:
         name: job_offer_id
         description: ''
         required: true
-        example: dolore
+        example: similique
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -36,21 +36,21 @@ endpoints:
         name: message
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: uffto
+        example: cgaq
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      job_offer_id: dolore
-      message: uffto
+      job_offer_id: similique
+      message: cgaq
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Ve43DgvEha5a61kf6Z8cdPb'
+      - 'Bearer ebaZd1vDV48636faEkgcPh5'
     controller: null
     method: null
     route: null
@@ -60,7 +60,7 @@ endpoints:
       - PUT
     uri: api/job-offer-proposal
     metadata:
-      groupName: 'JobOffer-Proposal Managment'
+      groupName: 'JobOffer-Proposal Management'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -83,7 +83,7 @@ endpoints:
         name: job_offer_proposal_id
         description: ''
         required: true
-        example: maxime
+        example: quaerat
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -92,21 +92,21 @@ endpoints:
         name: message
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: vgqwsq
+        example: pkufeogdlihqrvj
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      job_offer_proposal_id: maxime
-      message: vgqwsq
+      job_offer_proposal_id: quaerat
+      message: pkufeogdlihqrvj
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ZE4vgc8Deaf6kP5b13hd6Va'
+      - 'Bearer Pfhkacvg6d6e14VaE583ZbD'
     controller: null
     method: null
     route: null
@@ -116,7 +116,7 @@ endpoints:
       - DELETE
     uri: 'api/job-offer-proposal/{jobOfferProposal_id}'
     metadata:
-      groupName: 'JobOffer-Proposal Managment'
+      groupName: 'JobOffer-Proposal Management'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -133,13 +133,13 @@ endpoints:
         name: jobOfferProposal_id
         description: 'The ID of the jobOfferProposal.'
         required: true
-        example: 12
+        example: 13
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      jobOfferProposal_id: 12
+      jobOfferProposal_id: 13
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -150,7 +150,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hak6bev5gE1P3VDfZa6d48c'
+      - 'Bearer Dbe38kf664hZdPvEaacV1g5'
     controller: null
     method: null
     route: null
@@ -160,7 +160,7 @@ endpoints:
       - GET
     uri: api/job-offer-proposal/index
     metadata:
-      groupName: 'JobOffer-Proposal Managment'
+      groupName: 'JobOffer-Proposal Management'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -195,7 +195,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aaDfgVh4k5c18Pv6eZb63dE'
+      - 'Bearer PV681gkahb53a4ZEcedvf6D'
     controller: null
     method: null
     route: null
@@ -205,7 +205,7 @@ endpoints:
       - POST
     uri: api/job-offer-proposal/reject
     metadata:
-      groupName: 'JobOffer-Proposal Managment'
+      groupName: 'JobOffer-Proposal Management'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -230,21 +230,21 @@ endpoints:
         description: ''
         required: true
         example:
-          - sapiente
+          - cupiditate
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
       job_offer_proposal_ids:
-        - sapiente
+        - cupiditate
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1aE8hc5V6abDPkgevf63Zd4'
+      - 'Bearer b58aV3fcv1Z64e6agPdDhkE'
     controller: null
     method: null
     route: null
@@ -254,7 +254,7 @@ endpoints:
       - POST
     uri: 'api/job-offer-proposal/accept/{jobOfferProposal_id}'
     metadata:
-      groupName: 'JobOffer-Proposal Managment'
+      groupName: 'JobOffer-Proposal Management'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -274,13 +274,13 @@ endpoints:
         name: jobOfferProposal_id
         description: 'The ID of the jobOfferProposal.'
         required: true
-        example: 11
+        example: 20
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      jobOfferProposal_id: 11
+      jobOfferProposal_id: 20
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -291,7 +291,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vEDk64a81VaP5dgcZ3eh6bf'
+      - 'Bearer 68eaEPvk1Za6b35hfDgVc4d'
     controller: null
     method: null
     route: null
@@ -301,7 +301,7 @@ endpoints:
       - GET
     uri: api/job-offer-proposal/filter
     metadata:
-      groupName: 'JobOffer-Proposal Managment'
+      groupName: 'JobOffer-Proposal Management'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -322,7 +322,7 @@ endpoints:
         name: job_offer_id
         description: ''
         required: false
-        example: 9
+        example: 3
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -331,7 +331,7 @@ endpoints:
         name: order
         description: ''
         required: false
-        example: desc
+        example: asc
         type: string
         enumValues:
           - asc
@@ -339,8 +339,8 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      job_offer_id: 9
-      order: desc
+      job_offer_id: 3
+      order: asc
     fileParameters: []
     responses:
       -
@@ -356,7 +356,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4ak65vcDfEba8V3PZ61gedh'
+      - 'Bearer 6kv1dcDEVaf6b3e8gha4P5Z'
     controller: null
     method: null
     route: null
@@ -366,7 +366,7 @@ endpoints:
       - GET
     uri: 'api/job-offer-proposal/{jobOfferProposal_id}'
     metadata:
-      groupName: 'JobOffer-Proposal Managment'
+      groupName: 'JobOffer-Proposal Management'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -383,13 +383,13 @@ endpoints:
         name: jobOfferProposal_id
         description: 'The ID of the jobOfferProposal.'
         required: true
-        example: 3
+        example: 9
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      jobOfferProposal_id: 3
+      jobOfferProposal_id: 9
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -409,7 +409,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g4ZEcfea6v1V63dbD5kh8Pa'
+      - 'Bearer dDk6gPVhc1b3vZ5f4aE86ae'
     controller: null
     method: null
     route: null

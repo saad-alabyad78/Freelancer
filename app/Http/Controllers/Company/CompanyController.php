@@ -18,13 +18,24 @@ use App\Http\Requests\Company\UpdateCompanyRequest;
 use App\Http\Requests\Company\CreateCompanyImageRequest;
 
 /**
- * @group Company Managment
+ * @group Company Management
  *
  */
 class CompanyController extends Controller
 {
     public function __construct(protected ICompanyRepository $companyRepository)
     {}
+
+    /**
+     * All Companies
+     * 
+     * paginate 20
+     */
+    public function index()
+    {
+        $companies = Company::paginate(20) ;
+        return CompanyResource::collection($companies) ;
+    }
 
     /**
      * Store New Company .

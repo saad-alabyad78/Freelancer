@@ -6,7 +6,7 @@ use App\Constants\Gender;
 use App\Models\Freelancer;
 use App\Constants\LocationType;
 use Illuminate\Validation\Rule;
-use App\Constants\AttendenceType;
+use App\Constants\AttendanceType;
 use App\Constants\JobOfferStatus;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -30,8 +30,8 @@ class JobOfferForFreelancersRequest extends FormRequest
         return [
             'company_id' => ['exists:companies,id'] ,
             'location_type' => ['string', Rule::in(LocationType::$types)],
-            'attendence_type' => ['string', Rule::in(AttendenceType::$types)],
-            'status' => ['string' , Rule::in([JobOfferStatus::AVTIVE , JobOfferStatus::CLOUSED])],
+            'attendance_type' => ['string', Rule::in(AttendanceType::$types)],
+            'status' => ['string' , Rule::in([JobOfferStatus::ACTIVE , JobOfferStatus::CLOUSED])],
             'job_role_id' => ['integer' , 'exists:job_roles,id'] ,  
             'max_salary' => ['integer'] ,
             'min_salary' => ['integer'] ,

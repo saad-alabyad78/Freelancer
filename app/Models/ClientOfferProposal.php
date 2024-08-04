@@ -17,6 +17,8 @@ class ClientOfferProposal extends Model
         'client_id' ,
         'client_offer_id' ,
         'message' ,
+        'days' ,
+        'price' ,
         'accepted_at' ,
         'rejected_at' ,
         'created_at' ,

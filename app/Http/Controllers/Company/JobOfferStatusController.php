@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\Company\JobOfferResource;
 use App\Http\Requests\Company\ChangeJobOfferStatusRequest;
 /**
- * @group Company Managment
+ * @group Company Management
  **/
 class JobOfferStatusController extends Controller
 {

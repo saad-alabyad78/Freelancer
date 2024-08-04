@@ -27,9 +27,11 @@ class CreateClientOfferProposalRequest extends FormRequest
             'client_offer_id' => [
                 'required' , 
                 'integer' ,
-                Rule::exists('client_offers' , 'id')->where('status' , ClientOfferStatus::AVTIVE) ,
+                Rule::exists('client_offers' , 'id')->where('status' , ClientOfferStatus::ACTIVE) ,
             ] ,
             'message' => ['required' , 'string' , 'min:10' , 'max:255'] ,
+            'days' => ['integer'] ,
+            'price' => ['integer']
         ];
     }
 }

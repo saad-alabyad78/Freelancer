@@ -1,0 +1,160 @@
+name: ContactMessages
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/contact-message
+    metadata:
+      groupName: ContactMessages
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store contact message for any one'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: rzadqqkxdlqxiucgijffkb
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      email:
+        name: email
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: jordan89@example.net
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      phone:
+        name: phone
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: hhq
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      message:
+        name: message
+        description: 'Must not be greater than 40000 characters.'
+        required: true
+        example: lk
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      name: rzadqqkxdlqxiucgijffkb
+      email: jordan89@example.net
+      phone: hhq
+      message: lk
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/contact-message
+    metadata:
+      groupName: ContactMessages
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Paginate contact messages(admin)'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Z6DPbEaa61vk3fgh4d8Vec5'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/contact-message/{contactMessage_id}'
+    metadata:
+      groupName: ContactMessages
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete message(admin)'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      contactMessage_id:
+        name: contactMessage_id
+        description: 'The ID of the contactMessage.'
+        required: true
+        example: 4
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      contactMessage_id: 4
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ace3vEZ64D8VPd56hkg1afb'
+    controller: null
+    method: null
+    route: null
+    custom: []

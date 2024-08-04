@@ -5,13 +5,18 @@ namespace App\Http\Controllers\ClientOffer;
 use App\Models\File;
 use App\Models\ClientOffer;
 use Illuminate\Http\Request;
+use App\Models\ClientOfferProposal;
 use App\Constants\ClientOfferStatus;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ClientOffer\GetProposalsRequest;
 use App\Http\Resources\ClientOffer\ClientOfferResource;
-
 use App\Http\Requests\ClientOffer\CreateClientOfferRequest;
 use App\Http\Requests\ClientOffer\FilterClientOfferRequest;
 use App\Http\Requests\ClientOffer\UpdateClientOfferRequest;
+
+use App\Http\Requests\ClientOffer\ClientAcceptProposalsRequest;
+use App\Http\Requests\ClientOffer\ClientRejectProposalsRequest;
+use App\Http\Resources\ClientOffer\ClientOfferProposalResource;
 /**
  * @group Client Offer Management
  * 
@@ -20,6 +25,68 @@ class ClientOfferController extends Controller
 {
     public function __construct(){
         $this->middleware('role:client');
+    }
+
+    /**
+     * Accept Proposal
+     */
+    
+    public function acceptProposal(ClientAcceptProposalsRequest $request)
+    {
+        $proposal = ClientOfferProposal::where('id' , $request->input('proposal_id'))
+        ->first() ;
+
+        $proposal->update(['accepted_at' => now()->toDateTimeString()]) ;
+
+        ClientOfferProposal::where('client_offer_id' , $proposal->client_offer_id)
+        ->whereNot('id' , $proposal->id)
+        ->update(['rejected_at' => now()->toDateTimeString()]) ;
+
+        $offer = ClientOffer::where('id' , $proposal->client_offer_id)->first() ;
+
+        $offer->update(['freelancer_id' => $proposal->freelancer_id]) ;
+        //todo send api to the freelancer 
+        return ClientOfferResource::make($offer->load([
+            'freelancer',
+            'client',
+            'client_offer',
+            'sub_category',
+            'files',
+            'skills',
+        ]))  ;
+    }
+    //todo test 
+    /**
+     * Reject Proposals
+     * @param \App\Http\Requests\ClientOffer\ClientRejectProposalsRequest $request
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     */
+    public function rejectProposals(ClientRejectProposalsRequest $request)
+    {
+        $proposals = ClientOfferProposal::whereIn('id' , $request->input('proposal_ids'))
+        ->update(['rejected_at' => now()->toDateTimeString()]) ;
+
+        //todo send api to the freelancer 
+        return ClientOfferProposalResource::collection($proposals) ;
+    }
+
+    //todo test
+    /**
+     * List of proposals
+     * @param \App\Http\Requests\ClientOffer\GetProposalsRequest $request
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     */
+    public function proposals(GetProposalsRequest $request)
+    {
+        $proposals = ClientOfferProposal
+        ::where('client_offer_id' , $request->input('client_offer_id'))
+        ->orderBy('days' , $request->boolean('orderByDays')? 'asc' : 'desc')
+        ->orderBy('price' , $request->boolean('orderByPrice')? 'asc' : 'desc')
+        ->paginate() ;
+
+        return ClientOfferProposalResource::collection(
+            $proposals->load(['freelancer.job_role'])
+        ) ;
     }
     /**
      *  Client-Filter List Client Offers

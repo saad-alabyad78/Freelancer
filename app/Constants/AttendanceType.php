@@ -2,7 +2,7 @@
 
 namespace App\Constants;
 
-class AttendenceType{
+class AttendanceType{
     const FULL_TIME = 'full-time' ;
     const PART_TIME = 'part-time' ;
     const INTERN = 'intern' ;

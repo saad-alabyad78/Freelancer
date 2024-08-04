@@ -23,6 +23,8 @@ class UpdateCompanyRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'lon' => ['string'] ,
+            'lat' => ['string'] ,
 
             'profile_image_id' => ['nullable' , 'exists:images,id'] ,
             'background_image_id' => ['nullable' , 'exists:images,id'] ,

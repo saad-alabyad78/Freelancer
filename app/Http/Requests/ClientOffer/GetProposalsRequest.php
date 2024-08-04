@@ -1,20 +1,18 @@
 <?php
 
-namespace App\Http\Requests\FreelancerOffer;
+namespace App\Http\Requests\ClientOffer;
 
 use Illuminate\Validation\Rule;
-use App\Constants\ClientOfferStatus;
-use App\Constants\FreelancerOfferStatus;
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateFreelancerOfferProposalRequest extends FormRequest
+class GetProposalsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -25,12 +23,14 @@ class CreateFreelancerOfferProposalRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'freelancer_offer_id' => [
+            'client_offer_id' => [
                 'required' , 
                 'integer' ,
-                Rule::exists('freelancer_offers' , 'id')->where('status' , FreelancerOfferStatus::ACTIVE) ,
+                Rule::exists('client_offers' , 'id')
+                ->where('client_id' , auth('sanctum')->user()?->role_id) ,
             ] ,
-            'message' => ['required' , 'string' , 'min:10' , 'max:255'] ,
+            'orderByPrice' => ['boolean'] ,
+            'orderByDays' => ['boolean'] ,
         ];
     }
 }

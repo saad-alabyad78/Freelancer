@@ -12,7 +12,7 @@ use App\Http\Requests\JobOfferProposal\FilterJobOfferProposalRequest;
 use App\Http\Requests\JobOfferProposal\RejectJobOfferProposalRequest;
 use App\Http\Requests\JobOfferProposal\UpdateJobOfferProposalRequest;
 /**
- *@group JobOffer-Proposal Managment
+ *@group JobOffer-Proposal Management
  *
  **/
 class JobOfferProposalController extends Controller

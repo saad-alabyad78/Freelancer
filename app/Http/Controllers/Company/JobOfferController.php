@@ -15,7 +15,7 @@ use App\Http\Requests\Company\CreateJobOfferRequest;
 use App\Http\Requests\Company\DeleteJobOfferRequest;
 use App\Http\Requests\Company\UpdateJobOfferRequest;
 /**
- * @group Company Managment
+ * @group Company Management
  *
  **/
 class JobOfferController extends Controller
@@ -28,6 +28,8 @@ class JobOfferController extends Controller
      */
     public function show(JobOffer $jobOffer)
     {
+        $jobOffer->load(['job_role' , 'company']) ;
+        
         if($jobOffer->status == JobOfferStatus::PENDING)
         {
             $user = auth('sanctum')->user() ;
@@ -169,7 +171,7 @@ class JobOfferController extends Controller
                 422
             ]);
         }
-        if($job_offer->status == JobOfferStatus::AVTIVE){
+        if($job_offer->status == JobOfferStatus::ACTIVE){
             return response()->json([
                 'you can\' delete active job offer' ,
                 422

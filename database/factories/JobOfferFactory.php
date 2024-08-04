@@ -8,7 +8,7 @@ use App\Models\Industry;
 use App\Constants\Gender;
 use App\Services\xmlService;
 use App\Constants\LocationType;
-use App\Constants\AttendenceType;
+use App\Constants\AttendanceType;
 use App\Constants\Job_OfferTypes;
 use App\Constants\JobOfferStatus;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -28,7 +28,7 @@ class JobOfferFactory extends Factory
         return [
             'status' => fake()->randomElement(JobOfferStatus::$types) ,
             'location_type' => fake()->randomElement(LocationType::$types) ,
-            'attendence_type' => fake()->randomElement(AttendenceType::$types),
+            'attendance_type' => fake()->randomElement(AttendanceType::$types),
             'max_salary' => fake()->numberBetween(100 , 1000) ,
             'min_salary' => fake()->numberBetween(10 , 100) ,
             'transportation' => fake()->boolean(10) ,

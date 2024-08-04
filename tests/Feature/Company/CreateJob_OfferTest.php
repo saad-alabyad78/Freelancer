@@ -10,7 +10,7 @@ use App\Models\JobRole;
 use App\Models\Industry;
 use App\Models\JobOffer;
 use App\Constants\LocationType;
-use App\Constants\AttendenceType;
+use App\Constants\AttendanceType;
 use App\Constants\Job_OfferTypes;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -44,7 +44,7 @@ class CreateJob_OfferTest extends TestCase
             'industry_name' => $this->industry->name,
             'job_role_id' =>  JobRole::inRandomOrder()->take(1)->first()->id,
             
-            'attendence_type' => AttendenceType::FULL_TIME ,
+            'attendance_type' => AttendanceType::FULL_TIME ,
             'location_type' => LocationType::ON_SITE ,
             'max_salary' => 1000,
             'min_salary' => 10,

@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Requests\invitation;
+namespace App\Http\Requests\ClientOffer;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class RejectInvitationRequest extends FormRequest
+class ClientRejectProposalsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +23,13 @@ class RejectInvitationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'proposal_ids' => ['required' , 'array'] ,
+            'proposal_ids.*' => [
+                'required' ,
+                'integer' ,
+                Rule::exists('client_offer_proposals' , 'id')
+                ->where('client_id' , auth('sanctum')->id()) ,
+            ],
         ];
     }
 }

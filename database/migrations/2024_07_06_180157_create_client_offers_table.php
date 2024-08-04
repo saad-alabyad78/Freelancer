@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Client;
+use App\Models\Freelancer;
 use App\Models\SubCategory;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -18,6 +19,7 @@ return new class extends Migration
 
             $table->foreignIdFor(Client::class)->constrained()->restrictOnDelete() ;
             $table->foreignIdFor(SubCategory::class)->constrained()->restrictOnDelete() ;
+            $table->foreignIdFor(Freelancer::class)->nullable()->constrained()->nullOnDelete() ; 
 
             $table->string('title') ;
             $table->string('status')->index() ;

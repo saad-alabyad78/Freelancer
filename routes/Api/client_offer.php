@@ -27,6 +27,24 @@ Route::group([
     });
 });
 
+
+Route::group([
+    'prefix' => 'client-offer/client'
+] , function(){
+    Route::group([
+        'middleware' =>
+        [
+            'auth:sanctum' ,
+            'verify_email' ,
+            'role:client' ,
+        ]
+    ],function(){
+        Route::post('/proposals/accept' , [ClientOfferController::class , 'acceptProposal']) ;
+        Route::post('/proposals/reject' , [ClientOfferController::class , 'rejectProposals']) ;
+        Route::post('/proposals' , [ClientOfferController::class , 'proposals']) ;
+    });
+});
+
 Route::group([
     'prefix' => 'client-offer/admin'
 ] , function(){

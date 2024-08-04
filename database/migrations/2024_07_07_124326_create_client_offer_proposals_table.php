@@ -19,7 +19,11 @@ return new class extends Migration
             $table->foreignIdFor(Freelancer::class)->constrained()->cascadeOnDelete() ;
             $table->foreignIdFor(Client::class)->constrained()->cascadeOnDelete() ;
             $table->foreignIdFor(ClientOffer::class)->constrained()->cascadeOnDelete() ;
+            
             $table->string('message') ;
+            $table->integer('days')->default(14)->nullable() ;
+            $table->integer('price')->default(1000000)->nullable() ;
+            
             $table->date('accepted_at')->nullable() ;
             $table->date('rejected_at')->nullable() ;
             $table->timestamps();

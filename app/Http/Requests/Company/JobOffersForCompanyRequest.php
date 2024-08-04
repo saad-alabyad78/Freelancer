@@ -4,7 +4,7 @@ namespace App\Http\Requests\Company;
 
 use App\Constants\LocationType;
 use Illuminate\Validation\Rule;
-use App\Constants\AttendenceType;
+use App\Constants\AttendanceType;
 use App\Constants\JobOfferStatus;
 use App\Constants\Job_OfferStatus;
 use Illuminate\Foundation\Http\FormRequest;
@@ -28,7 +28,7 @@ class JobOffersForCompanyRequest extends FormRequest
     {
         return [
             'location_type' => ['string', Rule::in(LocationType::$types)],
-            'attendence_type' => ['string', Rule::in(AttendenceType::$types)],
+            'attendance_type' => ['string', Rule::in(AttendanceType::$types)],
             'status' => ['string' , Rule::in(JobOfferStatus::$types)],
             'job_role_id' => ['integer' , 'exists:job_roles,id'] ,            
         ];

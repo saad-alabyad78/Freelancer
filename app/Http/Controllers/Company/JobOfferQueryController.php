@@ -14,7 +14,7 @@ use App\Http\Requests\Company\JobOffersForCompanyRequest;
 use App\Http\Requests\Company\JobOfferForFreelancersRequest;
 
 /**
- * @group Company Managment
+ * @group Company Management
  **/
 class JobOfferQueryController extends Controller
 {
@@ -36,7 +36,6 @@ class JobOfferQueryController extends Controller
      */
     public function ForOwner(JobOffersForCompanyRequest $request)
     {
-        
         $company = Company::findOrFail(auth('sanctum')->user()->role_id) ;
 
         $filters = $request->validated();
@@ -79,7 +78,7 @@ class JobOfferQueryController extends Controller
 
         if(auth('sanctum')->check() and auth('sanctum')->user()->role_type==Freelancer::class)
         {
-            $freelancer = Freelancer::where(auth('sanctum')->user()->role_id)  ;
+            $freelancer = Freelancer::where(auth('sanctum')->user()->role_id)->first()  ;
         }
         
         $offers = JobOffer::filter($filters , $freelancer)
@@ -108,7 +107,6 @@ class JobOfferQueryController extends Controller
      */
     public function ForGuest()
     {
-
         $offers = JobOffer::
               with('job_role' , 'skills' , 'company' , 'skills.skillable') 
               ->orderByDesc('created_at')

@@ -20,7 +20,7 @@ return new class extends Migration
             
             $table->string('status')->index();
             $table->string('location_type')->index();
-            $table->string('attendence_type')->index();
+            $table->string('attendance_type')->index();
 
             $table->integer('max_salary')->nullable() ;
             $table->integer('min_salary')->nullable() ;

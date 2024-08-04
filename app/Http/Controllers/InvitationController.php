@@ -6,9 +6,10 @@ use App\Models\Invitation;
 use App\Models\Conversation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Requests\SendInvitationRequest;
-use App\Http\Requests\AcceptInvitationRequest;
-use App\Http\Requests\RejectInvitationRequest;
+use App\Http\Requests\invitation\SendInvitationRequest;
+use App\Http\Requests\invitation\AcceptInvitationRequest;
+use App\Http\Requests\invitation\RejectInvitationRequest;
+
 
 class InvitationController extends Controller
 {
@@ -17,7 +18,7 @@ class InvitationController extends Controller
      *
      * Sends an invitation from a company to a freelancer.
      *
-     * @param  \App\Http\Requests\SendInvitationRequest  $request
+     * @param  \App\Http\Requests\invitation\SendInvitationRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function sendInvitation(SendInvitationRequest $request)
@@ -78,7 +79,7 @@ class InvitationController extends Controller
      *
      * Accepts a specific invitation by the freelancer.
      *
-     * @param  \App\Http\Requests\AcceptInvitationRequest  $request
+     * @param  \App\Http\Requests\Invitation\AcceptInvitationRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -102,7 +103,7 @@ class InvitationController extends Controller
      *
      * Rejects a specific invitation by the freelancer.
      *
-     * @param  \App\Http\Requests\RejectInvitationRequest  $request
+     * @param  \App\Http\Requests\invitation\RejectInvitationRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

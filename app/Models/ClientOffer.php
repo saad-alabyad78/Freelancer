@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\Pivot;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
@@ -14,6 +15,7 @@ class ClientOffer extends BaseModel
     [
         'id' ,
         'client_id' ,
+        'freelancer_id' ,
         'sub_category_id' ,
         'title' ,
         'status' ,
@@ -40,6 +42,10 @@ class ClientOffer extends BaseModel
     public function client():BelongsTo
     {
         return $this->belongsTo(Client::class) ;
+    }
+    public function freelancer():BelongsTo
+    {
+        return $this->belongsTo(Freelancer::class) ;
     }
 
     public function scopeFilter(Builder $builder , array $filters)

@@ -23,6 +23,9 @@ class CreateCompanyRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'lat' => ['string' , 'max:255'] ,
+            'lon' => ['string' , 'max:255'] ,
+
             'industry_name' => ['string' , 'required' , 'exists:industries,name'] ,
 
             'profile_image_id' => ['nullable' , 'exists:images,id' ] ,

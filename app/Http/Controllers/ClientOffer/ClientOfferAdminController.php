@@ -7,10 +7,10 @@ use App\Models\ClientOffer;
 use Illuminate\Http\Request;
 use App\Constants\ClientOfferStatus;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\ClientOfferResource;
+use App\Http\Resources\ClientOffer\ClientOfferResource;
 use App\Http\Requests\ClientOffer\FilterClientOfferForAdminRequest;
 /**
- * @group Client Offer Managment
+ * @group Client Offer Management
  */
 class ClientOfferAdminController extends Controller
 {
@@ -42,7 +42,7 @@ class ClientOfferAdminController extends Controller
         }
 
         $clientOffer->update([
-            'status' => ClientOfferStatus::AVTIVE ,
+            'status' => ClientOfferStatus::ACTIVE ,
             'posted_at' => Carbon::now() ,
             ]) ;
 

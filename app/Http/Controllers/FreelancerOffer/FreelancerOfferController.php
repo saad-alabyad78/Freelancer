@@ -13,7 +13,7 @@ use App\Http\Requests\FreelancerOffer\UpdateFreelancerOfferRequest;
 
 
 /**
- * @group Freelancer Offer Managment
+ * @group Freelancer Offer Management
  * 
  */
 class FreelancerOfferController extends Controller

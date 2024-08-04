@@ -14,7 +14,7 @@ use App\Http\Requests\ClientOffer\UpdateClientOfferProposalRequest;
 use App\Http\Requests\ClientOffer\FilterClientOfferForFreelancerRequest;
 
 /**
- * @group Client Offer Managment
+ * @group Client Offer Management
  * 
  */
 class ClientOfferFreelancerController extends Controller

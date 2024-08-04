@@ -29,7 +29,7 @@ class CreateJobOfferProposalRequest extends FormRequest
                 'required',
 
                 Rule::exists('job_offers', 'id')
-                ->where('status', JobOfferStatus::AVTIVE) ,
+                ->where('status', JobOfferStatus::ACTIVE) ,
 
                 Rule::unique('job_offer_proposals' , 'job_offer_id')
                     ->where('freelancer_id' , (string)auth('sanctum')->user()?->role_id )  , 

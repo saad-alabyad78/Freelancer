@@ -19,7 +19,7 @@ class JobOffer extends BaseModel
         'id' ,
         'status',
         'location_type',
-        'attendence_type',
+        'attendance_type',
         'max_salary',
         'min_salary',
         'transportation',
@@ -70,7 +70,7 @@ class JobOffer extends BaseModel
     [
         'status'=> '='  ,
         'location_type'=> '='  ,
-        'attendence_type'=> '='  ,
+        'attendance_type'=> '='  ,
         'gender'=> '='  ,
         'industry_name'=> '='  ,
         'company_id'=> '='  ,

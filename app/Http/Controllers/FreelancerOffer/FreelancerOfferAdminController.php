@@ -43,7 +43,7 @@ class FreelancerOfferAdminController extends Controller
         }
 
         $freelancerOffer->update([
-            'status' => FreelancerOfferStatus::AVTIVE ,
+            'status' => FreelancerOfferStatus::ACTIVE ,
             'posted_at' => Carbon::now() ,
             ]) ;
 

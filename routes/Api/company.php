@@ -13,10 +13,11 @@ Route::get('company/job_offer/{job_offer}' , [JobOfferController::class , 'show'
 
 Route::group(['prefix' => 'company'] , function()
 {
+    Route::get('/' , [CompanyController::class , 'index']) ;
     Route::get('/{company:id}' , [CompanyController::class , 'show']) ;
     
-    Route::get('job_offer/list-job-offer' , [JobOfferQueryController::class , 'ForGuest']) ;
-    Route::post('job_offer/list-job-offer' , [JobOfferQueryController::class , 'ForFreelancer']) ;
+    Route::get('job_offers/list-job-offer/guests' , [JobOfferQueryController::class , 'ForGuest']) ;
+    Route::post('job_offers/list-job-offer' , [JobOfferQueryController::class , 'ForFreelancer']) ;
 
     
     Route::group(

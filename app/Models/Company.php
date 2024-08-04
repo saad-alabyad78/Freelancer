@@ -33,6 +33,9 @@ class Company extends BaseModel
         'region' ,
         'username' ,
         'industry_name' ,
+
+        'lat' ,
+        'lon' ,
     ] ;
 
     public function user():MorphOne

@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
 
+            $table->string('lat')->nullable(); 
+            $table->string('lon')->nullable();
+
             $table->string('profile_image_url' , 2048)->nullable();
             $table->string('background_image_url' , 2048)->nullable();
 

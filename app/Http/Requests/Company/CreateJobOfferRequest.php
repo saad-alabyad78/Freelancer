@@ -6,7 +6,7 @@ use App\Constants\Gender;
 use App\Rules\GenderRule;
 use App\Constants\LocationType;
 use Illuminate\Validation\Rule;
-use App\Constants\AttendenceType;
+use App\Constants\AttendanceType;
 use App\Rules\Job_OfferTypesRule;
 use App\Rules\Job_OfferStatusRule;
 use App\Rules\FieldsTogetherOrNoneRule;
@@ -34,7 +34,7 @@ class CreateJobOfferRequest extends FormRequest
             'job_role_id' => ['required' , 'exists:job_roles,id'] ,
             
             'location_type' => ['required', 'string', Rule::in(LocationType::$types)],
-            'attendence_type' => ['required', 'string', Rule::in(AttendenceType::$types)],
+            'attendance_type' => ['required', 'string', Rule::in(AttendanceType::$types)],
 
             'max_salary' => ['integer', 'min:0', 'max:100000000', 'gte:min_salary' , new FieldsTogetherOrNoneRule('min_salary')],
             'min_salary' => ['integer', 'min:0', 'max:100000000', 'lte:max_salary' , new FieldsTogetherOrNoneRule('max_salary')],
