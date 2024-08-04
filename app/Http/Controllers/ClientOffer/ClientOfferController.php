@@ -43,9 +43,12 @@ class ClientOfferController extends Controller
         ->update(['rejected_at' => now()->toDateTimeString()]) ;
 
         $offer = ClientOffer::where('id' , $proposal->client_offer_id)->first() ;
+        $offer->update(['status' => ClientOfferStatus::IN_PROGRESS]) ;
 
         $offer->update(['freelancer_id' => $proposal->freelancer_id]) ;
-        //todo send api to the freelancer 
+
+        //todo send notification to the freelancer 
+        
         return ClientOfferResource::make($offer->load([
             'freelancer',
             'client',
