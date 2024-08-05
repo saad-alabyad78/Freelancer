@@ -32,7 +32,7 @@ class CreateFreelancerRequest extends FormRequest
 
 
         'headline' => ['required' , 'string' , 'min:20' , 'max:200'],
-        'description' => ['required' , 'string' , 'min:60' , 'max:4000'],
+        'description' => ['required' , 'string' , 'min:10' , 'max:4000'],
         'city' => ['required' , new SyrianCityRule()],
         'gender' => ['required' , Rule::in(Gender::$types)],
         'date_of_birth' => ['required' , 'date' , 'before_or_equal:' . Carbon::now()->subYears(16)->toDateString()],

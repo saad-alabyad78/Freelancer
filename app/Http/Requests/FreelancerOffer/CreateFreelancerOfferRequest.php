@@ -25,7 +25,7 @@ class CreateFreelancerOfferRequest extends FormRequest
         return [
             'sub_category_id' => ['required' , 'integer' , 'exists:sub_categories,id'] ,
             'title' => ['required' , 'string' , 'min:5' , 'max:255' ],
-            'description' => ['required' , 'string' , 'min:100' , 'max:2000'],
+            'description' => ['required' , 'string' , 'min:10' , 'max:2000'],
             'min_price' => ['required' , 'lt:max_price' ],
             'max_price' => ['required' , 'gt:min_price' ],
             'days' => ['required' , 'integer' , 'digits_between:1,3' , 'max:100'] ,

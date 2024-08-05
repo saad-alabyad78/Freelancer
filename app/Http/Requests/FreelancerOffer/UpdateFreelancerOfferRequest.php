@@ -27,7 +27,7 @@ class UpdateFreelancerOfferRequest extends FormRequest
             'freelancer_offer_id' => ['required' , 'integer' , 'exists:freelancer_offers,id'] ,
             'sub_category_id' => ['integer' , 'exists:sub_categories,id'] ,
             'title' => ['string' , 'min:5' , 'max:255' ], 
-            'description' => [ 'string' , 'min:100' , 'max:2000'],
+            'description' => [ 'string' , 'min:10' , 'max:2000'],
             'min_price' => [ 'lt:max_price' ],
             'max_price' => [ 'gt:min_price' ],
             'days' => [ 'integer' , 'digits_between:1,3' , 'max:100'] ,
