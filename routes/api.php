@@ -57,6 +57,10 @@ require 'Api/freelancer_offer.php' ;
 
 require 'Api/contact_message.php' ;
 
+require 'Api/product.php' ;
+
+require 'Api/home.php' ;
+
 Route::post('test' , function(Request $request){
   return 'hi' ;
 });

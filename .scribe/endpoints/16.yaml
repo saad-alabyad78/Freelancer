@@ -1,0 +1,48 @@
+name: Home
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/home
+    metadata:
+      groupName: Home
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'website homepage info'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"companies":[{"id":1,"name":"Grimes, Jast and Waelchi","lat":null,"lon":null,"profile_image_url":null,"background_image_url":null,"profile_image_id":null,"background_image_id":null,"username":"8","description":"Culpa et ut commodi sunt.","size":"10","verified_at":null,"city":"\u062f\u0645\u0634\u0642","region":"Hansen Crossing","street_address":"45303 Bechtelar Squares Suite 569","industry_name":"\u062e\u062f\u0645\u064a","created_at":"2024-08-05T22:03:00.000000Z","updated_at":"2024-08-05T22:03:00.000000Z","user":{"id":11,"money":10000,"fcm_token":null,"role_id":1,"role_type":"App\\Models\\Company","provider":null,"first_name":"company1","last_name":null,"email":"company1@gmail.com","email_verified_at":"2024-08-05T22:03:00.000000Z","email_otp_code":null,"email_otp_expired_date":null,"password_otp_code":null,"password_otp_expired_date":null,"last_seen":null,"created_at":"2024-08-05T22:03:00.000000Z","updated_at":"2024-08-05T22:03:00.000000Z","online":false}}],"products":[{"id":2,"price":12345,"name":"name","description":"description","image_id":1,"freelancer_id":1,"deleted_at":null,"created_at":"2024-08-05T22:22:52.000000Z","updated_at":"2024-08-05T22:22:52.000000Z"},{"id":3,"price":12345,"name":"name","description":"description","image_id":1,"freelancer_id":1,"deleted_at":null,"created_at":"2024-08-05T22:23:42.000000Z","updated_at":"2024-08-05T22:23:42.000000Z"},{"id":4,"price":123452,"name":"name2","description":"description2","image_id":2,"freelancer_id":1,"deleted_at":null,"created_at":"2024-08-05T22:24:22.000000Z","updated_at":"2024-08-05T22:34:22.000000Z"}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '47'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer VadcDgPEb6h63k48eafv15Z'
+    controller: null
+    method: null
+    route: null
+    custom: []

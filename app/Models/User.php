@@ -28,6 +28,7 @@ class User extends Authenticatable
         'provider',
         'last_seen',
         'online',
+        'money',
     ];
 
     protected $hidden = [

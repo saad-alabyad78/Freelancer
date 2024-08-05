@@ -32,7 +32,7 @@ class SkillSeedCommand extends Command
       {
         chunkSkillsUploadRender($this) ;
       }else{
-        chunkSkillsInsertLocaly($this) ;
+        chunkSkillsInsertLocally($this) ;
       }
         
     }
@@ -47,7 +47,7 @@ function chunkSkillsUploadRender(SkillSeedCommand $object)
   }); 
 }
 
-function chunkSkillsInsertLocaly(SkillSeedCommand $object)
+function chunkSkillsInsertLocally(SkillSeedCommand $object)
 {
   $path = "/home/saad/Desktop/Freelancer/datasets/job_skills.csv";
 
