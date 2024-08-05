@@ -82,7 +82,7 @@ class JobOfferQueryController extends Controller
         }
         
         $offers = JobOffer::filter($filters , $freelancer)
-            ->with('job_role' , 'skills' , 'company' , 'skills.skillable') 
+            ->with('job_role' , 'skills' , 'company') 
             ->orderByDesc('created_at')//todo : add order by scope 
             ->paginate(20) ;
 
@@ -108,7 +108,7 @@ class JobOfferQueryController extends Controller
     public function ForGuest()
     {
         $offers = JobOffer::
-              with('job_role' , 'skills' , 'company' , 'skills.skillable') 
+              with('job_role' , 'skills' , 'company') 
               ->orderByDesc('created_at')
               ->paginate(20) ;
 

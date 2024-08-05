@@ -3,6 +3,7 @@
 namespace App\Http\Resources\Client;
 
 use Illuminate\Http\Request;
+use App\Http\Resources\Auth\UserResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ClientResource extends JsonResource
@@ -24,6 +25,7 @@ class ClientResource extends JsonResource
             'background_image_id' => $this->background_image_id ,
             'profile_image_url' => $this->profile_image_url , 
             'background_image_url' => $this->background_image_url ,
+            'user' => $this->whenLoaded('user' , fn()=>UserResource::make($this->user) , null) ,
             'created_at' => $this->created_at ,
             'updated_at' => $this->updated_at ,
         ];
