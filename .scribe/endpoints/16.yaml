@@ -12,10 +12,9 @@ endpoints:
       subgroupDescription: ''
       title: 'website homepage info'
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -38,10 +37,7 @@ endpoints:
         description: null
         custom: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer VadcDgPEb6h63k48eafv15Z'
+    auth: []
     controller: null
     method: null
     route: null

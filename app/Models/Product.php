@@ -20,9 +20,9 @@ class Product extends Model
         'price',
     ] ;
     
-    protected $append = ['clients_count'] ;
+    protected $appends = ['clientsCount'] ;
 
-    public function getClientsCountAttributes()
+    public function getClientsCountAttribute()
     {
         return $this->clients()->count() ;
     }

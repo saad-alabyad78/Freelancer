@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Company;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Http\Resources\ProductResource;
+use App\Http\Resources\Company\CompanyResource;
 /**
  *@group Home
  **/
@@ -12,6 +14,9 @@ class HomeController extends Controller
 {
     /**
      * website homepage info
+     * 
+     * @unauthenticated
+     * 
      * @return mixed|\Illuminate\Http\JsonResponse
      */
     public function home()
@@ -22,8 +27,8 @@ class HomeController extends Controller
 
         $products = Product::limit(10)->get() ;
 
-        $data['companies'] = $companies; 
-        $data['products'] = $products ;
+        $data['companies'] = CompanyResource::collection($companies); 
+        $data['products'] = ProductResource::collection($products) ;
 
         return response()->json($data) ;
     }

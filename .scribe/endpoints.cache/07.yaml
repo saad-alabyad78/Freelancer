@@ -48,7 +48,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer k564EPa3v18dZegbahV6Dcf'
+      - 'Bearer c6fveE5Vh648aP1kbdZa3Dg'
     controller: null
     method: null
     route: null
@@ -97,7 +97,7 @@ endpoints:
         name: headline
         description: 'Must be at least 20 characters. Must not be greater than 200 characters.'
         required: true
-        example: thsxcdskwfiko
+        example: btfkawdpnktbzttci
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -106,7 +106,7 @@ endpoints:
         name: description
         description: 'Must be at least 60 characters. Must not be greater than 4000 characters.'
         required: true
-        example: 'Commodi quod omnis vel quis non.'
+        example: 'Perferendis hic voluptas commodi aut eos dolores dignissimos.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -135,7 +135,7 @@ endpoints:
         name: date_of_birth
         description: 'Must be a valid date. Must be a date before or equal to <code>2008-08-06</code>.'
         required: true
-        example: '1997-08-29'
+        example: '2002-01-07'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -144,7 +144,7 @@ endpoints:
         name: job_role_id
         description: ''
         required: true
-        example: 8
+        example: 5
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -154,20 +154,20 @@ endpoints:
         description: ''
         required: true
         example:
-          - 20
+          - 5
         type: 'integer[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      headline: thsxcdskwfiko
-      description: 'Commodi quod omnis vel quis non.'
+      headline: btfkawdpnktbzttci
+      description: 'Perferendis hic voluptas commodi aut eos dolores dignissimos.'
       city: دمشق
       gender: male
-      date_of_birth: '1997-08-29'
-      job_role_id: 8
+      date_of_birth: '2002-01-07'
+      job_role_id: 5
       skill_ids:
-        - 20
+        - 5
     fileParameters: []
     responses:
       -
@@ -180,7 +180,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1c3dPDaaVh6bvfk4ZeE86g5'
+      - 'Bearer Zkegb61D5afh4da3VEvcP68'
     controller: null
     method: null
     route: null
@@ -229,7 +229,7 @@ endpoints:
         name: headline
         description: 'Must be at least 20 characters. Must not be greater than 200 characters.'
         required: false
-        example: izxkneloz
+        example: rubbgltvksqurdgpodd
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -238,7 +238,7 @@ endpoints:
         name: description
         description: 'Must be at least 60 characters. Must not be greater than 4000 characters.'
         required: false
-        example: 'Et ipsum magni laudantium doloribus veritatis non.'
+        example: 'Provident sit illo veniam earum pariatur adipisci laudantium.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -267,7 +267,7 @@ endpoints:
         name: date_of_birth
         description: 'Must be a valid date. Must be a date before or equal to <code>2008-08-06</code>.'
         required: false
-        example: '2000-04-11'
+        example: '1999-01-12'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -291,11 +291,11 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      headline: izxkneloz
-      description: 'Et ipsum magni laudantium doloribus veritatis non.'
+      headline: rubbgltvksqurdgpodd
+      description: 'Provident sit illo veniam earum pariatur adipisci laudantium.'
       city: دمشق
       gender: male
-      date_of_birth: '2000-04-11'
+      date_of_birth: '1999-01-12'
     fileParameters: []
     responses:
       -
@@ -308,7 +308,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 43aVD65P1gkbedc6fhZ8vEa'
+      - 'Bearer 6kfh541PaeaEVd3v68ZcbgD'
     controller: null
     method: null
     route: null
@@ -335,13 +335,13 @@ endpoints:
         name: portfolio_id
         description: 'The ID of the portfolio.'
         required: true
-        example: 20
+        example: 3
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      portfolio_id: 20
+      portfolio_id: 3
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -358,7 +358,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hDdbVk46eavZfg3P61E8ca5'
+      - 'Bearer 8VPcaaDZfb41veE356hkgd6'
     controller: null
     method: null
     route: null
@@ -389,7 +389,7 @@ endpoints:
         name: title
         description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
         required: true
-        example: fevjcxlorewhu
+        example: cxxmrnmeaameumrk
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -398,7 +398,7 @@ endpoints:
         name: url
         description: 'Must match the regex /\b(?:https?|ftp):\/\/[a-zA-Z0-9-.]+\.[a-zA-Z]{2,}(?:\/\S*)?\b/.'
         required: false
-        example: 'b:https://ly.K{2,}b'
+        example: 'b:http|ftp)://L1QL4.j{2,}b'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -407,7 +407,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: false
-        example: '2024-08-06T02:03:35'
+        example: '2024-08-06T02:17:29'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -416,7 +416,7 @@ endpoints:
         name: description
         description: 'Must be at least 20 characters.'
         required: true
-        example: 'Et aut esse sunt deserunt voluptates.'
+        example: 'Sed consequuntur vel esse cupiditate.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -426,7 +426,7 @@ endpoints:
         description: ''
         required: true
         example:
-          - 19
+          - 3
         type: 'integer[]'
         enumValues: []
         exampleWasSpecified: false
@@ -436,7 +436,7 @@ endpoints:
         description: ''
         required: true
         example:
-          - 5
+          - 15
         type: 'integer[]'
         enumValues: []
         exampleWasSpecified: false
@@ -446,7 +446,7 @@ endpoints:
         description: ''
         required: false
         example:
-          - 12
+          - 19
         type: 'integer[]'
         enumValues: []
         exampleWasSpecified: false
@@ -455,23 +455,23 @@ endpoints:
         name: section
         description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
         required: true
-        example: pjfudswozyahnxypfoqrgo
+        example: ljpvvmvjhdwzaeipj
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      title: fevjcxlorewhu
-      url: 'b:https://ly.K{2,}b'
-      date: '2024-08-06T02:03:35'
-      description: 'Et aut esse sunt deserunt voluptates.'
+      title: cxxmrnmeaameumrk
+      url: 'b:http|ftp)://L1QL4.j{2,}b'
+      date: '2024-08-06T02:17:29'
+      description: 'Sed consequuntur vel esse cupiditate.'
       file_ids:
-        - 19
+        - 3
       image_ids:
-        - 5
+        - 15
       skill_ids:
-        - 12
-      section: pjfudswozyahnxypfoqrgo
+        - 19
+      section: ljpvvmvjhdwzaeipj
     fileParameters: []
     responses:
       -
@@ -484,7 +484,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer E6kaD8he3dZfbc56VvPa4g1'
+      - 'Bearer 1ae6a6cV4fgPZhb85dvE3Dk'
     controller: null
     method: null
     route: null
@@ -515,7 +515,7 @@ endpoints:
         name: portfolio_id
         description: ''
         required: true
-        example: illo
+        example: quam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -524,7 +524,7 @@ endpoints:
         name: title
         description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
         required: false
-        example: dxbqynmlkpxmo
+        example: axooktwpdqxumtajrmr
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -533,7 +533,7 @@ endpoints:
         name: url
         description: 'Must match the regex /\b(?:https?|ftp):\/\/[a-zA-Z0-9-.]+\.[a-zA-Z]{2,}(?:\/\S*)?\b/.'
         required: false
-        example: 'bftp://r.i{2,}b'
+        example: 'b:https://miPl7aW.S{2,}:/S)b'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -542,7 +542,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: false
-        example: '2024-08-06T02:03:35'
+        example: '2024-08-06T02:17:29'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -551,7 +551,7 @@ endpoints:
         name: description
         description: 'Must be at least 20 characters.'
         required: false
-        example: 'Sed libero aperiam cumque qui nisi libero.'
+        example: 'Earum iure enim voluptatem molestiae voluptatem sapiente dignissimos.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -561,7 +561,7 @@ endpoints:
         description: ''
         required: true
         example:
-          - et
+          - vitae
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
@@ -571,7 +571,7 @@ endpoints:
         description: ''
         required: true
         example:
-          - est
+          - adipisci
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
@@ -589,22 +589,22 @@ endpoints:
         name: section
         description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
         required: false
-        example: vt
+        example: zpdtofwlsvsyicawqyffts
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      portfolio_id: illo
-      title: dxbqynmlkpxmo
-      url: 'bftp://r.i{2,}b'
-      date: '2024-08-06T02:03:35'
-      description: 'Sed libero aperiam cumque qui nisi libero.'
+      portfolio_id: quam
+      title: axooktwpdqxumtajrmr
+      url: 'b:https://miPl7aW.S{2,}:/S)b'
+      date: '2024-08-06T02:17:29'
+      description: 'Earum iure enim voluptatem molestiae voluptatem sapiente dignissimos.'
       file_ids:
-        - et
+        - vitae
       image_ids:
-        - est
-      section: vt
+        - adipisci
+      section: zpdtofwlsvsyicawqyffts
     fileParameters: []
     responses:
       -
@@ -617,7 +617,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer d6a8E5Pkcgv4eZaD1bhV63f'
+      - 'Bearer 46dfV5Ek3PDeh1bgcZ68aav'
     controller: null
     method: null
     route: null
@@ -648,20 +648,20 @@ endpoints:
         name: portfolio_id
         description: ''
         required: true
-        example: eum
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      portfolio_id: eum
+      portfolio_id: et
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer P4E65Dkaah8bdgZvf6cV1e3'
+      - 'Bearer Ecd86VZ1eagvkh6Pfb3a4D5'
     controller: null
     method: null
     route: null
@@ -714,7 +714,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6aacE4DgbZPd8k5vf3Ve1h6'
+      - 'Bearer PZ6De4vbfa51hgd83kVacE6'
     controller: null
     method: null
     route: null
@@ -767,7 +767,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fcE8VZ6513DaPe6bk4vghda'
+      - 'Bearer g6vfE5db3haDZeVPak8641c'
     controller: null
     method: null
     route: null
@@ -794,13 +794,13 @@ endpoints:
         name: portfolio_id
         description: 'The ID of the portfolio.'
         required: true
-        example: 1
+        example: 16
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      portfolio_id: 1
+      portfolio_id: 16
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -820,7 +820,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aZD8ePV1fd6k6vgc5haE43b'
+      - 'Bearer Dc1E3Pv64fdbe6Z5kg8aahV'
     controller: null
     method: null
     route: null
@@ -847,13 +847,13 @@ endpoints:
         name: portfolio_id
         description: 'The ID of the portfolio.'
         required: true
-        example: 19
+        example: 3
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      portfolio_id: 19
+      portfolio_id: 3
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -873,7 +873,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hbEaVe3ckaDZ6P18dv5f46g'
+      - 'Bearer dv6ZkhD653a1VE84fbcgePa'
     controller: null
     method: null
     route: null
