@@ -29,12 +29,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":2,"name":"name","description":"description","price":12345,"mine_as_client":null,"image":{"id":1,"url":"https:\/\/res.cloudinary.com\/dyefbd6jy\/image\/upload\/v1722896438\/phpgUczUz_ljiq0v.jpg"},"clients_count":0,"freelancer_id":null,"images":null,"files":null,"created_at":"2024-08-05T22:22:52.000000Z","updated_at":"2024-08-05T22:22:52.000000Z","deleted_at":null},{"id":3,"name":"name","description":"description","price":12345,"mine_as_client":null,"image":{"id":1,"url":"https:\/\/res.cloudinary.com\/dyefbd6jy\/image\/upload\/v1722896438\/phpgUczUz_ljiq0v.jpg"},"clients_count":0,"freelancer_id":null,"images":null,"files":null,"created_at":"2024-08-05T22:23:42.000000Z","updated_at":"2024-08-05T22:23:42.000000Z","deleted_at":null},{"id":4,"name":"name2","description":"description2","price":123452,"mine_as_client":null,"image":{"id":2,"url":"https:\/\/res.cloudinary.com\/dyefbd6jy\/image\/upload\/v1722896445\/phpSu3RWd_l3ovbj.jpg"},"clients_count":0,"freelancer_id":null,"images":null,"files":null,"created_at":"2024-08-05T22:24:22.000000Z","updated_at":"2024-08-05T22:34:22.000000Z","deleted_at":null}],"links":{"first":"http:\/\/localhost\/api\/products?page=1","last":"http:\/\/localhost\/api\/products?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/products?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/products","per_page":20,"to":3,"total":3}}'
+        content: '{"data":[],"links":{"first":"http:\/\/localhost\/api\/products?page=1","last":"http:\/\/localhost\/api\/products?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":null,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/products?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/products","per_page":20,"to":null,"total":0}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '49'
+          x-ratelimit-remaining: '48'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -79,13 +79,455 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
-        content: '{"data":{"id":2,"name":"name","description":"description","price":12345,"mine_as_client":null,"image":{"id":1,"url":"https:\/\/res.cloudinary.com\/dyefbd6jy\/image\/upload\/v1722896438\/phpgUczUz_ljiq0v.jpg"},"clients_count":0,"freelancer_id":null,"images":[],"files":null,"created_at":"2024-08-05T22:22:52.000000Z","updated_at":"2024-08-05T22:22:52.000000Z","deleted_at":null}}'
+        status: 404
+        content: |-
+          {
+              "message": "No query results for model [App\\Models\\Product] 2",
+              "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
+              "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
+              "line": 487,
+              "trace": [
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
+                      "line": 463,
+                      "function": "prepareException",
+                      "class": "Illuminate\\Foundation\\Exceptions\\Handler",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php",
+                      "line": 54,
+                      "function": "render",
+                      "class": "Illuminate\\Foundation\\Exceptions\\Handler",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php",
+                      "line": 51,
+                      "function": "render",
+                      "class": "NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 188,
+                      "function": "handleException",
+                      "class": "Illuminate\\Routing\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                      "line": 159,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                      "line": 125,
+                      "function": "handleRequest",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                      "line": 87,
+                      "function": "handleRequestUsingNamedLimiter",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php",
+                      "line": 25,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 144,
+                      "function": "Laravel\\Sanctum\\Http\\Middleware\\{closure}",
+                      "class": "Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 119,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php",
+                      "line": 24,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 119,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 805,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 784,
+                      "function": "runRouteWithinStack",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 748,
+                      "function": "runRoute",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 737,
+                      "function": "dispatchToRoute",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 200,
+                      "function": "dispatch",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 144,
+                      "function": "Illuminate\\Foundation\\Http\\{closure}",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                      "line": 21,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+                      "line": 31,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                      "line": 21,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+                      "line": 40,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php",
+                      "line": 27,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+                      "line": 99,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
+                      "line": 62,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Http\\Middleware\\HandleCors",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
+                      "line": 39,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Http\\Middleware\\TrustProxies",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 119,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 175,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 144,
+                      "function": "sendRequestThroughRouter",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 310,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 298,
+                      "function": "callLaravelOrLumenRoute",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 91,
+                      "function": "makeApiCall",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 44,
+                      "function": "makeResponseCall",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 35,
+                      "function": "makeResponseCallIfConditionsPass",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 236,
+                      "function": "__invoke",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 163,
+                      "function": "iterateThroughStrategies",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 95,
+                      "function": "fetchResponses",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 125,
+                      "function": "processRoute",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 72,
+                      "function": "extractEndpointsInfoFromLaravelApp",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 50,
+                      "function": "extractEndpointsInfoAndWriteToDisk",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php",
+                      "line": 53,
+                      "function": "get",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 36,
+                      "function": "handle",
+                      "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Util.php",
+                      "line": 41,
+                      "function": "Illuminate\\Container\\{closure}",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 93,
+                      "function": "unwrapIfClosure",
+                      "class": "Illuminate\\Container\\Util",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 35,
+                      "function": "callBoundMethod",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+                      "line": 662,
+                      "function": "call",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php",
+                      "line": 211,
+                      "function": "call",
+                      "class": "Illuminate\\Container\\Container",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/symfony/console/Command/Command.php",
+                      "line": 326,
+                      "function": "execute",
+                      "class": "Illuminate\\Console\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Console/Command.php",
+                      "line": 180,
+                      "function": "run",
+                      "class": "Symfony\\Component\\Console\\Command\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php",
+                      "line": 1096,
+                      "function": "run",
+                      "class": "Illuminate\\Console\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php",
+                      "line": 324,
+                      "function": "doRunCommand",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/symfony/console/Application.php",
+                      "line": 175,
+                      "function": "doRun",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php",
+                      "line": 201,
+                      "function": "run",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/home/saad/Desktop/Freelancer/artisan",
+                      "line": 35,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Console\\Kernel",
+                      "type": "->"
+                  }
+              ]
+          }
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '48'
+          x-ratelimit-remaining: '47'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -121,7 +563,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: rfawnuokeikoe
+        example: sxorfqbiyqejnwwpsjpckdp
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -130,7 +572,7 @@ endpoints:
         name: description
         description: ''
         required: true
-        example: 'Debitis qui exercitationem quo quibusdam aut optio.'
+        example: 'Veniam odit et reprehenderit ut nostrum.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -139,7 +581,7 @@ endpoints:
         name: price
         description: ''
         required: true
-        example: 5
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -148,7 +590,7 @@ endpoints:
         name: image_id
         description: ''
         required: true
-        example: 4
+        example: 14
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -158,7 +600,7 @@ endpoints:
         description: 'Must not be greater than 2048.'
         required: true
         example:
-          - 21
+          - 11
         type: 'integer[]'
         enumValues: []
         exampleWasSpecified: false
@@ -168,27 +610,27 @@ endpoints:
         description: ''
         required: true
         example:
-          - 8
+          - 15
         type: 'integer[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: rfawnuokeikoe
-      description: 'Debitis qui exercitationem quo quibusdam aut optio.'
-      price: 5
-      image_id: 4
+      name: sxorfqbiyqejnwwpsjpckdp
+      description: 'Veniam odit et reprehenderit ut nostrum.'
+      price: 17
+      image_id: 14
       image_ids:
-        - 21
+        - 11
       file_ids:
-        - 8
+        - 15
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer v6PV6g35fdE1cDk8aeZab4h'
+      - 'Bearer caa1dEZP6856veDfVg4hbk3'
     controller: null
     method: null
     route: null
@@ -215,13 +657,13 @@ endpoints:
         name: product_id
         description: 'The ID of the product.'
         required: true
-        example: 2
+        example: 9
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      product_id: 2
+      product_id: 9
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -229,7 +671,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: kbo
+        example: 'n'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -238,7 +680,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Fugit ea debitis nulla velit consectetur quae.'
+        example: 'Laboriosam laudantium et unde sit.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -247,7 +689,7 @@ endpoints:
         name: price
         description: ''
         required: false
-        example: 20
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -256,7 +698,7 @@ endpoints:
         name: image_id
         description: ''
         required: false
-        example: 20
+        example: 16
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -266,7 +708,7 @@ endpoints:
         description: 'Must not be greater than 2048.'
         required: false
         example:
-          - 14
+          - 23
         type: 'integer[]'
         enumValues: []
         exampleWasSpecified: false
@@ -276,27 +718,27 @@ endpoints:
         description: ''
         required: false
         example:
-          - 12
+          - 10
         type: 'integer[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: kbo
-      description: 'Fugit ea debitis nulla velit consectetur quae.'
-      price: 20
-      image_id: 20
+      name: 'n'
+      description: 'Laboriosam laudantium et unde sit.'
+      price: 17
+      image_id: 16
       image_ids:
-        - 14
+        - 23
       file_ids:
-        - 12
+        - 10
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer P6gefEa4DVc35ak8hZ1v6bd'
+      - 'Bearer fva5h1ZPE6g4dDa3bek86Vc'
     controller: null
     method: null
     route: null
@@ -325,13 +767,13 @@ endpoints:
         name: product_id
         description: 'The ID of the product.'
         required: true
-        example: 2
+        example: 18
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      product_id: 2
+      product_id: 18
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -342,7 +784,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1eaf6ZEDk3dPgbh4vaV856c'
+      - 'Bearer Zc3gE5VevP6hafD68dk41ab'
     controller: null
     method: null
     route: null
@@ -369,13 +811,13 @@ endpoints:
         name: product_id
         description: 'The ID of the product.'
         required: true
-        example: 2
+        example: 18
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      product_id: 2
+      product_id: 18
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -386,7 +828,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aakebhgPc65Zv8V6f1E4Dd3'
+      - 'Bearer 348fchevDb6a15ZgkaPEV6d'
     controller: null
     method: null
     route: null
@@ -429,7 +871,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6bEvhV5P18d4ke3fa6DagZc'
+      - 'Bearer Vg668bd1D5a3ef4PcakZhvE'
     controller: null
     method: null
     route: null

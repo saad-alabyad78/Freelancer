@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Product;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreProductRequest extends FormRequest
@@ -26,13 +27,24 @@ class StoreProductRequest extends FormRequest
             'description' => ['required' , 'string'] ,
             'price' => ['required' , 'integer'] ,
 
-            'image_id' => ['required' , 'integer' , 'exists:images,id'] ,
+            'image_id' => ['required' , 'integer' , Rule::exists('images')
+            ->whereNull('imagable_id')] ,
 
             'image_ids' => ['required' , 'array'] ,
-            'image_ids.*' => ['required' , 'integer' , 'exists:images,id' , 'max:2048'] ,
+            'image_ids.*' => [
+                'required' ,
+                'integer' ,
+                Rule::exists('images')
+                ->whereNull('imagable_id') ,
+                'max:2048'
+            ] ,
 
             'file_ids' => ['required' , 'array'] ,
-            'file_ids.*' => ['required' , 'integer' , 'exists:files,id'] ,
+            'file_ids.*' => [
+                'required' ,
+                'integer' ,
+                Rule::exists('files')
+                ->whereNull('filable_id')] ,
         ];
     }
 }

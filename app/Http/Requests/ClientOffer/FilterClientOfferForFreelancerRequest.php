@@ -24,7 +24,12 @@ class FilterClientOfferForFreelancerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'status' => ['string' , Rule::in([ClientOfferStatus::ACTIVE , ClientOfferStatus::CLOUSED]) ] ,
+            'status' => ['string' , Rule::in([
+                ClientOfferStatus::ACTIVE ,
+                ClientOfferStatus::CLOUSED , 
+                ClientOfferStatus::IN_PROGRESS ,
+                ClientOfferStatus::DONE
+            ])] ,
             'sub_category_id' => ['integer' , 'exists:sub_categories,id'] ,
             'skill_ids' => ['array' , 'max:25'] ,
             'skill_ids.*' => ['integer' , 'distinct' ,'exists:skills,id'] ,

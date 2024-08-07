@@ -14,6 +14,7 @@ Route::group([
     'prefix' => 'client'
 ] , function(){
 
+    Route::get('/' , [ClientController::class , 'index']);
     Route::get('{client:id}' , [ClientController::class , 'show']) ;
 
     Route::group([

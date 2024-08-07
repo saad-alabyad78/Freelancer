@@ -12,7 +12,7 @@ use App\Http\Resources\Client\ClientResource;
 use App\Http\Requests\Client\CreateClientRequest;
 use App\Http\Requests\Client\UpdateClientRequest;
 /**
- * @group Client Managment
+ * @group Client Management
  * 
  **/
 class ClientController extends Controller
@@ -20,6 +20,18 @@ class ClientController extends Controller
     public function __construct(protected IClientRepository $clientRepository)
     {
 
+    }
+    /**
+     * paginate clients 
+     * 
+     *@unauthenticated
+     *
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     */
+    public function index()
+    {
+        $clients = Client::paginate(10);
+        return ClientResource::collection($clients);
     }
     /**
      * Show Client .
