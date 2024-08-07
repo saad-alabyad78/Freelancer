@@ -21,7 +21,8 @@ Route::group([
     ],function(){
         Route::post('client-filter' , [ClientOfferController::class , 'clientFilter']) ;
         Route::post( 'store' , [ClientOfferController::class , 'store']) ;
-        Route::get( '{client_offer}' , [ClientOfferController::class , 'show']) ;
+        Route::get( '{client_offer}' , [ClientOfferController::class , 'show'])
+        ->withoutMiddleware(['role:client']) ;
         Route::put( '' , [ClientOfferController::class , 'update']) ;
         Route::delete( '{client_offer}' , [ClientOfferController::class , 'destroy']) ;
     });
@@ -75,7 +76,8 @@ Route::group([
             'role:freelancer' 
         ]
     ],function(){
-        Route::post('freelancer-filter' , [ClientOfferFreelancerController::class , 'freelancerFilter']) ;
+        Route::post('freelancer-filter' , [ClientOfferFreelancerController::class , 'freelancerFilter'])
+        ->withoutMiddleware(['role:freelancer']) ;
         Route::get( '{client_offer}' , [ClientOfferFreelancerController::class , 'showClientOffer']) ;
         Route::post('proposal/store' , [ClientOfferFreelancerController::class , 'createProposal']) ;
         Route::put('proposal' , [ClientOfferFreelancerController::class , 'updateProposal']) ;

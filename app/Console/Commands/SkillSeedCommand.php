@@ -63,8 +63,7 @@ function chunkSkillsInsertLocally(SkillSeedCommand $object)
     $skills = array_merge(...$chunk) ;
     $skills = array_map(fn($item)=>['name' => $item] , $skills); 
     $skills = array_filter($skills , function($item){return $item['name'] ?? false;}) ;
-    // var_dump($skills) ;
-    // return ;
+  
     Skill::insertOrIgnore($skills) ;
   }
   $end = microtime(true) ;

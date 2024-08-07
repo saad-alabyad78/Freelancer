@@ -32,8 +32,7 @@ class ClientOfferFreelancerController extends Controller
      */
     public function freelancerFilter(FilterClientOfferForFreelancerRequest $request)
     {
-        $clientOffers = ClientOffer::whereNot('status' , ClientOfferStatus::PENDING)
-        ->filter($request->validated())
+        $clientOffers = ClientOffer::filter($request->validated())
         ->with(['skills' , 'sub_category'])
         ->orderByDesc('created_at')
         ->paginate(20) ;

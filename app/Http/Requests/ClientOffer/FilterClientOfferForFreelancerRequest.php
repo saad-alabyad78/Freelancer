@@ -33,10 +33,10 @@ class FilterClientOfferForFreelancerRequest extends FormRequest
             'sub_category_id' => ['integer' , 'exists:sub_categories,id'] ,
             'skill_ids' => ['array' , 'max:25'] ,
             'skill_ids.*' => ['integer' , 'distinct' ,'exists:skills,id'] ,
-            'min_days' => ['integer' , 'lt:max_days' ] ,
-            'max_days' => ['integer' , 'gt:min_days'] ,
-            'min_price' => ['integer' , 'lt:max_price'] ,
-            'max_price' => ['integer' , 'gt:min_price'] ,
+            'min_days' => ['integer'] ,
+            'max_days' => ['integer'] ,
+            'min_price' => ['integer'] ,
+            'max_price' => ['integer'] ,
         ];
     }
 }

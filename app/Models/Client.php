@@ -29,6 +29,11 @@ class Client extends BaseModel
     {
         return $this->morphOne(User::class,"role");
     }
+
+    public function clientOffers():HasMany
+    {
+        return $this->hasMany(ClientOffer::class , 'client_id');
+    }
     public function client_offer_proposals():HasMany
     {
         return $this->hasMany(ClientOfferProposal::class) ;
