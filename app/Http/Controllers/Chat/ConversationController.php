@@ -18,15 +18,23 @@ use App\Http\Requests\Chat\CreateConversationRequest;
 
 /**
  * @group Chat Management
- * 
+ *
+ * APIs for managing chat conversations and messages
  */
 class ConversationController extends Controller
 {
     /**
      * Create a new conversation.
      *
-     * @param  \App\Http\Requests\Chat\CreateConversationRequest  $request
-     * @return \Illuminate\Http\JsonResponse
+     * @bodyParam user_id int required The ID of the user to start a conversation with. Example: 2
+     * @response 201 {
+     *     "message": "Conversation created successfully",
+     *     "conversation_id": 1,
+     *     "participants": [...]
+     * }
+     * @response 404 {
+     *     "message": "User not found"
+     * }
      */
     public function createConversation(CreateConversationRequest $request)
     {
@@ -53,9 +61,26 @@ class ConversationController extends Controller
     /**
      * Send a message in a conversation.
      *
-     * @param  \App\Http\Requests\Chat\SendMessageRequest  $request
-     * @param  int  $conversationId
-     * @return \Illuminate\Http\JsonResponse
+     * @urlParam conversationId int required The ID of the conversation. Example: 1
+     * @bodyParam message string The content of the message. Example: Hello
+     * @bodyParam parent_id int The ID of the parent message if replying to a specific message. Example: 1
+     * @bodyParam image file The image file to be sent as a message.
+     * @response 200 {
+     *     "id": 1,
+     *     "conversation_id": 1,
+     *     "user_id": 1,
+     *     "message": "Hello",
+     *     "parent_id": null,
+     *     "image": null,
+     *     "created_at": "2021-01-01T00:00:00.000000Z",
+     *     "updated_at": "2021-01-01T00:00:00.000000Z"
+     * }
+     * @response 403 {
+     *     "message": "You are banned from this conversation"
+     * }
+     * @response 403 {
+     *     "message": "You are not a participant in this conversation"
+     * }
      */
     public function sendMessage(SendMessageRequest $request, $conversationId)
     {
@@ -94,8 +119,25 @@ class ConversationController extends Controller
     /**
      * Get messages from a conversation.
      *
-     * @param  int  $conversationId
-     * @return \Illuminate\Http\JsonResponse
+     * @urlParam conversationId int required The ID of the conversation. Example: 1
+     * @response 200 {
+     *     "data": [
+     *         {
+     *             "id": 1,
+     *             "conversation_id": 1,
+     *             "user_id": 1,
+     *             "message": "Hello",
+     *             "parent_id": null,
+     *             "image": null,
+     *             "created_at": "2021-01-01T00:00:00.000000Z",
+     *             "updated_at": "2021-01-01T00:00:00.000000Z"
+     *         },
+     *         // المزيد من الرسائل
+     *     ]
+     * }
+     * @response 403 {
+     *     "message": "You are not a participant in this conversation"
+     * }
      */
     public function getMessages(Request $request, $conversationId)
     {
@@ -115,8 +157,16 @@ class ConversationController extends Controller
     /**
      * Get all conversations for the authenticated user.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\JsonResponse
+     * @response 200 {
+     *     "data": [
+     *         {
+     *             "id": 1,
+     *             "created_at": "2021-01-01T00:00:00.000000Z",
+     *             "updated_at": "2021-01-01T00:00:00.000000Z"
+     *         },
+     *         // المزيد من المحادثات
+     *     ]
+     * }
      */
     public function getConversations(Request $request)
     {
@@ -127,9 +177,26 @@ class ConversationController extends Controller
     /**
      * Get messages from a specific message in a conversation.
      *
-     * @param  int  $conversationId
-     * @param  int  $messageId
-     * @return \Illuminate\Http\JsonResponse
+     * @urlParam conversationId int required The ID of the conversation. Example: 1
+     * @urlParam messageId int required The ID of the message. Example: 1
+     * @response 200 {
+     *     "data": [
+     *         {
+     *             "id": 1,
+     *             "conversation_id": 1,
+     *             "user_id": 1,
+     *             "message": "Hello",
+     *             "parent_id": null,
+     *             "image": null,
+     *             "created_at": "2021-01-01T00:00:00.000000Z",
+     *             "updated_at": "2021-01-01T00:00:00.000000Z"
+     *         },
+     *         // المزيد من الرسائل
+     *     ]
+     * }
+     * @response 403 {
+     *     "message": "You are not a participant in this conversation"
+     * }
      */
     public function getMessagesByMessageId(Request $request, $conversationId, $messageId)
     {
@@ -160,10 +227,15 @@ class ConversationController extends Controller
     /**
      * Ban a user from a conversation.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $conversationId
-     * @param  int  $userId
-     * @return \Illuminate\Http\JsonResponse
+     * @urlParam conversationId int required The ID of the conversation. Example: 1
+     * @urlParam userId int required The ID of the user to be banned. Example: 2
+     * @response 200 {
+     *     "message": "User banned successfully",
+     *     "ban": { ... }
+     * }
+     * @response 404 {
+     *     "message": "User not found"
+     * }
      */
     public function banUser(Request $request, $conversationId, $userId)
     {
@@ -192,10 +264,11 @@ class ConversationController extends Controller
     /**
      * Unban a user from a conversation.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $conversationId
-     * @param  int  $userId
-     * @return \Illuminate\Http\JsonResponse
+     * @urlParam conversationId int required The ID of the conversation. Example: 1
+     * @urlParam userId int required The ID of the user to be unbanned. Example: 2
+     * @response 200 {
+     *     "message": "User unbanned successfully"
+     * }
      */
     public function unbanUser(Request $request, $conversationId, $userId)
     {
@@ -225,9 +298,11 @@ class ConversationController extends Controller
     /**
      * Like a message in a conversation.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $messageId
-     * @return \Illuminate\Http\JsonResponse
+     * @urlParam messageId int required The ID of the message to be liked. Example: 1
+     * @response 200 {
+     *     "message": "Message liked successfully",
+     *     "like": { ... }
+     * }
      */
     public function likeMessage(Request $request, $messageId)
     {
@@ -246,13 +321,15 @@ class ConversationController extends Controller
 
         return response()->json(['message' => 'Message liked successfully', 'like' => $like]);
     }
+
     /**
      * Get the online status and last seen time of a user by their ID.
      *
-     * This method retrieves the 'online' status and 'last_seen' timestamp of the specified user.
-     *
-     * @param  int  $userId
-     * @return \Illuminate\Http\JsonResponse
+     * @urlParam userId int required The ID of the user. Example: 2
+     * @response 200 {
+     *     "online": true,
+     *     "last_seen": "2021-01-01T00:00:00.000000Z"
+     * }
      */
     public function getUserStatus($userId)
     {
