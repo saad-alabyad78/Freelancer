@@ -10,7 +10,9 @@ use App\Http\Requests\invitation\SendInvitationRequest;
 use App\Http\Requests\invitation\AcceptInvitationRequest;
 use App\Http\Requests\invitation\RejectInvitationRequest;
 
-
+/**
+ * @group Invitation
+ */
 class InvitationController extends Controller
 {
     /**
