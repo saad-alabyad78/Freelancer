@@ -25,7 +25,7 @@ class ClientOfferProposal extends Model
         'updated_at' ,
     ] ;
 
-    public function freelnacer():BelongsTo
+    public function freelancer():BelongsTo
     {
         return $this->belongsTo(Freelancer::class) ;
     }

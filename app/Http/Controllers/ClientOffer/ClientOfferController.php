@@ -88,7 +88,7 @@ class ClientOfferController extends Controller
         ->paginate() ;
 
         return ClientOfferProposalResource::collection(
-            $proposals->load(['freelancer.job_role'])
+            $proposals->load(['freelancer.job_role' , 'freelancer.skills'])
         ) ;
     }
     /**

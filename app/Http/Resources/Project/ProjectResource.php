@@ -3,6 +3,7 @@
 namespace App\Http\Resources\Project;
 
 use Illuminate\Http\Request;
+use App\Http\Resources\MilestoneResource;
 use App\Http\Resources\Storage\FileResource;
 use App\Http\Resources\Client\ClientResource;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -23,6 +24,7 @@ class ProjectResource extends JsonResource
             'client_id' => $this->whenLoaded('client' , fn()=>ClientResource::make($this->client) , null),
             'price' => $this->price ,
             'days' => $this->days ,
+            'milestones' => $this->whenLoaded('milestones' , fn()=>MilestoneResource::collection($this->milestones) , null) ,
             'files' => $this->whenLoaded('files' , fn()=>FileResource::collection($this->files) , null),
             'finished_at' => $this->finished_at ,
             'created_at' => $this->created_at ,
