@@ -18,7 +18,7 @@ class InvitationPolicy
      */
     public function sendInvitation(User $user)
     {
-        return $user->role === 'company';
+        return $user->role_name === 'company';
     }
 
     /**
