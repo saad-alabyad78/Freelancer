@@ -45,6 +45,7 @@ class MilestoneController extends Controller
             $freelancer = Freelancer::where('id' , $project->freelancer_id)->first() ;
             $client = Client::where('id' , $project->client_id)->first() ;
 
+            //take it from the project money
             $freelancer->increment('money' , $milestone->price) ;
             $client->decrement('money' , $milestone->price) ;
 

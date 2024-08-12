@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignIdFor(Client::class)->constrained()->restrictOnDelete();
             $table->date('finished_at')->nullable();
             $table->integer('price');
+            $table->integer('client_money');
             $table->integer('days');
             $table->timestamps();
         });

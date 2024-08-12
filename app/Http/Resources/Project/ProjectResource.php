@@ -23,6 +23,7 @@ class ProjectResource extends JsonResource
             'freelancer_id' => $this->whenLoaded('freelancer' , fn()=>FreelancerResource::make($this->freelancer) , null), 
             'client_id' => $this->whenLoaded('client' , fn()=>ClientResource::make($this->client) , null),
             'price' => $this->price ,
+            'client_money' => $this->client_money ,
             'days' => $this->days ,
             'milestones' => $this->whenLoaded('milestones' , fn()=>MilestoneResource::collection($this->milestones) , null) ,
             'files' => $this->whenLoaded('files' , fn()=>FileResource::collection($this->files) , null),
