@@ -33,8 +33,7 @@ class SkillSeedCommand extends Command
         chunkSkillsUploadRender($this) ;
       }else{
         chunkSkillsInsertLocally($this) ;
-      }
-        
+      }  
     }
 }
 

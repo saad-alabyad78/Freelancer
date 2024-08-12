@@ -19,6 +19,7 @@ class Project extends Model
         'finished_at' ,
         'price' ,
         'days' ,
+        'client_money' ,
     ] ;
 
     public function files():MorphMany
