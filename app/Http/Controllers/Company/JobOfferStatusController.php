@@ -30,9 +30,9 @@ class JobOfferStatusController extends Controller
         $id = $request->validated()['job_offer_id'] ;
         $newStatus = $request->validated()['status'] ;
 
-        $jobOffer =JobOffer::whereAll([
+        $jobOffer =JobOffer::where([
             'id'=> $id,
-            'company_id'=>auth('sanctum')->user()->role['id']
+            'company_id'=> auth('sanctum')->user()->role_id
             ])->first() ;
 
         if($jobOffer == null){
