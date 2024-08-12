@@ -43,7 +43,7 @@ class ClientOfferAdminController extends Controller
 
         $clientOffer->update([
             'status' => ClientOfferStatus::ACTIVE ,
-            'posted_at' => Carbon::now() ,
+            'posted_at' => now()->toDateTimeString() ,
             ]) ;
 
         //todo:send message to client

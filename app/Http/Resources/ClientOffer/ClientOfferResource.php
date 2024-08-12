@@ -24,13 +24,11 @@ class ClientOfferResource extends JsonResource
         $user = User::where('role_id' , $this->client_id)
                 ->where('role_type' , Client::class)->first() ;
         return [
+            'status' => $this->status,
             'id' => $this->id ,
             'client_id' => $this->client_id,
-            'client' => ClientResource::make($this->client) ,
-            'user' => UserResource::make($user) ,
             'sub_category' => SubCategoryResource::make($this->whenLoaded('sub_category')),
             'title' => $this->title,
-            'status' => $this->status,
             'description' => $this->description,
             'min_price' => $this->min_price,
             'max_price' => $this->max_price,
@@ -38,6 +36,8 @@ class ClientOfferResource extends JsonResource
             'proposals_count' => $this->proposals_count ,
             'skills' => SkillResource::collection($this->whenLoaded('skills')) ,
             'files' => FileResource::collection($this->whenLoaded('files')) ,
+            'client' => ClientResource::make($this->client) ,
+            'user' => UserResource::make($user) ,
             'posted_at' => $this->posted_at ,
             'created_at' => $this->created_at ,
             'updated_at' => $this->updated_at ,

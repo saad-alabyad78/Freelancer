@@ -17,7 +17,7 @@ class Freelancer extends BaseModel
 {
     use HasFactory;
 
-    protected $with = ['user'] ;
+    protected $with = ['user' , 'job_role'] ;
     protected $fillable = 
     [
         'profile_image_url',

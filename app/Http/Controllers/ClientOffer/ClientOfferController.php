@@ -3,17 +3,25 @@
 namespace App\Http\Controllers\ClientOffer;
 
 use App\Models\File;
+use App\Models\Pill;
+use App\Models\User;
+use App\Models\Client;
+use App\Models\Project;
+use App\Models\Freelancer;
 use App\Models\ClientOffer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\ClientOfferProposal;
 use App\Constants\ClientOfferStatus;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\PillResource;
+use App\Http\Resources\Project\ProjectResource;
 use App\Http\Requests\ClientOffer\GetProposalsRequest;
 use App\Http\Resources\ClientOffer\ClientOfferResource;
 use App\Http\Requests\ClientOffer\CreateClientOfferRequest;
 use App\Http\Requests\ClientOffer\FilterClientOfferRequest;
-use App\Http\Requests\ClientOffer\UpdateClientOfferRequest;
 
+use App\Http\Requests\ClientOffer\UpdateClientOfferRequest;
 use App\Http\Requests\ClientOffer\ClientAcceptProposalsRequest;
 use App\Http\Requests\ClientOffer\ClientRejectProposalsRequest;
 use App\Http\Resources\ClientOffer\ClientOfferProposalResource;
@@ -36,6 +44,15 @@ class ClientOfferController extends Controller
         $proposal = ClientOfferProposal::where('id' , $request->input('proposal_id'))
         ->first() ;
 
+        $user = User::where('id' , auth('sanctum')->id())->first();
+        if($user->money < $proposal->price){
+            return response()->json([
+                'message' => 'you dont have money' ,
+                'client money' => $user->money ,
+                'proposal price' => $proposal->price ,
+            ]) ;
+        }
+
         $proposal->update(['accepted_at' => now()->toDateTimeString()]) ;
 
         ClientOfferProposal::where('client_offer_id' , $proposal->client_offer_id)
@@ -43,20 +60,51 @@ class ClientOfferController extends Controller
         ->update(['rejected_at' => now()->toDateTimeString()]) ;
 
         $offer = ClientOffer::where('id' , $proposal->client_offer_id)->first() ;
-        $offer->update(['status' => ClientOfferStatus::IN_PROGRESS]) ;
+        $offer->update([
+            'status' => ClientOfferStatus::IN_PROGRESS , 
+            'freelancer_id' => $proposal->freelancer_id ,
+        ]) ;
 
-        $offer->update(['freelancer_id' => $proposal->freelancer_id]) ;
+        $project = Project::create([
+            'freelancer_id' =>$offer->freelancer_id, 
+            'client_id' => $offer->client_id,
+            'finished_at' => null,
+            'price' => $proposal->price ,
+            'days' => $proposal->days ,
+            'client_money' => $user->money,
+        ]) ;
+        
+        $user->decrement('money' , $proposal->price) ;
+        
+        $pill = Pill::create([
+            'from_id' => $offer->client_id ,
+            'from_type' => Client::class,
+            'to_id' => $project->id ,
+            'to_type' => Project::class ,
+            'description' => 'this pill is to pay for the project building ',
+            'price' => $proposal->price ,  
+        ]) ;
 
         //todo send notification to the freelancer 
         
-        return ClientOfferResource::make($offer->load([
-            'freelancer',
-            'client',
-            'client_offer',
-            'sub_category',
-            'files',
-            'skills',
-        ]))  ;
+        return response()->json(
+        [
+            'pill' => PillResource::make($pill->load([
+                'from' , 
+                'to' ,
+            ])) ,
+            'project' => ProjectResource::make($project->load([
+                'freelancer' , 
+                'client' ,
+            ])) ,
+            'client_offer' => ClientOfferResource::make($offer->load([
+                'freelancer',
+                'client',
+                'sub_category',
+                'files',
+                'skills',
+            ])),
+        ]);
     }
     //todo test 
     /**
