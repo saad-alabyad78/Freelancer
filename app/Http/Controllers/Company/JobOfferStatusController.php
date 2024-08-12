@@ -44,7 +44,7 @@ class JobOfferStatusController extends Controller
         if($newStatus == JobOfferStatus::PENDING)
         {
             //todo test if this is working
-            $jobOffer->freelancers()->detach() ;
+            $jobOffer->proposals()->detach() ;
         }
         $jobOffer->status = $newStatus ;
         $jobOffer->save() ;
