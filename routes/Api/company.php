@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Company\CompanyController;
 use App\Http\Controllers\Company\JobOfferController;
 use App\Http\Controllers\Company\JobOfferQueryController;
+use App\Http\Controllers\Company\VerifyCompanyController;
 use App\Http\Controllers\Company\JobOfferStatusController;
 use App\Http\Controllers\Company\GetAllJobOfferForCompanyQuery;
 
@@ -58,4 +59,27 @@ Route::group(['prefix' => 'company'] , function()
             //todo : test
             Route::post('status/change' , [JobOfferStatusController::class , 'change']);
         });
+
+
+    Route::prefix('verifications')->group(function(){
+        Route::middleware([
+            'auth:sanctum' ,
+            'verify_email' ,
+            'role:admin' ,
+        ])->group(function(){
+            Route::post('/{verification}/accept' , [VerifyCompanyController::class , 'accept']);
+            Route::post('/{verification}/reject' , [VerifyCompanyController::class , 'reject']);
+        }) ;
+
+        Route::middleware([
+            'auth:sanctum' ,
+            'verify_email' ,
+            'role:admin,company' ,
+        ])->group(function(){
+            Route::get('/all' , [VerifyCompanyController::class , 'index']);
+            Route::get('{verification}' , [VerifyCompanyController::class , 'show']);
+            Route::post('/' , [VerifyCompanyController::class , 'store']);
+        }) ;
+    }) ;
+    
 });

@@ -1,17 +1,67 @@
-name: 'JobOffer-Proposal Management'
+name: 'Freelancer Managment'
 description: ''
 endpoints:
   -
     httpMethods:
-      - POST
-    uri: api/job-offer-proposal/store
+      - GET
+    uri: 'api/freelancer/{freelancer_id}'
     metadata:
-      groupName: 'JobOffer-Proposal Management'
+      groupName: 'Freelancer Managment'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Propose | Create (freelancer)'
-      description: 'Store a newly created job offer proposal.'
+      title: 'Get Freelancer .'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      freelancer_id:
+        name: freelancer_id
+        description: 'The ID of the freelancer.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      freelancer_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":null,"profile_image_url":null,"background_image_url":null,"username":null,"headline":null,"description":null,"city":null,"date_of_birth":null,"age":0,"gender":null,"user":null,"job_role":null,"skills":null,"portfolios":null}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 4P356ge6a8hZvafDVckbd1E'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/freelancer/store
+    metadata:
+      groupName: 'Freelancer Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store New Freelancer .'
+      description: ''
       authenticated: true
       custom: []
     headers:
@@ -23,34 +73,112 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      job_offer_id:
-        name: job_offer_id
+      profile_image_id:
+        name: profile_image_id
         description: ''
-        required: true
-        example: voluptates
+        required: false
+        example: null
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-      message:
-        name: message
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: itv
+      background_image_id:
+        name: background_image_id
+        description: ''
+        required: false
+        example: null
         type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      headline:
+        name: headline
+        description: 'Must be at least 20 characters. Must not be greater than 200 characters.'
+        required: true
+        example: uqydqctzbznnfwweo
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      description:
+        name: description
+        description: 'Must be at least 10 characters. Must not be greater than 4000 characters.'
+        required: true
+        example: 'Dicta fugit quaerat placeat repudiandae fugit.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      city:
+        name: city
+        description: 'this must be a syrian city.'
+        required: true
+        example: دمشق
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      gender:
+        name: gender
+        description: ''
+        required: true
+        example: male
+        type: string
+        enumValues:
+          - male
+          - female
+        exampleWasSpecified: false
+        custom: []
+      date_of_birth:
+        name: date_of_birth
+        description: 'Must be a valid date. Must be a date before or equal to <code>2008-08-13</code>.'
+        required: true
+        example: '2001-05-02'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      job_role_id:
+        name: job_role_id
+        description: ''
+        required: true
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      skill_ids:
+        name: skill_ids
+        description: ''
+        required: true
+        example:
+          - 13
+        type: 'integer[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      job_offer_id: voluptates
-      message: itv
+      headline: uqydqctzbznnfwweo
+      description: 'Dicta fugit quaerat placeat repudiandae fugit.'
+      city: دمشق
+      gender: male
+      date_of_birth: '2001-05-02'
+      job_role_id: 10
+      skill_ids:
+        - 13
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":null,"profile_image_url":null,"background_image_url":null,"username":null,"headline":null,"description":null,"city":null,"date_of_birth":null,"age":0,"gender":null,"user":null,"job_role":null,"skills":null,"portfolios":null}}'
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer V1Ecb8e3D6a4h5P6gafdvkZ'
+      - 'Bearer 5v6kbV6a3dfD8hga1PEZec4'
     controller: null
     method: null
     route: null
@@ -58,16 +186,14 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: api/job-offer-proposal
+    uri: api/freelancer
     metadata:
-      groupName: 'JobOffer-Proposal Management'
+      groupName: 'Freelancer Managment'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update (freelancer).'
-      description: |-
-        freelancer update the proposal message
-        but that does not updates the date of it
+      title: 'update Freelancer .'
+      description: ''
       authenticated: true
       custom: []
     headers:
@@ -79,34 +205,417 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      job_offer_proposal_id:
-        name: job_offer_proposal_id
+      profile_image_id:
+        name: profile_image_id
         description: ''
-        required: true
-        example: dolor
+        required: false
+        example: null
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-      message:
-        name: message
-        description: 'Must not be greater than 255 characters.'
+      background_image_id:
+        name: background_image_id
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      headline:
+        name: headline
+        description: 'Must be at least 20 characters. Must not be greater than 200 characters.'
+        required: false
+        example: qqpvttnnkkkzw
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      description:
+        name: description
+        description: 'Must be at least 60 characters. Must not be greater than 4000 characters.'
+        required: false
+        example: 'Magni odit libero veritatis omnis.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      city:
+        name: city
+        description: 'this must be a syrian city.'
+        required: false
+        example: دمشق
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      gender:
+        name: gender
+        description: ''
+        required: false
+        example: male
+        type: string
+        enumValues:
+          - male
+          - female
+        exampleWasSpecified: false
+        custom: []
+      date_of_birth:
+        name: date_of_birth
+        description: 'Must be a valid date. Must be a date before or equal to <code>2008-08-13</code>.'
+        required: false
+        example: '2001-12-21'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      job_role_id:
+        name: job_role_id
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      skill_ids:
+        name: skill_ids
+        description: ''
+        required: false
+        example: null
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      headline: qqpvttnnkkkzw
+      description: 'Magni odit libero veritatis omnis.'
+      city: دمشق
+      gender: male
+      date_of_birth: '2001-12-21'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":null,"profile_image_url":null,"background_image_url":null,"username":null,"headline":null,"description":null,"city":null,"date_of_birth":null,"age":0,"gender":null,"user":null,"job_role":null,"skills":null,"portfolios":null}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5VakavdbZ4636PcgDeE8fh1'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/freelancer/portfolio/{portfolio_id}'
+    metadata:
+      groupName: 'Freelancer Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get Portfolio .'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      portfolio_id:
+        name: portfolio_id
+        description: 'The ID of the portfolio.'
         required: true
-        example: usvrf
+        example: 9
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      portfolio_id: 9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":null,"title":null,"section":null,"views_count":null,"likes_count":null,"url":null,"date":null,"updated_at":null,"created_at":null}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3EP4daafhv66bZg5ecDkV18'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/freelancer/portfolio/store
+    metadata:
+      groupName: 'Freelancer Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store New Portfolio .'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
+        required: true
+        example: txxw
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      url:
+        name: url
+        description: 'Must match the regex /\b(?:https?|ftp):\/\/[a-zA-Z0-9-.]+\.[a-zA-Z]{2,}(?:\/\S*)?\b/.'
+        required: false
+        example: 'b:https|ftp)://xj.q{2,}:/SSSSSS)b'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      date:
+        name: date
+        description: 'Must be a valid date.'
+        required: false
+        example: '2024-08-13T04:12:57'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      description:
+        name: description
+        description: 'Must be at least 20 characters.'
+        required: true
+        example: 'Animi odio quo amet qui animi iste.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      file_ids:
+        name: file_ids
+        description: ''
+        required: true
+        example:
+          - 11
+        type: 'integer[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      image_ids:
+        name: image_ids
+        description: ''
+        required: true
+        example:
+          - 8
+        type: 'integer[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      skill_ids:
+        name: skill_ids
+        description: ''
+        required: false
+        example:
+          - 11
+        type: 'integer[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      section:
+        name: section
+        description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
+        required: true
+        example: pgcnplxbdblldfprfftbdzmdy
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      job_offer_proposal_id: dolor
-      message: usvrf
+      title: txxw
+      url: 'b:https|ftp)://xj.q{2,}:/SSSSSS)b'
+      date: '2024-08-13T04:12:57'
+      description: 'Animi odio quo amet qui animi iste.'
+      file_ids:
+        - 11
+      image_ids:
+        - 8
+      skill_ids:
+        - 11
+      section: pgcnplxbdblldfprfftbdzmdy
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":null,"title":null,"section":null,"views_count":null,"likes_count":null,"url":null,"date":null,"updated_at":null,"created_at":null}}'
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 4ke1Ea5vV8afDdbZ36hgPc6'
+      - 'Bearer 5Pd1havfekZ486g3bDa6EcV'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: api/freelancer/portfolio
+    metadata:
+      groupName: 'Freelancer Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Portfolio .'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      portfolio_id:
+        name: portfolio_id
+        description: ''
+        required: true
+        example: ut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      title:
+        name: title
+        description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
+        required: false
+        example: xxtu
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      url:
+        name: url
+        description: 'Must match the regex /\b(?:https?|ftp):\/\/[a-zA-Z0-9-.]+\.[a-zA-Z]{2,}(?:\/\S*)?\b/.'
+        required: false
+        example: 'b:https|ftp)://qUqEB4yq.C{2,}:/SS)b'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      date:
+        name: date
+        description: 'Must be a valid date.'
+        required: false
+        example: '2024-08-13T04:12:57'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      description:
+        name: description
+        description: 'Must be at least 20 characters.'
+        required: false
+        example: 'Earum maiores accusantium quisquam ut et voluptatum vel.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      file_ids:
+        name: file_ids
+        description: ''
+        required: true
+        example:
+          - nisi
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      image_ids:
+        name: image_ids
+        description: ''
+        required: true
+        example:
+          - laboriosam
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      skill_ids:
+        name: skill_ids
+        description: ''
+        required: false
+        example: null
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      section:
+        name: section
+        description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
+        required: false
+        example: jrodzimajtnc
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      portfolio_id: ut
+      title: xxtu
+      url: 'b:https|ftp)://qUqEB4yq.C{2,}:/SS)b'
+      date: '2024-08-13T04:12:57'
+      description: 'Earum maiores accusantium quisquam ut et voluptatum vel.'
+      file_ids:
+        - nisi
+      image_ids:
+        - laboriosam
+      section: jrodzimajtnc
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":null,"title":null,"section":null,"views_count":null,"likes_count":null,"url":null,"date":null,"updated_at":null,"created_at":null}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 54dZc8PfkD3V6v6haabE1ge'
     controller: null
     method: null
     route: null
@@ -114,106 +623,14 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/job-offer-proposal/{jobOfferProposal_id}'
+    uri: api/freelancer/portfolio
     metadata:
-      groupName: 'JobOffer-Proposal Management'
+      groupName: 'Freelancer Managment'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Delete | Cancel (freelancer).'
-      description: 'freelancer delete the proposal'
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      jobOfferProposal_id:
-        name: jobOfferProposal_id
-        description: 'The ID of the jobOfferProposal.'
-        required: true
-        example: 16
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      jobOfferProposal_id: 16
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 1a54g36ZefD8VdvPk6habEc'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/job-offer-proposal/index
-    metadata:
-      groupName: 'JobOffer-Proposal Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Display list (freelancer)'
-      description: |-
-        display a listing of proposals .
-        for the freelancer
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer VhZP64eva6d5aE1cfbk3g8D'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/job-offer-proposal/reject
-    metadata:
-      groupName: 'JobOffer-Proposal Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Reject (company)'
-      description: |-
-        reject one or more job offer proposals.
-
-        company reject one or more proposals
+      title: 'Delete Portfolio.'
+      description: ''
       authenticated: true
       custom: []
     headers:
@@ -225,138 +642,24 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      job_offer_proposal_ids:
-        name: job_offer_proposal_ids
+      portfolio_id:
+        name: portfolio_id
         description: ''
         required: true
-        example:
-          - ut
-        type: 'string[]'
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      job_offer_proposal_ids:
-        - ut
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer ga8e5DVbvPE613kfZa4cdh6'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: 'api/job-offer-proposal/accept/{jobOfferProposal_id}'
-    metadata:
-      groupName: 'JobOffer-Proposal Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Accept (company)'
-      description: |-
-        accept a job offer proposal.
-
-        company accepts the proposal
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      jobOfferProposal_id:
-        name: jobOfferProposal_id
-        description: 'The ID of the jobOfferProposal.'
-        required: true
-        example: 8
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      jobOfferProposal_id: 8
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer kD53Z4h1vfg8a6c6EbdaVPe'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/job-offer-proposal/filter
-    metadata:
-      groupName: 'JobOffer-Proposal Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Filter (company)'
-      description: 'filter job offer proposal based on job offer id and sort them by created date.'
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      job_offer_id:
-        name: job_offer_id
-        description: ''
-        required: false
-        example: 20
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      order:
-        name: order
-        description: ''
-        required: false
-        example: desc
+        example: tenetur
         type: string
-        enumValues:
-          - asc
-          - desc
+        enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      job_offer_id: 20
-      order: desc
+      portfolio_id: tenetur
     fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
+    responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer aZPD65EfecVd34hkbg6av81'
+      - 'Bearer 3516Zkhef8vPcDVEa6ba4gd'
     controller: null
     method: null
     route: null
@@ -364,14 +667,14 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/job-offer-proposal/{jobOfferProposal_id}'
+    uri: 'api/freelancer/portfolio/{portfolio_id}/liked-by-me'
     metadata:
-      groupName: 'JobOffer-Proposal Management'
+      groupName: 'Freelancer Managment'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display one (company|freelancer).'
-      description: 'company or freelancer can see the proposal'
+      title: 'Liked By Me'
+      description: 'return yes or no'
       authenticated: true
       custom: []
     headers:
@@ -379,17 +682,17 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      jobOfferProposal_id:
-        name: jobOfferProposal_id
-        description: 'The ID of the jobOfferProposal.'
+      portfolio_id:
+        name: portfolio_id
+        description: 'The ID of the portfolio.'
         required: true
-        example: 6
+        example: 9
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      jobOfferProposal_id: 6
+      portfolio_id: 9
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -409,7 +712,166 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer be1hka4V6Zc5vD6aPE3f8gd'
+      - 'Bearer 81hvZgk4fe6aDa5E3dVc6bP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/freelancer/portfolio/{portfolio_id}/like'
+    metadata:
+      groupName: 'Freelancer Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: Like
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      portfolio_id:
+        name: portfolio_id
+        description: 'The ID of the portfolio.'
+        required: true
+        example: 4
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      portfolio_id: 4
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer f5Da3Vhd1gPbv8k64e6cEaZ'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/freelancer/portfolio/{portfolio_id}/unlike'
+    metadata:
+      groupName: 'Freelancer Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: UnLike
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      portfolio_id:
+        name: portfolio_id
+        description: 'The ID of the portfolio.'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      portfolio_id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer a1Vf586aPhcgbEdv3ZD6e4k'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/freelancer/portfolio/{portfolio_id}/view'
+    metadata:
+      groupName: 'Freelancer Managment'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: View
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      portfolio_id:
+        name: portfolio_id
+        description: 'The ID of the portfolio.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      portfolio_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 8E5ceZk3hb1afvdgPV6Da64'
     controller: null
     method: null
     route: null

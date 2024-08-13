@@ -27,7 +27,7 @@ class StoreFileController extends Controller
         // $file = File::create([
         //     'url' => $url ,
         //     'size' => $size ,
-        //     'extention' => $extension ,
+        //     'extension' => $extension ,
         // ]) ;
 
         $cloudResponse = $request->file('file')->storeOnCloudinary() ;
@@ -37,7 +37,7 @@ class StoreFileController extends Controller
         'public_id' => $cloudResponse->getPublicId() ,
         'url' => $cloudResponse->getSecurePath() ,
         'size' => $cloudResponse->getSize() , 
-        'extention' => $cloudResponse->getExtension() ,
+        'extension' => $cloudResponse->getExtension() ,
         'deleted' => false ,
         ]) ;
 

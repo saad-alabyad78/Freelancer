@@ -18,7 +18,7 @@ class FileResource extends JsonResource
             'id' => $this->id , 
             'url' => $this->url ,
             'size' => $this->size , 
-            'extention' => $this->extention ,
+            'extension' => $this->extension ,
         ];
     }
 }
