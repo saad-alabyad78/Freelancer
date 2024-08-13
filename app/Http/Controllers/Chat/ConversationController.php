@@ -213,12 +213,21 @@ class ConversationController extends Controller
     }
 
     /**
-     * Get all conversations for the authenticated user.
+     * Get all conversations for the authenticated user with the latest message and participant details.
      *
      * @response 200 {
      *     "data": [
      *         {
      *             "id": 1,
+     *             "participant": {
+     *                 "id": 2,
+     *                 "name": "John Doe",
+     *                 "avatar": "avatar_url"
+     *             },
+     *             "last_message": {
+     *                 "message": "Hello, how are you?",
+     *                 "created_at": "2024-08-11T12:34:56.000000Z"
+     *             },
      *             "created_at": "2021-01-01T00:00:00.000000Z",
      *             "updated_at": "2021-01-01T00:00:00.000000Z"
      *         },
@@ -228,8 +237,44 @@ class ConversationController extends Controller
      */
     public function getConversations(Request $request)
     {
-        $conversations = $request->user()->conversations;
-        return response()->json($conversations);
+        $userId = $request->user()->id;
+
+        // الحصول على جميع المحادثات الخاصة بالمستخدم المسجل
+        $conversations = Conversation::whereHas('participants', function ($query) use ($userId) {
+            $query->where('user_id', $userId);
+        })->with(['participants' => function ($query) use ($userId) {
+            // استبعاد المستخدم المسجل من قائمة المشاركين
+            $query->where('user_id', '!=', $userId);
+        }, 'messages' => function ($query) {
+            // الحصول على آخر رسالة فقط
+            $query->latest()->first();
+        }])->get();
+
+        // تنسيق البيانات لإرجاعها في الاستجابة
+        $formattedConversations = $conversations->map(function ($conversation) {
+            // الحصول على المشاركين (من المفترض أن يكون هناك مشارك واحد فقط غير المستخدم المسجل)
+            $participant = $conversation->participants->first();
+
+            // الحصول على آخر رسالة في المحادثة
+            $lastMessage = $conversation->messages->first();
+
+            return [
+                'id' => $conversation->id,
+                'participant' => [
+                    'id' => $participant->id,
+                    'name' => $participant->first_name . ' ' . $participant->last_name,
+                    'avatar' => $participant->avatar,
+                ],
+                'last_message' => $lastMessage ? [
+                    'message' => $lastMessage->message,
+                    'created_at' => $lastMessage->created_at->toIso8601String(),
+                ] : null,
+                'created_at' => $conversation->created_at->toIso8601String(),
+                'updated_at' => $conversation->updated_at->toIso8601String(),
+            ];
+        });
+
+        return response()->json(['data' => $formattedConversations], 200);
     }
 
     /**
