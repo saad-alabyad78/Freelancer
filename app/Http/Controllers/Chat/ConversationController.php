@@ -239,23 +239,19 @@ class ConversationController extends Controller
     {
         $userId = $request->user()->id;
 
-        // الحصول على جميع المحادثات الخاصة بالمستخدم المسجل
         $conversations = Conversation::whereHas('participants', function ($query) use ($userId) {
             $query->where('user_id', $userId);
         })->with(['participants' => function ($query) use ($userId) {
-            // استبعاد المستخدم المسجل من قائمة المشاركين
+
             $query->where('user_id', '!=', $userId);
         }, 'messages' => function ($query) {
-            // الحصول على آخر رسالة فقط
             $query->latest()->first();
         }])->get();
 
-        // تنسيق البيانات لإرجاعها في الاستجابة
         $formattedConversations = $conversations->map(function ($conversation) {
-            // الحصول على المشاركين (من المفترض أن يكون هناك مشارك واحد فقط غير المستخدم المسجل)
+
             $participant = $conversation->participants->first();
 
-            // الحصول على آخر رسالة في المحادثة
             $lastMessage = $conversation->messages->first();
 
             return [
