@@ -12,6 +12,10 @@ use App\Http\Requests\Project\UpdateProjectRequest;
 
 class ProjectController extends Controller
 {
+    public function clientOk(Project $project)
+    {
+        $project->update(['client_ok' => true]) ;
+    }
     public function update(Project $project , UpdateProjectRequest $request)
     {
         if($request->has('file_ids')){

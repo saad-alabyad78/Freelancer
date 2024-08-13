@@ -28,7 +28,7 @@ class UpdateProjectRequest extends FormRequest
                 'integer' ,
                 Rule::exists('files' , 'id')
                 ->whereNull('filable') ,
-            ]
+            ] , 
         ];
     }
 }
