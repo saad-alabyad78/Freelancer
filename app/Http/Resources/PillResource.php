@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources\Storage;
+namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class FileResource extends JsonResource
+class PillResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,11 +14,6 @@ class FileResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return [
-            'id' => $this->id , 
-            'url' => $this->url ,
-            'size' => $this->size , 
-            'extension' => $this->extension ,
-        ];
+        return parent::toArray($request);
     }
 }

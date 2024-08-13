@@ -36,6 +36,8 @@ class Company extends BaseModel
 
         'lat' ,
         'lon' ,
+
+        'verified_at' ,
     ] ;
 
     public function user():MorphOne

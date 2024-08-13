@@ -21,7 +21,7 @@ class File extends BaseModel
         'size' , 
         'filable_id' ,
         'filable_type' ,
-        'extention' ,
+        'extension' ,
         'deleted' ,
     ] ;
 

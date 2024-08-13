@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('url' , 2048)->unique();
             $table->string('public_id')->unique();
             $table->integer('size');
-            $table->string('extention');
+            $table->string('extension');
             $table->unsignedBigInteger('filable_id')->nullable();
             $table->string('filable_type')->nullable();
             $table->boolean('deleted');
