@@ -30,7 +30,29 @@ class ConversationController extends Controller
      * @response 201 {
      *     "message": "Conversation created successfully",
      *     "conversation_id": 1,
-     *     "participants": [...]
+     *     "participants": [...],
+     *     "other_user": {
+     *         "id": 2,
+     *         "name": "John Doe",
+     *         "avatar": "avatar_url",
+     *         "is_online": true,
+     *         "last_seen": "2024-08-11 12:34:56"
+     *     }
+     * }
+     * @response 200 {
+     *     "message": "Conversation already exists",
+     *     "conversation_id": 1,
+     *     "participants": [...],
+     *     "other_user": {
+     *         "id": 2,
+     *         "name": "John Doe",
+     *         "avatar": "avatar_url",
+     *         "is_online": true,
+     *         "last_seen": "2024-08-11 12:34:56"
+     *     }
+     * }
+     * @response 400 {
+     *     "message": "Cannot create a conversation with yourself"
      * }
      * @response 404 {
      *     "message": "User not found"
@@ -41,16 +63,41 @@ class ConversationController extends Controller
         $authUser = $request->user();
         $otherUserId = $request->user_id;
 
+        if ($authUser->id == $otherUserId) {
+            return response()->json(['message' => 'Cannot create a conversation with yourself'], 400);
+        }
+
         $otherUser = User::find($otherUserId);
         if (!$otherUser) {
             return response()->json(['message' => 'User not found'], 404);
+        }
+
+        $existingConversation = Conversation::whereHas('participants', function ($query) use ($authUser, $otherUserId) {
+            $query->where('user_id', $authUser->id)->orWhere('user_id', $otherUserId);
+        })->withCount('participants')->having('participants_count', '=', 2)->first();
+
+        if ($existingConversation) {
+            $participants = $existingConversation->participants()->get();
+            $otherUserData = [
+                'id' => $otherUser->id,
+                'name' => $otherUser->first_name . ' ' . $otherUser->last_name,
+                'avatar' => $otherUser->avatar,
+                'is_online' => $otherUser->isOnline(),
+                'last_seen' => $otherUser->last_seen,
+            ];
+
+            return response()->json([
+                'message' => 'Conversation already exists',
+                'conversation_id' => $existingConversation->id,
+                'participants' => $participants,
+                'other_user' => $otherUserData
+            ], 200);
         }
 
         $conversation = Conversation::create();
         $conversation->participants()->attach([$authUser->id, $otherUserId]);
 
         $participants = $conversation->participants()->get();
-
         $otherUserData = [
             'id' => $otherUser->id,
             'name' => $otherUser->first_name . ' ' . $otherUser->last_name,
