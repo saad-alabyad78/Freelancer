@@ -21,6 +21,9 @@ return new class extends Migration
             $table->integer('price');
             $table->integer('client_money');
             $table->integer('days');
+            //todo migrate
+            $table->boolean('client_ok');
+            $table->boolean('freelancer_ok');
             $table->timestamps();
         });
     }

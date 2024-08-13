@@ -17,7 +17,8 @@ class ClientOfferProposalResource extends JsonResource
     {
         return [
             'id'=> $this->id ,
-            'freelancer_id'=> FreelancerResource::make($this->freelancer) ,
+            'freelancer_id' => $this->freelancer_id ,
+            'freelancer' => FreelancerResource::make($this->freelancer) ,
             'client_id'=> $this->client_id ,
             'client_offer_id'=> $this->client_offer_id ,
             'message'=> $this->message ,
