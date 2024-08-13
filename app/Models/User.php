@@ -62,6 +62,20 @@ class User extends Authenticatable
         return $this->morphTo();
     }
 
+    public function getAvatarAttribute()
+    {
+        switch ($this->role_type) {
+            case 'App\Models\Company':
+                return $this->role->profile_image_url;
+            case 'App\Models\Client':
+                return $this->role->profile_image_url;
+            case 'App\Models\Freelancer':
+                return $this->role->profile_image_url;
+            default:
+                return null;
+        }
+    }
+
     public function conversations()
     {
         return $this->belongsToMany(Conversation::class, 'conversation_user');

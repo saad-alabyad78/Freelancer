@@ -39,10 +39,10 @@ class ConversationController extends Controller
     public function createConversation(CreateConversationRequest $request)
     {
         $authUser = $request->user();
-
         $otherUserId = $request->user_id;
 
-        if (!User::find($otherUserId)) {
+        $otherUser = User::find($otherUserId);
+        if (!$otherUser) {
             return response()->json(['message' => 'User not found'], 404);
         }
 
@@ -51,12 +51,22 @@ class ConversationController extends Controller
 
         $participants = $conversation->participants()->get();
 
+        $otherUserData = [
+            'id' => $otherUser->id,
+            'name' => $otherUser->first_name . ' ' . $otherUser->last_name,
+            'avatar' => $otherUser->avatar,
+            'is_online' => $otherUser->isOnline(),
+            'last_seen' => $otherUser->last_seen,
+        ];
+
         return response()->json([
             'message' => 'Conversation created successfully',
             'conversation_id' => $conversation->id,
-            'participants' => $participants
+            'participants' => $participants,
+            'other_user' => $otherUserData
         ], 201);
     }
+
 
     /**
      * Send a message in a conversation.
