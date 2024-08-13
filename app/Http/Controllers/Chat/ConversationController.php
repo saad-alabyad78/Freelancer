@@ -72,9 +72,11 @@ class ConversationController extends Controller
             return response()->json(['message' => 'User not found'], 404);
         }
 
-        $existingConversation = Conversation::whereHas('participants', function ($query) use ($authUser, $otherUserId) {
-            $query->where('user_id', $authUser->id)->orWhere('user_id', $otherUserId);
-        })->withCount('participants')->having('participants_count', '=', 2)->first();
+        $existingConversation = Conversation::whereHas('participants', function ($query) use ($authUser) {
+            $query->where('user_id', $authUser->id);
+        })->whereHas('participants', function ($query) use ($otherUserId) {
+            $query->where('user_id', $otherUserId);
+        })->first();
 
         if ($existingConversation) {
             $participants = $existingConversation->participants()->get();
@@ -113,7 +115,6 @@ class ConversationController extends Controller
             'other_user' => $otherUserData
         ], 201);
     }
-
 
     /**
      * Send a message in a conversation.
