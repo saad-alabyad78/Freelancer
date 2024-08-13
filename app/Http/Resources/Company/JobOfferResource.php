@@ -2,7 +2,10 @@
 
 namespace App\Http\Resources\Company;
 
+use App\Models\User;
+use App\Models\Freelancer;
 use Illuminate\Http\Request;
+use App\Models\JobOfferProposal;
 use App\Http\Resources\Category\SkillResource;
 use App\Http\Resources\Category\JobRoleResource;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -16,7 +19,20 @@ class JobOfferResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        $user = User::where('id' , auth('sanctum')->id())->first() ;
+        
+        $i_proposed = null ;
+        
+        if($user->role_type == Freelancer::class)
+        {
+            $i_proposed = JobOfferProposal::
+                where('freelancer_id' , $user->role_id)
+                ->Where('job_offer_id' , $this->id)
+                ->exists() ;
+        }
+        
         return [
+            'i_proposed' => $i_proposed ,
             'id' => $this->id ,
             'description' => $this->description ,
             'status' => $this->status ,

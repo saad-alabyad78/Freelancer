@@ -114,8 +114,14 @@ class ClientOfferController extends Controller
      */
     public function rejectProposals(ClientRejectProposalsRequest $request)
     {
-        $proposals = ClientOfferProposal::whereIn('id' , $request->input('proposal_ids'))
+        ClientOfferProposal::whereIn('id' , $request->input('proposal_ids'))
         ->update(['rejected_at' => now()->toDateTimeString()]) ;
+
+        error
+        //todo 
+        $proposals = ClientOfferProposal
+        ::where('client_offer_id' , $request->input('client_offer_id'))
+        ->paginate() ;
 
         //todo send api to the freelancer 
         return ClientOfferProposalResource::collection($proposals) ;
