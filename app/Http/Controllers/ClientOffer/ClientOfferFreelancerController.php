@@ -62,6 +62,18 @@ class ClientOfferFreelancerController extends Controller
      */
     public function createProposal(CreateClientOfferProposalRequest $request)
     {
+        $freelancerId = auth('sanctum')->user()->role_id ;
+        
+        $oldProposal = ClientOfferProposal::where('freelancer_id' , $freelancerId)
+        ->where('client_offer_id' , $request->input('client_offer_id'))
+        ->whereNull('rejected_at') ;
+        
+        if($oldProposal->exists()){
+            return response()->json([
+                'message' => 'there is already a proposal for this client offer' ,
+            ]) ;
+        }
+        
         $data = $request->validated() ;
         $data['freelancer_id'] = auth('sanctum')->user()->role_id ;
         $clientOffer = ClientOffer::findOrFail($data['client_offer_id'])->first() ;

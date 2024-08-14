@@ -25,6 +25,11 @@ class ClientOfferProposal extends Model
         'updated_at' ,
     ] ;
 
+    protected $casts = [
+        'price' => 'integer' , 
+        'days' => 'integer' ,
+    ] ;
+
     public function freelancer():BelongsTo
     {
         return $this->belongsTo(Freelancer::class) ;

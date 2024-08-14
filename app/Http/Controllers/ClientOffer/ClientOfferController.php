@@ -135,6 +135,7 @@ class ClientOfferController extends Controller
     {
         $proposals = ClientOfferProposal
         ::where('client_offer_id' , $request->input('client_offer_id'))
+        ->whereNull(['rejected_at' , 'accepted_at'])
         ->orderBy('days' , $request->boolean('orderByDays')? 'asc' : 'desc')
         ->orderBy('price' , $request->boolean('orderByPrice')? 'asc' : 'desc')
         ->paginate() ;

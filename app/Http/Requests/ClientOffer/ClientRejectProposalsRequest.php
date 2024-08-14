@@ -28,7 +28,7 @@ class ClientRejectProposalsRequest extends FormRequest
                 'required' ,
                 'integer' ,
                 Rule::exists('client_offer_proposals' , 'id')
-                ->where('client_id' , auth('sanctum')->id()) ,
+                ->where('client_id' , auth('sanctum')->id()),
             ],
         ];
     }
