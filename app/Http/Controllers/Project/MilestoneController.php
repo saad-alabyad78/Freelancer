@@ -49,7 +49,7 @@ class MilestoneController extends Controller
             $freelancer->increment('money' , $milestone->price) ;
             $client->decrement('money' , $milestone->price) ;
 
-            //todo add a pill
+            //todo add a bill
         }
 
         return ProjectResource::make($project->load(['milestones','files','client','freelancer'])) ;

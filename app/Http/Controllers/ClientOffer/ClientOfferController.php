@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\ClientOffer;
 
 use App\Models\File;
-use App\Models\Pill;
+use App\Models\Bill;
 use App\Models\User;
 use App\Models\Client;
 use App\Models\Project;
@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\ClientOfferProposal;
 use App\Constants\ClientOfferStatus;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\PillResource;
+use App\Http\Resources\BillResource;
 use App\Http\Resources\Project\ProjectResource;
 use App\Http\Requests\ClientOffer\GetProposalsRequest;
 use App\Http\Resources\ClientOffer\ClientOfferResource;
@@ -83,12 +83,12 @@ class ClientOfferController extends Controller
 
             $user->decrement('money', $proposal->price);
 
-            $pill = Pill::create([
+            $bill = Bill::create([
                 'from_id' => $offer->client_id,
                 'from_type' => 'clients',
                 'to_id' => $project->id,
                 'to_type' => 'projects',
-                'description' => 'this pill is to pay for the project building ',
+                'description' => 'this bill is to pay for the project building ',
                 'money' => $proposal->price,
             ]);
 
@@ -97,7 +97,7 @@ class ClientOfferController extends Controller
 
             return response()->json(
                 [
-                    'pill' => PillResource::make($pill->load([
+                    'bill' => BillResource::make($bill->load([
                     ])),
                     'project' => ProjectResource::make($project->load([
                         'freelancer',
@@ -224,7 +224,7 @@ class ClientOfferController extends Controller
             ->with(['freelancer', 'client'])
             ->first();
 
-        $pill = Pill::where([
+        $bill = Bill::where([
             'from_id' => $clientOffer->client_id,
             'from_type' => 'clients',
             'to_id' => $project->id,
@@ -234,7 +234,7 @@ class ClientOfferController extends Controller
 
         return response()->json(
             [
-                'pill' => PillResource::make($pill),
+                'bill' => BillResource::make($bill),
 
                 'project' => ProjectResource::make($project),
 

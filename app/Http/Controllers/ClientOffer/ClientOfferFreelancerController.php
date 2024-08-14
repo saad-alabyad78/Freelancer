@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\ClientOffer;
 
-use App\Models\Pill;
+use App\Models\Bill;
 use App\Models\Project;
 use App\Models\ClientOffer;
 use Illuminate\Http\Request;
 use App\Models\ClientOfferProposal;
 use App\Constants\ClientOfferStatus;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\PillResource;
+use App\Http\Resources\BillResource;
 use App\Http\Resources\Project\ProjectResource;
 use App\Http\Resources\ClientOffer\ClientOfferResource;
 use App\Http\Resources\ClientOffer\ClientOfferProposalResource;
@@ -67,7 +67,7 @@ class ClientOfferFreelancerController extends Controller
             ->with(['freelancer', 'client'])
             ->first();
 
-        $pill = Pill::where([
+        $bill = Bill::where([
             'from_id' => $clientOffer->client_id,
             'from_type' => 'clients',
             'to_id' => $project->id,
@@ -77,7 +77,7 @@ class ClientOfferFreelancerController extends Controller
 
         return response()->json(
             [
-                'pill' => PillResource::make($pill),
+                'bill' => BillResource::make($bill),
 
                 'project' => ProjectResource::make($project),
 
