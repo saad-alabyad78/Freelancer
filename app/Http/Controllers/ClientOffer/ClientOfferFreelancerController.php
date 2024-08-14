@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers\ClientOffer;
 
+use App\Models\Pill;
+use App\Models\Project;
 use App\Models\ClientOffer;
 use Illuminate\Http\Request;
 use App\Models\ClientOfferProposal;
 use App\Constants\ClientOfferStatus;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\PillResource;
+use App\Http\Resources\Project\ProjectResource;
 use App\Http\Resources\ClientOffer\ClientOfferResource;
 use App\Http\Resources\ClientOffer\ClientOfferProposalResource;
 use App\Http\Requests\ClientOffer\CreateClientOfferProposalRequest;
@@ -34,6 +38,7 @@ class ClientOfferFreelancerController extends Controller
     {
         $clientOffers = ClientOffer::filter($request->validated())
         ->with(['skills' , 'sub_category'])
+        ->where('status' , '<>' , ClientOfferStatus::PENDING)
         ->orderByDesc('created_at')
         ->paginate(20) ;
 
@@ -50,7 +55,41 @@ class ClientOfferFreelancerController extends Controller
         {
             return response()->json(['error' => 'you can\'t see pending offers'],403) ;
         }
-        return ClientOfferResource::make($clientOffer) ;
+        if (!$clientOffer->freelancer_id) {
+            return ClientOfferResource::make($clientOffer->load([
+                'files',
+                'sub_category',
+                'skills',
+            ]));
+        }
+
+        $project = Project::where('client_offer_id', $clientOffer->id)
+            ->with(['freelancer', 'client'])
+            ->first();
+
+        $pill = Pill::where([
+            'from_id' => $clientOffer->client_id,
+            'from_type' => 'clients',
+            'to_id' => $project->id,
+            'to_type' => 'projects',
+        ])
+        ->first();
+
+        return response()->json(
+            [
+                'pill' => PillResource::make($pill),
+
+                'project' => ProjectResource::make($project),
+
+                'client_offer' => ClientOfferResource::make($clientOffer->load([
+                    'freelancer',
+                    'client',
+                    'sub_category',
+                    'files',
+                    'skills',
+                ])),
+            ]
+        );
     }
 
     /**

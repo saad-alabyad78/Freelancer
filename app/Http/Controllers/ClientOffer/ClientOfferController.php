@@ -30,83 +30,89 @@ use App\Http\Resources\ClientOffer\ClientOfferProposalResource;
  */
 class ClientOfferController extends Controller
 {
-    public function __construct(){
+    public function __construct()
+    {
         $this->middleware('role:client');
     }
 
     /**
      * Accept Proposal
      */
-    
+
     public function acceptProposal(ClientAcceptProposalsRequest $request)
     {
-        //DB::beginTransaction();
-        $proposal = ClientOfferProposal::where('id' , $request->input('proposal_id'))
-        ->first() ;
+        return DB::transaction(function ()
+        use (&$request)
+        {
+            $proposal = ClientOfferProposal::where('id', $request->input('proposal_id'))
+                ->first();
 
-        $user = User::where('id' , auth('sanctum')->id())->first();
-        if($user->money < $proposal->price){
-            return response()->json([
-                'message' => 'you dont have money' ,
-                'client money' => $user->money ,
-                'proposal price' => $proposal->price ,
-            ]) ;
-        }
+            $user = User::where('id', auth('sanctum')->id())->first();
+            if ($user->money < $proposal->price) {
+                return response()->json([
+                    'message' => 'you dont have money',
+                    'client money' => $user->money,
+                    'proposal price' => $proposal->price,
+                ]);
+            }
 
-        $proposal->update(['accepted_at' => now()->toDateTimeString()]) ;
+            $proposal->update(['accepted_at' => now()->toDateTimeString()]);
 
-        ClientOfferProposal::where('client_offer_id' , $proposal->client_offer_id)
-        ->whereNot('id' , $proposal->id)
-        ->update(['rejected_at' => now()->toDateTimeString()]) ;
+            ClientOfferProposal::where('client_offer_id', $proposal->client_offer_id)
+                ->whereNot('id', $proposal->id)
+                ->update(['rejected_at' => now()->toDateTimeString()]);
 
-        $offer = ClientOffer::where('id' , $proposal->client_offer_id)->first() ;
-        $offer->update([
-            'status' => ClientOfferStatus::IN_PROGRESS , 
-            'freelancer_id' => $proposal->freelancer_id ,
-        ]) ;
+            $offer = ClientOffer::where('id', $proposal->client_offer_id)->first();
+            $offer->update([
+                'status' => ClientOfferStatus::IN_PROGRESS,
+                'freelancer_id' => $proposal->freelancer_id,
+            ]);
 
-        $project = Project::create([
-            'freelancer_id' =>$offer->freelancer_id, 
-            'client_id' => $offer->client_id,
-            'finished_at' => null,
-            'price' => $proposal->price ,
-            'days' => $proposal->days ,
-            'client_money' => $user->money,
-            'client_ok' => false ,
-            'freelancer_ok' => false ,
-        ]) ;
-        
-        $user->decrement('money' , $proposal->price) ;
-        
-        $pill = Pill::create([
-            'from_id' => $offer->client_id ,
-            'from_type' => Client::class,
-            'to_id' => $project->id ,
-            'to_type' => Project::class ,
-            'description' => 'this pill is to pay for the project building ',
-            'price' => $proposal->price ,  
-        ]) ;
 
-        //todo send notification to the freelancer 
-        
-        return response()->json(
-        [
-            'pill' => PillResource::make($pill->load([
-                'from' , 
-                'to' ,
-            ])) ,
-            'project' => ProjectResource::make($project->load([
-                'freelancer' , 
-                'client' ,
-            ])) ,
-            'client_offer' => ClientOfferResource::make($offer->load([
-                'freelancer',
-                'client',
-                'sub_category',
-                'files',
-                'skills',
-            ])),
-        ]);
+            $project = Project::create([
+                'freelancer_id' => $offer->freelancer_id,
+                'client_id' => $offer->client_id,
+                'client_offer_id' => $proposal->client_offer_id ,
+                'finished_at' => null,
+                'price' => $proposal->price,
+                'days' => $proposal->days,
+                'client_money' => $proposal->price,
+                'client_ok' => false,
+                'freelancer_ok' => false,
+            ]);
+
+            $user->decrement('money', $proposal->price);
+
+            $pill = Pill::create([
+                'from_id' => $offer->client_id,
+                'from_type' => 'clients',
+                'to_id' => $project->id,
+                'to_type' => 'projects',
+                'description' => 'this pill is to pay for the project building ',
+                'money' => $proposal->price,
+            ]);
+
+            //todo send notification to the freelancer 
+            //todo send notification to the client 
+
+            return response()->json(
+                [
+                    'pill' => PillResource::make($pill->load([
+                    ])),
+                    'project' => ProjectResource::make($project->load([
+                        'freelancer',
+                        'client',
+                    ])),
+                    'client_offer' => ClientOfferResource::make($offer->load([
+                        'freelancer',
+                        'client',
+                        'sub_category',
+                        'files',
+                        'skills',
+                    ])),
+                ]
+            );
+        });
     }
     //todo test 
     /**
@@ -116,13 +122,13 @@ class ClientOfferController extends Controller
      */
     public function rejectProposals(ClientRejectProposalsRequest $request)
     {
-        ClientOfferProposal::whereIn('id' , $request->input('proposal_ids'))
-        ->update(['rejected_at' => now()->toDateTimeString()]) ;
+        ClientOfferProposal::whereIn('id', $request->input('proposal_ids'))
+            ->update(['rejected_at' => now()->toDateTimeString()]);
 
-        $proposals =  ClientOfferProposal::whereIn('id' , $request->input('proposal_ids'))->get();
+        $proposals = ClientOfferProposal::whereIn('id', $request->input('proposal_ids'))->get();
 
         //todo send api to the freelancer 
-        return ClientOfferProposalResource::collection($proposals) ;
+        return ClientOfferProposalResource::collection($proposals);
     }
 
     //todo test
@@ -134,15 +140,15 @@ class ClientOfferController extends Controller
     public function proposals(GetProposalsRequest $request)
     {
         $proposals = ClientOfferProposal
-        ::where('client_offer_id' , $request->input('client_offer_id'))
-        ->whereNull(['rejected_at' , 'accepted_at'])
-        ->orderBy('days' , $request->boolean('orderByDays')? 'asc' : 'desc')
-        ->orderBy('price' , $request->boolean('orderByPrice')? 'asc' : 'desc')
-        ->paginate() ;
+            ::where('client_offer_id', $request->input('client_offer_id'))
+            ->whereNull(['rejected_at', 'accepted_at'])
+            ->orderBy('days', $request->boolean('orderByDays') ? 'asc' : 'desc')
+            ->orderBy('price', $request->boolean('orderByPrice') ? 'asc' : 'desc')
+            ->paginate();
 
         return ClientOfferProposalResource::collection(
-            $proposals->load(['freelancer.job_role' , 'freelancer.skills'])
-        ) ;
+            $proposals->load(['freelancer.job_role', 'freelancer.skills'])
+        );
     }
     /**
      *  Client-Filter List Client Offers
@@ -152,12 +158,12 @@ class ClientOfferController extends Controller
     public function clientFilter(FilterClientOfferRequest $request)
     {
         $clientOffers = ClientOffer::filter($request->validated())
-        ->where('client_id' , auth('sanctum')->user()->role_id)
-        ->with(['skills' , 'sub_category'])
-        ->orderByDesc('created_at')
-        ->paginate(20) ;
+            ->where('client_id', auth('sanctum')->user()->role_id)
+            ->with(['skills', 'sub_category'])
+            ->orderByDesc('created_at')
+            ->paginate(20);
 
-        return ClientOfferResource::collection($clientOffers) ;
+        return ClientOfferResource::collection($clientOffers);
     }
     /**
      * Client Store Offer
@@ -167,28 +173,27 @@ class ClientOfferController extends Controller
      */
     public function store(CreateClientOfferRequest $request)
     {
-        $data = $request->validated() ;
-        $data['client_id'] = auth('sanctum')->user()->role_id ;
-        $data['status'] = ClientOfferStatus::PENDING ;
+        $data = $request->validated();
+        $data['client_id'] = auth('sanctum')->user()->role_id;
+        $data['status'] = ClientOfferStatus::PENDING;
 
-        $clientOffer = ClientOffer::create($data) ;
+        $clientOffer = ClientOffer::create($data);
 
-        $clientOffer->skills()->attach($data['skill_ids']) ;
-        
-        if($data['file_ids']??false)
-        {
-           File::whereIn('id' , $data['file_ids'])
-            ->update([
-                'filable_id' => $clientOffer->id ,
-                'filable_type' => ClientOffer::class ,
-            ]) ; 
+        $clientOffer->skills()->attach($data['skill_ids']);
+
+        if ($data['file_ids'] ?? false) {
+            File::whereIn('id', $data['file_ids'])
+                ->update([
+                    'filable_id' => $clientOffer->id,
+                    'filable_type' => ClientOffer::class,
+                ]);
         }
 
         return ClientOfferResource::make($clientOffer->load([
-            'files' ,
-            'sub_category' ,
-            'skills' ,
-            ])) ;
+            'files',
+            'sub_category',
+            'skills',
+        ]));
     }
 
     /**
@@ -201,41 +206,38 @@ class ClientOfferController extends Controller
     {
         //$this->authorize('view' , $clientOffer) ;
 
-        if($clientOffer->client_id != auth('sanctum')->user()->role_id)
-        {
+        if ($clientOffer->client_id != auth('sanctum')->user()->role_id) {
             return response()->json([
-                'error' => 'unauthorized' ,
-            ] , 403);
+                'error' => 'unauthorized',
+            ], 403);
         }
 
-        if(!$clientOffer->freelancer_id)
-        {
+        if (!$clientOffer->freelancer_id) {
             return ClientOfferResource::make($clientOffer->load([
-            'files' ,
-            'sub_category' ,
-            'skills' ,
-            ])) ;
+                'files',
+                'sub_category',
+                'skills',
+            ]));
         }
 
-        $project = Project::where('client_offer_id' , $clientOffer->id)
-        ->with(['freelancer' , 'client'])
-        ->first() ;
+        $project = Project::where('client_offer_id', $clientOffer->id)
+            ->with(['freelancer', 'client'])
+            ->first();
 
         $pill = Pill::where([
-            'from_id' => $clientOffer->client_id ,
-            'from_type' => Client::class,
-            'to_id' => $project->id ,
-            'to_type' => Project::class ,
+            'from_id' => $clientOffer->client_id,
+            'from_type' => 'clients',
+            'to_id' => $project->id,
+            'to_type' => 'projects',
         ])
-        ->with(['from' , 'to'])
-        ->first() ;
-        
+        ->first();
+
         return response()->json(
             [
                 'pill' => PillResource::make($pill),
-                
+
                 'project' => ProjectResource::make($project),
-                
+
                 'client_offer' => ClientOfferResource::make($clientOffer->load([
                     'freelancer',
                     'client',
@@ -243,7 +245,8 @@ class ClientOfferController extends Controller
                     'files',
                     'skills',
                 ])),
-            ]);
+            ]
+        );
     }
 
     /**
@@ -253,50 +256,49 @@ class ClientOfferController extends Controller
      * @return ClientOfferResource|mixed|\Illuminate\Http\JsonResponse
      */
     public function update(UpdateClientOfferRequest $request)
-    {   
-        $data = $request->validated() ;
-        
-        $clientOffer = ClientOffer::findOrFail($data['client_offer_id']) ;
+    {
+        $data = $request->validated();
 
-        if($clientOffer->client_id != auth('sanctum')->user()->role_id)
-        {
+        $clientOffer = ClientOffer::findOrFail($data['client_offer_id']);
+
+        if ($clientOffer->client_id != auth('sanctum')->user()->role_id) {
             return response()->json([
-                'error' => 'unauthorized' ,
-            ] , 403);
+                'error' => 'unauthorized',
+            ], 403);
         }
 
         //$this->authorize('update' , $clientOffer) ;
-    
-        if($clientOffer->status != ClientOfferStatus::PENDING)
-        {
+
+        if ($clientOffer->status != ClientOfferStatus::PENDING) {
             return response()->json(
-                ['error' => 'client offer status is not pending']) ;
+                ['error' => 'client offer status is not pending']
+            );
         }
 
-        $clientOffer->update($data) ;
+        $clientOffer->update($data);
 
-        $clientOffer->skills()->sync($data['skill_ids']) ;
-        
+        $clientOffer->skills()->sync($data['skill_ids']);
+
         //delete old files 
         $clientOffer
-        ->files()
-        ->whereNotIn('id' , $data['file_ids'])
-        ->update(['deleted' => true]) ;
-        
+            ->files()
+            ->whereNotIn('id', $data['file_ids'])
+            ->update(['deleted' => true]);
+
         //add old files
         File::whereNull('filable_id')
-            ->whereNull('filable_type') 
-            ->whereIn('id' , $data['file_ids'])
+            ->whereNull('filable_type')
+            ->whereIn('id', $data['file_ids'])
             ->update([
-                'filable_id' => $clientOffer->id ,
-                'filable_type' => ClientOffer::class ,
-            ]);
+                    'filable_id' => $clientOffer->id,
+                    'filable_type' => ClientOffer::class,
+                ]);
 
         return ClientOfferResource::make($clientOffer->load([
-            'files' ,
-            'sub_category' ,
-            'skills' ,
-            ])) ;
+            'files',
+            'sub_category',
+            'skills',
+        ]));
     }
 
     /**
@@ -309,15 +311,14 @@ class ClientOfferController extends Controller
     {
         //$this->authorize('delete' , $clientOffer) ;
 
-        if($clientOffer->client_id != auth('sanctum')->user()->role_id)
-        {
+        if ($clientOffer->client_id != auth('sanctum')->user()->role_id) {
             return response()->json([
-                'error' => 'unauthorized' ,
-            ] , 403);
+                'error' => 'unauthorized',
+            ], 403);
         }
-        
-        $clientOffer->delete() ;
 
-        return response()->json(['massage'=>'deleted']) ;
+        $clientOffer->delete();
+
+        return response()->json(['massage' => 'deleted']);
     }
 }
