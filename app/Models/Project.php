@@ -16,10 +16,13 @@ class Project extends Model
     protected $fillable = [
         'freelancer_id' , 
         'client_id' ,
+        'client_offer_id' ,
         'finished_at' ,
         'price' ,
         'days' ,
         'client_money' ,
+        'client_ok' ,
+        'freelancer_ok' ,
     ] ;
 
     public function files():MorphMany
@@ -41,4 +44,9 @@ class Project extends Model
     {
         return $this->belongsTo(Client::class) ;
     }
+    public function clientOffer():BelongsTo
+    {
+        return $this->belongsTo(Client::class) ;
+    }
+    
 }

@@ -2,6 +2,7 @@
 
 use App\Models\Client;
 use App\Models\Freelancer;
+use App\Models\ClientOffer;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -17,13 +18,14 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Freelancer::class)->constrained()->restrictOnDelete();
             $table->foreignIdFor(Client::class)->constrained()->restrictOnDelete();
+            $table->foreignIdFor(ClientOffer::class)->constrained()->restrictOnDelete();
             $table->date('finished_at')->nullable();
             $table->integer('price');
             $table->integer('client_money');
             $table->integer('days');
             //todo migrate
-            $table->boolean('client_ok');
-            $table->boolean('freelancer_ok');
+            $table->boolean('client_ok')->nullable();
+            $table->boolean('freelancer_ok')->nullable();
             $table->timestamps();
         });
     }

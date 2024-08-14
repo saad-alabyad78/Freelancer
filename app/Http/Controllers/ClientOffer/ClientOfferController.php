@@ -20,7 +20,6 @@ use App\Http\Requests\ClientOffer\GetProposalsRequest;
 use App\Http\Resources\ClientOffer\ClientOfferResource;
 use App\Http\Requests\ClientOffer\CreateClientOfferRequest;
 use App\Http\Requests\ClientOffer\FilterClientOfferRequest;
-
 use App\Http\Requests\ClientOffer\UpdateClientOfferRequest;
 use App\Http\Requests\ClientOffer\ClientAcceptProposalsRequest;
 use App\Http\Requests\ClientOffer\ClientRejectProposalsRequest;
@@ -41,6 +40,7 @@ class ClientOfferController extends Controller
     
     public function acceptProposal(ClientAcceptProposalsRequest $request)
     {
+        //DB::beginTransaction();
         $proposal = ClientOfferProposal::where('id' , $request->input('proposal_id'))
         ->first() ;
 
@@ -72,6 +72,8 @@ class ClientOfferController extends Controller
             'price' => $proposal->price ,
             'days' => $proposal->days ,
             'client_money' => $user->money,
+            'client_ok' => false ,
+            'freelancer_ok' => false ,
         ]) ;
         
         $user->decrement('money' , $proposal->price) ;
@@ -117,11 +119,7 @@ class ClientOfferController extends Controller
         ClientOfferProposal::whereIn('id' , $request->input('proposal_ids'))
         ->update(['rejected_at' => now()->toDateTimeString()]) ;
 
-        error
-        //todo 
-        $proposals = ClientOfferProposal
-        ::where('client_offer_id' , $request->input('client_offer_id'))
-        ->paginate() ;
+        $proposals =  ClientOfferProposal::whereIn('id' , $request->input('proposal_ids'))->get();
 
         //todo send api to the freelancer 
         return ClientOfferProposalResource::collection($proposals) ;
@@ -208,12 +206,43 @@ class ClientOfferController extends Controller
                 'error' => 'unauthorized' ,
             ] , 403);
         }
-        
-        return ClientOfferResource::make($clientOffer->load([
+
+        if(!$clientOffer->freelancer_id)
+        {
+            return ClientOfferResource::make($clientOffer->load([
             'files' ,
             'sub_category' ,
             'skills' ,
             ])) ;
+        }
+
+        $project = Project::where('client_offer_id' , $clientOffer->id)
+        ->with(['freelancer' , 'client'])
+        ->first() ;
+
+        $pill = Pill::where([
+            'from_id' => $clientOffer->client_id ,
+            'from_type' => Client::class,
+            'to_id' => $project->id ,
+            'to_type' => Project::class ,
+        ])
+        ->with(['from' , 'to'])
+        ->first() ;
+        
+        return response()->json(
+            [
+                'pill' => PillResource::make($pill),
+                
+                'project' => ProjectResource::make($project),
+                
+                'client_offer' => ClientOfferResource::make($clientOffer->load([
+                    'freelancer',
+                    'client',
+                    'sub_category',
+                    'files',
+                    'skills',
+                ])),
+            ]);
     }
 
     /**

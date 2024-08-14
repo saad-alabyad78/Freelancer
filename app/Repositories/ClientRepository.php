@@ -15,7 +15,7 @@ class ClientRepository extends BaseRepository implements IClientRepository{
                 'imagable_id' => $client->id ,
                 'imagable_type' => Client::class ,
             ]);
-            if($data['profile_image_url'] != null)
+            if($data['profile_image_id'] != null)
             $data['profile_image_url'] = Image::findOrFail($data['profile_image_id'])->pluck('url')->first() ;
         }
         if(array_key_exists('background_image_id' , $data) and $client?->background_image_id ?? false)
@@ -25,7 +25,7 @@ class ClientRepository extends BaseRepository implements IClientRepository{
                 'imagable_id' => $client->id ,
                 'imagable_type' => Client::class ,
             ]);
-            if($data['background_image_url'] != null)
+            if($data['background_image_id'] != null)
             $data['background_image_url'] = Image::findOrFail($data['profile_image_id'])->pluck('url')->first() ;
         }
 

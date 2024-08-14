@@ -5,6 +5,7 @@ namespace App\Http\Controllers\ClientOffer;
 use Carbon\Carbon;
 use App\Models\ClientOffer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Constants\ClientOfferStatus;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ClientOffer\ClientOfferResource;
