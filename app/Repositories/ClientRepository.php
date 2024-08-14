@@ -15,9 +15,10 @@ class ClientRepository extends BaseRepository implements IClientRepository{
                 'imagable_id' => $client->id ,
                 'imagable_type' => Client::class ,
             ]);
-            if($data['profile_image_id'] != null)
-            $data['profile_image_url'] = Image::findOrFail($data['profile_image_id'])->pluck('url')->first() ;
         }
+        if($data['profile_image_id'] != null)
+            $data['profile_image_url'] = Image::findOrFail($data['profile_image_id'])->first()->pluck('url') ;
+        
         if(array_key_exists('background_image_id' , $data) and $client?->background_image_id ?? false)
         {
             Image::where('id' , $client->background_image_id)->update([
@@ -25,9 +26,10 @@ class ClientRepository extends BaseRepository implements IClientRepository{
                 'imagable_id' => $client->id ,
                 'imagable_type' => Client::class ,
             ]);
-            if($data['background_image_id'] != null)
-            $data['background_image_url'] = Image::findOrFail($data['profile_image_id'])->pluck('url')->first() ;
         }
+
+        if($data['background_image_id'] != null)
+        $data['background_image_url'] = Image::findOrFail($data['background_image_id'])->first()->pluck('url') ;
 
         $client->update($data);
 
