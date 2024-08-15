@@ -79,7 +79,8 @@ Route::group([
         Route::get('my-proposals' , [ClientOfferFreelancerController::class , 'myProposals']) ;
         Route::post('freelancer-filter' , [ClientOfferFreelancerController::class , 'freelancerFilter'])
         ->withoutMiddleware(['role:freelancer']) ;
-        Route::get( '{client_offer}' , [ClientOfferFreelancerController::class , 'showClientOffer']) ;
+        Route::get( '{client_offer}' , [ClientOfferFreelancerController::class , 'showClientOffer'])
+        ->withoutMiddleware(['role:freelancer']) ;
         Route::post('proposal/store' , [ClientOfferFreelancerController::class , 'createProposal']) ;
         Route::put('proposal' , [ClientOfferFreelancerController::class , 'updateProposal']) ;
         Route::delete('proposal/{client_offer_proposal}' , [ClientOfferFreelancerController::class , 'deleteProposal']) ;
