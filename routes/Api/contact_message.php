@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactMessageController;
 
+//todo add throtle and tell yaser about it 
 Route::prefix('contact-message')->group(function(){
     Route::post('/' , [ContactMessageController::class , 'store']) ;
 

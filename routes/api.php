@@ -61,6 +61,8 @@ require 'Api/product.php' ;
 
 require 'Api/home.php' ;
 
+require 'Api/project.php' ;
+
 Route::post('test' , function(Request $request){
   return 'hi' ;
 });

@@ -1,125 +1,19 @@
-name: 'Company Verification'
+name: 'Client Offer Milestones'
 description: ''
 endpoints:
   -
     httpMethods:
-      - POST
-    uri: 'api/company/verifications/{verification_id}/accept'
-    metadata:
-      groupName: 'Company Verification'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'accept (admin)'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      verification_id:
-        name: verification_id
-        description: 'The ID of the verification.'
-        required: true
-        example: 20
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      verification_id: 20
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      response:
-        name: response
-        description: ''
-        required: true
-        example: esse
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      response: esse
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer Z1khDgvc853ePaa6bVfd6E4'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: 'api/company/verifications/{verification_id}/reject'
-    metadata:
-      groupName: 'Company Verification'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'reject (admin)'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      verification_id:
-        name: verification_id
-        description: 'The ID of the verification.'
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      verification_id: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      response:
-        name: response
-        description: ''
-        required: true
-        example: quod
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      response: quod
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer c8aekVPa1fDd6g35hbZv4E6'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
       - GET
-    uri: api/company/verifications/all
+    uri: api/projects
     metadata:
-      groupName: 'Company Verification'
+      groupName: 'Client Offer Milestones'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'return list of verification request (admin && company)'
-      description: ''
+      title: 'All My Client Offer (freelancer || Client\)'
+      description: |-
+        add query param ?type=
+        to filter project according on the type
       authenticated: true
       custom: []
     headers:
@@ -147,21 +41,21 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer EVZ8gbcDd14aaf6evP53k6h'
+      - 'Bearer gaceZ1E8fVv5a63kdb4PhD6'
     controller: null
     method: null
     route: null
     custom: []
   -
     httpMethods:
-      - GET
-    uri: 'api/company/verifications/{verification_id}'
+      - POST
+    uri: 'api/projects/{project_id}/client-ok'
     metadata:
-      groupName: 'Company Verification'
+      groupName: 'Client Offer Milestones'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'show  (admin && company)'
+      title: 'Client OK'
       description: ''
       authenticated: true
       custom: []
@@ -170,37 +64,28 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      verification_id:
-        name: verification_id
-        description: 'The ID of the verification.'
+      project_id:
+        name: project_id
+        description: 'The ID of the project.'
         required: true
-        example: 12
+        example: 9
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      verification_id: 12
+      project_id: 9
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
+    responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 3Zahc1k6fg6v84DdE5ePabV'
+      - 'Bearer Pf6ac8abZev4dE53hDV6k1g'
     controller: null
     method: null
     route: null
@@ -208,13 +93,13 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/company/verifications
+    uri: 'api/projects/{project_id}/freelancer-ok'
     metadata:
-      groupName: 'Company Verification'
+      groupName: 'Client Offer Milestones'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'store (company)'
+      title: 'Freelancer OK'
       description: ''
       authenticated: true
       custom: []
@@ -222,29 +107,129 @@ endpoints:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      file:
-        name: file
-        description: ''
+    urlParameters:
+      project_id:
+        name: project_id
+        description: 'The ID of the project.'
         required: true
-        example: 17
+        example: 9
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
-    cleanBodyParameters:
-      file: 17
+    cleanUrlParameters:
+      project_id: 9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Eg6ZV1a5kveP84hd6cD3afb'
+      - 'Bearer 4haP5fd36Z1E8kevabcVDg6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/projects/{project_id}'
+    metadata:
+      groupName: 'Client Offer Milestones'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Project Files'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      project_id:
+        name: project_id
+        description: 'The ID of the project.'
+        required: true
+        example: 9
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      project_id: 9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      file_ids:
+        name: file_ids
+        description: ''
+        required: false
+        example:
+          - 12
+        type: 'integer[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      file_ids:
+        - 12
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer b1eDZgvh8V4dPaf635Ek6ca'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/projects/{project_id}'
+    metadata:
+      groupName: 'Client Offer Milestones'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete or Cancel Project'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      project_id:
+        name: project_id
+        description: 'The ID of the project.'
+        required: true
+        example: 9
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      project_id: 9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer kVag64v8EZhf3Pec6D5ab1d'
     controller: null
     method: null
     route: null

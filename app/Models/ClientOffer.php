@@ -47,6 +47,10 @@ class ClientOffer extends BaseModel
     {
         return $this->belongsTo(Freelancer::class) ;
     }
+    public function project():HasOne
+    {
+        return $this->hasOne(Project::class) ;
+    }
 
     public function scopeFilter(Builder $builder , array $filters)
     {
