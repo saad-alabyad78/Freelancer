@@ -16,9 +16,9 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Freelancer::class)->constrained()->restrictOnDelete();
-            $table->foreignIdFor(Client::class)->constrained()->restrictOnDelete();
-            $table->foreignIdFor(ClientOffer::class)->constrained()->restrictOnDelete();
+            $table->foreignIdFor(Freelancer::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Client::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(ClientOffer::class)->constrained()->cascadeOnDelete();
             $table->date('finished_at')->nullable();
             $table->integer('price');
             $table->integer('client_money');

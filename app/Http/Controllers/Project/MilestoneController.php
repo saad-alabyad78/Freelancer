@@ -2,18 +2,22 @@
 
 namespace App\Http\Controllers\Project;
 
+use App\Models\Bill;
 use App\Models\Client;
 use App\Models\Project;
 use App\Models\Milestone;
 use App\Models\Freelancer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\BillResource;
 use App\Http\Resources\MilestoneResource;
 use App\Http\Requests\StoreMilestoneRequest;
 use App\Http\Requests\UpdateMilestoneRequest;
 use App\Http\Resources\Project\ProjectResource;
 
-
+/**
+ *@group Client Offer Milestones 
+ */
 class MilestoneController extends Controller
 {
     /**
@@ -31,6 +35,7 @@ class MilestoneController extends Controller
     
     /**
      * Store Milestone
+     * 
      * @param \App\Models\Project $project
      * @param \App\Http\Requests\StoreMilestoneRequest $request
      * @return ProjectResource
@@ -61,6 +66,7 @@ class MilestoneController extends Controller
         $milestone->update($request->validated()) ;
 
         if($milestone->client_ok and $milestone->freelancer_ok){
+            
             $milestone->update(['finished_at' => now()->toDateTimeString()]) ;
             
             $freelancer = Freelancer::where('id' , $project->freelancer_id)->first() ;
@@ -68,12 +74,22 @@ class MilestoneController extends Controller
 
             //take it from the project money
             $freelancer->increment('money' , $milestone->price) ;
-            $client->decrement('money' , $milestone->price) ;
+            $project->decrement('client_money' , $milestone->price) ;
 
-            //todo add a bill
+            $bill = Bill::create([
+                'from_id' => $milestone->project_id,
+                'from_type' => 'milestones',
+                'to_id' => $milestone->freelancer_ok,
+                'to_type' => 'freelancers',
+                'description' => 'this bill is for the freelancer for doing the milestone',
+                'money' => $milestone->price,
+            ]);
         }
 
-        return ProjectResource::make($project->load(['milestones','files','client','freelancer'])) ;
+        return response([
+            'bill' => BillResource::make($bill) ,
+            'project' => ProjectResource::make($project->load(['milestones','files','client','freelancer'])) ,
+        ]) ;
     }
     /**
      * Delete Milestone
