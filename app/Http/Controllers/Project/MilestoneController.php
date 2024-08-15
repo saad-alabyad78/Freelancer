@@ -13,9 +13,7 @@ use App\Http\Requests\StoreMilestoneRequest;
 use App\Http\Requests\UpdateMilestoneRequest;
 use App\Http\Resources\Project\ProjectResource;
 
-/**
- *@group Client Offer Milestones 
- */
+
 class MilestoneController extends Controller
 {
     /**

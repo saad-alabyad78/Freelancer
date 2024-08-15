@@ -27,7 +27,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"username":"client-client-1","gender":"male","city":"\u062f\u0645\u0634\u0642","date_of_birth":"2024-08-14","profile_image_id":null,"background_image_id":null,"profile_image_url":null,"background_image_url":null,"offers_count":2,"user":{"id":1,"first_name":"client","money":9940,"last_name":"client","username":"client-client-66be4aaacac4c","email":"client@gmail.com","role_id":1,"role":"client"},"created_at":"2024-08-14T19:47:51.000000Z","updated_at":"2024-08-14T19:47:51.000000Z"}],"links":{"first":"http:\/\/localhost\/api\/client?page=1","last":"http:\/\/localhost\/api\/client?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/client?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/client","per_page":10,"to":1,"total":1}}'
+        content: '{"data":[{"id":1,"username":"client-client-1","gender":"male","city":"\u062f\u0645\u0634\u0642","date_of_birth":"2024-08-14","profile_image_id":null,"background_image_id":null,"profile_image_url":null,"background_image_url":null,"offers_count":2,"user":{"id":1,"first_name":"client","money":9940,"last_name":"client","username":"client-client-66be54adf1f46","email":"client@gmail.com","role_id":1,"role":"client"},"created_at":"2024-08-14T19:47:51.000000Z","updated_at":"2024-08-14T19:47:51.000000Z"}],"links":{"first":"http:\/\/localhost\/api\/client?page=1","last":"http:\/\/localhost\/api\/client?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/client?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/client","per_page":10,"to":1,"total":1}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -79,7 +79,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"username":"client-client-1","gender":"male","city":"\u062f\u0645\u0634\u0642","date_of_birth":"2024-08-14","profile_image_id":null,"background_image_id":null,"profile_image_url":null,"background_image_url":null,"offers_count":2,"user":{"id":1,"first_name":"client","money":9940,"last_name":"client","username":"client-client-66be4aaacc22f","email":"client@gmail.com","role_id":1,"role":"client"},"created_at":"2024-08-14T19:47:51.000000Z","updated_at":"2024-08-14T19:47:51.000000Z"}}'
+        content: '{"data":{"id":1,"username":"client-client-1","gender":"male","city":"\u062f\u0645\u0634\u0642","date_of_birth":"2024-08-14","profile_image_id":null,"background_image_id":null,"profile_image_url":null,"background_image_url":null,"offers_count":2,"user":{"id":1,"first_name":"client","money":9940,"last_name":"client","username":"client-client-66be54adf3705","email":"client@gmail.com","role_id":1,"role":"client"},"created_at":"2024-08-14T19:47:51.000000Z","updated_at":"2024-08-14T19:47:51.000000Z"}}'
         headers: []
         description: ''
         custom: []
@@ -87,7 +87,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ha45Df86dkZPabVe6vc1g3E'
+      - 'Bearer gE65vaefadPk4hD6b3c81VZ'
     controller: null
     method: null
     route: null
@@ -136,7 +136,7 @@ endpoints:
         name: date_of_birth
         description: 'Must be a valid date. Must be a date before or equal to <code>2008-08-15</code>.'
         required: true
-        example: '1994-10-28'
+        example: '2008-05-09'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -154,7 +154,7 @@ endpoints:
         name: gender
         description: ''
         required: true
-        example: male
+        example: female
         type: string
         enumValues:
           - male
@@ -162,14 +162,14 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      date_of_birth: '1994-10-28'
+      date_of_birth: '2008-05-09'
       city: دمشق
-      gender: male
+      gender: female
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"username":"client-client-1","gender":"male","city":"\u062f\u0645\u0634\u0642","date_of_birth":"2024-08-14","profile_image_id":null,"background_image_id":null,"profile_image_url":null,"background_image_url":null,"offers_count":2,"user":{"id":1,"first_name":"client","money":9940,"last_name":"client","username":"client-client-66be4aaacd403","email":"client@gmail.com","role_id":1,"role":"client"},"created_at":"2024-08-14T19:47:51.000000Z","updated_at":"2024-08-14T19:47:51.000000Z"}}'
+        content: '{"data":{"id":1,"username":"client-client-1","gender":"male","city":"\u062f\u0645\u0634\u0642","date_of_birth":"2024-08-14","profile_image_id":null,"background_image_id":null,"profile_image_url":null,"background_image_url":null,"offers_count":2,"user":{"id":1,"first_name":"client","money":9940,"last_name":"client","username":"client-client-66be54ae00957","email":"client@gmail.com","role_id":1,"role":"client"},"created_at":"2024-08-14T19:47:51.000000Z","updated_at":"2024-08-14T19:47:51.000000Z"}}'
         headers: []
         description: ''
         custom: []
@@ -177,7 +177,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer c6kavE6PgaV3D8hf5dZb1e4'
+      - 'Bearer hk5a6d8vDe6cVa1fE4PZ3gb'
     controller: null
     method: null
     route: null
@@ -226,7 +226,7 @@ endpoints:
         name: date_of_birth
         description: 'Must be a valid date. Must be a date before or equal to <code>2008-08-15</code>.'
         required: false
-        example: '2005-10-07'
+        example: '2002-02-24'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -244,7 +244,7 @@ endpoints:
         name: gender
         description: ''
         required: false
-        example: female
+        example: male
         type: string
         enumValues:
           - male
@@ -252,14 +252,14 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      date_of_birth: '2005-10-07'
+      date_of_birth: '2002-02-24'
       city: دمشق
-      gender: female
+      gender: male
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"username":"client-client-1","gender":"male","city":"\u062f\u0645\u0634\u0642","date_of_birth":"2024-08-14","profile_image_id":null,"background_image_id":null,"profile_image_url":null,"background_image_url":null,"offers_count":2,"user":{"id":1,"first_name":"client","money":9940,"last_name":"client","username":"client-client-66be4aaace6bb","email":"client@gmail.com","role_id":1,"role":"client"},"created_at":"2024-08-14T19:47:51.000000Z","updated_at":"2024-08-14T19:47:51.000000Z"}}'
+        content: '{"data":{"id":1,"username":"client-client-1","gender":"male","city":"\u062f\u0645\u0634\u0642","date_of_birth":"2024-08-14","profile_image_id":null,"background_image_id":null,"profile_image_url":null,"background_image_url":null,"offers_count":2,"user":{"id":1,"first_name":"client","money":9940,"last_name":"client","username":"client-client-66be54ae01dbe","email":"client@gmail.com","role_id":1,"role":"client"},"created_at":"2024-08-14T19:47:51.000000Z","updated_at":"2024-08-14T19:47:51.000000Z"}}'
         headers: []
         description: ''
         custom: []
@@ -267,7 +267,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZV3Pfkca4evdga5h68D6E1b'
+      - 'Bearer P8k13bdhDeaZ4V6gvE5cf6a'
     controller: null
     method: null
     route: null
