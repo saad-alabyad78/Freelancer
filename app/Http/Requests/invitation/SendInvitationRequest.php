@@ -21,9 +21,18 @@ class SendInvitationRequest extends FormRequest
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
     public function rules(): array
-    {
-        return [
-            'freelancer_id' => 'required|exists:users,id',
-        ];
-    }
+{
+    return [
+        'freelancer_id' => [
+            'required',
+            'exists:users,id',
+            function ($attribute, $value, $fail) {
+                $user = \App\Models\User::find($value);
+                if (!$user || $user->role_name !== 'freelancer') {
+                    $fail('The selected user is not a freelancer.');
+                }
+            },
+        ],
+    ];
+}
 }
