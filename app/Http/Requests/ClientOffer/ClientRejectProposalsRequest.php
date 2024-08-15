@@ -29,8 +29,8 @@ class ClientRejectProposalsRequest extends FormRequest
                 'integer' ,
                 Rule::exists('client_offer_proposals' , 'id')
                 ->where('client_id' , auth('sanctum')->id())
-                ->whereNull('rejected_at')
-                ->whereNull('accepted_at'),
+                // ->whereNull('rejected_at')
+                // ->whereNull('accepted_at'),
             ],
         ];
     }
