@@ -1,19 +1,51 @@
-name: 'Client Offer Milestones'
+name: Endpoints
 description: ''
 endpoints:
   -
     httpMethods:
-      - GET
-    uri: api/projects
+      - POST
+    uri: api/test
     metadata:
-      groupName: 'Client Offer Milestones'
+      groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'All My Client Offer (freelancer || Client\)'
-      description: |-
-        add query param ?type=
-        to filter project according on the type
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer dg61EfDaVah6kecv38PbZ54'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/test
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
       authenticated: true
       custom: []
     headers:
@@ -41,195 +73,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gaceZ1E8fVv5a63kdb4PhD6'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: 'api/projects/{project_id}/client-ok'
-    metadata:
-      groupName: 'Client Offer Milestones'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Client OK'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      project_id:
-        name: project_id
-        description: 'The ID of the project.'
-        required: true
-        example: 9
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      project_id: 9
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer Pf6ac8abZev4dE53hDV6k1g'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: 'api/projects/{project_id}/freelancer-ok'
-    metadata:
-      groupName: 'Client Offer Milestones'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Freelancer OK'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      project_id:
-        name: project_id
-        description: 'The ID of the project.'
-        required: true
-        example: 9
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      project_id: 9
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 4haP5fd36Z1E8kevabcVDg6'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/projects/{project_id}'
-    metadata:
-      groupName: 'Client Offer Milestones'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Update Project Files'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      project_id:
-        name: project_id
-        description: 'The ID of the project.'
-        required: true
-        example: 9
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      project_id: 9
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      file_ids:
-        name: file_ids
-        description: ''
-        required: false
-        example:
-          - 12
-        type: 'integer[]'
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      file_ids:
-        - 12
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer b1eDZgvh8V4dPaf635Ek6ca'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/projects/{project_id}'
-    metadata:
-      groupName: 'Client Offer Milestones'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Delete or Cancel Project'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      project_id:
-        name: project_id
-        description: 'The ID of the project.'
-        required: true
-        example: 9
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      project_id: 9
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer kVag64v8EZhf3Pec6D5ab1d'
+      - 'Bearer aEPV8Zck3e1h6dD4af6vbg5'
     controller: null
     method: null
     route: null

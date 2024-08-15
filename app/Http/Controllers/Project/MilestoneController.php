@@ -13,14 +13,30 @@ use App\Http\Requests\StoreMilestoneRequest;
 use App\Http\Requests\UpdateMilestoneRequest;
 use App\Http\Resources\Project\ProjectResource;
 
+/**
+ *@group Client Offer Milestones 
+ */
 class MilestoneController extends Controller
 {
+    /**
+     * Get All Milestones
+     * 
+     * @param \App\Models\Project $project
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     */
     public function index(Project $project)
     {
         $milstones = $project->milestones()->paginate(20) ;
 
         return MilestoneResource::collection($milstones) ;
     }
+    
+    /**
+     * Store Milestone
+     * @param \App\Models\Project $project
+     * @param \App\Http\Requests\StoreMilestoneRequest $request
+     * @return ProjectResource
+     */
     public function store(Project $project , StoreMilestoneRequest $request)
     {
         $data = $request->validated() ;
@@ -29,6 +45,13 @@ class MilestoneController extends Controller
 
         return ProjectResource::make($project->load(['milestones','files','client','freelancer'])) ;
     }
+    /**
+     * Update Milestone
+     * @param \App\Models\Project $project
+     * @param \App\Models\Milestone $milestone
+     * @param \App\Http\Requests\UpdateMilestoneRequest $request
+     * @return mixed|ProjectResource|\Illuminate\Http\JsonResponse
+     */
     public function update(Project $project , Milestone $milestone , UpdateMilestoneRequest $request)
     {
         if($milestone->finished_at){
@@ -54,6 +77,13 @@ class MilestoneController extends Controller
 
         return ProjectResource::make($project->load(['milestones','files','client','freelancer'])) ;
     }
+    /**
+     * Delete Milestone
+     * 
+     * @param \App\Models\Project $project
+     * @param \App\Models\Milestone $milestone
+     * @return ProjectResource
+     */
     public function delete(Project $project , Milestone $milestone)
     {
         $milestone->delete() ;
