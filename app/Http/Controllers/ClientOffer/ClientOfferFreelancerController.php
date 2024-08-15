@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\ClientOffer;
 
 use App\Models\Bill;
+use App\Models\User;
 use App\Models\Project;
 use App\Models\ClientOffer;
 use Illuminate\Http\Request;
@@ -25,6 +26,33 @@ class ClientOfferFreelancerController extends Controller
 {
     public function __construct(){
         $this->middleware('role:freelancer');
+    }
+
+    /**
+     * my-proposal (freelancer)
+     * 
+     * send query param ?without_rejected_at=1 to remove rejected proposals
+     * send query param ?without_accepted_at=1 to remove accepted proposals
+     * 
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     */
+    public function myProposals()
+    {
+        $user = User::where('id' , auth('sanctum')->id())->first() ;
+                
+        $proposals = ClientOfferProposal::where('freelancer_id' , $user->role_id)
+        ->orderByDesc('created_at') ;
+
+        if(request()->boolean('without_rejected_at')){
+        
+            $proposals->whereNull('rejected_at') ;
+        }
+
+        if(request()->boolean('without_accepted_at')){
+            $proposals->whereNull('accepted_at') ;
+        }
+        
+        return ClientOfferProposalResource::collection($proposals->paginate()) ;
     }
 
     /**

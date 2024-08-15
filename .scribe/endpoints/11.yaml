@@ -1,17 +1,21 @@
-name: Invitation
-description: ''
+name: 'Chat Management'
+description: |-
+
+  APIs for managing chat conversations and messages
 endpoints:
   -
     httpMethods:
       - POST
-    uri: api/invitations
+    uri: api/conversations
     metadata:
-      groupName: Invitation
-      groupDescription: ''
+      groupName: 'Chat Management'
+      groupDescription: |-
+
+        APIs for managing chat conversations and messages
       subgroup: ''
       subgroupDescription: ''
-      title: 'Send an invitation.'
-      description: 'Sends an invitation from a company to a freelancer.'
+      title: 'Create a new conversation.'
+      description: ''
       authenticated: true
       custom: []
     headers:
@@ -23,122 +27,78 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      freelancer_id:
-        name: freelancer_id
-        description: ''
+      user_id:
+        name: user_id
+        description: 'The ID of the user to start a conversation with.'
         required: true
-        example: asperiores
-        type: string
+        example: 2
+        type: integer
         enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      job_offer_id:
-        name: job_offer_id
-        description: ''
-        required: true
-        example: rerum
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         custom: []
     cleanBodyParameters:
-      freelancer_id: asperiores
-      job_offer_id: rerum
+      user_id: 2
     fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer bgD46fkhe8Pva5VE3Zda61c'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/invitations/{id}'
-    metadata:
-      groupName: Invitation
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Delete an invitation.'
-      description: 'Deletes a specific invitation.'
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the invitation.'
-        required: true
-        example: veniam
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "message": "Conversation already exists",
+              "conversation_id": 1,
+              "participants": [...],
+              "other_user": {
+                  "id": 2,
+                  "name": "John Doe",
+                  "avatar": "avatar_url",
+                  "is_online": true,
+                  "last_seen": "2024-08-11 12:34:56"
+              }
+          }
+        headers: []
+        description: ''
         custom: []
-    cleanUrlParameters:
-      id: veniam
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer b8f145P6hVe3gdEc6kZvDaa'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: 'api/invitations/{id}/accept'
-    metadata:
-      groupName: Invitation
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Accept an invitation.'
-      description: 'Accepts a specific invitation by the freelancer.'
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the invitation.'
-        required: true
-        example: perspiciatis
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
+      -
+        status: 201
+        content: |-
+          {
+              "message": "Conversation created successfully",
+              "conversation_id": 1,
+              "participants": [...],
+              "other_user": {
+                  "id": 2,
+                  "name": "John Doe",
+                  "avatar": "avatar_url",
+                  "is_online": true,
+                  "last_seen": "2024-08-11 12:34:56"
+              }
+          }
+        headers: []
+        description: ''
         custom: []
-    cleanUrlParameters:
-      id: perspiciatis
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
+      -
+        status: 400
+        content: |-
+          {
+              "message": "Cannot create a conversation with yourself"
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+              "message": "User not found"
+          }
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1gk6abDEdavVh46Pf8c5Ze3'
+      - 'Bearer c4Pgkd8aE1e5vZD6V6hfba3'
     controller: null
     method: null
     route: null
@@ -146,43 +106,109 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: 'api/invitations/{id}/reject'
+    uri: 'api/conversations/{conversationId}/messages'
     metadata:
-      groupName: Invitation
-      groupDescription: ''
+      groupName: 'Chat Management'
+      groupDescription: |-
+
+        APIs for managing chat conversations and messages
       subgroup: ''
       subgroupDescription: ''
-      title: 'Reject an invitation.'
-      description: 'Rejects a specific invitation by the freelancer.'
+      title: 'Send a message in a conversation.'
+      description: ''
       authenticated: true
       custom: []
     headers:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the invitation.'
+      conversationId:
+        name: conversationId
+        description: 'The ID of the conversation.'
         required: true
-        example: molestiae
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      conversationId: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      message:
+        name: message
+        description: 'The content of the message.'
+        required: false
+        example: Hello
         type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      image:
+        name: image
+        description: 'The image file to be sent as a message.'
+        required: false
+        example: null
+        type: file
         enumValues: []
         exampleWasSpecified: false
         custom: []
-    cleanUrlParameters:
-      id: molestiae
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
+      parent_id:
+        name: parent_id
+        description: 'The ID of the parent message if replying to a specific message.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      message: Hello
+      parent_id: 1
+    fileParameters:
+      image: null
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "id": 1,
+              "conversation_id": 1,
+              "user_id": 1,
+              "message": "Hello",
+              "parent_id": null,
+              "image": null,
+              "created_at": "2021-01-01T00:00:00.000000Z",
+              "updated_at": "2021-01-01T00:00:00.000000Z"
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 403
+        content: |-
+          {
+              "message": "You are banned from this conversation"
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 403
+        content: |-
+          {
+              "message": "You are not a participant in this conversation"
+          }
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer dDg51bckfv6hP4ae8aEV3Z6'
+      - 'Bearer 3DbhaZa6Vdvcf8eEg4k165P'
     controller: null
     method: null
     route: null
@@ -190,14 +216,178 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/invitations
+    uri: 'api/conversations/{conversationId}/messages'
     metadata:
-      groupName: Invitation
-      groupDescription: ''
+      groupName: 'Chat Management'
+      groupDescription: |-
+
+        APIs for managing chat conversations and messages
       subgroup: ''
       subgroupDescription: ''
-      title: 'Get invitations.'
-      description: 'Retrieves all invitations for the authenticated user (company or freelancer).'
+      title: 'Get messages from a conversation.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      conversationId:
+        name: conversationId
+        description: 'The ID of the conversation.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      conversationId: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "data": [
+                  {
+                      "id": 1,
+                      "conversation_id": 1,
+                      "user_id": 1,
+                      "message": "Hello",
+                      "parent_id": null,
+                      "image": null,
+                      "created_at": "2021-01-01T00:00:00.000000Z",
+                      "updated_at": "2021-01-01T00:00:00.000000Z"
+                  },
+                  // المزيد من الرسائل
+              ]
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 403
+        content: |-
+          {
+              "message": "You are not a participant in this conversation"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer baPkDh46Zecgfv6daE8V351'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/conversations/{conversationId}/messages/{messageId}'
+    metadata:
+      groupName: 'Chat Management'
+      groupDescription: |-
+
+        APIs for managing chat conversations and messages
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get messages from a specific message in a conversation.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      conversationId:
+        name: conversationId
+        description: 'The ID of the conversation.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      messageId:
+        name: messageId
+        description: 'The ID of the message.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      conversationId: 1
+      messageId: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "data": [
+                  {
+                      "id": 1,
+                      "conversation_id": 1,
+                      "user_id": 1,
+                      "message": "Hello",
+                      "parent_id": null,
+                      "image": null,
+                      "created_at": "2021-01-01T00:00:00.000000Z",
+                      "updated_at": "2021-01-01T00:00:00.000000Z"
+                  },
+                  // المزيد من الرسائل
+              ]
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 403
+        content: |-
+          {
+              "message": "You are not a participant in this conversation"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer VgvEkahD31bP5f4aeZ66dc8'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/conversations
+    metadata:
+      groupName: 'Chat Management'
+      groupDescription: |-
+
+        APIs for managing chat conversations and messages
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get all conversations for the authenticated user with the latest message and participant details.'
+      description: ''
       authenticated: true
       custom: []
     headers:
@@ -213,19 +403,297 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
+        status: 200
+        content: |-
+          {
+              "data": [
+                  {
+                      "id": 1,
+                      "participant": {
+                          "id": 2,
+                          "name": "John Doe",
+                          "avatar": "avatar_url"
+                      },
+                      "last_message": {
+                          "message": "Hello, how are you?",
+                          "created_at": "2024-08-11T12:34:56.000000Z"
+                      },
+                      "created_at": "2021-01-01T00:00:00.000000Z",
+                      "updated_at": "2021-01-01T00:00:00.000000Z"
+                  },
+                  // المزيد من المحادثات
+              ]
+          }
+        headers: []
+        description: ''
         custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer kf1avdae3656ZP4EVDbgc8h'
+      - 'Bearer d5cf6PEa83aehVg6Z4Dvb1k'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/messages/{message}/like'
+    metadata:
+      groupName: 'Chat Management'
+      groupDescription: |-
+
+        APIs for managing chat conversations and messages
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Like a message in a conversation.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      message:
+        name: message
+        description: 'The message.'
+        required: true
+        example: quidem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      messageId:
+        name: messageId
+        description: 'The ID of the message to be liked.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      message: quidem
+      messageId: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "message": "Message liked successfully",
+              "like": { ... }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer cb8e61aPdfZh4kgEV5avD63'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/conversations/{conversationId}/ban/{userId}'
+    metadata:
+      groupName: 'Chat Management'
+      groupDescription: |-
+
+        APIs for managing chat conversations and messages
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Ban a user from a conversation.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      conversationId:
+        name: conversationId
+        description: 'The ID of the conversation.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      userId:
+        name: userId
+        description: 'The ID of the user to be banned.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      conversationId: 1
+      userId: 2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "message": "User banned successfully",
+              "ban": { ... }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+              "message": "User not found"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer EdPbg3fa8Dh164caVekv6Z5'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/conversations/{conversationId}/unban/{userId}'
+    metadata:
+      groupName: 'Chat Management'
+      groupDescription: |-
+
+        APIs for managing chat conversations and messages
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Unban a user from a conversation.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      conversationId:
+        name: conversationId
+        description: 'The ID of the conversation.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      userId:
+        name: userId
+        description: 'The ID of the user to be unbanned.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      conversationId: 1
+      userId: 2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "message": "User unbanned successfully"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer e4638EVDh1ZgaPavcbf5d6k'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/user/{userId}/status'
+    metadata:
+      groupName: 'Chat Management'
+      groupDescription: |-
+
+        APIs for managing chat conversations and messages
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get the online status and last seen time of a user by their ID.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      userId:
+        name: userId
+        description: 'The ID of the user.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      userId: 2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "online": true,
+              "last_seen": "2021-01-01T00:00:00.000000Z"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer PZf6841acV6bvDkga53Ehde'
     controller: null
     method: null
     route: null

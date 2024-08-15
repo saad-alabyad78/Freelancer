@@ -36,7 +36,7 @@ class JobOfferQueryController extends Controller
      */
     public function ForOwner(JobOffersForCompanyRequest $request)
     {
-        $company = Company::findOrFail(auth('sanctum')->user()->role_id) ;
+        $company = Company::findOrFail(auth('sanctum')->user()?->role_id) ;
 
         $filters = $request->validated();
         $filters['company_id'] = $company->id ;

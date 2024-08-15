@@ -1,17 +1,17 @@
-name: 'Client Offer Management'
+name: Invitation
 description: ''
 endpoints:
   -
     httpMethods:
       - POST
-    uri: api/client-offer/client/client-filter
+    uri: api/invitations
     metadata:
-      groupName: 'Client Offer Management'
+      groupName: Invitation
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Client-Filter List Client Offers'
-      description: ''
+      title: 'Send an invitation.'
+      description: 'Sends an invitation from a company to a freelancer.'
       authenticated: true
       custom: []
     headers:
@@ -23,162 +23,49 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      status:
-        name: status
+      freelancer_id:
+        name: freelancer_id
         description: ''
-        required: false
-        example: in_progress
+        required: true
+        example: velit
         type: string
-        enumValues:
-          - pending
-          - active
-          - cloused
-          - in_progress
-          - done
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      job_offer_id:
+        name: job_offer_id
+        description: ''
+        required: true
+        example: necessitatibus
+        type: string
+        enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      status: in_progress
+      freelancer_id: velit
+      job_offer_id: necessitatibus
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer P154kZ6efhgd8EacaV3Dv6b'
+      - 'Bearer ZdavE3feb14h6DcPkgaV856'
     controller: null
     method: null
     route: null
     custom: []
   -
     httpMethods:
-      - POST
-    uri: api/client-offer/client/store
+      - DELETE
+    uri: 'api/invitations/{id}'
     metadata:
-      groupName: 'Client Offer Management'
+      groupName: Invitation
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Client Store Offer'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      sub_category_id:
-        name: sub_category_id
-        description: ''
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      title:
-        name: title
-        description: 'Must be at least 1 character. Must not be greater than 255 characters.'
-        required: true
-        example: hhb
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      description:
-        name: description
-        description: 'Must be at least 1 character. Must not be greater than 2000 characters.'
-        required: true
-        example: 'Corporis voluptatem et sed suscipit aut omnis et.'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      min_price:
-        name: min_price
-        description: ''
-        required: true
-        example: vero
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      max_price:
-        name: max_price
-        description: ''
-        required: true
-        example: autem
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      days:
-        name: days
-        description: 'Must be between 1 and 3 digits. Must not be greater than 100 characters.'
-        required: true
-        example: d
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      skill_ids:
-        name: skill_ids
-        description: ''
-        required: true
-        example:
-          - 1
-        type: 'integer[]'
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      file_ids:
-        name: file_ids
-        description: ''
-        required: true
-        example:
-          - 16
-        type: 'integer[]'
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      sub_category_id: 1
-      title: hhb
-      description: 'Corporis voluptatem et sed suscipit aut omnis et.'
-      min_price: vero
-      max_price: autem
-      days: d
-      skill_ids:
-        - 1
-      file_ids:
-        - 16
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer Vc3h4akd6PZafe68D15Evgb'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/client-offer/client/{client_offer_id}'
-    metadata:
-      groupName: 'Client Offer Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Client Show Offers'
-      description: ''
+      title: 'Delete an invitation.'
+      description: 'Deletes a specific invitation.'
       authenticated: true
       custom: []
     headers:
@@ -186,17 +73,139 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      client_offer_id:
-        name: client_offer_id
-        description: 'The ID of the client offer.'
+      id:
+        name: id
+        description: 'The ID of the invitation.'
         required: true
-        example: 1
-        type: integer
+        example: excepturi
+        type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      client_offer_id: 1
+      id: excepturi
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 1e8bE3kafcV6aZd54v6PDhg'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/invitations/{id}/accept'
+    metadata:
+      groupName: Invitation
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Accept an invitation.'
+      description: 'Accepts a specific invitation by the freelancer.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the invitation.'
+        required: true
+        example: cumque
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: cumque
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 56daaf1k4ZE6Vc8hDg3Pveb'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/invitations/{id}/reject'
+    metadata:
+      groupName: Invitation
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Reject an invitation.'
+      description: 'Rejects a specific invitation by the freelancer.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the invitation.'
+        required: true
+        example: harum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: harum
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer egZf4V6Eh658ca3db1aPkvD'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/invitations
+    metadata:
+      groupName: Invitation
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get invitations.'
+      description: 'Retrieves all invitations for the authenticated user (company or freelancer).'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -216,847 +225,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8e4c3PE6Dkf1a56VZhadgvb'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: api/client-offer/client
-    metadata:
-      groupName: 'Client Offer Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Client Update Pending Offers'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      client_offer_id:
-        name: client_offer_id
-        description: ''
-        required: true
-        example: 20
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      sub_category_id:
-        name: sub_category_id
-        description: ''
-        required: false
-        example: 6
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      title:
-        name: title
-        description: 'Must be at least 5 characters. Must not be greater than 255 characters.'
-        required: false
-        example: gfssenulbwqrkooddsixx
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      description:
-        name: description
-        description: 'Must be at least 10 characters. Must not be greater than 2000 characters.'
-        required: false
-        example: 'In earum occaecati vel saepe.'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      min_price:
-        name: min_price
-        description: ''
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      max_price:
-        name: max_price
-        description: ''
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      days:
-        name: days
-        description: 'Must be between 1 and 3 digits. Must not be greater than 100 characters.'
-        required: false
-        example: clo
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      skill_ids:
-        name: skill_ids
-        description: ''
-        required: false
-        example:
-          - 7
-        type: 'integer[]'
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      file_ids:
-        name: file_ids
-        description: ''
-        required: false
-        example:
-          - 13
-        type: 'integer[]'
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      client_offer_id: 20
-      sub_category_id: 6
-      title: gfssenulbwqrkooddsixx
-      description: 'In earum occaecati vel saepe.'
-      days: clo
-      skill_ids:
-        - 7
-      file_ids:
-        - 13
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 3vb1ch8ZkaVe64Da5dEPgf6'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/client-offer/client/{client_offer_id}'
-    metadata:
-      groupName: 'Client Offer Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Client Delete Offers'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      client_offer_id:
-        name: client_offer_id
-        description: 'The ID of the client offer.'
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      client_offer_id: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 5hZv1a3cDd6a4VEke8fgbP6'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/client-offer/client/proposals/accept
-    metadata:
-      groupName: 'Client Offer Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Accept Proposal'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      proposal_id:
-        name: proposal_id
-        description: ''
-        required: true
-        example: 7
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      proposal_id: 7
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer a3fv68hZPEVegD1d56c4akb'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/client-offer/client/proposals/reject
-    metadata:
-      groupName: 'Client Offer Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Reject Proposals'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      proposal_ids:
-        name: proposal_ids
-        description: ''
-        required: true
-        example:
-          - 1
-        type: 'integer[]'
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      proposal_ids:
-        - 1
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 1V5gevZE48d6Pfkhcab3D6a'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/client-offer/client/proposals
-    metadata:
-      groupName: 'Client Offer Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'List of proposals'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      client_offer_id:
-        name: client_offer_id
-        description: ''
-        required: true
-        example: 16
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      orderByPrice:
-        name: orderByPrice
-        description: ''
-        required: false
-        example: false
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      orderByDays:
-        name: orderByDays
-        description: ''
-        required: false
-        example: true
-        type: boolean
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      client_offer_id: 16
-      orderByPrice: false
-      orderByDays: true
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer Vgvb45E8Z1dacaDf6e6kP3h'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/client-offer/admin/admin-filter
-    metadata:
-      groupName: 'Client Offer Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Admin-Filter List Client Offers'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      status:
-        name: status
-        description: ''
-        required: false
-        example: pending
-        type: string
-        enumValues:
-          - pending
-          - active
-          - cloused
-          - in_progress
-          - done
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      status: pending
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer EfaP663Vk4Zg8Dc1va5hdeb'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: 'api/client-offer/admin/{client_offer_id}/accept'
-    metadata:
-      groupName: 'Client Offer Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Admin Accept'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      client_offer_id:
-        name: client_offer_id
-        description: 'The ID of the client offer.'
-        required: true
-        example: quisquam
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      client_offer_id: quisquam
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 4PkgaEbd16acVD6vf3h8Z5e'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: 'api/client-offer/admin/{client_offer_id}/reject'
-    metadata:
-      groupName: 'Client Offer Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Admin Reject'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      client_offer_id:
-        name: client_offer_id
-        description: 'The ID of the client offer.'
-        required: true
-        example: eos
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      client_offer_id: eos
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer V8ke53bZa1dc6DEf6a4vPhg'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/client-offer/admin/{client_offer_id}'
-    metadata:
-      groupName: 'Client Offer Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Admin Delete'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      client_offer_id:
-        name: client_offer_id
-        description: 'The ID of the client offer.'
-        required: true
-        example: aliquam
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      client_offer_id: aliquam
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer baP68DEdZ5fhec4gkvVa613'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/client-offer/freelancer/freelancer-filter
-    metadata:
-      groupName: 'Client Offer Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Freelancer Filter'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      status:
-        name: status
-        description: ''
-        required: false
-        example: cloused
-        type: string
-        enumValues:
-          - active
-          - cloused
-          - in_progress
-          - done
-        exampleWasSpecified: false
-        custom: []
-      sub_category_id:
-        name: sub_category_id
-        description: ''
-        required: false
-        example: 18
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      skill_ids:
-        name: skill_ids
-        description: ''
-        required: false
-        example:
-          - 7
-        type: 'integer[]'
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      min_days:
-        name: min_days
-        description: ''
-        required: false
-        example: 13
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      max_days:
-        name: max_days
-        description: ''
-        required: false
-        example: 9
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      min_price:
-        name: min_price
-        description: ''
-        required: false
-        example: 14
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      max_price:
-        name: max_price
-        description: ''
-        required: false
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      status: cloused
-      sub_category_id: 18
-      skill_ids:
-        - 7
-      min_days: 13
-      max_days: 9
-      min_price: 14
-      max_price: 1
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer Eb1665kPV4ahcd8Dfv3eaZg'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/client-offer/freelancer/{client_offer_id}'
-    metadata:
-      groupName: 'Client Offer Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Freelance Show Offer'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      client_offer_id:
-        name: client_offer_id
-        description: 'The ID of the client offer.'
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      client_offer_id: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer EdVafa8314hD5bZcegP6kv6'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/client-offer/freelancer/proposal/store
-    metadata:
-      groupName: 'Client Offer Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Freelancer Propose'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      client_offer_id:
-        name: client_offer_id
-        description: ''
-        required: true
-        example: 19
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      message:
-        name: message
-        description: 'Must be at least 10 characters. Must not be greater than 255 characters.'
-        required: true
-        example: ryxrs
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      days:
-        name: days
-        description: ''
-        required: false
-        example: 14
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      price:
-        name: price
-        description: ''
-        required: false
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      client_offer_id: 19
-      message: ryxrs
-      days: 14
-      price: 1
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 846gZP6ahef31caDvdb5kEV'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: api/client-offer/freelancer/proposal
-    metadata:
-      groupName: 'Client Offer Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Freelancer Update Proposal Message'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      client_offer_proposal_id:
-        name: client_offer_proposal_id
-        description: ''
-        required: true
-        example: 19
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      message:
-        name: message
-        description: 'Must be at least 10 characters. Must not be greater than 255 characters.'
-        required: true
-        example: zbqxvmgvgpvubu
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      client_offer_proposal_id: 19
-      message: zbqxvmgvgpvubu
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 85f4hDd6k1e6PVaZabcEvg3'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/client-offer/freelancer/proposal/{client_offer_proposal_id}'
-    metadata:
-      groupName: 'Client Offer Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Freelancer Delete Proposal'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      client_offer_proposal_id:
-        name: client_offer_proposal_id
-        description: 'The ID of the client offer proposal.'
-        required: true
-        example: est
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      client_offer_proposal_id: est
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer b84gfch65a6VdvZEa1ePk3D'
+      - 'Bearer Zc6a6k453he8Da1bEVPfvgd'
     controller: null
     method: null
     route: null

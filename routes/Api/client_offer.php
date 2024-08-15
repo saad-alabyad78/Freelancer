@@ -76,6 +76,7 @@ Route::group([
             'role:freelancer' 
         ]
     ],function(){
+        Route::get('my-proposals' , [ClientOfferFreelancerController::class , 'myProposals']) ;
         Route::post('freelancer-filter' , [ClientOfferFreelancerController::class , 'freelancerFilter'])
         ->withoutMiddleware(['role:freelancer']) ;
         Route::get( '{client_offer}' , [ClientOfferFreelancerController::class , 'showClientOffer']) ;

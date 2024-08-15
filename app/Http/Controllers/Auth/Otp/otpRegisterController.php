@@ -11,7 +11,7 @@ use App\Http\Requests\Auth\ResendOtpRequest;
 use App\Http\Requests\Auth\VerifyEmailRequest;
 
 /**
- * @group Auth Managment
+ * @group Auth Management
  **/
 class otpRegisterController extends Controller
 {
@@ -58,7 +58,7 @@ class otpRegisterController extends Controller
 
         $device = substr($request->userAgent() ?? '' , 0 , 255) ;
 
-        //todo send a welcom email 
+        //todo send a welcome email 
 
         return response()->json([
             'message' => 'user email has been verified successfully ' ,

@@ -23,10 +23,10 @@ class JobOfferResource extends JsonResource
         
         $i_proposed = null ;
         
-        if($user->role_type == Freelancer::class)
+        if($user?->role_type == Freelancer::class)
         {
             $i_proposed = JobOfferProposal::
-                where('freelancer_id' , $user->role_id)
+                where('freelancer_id' , $user?->role_id)
                 ->Where('job_offer_id' , $this->id)
                 ->exists() ;
         }

@@ -1,16 +1,112 @@
-name: 'Company Verification'
+name: 'Company Management'
 description: ''
 endpoints:
   -
     httpMethods:
-      - POST
-    uri: 'api/company/verifications/{verification_id}/accept'
+      - GET
+    uri: 'api/company/job_offer/{job_offer_id}'
     metadata:
-      groupName: 'Company Verification'
+      groupName: 'Company Management'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'accept (admin)'
+      title: 'show offer by id'
+      description: "if the offer is pending only admins and it's company can see it"
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      job_offer_id:
+        name: job_offer_id
+        description: 'The ID of the job offer.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      job_offer_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"unauthenticated"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '51'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/company
+    metadata:
+      groupName: 'Company Management'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'All Companies'
+      description: 'paginate 20'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"street_address":"26569 Reynolds Island Suite 838","city":"\u062f\u0645\u0634\u0642","region":"Bosco Causeway","id":1,"profile_image_url":null,"background_image_url":null,"profile_image_id":null,"background_image_id":null,"verified_at":null,"username":"5","name":"Kozey-Buckridge","description":"Sequi tenetur sed ut vel suscipit.","size":"10","industry_name":"\u0628\u0631\u0645\u062c\u064a"}],"links":{"first":"http:\/\/localhost\/api\/company?page=1","last":"http:\/\/localhost\/api\/company?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/company?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/company","per_page":20,"to":1,"total":1}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '50'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer hve8cdZ6f4g51VDPaE6ak3b'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/company/{company_id}'
+    metadata:
+      groupName: 'Company Management'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show Company .'
       description: ''
       authenticated: true
       custom: []
@@ -19,38 +115,70 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      verification_id:
-        name: verification_id
-        description: 'The ID of the verification.'
+      company_id:
+        name: company_id
+        description: 'The ID of the company.'
         required: true
-        example: 4
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      verification_id: 4
+      company_id: 1
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters:
-      response:
-        name: response
-        description: ''
-        required: true
-        example: enim
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      response: enim
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"street_address":null,"city":null,"region":null,"id":null,"profile_image_url":null,"background_image_url":null,"profile_image_id":null,"background_image_id":null,"verified_at":null,"username":null,"name":null,"description":null,"size":null,"industry_name":null}}'
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer kdavP65gDVh3cb8ZafeE416'
+      - 'Bearer 4Dae1Zgh8cvkPE3b56a6dfV'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/company/job_offers/list-job-offer/guests
+    metadata:
+      groupName: 'Company Management'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'list job offers (for all)'
+      description: 'return all job offers for guests screan.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"i_proposed":null,"id":null,"description":null,"status":null,"location_type":null,"attendance_type":null,"max_salary":null,"min_salary":null,"transportation":null,"health_insurance":null,"military_service":null,"max_age":null,"min_age":null,"gender":null,"industry_name":null,"military_service_required":null,"gender_required":null,"age_required":null,"proposals_count":null,"created_at":null},{"i_proposed":null,"id":null,"description":null,"status":null,"location_type":null,"attendance_type":null,"max_salary":null,"min_salary":null,"transportation":null,"health_insurance":null,"military_service":null,"max_age":null,"min_age":null,"gender":null,"industry_name":null,"military_service_required":null,"gender_required":null,"age_required":null,"proposals_count":null,"created_at":null}],"links":{"first":"\/?page=1","last":"\/?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"\/?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"\/","per_page":20,"to":2,"total":2}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
     controller: null
     method: null
     route: null
@@ -58,13 +186,211 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: 'api/company/verifications/{verification_id}/reject'
+    uri: api/company/job_offers/list-job-offer
     metadata:
-      groupName: 'Company Verification'
+      groupName: 'Company Management'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'reject (admin)'
+      title: 'list job offers (for freelancers)'
+      description: 'return all job offers for freelancers screan.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      company_id:
+        name: company_id
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      location_type:
+        name: location_type
+        description: ''
+        required: false
+        example: on-site
+        type: string
+        enumValues:
+          - on-site
+          - remotly
+        exampleWasSpecified: false
+        custom: []
+      attendance_type:
+        name: attendance_type
+        description: ''
+        required: false
+        example: intern
+        type: string
+        enumValues:
+          - full-time
+          - part-time
+          - intern
+        exampleWasSpecified: false
+        custom: []
+      status:
+        name: status
+        description: ''
+        required: false
+        example: cloused
+        type: string
+        enumValues:
+          - active
+          - cloused
+        exampleWasSpecified: false
+        custom: []
+      job_role_id:
+        name: job_role_id
+        description: ''
+        required: false
+        example: 11
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      max_salary:
+        name: max_salary
+        description: ''
+        required: false
+        example: 6
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      min_salary:
+        name: min_salary
+        description: ''
+        required: false
+        example: 19
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      transportation:
+        name: transportation
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      health_insurance:
+        name: health_insurance
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      military_service:
+        name: military_service
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      max_age:
+        name: max_age
+        description: ''
+        required: false
+        example: 20
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      min_age:
+        name: min_age
+        description: ''
+        required: false
+        example: 4
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      gender:
+        name: gender
+        description: ''
+        required: false
+        example: female
+        type: string
+        enumValues:
+          - male
+          - female
+        exampleWasSpecified: false
+        custom: []
+      industry_name:
+        name: industry_name
+        description: ''
+        required: false
+        example: aut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      i_can_apply_for_it:
+        name: i_can_apply_for_it
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      location_type: on-site
+      attendance_type: intern
+      status: cloused
+      job_role_id: 11
+      max_salary: 6
+      min_salary: 19
+      transportation: false
+      health_insurance: true
+      military_service: false
+      max_age: 20
+      min_age: 4
+      gender: female
+      industry_name: aut
+      i_can_apply_for_it: false
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"i_proposed":null,"id":null,"description":null,"status":null,"location_type":null,"attendance_type":null,"max_salary":null,"min_salary":null,"transportation":null,"health_insurance":null,"military_service":null,"max_age":null,"min_age":null,"gender":null,"industry_name":null,"military_service_required":null,"gender_required":null,"age_required":null,"proposals_count":null,"created_at":null},{"i_proposed":null,"id":null,"description":null,"status":null,"location_type":null,"attendance_type":null,"max_salary":null,"min_salary":null,"transportation":null,"health_insurance":null,"military_service":null,"max_age":null,"min_age":null,"gender":null,"industry_name":null,"military_service_required":null,"gender_required":null,"age_required":null,"proposals_count":null,"created_at":null}],"links":{"first":"\/?page=1","last":"\/?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"\/?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"\/","per_page":20,"to":2,"total":2}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5Ef8Pdhkg1cae6Va6v4D3Zb'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/company/store
+    metadata:
+      groupName: 'Company Management'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store New Company .'
       description: ''
       authenticated: true
       custom: []
@@ -72,23 +398,624 @@ endpoints:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
-    urlParameters:
-      verification_id:
-        name: verification_id
-        description: 'The ID of the verification.'
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      lat:
+        name: lat
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: ufoubilqrat
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      lon:
+        name: lon
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: dowplnkhufzty
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      industry_name:
+        name: industry_name
+        description: ''
         required: true
-        example: 4
+        example: quae
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      profile_image_id:
+        name: profile_image_id
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      background_image_id:
+        name: background_image_id
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      name:
+        name: name
+        description: 'name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters.'
+        required: true
+        example: zbpgeohyrzwiccsaxuzd
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      description:
+        name: description
+        description: 'Must not be greater than 4000 characters.'
+        required: true
+        example: 'Consequatur sed eveniet doloribus error aspernatur.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      size:
+        name: size
+        description: ''
+        required: true
+        example: eos
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      city:
+        name: city
+        description: 'this must be a syrian city.'
+        required: true
+        example: دمشق
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      region:
+        name: region
+        description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
+        required: true
+        example: goxyvjhqitx
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      street_address:
+        name: street_address
+        description: 'Must be at least 3 characters. Must not be greater than 30 characters.'
+        required: true
+        example: xwschcknheqqy
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      gallery_image_ids:
+        name: gallery_image_ids
+        description: 'Must not have more than 25 items.'
+        required: false
+        example: null
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      gallery_images_ids:
+        name: gallery_images_ids
+        description: 'Must not be greater than 2048 characters.'
+        required: false
+        example:
+          - czaypgnchnwjbeamrgrifb
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      lat: ufoubilqrat
+      lon: dowplnkhufzty
+      industry_name: quae
+      name: zbpgeohyrzwiccsaxuzd
+      description: 'Consequatur sed eveniet doloribus error aspernatur.'
+      size: eos
+      city: دمشق
+      region: goxyvjhqitx
+      street_address: xwschcknheqqy
+      gallery_images_ids:
+        - czaypgnchnwjbeamrgrifb
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"street_address":null,"city":null,"region":null,"id":null,"profile_image_url":null,"background_image_url":null,"profile_image_id":null,"background_image_id":null,"verified_at":null,"username":null,"name":null,"description":null,"size":null,"industry_name":null}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Z8g5kE1V6beadDhv6P4cf3a'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: api/company
+    metadata:
+      groupName: 'Company Management'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Company .'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      lon:
+        name: lon
+        description: ''
+        required: false
+        example: qui
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      lat:
+        name: lat
+        description: ''
+        required: false
+        example: ipsum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      profile_image_id:
+        name: profile_image_id
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      background_image_id:
+        name: background_image_id
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      name:
+        name: name
+        description: 'name must be unique company name . Must be at least 3 characters. Must not be greater than 20 characters.'
+        required: false
+        example: dlquqs
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      description:
+        name: description
+        description: 'Must not be greater than 4000 characters.'
+        required: false
+        example: 'Aliquid omnis voluptatem debitis magni ullam ut.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      size:
+        name: size
+        description: 'Must be at least 5 characters. Must not be greater than 20 characters.'
+        required: false
+        example: porjo
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      city:
+        name: city
+        description: 'this must be a syrian city.'
+        required: false
+        example: دمشق
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      region:
+        name: region
+        description: 'Must be at least 3 characters. Must not be greater than 20 characters.'
+        required: false
+        example: hkvlbazlywptd
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      street_address:
+        name: street_address
+        description: 'Must be at least 3 characters. Must not be greater than 30 characters.'
+        required: false
+        example: grrwjqsigwreluirdbgzgg
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      gallery_image_ids:
+        name: gallery_image_ids
+        description: ''
+        required: false
+        example: null
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'gallery_image_ids[].id':
+        name: 'gallery_image_ids[].id'
+        description: ''
+        required: true
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      lon: qui
+      lat: ipsum
+      name: dlquqs
+      description: 'Aliquid omnis voluptatem debitis magni ullam ut.'
+      size: porjo
+      city: دمشق
+      region: hkvlbazlywptd
+      street_address: grrwjqsigwreluirdbgzgg
+      gallery_image_ids:
+        -
+          id: et
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"street_address":null,"city":null,"region":null,"id":null,"profile_image_url":null,"background_image_url":null,"profile_image_id":null,"background_image_id":null,"verified_at":null,"username":null,"name":null,"description":null,"size":null,"industry_name":null}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 4caDE3gd6Zhbf1keav5V6P8'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/company
+    metadata:
+      groupName: 'Company Management'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete the company.'
+      description: 'Note: the user will be deleted'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      password:
+        name: password
+        description: ''
+        required: true
+        example: '&g?df>'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      password: '&g?df>'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer b8Df6Z36hdPkeaVa15vcg4E'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/company/job_offer/store
+    metadata:
+      groupName: 'Company Management'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'create job offer.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      industry_name:
+        name: industry_name
+        description: ''
+        required: true
+        example: vitae
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      job_role_id:
+        name: job_role_id
+        description: ''
+        required: true
+        example: eos
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      location_type:
+        name: location_type
+        description: ''
+        required: true
+        example: on-site
+        type: string
+        enumValues:
+          - on-site
+          - remotly
+        exampleWasSpecified: false
+        custom: []
+      attendance_type:
+        name: attendance_type
+        description: ''
+        required: true
+        example: full-time
+        type: string
+        enumValues:
+          - full-time
+          - part-time
+          - intern
+        exampleWasSpecified: false
+        custom: []
+      max_salary:
+        name: max_salary
+        description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
+        required: false
+        example: 12
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
-    cleanUrlParameters:
-      verification_id: 4
+      min_salary:
+        name: min_salary
+        description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
+        required: false
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      max_age:
+        name: max_age
+        description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
+        required: false
+        example: 24
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      min_age:
+        name: min_age
+        description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
+        required: false
+        example: 13
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      description:
+        name: description
+        description: 'Must be at least 10 characters. Must not be greater than 40000 characters.'
+        required: true
+        example: 'Rerum sed ea explicabo asperiores.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      transportation:
+        name: transportation
+        description: ''
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      health_insurance:
+        name: health_insurance
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      military_service:
+        name: military_service
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      gender:
+        name: gender
+        description: ''
+        required: false
+        example: female
+        type: string
+        enumValues:
+          - male
+          - female
+        exampleWasSpecified: false
+        custom: []
+      skills:
+        name: skills
+        description: 'Must have at least 5 items. Must not have more than 25 items.'
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      age_required:
+        name: age_required
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      military_service_required:
+        name: military_service_required
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      gender_required:
+        name: gender_required
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'skills[].id':
+        name: 'skills[].id'
+        description: ''
+        required: true
+        example: iure
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'skills[].required':
+        name: 'skills[].required'
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      industry_name: vitae
+      job_role_id: eos
+      location_type: on-site
+      attendance_type: full-time
+      max_salary: 12
+      min_salary: 2
+      max_age: 24
+      min_age: 13
+      description: 'Rerum sed ea explicabo asperiores.'
+      transportation: true
+      health_insurance: false
+      military_service: false
+      gender: female
+      skills:
+        -
+          id: iure
+          required: false
+      age_required: false
+      military_service_required: false
+      gender_required: true
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"i_proposed":null,"id":null,"description":null,"status":null,"location_type":null,"attendance_type":null,"max_salary":null,"min_salary":null,"transportation":null,"health_insurance":null,"military_service":null,"max_age":null,"min_age":null,"gender":null,"industry_name":null,"military_service_required":null,"gender_required":null,"age_required":null,"proposals_count":null,"created_at":null}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ga1Vch653vDZPkead846Efb'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: api/company/job_offer
+    metadata:
+      groupName: 'Company Management'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Job Offer .'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      response:
-        name: response
+      job_offer_id:
+        name: job_offer_id
         description: ''
         required: true
         example: quam
@@ -96,125 +1023,180 @@ endpoints:
         enumValues: []
         exampleWasSpecified: false
         custom: []
-    cleanBodyParameters:
-      response: quam
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer e366bE41davfPh5cZ8VkagD'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/company/verifications/all
-    metadata:
-      groupName: 'Company Verification'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'return list of verification request (admin && company)'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
+      industry_name:
+        name: industry_name
+        description: ''
+        required: false
+        example: adipisci
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer cEfePd65b6Dh3kg4a1vZ8Va'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/company/verifications/{verification_id}'
-    metadata:
-      groupName: 'Company Verification'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'show  (admin && company)'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      verification_id:
-        name: verification_id
-        description: 'The ID of the verification.'
-        required: true
-        example: 4
+      job_role_id:
+        name: job_role_id
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      location_type:
+        name: location_type
+        description: ''
+        required: false
+        example: remotly
+        type: string
+        enumValues:
+          - on-site
+          - remotly
+        exampleWasSpecified: false
+        custom: []
+      attendance_type:
+        name: attendance_type
+        description: ''
+        required: false
+        example: part-time
+        type: string
+        enumValues:
+          - full-time
+          - part-time
+          - intern
+        exampleWasSpecified: false
+        custom: []
+      max_salary:
+        name: max_salary
+        description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
+        required: false
+        example: 15
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
-    cleanUrlParameters:
-      verification_id: 4
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+      min_salary:
+        name: min_salary
+        description: 'fields must be either together or none Must be at least 0. Must not be greater than 100000000.'
+        required: false
+        example: 23
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      max_age:
+        name: max_age
+        description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
+        required: false
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      min_age:
+        name: min_age
+        description: 'fields must be either together or none Must be at least 18. Must not be greater than 60.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      description:
+        name: description
+        description: 'Must be at least 40 characters. Must not be greater than 40000 characters.'
+        required: false
+        example: 'Quo aut omnis harum omnis suscipit et.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      transportation:
+        name: transportation
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      health_insurance:
+        name: health_insurance
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      military_service:
+        name: military_service
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      gender:
+        name: gender
+        description: ''
+        required: false
+        example: female
+        type: string
+        enumValues:
+          - male
+          - female
+        exampleWasSpecified: false
+        custom: []
+      skill_ids:
+        name: skill_ids
+        description: ''
+        required: false
+        example: null
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      job_offer_id: quam
+      industry_name: adipisci
+      location_type: remotly
+      attendance_type: part-time
+      max_salary: 15
+      min_salary: 23
+      max_age: 16
+      min_age: 1
+      description: 'Quo aut omnis harum omnis suscipit et.'
+      transportation: false
+      health_insurance: false
+      military_service: true
+      gender: female
     fileParameters: []
     responses:
       -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
+        status: 200
+        content: '{"data":{"i_proposed":null,"id":null,"description":null,"status":null,"location_type":null,"attendance_type":null,"max_salary":null,"min_salary":null,"transportation":null,"health_insurance":null,"military_service":null,"max_age":null,"min_age":null,"gender":null,"industry_name":null,"military_service_required":null,"gender_required":null,"age_required":null,"proposals_count":null,"created_at":null}}'
+        headers: []
+        description: ''
         custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer gZa6ea4D5Vd1kfb8h3EP6vc'
+      - 'Bearer cDdV3aEZbf15g64Ph86keav'
     controller: null
     method: null
     route: null
     custom: []
   -
     httpMethods:
-      - POST
-    uri: api/company/verifications
+      - DELETE
+    uri: api/company/job_offer
     metadata:
-      groupName: 'Company Verification'
+      groupName: 'Company Management'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'store (company)'
+      title: 'Delete Job Offer .'
       description: ''
       authenticated: true
       custom: []
@@ -227,24 +1209,175 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      file:
-        name: file
+      job_offer_id:
+        name: job_offer_id
         description: ''
         required: true
-        example: 3
-        type: integer
+        example: ut
+        type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      file: 3
+      job_offer_id: ut
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer caPvaeV8Zbf53Edh46D61gk'
+      - 'Bearer ka48v6h3edDgZPbc65VaE1f'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/company/job_offer/my-job-offers
+    metadata:
+      groupName: 'Company Management'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'list job offers (for company owner)'
+      description: 'return all job offers for this company.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      location_type:
+        name: location_type
+        description: ''
+        required: false
+        example: remotly
+        type: string
+        enumValues:
+          - on-site
+          - remotly
+        exampleWasSpecified: false
+        custom: []
+      attendance_type:
+        name: attendance_type
+        description: ''
+        required: false
+        example: full-time
+        type: string
+        enumValues:
+          - full-time
+          - part-time
+          - intern
+        exampleWasSpecified: false
+        custom: []
+      status:
+        name: status
+        description: ''
+        required: false
+        example: pending
+        type: string
+        enumValues:
+          - pending
+          - active
+          - cloused
+        exampleWasSpecified: false
+        custom: []
+      job_role_id:
+        name: job_role_id
+        description: ''
+        required: false
+        example: 12
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      location_type: remotly
+      attendance_type: full-time
+      status: pending
+      job_role_id: 12
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"i_proposed":null,"id":null,"description":null,"status":null,"location_type":null,"attendance_type":null,"max_salary":null,"min_salary":null,"transportation":null,"health_insurance":null,"military_service":null,"max_age":null,"min_age":null,"gender":null,"industry_name":null,"military_service_required":null,"gender_required":null,"age_required":null,"proposals_count":null,"created_at":null},{"i_proposed":null,"id":null,"description":null,"status":null,"location_type":null,"attendance_type":null,"max_salary":null,"min_salary":null,"transportation":null,"health_insurance":null,"military_service":null,"max_age":null,"min_age":null,"gender":null,"industry_name":null,"military_service_required":null,"gender_required":null,"age_required":null,"proposals_count":null,"created_at":null}],"links":{"first":"\/?page=1","last":"\/?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"\/?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"\/","per_page":20,"to":2,"total":2}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 8a5dkPhD6gZc41Efav6eb3V'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/company/job_offer/status/change
+    metadata:
+      groupName: 'Company Management'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Job Offer Status .'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      job_offer_id:
+        name: job_offer_id
+        description: ''
+        required: true
+        example: id
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      status:
+        name: status
+        description: ''
+        required: true
+        example: active
+        type: string
+        enumValues:
+          - pending
+          - active
+          - cloused
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      job_offer_id: id
+      status: active
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"i_proposed":null,"id":null,"description":null,"status":null,"location_type":null,"attendance_type":null,"max_salary":null,"min_salary":null,"transportation":null,"health_insurance":null,"military_service":null,"max_age":null,"min_age":null,"gender":null,"industry_name":null,"military_service_required":null,"gender_required":null,"age_required":null,"proposals_count":null,"created_at":null}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Eehbc5VdD6fk3gZavP8a146'
     controller: null
     method: null
     route: null
