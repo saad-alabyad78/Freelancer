@@ -24,7 +24,6 @@ class SendInvitationRequest extends FormRequest
     {
         return [
             'freelancer_id' => 'required|exists:users,id',
-            'job_offer_id' => 'required|exists:job_offers,id',
         ];
     }
 }

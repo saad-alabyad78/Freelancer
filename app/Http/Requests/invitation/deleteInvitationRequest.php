@@ -4,7 +4,7 @@ namespace App\Http\Requests\invitation;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RejectInvitationRequest extends FormRequest
+class deleteInvitationRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +22,8 @@ class RejectInvitationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'invitation_ids' => ['required' , 'array'] ,
+            'invitation_ids.*' => ['required' , 'integer' , 'distinct' , 'exists:invitations,id'] ,
         ];
     }
 }

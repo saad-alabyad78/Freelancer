@@ -26,9 +26,4 @@ class Invitation extends Model
     {
         return $this->belongsTo(User::class, 'freelancer_id');
     }
-
-    public function jobOffer()
-    {
-        return $this->belongsTo(JobOffer::class, 'job_offer_id');
-    }
 }

@@ -14,7 +14,7 @@ Route::group(
     ],
     function(){
         Route::post('/invitations', [InvitationController::class, 'sendInvitation']);
-        Route::delete('/invitations/{id}', [InvitationController::class, 'deleteInvitation']);
+        Route::delete('/invitations', [InvitationController::class, 'deleteInvitation']);
     });
 
 // freelancer
@@ -35,12 +35,11 @@ Route::group(
 Route::group(
     [
         'middleware' => [
-            'auth:sanctum' ,
-            'verify_email' ,
-            'role:company,freelancer' ,
+            'auth:sanctum',
+            'verify_email',
+            'role:company,freelancer',
         ],
     ],
-    function(){
+    function () {
         Route::get('/invitations', [InvitationController::class, 'getInvitations']);
-
     });

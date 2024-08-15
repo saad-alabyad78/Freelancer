@@ -7,8 +7,7 @@ use App\Models\Conversation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\invitation\SendInvitationRequest;
-use App\Http\Requests\invitation\AcceptInvitationRequest;
-use App\Http\Requests\invitation\RejectInvitationRequest;
+use App\Http\Requests\invitation\deleteInvitationRequest;
 
 /**
  * @group Invitation
@@ -27,7 +26,7 @@ class InvitationController extends Controller
     {
         $this->authorize('sendInvitation', Invitation::class);
 
-        $invitation = Invitation::create([
+        $invitation = Invitation::firstOrCreate([
             'company_id' => auth('sanctum')->user()->id,
             'freelancer_id' => $request->freelancer_id,
         ]);
@@ -48,12 +47,16 @@ class InvitationController extends Controller
     {
         $user = auth('sanctum')->user();
 
-        if ($user->role === 'company') {
+        if ($user->role_name === 'company') {
             $invitations = $user->sentInvitations;
-        } elseif ($user->role === 'freelancer') {
+        } elseif ($user->role_name === 'freelancer') {
             $invitations = $user->receivedInvitations;
         } else {
             return response()->json(['error' => 'Unauthorized'], 403);
+        }
+
+        if ($invitations->isEmpty()) {
+            return response()->json(['message' => 'No invitations found']);
         }
 
         return response()->json($invitations);
@@ -64,16 +67,18 @@ class InvitationController extends Controller
      *
      * Deletes a specific invitation.
      *
-     * @param  int  $id
+     * @param  \App\Http\Requests\invitation\deleteInvitationRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function deleteInvitation($id)
+    public function deleteInvitation(deleteInvitationRequest $request)
     {
-        $invitation = Invitation::findOrFail($id);
-        $this->authorize('deleteInvitation', $invitation);
+        foreach ($request->invitation_ids as $invitation_id) {
+            $invitation = Invitation::findOrFail($invitation_id);
+            $this->authorize('deleteInvitation', $invitation);
+            $invitation->delete();
+        }
 
-        $invitation->delete();
-        return response()->json(['message' => 'Invitation deleted successfully']);
+        return response()->json(['message' => 'Invitations deleted successfully']);
     }
 
     /**
@@ -81,20 +86,26 @@ class InvitationController extends Controller
      *
      * Accepts a specific invitation by the freelancer.
      *
-     * @param  \App\Http\Requests\Invitation\AcceptInvitationRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function acceptInvitation(AcceptInvitationRequest $request, $id)
+        public function acceptInvitation($id)
     {
         $invitation = Invitation::findOrFail($id);
         $this->authorize('respondToInvitation', $invitation);
 
+        if ($invitation->accepted_at) {
+            return response()->json(['error' => 'Invitation has already been accepted.']);
+        }
+
+        if ($invitation->rejected_at) {
+            return response()->json(['error' => 'Invitation has been rejected and cannot be accepted.']);
+        }
+
         $invitation->accepted_at = now();
         $invitation->save();
 
-        // Create a conversation between the company and the freelancer
-        $conversation = Conversation::create();
+        $conversation = Conversation::firstOrCreate();
         $conversation->participants()->attach([$invitation->company_id, $invitation->freelancer_id]);
 
         return response()->json(['message' => 'Invitation accepted', 'conversation' => $conversation]);
@@ -105,14 +116,21 @@ class InvitationController extends Controller
      *
      * Rejects a specific invitation by the freelancer.
      *
-     * @param  \App\Http\Requests\invitation\RejectInvitationRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function rejectInvitation(RejectInvitationRequest $request, $id)
+    public function rejectInvitation($id)
     {
         $invitation = Invitation::findOrFail($id);
         $this->authorize('respondToInvitation', $invitation);
+
+        if ($invitation->rejected_at) {
+            return response()->json(['error' => 'Invitation has already been rejected.']);
+        }
+
+        if ($invitation->accepted_at) {
+            return response()->json(['error' => 'Invitation has been accepted and cannot be rejected.']);
+        }
 
         $invitation->rejected_at = now();
         $invitation->save();
