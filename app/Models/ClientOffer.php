@@ -27,6 +27,8 @@ class ClientOffer extends BaseModel
         'proposals_count' ,
     ];
 
+    protected $with = ['sub_category' , 'client' , 'skills'] ;
+
     public function skills():MorphToMany
     {
         return $this->morphToMany(Skill::class , 'skillable') ;

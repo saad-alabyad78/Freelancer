@@ -101,7 +101,14 @@ class ProjectController extends Controller
      */
     public function delete(Project $project)
     {
+        $offer = ClientOffer::where('id' , $project->client_offer_id)
+        ->update([
+            'freelancer_id' => null , 
+            'status' => ClientOfferStatus::ACTIVE ,
+            'posted_at' => now()->toDateTimeString() ,
+        ]) ;
+        
         $project->delete() ;
-        return response()->json(['message'=>'deleted']);
+        return ClientOfferResource::make($offer) ;
     }
 }
