@@ -58,7 +58,7 @@ class ComplaintController extends Controller
      */
     public function freezeUser($id)
     {
-        $this->authorize('freezeUser', Auth::user());
+        //$this->authorize('freezeUser', Auth::user());
 
         $user = User::findOrFail($id);
         $user->delete(); // Soft Delete

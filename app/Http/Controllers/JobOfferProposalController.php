@@ -180,7 +180,7 @@ class JobOfferProposalController extends Controller
         //$this->authorize('accept', $jobOfferProposal);
 
         //todo send email to freelancer
-        
+
         $jobOfferProposal->update(
             [
                 'accepted_at' => now()->toDateTimeString() ,
@@ -190,7 +190,7 @@ class JobOfferProposalController extends Controller
         JobOffer::where('id', $jobOfferProposal->job_offer_id)->update(['status' => JobOfferStatus::DONE]) ;
 
         $conversation = Conversation::firstOrCreate();
-        
+
         $conversation->participants()->attach([$jobOfferProposal->freelancer_id, $jobOfferProposal->job_offer->company_id]);
         // TODO: send notification to freelancer (firebase)
 

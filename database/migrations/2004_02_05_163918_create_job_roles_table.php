@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('job_roles', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique()->index();
+            $table->softDeletes();
         });
     }
 
