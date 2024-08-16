@@ -112,8 +112,6 @@ class CompanyController extends Controller
         try {
             $company = Company::findOrFail(auth('sanctum')->user()->role['id']);
 
-            //todo : delete the old images profile and background in the observer
-
             $company = $this->companyRepository->update($company , $data);
 
             DB::commit() ;

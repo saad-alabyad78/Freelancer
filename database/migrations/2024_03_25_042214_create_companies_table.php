@@ -40,6 +40,8 @@ return new class extends Migration
                 ->on('industries')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
+            
+            $table->softDeletes() ;
                 
             $table->timestamps();
             

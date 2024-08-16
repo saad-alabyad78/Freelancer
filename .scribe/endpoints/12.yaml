@@ -27,30 +27,20 @@ endpoints:
         name: freelancer_id
         description: ''
         required: true
-        example: velit
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      job_offer_id:
-        name: job_offer_id
-        description: ''
-        required: true
-        example: necessitatibus
+        example: commodi
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      freelancer_id: velit
-      job_offer_id: necessitatibus
+      freelancer_id: commodi
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ZdavE3feb14h6DcPkgaV856'
+      - 'Bearer hd34Vk66DZPav5cfeaEg8b1'
     controller: null
     method: null
     route: null
@@ -58,7 +48,7 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/invitations/{id}'
+    uri: api/invitations
     metadata:
       groupName: Invitation
       groupDescription: ''
@@ -72,29 +62,31 @@ endpoints:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the invitation.'
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      invitation_ids:
+        name: invitation_ids
+        description: ''
         required: true
-        example: excepturi
-        type: string
+        example:
+          - 8
+        type: 'integer[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
-    cleanUrlParameters:
-      id: excepturi
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    cleanBodyParameters:
+      invitation_ids:
+        - 8
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1e8bE3kafcV6aZd54v6PDhg'
+      - 'Bearer fVcgb8Dvae1d36k5EP6ahZ4'
     controller: null
     method: null
     route: null
@@ -121,13 +113,13 @@ endpoints:
         name: id
         description: 'The ID of the invitation.'
         required: true
-        example: cumque
+        example: magnam
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: cumque
+      id: magnam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -138,7 +130,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 56daaf1k4ZE6Vc8hDg3Pveb'
+      - 'Bearer 1v3aPE6gcd48bfak6D5ZeVh'
     controller: null
     method: null
     route: null
@@ -165,13 +157,13 @@ endpoints:
         name: id
         description: 'The ID of the invitation.'
         required: true
-        example: harum
+        example: quo
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: harum
+      id: quo
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -182,7 +174,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer egZf4V6Eh658ca3db1aPkvD'
+      - 'Bearer 8gk616ea3bEcPdZDVaf5v4h'
     controller: null
     method: null
     route: null
@@ -225,7 +217,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Zc6a6k453he8Da1bEVPfvgd'
+      - 'Bearer ZbVe5d4gfva6PhaE63kc8D1'
     controller: null
     method: null
     route: null

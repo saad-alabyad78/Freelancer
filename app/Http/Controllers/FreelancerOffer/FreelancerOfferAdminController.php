@@ -11,7 +11,7 @@ use App\Http\Requests\FreelancerOffer\FilterFreelancerOfferForAdminRequest;
 
 
 /**
- * @group Freelancer Offer Managment
+ * @group Freelancer Offer Management
  */
 class FreelancerOfferAdminController extends Controller
 {

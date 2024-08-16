@@ -25,9 +25,7 @@ class CompanyRepository extends BaseRepository implements ICompanyRepository
         //store and create images
 
         if(array_key_exists('gallery_image_ids' , $data))
-        {
-            //todo:chnuk set in the database                 
-
+        {         
             $gallery_images = Image::whereIn('id' , $data['gallery_image_ids'])->get() ;
             
             $company->gallery_images()->saveMany($gallery_images) ;

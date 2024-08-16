@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -33,11 +34,18 @@ class Freelancer extends BaseModel
         'username' ,
     ];
 
+    protected $appends = ['rating'] ;
+
     public function Age():Attribute
     {
         return Attribute::make(
             get: fn() => Carbon::parse($this->date_of_birth)->age
         );
+    }
+
+    public function getRatingAttribute()
+    {
+        return $this->rates()->avg('number') ;
     }
 
     public function user():MorphOne
@@ -63,5 +71,9 @@ class Freelancer extends BaseModel
     public function client_offer_proposals():HasMany
     {
         return $this->hasMany(ClientOfferProposal::class) ;
+    }
+    public function rates():MorphMany
+    {
+        return $this->morphMany(Rate::class , 'model') ;
     }
 }

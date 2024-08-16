@@ -33,7 +33,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: monahan.vincenzo@example.net
+        example: ejaskolski@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -42,21 +42,21 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: "BY)>`FO!P?'o,Prqpz"
+        example: '2{ckS:'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: monahan.vincenzo@example.net
-      password: "BY)>`FO!P?'o,Prqpz"
+      email: ejaskolski@example.com
+      password: '2{ckS:'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 8Vh16veEPabgZ4ckdD3a5f6'
+      - 'Bearer 1a5E3fg6ZPb84cDVkvdeah6'
     controller: null
     method: null
     route: null
@@ -92,7 +92,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer efc65bvZ36DahgP4EdVk8a1'
+      - 'Bearer 63fe58bvgchPaZVa6D14kEd'
     controller: null
     method: null
     route: null
@@ -124,7 +124,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":13,"first_name":"Yvonne","money":10000,"last_name":"Schmitt","username":"yvonne-schmitt-66bda2035a7d3","email":"rjohns@example.com","role_id":null,"role":""}}'
+        content: '{"data":{"id":12,"first_name":"Torrance","money":10000,"last_name":"Bechtelar","username":"torrance-bechtelar-66be75e7d4574","email":"smitham.ellie@example.com","role_id":null,"role":""}}'
         headers: []
         description: ''
         custom: []
@@ -132,7 +132,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer b4Za8hD3aePEgkd5v6V61fc'
+      - 'Bearer face6EP4Z6d1gkD8hV35bav'
     controller: null
     method: null
     route: null
@@ -165,18 +165,18 @@ endpoints:
         name: token
         description: ''
         required: true
-        example: occaecati
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      token: occaecati
+      token: qui
     fileParameters: []
     responses:
       -
         status: 401
-        content: '{"provider":"google","error":"failed to authenticate the user with google oauth token ","message":"Client error: `GET https:\/\/www.googleapis.com\/oauth2\/v3\/userinfo?prettyPrint=false` resulted in a `401 Unauthorized` response:\n{\n  \"error\": \"invalid_request\",\n  \"error_description\": \"Invalid Credentials\"\n}\n"}'
+        content: '{"provider":"google","error":"failed to authenticate the user with google oauth token ","message":"cURL error 6: Could not resolve host: www.googleapis.com (see https:\/\/curl.haxx.se\/libcurl\/c\/libcurl-errors.html) for https:\/\/www.googleapis.com\/oauth2\/v3\/userinfo?prettyPrint=false"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -189,7 +189,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8a6ZP346kfdVgbaEhc1Dev5'
+      - 'Bearer cZvh5g61DefP6b83aVkaEd4'
     controller: null
     method: null
     route: null
@@ -222,20 +222,20 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: citlalli.daugherty@example.com
+        example: crau@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: citlalli.daugherty@example.com
+      email: crau@example.net
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer b4avkVf1D8PZgdeEahc6536'
+      - 'Bearer h1vab346ZfgeDVa5k6EPdc8'
     controller: null
     method: null
     route: null
@@ -268,7 +268,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: oconnell.karina@example.net
+        example: sokeefe@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -277,7 +277,7 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: ea
+        example: magni
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -286,22 +286,22 @@ endpoints:
         name: password_otp_code
         description: ''
         required: true
-        example: quae
+        example: earum
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: oconnell.karina@example.net
-      password: ea
-      password_otp_code: quae
+      email: sokeefe@example.com
+      password: magni
+      password_otp_code: earum
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer bV6k6aD5vg3ca4fe18dZhPE'
+      - 'Bearer da6P4hEg1be86DkVZ3fca5v'
     controller: null
     method: null
     route: null

@@ -27,6 +27,8 @@ class ClientOffer extends BaseModel
         'proposals_count' ,
     ];
 
+    protected $with = ['sub_category' , 'client' , 'skills'] ;
+
     public function skills():MorphToMany
     {
         return $this->morphToMany(Skill::class , 'skillable') ;
@@ -46,6 +48,10 @@ class ClientOffer extends BaseModel
     public function freelancer():BelongsTo
     {
         return $this->belongsTo(Freelancer::class) ;
+    }
+    public function project():HasOne
+    {
+        return $this->hasOne(Project::class) ;
     }
 
     public function scopeFilter(Builder $builder , array $filters)

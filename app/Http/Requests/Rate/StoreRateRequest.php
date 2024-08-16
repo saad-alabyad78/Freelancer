@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Requests\Storage;
+namespace App\Http\Requests\Rate;
 
+use Illuminate\Validation\Rule;
+use App\Constants\RatingConstants;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreFileRequest extends FormRequest
+class StoreRateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,13 +24,14 @@ class StoreFileRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'file' => [
-                'required',
-                'file',
-                'max:10240' // The file size limit is 10MB
+            'model_id' => [ 'required' , 'integer'] ,
+            'model_type' => [ 
+                'required' ,
+                'string' ,
+                Rule::in(array_keys(RatingConstants::MAP_TO_MODEL))
             ] ,
-            'title' => ['required' , 'string' , 'max:255' , 'mimes:pdf,png,jpg,jpeg,zip'] ,
-            //todo : what file types allowed 
+            'description' => [ 'required' , 'string'] ,
+            'number' => [ 'required' , 'string'] ,
         ];
     }
 }
