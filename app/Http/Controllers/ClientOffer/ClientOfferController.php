@@ -27,7 +27,7 @@ use App\Http\Requests\ClientOffer\ClientRejectProposalsRequest;
 use App\Http\Resources\ClientOffer\ClientOfferProposalResource;
 /**
  * @group Client Offer Management
- * 
+ *
  */
 class ClientOfferController extends Controller
 {
@@ -85,7 +85,7 @@ class ClientOfferController extends Controller
             $user->decrement('money', $proposal->price);
 
             $bills = [] ;
-            
+
             $bills[] = Bill::create([
                 'from_id' => $offer->client_id,
                 'from_type' => 'clients',
@@ -95,7 +95,7 @@ class ClientOfferController extends Controller
                 'money' => ($proposal->price * 90)/100,
             ]);
             $admin = Admin::first() ;
-            
+
             $bills[] = Bill::create([
                 'from_id' => $offer->client_id,
                 'from_type' => 'clients',
@@ -104,10 +104,12 @@ class ClientOfferController extends Controller
                 'description' => 'this bill is to pay for the project building ',
                 'money' => ($proposal->price * 10)/100,
             ]);
-            
+            $conversation = Conversation::firstOrCreate();
+            $conversation->participants()->attach([$offer->freelancer_id, $offerl->jobOffer->client_id]);
 
-            //todo send notification to the freelancer 
-            //todo send notification to the client 
+
+            //todo send notification to the freelancer
+            //todo send notification to the client
 
             return response()->json(
                 [
@@ -124,6 +126,7 @@ class ClientOfferController extends Controller
                         'files',
                         'skills',
                     ])),
+                    'conversation_id' => $conversation->id,
                 ]
             );
         });
@@ -140,7 +143,7 @@ class ClientOfferController extends Controller
 
         $proposals = ClientOfferProposal::whereIn('id', $request->input('proposal_ids'))->get();
 
-        //todo send api to the freelancer 
+        //todo send api to the freelancer
         return ClientOfferProposalResource::collection($proposals);
     }
 
@@ -180,7 +183,7 @@ class ClientOfferController extends Controller
     }
     /**
      * Client Store Offer
-     * 
+     *
      * @param \App\Http\Requests\ClientOffer\CreateClientOfferRequest $request
      * @return ClientOfferResource
      */
@@ -211,7 +214,7 @@ class ClientOfferController extends Controller
 
     /**
      * Client Show Offers
-     * 
+     *
      * @param \App\Models\ClientOffer $clientOffer
      * @return ClientOfferResource|mixed|\Illuminate\Http\JsonResponse
      */
@@ -264,7 +267,7 @@ class ClientOfferController extends Controller
 
     /**
      * Client Update Pending Offers
-     * 
+     *
      * @param \App\Http\Requests\ClientOffer\UpdateClientOfferRequest $request
      * @return ClientOfferResource|mixed|\Illuminate\Http\JsonResponse
      */
@@ -292,7 +295,7 @@ class ClientOfferController extends Controller
 
         $clientOffer->skills()->sync($data['skill_ids']);
 
-        //delete old files 
+        //delete old files
         $clientOffer
             ->files()
             ->whereNotIn('id', $data['file_ids'])
@@ -316,7 +319,7 @@ class ClientOfferController extends Controller
 
     /**
      * Client Delete Offers
-     * 
+     *
      * @param \App\Models\ClientOffer $clientOffer
      * @return mixed|\Illuminate\Http\JsonResponse
      */
