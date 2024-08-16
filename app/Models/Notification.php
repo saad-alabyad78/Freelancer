@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 // use Spatie\Translatable\HasTranslations;
 
 class Notification extends Model
@@ -41,5 +42,10 @@ class Notification extends Model
     public function getAdditionalDataAttribute()
     {
         return isset($this->attributes['additional_data']) ? json_decode($this->attributes['additional_data'], true) : null;
+    }
+
+    public function model():MorphTo
+    {
+        return $this->morphTo() ;
     }
 }
