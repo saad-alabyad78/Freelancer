@@ -3,10 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use App\Models\Skill;
 use App\Models\Freelancer;
+use App\Models\JobRole;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Carbon\Carbon;
 
 class FreelancerSeeder extends Seeder
 {
@@ -15,27 +15,28 @@ class FreelancerSeeder extends Seeder
      */
     public function run(): void
     {
-        $user1 = User::factory()->makeOne([
-            'first_name' => 'freelancer1' ,
-            'last_name' => null,
-            'email' => 'freelancer1@gmail.com'
-        ]);
-        $user2 = User::factory()->makeOne([
-            'first_name' => 'freelancer2' ,
-            'last_name' => null ,
-            'email' => 'freelancer2@gmail.com' ,
-        ]);
+        for ($i = 1; $i <= 50; $i++) {
+            $jobRole = JobRole::inRandomOrder()->first();
 
-        $freelancer1 = Freelancer::factory()->create();
-        $freelancer2 = Freelancer::factory()->create();
+            $freelancer = Freelancer::create([
+                'username' => 'freelancer_' . uniqid(),
+                'profile_image_url' => '/images/freelancers/default_profile.png',
+                'background_image_url' => '/images/freelancers/default_background.png',
+                'headline' => 'Freelancer ' . $i,
+                'description' => 'This is a description for freelancer ' . $i,
+                'city' => 'City ' . $i,
+                'gender' => array_rand(['male', 'female']),
+                'date_of_birth' => Carbon::parse(rand(1980, 2000) . '-' . rand(1, 12) . '-' . rand(1, 28)),
+                'job_role_id' => $jobRole->id,
+            ]);
 
-        $freelancer1->user()->save($user1) ;
-        $freelancer2->user()->save($user2) ;
+            $user = User::factory()->create([
+                'first_name' => 'Freelancer' . $i,
+                'last_name' => 'User' . $i,
+                'email' => 'freelancer' . $i . '@example.com',
+            ]);
 
-        $skills = Skill::limit(5)->get() ;
-
-        $freelancer1->skills()->attach($skills) ;
-        $freelancer2->skills()->attach($skills) ;
-        
+            $freelancer->user()->save($user);
+        }
     }
 }

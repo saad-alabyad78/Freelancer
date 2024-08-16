@@ -15,10 +15,10 @@ class File extends BaseModel
 
     protected $fillable = [
         'id' ,
-        'title' ,   
+        'title' ,
         'public_id' ,
         'url' ,
-        'size' , 
+        'size' ,
         'filable_id' ,
         'filable_type' ,
         'extension' ,

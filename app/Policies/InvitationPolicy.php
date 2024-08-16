@@ -43,12 +43,8 @@ class InvitationPolicy
     public function respondToInvitation(User $user, Invitation $invitation)
     {
         // Ensure the invitation is not already accepted or rejected
-        if ($invitation->accepted_at) {
-            return response()->json(['error' => 'Invitation has already been accepted.']);
-        }
-
-        if ($invitation->rejected_at) {
-            return response()->json(['error' => 'Invitation has been rejected and cannot be accepted.']);
+        if ($invitation->accepted_at || $invitation->rejected_at) {
+            return false;
         }
 
         return $user->id === $invitation->freelancer_id;

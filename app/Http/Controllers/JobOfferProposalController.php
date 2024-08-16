@@ -180,6 +180,8 @@ class JobOfferProposalController extends Controller
         $jobOfferProposal->update(['accepted_at' => now()->toDateTimeString()]);
         JobOffer::where('id', $jobOfferProposal->job_offer_id)->decrement('proposals_count');
 
+        $conversation = Conversation::firstOrCreate();
+        $conversation->participants()->attach([$jobOfferProposal->freelancer_id, $jobOfferProposal->jobOffer->company_id]);
         // TODO: send notification to freelancer (firebase)
 
         return JobOfferProposalResource::make($jobOfferProposal);

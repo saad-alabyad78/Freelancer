@@ -2,13 +2,10 @@
 
 namespace Database\Seeders;
 
-use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Client;
-use App\Constants\Gender;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class ClientSeeder extends Seeder
 {
@@ -17,25 +14,23 @@ class ClientSeeder extends Seeder
      */
     public function run(): void
     {
-        $client = Client::create(
-            [
-                'gender' => Gender::MALE ,
-                'date_of_birth' => Carbon::now()->toDateString(),
-                'city' => 'دمشق',
-                'username' => 'client-client-1' ,
-            ]
-        ) ;
+        for ($i = 1; $i <= 50; $i++) {
+            $client = Client::create([
+                'username' => 'client_' . uniqid(),
+                'profile_image_url' => '/images/clients/default_profile.png',
+                'background_image_url' => '/images/clients/default_background.png',
+                'gender' => array_rand(['male', 'female']),
+                'date_of_birth' => Carbon::parse(rand(1980, 2000) . '-' . rand(1, 12) . '-' . rand(1, 28)),
+                'city' => 'City ' . $i,
+            ]);
 
-        $user = User::updateOrCreate([
-            'first_name' => 'client' , 
-            'last_name' => 'client' ,
-            'email' => 'client@gmail.com' ,
-            'email_verified_at' => '2000-11-11' ,
-            'role_id' => $client->id ,
-            'role_type' => Client::class ,
-            ] , [
-                'password' => Hash::make('12345678') , 
-            ]) ;
+            $user = User::factory()->create([
+                'first_name' => 'Client' . $i,
+                'last_name' => 'User' . $i,
+                'email' => 'client' . $i . '@example.com',
+            ]);
 
+            $client->user()->save($user);
+        }
     }
 }

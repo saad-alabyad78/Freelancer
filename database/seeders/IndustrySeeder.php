@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Industry;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class IndustrySeeder extends Seeder
 {
@@ -13,7 +12,21 @@ class IndustrySeeder extends Seeder
      */
     public function run(): void
     {
-        Industry::updateOrCreate(['name' => 'برمجي']) ;     
-        Industry::updateOrCreate(['name' => 'خدمي']) ;     
+        Industry::updateOrCreate(['name' => 'Information Technology']);
+        Industry::updateOrCreate(['name' => 'Healthcare']);
+        Industry::updateOrCreate(['name' => 'Education']);
+        Industry::updateOrCreate(['name' => 'Manufacturing']);
+        Industry::updateOrCreate(['name' => 'Finance']);
+        Industry::updateOrCreate(['name' => 'Retail']);
+        Industry::updateOrCreate(['name' => 'Real Estate']);
+        Industry::updateOrCreate(['name' => 'Hospitality']);
+        Industry::updateOrCreate(['name' => 'Transportation']);
+        Industry::updateOrCreate(['name' => 'Construction']);
+        Industry::updateOrCreate(['name' => 'Marketing & Advertising']);
+        Industry::updateOrCreate(['name' => 'Telecommunications']);
+        Industry::updateOrCreate(['name' => 'Entertainment']);
+        Industry::updateOrCreate(['name' => 'Legal Services']);
+        Industry::updateOrCreate(['name' => 'Non-Profit']);
+        Industry::updateOrCreate(['name' => 'Public Administration']);
     }
 }
