@@ -12,7 +12,7 @@ class ClientSeeder extends Seeder
 {
     public function run(): void
     {
-        $users = User::whereNull('role_id')->whereNull('role_type')->take(106 6)->get();
+        $users = User::whereNull('role_id')->whereNull('role_type')->take(10)->get();
 
         foreach ($users as $user) {
             $username = explode('@', $user->email)[0];
