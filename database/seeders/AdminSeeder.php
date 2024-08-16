@@ -9,50 +9,28 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        $users = [
-            User::updateOrCreate([
-                'email' => 'admin1@gmail.com',
-            ], [
-                'first_name' => 'admin1',
-                'last_name' => 'admin',
-                'email_verified_at' => '2000-11-11',
-                'password' => Hash::make('12345678'),
-            ]),
-            User::updateOrCreate([
-                'email' => 'admin2@gmail.com',
-            ], [
-                'first_name' => 'admin2',
-                'last_name' => 'admin',
-                'email_verified_at' => '2000-11-11',
-                'password' => Hash::make('12345678'),
-            ]),
-            User::updateOrCreate([
-                'email' => 'admin3@gmail.com',
-            ], [
-                'first_name' => 'admin3',
-                'last_name' => 'admin',
-                'email_verified_at' => '2000-11-11',
-                'password' => Hash::make('12345678'),
-            ]),
-            User::updateOrCreate([
-                'email' => 'admin4@gmail.com',
-            ], [
-                'first_name' => 'admin4',
-                'last_name' => 'admin',
-                'email_verified_at' => '2000-11-11',
-                'password' => Hash::make('12345678'),
-            ]),
-        ];
+        $adminUsers = User::whereNull('role_id')->whereNull('role_type')->take(6)->get();
 
-        foreach ($users as $user) {
-            if (!$user->role_id) {
-                $admin = Admin::create();
+        foreach ($adminUsers as $adminData) {
+            $user = User::updateOrCreate([
+                'email' => $adminData['email'],
+            ], [
+                'first_name' => $adminData['first_name'],
+                'last_name' => $adminData['last_name'],
+                'email_verified_at' => now(),
+                'password' => Hash::make('12345678'),
+            ]);
+
+            if (!$user->role_id && !$user->role_type) {
+                $admin = Admin::create([]);
                 $admin->user()->save($user);
+
+                $user->update([
+                    'role_id' => $admin->id,
+                    'role_type' => Admin::class,
+                ]);
             }
         }
     }

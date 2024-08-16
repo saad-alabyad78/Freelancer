@@ -4,33 +4,32 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use App\Models\Client;
-use Carbon\Carbon;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class ClientSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        for ($i = 1; $i <= 50; $i++) {
+        $users = User::whereNull('role_id')->whereNull('role_type')->take(106 6)->get();
+
+        foreach ($users as $user) {
+            $username = explode('@', $user->email)[0];
+
             $client = Client::create([
-                'username' => 'client_' . uniqid(),
+                'username' => $username,
                 'profile_image_url' => '/images/clients/default_profile.jpg',
                 'background_image_url' => '/images/clients/default_background.jpg',
                 'gender' => array_rand(['male', 'female']),
                 'date_of_birth' => Carbon::parse(rand(1980, 2000) . '-' . rand(1, 12) . '-' . rand(1, 28)),
-                'city' => 'City ' . $i,
+                'city' => 'Client City',
             ]);
 
-            $user = User::factory()->create([
-                'first_name' => 'Client' . $i,
-                'last_name' => 'User' . $i,
-                'email' => 'client' . $i . '@example.com',
+            $user->update([
+                'role_id' => $client->id,
+                'role_type' => Client::class,
             ]);
-
-            $client->user()->save($user);
         }
     }
 }

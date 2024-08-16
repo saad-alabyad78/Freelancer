@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Constants\ComplaintTypes;
+use Illuminate\Validation\Rule;
 
 class StoreComplaintRequest extends FormRequest
 {
@@ -15,9 +17,8 @@ class StoreComplaintRequest extends FormRequest
     {
         return [
             'accused_id' => 'required|exists:users,id',
+            'type' => ['nullable', Rule::in(ComplaintTypes::all())],
             'reason' => 'required|string',
-            'type' => 'nullable|string',
         ];
     }
 }
-

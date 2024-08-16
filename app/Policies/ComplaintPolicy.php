@@ -12,7 +12,7 @@ class ComplaintPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->is_admin;
+        return $user->role_name == 'admin';
     }
 
     /**
@@ -28,7 +28,7 @@ class ComplaintPolicy
      */
     public function freezeUser(User $user)
     {
-        return $user->is_admin;
+        return $user->role_name == 'admin';
     }
 }
 

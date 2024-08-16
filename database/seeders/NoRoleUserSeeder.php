@@ -9,9 +9,6 @@ use Faker\Factory as Faker;
 
 class NoRoleUserSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         $faker = Faker::create('ar_SA');
@@ -19,24 +16,21 @@ class NoRoleUserSeeder extends Seeder
         for ($i = 0; $i < 50; $i++) {
             $firstName = $faker->firstName;
             $lastName = $faker->lastName;
-            // استخدام الأسماء العربية لإنشاء البريد الإلكتروني باللغة الإنجليزية
             $email = strtolower($this->transliterate($firstName) . $this->transliterate($lastName) . $i . '@example.com');
             $verifiedAt = $faker->dateTimeBetween('-10 years', 'now')->format('Y-m-d H:i:s');
 
-            User::updateOrCreate([
+            User::create([
                 'first_name' => $firstName,
                 'last_name' => $lastName,
                 'email' => $email,
                 'email_verified_at' => $verifiedAt,
-            ], [
                 'password' => Hash::make('12345678'),
+                'role_id' => null,
+                'role_type' => null,
             ]);
         }
     }
 
-    /**
-     * تحويل النص العربي إلى نص لاتيني
-     */
     private function transliterate($text)
     {
         $transliterationTable = [

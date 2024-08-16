@@ -6,39 +6,40 @@ use App\Models\User;
 use App\Models\Company;
 use App\Models\Industry;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CompanySeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        for ($i = 1; $i <= 50; $i++) {
-            $industry = Industry::inRandomOrder()->first();
+        $users = User::whereNull('role_id')->whereNull('role_type')->take(15)->get();
+
+        $industries = Industry::pluck('name')->toArray();
+
+        foreach ($users as $user) {
+            $username = explode('@', $user->email)[0];
+
+            $industryName = $industries[array_rand($industries)];
 
             $company = Company::create([
-                'name' => 'Company ' . $i,
+                'username' => $username,
+                'name' => 'Company ' . $user->first_name,
                 'lat' => rand(35, 45),
                 'lon' => rand(25, 35),
                 'profile_image_url' => '/images/companies/default_profile.jpg',
                 'background_image_url' => '/images/companies/default_background.jpg',
-                'username' => 'company_' . uniqid(),
-                'description' => 'Description for company ' . $i,
+                'description' => 'Description for company ' . $user->first_name,
                 'size' => rand(10, 100) . ' employees',
-                'city' => 'City ' . $i,
-                'region' => 'Region ' . $i,
-                'street_address' => 'Street Address ' . $i,
-                'industry_name' => $industry->name,
+                'city' => 'Company City',
+                'region' => 'Region ' . rand(1, 10),
+                'street_address' => 'Street Address ' . rand(1, 100),
+                'industry_name' => $industryName,
             ]);
 
-            $user = User::factory()->create([
-                'first_name' => 'Company' . $i,
-                'last_name' => 'User' . $i,
-                'email' => 'company' . $i . '@example.com',
+            $user->update([
+                'role_id' => $company->id,
+                'role_type' => Company::class,
             ]);
-
-            $company->user()->save($user);
         }
     }
 }

@@ -9,34 +9,28 @@ use Illuminate\Support\Facades\Hash;
 
 class SuperAdminSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        $users = [
-            User::updateOrCreate([
-                'email' => 'saadalabyad78@gmail.com',
-            ], [
-                'first_name' => 'saad',
-                'last_name' => 'alabyad',
-                'email_verified_at' => '2000-11-11',
-                'password' => Hash::make('12345678'),
-            ]),
-            User::updateOrCreate([
-                'email' => 'yasserjamalaldeen@gmail.com',
-            ], [
-                'first_name' => 'sham',
-                'last_name' => 'jamous',
-                'email_verified_at' => '2000-11-11',
-                'password' => Hash::make('12345678'),
-            ]),
-        ];
+        $superAdminUsers = User::whereNull('role_id')->whereNull('role_type')->take(4)->get();
 
-        foreach ($users as $user) {
-            if (!$user->role_id) {
-                $superAdmin = SuperAdmin::create();
+        foreach ($superAdminUsers as $superAdminData) {
+            $user = User::updateOrCreate([
+                'email' => $superAdminData['email'],
+            ], [
+                'first_name' => $superAdminData['first_name'],
+                'last_name' => $superAdminData['last_name'],
+                'email_verified_at' => now(),
+                'password' => Hash::make('12345678'),
+            ]);
+
+            if (!$user->role_id && !$user->role_type) {
+                $superAdmin = SuperAdmin::create([]);
                 $superAdmin->user()->save($user);
+
+                $user->update([
+                    'role_id' => $superAdmin->id,
+                    'role_type' => SuperAdmin::class,
+                ]);
             }
         }
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Complaint;
 use App\Models\User;
+use App\Constants\ComplaintTypes;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreComplaintRequest;
 use Illuminate\Support\Facades\Auth;
@@ -32,8 +33,8 @@ class ComplaintController extends Controller
         $complaint = Complaint::create([
             'complainant_id' => Auth::id(),
             'accused_id' => $request->accused_id,
-            'reason' => $request->reason,
             'type' => $request->type,
+            'reason' => $request->reason,
         ]);
 
         return response()->json($complaint, 201);

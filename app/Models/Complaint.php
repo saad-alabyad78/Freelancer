@@ -10,7 +10,16 @@ class Complaint extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['complainant_id', 'accused_id', 'reason', 'type'];
+    protected $fillable = [
+        'complainant_id',
+        'accused_id',
+        'reason',
+        'type',
+    ];
+
+    protected $casts = [
+        'type' => 'string',
+    ];
 
     public function complainant()
     {
