@@ -29,7 +29,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"ui","category_id":1},{"id":2,"name":"western","category_id":2},{"id":3,"name":"eastern","category_id":2}],"links":{"first":"http:\/\/localhost\/api\/category\/sub-category?page=1","last":"http:\/\/localhost\/api\/category\/sub-category?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/category\/sub-category?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/category\/sub-category","per_page":20,"to":3,"total":3}}'
+        content: '{"data":[{"id":1,"name":"Frontend Development","category_id":1},{"id":2,"name":"Backend Development","category_id":1},{"id":3,"name":"Fullstack Development","category_id":1},{"id":4,"name":"UI\/UX Design","category_id":2},{"id":5,"name":"Logo Design","category_id":2},{"id":6,"name":"Illustration","category_id":2},{"id":7,"name":"Copywriting","category_id":3},{"id":8,"name":"Translation","category_id":3},{"id":9,"name":"Editing & Proofreading","category_id":3},{"id":10,"name":"SEO","category_id":4},{"id":11,"name":"Content Marketing","category_id":4},{"id":12,"name":"Social Media Marketing","category_id":4},{"id":13,"name":"Video Editing","category_id":5},{"id":14,"name":"2D Animation","category_id":5},{"id":15,"name":"3D Animation","category_id":5},{"id":16,"name":"Music Production","category_id":6},{"id":17,"name":"Voice Over","category_id":6},{"id":18,"name":"Sound Design","category_id":6},{"id":19,"name":"Coaching","category_id":7},{"id":20,"name":"Mentorship","category_id":7}],"links":{"first":"http:\/\/localhost\/api\/category\/sub-category?page=1","last":"http:\/\/localhost\/api\/category\/sub-category?page=2","prev":null,"next":"http:\/\/localhost\/api\/category\/sub-category?page=2"},"meta":{"current_page":1,"from":1,"last_page":2,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/category\/sub-category?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/category\/sub-category?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/category\/sub-category?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/category\/sub-category","per_page":20,"to":20,"total":21}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -121,7 +121,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: illum
+        example: saepe
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -136,7 +136,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: illum
+      name: saepe
       category_id: 8
     fileParameters: []
     responses: []
@@ -144,7 +144,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer d4abv68EkfVa51DcgheP6Z3'
+      - 'Bearer 1Pcfag8Eb6kd4DZeah36vV5'
     controller: null
     method: null
     route: null
@@ -185,20 +185,20 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: ut
+        example: nihil
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: ut
+      name: nihil
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer h5vP4aD1V386aEekcd6bZgf'
+      - 'Bearer afVdavge43k1Eh65PDb68Zc'
     controller: null
     method: null
     route: null
@@ -242,7 +242,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a18a46PEZV6hvkdcfgDeb35'
+      - 'Bearer fPd5aD1a6he6v4bEc3gVZk8'
     controller: null
     method: null
     route: null

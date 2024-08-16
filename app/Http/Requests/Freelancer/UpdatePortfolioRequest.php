@@ -38,7 +38,7 @@ class UpdatePortfolioRequest extends FormRequest
             'image_ids' => ['array' , 'max:6'] ,
             'image_ids.*' => ['required','exists:images,id'],
 
-            'skill_ids' => ['required' , 'array' , 'min:5' , 'max:50'] ,
+            'skill_ids' => ['required' , 'array' , 'min:1' , 'max:50'] ,
             'skill_ids.*' => ['exists:skills,id' , 'distinct'] ,
 
             'section' => ['string' , 'min:3' , 'max:255'] ,

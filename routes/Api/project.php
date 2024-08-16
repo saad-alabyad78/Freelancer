@@ -21,7 +21,7 @@ Route::group([
 
     Route::prefix('{project}/milestones')->group(function(){
         Route::get('/' , [MilestoneController::class , 'index']) ;
-        Route::post('{milestone}' , [MilestoneController::class , 'store']) ;
+        Route::post('/' , [MilestoneController::class , 'store']) ;
         Route::put('{milestone}' , [MilestoneController::class , 'update']) ;
         Route::delete('{milestone}' , [MilestoneController::class , 'delete']) ;
     }) ;

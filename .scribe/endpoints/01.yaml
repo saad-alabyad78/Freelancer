@@ -1,16 +1,16 @@
-name: 'Auth Management'
+name: 'Auth Managment'
 description: ''
 endpoints:
   -
     httpMethods:
-      - POST
-    uri: api/otp/register
+      - GET
+    uri: api/request.me
     metadata:
-      groupName: 'Auth Management'
+      groupName: 'Auth Managment'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Who Am I'
       description: ''
       authenticated: true
       custom: []
@@ -22,153 +22,21 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters:
-      first_name:
-        name: first_name
-        description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-        required: true
-        example: s
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      last_name:
-        name: last_name
-        description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
-        required: false
-        example: gwnwjmockdjzowku
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      email:
-        name: email
-        description: 'Must be a valid email address. Must not be greater than 255 characters.'
-        required: true
-        example: geoffrey14@example.org
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      password:
-        name: password
-        description: 'Must be at least 8 characters. Must not be greater than 255 characters.'
-        required: true
-        example: "yu4<*;`E'M_m"
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      first_name: s
-      last_name: gwnwjmockdjzowku
-      email: geoffrey14@example.org
-      password: "yu4<*;`E'M_m"
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer hvVcd6b6kgf3418a5EeDaZP'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/otp/email/verify
-    metadata:
-      groupName: 'Auth Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      email_otp_code:
-        name: email_otp_code
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":211,"first_name":"Dorian","money":10000,"last_name":"Stiedemann","username":"dorian-stiedemann-66bfa83c32915","email":"bailey85@example.net","role_id":null,"role":""}}'
+        headers: []
         description: ''
-        required: true
-        example: et
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
         custom: []
-      email:
-        name: email
-        description: 'Must be a valid email address.'
-        required: true
-        example: myriam.ortiz@example.net
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      email_otp_code: et
-      email: myriam.ortiz@example.net
-    fileParameters: []
-    responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer hP8vZVd1ck4EDeb53af6ga6'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/otp/resend
-    metadata:
-      groupName: 'Auth Management'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      email:
-        name: email
-        description: 'Must be a valid email address.'
-        required: true
-        example: brittany.towne@example.com
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      email: brittany.towne@example.com
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer hkbV6gED5P4vce3da6f1a8Z'
+      - 'Bearer 16Z6vbfDaEekV48hg3P5adc'
     controller: null
     method: null
     route: null

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreMilestoneRequest extends FormRequest
@@ -21,9 +22,14 @@ class StoreMilestoneRequest extends FormRequest
      */
     public function rules(): array
     {
+        $project = $this->route('project') ;
         return [
-            'price' => ['required' , 'integer'],
-            'deadline' => ['required' , 'date' ],
+            'price' => ['required' , 'integer' , 'max:'.$project?->client_money],
+            'deadline' => ['required' , 'date' , function($attribute , $value , $fail){
+                if($value < now()->toDateString()){
+                    $fail('deadline must be in the future') ;
+                }
+            }],
             'description' => ['required' , 'string'],
         ];
     }

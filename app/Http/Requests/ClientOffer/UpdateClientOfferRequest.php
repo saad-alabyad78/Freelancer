@@ -26,13 +26,13 @@ class UpdateClientOfferRequest extends FormRequest
         return [
             'client_offer_id' => ['required' , 'integer' , 'exists:client_offers,id'] ,
             'sub_category_id' => ['integer' , 'exists:sub_categories,id'] ,
-            'title' => ['string' , 'min:5' , 'max:255' ], 
+            'title' => ['string' , 'min:1' , 'max:255' ], 
             'description' => [ 'string' , 'min:10' , 'max:2000'],
             'min_price' => [ 'lt:max_price' ],
             'max_price' => [ 'gt:min_price' ],
             'days' => [ 'integer' , 'digits_between:1,3' , 'max:100'] ,
 
-            'skill_ids' => ['required' , 'array' , 'min:5' , 'max:25'] ,
+            'skill_ids' => ['required' , 'array' , 'min:1' , 'max:25'] ,
             'skill_ids.*' => [ 'integer' , 'distinct' , 'exists:skills,id'] ,
 
             'file_ids' => ['present' , 'array' , 'min:0' , 'max:25'] ,

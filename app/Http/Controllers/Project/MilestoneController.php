@@ -46,6 +46,8 @@ class MilestoneController extends Controller
 
         $project->milestones()->create($data) ;
 
+        $project->decrement('client_money' , $data['price']) ;
+
         return ProjectResource::make($project->load(['milestones','files','client','freelancer'])) ;
     }
     /**

@@ -31,7 +31,7 @@ class UpdateCompanyRequest extends FormRequest
 
             'name' => ['min:3' , 'max:20' , 'string' , 'unique:companies,name,'.auth('sanctum')->user()?->role['id']] ,
             'description' => ['string' , 'max:4000' ] ,
-            'size' => ['string' , 'min:5' , 'max:20'] , 
+            'size' => ['string' , 'min:1' , 'max:255'] , 
             'city' => ['string' , new SyrianCityRule()] , 
             'region' => ['string' , 'min:3' , 'max:20'] ,
             'street_address' => ['string' , 'min:3' , 'max:30'] ,

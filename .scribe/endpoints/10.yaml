@@ -27,7 +27,7 @@ endpoints:
         name: job_offer_id
         description: ''
         required: true
-        example: quis
+        example: iste
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -36,21 +36,21 @@ endpoints:
         name: message
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: ito
+        example: mxlnjquanpvqafqzsb
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      job_offer_id: quis
-      message: ito
+      job_offer_id: iste
+      message: mxlnjquanpvqafqzsb
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer bh65vfe81Z34VcEkgd6DaaP'
+      - 'Bearer bhEacvdf6ZVgaDPk1e36548'
     controller: null
     method: null
     route: null
@@ -83,7 +83,7 @@ endpoints:
         name: job_offer_proposal_id
         description: ''
         required: true
-        example: quod
+        example: cum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -92,21 +92,21 @@ endpoints:
         name: message
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: xskcuqigdtijdnosg
+        example: wjwtcjakapnjkanfxwjxfyvm
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      job_offer_proposal_id: quod
-      message: xskcuqigdtijdnosg
+      job_offer_proposal_id: cum
+      message: wjwtcjakapnjkanfxwjxfyvm
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 8V6beh614dvEPag3akZcD5f'
+      - 'Bearer f6EbdkaZV4vehga8c615P3D'
     controller: null
     method: null
     route: null
@@ -133,13 +133,13 @@ endpoints:
         name: jobOfferProposal_id
         description: 'The ID of the jobOfferProposal.'
         required: true
-        example: 9
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      jobOfferProposal_id: 9
+      jobOfferProposal_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -150,7 +150,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6c5aDeP1a834bdZ6EvgfhVk'
+      - 'Bearer eDaakPv61d3E654gh8VfZbc'
     controller: null
     method: null
     route: null
@@ -195,7 +195,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Zkv8P5DbEc13hgV4a6afed6'
+      - 'Bearer a4D6fg861d5vVZP3bkechaE'
     controller: null
     method: null
     route: null
@@ -230,21 +230,21 @@ endpoints:
         description: ''
         required: true
         example:
-          - et
+          - occaecati
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
       job_offer_proposal_ids:
-        - et
+        - occaecati
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Dcd138ZPb56haVkfv64eEga'
+      - 'Bearer bVa634evcahdEZk8DP6f1g5'
     controller: null
     method: null
     route: null
@@ -274,13 +274,13 @@ endpoints:
         name: jobOfferProposal_id
         description: 'The ID of the jobOfferProposal.'
         required: true
-        example: 17
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      jobOfferProposal_id: 17
+      jobOfferProposal_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -291,14 +291,14 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VvEahe158kZ4d6abP6fD3gc'
+      - 'Bearer 3bZV5v64f8adgacP61DEhek'
     controller: null
     method: null
     route: null
     custom: []
   -
     httpMethods:
-      - GET
+      - POST
     uri: api/job-offer-proposal/filter
     metadata:
       groupName: 'JobOffer-Proposal Management'
@@ -322,7 +322,7 @@ endpoints:
         name: job_offer_id
         description: ''
         required: false
-        example: 8
+        example: 20
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -331,7 +331,7 @@ endpoints:
         name: order
         description: ''
         required: false
-        example: asc
+        example: desc
         type: string
         enumValues:
           - asc
@@ -339,24 +339,15 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      job_offer_id: 8
-      order: asc
+      job_offer_id: 20
+      order: desc
     fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
+    responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer EhevZcd6bkfDag51P8Va364'
+      - 'Bearer hvadZD3bVgP18c6akf4eE56'
     controller: null
     method: null
     route: null
@@ -383,13 +374,13 @@ endpoints:
         name: jobOfferProposal_id
         description: 'The ID of the jobOfferProposal.'
         required: true
-        example: 5
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      jobOfferProposal_id: 5
+      jobOfferProposal_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -409,7 +400,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cDvkeb6PgEh8V316a54aZfd'
+      - 'Bearer EDegcP1V4av566a8bfZhkd3'
     controller: null
     method: null
     route: null

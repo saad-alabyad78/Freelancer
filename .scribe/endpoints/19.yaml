@@ -1,4 +1,4 @@
-name: 'Client Offer Milestones'
+name: 'Project && Milestones'
 description: ''
 endpoints:
   -
@@ -6,7 +6,7 @@ endpoints:
       - GET
     uri: api/projects
     metadata:
-      groupName: 'Client Offer Milestones'
+      groupName: 'Project && Milestones'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -41,7 +41,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 46e8fZgd31vkbaah6V5cDEP'
+      - 'Bearer 5hDV664fckZa1vdgb8aePE3'
     controller: null
     method: null
     route: null
@@ -51,7 +51,7 @@ endpoints:
       - POST
     uri: 'api/projects/{project_id}/client-ok'
     metadata:
-      groupName: 'Client Offer Milestones'
+      groupName: 'Project && Milestones'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -68,13 +68,13 @@ endpoints:
         name: project_id
         description: 'The ID of the project.'
         required: true
-        example: 1
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      project_id: 1
+      project_id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -85,7 +85,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 64fkaVDhZPvg3c1dbaE658e'
+      - 'Bearer 656VbPceg48k3ahvZdf1aDE'
     controller: null
     method: null
     route: null
@@ -95,7 +95,7 @@ endpoints:
       - POST
     uri: 'api/projects/{project_id}/freelancer-ok'
     metadata:
-      groupName: 'Client Offer Milestones'
+      groupName: 'Project && Milestones'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -112,13 +112,13 @@ endpoints:
         name: project_id
         description: 'The ID of the project.'
         required: true
-        example: 1
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      project_id: 1
+      project_id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -129,7 +129,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vVekdE4D6cag8aPbZ1h3f65'
+      - 'Bearer 8E63VegfaZd15bv46ahDPkc'
     controller: null
     method: null
     route: null
@@ -139,7 +139,7 @@ endpoints:
       - PUT
     uri: 'api/projects/{project_id}'
     metadata:
-      groupName: 'Client Offer Milestones'
+      groupName: 'Project && Milestones'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -156,13 +156,13 @@ endpoints:
         name: project_id
         description: 'The ID of the project.'
         required: true
-        example: 1
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      project_id: 1
+      project_id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -171,21 +171,21 @@ endpoints:
         description: ''
         required: false
         example:
-          - 20
+          - 16
         type: 'integer[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
       file_ids:
-        - 20
+        - 16
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer a6dafegD4PZ8vh56kE3b1Vc'
+      - 'Bearer 8b6VDekd4ZafhcP3g16aEv5'
     controller: null
     method: null
     route: null
@@ -195,7 +195,7 @@ endpoints:
       - DELETE
     uri: 'api/projects/{project_id}'
     metadata:
-      groupName: 'Client Offer Milestones'
+      groupName: 'Project && Milestones'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -212,13 +212,13 @@ endpoints:
         name: project_id
         description: 'The ID of the project.'
         required: true
-        example: 1
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      project_id: 1
+      project_id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -229,7 +229,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gDa58fvV1hdba4k3EPecZ66'
+      - 'Bearer fkZhDvc534abaegPVE186d6'
     controller: null
     method: null
     route: null
@@ -239,7 +239,7 @@ endpoints:
       - GET
     uri: 'api/projects/{project_id}/milestones'
     metadata:
-      groupName: 'Client Offer Milestones'
+      groupName: 'Project && Milestones'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -256,13 +256,13 @@ endpoints:
         name: project_id
         description: 'The ID of the project.'
         required: true
-        example: 1
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      project_id: 1
+      project_id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -282,7 +282,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4eaDEabg81k66ZdcP5vVfh3'
+      - 'Bearer 4gk6Z38aPvceahVb51d6fDE'
     controller: null
     method: null
     route: null
@@ -290,9 +290,9 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: 'api/projects/{project_id}/milestones/{milestone}'
+    uri: 'api/projects/{project_id}/milestones'
     metadata:
-      groupName: 'Client Offer Milestones'
+      groupName: 'Project && Milestones'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -309,31 +309,21 @@ endpoints:
         name: project_id
         description: 'The ID of the project.'
         required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      milestone:
-        name: milestone
-        description: 'The milestone.'
-        required: true
-        example: 7
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      project_id: 1
-      milestone: 7
+      project_id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
       price:
         name: price
-        description: ''
+        description: 'Must not be greater than .'
         required: true
-        example: 4
+        example: 16
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -342,7 +332,7 @@ endpoints:
         name: deadline
         description: 'Must be a valid date.'
         required: true
-        example: '2024-08-16T00:41:23'
+        example: '2024-08-16T22:28:31'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -351,22 +341,22 @@ endpoints:
         name: description
         description: ''
         required: true
-        example: 'Quia ab soluta voluptas quo explicabo.'
+        example: 'Atque voluptatum non rerum et ut sit.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      price: 4
-      deadline: '2024-08-16T00:41:23'
-      description: 'Quia ab soluta voluptas quo explicabo.'
+      price: 16
+      deadline: '2024-08-16T22:28:31'
+      description: 'Atque voluptatum non rerum et ut sit.'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer k663dvV58aDeab14EhPfZgc'
+      - 'Bearer gbheD6ada836VkPc51Z4vfE'
     controller: null
     method: null
     route: null
@@ -376,7 +366,7 @@ endpoints:
       - PUT
     uri: 'api/projects/{project_id}/milestones/{milestone_id}'
     metadata:
-      groupName: 'Client Offer Milestones'
+      groupName: 'Project && Milestones'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -393,7 +383,7 @@ endpoints:
         name: project_id
         description: 'The ID of the project.'
         required: true
-        example: 1
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -402,14 +392,14 @@ endpoints:
         name: milestone_id
         description: 'The ID of the milestone.'
         required: true
-        example: 5
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      project_id: 1
-      milestone_id: 5
+      project_id: 2
+      milestone_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -417,7 +407,7 @@ endpoints:
         name: client_ok
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -432,7 +422,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      client_ok: false
+      client_ok: true
       freelancer_ok: true
     fileParameters: []
     responses: []
@@ -440,7 +430,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4ZhcabakdDP16Vv3eg6E5f8'
+      - 'Bearer cZ1g5P8vE4efd6V63hDkaba'
     controller: null
     method: null
     route: null
@@ -450,7 +440,7 @@ endpoints:
       - DELETE
     uri: 'api/projects/{project_id}/milestones/{milestone_id}'
     metadata:
-      groupName: 'Client Offer Milestones'
+      groupName: 'Project && Milestones'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -467,7 +457,7 @@ endpoints:
         name: project_id
         description: 'The ID of the project.'
         required: true
-        example: 1
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -476,14 +466,14 @@ endpoints:
         name: milestone_id
         description: 'The ID of the milestone.'
         required: true
-        example: 6
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      project_id: 1
-      milestone_id: 6
+      project_id: 2
+      milestone_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -494,7 +484,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer c8gdVa546PfkZE16vaehbD3'
+      - 'Bearer Zv46Eh6be53DafgPcdVa18k'
     controller: null
     method: null
     route: null

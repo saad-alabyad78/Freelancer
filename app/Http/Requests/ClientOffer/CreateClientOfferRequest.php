@@ -30,10 +30,10 @@ class CreateClientOfferRequest extends FormRequest
             'max_price' => ['required' , 'gt:min_price' ],
             'days' => ['required' , 'integer' , 'digits_between:1,3' , 'max:100'] ,
 
-            'skill_ids' => ['required' , 'array' , 'min:5' , 'max:25'] ,
+            'skill_ids' => ['required' , 'array' , 'min:1' , 'max:100'] ,
             'skill_ids.*' => ['required' , 'integer' , 'distinct' , 'exists:skills,id'] ,
 
-            'file_ids' => ['array' , 'max:25'] ,
+            'file_ids' => ['array' , 'max:50'] ,
             'file_ids.*' => [
                 'required' ,
                 'integer' ,

@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests\ClientOffer;
 
+use App\Models\User;
 use Illuminate\Validation\Rule;
+use App\Models\ClientOfferProposal;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ClientAcceptProposalsRequest extends FormRequest
@@ -22,12 +24,14 @@ class ClientAcceptProposalsRequest extends FormRequest
      */
     public function rules(): array
     {
+        $user = User::where('id' , auth('sanctum')->id())->first() ;
+        
         return [
             'proposal_id' => [
             'required' ,
             'integer' ,
             Rule::exists('client_offer_proposals' , 'id')
-                ->where('client_id' , auth('sanctum')->id())
+                ->where('client_id' , $user?->role_id)
                 ->whereNull('rejected_at')
                 ->whereNull('accepted_at') ,
             ] ,

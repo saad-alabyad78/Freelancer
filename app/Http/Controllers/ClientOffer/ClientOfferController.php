@@ -104,13 +104,12 @@ class ClientOfferController extends Controller
                 'description' => 'this bill is to pay for the project building ',
                 'money' => (int)(($proposal->price * 10)/100),
             ]);
+
             $conversation = Conversation::firstOrCreate();
-            $conversation->participants()->attach([$offer->freelancer_id, $offer->jobOffer->client_id]);
+            $conversation->participants()->attach([$offer->freelancer_id, $offer->client_id]);
 
 
             //todo send notification to the freelancer
-            //todo send notification to the client
-
                 
             return ClientOfferResource::make($offer->load([
                         'freelancer',
@@ -257,6 +256,7 @@ class ClientOfferController extends Controller
                     'bills' => BillResource::collection($bills),
 
                     'project' => ProjectResource::make($project?->load([
+                        'milestones' ,
                         'freelancer',
                         'client',
                     ])),

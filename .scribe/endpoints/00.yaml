@@ -1,4 +1,4 @@
-name: 'Auth Managment'
+name: 'Auth Management'
 description: |-
 
   APIs to manage the login and logout
@@ -8,7 +8,7 @@ endpoints:
       - POST
     uri: api/login
     metadata:
-      groupName: 'Auth Managment'
+      groupName: 'Auth Management'
       groupDescription: |-
 
         APIs to manage the login and logout
@@ -31,7 +31,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: ejaskolski@example.com
+        example: florian.schaefer@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -40,21 +40,21 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: '2{ckS:'
+        example: '8_1"7hFI%go~9'';^Z'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: ejaskolski@example.com
-      password: '2{ckS:'
+      email: florian.schaefer@example.org
+      password: '8_1"7hFI%go~9'';^Z'
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1a5E3fg6ZPb84cDVkvdeah6'
+      - 'Bearer Z1dVDg5avefEak4Ph68cb63'
     controller: null
     method: null
     route: null
@@ -64,7 +64,7 @@ endpoints:
       - POST
     uri: api/logout
     metadata:
-      groupName: 'Auth Managment'
+      groupName: 'Auth Management'
       groupDescription: |-
 
         APIs to manage the login and logout
@@ -90,47 +90,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 63fe58bvgchPaZVa6D14kEd'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/request.me
-    metadata:
-      groupName: 'Auth Managment'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Who Am I'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":{"id":12,"first_name":"Torrance","money":10000,"last_name":"Bechtelar","username":"torrance-bechtelar-66be75e7d4574","email":"smitham.ellie@example.com","role_id":null,"role":""}}'
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer face6EP4Z6d1gkD8hV35bav'
+      - 'Bearer Z3kaE6cP5hfv1daVgD8b6e4'
     controller: null
     method: null
     route: null
@@ -140,7 +100,7 @@ endpoints:
       - GET
     uri: api/provider/google
     metadata:
-      groupName: 'Auth Managment'
+      groupName: 'Auth Management'
       groupDescription: |-
 
         API to sign with google oauth2.
@@ -163,18 +123,18 @@ endpoints:
         name: token
         description: ''
         required: true
-        example: qui
+        example: totam
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      token: qui
+      token: totam
     fileParameters: []
     responses:
       -
         status: 401
-        content: '{"provider":"google","error":"failed to authenticate the user with google oauth token ","message":"cURL error 6: Could not resolve host: www.googleapis.com (see https:\/\/curl.haxx.se\/libcurl\/c\/libcurl-errors.html) for https:\/\/www.googleapis.com\/oauth2\/v3\/userinfo?prettyPrint=false"}'
+        content: '{"provider":"google","error":"failed to authenticate the user with google oauth token ","message":"Client error: `GET https:\/\/www.googleapis.com\/oauth2\/v3\/userinfo?prettyPrint=false` resulted in a `401 Unauthorized` response:\n{\n  \"error\": \"invalid_request\",\n  \"error_description\": \"Invalid Credentials\"\n}\n"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -187,7 +147,179 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cZvh5g61DefP6b83aVkaEd4'
+      - 'Bearer h3v5Eeab1PDc68ZgkaV46df'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/otp/register
+    metadata:
+      groupName: 'Auth Management'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      first_name:
+        name: first_name
+        description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
+        required: true
+        example: mcz
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      last_name:
+        name: last_name
+        description: 'Must be at least 3 characters. Must not be greater than 255 characters.'
+        required: false
+        example: wblhwoligmggofzffcrsfte
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      email:
+        name: email
+        description: 'Must be a valid email address. Must not be greater than 255 characters.'
+        required: true
+        example: ymetz@example.org
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      password:
+        name: password
+        description: 'Must be at least 8 characters. Must not be greater than 255 characters.'
+        required: true
+        example: '(ee"+aa'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      first_name: mcz
+      last_name: wblhwoligmggofzffcrsfte
+      email: ymetz@example.org
+      password: '(ee"+aa'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer eZ8h5Eva3gPbVf6Dac14d6k'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/otp/email/verify
+    metadata:
+      groupName: 'Auth Management'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email_otp_code:
+        name: email_otp_code
+        description: ''
+        required: true
+        example: quia
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      email:
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: kianna10@example.net
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      email_otp_code: quia
+      email: kianna10@example.net
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer gc138D5k6vaadEfb4ZeVhP6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/otp/resend
+    metadata:
+      groupName: 'Auth Management'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: lhackett@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      email: lhackett@example.com
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer eV51f6bvkZc8dE64DahgP3a'
     controller: null
     method: null
     route: null
@@ -197,7 +329,7 @@ endpoints:
       - POST
     uri: api/otp/forgot-password
     metadata:
-      groupName: 'Auth Managment'
+      groupName: 'Auth Management'
       groupDescription: |-
 
         Resent The Password
@@ -220,20 +352,20 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: crau@example.net
+        example: oswaniawski@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: crau@example.net
+      email: oswaniawski@example.org
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer h1vab346ZfgeDVa5k6EPdc8'
+      - 'Bearer abDP43acedZgEk65Vvf186h'
     controller: null
     method: null
     route: null
@@ -243,7 +375,7 @@ endpoints:
       - POST
     uri: api/otp/reset-password
     metadata:
-      groupName: 'Auth Managment'
+      groupName: 'Auth Management'
       groupDescription: |-
 
         Resent The Password
@@ -266,7 +398,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: sokeefe@example.com
+        example: lamont81@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -275,7 +407,7 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: magni
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -284,22 +416,22 @@ endpoints:
         name: password_otp_code
         description: ''
         required: true
-        example: earum
+        example: officiis
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: sokeefe@example.com
-      password: magni
-      password_otp_code: earum
+      email: lamont81@example.org
+      password: ut
+      password_otp_code: officiis
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer da6P4hEg1be86DkVZ3fca5v'
+      - 'Bearer P6advf4D8kV56gEh13Zaecb'
     controller: null
     method: null
     route: null

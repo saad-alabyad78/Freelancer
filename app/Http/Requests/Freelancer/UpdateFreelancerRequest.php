@@ -37,7 +37,7 @@ class UpdateFreelancerRequest extends FormRequest
                 'gender' => [ Rule::in(Gender::$types)],
                 'date_of_birth' => [ 'date' , 'before_or_equal:' . Carbon::now()->subYears(16)->toDateString()],
                 'job_role_id' => [ 'exists:job_roles,id'],
-                'skill_ids' => ['array' , 'min:5' , 'max:50'] ,
+                'skill_ids' => ['array' , 'min:1' , 'max:50'] ,
                 'skill_ids.*' => ['exists:skills,id' , 'distinct'] ,
                 
         ];
