@@ -112,4 +112,10 @@ class User extends Authenticatable
     {
         $this->update(['online' => false, 'last_seen' => now()]);
     }
+
+
+    public function notifications(): HasMany
+    {
+        return $this->hasMany(Notification::class);
+    }
 }
