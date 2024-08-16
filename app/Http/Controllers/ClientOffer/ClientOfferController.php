@@ -10,6 +10,7 @@ use App\Models\Client;
 use App\Models\Project;
 use App\Models\Freelancer;
 use App\Models\ClientOffer;
+use App\Models\Conversation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\ClientOfferProposal;
@@ -104,7 +105,7 @@ class ClientOfferController extends Controller
                 'money' => (int)(($proposal->price * 10)/100),
             ]);
             $conversation = Conversation::firstOrCreate();
-            $conversation->participants()->attach([$offer->freelancer_id, $offerl->jobOffer->client_id]);
+            $conversation->participants()->attach([$offer->freelancer_id, $offer->jobOffer->client_id]);
 
 
             //todo send notification to the freelancer
