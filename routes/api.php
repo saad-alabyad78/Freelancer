@@ -65,8 +65,9 @@ require 'Api/project.php' ;
 
 require 'Api/complaintAndMoney.php' ;
 
-
 require 'Api/notification.php' ;
+
+require 'Api/statistic.php' ;
 
 Route::post('test' , function(Request $request){
   return 'hi' ;

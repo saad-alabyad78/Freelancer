@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Client;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
 
 class ClientSeeder extends Seeder
 {
@@ -21,7 +21,7 @@ class ClientSeeder extends Seeder
                 'username' => $username,
                 'profile_image_url' => '/images/clients/default_profile.jpg',
                 'background_image_url' => '/images/clients/default_background.jpg',
-                'gender' => array_rand(['male', 'female']),
+                'gender' => array_rand(['male', 'female']),//todo array key
                 'date_of_birth' => Carbon::parse(rand(1980, 2000) . '-' . rand(1, 12) . '-' . rand(1, 28)),
                 'city' => 'Client City',
             ]);

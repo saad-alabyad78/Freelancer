@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\ClientOffer;
 
+use App\Http\Resources\Project\ProjectResource;
 use App\Models\User;
 use App\Models\Client;
 use App\Models\Freelancer;
@@ -38,6 +39,7 @@ class ClientOfferResource extends JsonResource
         
 
         return [
+            'project' => ProjectResource::make($this->project) ,
             'status' => $this->status,
             'id' => $this->id ,
             'client_id' => $this->client_id,

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Project;
 
+use App\Models\Bill;
 use App\Models\File;
 use App\Models\User;
 use App\Models\Client;
@@ -54,20 +55,26 @@ class ProjectController extends Controller
     /**
      * Client OK
      * @param \App\Models\Project $project
-     * @return void
      */
     public function clientOk(Project $project)
     {
         $project->update(['client_ok' => true]) ;
+        
+        $this->checkEndOfProject($project) ;
+        
+        return ProjectResource::make($project) ;
     }
     /**
      * Freelancer OK
      * @param \App\Models\Project $project
-     * @return void
      */
     public function freelancerOk(Project $project)
     {
         $project->update(['freelancer_ok' => true]) ;
+
+        $this->checkEndOfProject($project) ;
+
+        return ProjectResource::make($project) ;
     }
     /**
      * Update Project Files
@@ -110,5 +117,30 @@ class ProjectController extends Controller
         
         $project->delete() ;
         return ClientOfferResource::make($offer) ;
+    }
+
+    private function checkEndOfProject(Project &$project)
+    {
+        if($project->client_ok and $project->freelancer_ok){
+            if($project->client_money > 0)
+            {
+                Bill::create([
+                    'from_id' => $project->client_id,
+                    'from_type' => 'clients',
+                    'to_id' => $project->freelancer_id,
+                    'to_type' => 'freelancers',
+                    'description' => 'this bill is to pay for the freelancer for finishing the project ',
+                    'money' => (int)($project->client_money),
+                ]);
+            }
+            $project->update([
+                'status' => ClientOfferStatus::DONE,
+                'client_money' => 0 
+                ]) ;
+
+            $freelancer = User::where('role_type' , Freelancer::class)
+                ->where('role_id' , $project->freelancer_id)
+                ->increment('money') ;
+        }
     }
 }

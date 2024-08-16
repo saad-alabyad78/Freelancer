@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Project;
 
 use App\Models\Bill;
+use App\Models\User;
 use App\Models\Client;
 use App\Models\Project;
 use App\Models\Milestone;
 use App\Models\Freelancer;
 use Illuminate\Http\Request;
+use App\Constants\ClientOfferStatus;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\BillResource;
 use App\Http\Resources\MilestoneResource;
@@ -81,14 +83,18 @@ class MilestoneController extends Controller
             $bill = Bill::create([
                 'from_id' => $milestone->project_id,
                 'from_type' => 'milestones',
-                'to_id' => $milestone->freelancer_ok,
+                'to_id' => $milestone->freelancer_id,
                 'to_type' => 'freelancers',
                 'description' => 'this bill is for the freelancer for doing the milestone',
                 'money' => $milestone->price,
             ]);
+
+            $freelancer = User::where('role_type' , Freelancer::class)
+            ->where('role_id' , $milestone->freelancer_id)
+            ->increment('money') ;
         }
 
-        return response([
+        return response()->json([
             'bill' => BillResource::make($bill) ,
             'project' => ProjectResource::make($project->load(['milestones','files','client','freelancer'])) ,
         ]) ;
