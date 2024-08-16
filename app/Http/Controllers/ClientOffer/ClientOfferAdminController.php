@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers\ClientOffer;
 
+use Mail;
 use Carbon\Carbon;
+use App\Models\User;
+use App\Models\Client;
+use App\Mail\MailMessage;
 use App\Models\ClientOffer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -47,7 +51,10 @@ class ClientOfferAdminController extends Controller
             'posted_at' => now()->toDateTimeString() ,
             ]) ;
 
-        //todo:send message to client
+        $user = User::where('role_type' , Client::class)
+        ->where('role_id' , $clientOffer->client_id)->first() ;
+
+        Mail::to($user)->send(new MailMessage("تمت الموافقة على طلبك")) ;
         
         return ClientOfferResource::make($clientOffer) ;
     }
@@ -63,7 +70,10 @@ class ClientOfferAdminController extends Controller
             ] , 422) ;
         }
 
-        //todo:send message to client
+        $user = User::where('role_type' , Client::class)
+        ->where('role_id' , $clientOffer->client_id)->first() ;
+        
+        Mail::to($user)->send(new MailMessage('لقد تم رفض عرض للاسف')) ;
 
         $clientOffer->delete() ;
 
@@ -74,6 +84,11 @@ class ClientOfferAdminController extends Controller
      */
     public function delete(ClientOffer $clientOffer)
     {
+        $user = User::where('role_type' , Client::class)
+        ->where('role_id' , $clientOffer->client_id)->first() ;
+
+        Mail::to($user)->send(new MailMessage('لقد تم رفض عرض للاسف')) ;
+        
         //todo:send message to client
 
         $clientOffer->delete() ;

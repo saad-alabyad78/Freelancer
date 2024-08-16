@@ -25,9 +25,10 @@ class StoreFileRequest extends FormRequest
             'file' => [
                 'required',
                 'file',
-                'max:10240' // The file size limit is 10MB
+                'max:10240',
+                'mimes:pdf,png,jpg,jpeg,zip', // The file size limit is 10MB
             ] ,
-            'title' => ['required' , 'string' , 'max:255' , 'mimes:pdf,png,jpg,jpeg,zip'] ,
+            'title' => ['required' , 'string' , 'max:255'] ,
             //todo : what file types allowed 
         ];
     }

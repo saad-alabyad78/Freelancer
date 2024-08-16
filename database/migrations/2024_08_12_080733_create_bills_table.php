@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->morphs('from');
             $table->morphs('to');
-            $table->integer('money');
+            $table->double('money');
             $table->text('description');
             $table->softDeletes();
             $table->timestamps();
