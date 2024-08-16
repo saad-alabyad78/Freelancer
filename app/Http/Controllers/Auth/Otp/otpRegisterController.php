@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Auth\Otp;
 
 use App\Models\User;
+use App\Mail\WelcomeMail;
 use App\Traits\GmailVerifyOtp;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Resources\Auth\UserResource;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\Http\Requests\Auth\ResendOtpRequest;
@@ -58,7 +60,7 @@ class otpRegisterController extends Controller
 
         $device = substr($request->userAgent() ?? '' , 0 , 255) ;
 
-        //todo send a welcome email 
+        Mail::to($user)->send(new WelcomeMail($user->full_name)) ;
 
         return response()->json([
             'message' => 'user email has been verified successfully ' ,

@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Requests\ClientOffer;
+namespace App\Http\Requests\Rate;
 
 use Illuminate\Validation\Rule;
+use App\Constants\RatingConstants;
 use Illuminate\Foundation\Http\FormRequest;
 
-class ClientAcceptProposalsRequest extends FormRequest
+class StoreRateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,14 +24,14 @@ class ClientAcceptProposalsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'proposal_id' => [
-            'required' ,
-            'integer' ,
-            Rule::exists('client_offer_proposals' , 'id')
-                ->where('client_id' , auth('sanctum')->id())
-                ->whereNull('rejected_at')
-                ->whereNull('accepted_at') ,
+            'model_id' => [ 'required' , 'integer'] ,
+            'model_type' => [ 
+                'required' ,
+                'string' ,
+                Rule::in(array_keys(RatingConstants::MAP_TO_MODEL))
             ] ,
+            'description' => [ 'required' , 'string'] ,
+            'number' => [ 'required' , 'string'] ,
         ];
     }
 }

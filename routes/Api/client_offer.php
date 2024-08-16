@@ -64,7 +64,6 @@ Route::group([
     });
 });
 
-//todo need testing
 Route::group([
     'prefix' => 'client-offer/freelancer'
 ] , function(){

@@ -56,6 +56,13 @@ class User extends Authenticatable
             get: fn() => Str::slug($name)
         );
     }
+    protected function fullName(): Attribute
+    {
+        $name = $this->first_name . ' ' . $this->last_name ;
+        return Attribute::make(
+            get: fn() => $name
+        );
+    }
 
     public function role(): MorphTo
     {

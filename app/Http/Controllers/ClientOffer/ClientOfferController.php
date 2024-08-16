@@ -5,6 +5,7 @@ namespace App\Http\Controllers\ClientOffer;
 use App\Models\Bill;
 use App\Models\File;
 use App\Models\User;
+use App\Models\Admin;
 use App\Models\Client;
 use App\Models\Project;
 use App\Models\Freelancer;
@@ -83,22 +84,35 @@ class ClientOfferController extends Controller
 
             $user->decrement('money', $proposal->price);
 
-            $bill = Bill::create([
+            $bills = [] ;
+            
+            $bills[] = Bill::create([
                 'from_id' => $offer->client_id,
                 'from_type' => 'clients',
                 'to_id' => $project->id,
                 'to_type' => 'projects',
                 'description' => 'this bill is to pay for the project building ',
-                'money' => $proposal->price,
+                'money' => ($proposal->price * 90)/100,
             ]);
+            $admin = Admin::first() ;
+            
+            $bills[] = Bill::create([
+                'from_id' => $offer->client_id,
+                'from_type' => 'clients',
+                'to_id' => $admin->id,
+                'to_type' => 'admins',
+                'description' => 'this bill is to pay for the project building ',
+                'money' => ($proposal->price * 10)/100,
+            ]);
+            
 
             //todo send notification to the freelancer 
             //todo send notification to the client 
 
             return response()->json(
                 [
-                    'bill' => BillResource::make($bill->load([
-                    ])),
+                    'bills' => BillResource::collection($bills),
+
                     'project' => ProjectResource::make($project->load([
                         'freelancer',
                         'client',
@@ -114,7 +128,6 @@ class ClientOfferController extends Controller
             );
         });
     }
-    //todo test 
     /**
      * Reject Proposals
      * @param \App\Http\Requests\ClientOffer\ClientRejectProposalsRequest $request

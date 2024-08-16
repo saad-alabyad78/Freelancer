@@ -53,10 +53,8 @@ Route::group(['prefix' => 'company'] , function()
             Route::put('' ,  [JobOfferController::class , 'update']);
             Route::delete('' ,  [JobOfferController::class , 'delete']);
             
-            //todo : test 
             Route::post('my-job-offers' , [JobOfferQueryController::class , 'ForOwner']) ;
 
-            //todo : test
             Route::post('status/change' , [JobOfferStatusController::class , 'change']);
         });
 
