@@ -66,7 +66,7 @@ class JobOfferController extends Controller
 
         $data = $request->validated() ;
 
-        $data['status'] = JobOfferStatus::PENDING  ;
+        $data['status'] = JobOfferStatus::ACTIVE  ;
         $data['company_id'] = auth('sanctum')->user()->role['id'] ;
 
         $job_offer = JobOffer::Create($data);

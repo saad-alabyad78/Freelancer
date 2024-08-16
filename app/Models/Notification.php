@@ -25,6 +25,7 @@ class Notification extends Model
         'additional_data',
     ];
 
+    protected $with = ['model'] ;
     protected function asJson($value): bool|string
     {
         return json_encode($value, JSON_UNESCAPED_UNICODE);

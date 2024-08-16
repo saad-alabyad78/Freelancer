@@ -10,6 +10,7 @@ use App\Models\Client;
 use App\Models\Project;
 use App\Models\Freelancer;
 use App\Models\ClientOffer;
+use App\Models\Conversation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\ClientOfferProposal;
@@ -104,30 +105,29 @@ class ClientOfferController extends Controller
                 'money' => (int)(($proposal->price * 10)/100),
             ]);
             $conversation = Conversation::firstOrCreate();
-            $conversation->participants()->attach([$offer->freelancer_id, $offerl->jobOffer->client_id]);
+            $conversation->participants()->attach([$offer->freelancer_id, $offer->jobOffer->client_id]);
 
 
             //todo send notification to the freelancer
             //todo send notification to the client
 
-            return response()->json(
-                [
-                    'bills' => BillResource::collection($bills),
-
-                    'project' => ProjectResource::make($project->load([
-                        'freelancer',
-                        'client',
-                    ])),
-                    'client_offer' => ClientOfferResource::make($offer->load([
+                
+            return ClientOfferResource::make($offer->load([
                         'freelancer',
                         'client',
                         'sub_category',
                         'files',
-                        'skills',
-                    ])),
-                    'conversation_id' => $conversation->id,
-                ]
-            );
+                        'skills']))->additional(
+                            [
+                                'bills' => BillResource::collection($bills),
+
+                                'project' => ProjectResource::make($project->load([
+                                    'freelancer',
+                                    'client',
+                                ])),
+                                'conversation_id' => $conversation->id,
+                            ]
+                        );
         });
     }
     /**
@@ -221,11 +221,11 @@ class ClientOfferController extends Controller
     {
         //$this->authorize('view' , $clientOffer) ;
 
-        if ($clientOffer->client_id != auth('sanctum')->user()->role_id) {
-            return response()->json([
-                'error' => 'unauthorized',
-            ], 403);
-        }
+        // if ($clientOffer->client_id != auth('sanctum')->user()?->role_id) {
+        //     return response()->json([
+        //         'error' => 'unauthorized',
+        //     ], 403);
+        // }
 
         if (!$clientOffer->freelancer_id) {
             return ClientOfferResource::make($clientOffer->load([
@@ -239,29 +239,29 @@ class ClientOfferController extends Controller
             ->with(['freelancer', 'client'])
             ->first();
 
-        $bill = Bill::where([
+        $bills = Bill::where([
             'from_id' => $clientOffer->client_id,
             'from_type' => 'clients',
             'to_id' => $project->id,
             'to_type' => 'projects',
         ])
-        ->first();
+        ->get();
 
-        return response()->json(
-            [
-                'bill' => BillResource::make($bill),
+        return ClientOfferResource::make($clientOffer->load([
+            'freelancer',
+            'client',
+            'sub_category',
+            'files',
+            'skills']))->additional(
+                [
+                    'bills' => BillResource::collection($bills),
 
-                'project' => ProjectResource::make($project),
-
-                'client_offer' => ClientOfferResource::make($clientOffer->load([
-                    'freelancer',
-                    'client',
-                    'sub_category',
-                    'files',
-                    'skills',
-                ])),
-            ]
-        );
+                    'project' => ProjectResource::make($project?->load([
+                        'freelancer',
+                        'client',
+                    ])),
+                ]
+            );
     }
 
     /**

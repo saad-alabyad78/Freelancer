@@ -22,7 +22,11 @@ Route::group([
         Route::post('client-filter' , [ClientOfferController::class , 'clientFilter']) ;
         Route::post( 'store' , [ClientOfferController::class , 'store']) ;
         Route::get( '{client_offer}' , [ClientOfferController::class , 'show'])
-        ->withoutMiddleware(['role:client']) ;
+        ->withoutMiddleware([
+            'auth:sanctum' ,
+            'verify_email' ,
+            'role:client' ,
+        ]) ;
         Route::put( '' , [ClientOfferController::class , 'update']) ;
         Route::delete( '{client_offer}' , [ClientOfferController::class , 'destroy']) ;
     });

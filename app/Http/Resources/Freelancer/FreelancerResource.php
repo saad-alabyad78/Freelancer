@@ -2,6 +2,8 @@
 
 namespace App\Http\Resources\Freelancer;
 
+use App\Models\Rate;
+use App\Models\Freelancer;
 use Illuminate\Http\Request;
 use App\Http\Resources\Auth\UserResource;
 use App\Http\Resources\Category\SkillResource;
@@ -18,6 +20,10 @@ class FreelancerResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
+            'rating' => $this->rating ?? Rate::where('model_id' , $this->id)
+            ->where('model_type' , Freelancer::class)
+            ->average('number') ,
+
             'id' => $this->id ,
             'profile_image_url' =>  $this->profile_image_url ,
             'background_image_url' =>  $this->background_image_url ,

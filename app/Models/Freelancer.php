@@ -43,9 +43,9 @@ class Freelancer extends BaseModel
         );
     }
 
-    public function getRatingAttribute()
+    public function getRatingAttributes()
     {
-        return $this->rates()->avg('number') ;
+        return $this->rates()->avg('number') ?? 1;
     }
 
     public function user():MorphOne

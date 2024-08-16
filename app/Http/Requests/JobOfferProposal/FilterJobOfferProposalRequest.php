@@ -13,7 +13,7 @@ class FilterJobOfferProposalRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return auth('sanctum')->check() and auth('sanctum')->user()->role_type == Company::class ;
+        return true ;
     }
 
     /**

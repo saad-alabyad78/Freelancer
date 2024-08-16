@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Factories\BelongsToRelationship;
 
 class JobOfferProposal extends BaseModel
 {
+    protected $with = ['freelancer'] ;
+    
     protected $fillable = [
         'id' ,
         'freelancer_id' ,

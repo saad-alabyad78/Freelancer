@@ -28,7 +28,7 @@ class ClientOfferResource extends JsonResource
         
         $i_proposed = null ;
         
-        if($user->role_type == Freelancer::class)
+        if($user and $user->role_type == Freelancer::class)
         {
             $i_proposed = ClientOfferProposal::
                 where('freelancer_id' , $user->role_id)

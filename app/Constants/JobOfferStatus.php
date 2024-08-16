@@ -6,5 +6,6 @@ class JobOfferStatus{
     const PENDING = 'pending' ;
     const ACTIVE = 'active' ;
     const CLOUSED = 'cloused' ;
-    public static $types = [self::PENDING , self::ACTIVE , self::CLOUSED] ;
+    const DONE = 'done' ;
+    public static $types = [self::PENDING , self::ACTIVE , self::CLOUSED , self::DONE] ;
 }
