@@ -2,11 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\ClientOffer;
 use App\Models\Client;
 use App\Models\Freelancer;
+use App\Models\ClientOffer;
 use App\Models\SubCategory;
 use Illuminate\Database\Seeder;
+use App\Constants\ClientOfferStatus;
 
 class ClientOfferSeeder extends Seeder
 {
@@ -24,7 +25,7 @@ class ClientOfferSeeder extends Seeder
             'freelancer_id' => $freelancer->id,
             'sub_category_id' => $subCategory->id,
             'title' => 'Web Design Project',
-            'status' => 'open',
+            'status' => ClientOfferStatus::ACTIVE,
             'description' => 'Looking for a skilled web designer to create a modern website.',
             'min_price' => 1000,
             'max_price' => 5000,

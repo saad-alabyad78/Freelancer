@@ -45,6 +45,7 @@ class JobOfferQueryController extends Controller
         //filter scope
         $job_offers = JobOffer::filter($filters)
                     ->with(['job_role' , 'skills' , 'company'])
+                    ->whereNot('status' , JobOfferStatus::DONE)
                     ->orderByDesc('created_at')
                     ->paginate(20);
 

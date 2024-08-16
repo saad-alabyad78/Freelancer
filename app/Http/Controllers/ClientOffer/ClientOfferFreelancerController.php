@@ -95,7 +95,7 @@ class ClientOfferFreelancerController extends Controller
             ->with(['freelancer', 'client'])
             ->first();
 
-        $bill = Bill::where([
+        $bills = Bill::where([
             'from_id' => $clientOffer->client_id,
             'from_type' => 'clients',
             'to_id' => $project->id,
@@ -103,21 +103,21 @@ class ClientOfferFreelancerController extends Controller
         ])
         ->first();
 
-        return response()->json(
-            [
-                'bill' => BillResource::make($bill),
+        return ClientOfferResource::make($clientOffer->load([
+            'freelancer',
+            'client',
+            'sub_category',
+            'files',
+            'skills']))->additional(
+                [
+                    'bills' => BillResource::collection($bills),
 
-                'project' => ProjectResource::make($project),
-
-                'client_offer' => ClientOfferResource::make($clientOffer->load([
-                    'freelancer',
-                    'client',
-                    'sub_category',
-                    'files',
-                    'skills',
-                ])),
-            ]
-        );
+                    'project' => ProjectResource::make($project->load([
+                        'freelancer',
+                        'client',
+                    ])),
+                ]
+            );
     }
 
     /**

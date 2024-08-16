@@ -30,13 +30,13 @@ class CreateFreelancerRequest extends FormRequest
         'background_image_id' => ['nullable' , 'exists:images,id'] ,
 
 
-        'headline' => ['required' , 'string' , 'min:20' , 'max:200'],
-        'description' => ['required' , 'string' , 'min:10' , 'max:4000'],
+        'headline' => ['required' , 'string' , 'min:1' , 'max:255'],
+        'description' => ['required' , 'string' , 'min:1' , 'max:4000'],
         'city' => ['required' , new SyrianCityRule()],
         'gender' => ['required' , Rule::in(Gender::$types)],
         'date_of_birth' => ['required' , 'date' , 'before_or_equal:' . Carbon::now()->subYears(16)->toDateString()],
         'job_role_id' => ['required' , 'integer' , 'exists:job_roles,id'],
-        'skill_ids' => ['required' , 'array' , 'min:5' , 'max:50'] ,
+        'skill_ids' => ['required' , 'array' , 'min:1' , 'max:50'] ,
         'skill_ids.*' => ['required' , 'integer' , 'distinct' , 'exists:skills,id' ] ,
         
         ];

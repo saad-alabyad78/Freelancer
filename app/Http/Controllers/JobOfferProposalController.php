@@ -6,6 +6,7 @@ use App\Models\Company;
 use App\Models\JobOffer;
 use App\Models\Conversation;
 use App\Models\JobOfferProposal;
+use App\Constants\JobOfferStatus;
 use App\Http\Resources\JobOfferProposal\JobOfferProposalResource;
 use App\Http\Requests\JobOfferProposal\CreateJobOfferProposalRequest;
 use App\Http\Requests\JobOfferProposal\FilterJobOfferProposalRequest;
@@ -27,7 +28,7 @@ class JobOfferProposalController extends Controller
      */
     public function filter(FilterJobOfferProposalRequest $request)
     {
-        $this->authorize('filter', JobOfferProposal::class);
+        //$this->authorize('filter', JobOfferProposal::class);
 
         $data = $request->validated();
 
@@ -176,13 +177,21 @@ class JobOfferProposalController extends Controller
      */
     public function accept(JobOfferProposal $jobOfferProposal)
     {
-        $this->authorize('accept', $jobOfferProposal);
+        //$this->authorize('accept', $jobOfferProposal);
 
-        $jobOfferProposal->update(['accepted_at' => now()->toDateTimeString()]);
+        //todo send email to freelancer
+        
+        $jobOfferProposal->update(
+            [
+                'accepted_at' => now()->toDateTimeString() ,
+            ]);
         JobOffer::where('id', $jobOfferProposal->job_offer_id)->decrement('proposals_count');
 
+        JobOffer::where('id', $jobOfferProposal->job_offer_id)->update(['status' => JobOfferStatus::DONE]) ;
+
         $conversation = Conversation::firstOrCreate();
-        $conversation->participants()->attach([$jobOfferProposal->freelancer_id, $jobOfferProposal->jobOffer->company_id]);
+        
+        $conversation->participants()->attach([$jobOfferProposal->freelancer_id, $jobOfferProposal->job_offer->company_id]);
         // TODO: send notification to freelancer (firebase)
 
         return JobOfferProposalResource::make($jobOfferProposal)

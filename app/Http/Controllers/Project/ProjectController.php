@@ -17,7 +17,7 @@ use App\Http\Requests\Project\UploadFilesRequest;
 use App\Http\Requests\Project\UpdateProjectRequest;
 use App\Http\Resources\ClientOffer\ClientOfferResource;
 /**
- *@group Client Offer Milestones 
+ *@group Project && Milestones 
  */
 class ProjectController extends Controller
 {

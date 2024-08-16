@@ -63,6 +63,8 @@ require 'Api/home.php' ;
 
 require 'Api/project.php' ;
 
+require 'Api/notification.php' ;
+
 Route::post('test' , function(Request $request){
   return 'hi' ;
 });
