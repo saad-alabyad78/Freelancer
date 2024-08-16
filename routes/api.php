@@ -69,6 +69,8 @@ require 'Api/notification.php' ;
 
 require 'Api/statistic.php' ;
 
+require 'Api/bill.php' ;
+
 Route::post('test' , function(Request $request){
   return 'hi' ;
 });

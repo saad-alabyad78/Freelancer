@@ -25,6 +25,12 @@ class StatisticController extends Controller
             'clients' ,
             'skills' , 
             'job_roles' ,
+            'categories' , 
+            'sub_categories' ,
+            'industries' ,
+            'products' , 
+            'client_offers' ,
+            'job_offers' ,
         ] ;
   
         $data = [] ;
