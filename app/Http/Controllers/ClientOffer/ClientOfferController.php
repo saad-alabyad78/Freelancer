@@ -69,7 +69,6 @@ class ClientOfferController extends Controller
                 'freelancer_id' => $proposal->freelancer_id,
             ]);
 
-
             $project = Project::create([
                 'freelancer_id' => $offer->freelancer_id,
                 'client_id' => $offer->client_id,
@@ -92,7 +91,7 @@ class ClientOfferController extends Controller
                 'to_id' => $project->id,
                 'to_type' => 'projects',
                 'description' => 'this bill is to pay for the project building ',
-                'money' => ($proposal->price * 90)/100,
+                'money' => (int)(($proposal->price * 90)/100),
             ]);
             $admin = Admin::first() ;
             
@@ -102,7 +101,7 @@ class ClientOfferController extends Controller
                 'to_id' => $admin->id,
                 'to_type' => 'admins',
                 'description' => 'this bill is to pay for the project building ',
-                'money' => ($proposal->price * 10)/100,
+                'money' => (int)(($proposal->price * 10)/100),
             ]);
             
 

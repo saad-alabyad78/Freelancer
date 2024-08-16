@@ -4,20 +4,19 @@ namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
-use Faker\Provider\ar_EG\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class WelcomeMail extends Mailable implements ShouldQueue
+class MailMessage extends Mailable
 {
     use Queueable, SerializesModels;
 
     /**
      * Create a new message instance.
      */
-    public function __construct(private $name)
+    public function __construct(private $message)
     {
         //
     }
@@ -28,7 +27,7 @@ class WelcomeMail extends Mailable implements ShouldQueue
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Welcome Mail',
+            subject: 'Mail Message',
         );
     }
 
@@ -38,8 +37,8 @@ class WelcomeMail extends Mailable implements ShouldQueue
     public function content(): Content
     {
         return new Content(
-            view: 'mail.welcome',
-            with: ['name' => $this->name] ,
+            view: 'mail.message',
+            with: ['message' => $this->message] ,
         );
     }
 
