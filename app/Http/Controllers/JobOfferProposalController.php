@@ -184,7 +184,7 @@ class JobOfferProposalController extends Controller
         $conversation->participants()->attach([$jobOfferProposal->freelancer_id, $jobOfferProposal->jobOffer->company_id]);
         // TODO: send notification to freelancer (firebase)
 
-        return JobOfferProposalResource::make($jobOfferProposal);
+        return JobOfferProposalResource::make($jobOfferProposal)
+        ->additional(['conversation_id' => $conversation->id]);
     }
-
 }
