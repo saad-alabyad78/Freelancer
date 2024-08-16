@@ -6,6 +6,7 @@ use App\Models\Company;
 use App\Models\JobRole;
 use App\Models\JobOffer;
 use App\Models\Freelancer;
+use App\Constants\JobOfferStatus;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Builder;
@@ -82,6 +83,7 @@ class JobOfferQueryController extends Controller
         }
         
         $offers = JobOffer::filter($filters , $freelancer)
+            ->whereNot('status' , JobOfferStatus::PENDING)
             ->with('job_role' , 'skills' , 'company') 
             ->orderByDesc('created_at')
             ->paginate(20) ;

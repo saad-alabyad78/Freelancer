@@ -34,6 +34,7 @@ class JobOfferProposalController extends Controller
         $company = Company::findOrFail(auth('sanctum')->user()->role_id);
 
         $proposals = $company->job_offer_proposals()
+                            ->with(['freelancer'])
                             ->when($data['job_offer_id'] ?? false , function($query) use ($data){
                                 return $query->where('job_offer_id' , $data['job_offer_id']) ;
                             })
