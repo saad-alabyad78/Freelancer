@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('gender');
             $table->date('date_of_birth');
             $table->string('city');
+
+            $table->softDeletes() ;
             
             $table->timestamps();
         });

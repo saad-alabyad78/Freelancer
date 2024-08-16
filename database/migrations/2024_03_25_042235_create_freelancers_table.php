@@ -29,6 +29,8 @@ return new class extends Migration
 
             $table->foreignId('job_role_id')->constrained();
 
+            $table->softDeletes() ;
+
             $table->timestamps();
         });
     }
