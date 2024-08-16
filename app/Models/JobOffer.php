@@ -14,6 +14,7 @@ class JobOffer extends BaseModel
 {
     use HasFactory;
 
+    protected $with = ['skills'] ;
     
     protected $fillable = [
         'id' ,

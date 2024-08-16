@@ -12,7 +12,7 @@ use App\Http\Requests\Auth\ResetPasswordRequest;
 use App\Http\Requests\Auth\ForgotPasswordRequest;
 
 /**
- * @group Auth Managment
+ * @group Auth Management
  * 
  * Resent The Password
  **/
