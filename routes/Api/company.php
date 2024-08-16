@@ -58,7 +58,6 @@ Route::group(['prefix' => 'company'] , function()
             Route::post('status/change' , [JobOfferStatusController::class , 'change']);
         });
 
-
     Route::prefix('verifications')->group(function(){
         Route::middleware([
             'auth:sanctum' ,
