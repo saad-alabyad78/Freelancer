@@ -43,7 +43,7 @@
 <body>
     <div class="container">
         <h2>مرحبا بكم في سبل</h2>
-        <p>{{ $message }}</p>
+        <p>{{ $name }}</p>
     </div>
     <div class="footer">
         Sent with ❤️ from SPL

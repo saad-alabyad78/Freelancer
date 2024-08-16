@@ -68,6 +68,8 @@ class DatabaseSeeder extends Seeder
                 break;
         }
 
+        
+
         $this->call([
             NoRoleUserSeeder::class,
             IndustrySeeder::class,

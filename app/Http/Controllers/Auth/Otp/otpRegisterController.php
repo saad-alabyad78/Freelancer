@@ -60,7 +60,7 @@ class otpRegisterController extends Controller
 
         $device = substr($request->userAgent() ?? '' , 0 , 255) ;
 
-        Mail::to($user)->send(new WelcomeMail($user->full_name)) ;
+        Mail::to($user)->send(new WelcomeMail($user->full_name ?? " no name ")) ;
 
         return response()->json([
             'message' => 'user email has been verified successfully ' ,
