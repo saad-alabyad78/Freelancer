@@ -17,8 +17,8 @@ class ClientSeeder extends Seeder
         for ($i = 1; $i <= 50; $i++) {
             $client = Client::create([
                 'username' => 'client_' . uniqid(),
-                'profile_image_url' => '/images/clients/default_profile.png',
-                'background_image_url' => '/images/clients/default_background.png',
+                'profile_image_url' => '/images/clients/default_profile.jpg',
+                'background_image_url' => '/images/clients/default_background.jpg',
                 'gender' => array_rand(['male', 'female']),
                 'date_of_birth' => Carbon::parse(rand(1980, 2000) . '-' . rand(1, 12) . '-' . rand(1, 28)),
                 'city' => 'City ' . $i,

@@ -20,8 +20,8 @@ class FreelancerSeeder extends Seeder
 
             $freelancer = Freelancer::create([
                 'username' => 'freelancer_' . uniqid(),
-                'profile_image_url' => '/images/freelancers/default_profile.png',
-                'background_image_url' => '/images/freelancers/default_background.png',
+                'profile_image_url' => '/images/freelancers/default_profile.jpg',
+                'background_image_url' => '/images/freelancers/default_background.jpg',
                 'headline' => 'Freelancer ' . $i,
                 'description' => 'This is a description for freelancer ' . $i,
                 'city' => 'City ' . $i,
