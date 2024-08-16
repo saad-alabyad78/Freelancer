@@ -40,8 +40,8 @@ class CreateJobOfferRequest extends FormRequest
             'min_salary' => ['integer', 'min:0', 'max:100000000', 'lte:max_salary' , new FieldsTogetherOrNoneRule('max_salary')],
 
 
-            'max_age' => ['integer', 'min:18', 'max:60', 'gte:min_age' , new FieldsTogetherOrNoneRule('min_age')],
-            'min_age' => ['integer', 'min:18', 'max:60', 'lte:max_age' , new FieldsTogetherOrNoneRule('max_age')],
+            'max_age' => ['integer', 'min:16', 'max:60', 'gte:min_age' , new FieldsTogetherOrNoneRule('min_age')],
+            'min_age' => ['integer', 'min:16', 'max:60', 'lte:max_age' , new FieldsTogetherOrNoneRule('max_age')],
             
             'description' => ['required' ,'string' ,  'min:10' ,' max:40000' ] ,
 
@@ -50,7 +50,7 @@ class CreateJobOfferRequest extends FormRequest
             'military_service' => ['required' , 'bool'] ,
             'gender' => ['nullable' , Rule::in(Gender::$types)] ,
             
-            'skills' => ['required' , 'array' , 'min:5' , 'max:25'] ,
+            'skills' => ['required' , 'array' , 'min:1' , 'max:25'] ,
             'skills.*.id' => ['required' , 'exists:skills,id' , 'distinct'] ,
             'skills.*.required' => ['required' , 'boolean'] ,
 

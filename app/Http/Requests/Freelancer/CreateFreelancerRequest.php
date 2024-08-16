@@ -26,7 +26,6 @@ class CreateFreelancerRequest extends FormRequest
     public function rules(): array
     {
         return [
-        
         'profile_image_id' => ['nullable' , 'exists:images,id'] ,
         'background_image_id' => ['nullable' , 'exists:images,id'] ,
 
@@ -39,6 +38,7 @@ class CreateFreelancerRequest extends FormRequest
         'job_role_id' => ['required' , 'integer' , 'exists:job_roles,id'],
         'skill_ids' => ['required' , 'array' , 'min:5' , 'max:50'] ,
         'skill_ids.*' => ['required' , 'integer' , 'distinct' , 'exists:skills,id' ] ,
+        
         ];
     }
 }

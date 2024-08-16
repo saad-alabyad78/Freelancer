@@ -41,7 +41,7 @@ class ProviderController extends Controller
             $user->email_verified_at = Carbon::now()->format('Y-m-d H:i:s');
             $user->save();
 
-            Mail::to($user)->send(new WelcomeMail($user->full_name)) ;
+            //Mail::to($user)->send(new WelcomeMail($user->full_name)) ;
             
             return response()->json([
                 'user' => UserResource::make($user) ,

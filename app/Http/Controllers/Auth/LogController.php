@@ -6,13 +6,13 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-use App\Http\Requests\Auth\LogInRequest;
-use App\Http\Resources\Auth\UserResource;
 use Illuminate\Support\Facades\Cache;
 use App\Events\UserOnlineStatusUpdated;
+use App\Http\Requests\Auth\LogInRequest;
+use App\Http\Resources\Auth\UserResource;
 
 /**
- * @group Auth Managment
+ * @group Auth Management
  *
  * APIs to manage the login and logout
  **/
@@ -25,9 +25,6 @@ class LogController extends Controller
      */
     public function login(LogInRequest $request)
     {
-        //TODO: the otp code must be when loggin in not when register
-        //what if log in with not verefied email
-
         $user = User::where('email' , $request->email)->first();
 
         if(! $user->email_verified_at){

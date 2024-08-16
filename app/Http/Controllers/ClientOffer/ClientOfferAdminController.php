@@ -54,7 +54,7 @@ class ClientOfferAdminController extends Controller
         $user = User::where('role_type' , Client::class)
         ->where('role_id' , $clientOffer->client_id)->first() ;
 
-        Mail::to($user)->send(new MailMessage("تمت الموافقة على طلبك")) ;
+        //Mail::to($user)->send(new MailMessage("تمت الموافقة على طلبك")) ;
         
         return ClientOfferResource::make($clientOffer) ;
     }
@@ -73,7 +73,7 @@ class ClientOfferAdminController extends Controller
         $user = User::where('role_type' , Client::class)
         ->where('role_id' , $clientOffer->client_id)->first() ;
         
-        Mail::to($user)->send(new MailMessage('لقد تم رفض عرض للاسف')) ;
+        //Mail::to($user)->send(new MailMessage('لقد تم رفض عرض للاسف')) ;
 
         $clientOffer->delete() ;
 
@@ -87,7 +87,7 @@ class ClientOfferAdminController extends Controller
         $user = User::where('role_type' , Client::class)
         ->where('role_id' , $clientOffer->client_id)->first() ;
 
-        Mail::to($user)->send(new MailMessage('لقد تم رفض عرض للاسف')) ;
+        //Mail::to($user)->send(new MailMessage('لقد تم رفض عرض للاسف')) ;
         
         //todo:send message to client
 
