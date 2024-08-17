@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use Faker\Factory as Faker;
 
 class NoRoleUserSeeder extends Seeder
 {
@@ -16,7 +16,7 @@ class NoRoleUserSeeder extends Seeder
         for ($i = 0; $i < 50; $i++) {
             $firstName = $faker->firstName;
             $lastName = $faker->lastName;
-            $email = strtolower($this->transliterate($firstName) . $this->transliterate($lastName) . $i . '@example.com');
+            $email = strtolower($this->transliterate($firstName) . $this->transliterate($lastName) . $i . '@gmail.com');
             $verifiedAt = $faker->dateTimeBetween('-10 years', 'now')->format('Y-m-d H:i:s');
 
             User::create([

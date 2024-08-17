@@ -11,19 +11,8 @@ class NotificationController extends Controller
 {
     public function __construct(protected NotificationService $notificationService){}
 
-    public function store(User $user , StoreNotificationsRequest $request)
+    public function index(User $user)
     {
-        $this->notificationService->pushNotification(
-            'title' , 
-            'description' ,
-            'type' ,
-            1 ,
-            $user ,
-            User::class ,
-            $user->id ,
-            true 
-       ) ;
-
        return $user->notifications()->get() ;
     }
 }

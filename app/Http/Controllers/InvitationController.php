@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Company;
+use App\Models\Freelancer;
 use App\Models\Invitation;
 use App\Models\Conversation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Services\Notification\NotificationService;
 use App\Http\Requests\invitation\SendInvitationRequest;
 use App\Http\Requests\invitation\deleteInvitationRequest;
 
@@ -14,6 +18,7 @@ use App\Http\Requests\invitation\deleteInvitationRequest;
  */
 class InvitationController extends Controller
 {
+    public function __construct(protected NotificationService $notificationService){}
     /**
      * Send an invitation.
      *
@@ -30,6 +35,23 @@ class InvitationController extends Controller
             'company_id' => auth('sanctum')->user()->id,
             'freelancer_id' => $request->freelancer_id,
         ]);
+
+        $userFreelancer = User::where('role_type' , Freelancer::class)
+        ->where('role_id' , $request->freelancer_id)->first() ;
+        
+        $userCompany = User::where('id' , auth('sanctum')->user()->id)->first() ;
+        $company = Company::where('id' , $userCompany->role_id)->first() ;
+
+        $this->notificationService->pushNotification(
+            'invitations' , 
+            'company ' . $company->name . ' send you invitation to join the team ' ,
+            'invitations' ,
+            0 ,
+            $userFreelancer ,
+            Company::class , 
+            $company->id ,
+            false
+        ) ;
 
         // send a notification to freelancer
 

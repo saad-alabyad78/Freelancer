@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Company;
 use App\Models\Industry;
+use App\Constants\SyrianCities;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -26,11 +27,11 @@ class CompanySeeder extends Seeder
                 'name' => 'Company ' . $user->first_name,
                 'lat' => rand(35, 45),
                 'lon' => rand(25, 35),
-                'profile_image_url' => '/images/companies/default_profile.jpg',
-                'background_image_url' => '/images/companies/default_background.jpg',
+                'profile_image_url' => null ,
+                'background_image_url' => null ,
                 'description' => 'Description for company ' . $user->first_name,
                 'size' => rand(10, 100) . ' employees',
-                'city' => 'Company City',
+                'city' => fake()->randomElement(SyrianCities::$allCities),
                 'region' => 'Region ' . rand(1, 10),
                 'street_address' => 'Street Address ' . rand(1, 100),
                 'industry_name' => $industryName,

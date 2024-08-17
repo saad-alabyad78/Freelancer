@@ -2,11 +2,13 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use App\Models\User;
+use App\Constants\Gender;
 use App\Models\Freelancer;
+use App\Constants\SyrianCities;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
 
 class FreelancerSeeder extends Seeder
 {
@@ -19,12 +21,12 @@ class FreelancerSeeder extends Seeder
 
             $freelancer = Freelancer::create([
                 'username' => $username,
-                'profile_image_url' => '/images/freelancers/default_profile.jpg',
-                'background_image_url' => '/images/freelancers/default_background.jpg',
+                'profile_image_url' => null ,
+                'background_image_url' => null ,
                 'headline' => 'Freelancer ' . $user->first_name,
                 'description' => 'This is a description for freelancer ' . $user->first_name,
-                'city' => 'Freelancer City',
-                'gender' => array_rand(['male', 'female']),
+                'city' => fake()->randomElement(SyrianCities::$allCities),
+                'gender' => fake()->randomElement(Gender::$types),
                 'date_of_birth' => Carbon::parse(rand(1980, 2000) . '-' . rand(1, 12) . '-' . rand(1, 28)),
                 'job_role_id' => rand(1, 5),
             ]);
