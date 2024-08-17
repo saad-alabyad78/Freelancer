@@ -38,7 +38,7 @@ class RolesMiddleware
 
         if(!in_array('any' , $roles) and !in_array(auth('sanctum')->user()->role_name , $roles)){
             return response()->json(
-                ['message' => 'you don\'t have the currect role'] ,
+                ['message' => 'you don\'t have the correct role'] ,
                  403 ,
                  ['Accept' => 'application/json']) ;
         }

@@ -8,5 +8,6 @@ Route::prefix('bills')->group(function(){
         'role:admin'
     ])->group(function(){
         Route::get('/' , [BillController::class , 'index']) ;
+        Route::get('/reports', [BillController::class , 'reports']) ;
     }) ;
 }) ;

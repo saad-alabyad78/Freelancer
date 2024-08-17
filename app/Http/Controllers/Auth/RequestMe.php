@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cache;
 use App\Http\Resources\Auth\UserResource;
 /**
- * @group Auth Managment
+ * @group Auth Management
  **/
 class RequestMe extends Controller
 {

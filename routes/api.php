@@ -5,6 +5,7 @@ use App\Models\Company;
 use App\Models\JobRole;
 use App\Constants\Disks;
 use App\Models\JobOffer;
+use App\Mail\WelcomeMail;
 use App\Models\Freelancer;
 use App\Constants\Defaults;
 use App\Helpers\ChunkHelper;
@@ -12,6 +13,7 @@ use App\Models\GalleryImage;
 use App\Services\xmlService;
 use Illuminate\Http\Request;
 use App\Services\imageService;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Resources\Company\CompanyResource;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
@@ -76,8 +78,9 @@ Route::post('test' , function(Request $request){
 });
 
 Route::get('test' , function(){
-  //dd(Route::getRoutes()) ;
- return 'hi salah' ;
-})->middleware('auth:sanctum');
+  $user = User::where('email' , 'saadalabyad78@gmail.com')->first() ;
+
+  Mail::to($user , 'soso')->send(new WelcomeMail('wsws')) ;
+});
 
 
