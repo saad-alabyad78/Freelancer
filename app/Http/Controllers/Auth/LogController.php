@@ -42,7 +42,7 @@ class LogController extends Controller
         $device = substr($request->userAgent() ?? '' , 0 , 255) ;
 
         $user->markOnline();
-        broadcast(new UserOnlineStatusUpdated($user->id, true));
+        //broadcast(new UserOnlineStatusUpdated($user->id, true));
 
         return response()->json([
             'user' => UserResource::make($user) ,

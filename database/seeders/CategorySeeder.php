@@ -13,39 +13,90 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        $cat1 = Category::updateOrCreate(['name' => 'Web Development']);
-        SubCategory::updateOrCreate(['name' => 'Frontend Development', 'category_id' => $cat1->id]);
-        SubCategory::updateOrCreate(['name' => 'Backend Development', 'category_id' => $cat1->id]);
-        SubCategory::updateOrCreate(['name' => 'Fullstack Development', 'category_id' => $cat1->id]);
+        $categories = [
+            'Web Development' => [
+                'Frontend Development',
+                'Backend Development',
+                'Fullstack Development',
+            ],
+            'Graphic Design' => [
+                'UI/UX Design',
+                'Logo Design',
+                'Illustration',
+            ],
+            'Writing & Translation' => [
+                'Copywriting',
+                'Translation',
+                'Editing & Proofreading',
+            ],
+            'Digital Marketing' => [
+                'SEO',
+                'Content Marketing',
+                'Social Media Marketing',
+            ],
+            'Video & Animation' => [
+                'Video Editing',
+                '2D Animation',
+                '3D Animation',
+            ],
+            'Music & Audio' => [
+                'Music Production',
+                'Voice Over',
+                'Sound Design',
+            ],
+            'Personal Development' => [
+                'Coaching',
+                'Mentorship',
+                'Career Counseling',
+            ],
 
-        $cat2 = Category::updateOrCreate(['name' => 'Graphic Design']);
-        SubCategory::updateOrCreate(['name' => 'UI/UX Design', 'category_id' => $cat2->id]);
-        SubCategory::updateOrCreate(['name' => 'Logo Design', 'category_id' => $cat2->id]);
-        SubCategory::updateOrCreate(['name' => 'Illustration', 'category_id' => $cat2->id]);
+            'تطوير الويب' => [
+                'تطوير الواجهة الأمامية',
+                'تطوير الواجهة الخلفية',
+                'تطوير الويب المتكامل',
+            ],
+            'التصميم الجرافيكي' => [
+                'تصميم واجهة المستخدم وتجربة المستخدم',
+                'تصميم الشعارات',
+                'الرسوم التوضيحية',
+            ],
+            'الكتابة والترجمة' => [
+                'كتابة المحتوى',
+                'الترجمة',
+                'التحرير والتدقيق اللغوي',
+            ],
+            'التسويق الرقمي' => [
+                'تحسين محركات البحث',
+                'تسويق المحتوى',
+                'التسويق عبر وسائل التواصل الاجتماعي',
+            ],
+            'الفيديو والرسوم المتحركة' => [
+                'تحرير الفيديو',
+                'الرسوم المتحركة ثنائية الأبعاد',
+                'الرسوم المتحركة ثلاثية الأبعاد',
+            ],
+            'الموسيقى والصوت' => [
+                'إنتاج الموسيقى',
+                'التعليق الصوتي',
+                'تصميم الصوت',
+            ],
+            'التطوير الشخصي' => [
+                'التدريب',
+                'الإرشاد',
+                'الإرشاد المهني',
+            ],
+        ];
 
-        $cat3 = Category::updateOrCreate(['name' => 'Writing & Translation']);
-        SubCategory::updateOrCreate(['name' => 'Copywriting', 'category_id' => $cat3->id]);
-        SubCategory::updateOrCreate(['name' => 'Translation', 'category_id' => $cat3->id]);
-        SubCategory::updateOrCreate(['name' => 'Editing & Proofreading', 'category_id' => $cat3->id]);
 
-        $cat4 = Category::updateOrCreate(['name' => 'Digital Marketing']);
-        SubCategory::updateOrCreate(['name' => 'SEO', 'category_id' => $cat4->id]);
-        SubCategory::updateOrCreate(['name' => 'Content Marketing', 'category_id' => $cat4->id]);
-        SubCategory::updateOrCreate(['name' => 'Social Media Marketing', 'category_id' => $cat4->id]);
+        foreach ($categories as $categoryName => $subCategories) {
+            // Create or update the category
+            $category = Category::updateOrCreate(['name' => $categoryName]);
 
-        $cat5 = Category::updateOrCreate(['name' => 'Video & Animation']);
-        SubCategory::updateOrCreate(['name' => 'Video Editing', 'category_id' => $cat5->id]);
-        SubCategory::updateOrCreate(['name' => '2D Animation', 'category_id' => $cat5->id]);
-        SubCategory::updateOrCreate(['name' => '3D Animation', 'category_id' => $cat5->id]);
+            // Loop through the subcategories and create or update them
+            foreach ($subCategories as $subCategoryName) {
+                SubCategory::updateOrCreate(['name' => $subCategoryName, 'category_id' => $category->id]);
+            }
+        }
 
-        $cat6 = Category::updateOrCreate(['name' => 'Music & Audio']);
-        SubCategory::updateOrCreate(['name' => 'Music Production', 'category_id' => $cat6->id]);
-        SubCategory::updateOrCreate(['name' => 'Voice Over', 'category_id' => $cat6->id]);
-        SubCategory::updateOrCreate(['name' => 'Sound Design', 'category_id' => $cat6->id]);
-
-        $cat7 = Category::updateOrCreate(['name' => 'Personal Development']);
-        SubCategory::updateOrCreate(['name' => 'Coaching', 'category_id' => $cat7->id]);
-        SubCategory::updateOrCreate(['name' => 'Mentorship', 'category_id' => $cat7->id]);
-        SubCategory::updateOrCreate(['name' => 'Career Counseling', 'category_id' => $cat7->id]);
     }
 }
