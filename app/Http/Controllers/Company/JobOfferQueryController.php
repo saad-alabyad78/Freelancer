@@ -80,7 +80,7 @@ class JobOfferQueryController extends Controller
 
         if(auth('sanctum')->check() and auth('sanctum')->user()->role_type==Freelancer::class)
         {
-            $freelancer = Freelancer::where(auth('sanctum')->user()->role_id)->first()  ;
+            $freelancer = Freelancer::where('id' , auth('sanctum')->user()->role_id)->first()  ;
         }
         
         $offers = JobOffer::filter($filters , $freelancer)

@@ -2,6 +2,8 @@
 
 namespace App\Http\Resources\Company;
 
+use App\Http\Resources\Auth\UserResource;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Resources\Storage\ImageResource;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -32,6 +34,7 @@ class CompanyResource extends JsonResource
             'description' => $this->description ,
             'size' => $this->size , 
             'industry_name' => $this->industry_name ,
+            'user' => UserResource::make($this->user) ,
             'gallery_images' => ImageResource::collection($this->whenLoaded('gallery_images')) ,
             ];
     }

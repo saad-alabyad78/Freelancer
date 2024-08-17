@@ -20,9 +20,9 @@ class FreelancerResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'rating' => $this->rating ?? Rate::where('model_id' , $this->id)
-            ->where('model_type' , Freelancer::class)
-            ->average('number') ,
+            // 'rating' => $this->rating ?? Rate::where('model_id' , $this->id)
+            // ->where('model_type' , Freelancer::class)
+            // ->average('number') ,
 
             'id' => $this->id ,
             'profile_image_url' =>  $this->profile_image_url ,

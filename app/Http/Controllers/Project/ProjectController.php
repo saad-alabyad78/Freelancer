@@ -58,7 +58,10 @@ class ProjectController extends Controller
      */
     public function clientOk(Project $project)
     {
-        $project->update(['client_ok' => true]) ;
+        $project->update([
+            'client_ok' => true ,
+            'freelancer_ok' => true ,
+        ]) ;
         
         $this->checkEndOfProject($project) ;
         

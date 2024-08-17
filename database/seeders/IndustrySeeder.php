@@ -12,44 +12,21 @@ class IndustrySeeder extends Seeder
      */
     public function run(): void
     {
-        $industries = [
-            'Information Technology',
-            'Healthcare',
-            'Education',
-            'Manufacturing',
-            'Finance',
-            'Retail',
-            'Real Estate',
-            'Hospitality',
-            'Transportation',
-            'Construction',
-            'Marketing & Advertising',
-            'Telecommunications',
-            'Entertainment',
-            'Legal Services',
-            'Non-Profit',
-            'Public Administration',
-            'تكنولوجيا المعلومات',
-            'الرعاية الصحية',
-            'التعليم',
-            'التصنيع',
-            'المالية',
-            'التجزئة',
-            'العقارات',
-            'الضيافة',
-            'النقل',
-            'البناء',
-            'التسويق والإعلان',
-            'الاتصالات',
-            'الترفيه',
-            'الخدمات القانونية',
-            'المنظمات غير الربحية',
-            'الإدارة العامة',
-        ];
-        
-        foreach ($industries as $industry) {
-            Industry::updateOrCreate(['name' => $industry]);
-        }
-        
+        Industry::updateOrCreate(['name' => 'Information Technology']);
+        Industry::updateOrCreate(['name' => 'Healthcare']);
+        Industry::updateOrCreate(['name' => 'Education']);
+        Industry::updateOrCreate(['name' => 'Manufacturing']);
+        Industry::updateOrCreate(['name' => 'Finance']);
+        Industry::updateOrCreate(['name' => 'Retail']);
+        Industry::updateOrCreate(['name' => 'Real Estate']);
+        Industry::updateOrCreate(['name' => 'Hospitality']);
+        Industry::updateOrCreate(['name' => 'Transportation']);
+        Industry::updateOrCreate(['name' => 'Construction']);
+        Industry::updateOrCreate(['name' => 'Marketing & Advertising']);
+        Industry::updateOrCreate(['name' => 'Telecommunications']);
+        Industry::updateOrCreate(['name' => 'Entertainment']);
+        Industry::updateOrCreate(['name' => 'Legal Services']);
+        Industry::updateOrCreate(['name' => 'Non-Profit']);
+        Industry::updateOrCreate(['name' => 'Public Administration']);
     }
 }

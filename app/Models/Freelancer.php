@@ -34,7 +34,7 @@ class Freelancer extends BaseModel
         'username' ,
     ];
 
-    protected $appends = ['rating'] ;
+    // protected $appends = ['rating'] ;
 
     public function Age():Attribute
     {
@@ -43,10 +43,10 @@ class Freelancer extends BaseModel
         );
     }
 
-    public function getRatingAttributes()
-    {
-        return $this->rates()->avg('number') ?? 1;
-    }
+    // public function getRatingAttributes()
+    // {
+    //     return $this->rates()->avg('number') ?? 1;
+    // }
 
     public function user():MorphOne
     {
